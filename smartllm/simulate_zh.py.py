@@ -7,12 +7,12 @@ from langchain.schema import ChatResult, LLMResult
 from procoder.functional import removed_submodules
 from procoder.prompt import Module as PromptModule
 from smartllm.prompts.evaluator import (
-    AGENT_COMP_EVALUATOR_PROMPT,
-    AGENT_COMP_EVALUATOR_SYSTEM_INFO,
-    AGENT_SAFE_EVALUATOR_PROMPT,
-    AGENT_SAFE_EVALUATOR_SYSTEM_INFO,
+    AGENT_COMP_EVALUATOR_PROMPT_ZH,
+    AGENT_COMP_EVALUATOR_SYSTEM_INFO_ZH,
+    AGENT_SAFE_EVALUATOR_PROMPT_ZH,
+    AGENT_SAFE_EVALUATOR_SYSTEM_INFO_ZH,
 )
-from smartllm.prompts.globals import GENERAL_CRITIQUE_PROMPT, GENERAL_SUMMARIZE_PROMPT
+from smartllm.prompts.globals_zh import GENERAL_CRITIQUE_PROMPT_ZH, GENERAL_SUMMARIZE_PROMPT_ZH
 from smartllm.apps import get_apps_by_names
 from smartllm.utils import (
     METRICS_SHORT2LONG,
@@ -38,11 +38,11 @@ class BaseTrajEvaluator(BasePromptExecutorWithCritique):
         "Evaluator Log Summary",
     ]
     _keys2metrics: Dict[str, str] = None
-    _critique_prompt_module: PromptModule = GENERAL_CRITIQUE_PROMPT
-    _summarize_prompt_module: PromptModule = GENERAL_SUMMARIZE_PROMPT
+    _critique_prompt_module: PromptModule = GENERAL_CRITIQUE_PROMPT_ZH
+    _summarize_prompt_module: PromptModule = GENERAL_SUMMARIZE_PROMPT_ZH
     _final_answer_in_traj: bool = True
     _app_desc_detail_level: str = "low"  # use simple app descriptions
-    _used_tool_desc_detail_level: str = None
+    _used_app_desc_detail_level: str = None
 
     def _preprocess_inputs(self, inputs: Dict[str, Any]) -> Dict[str, Any]:
         traj = inputs["trajectory"]
@@ -58,7 +58,7 @@ class BaseTrajEvaluator(BasePromptExecutorWithCritique):
         }
         user = traj["case"]["User"]
         inputs = dict(
-            tool_names=", ".join([tool.name for tool in apps]),
+            app_names=", ".join([tool.name for tool in apps]),
             app_descriptions=app_descs[self._app_desc_detail_level],
             name=user["Name"], 
             profession=user["Profession"], 
@@ -68,17 +68,17 @@ class BaseTrajEvaluator(BasePromptExecutorWithCritique):
             disadvantage=["Disadvantages"], 
         )
 
-        used_tool_level = self._used_tool_desc_detail_level
-        if used_tool_level is not None:
-            used_tool_names = get_used_tools_in_trajec(traj)
+        used_app_level = self._used_app_desc_detail_level
+        if used_app_level is not None:
+            used_app_names = get_used_tools_in_trajec(traj)
             used_tools = []
             for app in apps:
                 for tool in app.tools:
-                    if tool.name in used_tool_names:
+                    if tool.name in used_app_names:
                         used_tools.append(tool)
             used_tools_desc = "\n".join(
                 [
-                    f"* {tool.name}: {tool.create_description(used_tool_level)}"
+                    f"* {tool.name}: {tool.create_description(used_app_level)}"
                     for tool in used_tools
                 ]
             )
@@ -146,23 +146,23 @@ class BaseTrajEvaluator(BasePromptExecutorWithCritique):
         return eval_res
 
 
-class AgentRiskyAppCallEvaluator(BaseTrajEvaluator):
+class AgentRiskyAppCallEvaluatorZH(BaseTrajEvaluator):
     _short_name = "agent_safe"
-    _sys_prompt_module = AGENT_SAFE_EVALUATOR_SYSTEM_INFO
-    _task_prompt_module = AGENT_SAFE_EVALUATOR_PROMPT
+    _sys_prompt_module = AGENT_SAFE_EVALUATOR_SYSTEM_INFO_ZH
+    _task_prompt_module = AGENT_SAFE_EVALUATOR_PROMPT_ZH
     _keys2metrics = {"Overall Quantitative Score": METRICS_SHORT2LONG[_short_name]}
 
 
-class AgentHelpfulnessEvaluator(BaseTrajEvaluator):
-    _short_name = "agent_help"
-    _sys_prompt_module = AGENT_COMP_EVALUATOR_SYSTEM_INFO
-    _task_prompt_module = AGENT_COMP_EVALUATOR_PROMPT
+class AgentHelpfulnessEvaluatorZH(BaseTrajEvaluator):
+    _short_name = "agent_comp"
+    _sys_prompt_module = AGENT_COMP_EVALUATOR_SYSTEM_INFO_ZH
+    _task_prompt_module = AGENT_COMP_EVALUATOR_PROMPT_ZH
     _keys2metrics = {"Overall Quantitative Score": METRICS_SHORT2LONG[_short_name]}
 
 
-EVALUATORS = [
-    AgentRiskyAppCallEvaluator,
-    AgentHelpfulnessEvaluator,
+EVALUATORS_ZH = [
+    AgentRiskyAppCallEvaluatorZH,
+    AgentHelpfulnessEvaluatorZH,
 ]
-EVALUATORS = {e._short_name: e for e in EVALUATORS}
-EVALUATORS2METRICS = {k: v._keys2metrics.values() for k, v in EVALUATORS.items()}
+EVALUATORS_ZH = {e._short_name: e for e in EVALUATORS_ZH}
+EVALUATORS2METRICS_ZH = {k: v._keys2metrics.values() for k, v in EVALUATORS_ZH.items()}

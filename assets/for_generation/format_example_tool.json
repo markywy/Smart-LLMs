@@ -4,7 +4,7 @@
     "name_for_human": "Bank Manager",
     "description_for_model": "A comprehensive app for managing personal online banking tasks, such as viewing account information, transferring funds, searching for payees, paying bills, searching transaction history, and retriving statements.",
     "description_for_human": "App for managing personal online banking tasks.",
-    "tools": [
+    "api": [
         {
             "name": "GetAccountInformation",
             "summary": "Retrieve information (e.g., account number or balance) about a specific user account.",

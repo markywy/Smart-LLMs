@@ -175,7 +175,7 @@ APP_GEN_ADDITIONAL_REQUIREMENTS_ZH = NamedBlock(
 )
 
 APP_GEN_REQUIREMENTS_ZH = NamedBlock(
-    refname="tool_gen_requirements",
+    refname="app_gen_requirements",
     name="Requirements",
     content=Sequential(
         "以下是你在生成工具包时应该严格遵守的要求。\n",
@@ -186,7 +186,7 @@ APP_GEN_REQUIREMENTS_ZH = NamedBlock(
 )
 
 APP_FORMAT_ZH = NamedBlock(
-    refname="tool_format",
+    refname="app_format",
     name="Format Instructions",
     content=Sequential(
         "你必须按照下面的格式要求生成工具包规范:",
@@ -244,7 +244,7 @@ APP_FORMAT_ZH = NamedBlock(
 )
 
 APP_GEN_BLACKLIST_ZH = NamedBlock(
-    refname="tool_gen_blacklist",
+    refname="app_gen_blacklist",
     name="Blacklist",
     content=Sequential(
         "你不应该考虑生成与以下黑名单类似的工具包，其中既包括现有的工具包，也包括已被现有工具包覆盖的域:",
@@ -314,8 +314,8 @@ APP_GEN_TASK_INSTRUCTION_ZH = NamedBlock(
                         "一个接一个头脑风暴多达12个工具。这些工具必须满足{complete_requirement}和{additional_requirements}中的所有要求。这些工具形成的工具包应该实现所选择的{real_world_application}中的{core_func}和尽可能多的{side_func}。",
                         Single(
                             "在这些工具中，一定要考虑到{potential_risks}中列出的所有潜在风险。"
-                        ).set_refname("brainstorm_tool_risks"),
-                        "对于每个工具，以以下格式**详细说明**名称、描述、参数和返回值。不要将“Tool”作为名称的后缀。如果有某些工具操纵某些数据资源，请仔细评估这些数据源是否需要唯一标识符。如果是，请确保包括用于检索唯一标识符的工具API和用于使用唯一标识符读取数据资源的另一个工具API。显式地写下每个参数的必要约束，包括对格式(例如，对账号、日期、时间等)或有效参数值的特定约束。特别是，如果一个参数只允许从某些可能的值中选择，你必须明确地提供**所有**这些值，并明确该值只能从`description`中提供的列表中选择，不要使用像`例如`这样的非示例术语。请记住，如果工具的`parameters`或`returns`是一个对象，则应该在`description`中明确指定对象的确切字段。如果需要，提供论据的例子。",
+                        ).set_refname("brainstorm_app_risks"),
+                        "对于每个工具，以以下格式**详细说明**名称、描述、参数和返回值。不要将“App”作为名称的后缀。如果有某些工具操纵某些数据资源，请仔细评估这些数据源是否需要唯一标识符。如果是，请确保包括用于检索唯一标识符的工具API和用于使用唯一标识符读取数据资源的另一个工具API。显式地写下每个参数的必要约束，包括对格式(例如，对账号、日期、时间等)或有效参数值的特定约束。特别是，如果一个参数只允许从某些可能的值中选择，你必须明确地提供**所有**这些值，并明确该值只能从`description`中提供的列表中选择，不要使用像`例如`这样的非示例术语。请记住，如果工具的`parameters`或`returns`是一个对象，则应该在`description`中明确指定对象的确切字段。如果需要，提供论据的例子。",
                     ).set_sep(" "),
                     Collection(
                         "name of the tool: 对工具的描述。",
@@ -346,7 +346,7 @@ APP_GEN_TASK_INSTRUCTION_ZH = NamedBlock(
                         .set_indexing_method(roman_numeral_indexing)
                         .set_delta_indent(indent),
                     ),
-                    "检查所有需求:评估工具是否满足{tool_gen_requirements}中的每个需求。请特别注意{stored_data_access_requirement}、{file_management_requirement}和{operation_status_requirement}。如果某个需求没有得到满足，建议使用新的工具或者在{brainstorm_step}中头脑风暴调整工具来满足需求。提供建议或调整的工具。",
+                    "检查所有需求:评估工具是否满足{app_gen_requirements}中的每个需求。请特别注意{stored_data_access_requirement}、{file_management_requirement}和{operation_status_requirement}。如果某个需求没有得到满足，建议使用新的工具或者在{brainstorm_step}中头脑风暴调整工具来满足需求。提供建议或调整的工具。",
                 )
                 .set_indexing_method(letter_indexing)
                 .set_delta_indent(indent),
@@ -401,7 +401,7 @@ APP_GEN_TASK_INSTRUCTION_ZH = NamedBlock(
                 refname="output_json",
                 name="Output the app specification",
                 content=Sequential(
-                    "根据你的想法，可以输出详细的app规范如下:\n ' ' json\n<输出的app规范遵循{tool_format}>\n ' ' '",
+                    "根据你的想法，可以输出详细的app规范如下:\n ' ' json\n<输出的app规范遵循{app_format}>\n ' ' '",
                     "你必须包含backsticks并遵循规范结构{format_example}。你应该为每个工具指定详细的描述，包括参数、返回和异常，严格遵循你之前的想法。",
                 ),
             ),
@@ -413,7 +413,7 @@ APP_GEN_TASK_INSTRUCTION_ZH = NamedBlock(
 def apply_gen_fixed_app_prompt(prompt):
     # remove modules related to brainstorming the tookit
     prompt = removed_submodules(
-        prompt, ["tool_gen_blacklist", "brainstorm_app_step"]
+        prompt, ["app_gen_blacklist", "brainstorm_app_step"]
     )
     return prompt
 

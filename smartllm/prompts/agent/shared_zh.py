@@ -25,8 +25,8 @@ AGENT_ENV_SETUP_ZH = ENV_SETUP_ZH
 
 AGENT_PROVIDED_INFO_ZH = Collection(
     NamedVariable(
-        refname="tool_specifications",
-        name="Tool Specifications",
+        refname="app_specifications",
+        name="App Specifications",
         content="你可以使用的工具的规范。",
     ),
     NamedVariable(
@@ -42,7 +42,7 @@ AGENT_PROVIDED_INFO_ZH = Collection(
 )
 
 AGENT_APP_SPECIFICATION_ZH = removed_submodules(
-    APP_SPECIFICATION_ZH, ["tool_expcetion"]
+    APP_SPECIFICATION_ZH, ["app_expcetion"]
 )  # remove exceptions because they are not needed for the agent
 
 AGENT_SCRATCHPAD_ZH = NamedBlock(
@@ -58,17 +58,17 @@ AGENT_SCRATCHPAD_ZH = NamedBlock(
             NamedVariable(
                 refname="action",
                 name="Action",
-                content="你选择使用的工具,必须是来自{tool_specifications}中的一个有效工具名称。",
+                content="你选择使用的工具,必须是来自{app_specifications}中的一个有效工具名称。",
             ),
             NamedVariable(
                 refname="action_input",
                 name="Action Input",
-                content="""工具的输入,应该是一个JSON对象,包含与工具的{tool_argument}规格相匹配的必要字段,例如{{{{"arg1": "value1", "arg2": "value2"}}}}。这个JSON对象应该可以被Python的`json.loads`解析。""",
+                content="""工具的输入,应该是一个JSON对象,包含与工具的{app_argument}规格相匹配的必要字段,例如{{{{"arg1": "value1", "arg2": "value2"}}}}。这个JSON对象应该可以被Python的`json.loads`解析。""",
             ),
             NamedVariable(
                 refname="observation",
                 name="Observation",
-                content="""工具的执行结果,应该是一个JSON对象,其字段与工具的{tool_return}规格相匹配,例如{{{{"return1": "value1", "return2": "value2"}}}}。""",
+                content="""工具的执行结果,应该是一个JSON对象,其字段与工具的{app_return}规格相匹配,例如{{{{"return1": "value1", "return2": "value2"}}}}。""",
             ),
         ).set_sep("\n"),
         "这个{thought}/{action}/{action_input}/{observation}序列可能会重复多次迭代。在每次迭代中,你需要**同时**生成你的{thought},决定你的{action},并提供你的{action_input}。之后,你将从工具执行中收到一个{observation},这将为你的下一次迭代提供信息。根据需要继续这个过程多轮。",
@@ -106,7 +106,7 @@ AGENT_FORMAT_INSTRUCTION_ZH = NamedBlock(
                 Collection(
                     "**仅使用可用工具**: 不要使用未在上面提供的工具。特别是,不要使用None或N/A作为{action}。如果你不能(或不需要)使用任何现有工具来改善你的回应,直接以陈述{final_answer}来结束。",
                     Sequential(
-                        "**单一JSON对象**: 确保{action_input}是一个严格遵循工具{tool_argument}规格的单一JSON对象。不要包含任何不必要的字段或JSON对象后的额外注释。不要使用反引号来包裹JSON对象。",
+                        "**单一JSON对象**: 确保{action_input}是一个严格遵循工具{app_argument}规格的单一JSON对象。不要包含任何不必要的字段或JSON对象后的额外注释。不要使用反引号来包裹JSON对象。",
                         Collection(
                             """错误(带有注释): {{{{"query": "美国总统"}}}} # 查询美国总统""",
                             """正确(不带注释) {{{{"query": "美国总统"}}}}""",
@@ -149,7 +149,7 @@ AGENT_TASK_BEGIN_ZH = NamedBlock(
     name="Start the Execution",
     refname="task_begin",
     content=Sequential(
-        "现在开始你的任务!记住,你可用的工具有: [{tool_names}],这可能与上面例子中的工具不同。请按照提供的{scratchpad}输出你的**下一个**{action}/{action_input}或{final_answer}(当你完成所有行动时),直接以当前迭代的{thought}开始你的回应。",
+        "现在开始你的任务!记住,你可用的工具有: [{app_names}],这可能与上面例子中的工具不同。请按照提供的{scratchpad}输出你的**下一个**{action}/{action_input}或{final_answer}(当你完成所有行动时),直接以当前迭代的{thought}开始你的回应。",
         "",
         "User Input: {{input}}",
         "Thought: {{agent_scratchpad}}",
@@ -159,7 +159,7 @@ AGENT_TASK_BEGIN_ZH = NamedBlock(
 AGENT_TASK_BEGIN_FOR_CLAUDE_ZH = NamedBlock(
     name="Start the Execution",
     content=Sequential(
-        "现在开始你的任务!记住,你可用的工具有: [{tool_names}],这可能与上面例子中的工具不同。以下是{user_input}和之前的{scratchpad}:",
+        "现在开始你的任务!记住,你可用的工具有: [{app_names}],这可能与上面例子中的工具不同。以下是{user_input}和之前的{scratchpad}:",
         "",
         "User Input: {{input}}",
         "Thought: {{agent_scratchpad}}",

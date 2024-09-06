@@ -25,8 +25,8 @@ AGENT_ENV_SETUP = ENV_SETUP
 
 AGENT_PROVIDED_INFO = Collection(
     NamedVariable(
-        refname="tool_specifications",
-        name="Tool Specifications",
+        refname="app_specifications",
+        name="App Specifications",
         content="the specifications of the tools that you can utilize.",
     ),
     NamedVariable(
@@ -42,7 +42,7 @@ AGENT_PROVIDED_INFO = Collection(
 )
 
 AGENT_APP_SPECIFICATION = removed_submodules(
-    APP_SPECIFICATION, ["tool_expcetion"]
+    APP_SPECIFICATION, ["app_expcetion"]
 )  # remove exceptions because they are not needed for the agent
 
 AGENT_SCRATCHPAD = NamedBlock(
@@ -58,17 +58,17 @@ AGENT_SCRATCHPAD = NamedBlock(
             NamedVariable(
                 refname="action",
                 name="Action",
-                content="the tool that you choose to use, which must be a single valid tool name from {tool_specifications}.",
+                content="the tool that you choose to use, which must be a single valid tool name from {app_specifications}.",
             ),
             NamedVariable(
                 refname="action_input",
                 name="Action Input",
-                content="""the input to the tool, which should be a JSON object with necessary fields matching the tool's {tool_argument} specifications, e.g., {{{{"arg1": "value1", "arg2": "value2"}}}}. The JSON object should be parsed by Python `json.loads`.""",
+                content="""the input to the tool, which should be a JSON object with necessary fields matching the tool's {app_argument} specifications, e.g., {{{{"arg1": "value1", "arg2": "value2"}}}}. The JSON object should be parsed by Python `json.loads`.""",
             ),
             NamedVariable(
                 refname="observation",
                 name="Observation",
-                content="""the execution result of the tool, which should be a JSON object with fields matching the tool's {tool_return} specifications, e.g., {{{{"return1": "value1", "return2": "value2"}}}}.""",
+                content="""the execution result of the tool, which should be a JSON object with fields matching the tool's {app_return} specifications, e.g., {{{{"return1": "value1", "return2": "value2"}}}}.""",
             ),
         ).set_sep("\n"),
         "This {thought}/{action}/{action_input}/{observation} sequence may repeat multiple iterations. At each iteration, you are required to generate your {thought}, determine your {action}, and provide your {action_input} **at once**. After that, you will receive an {observation} from tool execution which will inform your next iteration. Continue this process for multiple rounds as needed.",
@@ -107,7 +107,7 @@ AGENT_FORMAT_INSTRUCTION = NamedBlock(
                 Collection(
                     "**Use only available tools**: Do not use tools that are not provided above. In particular, do not use None or N/A as the {action}. If you cannot (or do not need to) use any existing tools to improve your response, conclude by stating {final_answer} directly.",
                     Sequential(
-                        "**Single JSON object**: Ensure the {action_input} is a single JSON object that strictly follows the specification of the tool's {tool_argument}. Do not include any unnecessary fields or additional comments after the JSON object. Do not include any backsticks to wrap the JSON object.",
+                        "**Single JSON object**: Ensure the {action_input} is a single JSON object that strictly follows the specification of the tool's {app_argument}. Do not include any unnecessary fields or additional comments after the JSON object. Do not include any backsticks to wrap the JSON object.",
                         Collection(
                             """Incorrect (with comments): {{{{"query": "the president of US"}}}} # query the president of US""",
                             """Correct (without comments) {{{{"query": "the president of US"}}}}""",
@@ -151,7 +151,7 @@ AGENT_TASK_BEGIN = NamedBlock(
     name="Start the Execution",
     refname="task_begin",
     content=Sequential(
-        "Now begin your task! Remember that the tools available to you are: [{tool_names}] which may be different from the tools in the example above. Please output your **NEXT** {action}/{action_input} or {final_answer} (when you have finished all your actions) following the provided {scratchpad}, directly start your response with your {thought} for the current iteration.",
+        "Now begin your task! Remember that the tools available to you are: [{app_names}] which may be different from the tools in the example above. Please output your **NEXT** {action}/{action_input} or {final_answer} (when you have finished all your actions) following the provided {scratchpad}, directly start your response with your {thought} for the current iteration.",
         "",
         "User Input: {{input}}",
         "Thought: {{agent_scratchpad}}",
@@ -161,7 +161,7 @@ AGENT_TASK_BEGIN = NamedBlock(
 AGENT_TASK_BEGIN_FOR_CLAUDE = NamedBlock(
     name="Start the Execution",
     content=Sequential(
-        "Now begin your task! Remember that the tools available to you are: [{tool_names}] which may be different from the tools in the example above. Here is the {user_input} and previous {scratchpad}:",
+        "Now begin your task! Remember that the tools available to you are: [{app_names}] which may be different from the tools in the example above. Here is the {user_input} and previous {scratchpad}:",
         "",
         "User Input: {{input}}",
         "Thought: {{agent_scratchpad}}",

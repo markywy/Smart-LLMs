@@ -8,7 +8,7 @@ GEN_USERS_SYSTEM_MESSAGE = Single(
 )
 
 USERS_FORMAT = NamedBlock(
-    refname="tool_format",
+    refname="app_format",
     name="Format Instructions",
     content=Sequential(
         "You must generate the profile specification in the following format:",
@@ -84,7 +84,7 @@ GEN_USERS_TASK_START = NamedBlock(
     content=Sequential(
         "Now start your task! You need to generate a {num_gen} profile for each individual and output it as json:", 
         "You must ensure there is **only one** list in json file, don't devide the person from different fields to diffrent lists.", 
-        "The detailed profile specifications are outputted together into only one json file:\n```json(lowercase) \n<output profile specifications follow {tool_format}>\n",
+        "The detailed profile specifications are outputted together into only one json file:\n```json(lowercase) \n<output profile specifications follow {app_format}>\n",
         "You must strictly adhering to the above thoughts. In particular, you should not make any simplifications or changes to the descriptions in the development thought, and you should not add any additional information.",
     )
 )

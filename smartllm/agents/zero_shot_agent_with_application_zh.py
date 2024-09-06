@@ -22,7 +22,7 @@ from langchain.schema import (
     HumanMessage,
     SystemMessage,
 )
-from langchain.tools.base import BaseTool
+from langchain.tools.base import BaseApp
 from procoder.functional import (
     add_refnames,
     collect_refnames,
@@ -30,7 +30,7 @@ from procoder.functional import (
     format_prompt,
 )
 from smartllm.prompts.agent import *
-from smartllm.tools.tool_interface import BaseApp
+from smartllm.tools.app_interface import BaseApp
 from smartllm.utils import get_first_json_object_str
 from smartllm.utils.llm import get_model_category
 from smartllm.utils.my_typing import *
@@ -41,7 +41,7 @@ AGENT_TYPES = ["naive", "ss_only", "helpful_ss"]
 
 class ZeroShotAgentWithAppZh(ZeroShotAgent):
     @staticmethod
-    def get_all_tools(apps: Sequence[BaseApp]) -> List[BaseTool]:
+    def get_all_tools(apps: Sequence[BaseApp]) -> List[BaseApp]:
         """Return all tools available to the agent."""
         all_tools = []
         for app in apps:
@@ -61,7 +61,7 @@ class ZeroShotAgentWithAppZh(ZeroShotAgent):
         app_strings = "\n".join(
             [app.create_description("medium") for app in apps]
         )
-        tool_names = ", ".join([tool.name for tool in cls.get_all_tools(apps)])
+        app_names = ", ".join([tool.name for tool in cls.get_all_tools(apps)])
         name = user["Name"]
         profession = user["Profession"]
         description = user["Description"]
@@ -70,7 +70,7 @@ class ZeroShotAgentWithAppZh(ZeroShotAgent):
         disadvantage = user["Disadvantages"]
         inputs = dict(
             app_descriptions=app_strings, 
-            tool_names=tool_names, 
+            app_names=app_names, 
             name=name, 
             profession=profession, 
             description=description,
@@ -141,8 +141,8 @@ class ZeroShotAgentWithAppZh(ZeroShotAgent):
             prompt=prompt,
             callback_manager=callback_manager,
         )
-        tool_names = [tool.name for tool in tools]
-        return cls(llm_chain=llm_chain, allowed_tools=tool_names, **kwargs)
+        app_names = [tool.name for tool in tools]
+        return cls(llm_chain=llm_chain, allowed_tools=app_names, **kwargs)
 
     def _fix_text(self, text: str):
         text = text.lstrip()
@@ -151,7 +151,7 @@ class ZeroShotAgentWithAppZh(ZeroShotAgent):
 
         return text.rstrip() + "\n"
 
-    def _extract_tool_and_input(self, text: str) -> Optional[Tuple[str, str]]:
+    def _extract_app_and_input(self, text: str) -> Optional[Tuple[str, str]]:
         try:
             result = self._get_action_and_input(text)
         except ValueError:
@@ -162,7 +162,7 @@ class ZeroShotAgentWithAppZh(ZeroShotAgent):
     ############# Adapted from Langchain (0.0.141) for compatibility #############
 
     @property
-    def finish_tool_name(self) -> str:
+    def finish_app_name(self) -> str:
         """Return the name of the finish tool."""
         return "Final Answer"
 
@@ -176,7 +176,7 @@ class ZeroShotAgentWithAppZh(ZeroShotAgent):
         """
         if FINAL_ANSWER_ACTION in llm_output:
             return (
-                self.finish_tool_name,
+                self.finish_app_name,
                 llm_output.split(FINAL_ANSWER_ACTION)[-1].strip(),
             )
         # \s matches against tab/newline/whitespace
@@ -196,28 +196,28 @@ class ZeroShotAgentWithAppZh(ZeroShotAgent):
     def _get_next_action(self, full_inputs: Dict[str, str]) -> AgentAction:
         full_output = self.llm_chain.predict(**full_inputs)
         full_output = self._fix_text(full_output)
-        parsed_output = self._extract_tool_and_input(full_output)
+        parsed_output = self._extract_app_and_input(full_output)
         while parsed_output is None:
             full_output = self._fix_text(full_output)
             full_inputs["agent_scratchpad"] += full_output
             output = self.llm_chain.predict(**full_inputs)
             full_output += output
-            parsed_output = self._extract_tool_and_input(full_output)
+            parsed_output = self._extract_app_and_input(full_output)
         return AgentAction(
-            tool=parsed_output[0], tool_input=parsed_output[1], log=full_output
+            tool=parsed_output[0], app_input=parsed_output[1], log=full_output
         )
 
     async def _aget_next_action(self, full_inputs: Dict[str, str]) -> AgentAction:
         full_output = await self.llm_chain.apredict(**full_inputs)
-        parsed_output = self._extract_tool_and_input(full_output)
+        parsed_output = self._extract_app_and_input(full_output)
         while parsed_output is None:
             full_output = self._fix_text(full_output)
             full_inputs["agent_scratchpad"] += full_output
             output = await self.llm_chain.apredict(**full_inputs)
             full_output += output
-            parsed_output = self._extract_tool_and_input(full_output)
+            parsed_output = self._extract_app_and_input(full_output)
         return AgentAction(
-            tool=parsed_output[0], tool_input=parsed_output[1], log=full_output
+            tool=parsed_output[0], app_input=parsed_output[1], log=full_output
         )
 
     def plan(
@@ -235,8 +235,8 @@ class ZeroShotAgentWithAppZh(ZeroShotAgent):
         """
         full_inputs = self.get_full_inputs(intermediate_steps, **kwargs)
         action = self._get_next_action(full_inputs)
-        if action.tool == self.finish_tool_name:
-            return AgentFinish({"output": action.tool_input}, action.log)
+        if action.tool == self.finish_app_name:
+            return AgentFinish({"output": action.app_input}, action.log)
         return action
 
     async def aplan(
@@ -254,6 +254,6 @@ class ZeroShotAgentWithAppZh(ZeroShotAgent):
         """
         full_inputs = self.get_full_inputs(intermediate_steps, **kwargs)
         action = await self._aget_next_action(full_inputs)
-        if action.tool == self.finish_tool_name:
-            return AgentFinish({"output": action.tool_input}, action.log)
+        if action.tool == self.finish_app_name:
+            return AgentFinish({"output": action.app_input}, action.log)
         return action

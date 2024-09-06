@@ -1,6 +1,6 @@
 from .real_tools import *
 from .register import get_app_dict, apps_factory
-from .tool_interface import BaseApp, FunctionApp
+from .app_interface import BaseApp, FunctionApp
 # Prompt the user for input
 simulate_lan = input("Enter language code (zh for Chinese, en for English): ").strip().lower()
 
@@ -28,10 +28,10 @@ def get_apps_by_names(names: List[str]) -> List[FunctionApp]:
     return apps
 
 
-def get_tool_class_by_name(apps: List[FunctionApp], name: str) -> BaseTool:
+def get_app_class_by_name(apps: List[FunctionApp], name: str) -> BaseApp:
     for app in apps:
         try:
             return app[name]
         except ValueError:
             pass
-    raise ValueError(f"Tool {name} does not exist in these apps")
+    raise ValueError(f"App {name} does not exist in these apps")

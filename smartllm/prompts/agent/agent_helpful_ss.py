@@ -39,7 +39,7 @@ AGENT_HELPFUL_SS_CLAUDE_PROMPT = replaced_submodule(
 
 
 if __name__ == "__main__":
-    inputs = dict(app_descriptions=None, tool_names=None)
+    inputs = dict(app_descriptions=None, app_names=None)
     add_refnames(AGENT_DUMMY_VARS, inputs, include_brackets=False)
     system_prompt, example_prompt = format_multiple_prompts(
         [

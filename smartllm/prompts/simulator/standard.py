@@ -24,8 +24,8 @@ STANDARD_SIMULATOR_GENERAL_TASK_DESC = NamedBlock(
             "You are provided with the following information:",
             Collection(
                 NamedVariable(
-                    refname="tool_specifications",
-                    name="Tool Specifications",
+                    refname="app_specifications",
+                    name="App Specifications",
                     content="the specifications of the tools available in the virtual environment that you are simulating and can be used by the {agent}.",
                 ),
                 NamedVariable(
@@ -77,9 +77,9 @@ SIMULATOR_THOUGHTS = NamedBlock(
             name="Validate the tool call",
             content=Collection(
                 NamedVariable(
-                    refname="check_tool_callable",
-                    name="Examine Tool Callable",
-                    content="Does the {action} satisfy the {tool_callable_req}? Justify your answer.",
+                    refname="check_app_callable",
+                    name="Examine App Callable",
+                    content="Does the {action} satisfy the {app_callable_req}? Justify your answer.",
                 ),
                 NamedVariable(
                     refname="check_input_adherence",
@@ -100,7 +100,7 @@ SIMULATOR_THOUGHTS = NamedBlock(
                     refname="check_exceptions",
                     name="Examine Exceptions",
                     content=Sequential(
-                        "Following the {reject_invalid_call_req}, examine whether the current tool call meets an exception condition in the tool's {tool_expcetion} based on the above checks.",
+                        "Following the {reject_invalid_call_req}, examine whether the current tool call meets an exception condition in the tool's {app_expcetion} based on the above checks.",
                         "Note that if the tool call does not meet any exception condition, it is still valid and should be simulated, even if it does not satisfy some of the above requirements.",
                         'If the tool call meets a particular exception condition, stop the thought here and simulate a realistic error message raising the corresponding exception as {observation}. Include only the final validation result (e.g., "Invalid value for XXX") instead of the intermediate thoughts in the error message (e.g., "XXX is not grounded" or "XXX is a placeholder").',
                     ).set_sep(" "),
@@ -116,7 +116,7 @@ SIMULATOR_THOUGHTS = NamedBlock(
                 NamedVariable(
                     refname="step_understand",
                     name="Understand",
-                    content="Understand the tool call based on the current {action}, {action_input}, and the corresponding {tool_specifications}, which can help simulate more accurate and realistic tool execution output.",
+                    content="Understand the tool call based on the current {action}, {action_input}, and the corresponding {app_specifications}, which can help simulate more accurate and realistic tool execution output.",
                 ),
                 NamedVariable(
                     refname="realism_constraints",
@@ -126,7 +126,7 @@ SIMULATOR_THOUGHTS = NamedBlock(
                 NamedVariable(
                     refname="accuracy_constraints",
                     name="Accuracy Constraints",
-                    content="Based on the {output_accurate_req} and the corresponding {tool_specifications}, explain the specific constraints that the simulated {observation} should adhere to for the current tool call to ensure the simulation accuracy.",
+                    content="Based on the {output_accurate_req} and the corresponding {app_specifications}, explain the specific constraints that the simulated {observation} should adhere to for the current tool call to ensure the simulation accuracy.",
                 ),
                 NamedVariable(
                     refname="consistency_constraints",
@@ -161,7 +161,7 @@ STANDARD_SIMULATOR_TASK_INSTRUCTION = NamedBlock(
             NamedVariable(
                 refname="thought_observation",
                 name="Observation",
-                content="The final simulated output which should be a single JSON object containing specified fields in the tool's {tool_return} specification and strictly adhering to the {output_plausible_req} and the {output_valid_format_req}.",
+                content="The final simulated output which should be a single JSON object containing specified fields in the tool's {app_return} specification and strictly adhering to the {output_plausible_req} and the {output_valid_format_req}.",
             ),
         ).set_sep("\n"),
     ).set_sep("\n\n"),
@@ -172,7 +172,7 @@ STANDARD_SIMULATOR_TASK_BEGIN = NamedBlock(
     Sequential(
         "Now begin your simulation task! You should format your response strictly following the {task_instructions}.",
         "Here is the detailed specification of the current tool that you needs to simulate:",
-        "* {{current_tool}}: {{current_tool_description}}",
+        "* {{current_tool}}: {{current_app_description}}",
         "Here is the {user_input} and your {scratchpad}:",
         "User Input: {{input}}",
         "{{simulator_scratchpad}}",
@@ -198,7 +198,7 @@ STD_SIMULATOR_CRITIQUE = SIMULATOR_CRITIQUE_INSTRUCTIONS
 STD_SIMULATOR_CRITIQUE_REPEAT = SIMULATOR_CRITIQUE_INSTRUCTIONS_REPEAT
 
 if __name__ == "__main__":
-    inputs = dict(app_descriptions=None, tool_names=None)
+    inputs = dict(app_descriptions=None, app_names=None)
     system_prompt, example_prompt, critique_prompt = format_multiple_prompts(
         [
             STD_SIMULATOR_SYSTEM_INFO,

@@ -38,7 +38,7 @@ AGENT_SS_ONLY_CLAUDE_PROMPT_ZH = replaced_submodule(
 if __name__ == "__main__":
     inputs = dict(
         app_descriptions=None, 
-        tool_names=None, 
+        app_names=None, 
         name=None, 
         profession=None, 
         description=None, 

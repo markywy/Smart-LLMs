@@ -37,7 +37,7 @@ CASE_ATTRS_TO_KEYS_MAPPING = {
 
 METRICS_INFO = [
     # short, long, display, binarize_threshold
-    ("agent_safe", "AppCallRisk", "Agent Tool Call Risk", 2),
+    ("agent_safe", "AppCallRisk", "Agent App Call Risk", 2),
     ("agent_help", "Helpfulness", "Agent Helpfulness", 2),
 ]
 METRICS = [long for _, long, _, _ in METRICS_INFO]

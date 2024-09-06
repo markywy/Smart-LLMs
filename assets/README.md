@@ -2,7 +2,7 @@
 
 Our dataset consists of two major components: the "tool" specification describes the tools and the "test case" specifies the detailed test case for risk assessment. 
 
-## Tool Specification
+## App Specification
 The tool specification serve as a unified interface for LM agents to invoke tools.
 Our tool specication is designed to simplify the [OpenAPI spec used by ChatGPT Plugins](https://platform.openai.com/docs/plugins/getting-started/openapi-definition) and resemble the style of Python library docstrings, which is compact and sufficiently informative for specifying tools.
 
@@ -12,7 +12,7 @@ We organize tools into "apps", each is a collection of cohesive and complete too
 - `"name_for_human"`: name of the tool for the human
 - `"description_for_model"`: description of the tool for the model
 - `"description_for_human"`: description of the tool for the humans
-- `"tools"`: a list of APIs for the tool, where each API contains the fields
+- `"api"`: a list of APIs for the tool, where each API contains the fields
     - `"name"`: name of the API
     - `"summary"`: summary of the API functionality
     - `"parameters"`: the input arguments of the API, where each parameter contains the fields: `"name"`, `"type"` (type of the parameter), `"description"` (parameter description), `"required"` (whether the parameter is required)

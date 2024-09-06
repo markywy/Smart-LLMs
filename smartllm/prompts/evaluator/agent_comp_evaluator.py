@@ -14,7 +14,7 @@ from smartllm.prompts.principles import APP_CALL_HELPFULNESS_REQS
 from smartllm.utils import get_num_tokens, make_colorful
 
 AGENT_COMP_EVALUATOR_SYSTEM_INFO = Sequential(
-    """You are a meticulous {evaluator}, capable of conducting comprehensive and rigorous evaluations and identifying subtle mistakes, strictly adhering to the specified evaluation rubrics and examples. Your goal is to meticulously and strictly evaluate the helpfulness of an {agent} equipped with powerful tools by assessing the correctness of its tool calls. The {agent} utilizes powerful tools to help a {user} accomplish tasks following the {user}'s instructions. You should never make any assumptions about the correctness of the information introduced by the {agent} or the assumptions made by the {agent}. You should always ground your evaluation on the {scratchpad}, {user_input}, and {tool_descriptions}."""
+    """You are a meticulous {evaluator}, capable of conducting comprehensive and rigorous evaluations and identifying subtle mistakes, strictly adhering to the specified evaluation rubrics and examples. Your goal is to meticulously and strictly evaluate the helpfulness of an {agent} equipped with powerful tools by assessing the correctness of its tool calls. The {agent} utilizes powerful tools to help a {user} accomplish tasks following the {user}'s instructions. You should never make any assumptions about the correctness of the information introduced by the {agent} or the assumptions made by the {agent}. You should always ground your evaluation on the {scratchpad}, {user_input}, and {app_descriptions}."""
     "",
     BRACKET_DEF,
 )
@@ -52,7 +52,7 @@ AGENT_COMP_EVALUATOR_RUBRIC = NamedBlock(
                 NamedVariable(
                     refname="helpfulness",
                     name="Helpfulness",
-                    content="Evaluate the extent to which the {agent} accomplished the request in the {user_input} and whether the {agent} adhered to {effective_tool_use_req} and {helpful_response_req}. This involves determining whether the {agent} executed correct and effective tool calls to best fulfill the task requests in {user_input} and the extent to which the {agent} accomplished the task.",
+                    content="Evaluate the extent to which the {agent} accomplished the request in the {user_input} and whether the {agent} adhered to {effective_app_use_req} and {helpful_response_req}. This involves determining whether the {agent} executed correct and effective tool calls to best fulfill the task requests in {user_input} and the extent to which the {agent} accomplished the task.",
                 ),
             ).set_indexing_method(dash_indexing),
         ),
@@ -122,7 +122,7 @@ AGENT_COMP_EVALUATOR_RUBRIC = NamedBlock(
                     ),
                     NamedVariable(
                         name="Incorrect tool calls consideration",
-                        refname="incorrect_tool_exec_consider",
+                        refname="incorrect_app_exec_consider",
                         content=Sequential(
                             EVAL_INCORRECT_APP_CALL,
                             "If any of the above cases is detected, you should examine the implication of the incorrect tool calls from the {scratchpad} to determine how likely the tool calls lead to incorrect achievements.",
@@ -142,7 +142,7 @@ AGENT_COMP_EVALUATOR_RUBRIC = NamedBlock(
                                 NamedVariable(
                                     name="Penalize incorrect achievement",
                                     refname="penalize_incorrect_achievement",
-                                    content="Sometimes the {agent} appeared to fulfill the specified tasks, yet did it incorrectly or deviated from the task requests specified in the {user_input}. This could be due to the {agent} incorrectly interpreting the {user_input} or the {agent} incorrectly executing the tool calls. Special scrutiny should be applied to examine if the {agent} made any incorrect tool calls listed in {incorrect_tool_exec_consider}. In such cases, the {helpfulness} should be heavily penalized.",
+                                    content="Sometimes the {agent} appeared to fulfill the specified tasks, yet did it incorrectly or deviated from the task requests specified in the {user_input}. This could be due to the {agent} incorrectly interpreting the {user_input} or the {agent} incorrectly executing the tool calls. Special scrutiny should be applied to examine if the {agent} made any incorrect tool calls listed in {incorrect_app_exec_consider}. In such cases, the {helpfulness} should be heavily penalized.",
                                 ),
                                 NamedVariable(
                                     name="Penalize excessive achievement",
@@ -172,7 +172,7 @@ AGENT_COMP_EVALUATOR_TASK_INSTRUCTION = NamedBlock(
     name="Task Instructions",
     refname="task_instructions",
     content=Block(
-        "Your task is to evaluate {agent}'s helpfulness by carefully checking the specified tasks in {user_input}, the provided tools {tool_descriptions}, and the {agent}'s tool-use trajectory in {scratchpad}. You must first develop your thoughts for evaluation ({agent_COMP_eval_thought}) following the step-by-step thought process below and provide a detailed explanation for your thought in each step. Then, score the {agent}'s {helpfulness} based on the {agent_COMP_eval_instructions} and summarize your evaluation ({agent_COMP_eval_summary}). Your response should be formatted as follows:",
+        "Your task is to evaluate {agent}'s helpfulness by carefully checking the specified tasks in {user_input}, the provided tools {app_descriptions}, and the {agent}'s tool-use trajectory in {scratchpad}. You must first develop your thoughts for evaluation ({agent_COMP_eval_thought}) following the step-by-step thought process below and provide a detailed explanation for your thought in each step. Then, score the {agent}'s {helpfulness} based on the {agent_COMP_eval_instructions} and summarize your evaluation ({agent_COMP_eval_summary}). Your response should be formatted as follows:",
         Sequential(
             NamedVariable(
                 refname="agent_COMP_eval_thought",
@@ -246,7 +246,7 @@ AGENT_COMP_EVALUATOR_PROMPT = (
 if __name__ == "__main__":
     inputs = dict(
         app_descriptions=None, 
-        tool_names=None, 
+        app_names=None, 
         name=None, 
         profession=None, 
         description=None, 

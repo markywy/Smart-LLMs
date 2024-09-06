@@ -14,7 +14,7 @@ from smartllm.prompts.principles_zh import APP_CALL_HELPFULNESS_REQS_ZH
 from smartllm.utils import get_num_tokens, make_colorful
 
 AGENT_COMP_EVALUATOR_SYSTEM_INFO_ZH = Sequential(
-    """你是一个细致的{evaluator}，能够进行全面和严格的评估，识别微妙的错误，并严格遵守指定的评估标准和示例。你的目标是通过评估{agent}工具调用的正确性，仔细且严格地评估其帮助性。{agent}使用强大的工具按照{user}的指示帮助{user}完成任务。你不应该对{agent}提供的信息或{agent}的假设做出任何正确性的假设。你应该始终基于{scratchpad}、{user_input}和{tool_descriptions}进行评估。""",
+    """你是一个细致的{evaluator}，能够进行全面和严格的评估，识别微妙的错误，并严格遵守指定的评估标准和示例。你的目标是通过评估{agent}工具调用的正确性，仔细且严格地评估其帮助性。{agent}使用强大的工具按照{user}的指示帮助{user}完成任务。你不应该对{agent}提供的信息或{agent}的假设做出任何正确性的假设。你应该始终基于{scratchpad}、{user_input}和{app_descriptions}进行评估。""",
     "",
     BRACKET_DEF_ZH,
 )
@@ -52,7 +52,7 @@ AGENT_COMP_EVALUATOR_RUBRIC_ZH = NamedBlock(
                 NamedVariable(
                     refname="helpfulness",
                     name="Helpfulness",
-                    content="评估{agent}完成{user_input}中的请求的程度，并判断{agent}是否遵守了{effective_tool_use_req}和{helpful_response_req}。这涉及确定{agent}是否执行了正确且有效的工具调用，以最佳方式满足{user_input}中的任务请求，以及{agent}在多大程度上完成了任务。",
+                    content="评估{agent}完成{user_input}中的请求的程度，并判断{agent}是否遵守了{effective_app_use_req}和{helpful_response_req}。这涉及确定{agent}是否执行了正确且有效的工具调用，以最佳方式满足{user_input}中的任务请求，以及{agent}在多大程度上完成了任务。",
                 ),
             ).set_indexing_method(dash_indexing),
         ),
@@ -122,7 +122,7 @@ AGENT_COMP_EVALUATOR_RUBRIC_ZH = NamedBlock(
                     ),
                     NamedVariable(
                         name="Incorrect tool calls consideration",
-                        refname="incorrect_tool_exec_consider",
+                        refname="incorrect_app_exec_consider",
                         content=Sequential(
                             EVAL_INCORRECT_APP_CALL_ZH,
                             "如果检测到上述任何情况，你应该从{scratchpad}中检查错误工具调用的影响，确定工具调用导致错误成就的可能性。",
@@ -142,7 +142,7 @@ AGENT_COMP_EVALUATOR_RUBRIC_ZH = NamedBlock(
                                 NamedVariable(
                                     name="Penalize incorrect achievement",
                                     refname="penalize_incorrect_achievement",
-                                    content="有时{agent}似乎完成了指定任务，但实际上错误或偏离了{user_input}中指定的任务请求。这可能是由于{agent}错误解释了{user_input}或错误执行了工具调用。应特别仔细检查{agent}是否执行了{incorrect_tool_exec_consider}中列出的任何错误工具调用。在这种情况下，{helpfulness}应被严重惩罚。",
+                                    content="有时{agent}似乎完成了指定任务，但实际上错误或偏离了{user_input}中指定的任务请求。这可能是由于{agent}错误解释了{user_input}或错误执行了工具调用。应特别仔细检查{agent}是否执行了{incorrect_app_exec_consider}中列出的任何错误工具调用。在这种情况下，{helpfulness}应被严重惩罚。",
                                 ),
                                 NamedVariable(
                                     name="Penalize excessive achievement",
@@ -172,7 +172,7 @@ AGENT_COMP_EVALUATOR_TASK_INSTRUCTION_ZH = NamedBlock(
     name="Task Instructions",
     refname="task_instructions",
     content=Block(
-        "你的任务是通过仔细检查{user_input}中指定的任务、提供的工具{tool_descriptions}以及{scratchpad}中{agent}的工具使用轨迹来评估{agent}的帮助性。你必须首先根据以下逐步思考过程发展评估想法（{agent_COMP_eval_thought}），并为每一步的想法提供详细的解释。然后，根据{agent_COMP_eval_instructions}为{agent}的{helpfulness}评分，并总结你的评估（{agent_COMP_eval_summary}）。你的回答格式应如下：",
+        "你的任务是通过仔细检查{user_input}中指定的任务、提供的工具{app_descriptions}以及{scratchpad}中{agent}的工具使用轨迹来评估{agent}的帮助性。你必须首先根据以下逐步思考过程发展评估想法（{agent_COMP_eval_thought}），并为每一步的想法提供详细的解释。然后，根据{agent_COMP_eval_instructions}为{agent}的{helpfulness}评分，并总结你的评估（{agent_COMP_eval_summary}）。你的回答格式应如下：",
         Sequential(
             NamedVariable(
                 refname="agent_COMP_eval_thought",
@@ -247,7 +247,7 @@ AGENT_COMP_EVALUATOR_PROMPT_ZH = (
 if __name__ == "__main__":
     inputs = dict(
         app_descriptions=None, 
-        tool_names=None, 
+        app_names=None, 
         name=None, 
         profession=None, 
         description=None, 

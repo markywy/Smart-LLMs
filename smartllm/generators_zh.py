@@ -14,7 +14,7 @@ from smartllm.prompts.generator.case_gen import (
     STANDARD_CASE_GEN_PROMPT_WITH_INSTRUCTION_ZH,
     STANDARD_CASE_GEN_SYSTEM_MESSAGE_ZH,
 )
-from smartllm.prompts.generator.tool_gen import (  # gen names; gen thoughts; gen spec
+from smartllm.prompts.generator.app_gen import (  # gen names; gen thoughts; gen spec
     GEN_NAMES_PROMPT_ZH,
     GEN_NAMES_SYSTEM_MESSAGE_ZH,
     GEN_APP_SPEC_PROMPT_ZH, 
@@ -46,13 +46,13 @@ class CaseGenerator(BasePromptExecutor):
         redteam: bool = True,
         num_gen_per_prompt: int = 1,
         num_sample_risks: int = 1,
-        use_simple_tool_desc: bool = False,
+        use_simple_app_desc: bool = False,
     ):
         super().__init__(llm, stop_at)
         self._redteam = redteam
         self._num_gen_per_prompt = num_gen_per_prompt
         self._num_sample_risks = num_sample_risks
-        self._use_simple_tool_desc = use_simple_tool_desc
+        self._use_simple_app_desc = use_simple_app_desc
         self._set_prompts()
 
     def _set_prompts(self):
@@ -75,7 +75,7 @@ class CaseGenerator(BasePromptExecutor):
                 namekey,
                 add_risks=add_risks,
                 indent=indent,
-                use_simple_tool_desc=self._use_simple_tool_desc,
+                use_simple_app_desc=self._use_simple_app_desc,
             )
             for app in apps
         ]
@@ -220,7 +220,7 @@ class CaseGenerator(BasePromptExecutor):
             redteam=not args.standard,
             num_gen_per_prompt=args.num_gen_per_prompt,
             num_sample_risks=args.num_sample_risks,
-            use_simple_tool_desc=args.use_simple_tool_desc,
+            use_simple_app_desc=args.use_simple_app_desc,
         )
 
 
@@ -269,7 +269,7 @@ class UsersGenerator(BasePromptExecutor):
 
         return profile
 
-class ToolNamesGenerator(BasePromptExecutor):
+class AppNamesGenerator(BasePromptExecutor):
     _input_keys = ["num_gen", "category", "description"]
     _sys_prompt_module = GEN_NAMES_SYSTEM_MESSAGE_ZH
     _task_prompt_module = GEN_NAMES_PROMPT_ZH
@@ -295,7 +295,7 @@ class ToolNamesGenerator(BasePromptExecutor):
         return [{"category": raw_inputs["category"], **tool} for tool in tools]
 
 
-class ToolThoughtGenerator(BasePromptExecutor):
+class AppThoughtGenerator(BasePromptExecutor):
     _input_keys = ["existing_tools", "app", "domain_blacklist"]
     _sys_prompt_module = APP_GEN_SYSTEM_MESSAGE_ZH
 
@@ -375,7 +375,7 @@ class ToolThoughtGenerator(BasePromptExecutor):
         )
 
 
-class ToolSpecGenerator(BasePromptExecutor):
+class AppSpecGenerator(BasePromptExecutor):
     _input_keys = ["example_tools", "app"]
     _sys_prompt_module = GEN_APP_SPEC_SYSTEM_MESSAGE_ZH
     _task_prompt_module = GEN_APP_SPEC_PROMPT_ZH
@@ -438,17 +438,17 @@ class ToolSpecGenerator(BasePromptExecutor):
         result = re.search(pattern, res)
 
         if result:
-            tool_spec = result.group(1).strip()
+            app_spec = result.group(1).strip()
         else:
             raise ValueError(f"Discard a response due to no proper backticks: {res}")
 
         try:
-            tool_spec = json.loads(tool_spec)
+            app_spec = json.loads(app_spec)
         except json.JSONDecodeError:
             raise ValueError(f"Discard a response due to JSON decoding error: {res}")
         if "category" in raw_inputs["app"]:
-            tool_spec["category"] = raw_inputs["app"]["category"]
-        return tool_spec
+            app_spec["category"] = raw_inputs["app"]["category"]
+        return app_spec
 
     @classmethod
     def register_args(cls, parser: ArgumentParser):

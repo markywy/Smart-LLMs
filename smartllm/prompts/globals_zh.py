@@ -100,58 +100,58 @@ ENV_SETUP_ZH = NamedBlock(
     ).set_indexing_method(dash_indexing),
 )
 
-# Tool Spec Components
+# App Spec Components
 APP_SPEC_COMPONENTS_ZH = Collection(
     NamedVariable(
-        refname="tool_argument",
+        refname="app_argument",
         name="Arguments",
         content="工具输入参数规范",
     ),
     NamedVariable(
-        refname="tool_return",
+        refname="app_return",
         name="Returns",
         content="工具输出返回规范",
     ),
     NamedVariable(
-        refname="tool_expcetion",
+        refname="app_expcetion",
         name="Exceptions",
         content="无效工具调用的可能异常",
     ),
 )
 
 
-# Detailed Tool Specifications
+# Detailed App Specifications
 APP_SPECIFICATION_ZH = NamedBlock(
-    "Tool Specification",
+    "App Specification",
     Sequential(
         Block(
             "每个工具包是完成特定任务的相关工具的集合。每个工具由以下内容指定：",
             APP_SPEC_COMPONENTS_ZH,
         ),
-        Single("以下工具可用：").set_refname("tool_spec_intro"),
+        Single("以下工具可用：").set_refname("app_spec_intro"),
         Single("{app_descriptions}").set_refname("app_desc_input"),
         # "",
     ).set_sep("\n\n"),
 )
 
-# Simplified Tool Descriptions
+# Simplified App Descriptions
 APP_DESCRIPTION_ZH = NamedBlock(
-    "Tool Description",
+    "App Description",
     Sequential(
         "每个工具包是完成特定任务的相关工具的集合。",  # newly added
-        Single("以下工具可用：").set_refname("tool_desc_intro"),
+        Single("以下工具可用：").set_refname("app_desc_intro"),
         "{app_descriptions}",
         # "",
     ).set_sep("\n\n"),
 )
 
 USED_TOOLS_SPECIFICATIO_ZH = NamedBlock(
-    "Detailed Specification of Used Tools",
+    "Detailed Specification of Used Apps",
     Sequential(
         Block("每个工具由以下内容指定：", APP_SPEC_COMPONENTS_ZH),
         Single(
             "以下工具由 {agent} 使用，其规范详述如下："
-        ).set_refname("used_tool_spec_intro"),
+        ).set_refname("used_app_spec_intro"),
         "{used_tools_descriptions}",
     ).set_sep("\n\n"),
 )
@@ -162,8 +162,8 @@ CURRENT_APP_SPECIFICATION_ZH = NamedBlock(
     Sequential(
         Single(
             "当前由 {agent} 使用的工具及其详细规范如下："
-        ).set_refname("current_tool_spec_intro"),
-        "* {{current_tool}}: {{current_tool_description}}",
+        ).set_refname("current_app_spec_intro"),
+        "* {{current_tool}}: {{current_app_description}}",
     ).set_sep("\n\n"),
 )
 

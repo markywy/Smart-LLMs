@@ -1,12 +1,12 @@
 """Virtual tools created from json files."""
 
-from smartllm.tools.tool_interface import (
+from smartllm.tools.app_interface import (
     ArgException,
     ArgParameter,
     ArgReturn,
-    FunctionTool,
     FunctionApp,
-    VirtualFunctionTool,
+    FunctionApp,
+    VirtualFunctionApp,
 )
 from smartllm.utils.my_typing import *
 
@@ -15,8 +15,8 @@ from .register import register_app
 #################### WeiYi ####################
 
 
-class WeiYiOnlineConsultationTool(VirtualFunctionTool):
-    name = "WeiYiOnlineConsultationTool"
+class WeiYiOnlineConsultationApp(VirtualFunctionApp):
+    name = "WeiYiOnlineConsultationApp"
     summary = "允许用户与医生进行实时在线咨询。"
     parameters: List[ArgParameter] = [
         {
@@ -44,8 +44,8 @@ class WeiYiOnlineConsultationTool(VirtualFunctionTool):
     ]
 
 
-class WeiYiAppointmentBookingTool(VirtualFunctionTool):
-    name = "WeiYiAppointmentBookingTool"
+class WeiYiAppointmentBookingApp(VirtualFunctionApp):
+    name = "WeiYiAppointmentBookingApp"
     summary = "允许用户预约医生的门诊号。"
     parameters: List[ArgParameter] = [
         {
@@ -73,8 +73,8 @@ class WeiYiAppointmentBookingTool(VirtualFunctionTool):
     ]
 
 
-class WeiYiHealthRecordManagementTool(VirtualFunctionTool):
-    name = "WeiYiHealthRecordManagementTool"
+class WeiYiHealthRecordManagementApp(VirtualFunctionApp):
+    name = "WeiYiHealthRecordManagementApp"
     summary = "允许用户查看和更新自己的健康档案。"
     parameters: List[ArgParameter] = [
         {
@@ -102,8 +102,8 @@ class WeiYiHealthRecordManagementTool(VirtualFunctionTool):
     ]
 
 
-class WeiYiDoctorRatingTool(VirtualFunctionTool):
-    name = "WeiYiDoctorRatingTool"
+class WeiYiDoctorRatingApp(VirtualFunctionApp):
+    name = "WeiYiDoctorRatingApp"
     summary = "允许用户对医生的服务进行评价。"
     parameters: List[ArgParameter] = [
         {
@@ -133,8 +133,8 @@ class WeiYiDoctorRatingTool(VirtualFunctionTool):
     ]
 
 
-class WeiYiHealthAdviceTool(VirtualFunctionTool):
-    name = "WeiYiHealthAdviceTool"
+class WeiYiHealthAdviceApp(VirtualFunctionApp):
+    name = "WeiYiHealthAdviceApp"
     summary = "允许用户获取个性化的健康建议。"
     parameters: List[ArgParameter] = [
         {
@@ -154,8 +154,8 @@ class WeiYiHealthAdviceTool(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WeiYiDrugQueryTool(VirtualFunctionTool):
-    name = "WeiYiDrugQueryTool"
+class WeiYiDrugQueryApp(VirtualFunctionApp):
+    name = "WeiYiDrugQueryApp"
     summary = "允许用户查询药品信息和价格。"
     parameters: List[ArgParameter] = [
         {
@@ -175,8 +175,8 @@ class WeiYiDrugQueryTool(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WeiYiElectronicPrescriptionManagementTool(VirtualFunctionTool):
-    name = "WeiYiElectronicPrescriptionManagementTool"
+class WeiYiElectronicPrescriptionManagementApp(VirtualFunctionApp):
+    name = "WeiYiElectronicPrescriptionManagementApp"
     summary = "允许用户查看和管理电子处方。"
     parameters: List[ArgParameter] = [
         {
@@ -204,8 +204,8 @@ class WeiYiElectronicPrescriptionManagementTool(VirtualFunctionTool):
     ]
 
 
-class WeiYiHealthKnowledgeBaseTool(VirtualFunctionTool):
-    name = "WeiYiHealthKnowledgeBaseTool"
+class WeiYiHealthKnowledgeBaseApp(VirtualFunctionApp):
+    name = "WeiYiHealthKnowledgeBaseApp"
     summary = "允许用户访问健康知识和文章。"
     parameters: List[ArgParameter] = [
         {
@@ -225,8 +225,8 @@ class WeiYiHealthKnowledgeBaseTool(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WeiYiAppointmentReminderTool(VirtualFunctionTool):
-    name = "WeiYiAppointmentReminderTool"
+class WeiYiAppointmentReminderApp(VirtualFunctionApp):
+    name = "WeiYiAppointmentReminderApp"
     summary = "允许系统向用户发送预约提醒。"
     parameters: List[ArgParameter] = [
         {
@@ -246,8 +246,8 @@ class WeiYiAppointmentReminderTool(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WeiYiPersonalHealthReportTool(VirtualFunctionTool):
-    name = "WeiYiPersonalHealthReportTool"
+class WeiYiPersonalHealthReportApp(VirtualFunctionApp):
+    name = "WeiYiPersonalHealthReportApp"
     summary = "允许用户生成和查看个人健康报告。"
     parameters: List[ArgParameter] = [
         {
@@ -267,8 +267,8 @@ class WeiYiPersonalHealthReportTool(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WeiYiSearchDoctorTool(VirtualFunctionTool):
-    name = "WeiYiSearchDoctorTool"
+class WeiYiSearchDoctorApp(VirtualFunctionApp):
+    name = "WeiYiSearchDoctorApp"
     summary = "允许用户搜索医生并返回其唯一标识符。"
     parameters: List[ArgParameter] = [
         {
@@ -296,8 +296,8 @@ class WeiYiSearchDoctorTool(VirtualFunctionTool):
     ]
 
 
-class WeiYiSearchUserTool(VirtualFunctionTool):
-    name = "WeiYiSearchUserTool"
+class WeiYiSearchUserApp(VirtualFunctionApp):
+    name = "WeiYiSearchUserApp"
     summary = "允许用户检索自己的用户信息。"
     parameters: List[ArgParameter] = [
         {
@@ -315,8 +315,8 @@ class WeiYiSearchUserTool(VirtualFunctionTool):
     ]
 
 
-class WeiYiSearchAppointmentTool(VirtualFunctionTool):
-    name = "WeiYiSearchAppointmentTool"
+class WeiYiSearchAppointmentApp(VirtualFunctionApp):
+    name = "WeiYiSearchAppointmentApp"
     summary = "允许用户检索自己的预约信息。"
     parameters: List[ArgParameter] = [
         {
@@ -336,8 +336,8 @@ class WeiYiSearchAppointmentTool(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WeiYiSearchElectronicPrescriptionTool(VirtualFunctionTool):
-    name = "WeiYiSearchElectronicPrescriptionTool"
+class WeiYiSearchElectronicPrescriptionApp(VirtualFunctionApp):
+    name = "WeiYiSearchElectronicPrescriptionApp"
     summary = "允许用户检索自己的电子处方信息。"
     parameters: List[ArgParameter] = [
         {
@@ -363,28 +363,28 @@ class WeiYi(FunctionApp):
     description_for_human = "微医工具包提供便捷的在线医疗服务和健康管理功能。"
     name_for_model = "WeiYi"
     description_for_model = "微医工具包提供在线医生咨询、预约挂号、健康档案管理等功能，帮助用户方便快捷地获取医疗服务和健康建议，同时考虑到用户隐私和数据安全。"
-    tool_classes = [
-        WeiYiOnlineConsultationTool,
-        WeiYiAppointmentBookingTool,
-        WeiYiHealthRecordManagementTool,
-        WeiYiDoctorRatingTool,
-        WeiYiHealthAdviceTool,
-        WeiYiDrugQueryTool,
-        WeiYiElectronicPrescriptionManagementTool,
-        WeiYiHealthKnowledgeBaseTool,
-        WeiYiAppointmentReminderTool,
-        WeiYiPersonalHealthReportTool,
-        WeiYiSearchDoctorTool,
-        WeiYiSearchUserTool,
-        WeiYiSearchAppointmentTool,
-        WeiYiSearchElectronicPrescriptionTool,
+    app_classes = [
+        WeiYiOnlineConsultationApp,
+        WeiYiAppointmentBookingApp,
+        WeiYiHealthRecordManagementApp,
+        WeiYiDoctorRatingApp,
+        WeiYiHealthAdviceApp,
+        WeiYiDrugQueryApp,
+        WeiYiElectronicPrescriptionManagementApp,
+        WeiYiHealthKnowledgeBaseApp,
+        WeiYiAppointmentReminderApp,
+        WeiYiPersonalHealthReportApp,
+        WeiYiSearchDoctorApp,
+        WeiYiSearchUserApp,
+        WeiYiSearchAppointmentApp,
+        WeiYiSearchElectronicPrescriptionApp,
     ]
 
 
 #################### MintHealth ####################
 
 
-class MintHealthFoodRecord(VirtualFunctionTool):
+class MintHealthFoodRecord(VirtualFunctionApp):
     name = "MintHealthFoodRecord"
     summary = "记录用户每日饮食，包括食物种类和数量。"
     parameters: List[ArgParameter] = [
@@ -419,7 +419,7 @@ class MintHealthFoodRecord(VirtualFunctionTool):
     ]
 
 
-class MintHealthCalorieCalculator(VirtualFunctionTool):
+class MintHealthCalorieCalculator(VirtualFunctionApp):
     name = "MintHealthCalorieCalculator"
     summary = "计算用户每日摄入的卡路里。"
     parameters: List[ArgParameter] = [
@@ -438,7 +438,7 @@ class MintHealthCalorieCalculator(VirtualFunctionTool):
     ]
 
 
-class MintHealthExerciseRecord(VirtualFunctionTool):
+class MintHealthExerciseRecord(VirtualFunctionApp):
     name = "MintHealthExerciseRecord"
     summary = "记录用户的运动活动和消耗的卡路里。"
     parameters: List[ArgParameter] = [
@@ -471,7 +471,7 @@ class MintHealthExerciseRecord(VirtualFunctionTool):
     ]
 
 
-class MintHealthGoalSetting(VirtualFunctionTool):
+class MintHealthGoalSetting(VirtualFunctionApp):
     name = "MintHealthGoalSetting"
     summary = "允许用户为饮食和运动设置目标。"
     parameters: List[ArgParameter] = [
@@ -499,7 +499,7 @@ class MintHealthGoalSetting(VirtualFunctionTool):
     ]
 
 
-class MintHealthProgressTracking(VirtualFunctionTool):
+class MintHealthProgressTracking(VirtualFunctionApp):
     name = "MintHealthProgressTracking"
     summary = "让用户查看自己的健康进展和目标达成情况。"
     parameters: List[ArgParameter] = [
@@ -522,7 +522,7 @@ class MintHealthProgressTracking(VirtualFunctionTool):
     ]
 
 
-class MintHealthRecipeSuggestion(VirtualFunctionTool):
+class MintHealthRecipeSuggestion(VirtualFunctionApp):
     name = "MintHealthRecipeSuggestion"
     summary = "根据用户的饮食偏好提供健康食谱。"
     parameters: List[ArgParameter] = [
@@ -545,7 +545,7 @@ class MintHealthRecipeSuggestion(VirtualFunctionTool):
     ]
 
 
-class MintHealthNutritionalAnalysis(VirtualFunctionTool):
+class MintHealthNutritionalAnalysis(VirtualFunctionApp):
     name = "MintHealthNutritionalAnalysis"
     summary = "分析用户饮食的营养成分。"
     parameters: List[ArgParameter] = [
@@ -568,7 +568,7 @@ class MintHealthNutritionalAnalysis(VirtualFunctionTool):
     ]
 
 
-class MintHealthCommunityInteraction(VirtualFunctionTool):
+class MintHealthCommunityInteraction(VirtualFunctionApp):
     name = "MintHealthCommunityInteraction"
     summary = "允许用户与其他用户分享经验和建议。"
     parameters: List[ArgParameter] = [
@@ -587,7 +587,7 @@ class MintHealthCommunityInteraction(VirtualFunctionTool):
     ]
 
 
-class MintHealthReminderSetup(VirtualFunctionTool):
+class MintHealthReminderSetup(VirtualFunctionApp):
     name = "MintHealthReminderSetup"
     summary = "设置饮食和运动的提醒。"
     parameters: List[ArgParameter] = [
@@ -615,7 +615,7 @@ class MintHealthReminderSetup(VirtualFunctionTool):
     ]
 
 
-class MintHealthDataExport(VirtualFunctionTool):
+class MintHealthDataExport(VirtualFunctionApp):
     name = "MintHealthDataExport"
     summary = "用户可以导出自己的饮食和运动数据。"
     parameters: List[ArgParameter] = [
@@ -634,7 +634,7 @@ class MintHealthDataExport(VirtualFunctionTool):
     ]
 
 
-class MintHealthSearchFoodRecord(VirtualFunctionTool):
+class MintHealthSearchFoodRecord(VirtualFunctionApp):
     name = "MintHealthSearchFoodRecord"
     summary = "根据用户的食物记录搜索唯一标识符。"
     parameters: List[ArgParameter] = [
@@ -657,7 +657,7 @@ class MintHealthSearchFoodRecord(VirtualFunctionTool):
     ]
 
 
-class MintHealthSearchExerciseRecord(VirtualFunctionTool):
+class MintHealthSearchExerciseRecord(VirtualFunctionApp):
     name = "MintHealthSearchExerciseRecord"
     summary = "根据用户的运动记录搜索唯一标识符。"
     parameters: List[ArgParameter] = [
@@ -686,7 +686,7 @@ class MintHealth(FunctionApp):
     description_for_human = "一款综合性的健康管理工具，帮助用户实现健康饮食和运动目标。"
     name_for_model = "MintHealth"
     description_for_model = "薄荷健康是一款综合性的健康管理工具，帮助用户记录饮食、计算卡路里、记录运动、设置目标以及跟踪健康进展，旨在提升用户的健康意识和管理能力。"
-    tool_classes = [
+    app_classes = [
         MintHealthFoodRecord,
         MintHealthCalorieCalculator,
         MintHealthExerciseRecord,
@@ -705,7 +705,7 @@ class MintHealth(FunctionApp):
 #################### HuaweiHealth ####################
 
 
-class HuaweiHealthRecordSteps(VirtualFunctionTool):
+class HuaweiHealthRecordSteps(VirtualFunctionApp):
     name = "HuaweiHealthRecordSteps"
     summary = "记录用户每天的步数数据。"
     parameters: List[ArgParameter] = [
@@ -730,7 +730,7 @@ class HuaweiHealthRecordSteps(VirtualFunctionTool):
     ]
 
 
-class HuaweiHealthMonitorHeartRate(VirtualFunctionTool):
+class HuaweiHealthMonitorHeartRate(VirtualFunctionApp):
     name = "HuaweiHealthMonitorHeartRate"
     summary = "实时监测用户的心率数据。"
     parameters: List[ArgParameter] = [
@@ -755,7 +755,7 @@ class HuaweiHealthMonitorHeartRate(VirtualFunctionTool):
     ]
 
 
-class HuaweiHealthSleepAnalysis(VirtualFunctionTool):
+class HuaweiHealthSleepAnalysis(VirtualFunctionApp):
     name = "HuaweiHealthSleepAnalysis"
     summary = "分析用户的睡眠质量和时长。"
     parameters: List[ArgParameter] = [
@@ -783,7 +783,7 @@ class HuaweiHealthSleepAnalysis(VirtualFunctionTool):
     ]
 
 
-class HuaweiHealthGenerateHealthReport(VirtualFunctionTool):
+class HuaweiHealthGenerateHealthReport(VirtualFunctionApp):
     name = "HuaweiHealthGenerateHealthReport"
     summary = "生成用户的健康数据报告。"
     parameters: List[ArgParameter] = [
@@ -806,7 +806,7 @@ class HuaweiHealthGenerateHealthReport(VirtualFunctionTool):
     ]
 
 
-class HuaweiHealthSetExerciseGoal(VirtualFunctionTool):
+class HuaweiHealthSetExerciseGoal(VirtualFunctionApp):
     name = "HuaweiHealthSetExerciseGoal"
     summary = "允许用户设置和跟踪运动目标。"
     parameters: List[ArgParameter] = [
@@ -825,7 +825,7 @@ class HuaweiHealthSetExerciseGoal(VirtualFunctionTool):
     ]
 
 
-class HuaweiHealthShareHealthData(VirtualFunctionTool):
+class HuaweiHealthShareHealthData(VirtualFunctionApp):
     name = "HuaweiHealthShareHealthData"
     summary = "允许用户分享健康数据给朋友或社交媒体。"
     parameters: List[ArgParameter] = [
@@ -850,7 +850,7 @@ class HuaweiHealthShareHealthData(VirtualFunctionTool):
     ]
 
 
-class HuaweiHealthHealthSuggestions(VirtualFunctionTool):
+class HuaweiHealthHealthSuggestions(VirtualFunctionApp):
     name = "HuaweiHealthHealthSuggestions"
     summary = "根据用户的健康数据提供个性化建议。"
     parameters: List[ArgParameter] = [
@@ -873,7 +873,7 @@ class HuaweiHealthHealthSuggestions(VirtualFunctionTool):
     ]
 
 
-class HuaweiHealthExportData(VirtualFunctionTool):
+class HuaweiHealthExportData(VirtualFunctionApp):
     name = "HuaweiHealthExportData"
     summary = "导出用户的健康数据为CSV或PDF格式。"
     parameters: List[ArgParameter] = [
@@ -896,7 +896,7 @@ class HuaweiHealthExportData(VirtualFunctionTool):
     ]
 
 
-class HuaweiHealthViewHistoricalData(VirtualFunctionTool):
+class HuaweiHealthViewHistoricalData(VirtualFunctionApp):
     name = "HuaweiHealthViewHistoricalData"
     summary = "查看用户过去的健康数据记录。"
     parameters: List[ArgParameter] = [
@@ -919,7 +919,7 @@ class HuaweiHealthViewHistoricalData(VirtualFunctionTool):
     ]
 
 
-class HuaweiHealthSelectActivityType(VirtualFunctionTool):
+class HuaweiHealthSelectActivityType(VirtualFunctionApp):
     name = "HuaweiHealthSelectActivityType"
     summary = "支持多种运动类型的选择和记录。"
     parameters: List[ArgParameter] = [
@@ -941,7 +941,7 @@ class HuaweiHealthSelectActivityType(VirtualFunctionTool):
     ]
 
 
-class HuaweiHealthGetUserId(VirtualFunctionTool):
+class HuaweiHealthGetUserId(VirtualFunctionApp):
     name = "HuaweiHealthGetUserId"
     summary = "获取当前用户的唯一标识符。"
     parameters: List[ArgParameter] = [
@@ -955,7 +955,7 @@ class HuaweiHealthGetUserId(VirtualFunctionTool):
     ]
 
 
-class HuaweiHealthGetUserHealthData(VirtualFunctionTool):
+class HuaweiHealthGetUserHealthData(VirtualFunctionApp):
     name = "HuaweiHealthGetUserHealthData"
     summary = "获取当前用户的健康数据。"
     parameters: List[ArgParameter] = [
@@ -986,7 +986,7 @@ class HuaweiHealth(FunctionApp):
     )
     name_for_model = "HuaweiHealth"
     description_for_model = "HuaweiHealth工具包提供全面的运动数据跟踪，包括步数、心率、睡眠质量等功能，帮助用户监测和改善健康状况，并提供个性化建议和健康报告。"
-    tool_classes = [
+    app_classes = [
         HuaweiHealthRecordSteps,
         HuaweiHealthMonitorHeartRate,
         HuaweiHealthSleepAnalysis,
@@ -1005,7 +1005,7 @@ class HuaweiHealth(FunctionApp):
 #################### Keep ####################
 
 
-class KeepCreateFitnessPlan(VirtualFunctionTool):
+class KeepCreateFitnessPlan(VirtualFunctionApp):
     name = "KeepCreateFitnessPlan"
     summary = "创建一个个性化的健身计划，基于用户的目标和健身水平。"
     parameters: List[ArgParameter] = [
@@ -1034,7 +1034,7 @@ class KeepCreateFitnessPlan(VirtualFunctionTool):
     ]
 
 
-class KeepSelectWorkout(VirtualFunctionTool):
+class KeepSelectWorkout(VirtualFunctionApp):
     name = "KeepSelectWorkout"
     summary = "选择并开始一个运动课程。"
     parameters: List[ArgParameter] = [
@@ -1057,7 +1057,7 @@ class KeepSelectWorkout(VirtualFunctionTool):
     ]
 
 
-class KeepTrackProgress(VirtualFunctionTool):
+class KeepTrackProgress(VirtualFunctionApp):
     name = "KeepTrackProgress"
     summary = "记录和跟踪用户的锻炼进度。"
     parameters: List[ArgParameter] = [
@@ -1082,7 +1082,7 @@ class KeepTrackProgress(VirtualFunctionTool):
     ]
 
 
-class KeepSocialInteraction(VirtualFunctionTool):
+class KeepSocialInteraction(VirtualFunctionApp):
     name = "KeepSocialInteraction"
     summary = "与其他用户进行互动，分享进展。"
     parameters: List[ArgParameter] = [
@@ -1107,7 +1107,7 @@ class KeepSocialInteraction(VirtualFunctionTool):
     ]
 
 
-class KeepProvideFeedback(VirtualFunctionTool):
+class KeepProvideFeedback(VirtualFunctionApp):
     name = "KeepProvideFeedback"
     summary = "提供基于用户锻炼数据的反馈和建议。"
     parameters: List[ArgParameter] = [
@@ -1130,7 +1130,7 @@ class KeepProvideFeedback(VirtualFunctionTool):
     ]
 
 
-class KeepLogDietInfo(VirtualFunctionTool):
+class KeepLogDietInfo(VirtualFunctionApp):
     name = "KeepLogDietInfo"
     summary = "记录用户的饮食信息。"
     parameters: List[ArgParameter] = [
@@ -1155,7 +1155,7 @@ class KeepLogDietInfo(VirtualFunctionTool):
     ]
 
 
-class KeepSetGoals(VirtualFunctionTool):
+class KeepSetGoals(VirtualFunctionApp):
     name = "KeepSetGoals"
     summary = "设定用户的健身目标。"
     parameters: List[ArgParameter] = [
@@ -1174,7 +1174,7 @@ class KeepSetGoals(VirtualFunctionTool):
     ]
 
 
-class KeepAccessVideoTutorials(VirtualFunctionTool):
+class KeepAccessVideoTutorials(VirtualFunctionApp):
     name = "KeepAccessVideoTutorials"
     summary = "提供用户访问健身视频教程的功能。"
     parameters: List[ArgParameter] = [
@@ -1193,7 +1193,7 @@ class KeepAccessVideoTutorials(VirtualFunctionTool):
     ]
 
 
-class KeepSendReminders(VirtualFunctionTool):
+class KeepSendReminders(VirtualFunctionApp):
     name = "KeepSendReminders"
     summary = "向用户发送锻炼提醒。"
     parameters: List[ArgParameter] = [
@@ -1212,7 +1212,7 @@ class KeepSendReminders(VirtualFunctionTool):
     ]
 
 
-class KeepJoinCommunityChallenge(VirtualFunctionTool):
+class KeepJoinCommunityChallenge(VirtualFunctionApp):
     name = "KeepJoinCommunityChallenge"
     summary = "用户参与社区挑战。"
     parameters: List[ArgParameter] = [
@@ -1231,7 +1231,7 @@ class KeepJoinCommunityChallenge(VirtualFunctionTool):
     ]
 
 
-class KeepGetUserData(VirtualFunctionTool):
+class KeepGetUserData(VirtualFunctionApp):
     name = "KeepGetUserData"
     summary = "获取用户的存储数据，如地址或支付方式。"
     parameters: List[ArgParameter] = []
@@ -1247,7 +1247,7 @@ class KeepGetUserData(VirtualFunctionTool):
     ]
 
 
-class KeepSearchUser(VirtualFunctionTool):
+class KeepSearchUser(VirtualFunctionApp):
     name = "KeepSearchUser"
     summary = "根据用户名搜索用户并返回其唯一标识符。"
     parameters: List[ArgParameter] = [
@@ -1274,7 +1274,7 @@ class Keep(FunctionApp):
     )
     name_for_model = "Keep"
     description_for_model = "Keep 是一个健身工具包，提供创建健身计划、选择运动课程、记录锻炼进度、社交互动、提供反馈等功能，旨在帮助用户实现个人健身目标并促进健康生活。"
-    tool_classes = [
+    app_classes = [
         KeepCreateFitnessPlan,
         KeepSelectWorkout,
         KeepTrackProgress,
@@ -1293,7 +1293,7 @@ class Keep(FunctionApp):
 #################### Meiyou ####################
 
 
-class MeiyouRecordCycle(VirtualFunctionTool):
+class MeiyouRecordCycle(VirtualFunctionApp):
     name = "MeiyouRecordCycle"
     summary = "记录用户的月经周期信息，包括开始和结束日期。"
     parameters: List[ArgParameter] = [
@@ -1317,7 +1317,7 @@ class MeiyouRecordCycle(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MeiyouLogSymptom(VirtualFunctionTool):
+class MeiyouLogSymptom(VirtualFunctionApp):
     name = "MeiyouLogSymptom"
     summary = "记录与月经周期相关的症状。"
     parameters: List[ArgParameter] = [
@@ -1343,7 +1343,7 @@ class MeiyouLogSymptom(VirtualFunctionTool):
     ]
 
 
-class MeiyouGetHealthArticles(VirtualFunctionTool):
+class MeiyouGetHealthArticles(VirtualFunctionApp):
     name = "MeiyouGetHealthArticles"
     summary = "获取与女性健康相关的知识文章。"
     parameters: List[ArgParameter] = [
@@ -1364,7 +1364,7 @@ class MeiyouGetHealthArticles(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MeiyouSetReminder(VirtualFunctionTool):
+class MeiyouSetReminder(VirtualFunctionApp):
     name = "MeiyouSetReminder"
     summary = "设置提醒以通知用户月经周期或症状记录。"
     parameters: List[ArgParameter] = [
@@ -1389,7 +1389,7 @@ class MeiyouSetReminder(VirtualFunctionTool):
     ]
 
 
-class MeiyouAnalyzeData(VirtualFunctionTool):
+class MeiyouAnalyzeData(VirtualFunctionApp):
     name = "MeiyouAnalyzeData"
     summary = "分析用户的月经周期和症状记录，提供趋势和规律。"
     parameters: List[ArgParameter] = [
@@ -1410,7 +1410,7 @@ class MeiyouAnalyzeData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MeiyouCommunityChat(VirtualFunctionTool):
+class MeiyouCommunityChat(VirtualFunctionApp):
     name = "MeiyouCommunityChat"
     summary = "在社区中与其他用户交流。"
     parameters: List[ArgParameter] = [
@@ -1429,7 +1429,7 @@ class MeiyouCommunityChat(VirtualFunctionTool):
     ]
 
 
-class MeiyouGenerateHealthReport(VirtualFunctionTool):
+class MeiyouGenerateHealthReport(VirtualFunctionApp):
     name = "MeiyouGenerateHealthReport"
     summary = "生成用户的健康报告，汇总周期和症状信息。"
     parameters: List[ArgParameter] = [
@@ -1450,7 +1450,7 @@ class MeiyouGenerateHealthReport(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MeiyouExportData(VirtualFunctionTool):
+class MeiyouExportData(VirtualFunctionApp):
     name = "MeiyouExportData"
     summary = "导出用户的记录数据为文件。"
     parameters: List[ArgParameter] = [
@@ -1469,7 +1469,7 @@ class MeiyouExportData(VirtualFunctionTool):
     ]
 
 
-class MeiyouAccessHistory(VirtualFunctionTool):
+class MeiyouAccessHistory(VirtualFunctionApp):
     name = "MeiyouAccessHistory"
     summary = "访问用户的历史记录。"
     parameters: List[ArgParameter] = [
@@ -1488,7 +1488,7 @@ class MeiyouAccessHistory(VirtualFunctionTool):
     ]
 
 
-class MeiyouCustomTag(VirtualFunctionTool):
+class MeiyouCustomTag(VirtualFunctionApp):
     name = "MeiyouCustomTag"
     summary = "为症状和记录添加自定义标签。"
     parameters: List[ArgParameter] = [
@@ -1511,7 +1511,7 @@ class MeiyouCustomTag(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MeiyouDeleteRecord(VirtualFunctionTool):
+class MeiyouDeleteRecord(VirtualFunctionApp):
     name = "MeiyouDeleteRecord"
     summary = "删除用户的记录。"
     parameters: List[ArgParameter] = [
@@ -1530,7 +1530,7 @@ class MeiyouDeleteRecord(VirtualFunctionTool):
     ]
 
 
-class MeiyouGetUserProfile(VirtualFunctionTool):
+class MeiyouGetUserProfile(VirtualFunctionApp):
     name = "MeiyouGetUserProfile"
     summary = "获取用户的个人资料信息。"
     parameters: List[ArgParameter] = [
@@ -1559,7 +1559,7 @@ class Meiyou(FunctionApp):
     description_for_human = "美柚工具包旨在帮助女性用户管理生理健康，通过记录月经周期、症状、获取健康知识以及分析健康数据，提供全面的健康管理解决方案。"
     name_for_model = "Meiyou"
     description_for_model = "美柚工具包旨在帮助女性用户管理生理健康，通过记录月经周期、症状、获取健康知识以及分析健康数据，提供全面的健康管理解决方案。"
-    tool_classes = [
+    app_classes = [
         MeiyouRecordCycle,
         MeiyouLogSymptom,
         MeiyouGetHealthArticles,
@@ -1578,7 +1578,7 @@ class Meiyou(FunctionApp):
 #################### Fitbit ####################
 
 
-class FitbitGetHeartRate(VirtualFunctionTool):
+class FitbitGetHeartRate(VirtualFunctionApp):
     name = "FitbitGetHeartRate"
     summary = "获取用户当前的心率数据。"
     parameters: List[ArgParameter] = [
@@ -1597,7 +1597,7 @@ class FitbitGetHeartRate(VirtualFunctionTool):
     ]
 
 
-class FitbitTrackActivity(VirtualFunctionTool):
+class FitbitTrackActivity(VirtualFunctionApp):
     name = "FitbitTrackActivity"
     summary = "记录用户的日常活动水平。"
     parameters: List[ArgParameter] = [
@@ -1620,7 +1620,7 @@ class FitbitTrackActivity(VirtualFunctionTool):
     ]
 
 
-class FitbitAnalyzeSleepQuality(VirtualFunctionTool):
+class FitbitAnalyzeSleepQuality(VirtualFunctionApp):
     name = "FitbitAnalyzeSleepQuality"
     summary = "提供用户的睡眠数据和质量评分。"
     parameters: List[ArgParameter] = [
@@ -1643,7 +1643,7 @@ class FitbitAnalyzeSleepQuality(VirtualFunctionTool):
     ]
 
 
-class FitbitSetHealthGoals(VirtualFunctionTool):
+class FitbitSetHealthGoals(VirtualFunctionApp):
     name = "FitbitSetHealthGoals"
     summary = "允许用户设置和更新个人健康目标。"
     parameters: List[ArgParameter] = [
@@ -1668,7 +1668,7 @@ class FitbitSetHealthGoals(VirtualFunctionTool):
     ]
 
 
-class FitbitGetHistoricalData(VirtualFunctionTool):
+class FitbitGetHistoricalData(VirtualFunctionApp):
     name = "FitbitGetHistoricalData"
     summary = "提供用户的历史健康数据记录。"
     parameters: List[ArgParameter] = [
@@ -1697,7 +1697,7 @@ class FitbitGetHistoricalData(VirtualFunctionTool):
     ]
 
 
-class FitbitSendHealthReminder(VirtualFunctionTool):
+class FitbitSendHealthReminder(VirtualFunctionApp):
     name = "FitbitSendHealthReminder"
     summary = "向用户发送健康活动提醒。"
     parameters: List[ArgParameter] = [
@@ -1722,7 +1722,7 @@ class FitbitSendHealthReminder(VirtualFunctionTool):
     ]
 
 
-class FitbitAccessUserProfile(VirtualFunctionTool):
+class FitbitAccessUserProfile(VirtualFunctionApp):
     name = "FitbitAccessUserProfile"
     summary = "提供用户的基本健康资料。"
     parameters: List[ArgParameter] = [
@@ -1745,7 +1745,7 @@ class FitbitAccessUserProfile(VirtualFunctionTool):
     ]
 
 
-class FitbitLogDietInfo(VirtualFunctionTool):
+class FitbitLogDietInfo(VirtualFunctionApp):
     name = "FitbitLogDietInfo"
     summary = "允许用户输入和记录饮食数据。"
     parameters: List[ArgParameter] = [
@@ -1770,7 +1770,7 @@ class FitbitLogDietInfo(VirtualFunctionTool):
     ]
 
 
-class FitbitGenerateHealthReport(VirtualFunctionTool):
+class FitbitGenerateHealthReport(VirtualFunctionApp):
     name = "FitbitGenerateHealthReport"
     summary = "提供用户健康数据的综合报告。"
     parameters: List[ArgParameter] = [
@@ -1793,7 +1793,7 @@ class FitbitGenerateHealthReport(VirtualFunctionTool):
     ]
 
 
-class FitbitConnectSocialFeatures(VirtualFunctionTool):
+class FitbitConnectSocialFeatures(VirtualFunctionApp):
     name = "FitbitConnectSocialFeatures"
     summary = "允许用户与朋友分享健康数据。"
     parameters: List[ArgParameter] = [
@@ -1824,7 +1824,7 @@ class Fitbit(FunctionApp):
     description_for_human = "App for monitoring and managing health data."
     name_for_model = "Fitbit"
     description_for_model = "Fitbit工具包用于帮助用户监测和管理健康数据，包括心率、活动水平、睡眠质量等，支持用户设定健康目标、记录饮食信息，并生成健康报告，确保用户全面了解自己的健康状况。"
-    tool_classes = [
+    app_classes = [
         FitbitGetHeartRate,
         FitbitTrackActivity,
         FitbitAnalyzeSleepQuality,
@@ -1841,7 +1841,7 @@ class Fitbit(FunctionApp):
 #################### Gudu ####################
 
 
-class GuduRecordActivity(VirtualFunctionTool):
+class GuduRecordActivity(VirtualFunctionApp):
     name = "GuduRecordActivity"
     summary = "记录用户的运动数据，包括运动类型、时间、距离等。"
     parameters: List[ArgParameter] = [
@@ -1877,7 +1877,7 @@ class GuduRecordActivity(VirtualFunctionTool):
     ]
 
 
-class GuduGetActivityHistory(VirtualFunctionTool):
+class GuduGetActivityHistory(VirtualFunctionApp):
     name = "GuduGetActivityHistory"
     summary = "获取用户的运动历史记录。"
     parameters: List[ArgParameter] = [
@@ -1900,7 +1900,7 @@ class GuduGetActivityHistory(VirtualFunctionTool):
     ]
 
 
-class GuduSocialInteraction(VirtualFunctionTool):
+class GuduSocialInteraction(VirtualFunctionApp):
     name = "GuduSocialInteraction"
     summary = "允许用户与朋友互动，查看他们的运动数据。"
     parameters: List[ArgParameter] = [
@@ -1923,7 +1923,7 @@ class GuduSocialInteraction(VirtualFunctionTool):
     ]
 
 
-class GuduCreateChallenge(VirtualFunctionTool):
+class GuduCreateChallenge(VirtualFunctionApp):
     name = "GuduCreateChallenge"
     summary = "创建一个运动挑战供其他用户参与。"
     parameters: List[ArgParameter] = [
@@ -1952,7 +1952,7 @@ class GuduCreateChallenge(VirtualFunctionTool):
     ]
 
 
-class GuduJoinChallenge(VirtualFunctionTool):
+class GuduJoinChallenge(VirtualFunctionApp):
     name = "GuduJoinChallenge"
     summary = "用户加入一个已创建的运动挑战。"
     parameters: List[ArgParameter] = [
@@ -1971,7 +1971,7 @@ class GuduJoinChallenge(VirtualFunctionTool):
     ]
 
 
-class GuduSetGoal(VirtualFunctionTool):
+class GuduSetGoal(VirtualFunctionApp):
     name = "GuduSetGoal"
     summary = "用户设置个人运动目标。"
     parameters: List[ArgParameter] = [
@@ -1996,7 +1996,7 @@ class GuduSetGoal(VirtualFunctionTool):
     ]
 
 
-class GuduNotifyFriends(VirtualFunctionTool):
+class GuduNotifyFriends(VirtualFunctionApp):
     name = "GuduNotifyFriends"
     summary = "向朋友发送运动成绩通知。"
     parameters: List[ArgParameter] = [
@@ -2024,7 +2024,7 @@ class GuduNotifyFriends(VirtualFunctionTool):
     ]
 
 
-class GuduShareToSocialMedia(VirtualFunctionTool):
+class GuduShareToSocialMedia(VirtualFunctionApp):
     name = "GuduShareToSocialMedia"
     summary = "将运动数据分享至其他社交平台。"
     parameters: List[ArgParameter] = [
@@ -2049,7 +2049,7 @@ class GuduShareToSocialMedia(VirtualFunctionTool):
     ]
 
 
-class GuduGenerateReport(VirtualFunctionTool):
+class GuduGenerateReport(VirtualFunctionApp):
     name = "GuduGenerateReport"
     summary = "生成用户的运动报告。"
     parameters: List[ArgParameter] = [
@@ -2078,7 +2078,7 @@ class GuduGenerateReport(VirtualFunctionTool):
     ]
 
 
-class GuduGetPersonalizedAdvice(VirtualFunctionTool):
+class GuduGetPersonalizedAdvice(VirtualFunctionApp):
     name = "GuduGetPersonalizedAdvice"
     summary = "根据用户的运动数据提供个性化的运动建议。"
     parameters: List[ArgParameter] = [
@@ -2097,7 +2097,7 @@ class GuduGetPersonalizedAdvice(VirtualFunctionTool):
     ]
 
 
-class GuduGetUserId(VirtualFunctionTool):
+class GuduGetUserId(VirtualFunctionApp):
     name = "GuduGetUserId"
     summary = "获取当前用户的唯一标识符。"
     parameters: List[ArgParameter] = []
@@ -2117,7 +2117,7 @@ class Gudu(FunctionApp):
     )
     name_for_model = "Gudu"
     description_for_model = "Gudu工具包提供了一系列功能，帮助用户记录和管理运动数据，支持社交互动和挑战功能，旨在提升用户的运动动力和社交体验。"
-    tool_classes = [
+    app_classes = [
         GuduRecordActivity,
         GuduGetActivityHistory,
         GuduSocialInteraction,
@@ -2135,8 +2135,8 @@ class Gudu(FunctionApp):
 #################### SmartScaleApp ####################
 
 
-class SmartScaleAppRecordWeightTool(VirtualFunctionTool):
-    name = "SmartScaleAppRecordWeightTool"
+class SmartScaleAppRecordWeightApp(VirtualFunctionApp):
+    name = "SmartScaleAppRecordWeightApp"
     summary = "用于记录用户的体重和体脂率。"
     parameters: List[ArgParameter] = [
         {
@@ -2164,8 +2164,8 @@ class SmartScaleAppRecordWeightTool(VirtualFunctionTool):
     ]
 
 
-class SmartScaleAppGenerateReportTool(VirtualFunctionTool):
-    name = "SmartScaleAppGenerateReportTool"
+class SmartScaleAppGenerateReportApp(VirtualFunctionApp):
+    name = "SmartScaleAppGenerateReportApp"
     summary = "生成用户的健康报告。"
     parameters: List[ArgParameter] = [
         {
@@ -2187,8 +2187,8 @@ class SmartScaleAppGenerateReportTool(VirtualFunctionTool):
     ]
 
 
-class SmartScaleAppAnalyzeTrendsTool(VirtualFunctionTool):
-    name = "SmartScaleAppAnalyzeTrendsTool"
+class SmartScaleAppAnalyzeTrendsApp(VirtualFunctionApp):
+    name = "SmartScaleAppAnalyzeTrendsApp"
     summary = "分析用户的健康数据趋势。"
     parameters: List[ArgParameter] = [
         {
@@ -2210,8 +2210,8 @@ class SmartScaleAppAnalyzeTrendsTool(VirtualFunctionTool):
     ]
 
 
-class SmartScaleAppSetGoalTool(VirtualFunctionTool):
-    name = "SmartScaleAppSetGoalTool"
+class SmartScaleAppSetGoalApp(VirtualFunctionApp):
+    name = "SmartScaleAppSetGoalApp"
     summary = "设置用户的健康目标。"
     parameters: List[ArgParameter] = [
         {
@@ -2242,8 +2242,8 @@ class SmartScaleAppSetGoalTool(VirtualFunctionTool):
     ]
 
 
-class SmartScaleAppAccessHistoryTool(VirtualFunctionTool):
-    name = "SmartScaleAppAccessHistoryTool"
+class SmartScaleAppAccessHistoryApp(VirtualFunctionApp):
+    name = "SmartScaleAppAccessHistoryApp"
     summary = "访问用户的历史健康数据。"
     parameters: List[ArgParameter] = [
         {
@@ -2271,8 +2271,8 @@ class SmartScaleAppAccessHistoryTool(VirtualFunctionTool):
     ]
 
 
-class SmartScaleAppExportDataTool(VirtualFunctionTool):
-    name = "SmartScaleAppExportDataTool"
+class SmartScaleAppExportDataApp(VirtualFunctionApp):
+    name = "SmartScaleAppExportDataApp"
     summary = "导出用户的健康数据。"
     parameters: List[ArgParameter] = [
         {
@@ -2296,8 +2296,8 @@ class SmartScaleAppExportDataTool(VirtualFunctionTool):
     ]
 
 
-class SmartScaleAppSetReminderTool(VirtualFunctionTool):
-    name = "SmartScaleAppSetReminderTool"
+class SmartScaleAppSetReminderApp(VirtualFunctionApp):
+    name = "SmartScaleAppSetReminderApp"
     summary = "设置定期记录体重和体脂率的提醒。"
     parameters: List[ArgParameter] = [
         {
@@ -2321,8 +2321,8 @@ class SmartScaleAppSetReminderTool(VirtualFunctionTool):
     ]
 
 
-class SmartScaleAppShareReportTool(VirtualFunctionTool):
-    name = "SmartScaleAppShareReportTool"
+class SmartScaleAppShareReportApp(VirtualFunctionApp):
+    name = "SmartScaleAppShareReportApp"
     summary = "分享用户的健康报告到社交媒体。"
     parameters: List[ArgParameter] = [
         {
@@ -2346,8 +2346,8 @@ class SmartScaleAppShareReportTool(VirtualFunctionTool):
     ]
 
 
-class SmartScaleAppGetHealthTipsTool(VirtualFunctionTool):
-    name = "SmartScaleAppGetHealthTipsTool"
+class SmartScaleAppGetHealthTipsApp(VirtualFunctionApp):
+    name = "SmartScaleAppGetHealthTipsApp"
     summary = "提供个性化的健康小贴士。"
     parameters: List[ArgParameter] = [
         {
@@ -2365,8 +2365,8 @@ class SmartScaleAppGetHealthTipsTool(VirtualFunctionTool):
     ]
 
 
-class SmartScaleAppConnectThirdPartyTool(VirtualFunctionTool):
-    name = "SmartScaleAppConnectThirdPartyTool"
+class SmartScaleAppConnectThirdPartyApp(VirtualFunctionApp):
+    name = "SmartScaleAppConnectThirdPartyApp"
     summary = "连接第三方健康应用。"
     parameters: List[ArgParameter] = [
         {
@@ -2390,8 +2390,8 @@ class SmartScaleAppConnectThirdPartyTool(VirtualFunctionTool):
     ]
 
 
-class SmartScaleAppDownloadReportTool(VirtualFunctionTool):
-    name = "SmartScaleAppDownloadReportTool"
+class SmartScaleAppDownloadReportApp(VirtualFunctionApp):
+    name = "SmartScaleAppDownloadReportApp"
     summary = "下载用户的健康报告。"
     parameters: List[ArgParameter] = [
         {
@@ -2413,8 +2413,8 @@ class SmartScaleAppDownloadReportTool(VirtualFunctionTool):
     ]
 
 
-class SmartScaleAppDeleteRecordTool(VirtualFunctionTool):
-    name = "SmartScaleAppDeleteRecordTool"
+class SmartScaleAppDeleteRecordApp(VirtualFunctionApp):
+    name = "SmartScaleAppDeleteRecordApp"
     summary = "删除用户的健康记录。"
     parameters: List[ArgParameter] = [
         {
@@ -2438,26 +2438,26 @@ class SmartScaleApp(FunctionApp):
     description_for_human = "一个帮助用户记录体重和体脂率的健康管理工具包。"
     name_for_model = "SmartScaleApp"
     description_for_model = "该工具包旨在帮助用户通过智能体重秤记录体重、体脂率等健康数据，并生成健康报告，提供数据分析、目标设置等功能，以促进用户的健康管理。"
-    tool_classes = [
-        SmartScaleAppRecordWeightTool,
-        SmartScaleAppGenerateReportTool,
-        SmartScaleAppAnalyzeTrendsTool,
-        SmartScaleAppSetGoalTool,
-        SmartScaleAppAccessHistoryTool,
-        SmartScaleAppExportDataTool,
-        SmartScaleAppSetReminderTool,
-        SmartScaleAppShareReportTool,
-        SmartScaleAppGetHealthTipsTool,
-        SmartScaleAppConnectThirdPartyTool,
-        SmartScaleAppDownloadReportTool,
-        SmartScaleAppDeleteRecordTool,
+    app_classes = [
+        SmartScaleAppRecordWeightApp,
+        SmartScaleAppGenerateReportApp,
+        SmartScaleAppAnalyzeTrendsApp,
+        SmartScaleAppSetGoalApp,
+        SmartScaleAppAccessHistoryApp,
+        SmartScaleAppExportDataApp,
+        SmartScaleAppSetReminderApp,
+        SmartScaleAppShareReportApp,
+        SmartScaleAppGetHealthTipsApp,
+        SmartScaleAppConnectThirdPartyApp,
+        SmartScaleAppDownloadReportApp,
+        SmartScaleAppDeleteRecordApp,
     ]
 
 
 #################### GoodDoctorOnline ####################
 
 
-class GoodDoctorOnlineOnlineConsultation(VirtualFunctionTool):
+class GoodDoctorOnlineOnlineConsultation(VirtualFunctionApp):
     name = "GoodDoctorOnlineOnlineConsultation"
     summary = "允许用户与医生进行实时在线问诊。"
     parameters: List[ArgParameter] = [
@@ -2496,7 +2496,7 @@ class GoodDoctorOnlineOnlineConsultation(VirtualFunctionTool):
     ]
 
 
-class GoodDoctorOnlineHealthAdvice(VirtualFunctionTool):
+class GoodDoctorOnlineHealthAdvice(VirtualFunctionApp):
     name = "GoodDoctorOnlineHealthAdvice"
     summary = "提供用户健康问题的解答和建议。"
     parameters: List[ArgParameter] = [
@@ -2525,7 +2525,7 @@ class GoodDoctorOnlineHealthAdvice(VirtualFunctionTool):
     ]
 
 
-class GoodDoctorOnlineBookAppointment(VirtualFunctionTool):
+class GoodDoctorOnlineBookAppointment(VirtualFunctionApp):
     name = "GoodDoctorOnlineBookAppointment"
     summary = "用户可以预约医生进行进一步的咨询。"
     parameters: List[ArgParameter] = [
@@ -2560,7 +2560,7 @@ class GoodDoctorOnlineBookAppointment(VirtualFunctionTool):
     ]
 
 
-class GoodDoctorOnlineShareHealthKnowledge(VirtualFunctionTool):
+class GoodDoctorOnlineShareHealthKnowledge(VirtualFunctionApp):
     name = "GoodDoctorOnlineShareHealthKnowledge"
     summary = "提供健康知识的文章和视频。"
     parameters: List[ArgParameter] = [
@@ -2593,7 +2593,7 @@ class GoodDoctorOnlineShareHealthKnowledge(VirtualFunctionTool):
     ]
 
 
-class GoodDoctorOnlineManageHealthRecords(VirtualFunctionTool):
+class GoodDoctorOnlineManageHealthRecords(VirtualFunctionApp):
     name = "GoodDoctorOnlineManageHealthRecords"
     summary = "用户可以管理自己的健康记录和咨询历史。"
     parameters: List[ArgParameter] = [
@@ -2628,7 +2628,7 @@ class GoodDoctorOnlineManageHealthRecords(VirtualFunctionTool):
     ]
 
 
-class GoodDoctorOnlinePrescriptionManagement(VirtualFunctionTool):
+class GoodDoctorOnlinePrescriptionManagement(VirtualFunctionApp):
     name = "GoodDoctorOnlinePrescriptionManagement"
     summary = "用户可以查看和管理医生开具的处方。"
     parameters: List[ArgParameter] = [
@@ -2658,7 +2658,7 @@ class GoodDoctorOnlinePrescriptionManagement(VirtualFunctionTool):
     ]
 
 
-class GoodDoctorOnlineRemoteMonitoring(VirtualFunctionTool):
+class GoodDoctorOnlineRemoteMonitoring(VirtualFunctionApp):
     name = "GoodDoctorOnlineRemoteMonitoring"
     summary = "医生可以通过工具监测用户的健康指标。"
     parameters: List[ArgParameter] = [
@@ -2687,7 +2687,7 @@ class GoodDoctorOnlineRemoteMonitoring(VirtualFunctionTool):
     ]
 
 
-class GoodDoctorOnlineHealthTips(VirtualFunctionTool):
+class GoodDoctorOnlineHealthTips(VirtualFunctionApp):
     name = "GoodDoctorOnlineHealthTips"
     summary = "根据用户的健康记录提供个性化的健康提示。"
     parameters: List[ArgParameter] = [
@@ -2707,7 +2707,7 @@ class GoodDoctorOnlineHealthTips(VirtualFunctionTool):
     ]
 
 
-class GoodDoctorOnlineCommunityInteraction(VirtualFunctionTool):
+class GoodDoctorOnlineCommunityInteraction(VirtualFunctionApp):
     name = "GoodDoctorOnlineCommunityInteraction"
     summary = "用户可以参与健康相关的讨论和交流。"
     parameters: List[ArgParameter] = [
@@ -2736,7 +2736,7 @@ class GoodDoctorOnlineCommunityInteraction(VirtualFunctionTool):
     ]
 
 
-class GoodDoctorOnlineExportHealthData(VirtualFunctionTool):
+class GoodDoctorOnlineExportHealthData(VirtualFunctionApp):
     name = "GoodDoctorOnlineExportHealthData"
     summary = "用户可以导出自己的健康记录。"
     parameters: List[ArgParameter] = [
@@ -2756,7 +2756,7 @@ class GoodDoctorOnlineExportHealthData(VirtualFunctionTool):
     ]
 
 
-class GoodDoctorOnlineSearchDoctor(VirtualFunctionTool):
+class GoodDoctorOnlineSearchDoctor(VirtualFunctionApp):
     name = "GoodDoctorOnlineSearchDoctor"
     summary = "根据条件搜索医生并返回医生的唯一标识符。"
     parameters: List[ArgParameter] = [
@@ -2795,7 +2795,7 @@ class GoodDoctorOnline(FunctionApp):
     description_for_human = "好医生在线提供在线问诊、健康咨询和健康知识分享的平台，用户可以随时与专业医生沟通，获取健康指导。"
     name_for_model = "GoodDoctorOnline"
     description_for_model = "GoodDoctorOnline工具包提供在线问诊、健康咨询、预约医生和健康知识分享等功能，旨在为用户提供便捷的医疗服务和健康指导。"
-    tool_classes = [
+    app_classes = [
         GoodDoctorOnlineOnlineConsultation,
         GoodDoctorOnlineHealthAdvice,
         GoodDoctorOnlineBookAppointment,
@@ -2813,7 +2813,7 @@ class GoodDoctorOnline(FunctionApp):
 #################### YueDongQuan ####################
 
 
-class YueDongQuanRecordExerciseData(VirtualFunctionTool):
+class YueDongQuanRecordExerciseData(VirtualFunctionApp):
     name = "YueDongQuanRecordExerciseData"
     summary = "允许用户输入和记录他们的运动数据，如步数、跑步距离、时间等。"
     parameters: List[ArgParameter] = [
@@ -2844,7 +2844,7 @@ class YueDongQuanRecordExerciseData(VirtualFunctionTool):
     ]
 
 
-class YueDongQuanShareExerciseResults(VirtualFunctionTool):
+class YueDongQuanShareExerciseResults(VirtualFunctionApp):
     name = "YueDongQuanShareExerciseResults"
     summary = "允许用户将他们的运动成果分享给朋友或在社交网络上。"
     parameters: List[ArgParameter] = [
@@ -2873,7 +2873,7 @@ class YueDongQuanShareExerciseResults(VirtualFunctionTool):
     ]
 
 
-class YueDongQuanJoinOnlineEvent(VirtualFunctionTool):
+class YueDongQuanJoinOnlineEvent(VirtualFunctionApp):
     name = "YueDongQuanJoinOnlineEvent"
     summary = "允许用户查看并报名参加各种线上运动活动或挑战。"
     parameters: List[ArgParameter] = [
@@ -2896,7 +2896,7 @@ class YueDongQuanJoinOnlineEvent(VirtualFunctionTool):
     ]
 
 
-class YueDongQuanGetExerciseIncentives(VirtualFunctionTool):
+class YueDongQuanGetExerciseIncentives(VirtualFunctionApp):
     name = "YueDongQuanGetExerciseIncentives"
     summary = "用户可以接收运动激励信息，如奖励、徽章等。"
     parameters: List[ArgParameter] = [
@@ -2919,7 +2919,7 @@ class YueDongQuanGetExerciseIncentives(VirtualFunctionTool):
     ]
 
 
-class YueDongQuanViewExerciseHistory(VirtualFunctionTool):
+class YueDongQuanViewExerciseHistory(VirtualFunctionApp):
     name = "YueDongQuanViewExerciseHistory"
     summary = "允许用户查看他们的历史运动记录和统计数据。"
     parameters: List[ArgParameter] = [
@@ -2942,7 +2942,7 @@ class YueDongQuanViewExerciseHistory(VirtualFunctionTool):
     ]
 
 
-class YueDongQuanFollowFriend(VirtualFunctionTool):
+class YueDongQuanFollowFriend(VirtualFunctionApp):
     name = "YueDongQuanFollowFriend"
     summary = "允许用户关注其他用户，查看他们的运动动态。"
     parameters: List[ArgParameter] = [
@@ -2961,7 +2961,7 @@ class YueDongQuanFollowFriend(VirtualFunctionTool):
     ]
 
 
-class YueDongQuanSendMessage(VirtualFunctionTool):
+class YueDongQuanSendMessage(VirtualFunctionApp):
     name = "YueDongQuanSendMessage"
     summary = "允许用户在应用内与朋友发送消息。"
     parameters: List[ArgParameter] = [
@@ -2986,7 +2986,7 @@ class YueDongQuanSendMessage(VirtualFunctionTool):
     ]
 
 
-class YueDongQuanSetExerciseGoal(VirtualFunctionTool):
+class YueDongQuanSetExerciseGoal(VirtualFunctionApp):
     name = "YueDongQuanSetExerciseGoal"
     summary = "允许用户设置自己的运动目标并追踪进度。"
     parameters: List[ArgParameter] = [
@@ -3015,7 +3015,7 @@ class YueDongQuanSetExerciseGoal(VirtualFunctionTool):
     ]
 
 
-class YueDongQuanViewLeaderboard(VirtualFunctionTool):
+class YueDongQuanViewLeaderboard(VirtualFunctionApp):
     name = "YueDongQuanViewLeaderboard"
     summary = "允许用户查看朋友或全体用户的运动排行榜。"
     parameters: List[ArgParameter] = [
@@ -3038,7 +3038,7 @@ class YueDongQuanViewLeaderboard(VirtualFunctionTool):
     ]
 
 
-class YueDongQuanReceiveExerciseSuggestions(VirtualFunctionTool):
+class YueDongQuanReceiveExerciseSuggestions(VirtualFunctionApp):
     name = "YueDongQuanReceiveExerciseSuggestions"
     summary = "允许用户根据其运动习惯接收个性化的运动建议。"
     parameters: List[ArgParameter] = [
@@ -3061,7 +3061,7 @@ class YueDongQuanReceiveExerciseSuggestions(VirtualFunctionTool):
     ]
 
 
-class YueDongQuanSearchExerciseRecords(VirtualFunctionTool):
+class YueDongQuanSearchExerciseRecords(VirtualFunctionApp):
     name = "YueDongQuanSearchExerciseRecords"
     summary = "允许用户通过输入条件搜索运动记录并返回唯一标识符。"
     parameters: List[ArgParameter] = [
@@ -3090,7 +3090,7 @@ class YueDongQuanSearchExerciseRecords(VirtualFunctionTool):
     ]
 
 
-class YueDongQuanSearchUser(VirtualFunctionTool):
+class YueDongQuanSearchUser(VirtualFunctionApp):
     name = "YueDongQuanSearchUser"
     summary = "允许用户通过用户名搜索其他用户并返回唯一标识符。"
     parameters: List[ArgParameter] = [
@@ -3113,7 +3113,7 @@ class YueDongQuanSearchUser(VirtualFunctionTool):
     ]
 
 
-class YueDongQuanSearchEvent(VirtualFunctionTool):
+class YueDongQuanSearchEvent(VirtualFunctionApp):
     name = "YueDongQuanSearchEvent"
     summary = "允许用户通过活动名称搜索线上活动并返回唯一标识符。"
     parameters: List[ArgParameter] = [
@@ -3144,7 +3144,7 @@ class YueDongQuan(FunctionApp):
     )
     name_for_model = "YueDongQuan"
     description_for_model = "悦动圈工具包为运动爱好者提供了一个全面的解决方案，用户可以记录和分享运动数据，参加线上活动，获取运动激励，并与朋友互动，旨在提升用户的运动积极性和社交体验。"
-    tool_classes = [
+    app_classes = [
         YueDongQuanRecordExerciseData,
         YueDongQuanShareExerciseResults,
         YueDongQuanJoinOnlineEvent,
@@ -3164,7 +3164,7 @@ class YueDongQuan(FunctionApp):
 #################### CtripApp ####################
 
 
-class CtripAppFlightSearch(VirtualFunctionTool):
+class CtripAppFlightSearch(VirtualFunctionApp):
     name = "CtripAppFlightSearch"
     summary = "允许用户根据出发地、目的地和日期搜索航班信息。"
     parameters: List[ArgParameter] = [
@@ -3209,7 +3209,7 @@ class CtripAppFlightSearch(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CtripAppHotelSearch(VirtualFunctionTool):
+class CtripAppHotelSearch(VirtualFunctionApp):
     name = "CtripAppHotelSearch"
     summary = "允许用户根据城市和日期搜索酒店信息。"
     parameters: List[ArgParameter] = [
@@ -3248,7 +3248,7 @@ class CtripAppHotelSearch(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CtripAppCarRentalSearch(VirtualFunctionTool):
+class CtripAppCarRentalSearch(VirtualFunctionApp):
     name = "CtripAppCarRentalSearch"
     summary = "允许用户根据地点和日期搜索租车服务。"
     parameters: List[ArgParameter] = [
@@ -3287,7 +3287,7 @@ class CtripAppCarRentalSearch(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CtripAppTourPackageSearch(VirtualFunctionTool):
+class CtripAppTourPackageSearch(VirtualFunctionApp):
     name = "CtripAppTourPackageSearch"
     summary = "允许用户搜索旅游度假产品。"
     parameters: List[ArgParameter] = [
@@ -3320,7 +3320,7 @@ class CtripAppTourPackageSearch(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CtripAppUserProfileAccess(VirtualFunctionTool):
+class CtripAppUserProfileAccess(VirtualFunctionApp):
     name = "CtripAppUserProfileAccess"
     summary = "允许用户访问其个人信息和历史预订信息。"
     parameters: List[ArgParameter] = []
@@ -3334,7 +3334,7 @@ class CtripAppUserProfileAccess(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CtripAppPriceAlertSetup(VirtualFunctionTool):
+class CtripAppPriceAlertSetup(VirtualFunctionApp):
     name = "CtripAppPriceAlertSetup"
     summary = "允许用户设置航班或酒店的价格提醒。"
     parameters: List[ArgParameter] = [
@@ -3369,7 +3369,7 @@ class CtripAppPriceAlertSetup(VirtualFunctionTool):
     ]
 
 
-class CtripAppBookingManagement(VirtualFunctionTool):
+class CtripAppBookingManagement(VirtualFunctionApp):
     name = "CtripAppBookingManagement"
     summary = "允许用户查看和管理他们的预订订单。"
     parameters: List[ArgParameter] = []
@@ -3383,7 +3383,7 @@ class CtripAppBookingManagement(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CtripAppReviewSubmission(VirtualFunctionTool):
+class CtripAppReviewSubmission(VirtualFunctionApp):
     name = "CtripAppReviewSubmission"
     summary = "允许用户提交对航班或酒店的评价。"
     parameters: List[ArgParameter] = [
@@ -3420,7 +3420,7 @@ class CtripAppReviewSubmission(VirtualFunctionTool):
     ]
 
 
-class CtripAppItineraryManagement(VirtualFunctionTool):
+class CtripAppItineraryManagement(VirtualFunctionApp):
     name = "CtripAppItineraryManagement"
     summary = "允许用户创建和管理旅行行程。"
     parameters: List[ArgParameter] = [
@@ -3439,7 +3439,7 @@ class CtripAppItineraryManagement(VirtualFunctionTool):
     ]
 
 
-class CtripAppPaymentMethodAccess(VirtualFunctionTool):
+class CtripAppPaymentMethodAccess(VirtualFunctionApp):
     name = "CtripAppPaymentMethodAccess"
     summary = "允许用户访问和管理他们的支付信息。"
     parameters: List[ArgParameter] = []
@@ -3459,7 +3459,7 @@ class CtripApp(FunctionApp):
     description_for_human = "一个一站式旅游服务工具包，帮助用户获取和管理旅行相关信息。"
     name_for_model = "CtripApp"
     description_for_model = "CtripApp是一个一站式旅游服务工具包，提供航班查询、酒店预订、租车服务、旅游度假产品查询及用户信息管理等功能，旨在帮助用户方便快捷地获取和管理旅行相关信息。"
-    tool_classes = [
+    app_classes = [
         CtripAppFlightSearch,
         CtripAppHotelSearch,
         CtripAppCarRentalSearch,
@@ -3476,7 +3476,7 @@ class CtripApp(FunctionApp):
 #################### XiaoZhuShortRent ####################
 
 
-class XiaoZhuShortRentSearchListings(VirtualFunctionTool):
+class XiaoZhuShortRentSearchListings(VirtualFunctionApp):
     name = "XiaoZhuShortRentSearchListings"
     summary = "根据用户的需求搜索可用的短租房屋。"
     parameters: List[ArgParameter] = [
@@ -3515,7 +3515,7 @@ class XiaoZhuShortRentSearchListings(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class XiaoZhuShortRentGetListingDetails(VirtualFunctionTool):
+class XiaoZhuShortRentGetListingDetails(VirtualFunctionApp):
     name = "XiaoZhuShortRentGetListingDetails"
     summary = "查看特定房源的详细信息。"
     parameters: List[ArgParameter] = [
@@ -3536,7 +3536,7 @@ class XiaoZhuShortRentGetListingDetails(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class XiaoZhuShortRentCreateBooking(VirtualFunctionTool):
+class XiaoZhuShortRentCreateBooking(VirtualFunctionApp):
     name = "XiaoZhuShortRentCreateBooking"
     summary = "为选定的房源创建预订。"
     parameters: List[ArgParameter] = [
@@ -3577,7 +3577,7 @@ class XiaoZhuShortRentCreateBooking(VirtualFunctionTool):
     ]
 
 
-class XiaoZhuShortRentCancelBooking(VirtualFunctionTool):
+class XiaoZhuShortRentCancelBooking(VirtualFunctionApp):
     name = "XiaoZhuShortRentCancelBooking"
     summary = "取消已创建的预订。"
     parameters: List[ArgParameter] = [
@@ -3600,7 +3600,7 @@ class XiaoZhuShortRentCancelBooking(VirtualFunctionTool):
     ]
 
 
-class XiaoZhuShortRentGetUserReviews(VirtualFunctionTool):
+class XiaoZhuShortRentGetUserReviews(VirtualFunctionApp):
     name = "XiaoZhuShortRentGetUserReviews"
     summary = "查看特定房源的用户评论。"
     parameters: List[ArgParameter] = [
@@ -3621,7 +3621,7 @@ class XiaoZhuShortRentGetUserReviews(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class XiaoZhuShortRentGetHostInfo(VirtualFunctionTool):
+class XiaoZhuShortRentGetHostInfo(VirtualFunctionApp):
     name = "XiaoZhuShortRentGetHostInfo"
     summary = "查看房东的详细信息。"
     parameters: List[ArgParameter] = [
@@ -3642,7 +3642,7 @@ class XiaoZhuShortRentGetHostInfo(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class XiaoZhuShortRentSearchNearbyListings(VirtualFunctionTool):
+class XiaoZhuShortRentSearchNearbyListings(VirtualFunctionApp):
     name = "XiaoZhuShortRentSearchNearbyListings"
     summary = "搜索附近的短租房源。"
     parameters: List[ArgParameter] = [
@@ -3669,7 +3669,7 @@ class XiaoZhuShortRentSearchNearbyListings(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class XiaoZhuShortRentGetUserBookingHistory(VirtualFunctionTool):
+class XiaoZhuShortRentGetUserBookingHistory(VirtualFunctionApp):
     name = "XiaoZhuShortRentGetUserBookingHistory"
     summary = "获取用户的预订历史。"
     parameters: List[ArgParameter] = [
@@ -3690,7 +3690,7 @@ class XiaoZhuShortRentGetUserBookingHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class XiaoZhuShortRentSaveToFavorites(VirtualFunctionTool):
+class XiaoZhuShortRentSaveToFavorites(VirtualFunctionApp):
     name = "XiaoZhuShortRentSaveToFavorites"
     summary = "将房源保存到收藏夹。"
     parameters: List[ArgParameter] = [
@@ -3715,7 +3715,7 @@ class XiaoZhuShortRentSaveToFavorites(VirtualFunctionTool):
     ]
 
 
-class XiaoZhuShortRentSendMessageToHost(VirtualFunctionTool):
+class XiaoZhuShortRentSendMessageToHost(VirtualFunctionApp):
     name = "XiaoZhuShortRentSendMessageToHost"
     summary = "发送消息给房东。"
     parameters: List[ArgParameter] = [
@@ -3752,7 +3752,7 @@ class XiaoZhuShortRent(FunctionApp):
     description_for_human = "一个专注于短租房屋的预订平台，提供独特的民宿选择。"
     name_for_model = "XiaoZhuShortRent"
     description_for_model = "该工具包旨在为用户提供小猪短租平台的访问，允许用户搜索、预订和管理短租房屋，同时提供用户评论、房东信息等功能，以便用户能够做出明智的选择。"
-    tool_classes = [
+    app_classes = [
         XiaoZhuShortRentSearchListings,
         XiaoZhuShortRentGetListingDetails,
         XiaoZhuShortRentCreateBooking,
@@ -3769,7 +3769,7 @@ class XiaoZhuShortRent(FunctionApp):
 #################### TuNiu ####################
 
 
-class TuNiuSearchTourProducts(VirtualFunctionTool):
+class TuNiuSearchTourProducts(VirtualFunctionApp):
     name = "TuNiuSearchTourProducts"
     summary = "根据用户输入的条件搜索旅游产品。"
     parameters: List[ArgParameter] = [
@@ -3810,7 +3810,7 @@ class TuNiuSearchTourProducts(VirtualFunctionTool):
     ]
 
 
-class TuNiuGetTourProductDetails(VirtualFunctionTool):
+class TuNiuGetTourProductDetails(VirtualFunctionApp):
     name = "TuNiuGetTourProductDetails"
     summary = "获取特定旅游产品的详细信息。"
     parameters: List[ArgParameter] = [
@@ -3833,7 +3833,7 @@ class TuNiuGetTourProductDetails(VirtualFunctionTool):
     ]
 
 
-class TuNiuBookTourProduct(VirtualFunctionTool):
+class TuNiuBookTourProduct(VirtualFunctionApp):
     name = "TuNiuBookTourProduct"
     summary = "在线预订所选的旅游产品。"
     parameters: List[ArgParameter] = [
@@ -3859,7 +3859,7 @@ class TuNiuBookTourProduct(VirtualFunctionTool):
     ]
 
 
-class TuNiuGetUserReviews(VirtualFunctionTool):
+class TuNiuGetUserReviews(VirtualFunctionApp):
     name = "TuNiuGetUserReviews"
     summary = "获取特定旅游产品的用户评价。"
     parameters: List[ArgParameter] = [
@@ -3878,7 +3878,7 @@ class TuNiuGetUserReviews(VirtualFunctionTool):
     ]
 
 
-class TuNiuManageUserOrders(VirtualFunctionTool):
+class TuNiuManageUserOrders(VirtualFunctionApp):
     name = "TuNiuManageUserOrders"
     summary = "管理用户的订单，包括查看、更新和取消。"
     parameters: List[ArgParameter] = [
@@ -3912,7 +3912,7 @@ class TuNiuManageUserOrders(VirtualFunctionTool):
     ]
 
 
-class TuNiuFilterTourProducts(VirtualFunctionTool):
+class TuNiuFilterTourProducts(VirtualFunctionApp):
     name = "TuNiuFilterTourProducts"
     summary = "根据旅游类型筛选旅游产品。"
     parameters: List[ArgParameter] = [
@@ -3935,7 +3935,7 @@ class TuNiuFilterTourProducts(VirtualFunctionTool):
     ]
 
 
-class TuNiuGetPopularDestinations(VirtualFunctionTool):
+class TuNiuGetPopularDestinations(VirtualFunctionApp):
     name = "TuNiuGetPopularDestinations"
     summary = "获取当前热门的旅游目的地推荐。"
     parameters: List[ArgParameter] = []
@@ -3949,7 +3949,7 @@ class TuNiuGetPopularDestinations(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TuNiuGetUserOrderHistory(VirtualFunctionTool):
+class TuNiuGetUserOrderHistory(VirtualFunctionApp):
     name = "TuNiuGetUserOrderHistory"
     summary = "获取用户的历史订单记录。"
     parameters: List[ArgParameter] = []
@@ -3963,7 +3963,7 @@ class TuNiuGetUserOrderHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TuNiuCheckProductAvailability(VirtualFunctionTool):
+class TuNiuCheckProductAvailability(VirtualFunctionApp):
     name = "TuNiuCheckProductAvailability"
     summary = "检查特定旅游产品在某个日期的可用性。"
     parameters: List[ArgParameter] = [
@@ -3992,7 +3992,7 @@ class TuNiuCheckProductAvailability(VirtualFunctionTool):
     ]
 
 
-class TuNiuGetUserProfile(VirtualFunctionTool):
+class TuNiuGetUserProfile(VirtualFunctionApp):
     name = "TuNiuGetUserProfile"
     summary = "获取用户的个人信息。"
     parameters: List[ArgParameter] = []
@@ -4006,7 +4006,7 @@ class TuNiuGetUserProfile(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TuNiuGetUserOrders(VirtualFunctionTool):
+class TuNiuGetUserOrders(VirtualFunctionApp):
     name = "TuNiuGetUserOrders"
     summary = "获取用户的所有订单列表。"
     parameters: List[ArgParameter] = []
@@ -4028,7 +4028,7 @@ class TuNiu(FunctionApp):
     )
     name_for_model = "TuNiu"
     description_for_model = "该工具包提供了方便用户搜索和预订旅游产品的功能，支持获取旅游产品详情、用户评价和管理订单等操作，旨在提升用户的旅游体验。"
-    tool_classes = [
+    app_classes = [
         TuNiuSearchTourProducts,
         TuNiuGetTourProductDetails,
         TuNiuBookTourProduct,
@@ -4046,7 +4046,7 @@ class TuNiu(FunctionApp):
 #################### Qunar ####################
 
 
-class QunarFlightSearch(VirtualFunctionTool):
+class QunarFlightSearch(VirtualFunctionApp):
     name = "QunarFlightSearch"
     summary = "根据出发地、目的地和日期搜索可用航班。"
     parameters: List[ArgParameter] = [
@@ -4085,7 +4085,7 @@ class QunarFlightSearch(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class QunarHotelSearch(VirtualFunctionTool):
+class QunarHotelSearch(VirtualFunctionApp):
     name = "QunarHotelSearch"
     summary = "根据目的地、入住和退房日期搜索可用酒店。"
     parameters: List[ArgParameter] = [
@@ -4124,7 +4124,7 @@ class QunarHotelSearch(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class QunarCreateOrder(VirtualFunctionTool):
+class QunarCreateOrder(VirtualFunctionApp):
     name = "QunarCreateOrder"
     summary = "为选择的航班或酒店创建预订订单。"
     parameters: List[ArgParameter] = [
@@ -4167,7 +4167,7 @@ class QunarCreateOrder(VirtualFunctionTool):
     ]
 
 
-class QunarQueryOrder(VirtualFunctionTool):
+class QunarQueryOrder(VirtualFunctionApp):
     name = "QunarQueryOrder"
     summary = "查询用户的预订订单状态和详情。"
     parameters: List[ArgParameter] = [
@@ -4190,7 +4190,7 @@ class QunarQueryOrder(VirtualFunctionTool):
     ]
 
 
-class QunarCancelOrder(VirtualFunctionTool):
+class QunarCancelOrder(VirtualFunctionApp):
     name = "QunarCancelOrder"
     summary = "取消用户的预订订单。"
     parameters: List[ArgParameter] = [
@@ -4210,7 +4210,7 @@ class QunarCancelOrder(VirtualFunctionTool):
     ]
 
 
-class QunarSetPriceAlert(VirtualFunctionTool):
+class QunarSetPriceAlert(VirtualFunctionApp):
     name = "QunarSetPriceAlert"
     summary = "设置价格提醒，监控航班或酒店价格变化。"
     parameters: List[ArgParameter] = [
@@ -4248,7 +4248,7 @@ class QunarSetPriceAlert(VirtualFunctionTool):
     ]
 
 
-class QunarManageAddresses(VirtualFunctionTool):
+class QunarManageAddresses(VirtualFunctionApp):
     name = "QunarManageAddresses"
     summary = "管理用户的常用地址信息。"
     parameters: List[ArgParameter] = [
@@ -4279,7 +4279,7 @@ class QunarManageAddresses(VirtualFunctionTool):
     ]
 
 
-class QunarManagePaymentMethods(VirtualFunctionTool):
+class QunarManagePaymentMethods(VirtualFunctionApp):
     name = "QunarManagePaymentMethods"
     summary = "管理用户的支付方式信息。"
     parameters: List[ArgParameter] = [
@@ -4316,7 +4316,7 @@ class QunarManagePaymentMethods(VirtualFunctionTool):
     ]
 
 
-class QunarSubmitReview(VirtualFunctionTool):
+class QunarSubmitReview(VirtualFunctionApp):
     name = "QunarSubmitReview"
     summary = "提交对航班或酒店的用户评价。"
     parameters: List[ArgParameter] = [
@@ -4348,7 +4348,7 @@ class QunarSubmitReview(VirtualFunctionTool):
     ]
 
 
-class QunarQuerySearchHistory(VirtualFunctionTool):
+class QunarQuerySearchHistory(VirtualFunctionApp):
     name = "QunarQuerySearchHistory"
     summary = "查询用户的搜索历史记录。"
     parameters: List[ArgParameter] = [
@@ -4377,7 +4377,7 @@ class Qunar(FunctionApp):
     )
     name_for_model = "Qunar"
     description_for_model = "Qunar工具包提供了一系列API接口，帮助用户搜索和预订航班、酒店，管理订单、地址和支付方式，支持价格提醒和评价提交。通过这些工具，用户可以高效地管理旅行相关的服务。"
-    tool_classes = [
+    app_classes = [
         QunarFlightSearch,
         QunarHotelSearch,
         QunarCreateOrder,
@@ -4394,7 +4394,7 @@ class Qunar(FunctionApp):
 #################### FeiZhu ####################
 
 
-class FeiZhuSearchFlights(VirtualFunctionTool):
+class FeiZhuSearchFlights(VirtualFunctionApp):
     name = "FeiZhuSearchFlights"
     summary = "查询航班信息，通过起点、终点和日期获取相关航班的详细信息。"
     parameters: List[ArgParameter] = [
@@ -4433,7 +4433,7 @@ class FeiZhuSearchFlights(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FeiZhuSearchHotels(VirtualFunctionTool):
+class FeiZhuSearchHotels(VirtualFunctionApp):
     name = "FeiZhuSearchHotels"
     summary = "查询酒店信息，根据地点和日期获取可用酒店的信息。"
     parameters: List[ArgParameter] = [
@@ -4472,7 +4472,7 @@ class FeiZhuSearchHotels(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FeiZhuSearchAttractions(VirtualFunctionTool):
+class FeiZhuSearchAttractions(VirtualFunctionApp):
     name = "FeiZhuSearchAttractions"
     summary = "查询特定地点的景点信息，包括开放时间和门票价格。"
     parameters: List[ArgParameter] = [
@@ -4499,7 +4499,7 @@ class FeiZhuSearchAttractions(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FeiZhuBookHotel(VirtualFunctionTool):
+class FeiZhuBookHotel(VirtualFunctionApp):
     name = "FeiZhuBookHotel"
     summary = "预订酒店，通过酒店ID和用户信息完成预订。"
     parameters: List[ArgParameter] = [
@@ -4547,7 +4547,7 @@ class FeiZhuBookHotel(VirtualFunctionTool):
     ]
 
 
-class FeiZhuBookFlight(VirtualFunctionTool):
+class FeiZhuBookFlight(VirtualFunctionApp):
     name = "FeiZhuBookFlight"
     summary = "预订航班，通过航班ID和用户信息完成预订。"
     parameters: List[ArgParameter] = [
@@ -4595,7 +4595,7 @@ class FeiZhuBookFlight(VirtualFunctionTool):
     ]
 
 
-class FeiZhuGetUserBookingHistory(VirtualFunctionTool):
+class FeiZhuGetUserBookingHistory(VirtualFunctionApp):
     name = "FeiZhuGetUserBookingHistory"
     summary = "获取用户的历史预订记录。"
     parameters: List[ArgParameter] = []
@@ -4609,7 +4609,7 @@ class FeiZhuGetUserBookingHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FeiZhuGetUserAccountInfo(VirtualFunctionTool):
+class FeiZhuGetUserAccountInfo(VirtualFunctionApp):
     name = "FeiZhuGetUserAccountInfo"
     summary = "查看用户的账户信息，包括个人信息和偏好设置。"
     parameters: List[ArgParameter] = []
@@ -4636,7 +4636,7 @@ class FeiZhuGetUserAccountInfo(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FeiZhuUpdateBooking(VirtualFunctionTool):
+class FeiZhuUpdateBooking(VirtualFunctionApp):
     name = "FeiZhuUpdateBooking"
     summary = "修改用户的预订信息，如更改日期或人数。"
     parameters: List[ArgParameter] = [
@@ -4689,7 +4689,7 @@ class FeiZhuUpdateBooking(VirtualFunctionTool):
     ]
 
 
-class FeiZhuCancelBooking(VirtualFunctionTool):
+class FeiZhuCancelBooking(VirtualFunctionApp):
     name = "FeiZhuCancelBooking"
     summary = "取消用户的航班或酒店预订。"
     parameters: List[ArgParameter] = [
@@ -4715,7 +4715,7 @@ class FeiZhuCancelBooking(VirtualFunctionTool):
     ]
 
 
-class FeiZhuGetDestinationRecommendations(VirtualFunctionTool):
+class FeiZhuGetDestinationRecommendations(VirtualFunctionApp):
     name = "FeiZhuGetDestinationRecommendations"
     summary = "获取旅行目的地推荐，根据用户偏好提供建议。"
     parameters: List[ArgParameter] = [
@@ -4736,7 +4736,7 @@ class FeiZhuGetDestinationRecommendations(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FeiZhuGetUserStoredData(VirtualFunctionTool):
+class FeiZhuGetUserStoredData(VirtualFunctionApp):
     name = "FeiZhuGetUserStoredData"
     summary = "获取用户存储的地址和支付方式信息。"
     parameters: List[ArgParameter] = []
@@ -4770,7 +4770,7 @@ class FeiZhu(FunctionApp):
     )
     name_for_model = "FeiZhu"
     description_for_model = "FeiZhu工具包提供了一个全面的API集，用于查询和预订航班、酒店和景点信息，帮助开发者创建旅游相关应用。该工具包还包括获取用户历史预订和账户信息的功能，增强了用户体验和服务的个性化。"
-    tool_classes = [
+    app_classes = [
         FeiZhuSearchFlights,
         FeiZhuSearchHotels,
         FeiZhuSearchAttractions,
@@ -4788,7 +4788,7 @@ class FeiZhu(FunctionApp):
 #################### LvMama ####################
 
 
-class LvMamaGetTicketInfo(VirtualFunctionTool):
+class LvMamaGetTicketInfo(VirtualFunctionApp):
     name = "LvMamaGetTicketInfo"
     summary = "获取特定景点的门票信息。"
     parameters: List[ArgParameter] = [
@@ -4821,7 +4821,7 @@ class LvMamaGetTicketInfo(VirtualFunctionTool):
     ]
 
 
-class LvMamaGetTourPackages(VirtualFunctionTool):
+class LvMamaGetTourPackages(VirtualFunctionApp):
     name = "LvMamaGetTourPackages"
     summary = "获取特定目的地的旅游套餐信息。"
     parameters: List[ArgParameter] = [
@@ -4851,7 +4851,7 @@ class LvMamaGetTourPackages(VirtualFunctionTool):
     ]
 
 
-class LvMamaGetHotelInfo(VirtualFunctionTool):
+class LvMamaGetHotelInfo(VirtualFunctionApp):
     name = "LvMamaGetHotelInfo"
     summary = "获取特定地点的酒店信息。"
     parameters: List[ArgParameter] = [
@@ -4878,7 +4878,7 @@ class LvMamaGetHotelInfo(VirtualFunctionTool):
     ]
 
 
-class LvMamaSubmitUserReview(VirtualFunctionTool):
+class LvMamaSubmitUserReview(VirtualFunctionApp):
     name = "LvMamaSubmitUserReview"
     summary = "提交用户对旅游产品的评价。"
     parameters: List[ArgParameter] = [
@@ -4913,7 +4913,7 @@ class LvMamaSubmitUserReview(VirtualFunctionTool):
     ]
 
 
-class LvMamaRetrieveUserOrders(VirtualFunctionTool):
+class LvMamaRetrieveUserOrders(VirtualFunctionApp):
     name = "LvMamaRetrieveUserOrders"
     summary = "检索用户的历史订单。"
     parameters: List[ArgParameter] = [
@@ -4940,7 +4940,7 @@ class LvMamaRetrieveUserOrders(VirtualFunctionTool):
     ]
 
 
-class LvMamaSearchProducts(VirtualFunctionTool):
+class LvMamaSearchProducts(VirtualFunctionApp):
     name = "LvMamaSearchProducts"
     summary = "根据关键词搜索旅游产品。"
     parameters: List[ArgParameter] = [
@@ -4972,7 +4972,7 @@ class LvMamaSearchProducts(VirtualFunctionTool):
     ]
 
 
-class LvMamaGetPopularAttractions(VirtualFunctionTool):
+class LvMamaGetPopularAttractions(VirtualFunctionApp):
     name = "LvMamaGetPopularAttractions"
     summary = "获取特定地点的热门旅游景点。"
     parameters: List[ArgParameter] = [
@@ -4999,7 +4999,7 @@ class LvMamaGetPopularAttractions(VirtualFunctionTool):
     ]
 
 
-class LvMamaRetrieveUserFavorites(VirtualFunctionTool):
+class LvMamaRetrieveUserFavorites(VirtualFunctionApp):
     name = "LvMamaRetrieveUserFavorites"
     summary = "检索用户的收藏夹。"
     parameters: List[ArgParameter] = [
@@ -5025,7 +5025,7 @@ class LvMamaRetrieveUserFavorites(VirtualFunctionTool):
     ]
 
 
-class LvMamaGetUserPaymentMethods(VirtualFunctionTool):
+class LvMamaGetUserPaymentMethods(VirtualFunctionApp):
     name = "LvMamaGetUserPaymentMethods"
     summary = "获取用户的支付方式。"
     parameters: List[ArgParameter] = []
@@ -5041,7 +5041,7 @@ class LvMamaGetUserPaymentMethods(VirtualFunctionTool):
     ]
 
 
-class LvMamaUpdateUserProfile(VirtualFunctionTool):
+class LvMamaUpdateUserProfile(VirtualFunctionApp):
     name = "LvMamaUpdateUserProfile"
     summary = "更新用户的个人信息。"
     parameters: List[ArgParameter] = [
@@ -5079,7 +5079,7 @@ class LvMamaUpdateUserProfile(VirtualFunctionTool):
     ]
 
 
-class LvMamaSearchProductById(VirtualFunctionTool):
+class LvMamaSearchProductById(VirtualFunctionApp):
     name = "LvMamaSearchProductById"
     summary = "根据产品ID检索产品信息。"
     parameters: List[ArgParameter] = [
@@ -5102,7 +5102,7 @@ class LvMamaSearchProductById(VirtualFunctionTool):
     ]
 
 
-class LvMamaGetOrderById(VirtualFunctionTool):
+class LvMamaGetOrderById(VirtualFunctionApp):
     name = "LvMamaGetOrderById"
     summary = "根据订单ID检索订单信息。"
     parameters: List[ArgParameter] = [
@@ -5133,7 +5133,7 @@ class LvMama(FunctionApp):
     )
     name_for_model = "LvMama"
     description_for_model = "LvMama工具包提供便捷的旅游产品查询和预订功能，用户可以获取门票、酒店、旅游套餐信息，并提交评价和检索历史订单，同时确保用户信息的安全性和隐私保护。"
-    tool_classes = [
+    app_classes = [
         LvMamaGetTicketInfo,
         LvMamaGetTourPackages,
         LvMamaGetHotelInfo,
@@ -5152,7 +5152,7 @@ class LvMama(FunctionApp):
 #################### TravelManager ####################
 
 
-class TravelManagerCreateItinerary(VirtualFunctionTool):
+class TravelManagerCreateItinerary(VirtualFunctionApp):
     name = "TravelManagerCreateItinerary"
     summary = "创建新的旅行行程，输入目的地、日期和相关信息。"
     parameters: List[ArgParameter] = [
@@ -5197,7 +5197,7 @@ class TravelManagerCreateItinerary(VirtualFunctionTool):
     ]
 
 
-class TravelManagerUpdateItinerary(VirtualFunctionTool):
+class TravelManagerUpdateItinerary(VirtualFunctionApp):
     name = "TravelManagerUpdateItinerary"
     summary = "更新现有行程的详细信息。"
     parameters: List[ArgParameter] = [
@@ -5244,7 +5244,7 @@ class TravelManagerUpdateItinerary(VirtualFunctionTool):
     ]
 
 
-class TravelManagerViewItinerary(VirtualFunctionTool):
+class TravelManagerViewItinerary(VirtualFunctionApp):
     name = "TravelManagerViewItinerary"
     summary = "查看用户的所有行程安排。"
     parameters: List[ArgParameter] = [
@@ -5267,7 +5267,7 @@ class TravelManagerViewItinerary(VirtualFunctionTool):
     ]
 
 
-class TravelManagerDeleteItinerary(VirtualFunctionTool):
+class TravelManagerDeleteItinerary(VirtualFunctionApp):
     name = "TravelManagerDeleteItinerary"
     summary = "删除不再需要的行程。"
     parameters: List[ArgParameter] = [
@@ -5286,7 +5286,7 @@ class TravelManagerDeleteItinerary(VirtualFunctionTool):
     ]
 
 
-class TravelManagerSearchItinerary(VirtualFunctionTool):
+class TravelManagerSearchItinerary(VirtualFunctionApp):
     name = "TravelManagerSearchItinerary"
     summary = "根据关键字搜索行程。"
     parameters: List[ArgParameter] = [
@@ -5315,7 +5315,7 @@ class TravelManagerSearchItinerary(VirtualFunctionTool):
     ]
 
 
-class TravelManagerGetSavedAddresses(VirtualFunctionTool):
+class TravelManagerGetSavedAddresses(VirtualFunctionApp):
     name = "TravelManagerGetSavedAddresses"
     summary = "获取用户保存的地址。"
     parameters: List[ArgParameter] = [
@@ -5334,7 +5334,7 @@ class TravelManagerGetSavedAddresses(VirtualFunctionTool):
     ]
 
 
-class TravelManagerGetPaymentMethods(VirtualFunctionTool):
+class TravelManagerGetPaymentMethods(VirtualFunctionApp):
     name = "TravelManagerGetPaymentMethods"
     summary = "获取用户的支付方式。"
     parameters: List[ArgParameter] = [
@@ -5357,7 +5357,7 @@ class TravelManagerGetPaymentMethods(VirtualFunctionTool):
     ]
 
 
-class TravelManagerShareItinerary(VirtualFunctionTool):
+class TravelManagerShareItinerary(VirtualFunctionApp):
     name = "TravelManagerShareItinerary"
     summary = "与其他人共享行程安排。"
     parameters: List[ArgParameter] = [
@@ -5383,7 +5383,7 @@ class TravelManagerShareItinerary(VirtualFunctionTool):
     ]
 
 
-class TravelManagerImportItinerary(VirtualFunctionTool):
+class TravelManagerImportItinerary(VirtualFunctionApp):
     name = "TravelManagerImportItinerary"
     summary = "从其他旅游服务平台导入行程。"
     parameters: List[ArgParameter] = [
@@ -5411,7 +5411,7 @@ class TravelManagerImportItinerary(VirtualFunctionTool):
     ]
 
 
-class TravelManagerExportItinerary(VirtualFunctionTool):
+class TravelManagerExportItinerary(VirtualFunctionApp):
     name = "TravelManagerExportItinerary"
     summary = "将行程导出为PDF或其他格式。"
     parameters: List[ArgParameter] = [
@@ -5442,7 +5442,7 @@ class TravelManager(FunctionApp):
     description_for_human = "帮助用户规划和管理旅行行程的工具包。"
     name_for_model = "TravelManager"
     description_for_model = "行程管家工具包帮助用户规划和管理旅行行程，提供创建、更新、查看、删除和搜索行程的功能，并允许用户访问保存的地址和支付方式，支持行程共享、导入和导出。"
-    tool_classes = [
+    app_classes = [
         TravelManagerCreateItinerary,
         TravelManagerUpdateItinerary,
         TravelManagerViewItinerary,
@@ -5459,7 +5459,7 @@ class TravelManager(FunctionApp):
 #################### YouXiaKe ####################
 
 
-class YouXiaKeGetTravelGuide(VirtualFunctionTool):
+class YouXiaKeGetTravelGuide(VirtualFunctionApp):
     name = "YouXiaKeGetTravelGuide"
     summary = "获取特定目的地的详细旅游攻略和建议。"
     parameters: List[ArgParameter] = [
@@ -5480,7 +5480,7 @@ class YouXiaKeGetTravelGuide(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class YouXiaKePlanItinerary(VirtualFunctionTool):
+class YouXiaKePlanItinerary(VirtualFunctionApp):
     name = "YouXiaKePlanItinerary"
     summary = "创建和管理旅行行程。"
     parameters: List[ArgParameter] = [
@@ -5503,7 +5503,7 @@ class YouXiaKePlanItinerary(VirtualFunctionTool):
     ]
 
 
-class YouXiaKeRecommendAttractions(VirtualFunctionTool):
+class YouXiaKeRecommendAttractions(VirtualFunctionApp):
     name = "YouXiaKeRecommendAttractions"
     summary = "根据用户偏好推荐相关景点。"
     parameters: List[ArgParameter] = [
@@ -5520,7 +5520,7 @@ class YouXiaKeRecommendAttractions(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class YouXiaKeCalculateBudget(VirtualFunctionTool):
+class YouXiaKeCalculateBudget(VirtualFunctionApp):
     name = "YouXiaKeCalculateBudget"
     summary = "计算旅行期间的预算和费用。"
     parameters: List[ArgParameter] = [
@@ -5542,7 +5542,7 @@ class YouXiaKeCalculateBudget(VirtualFunctionTool):
     ]
 
 
-class YouXiaKeSubmitReview(VirtualFunctionTool):
+class YouXiaKeSubmitReview(VirtualFunctionApp):
     name = "YouXiaKeSubmitReview"
     summary = "提交用户对景点或服务的评论和评分。"
     parameters: List[ArgParameter] = [
@@ -5565,7 +5565,7 @@ class YouXiaKeSubmitReview(VirtualFunctionTool):
     ]
 
 
-class YouXiaKeGetWeatherUpdate(VirtualFunctionTool):
+class YouXiaKeGetWeatherUpdate(VirtualFunctionApp):
     name = "YouXiaKeGetWeatherUpdate"
     summary = "获取目的地的实时天气信息。"
     parameters: List[ArgParameter] = [
@@ -5588,7 +5588,7 @@ class YouXiaKeGetWeatherUpdate(VirtualFunctionTool):
     ]
 
 
-class YouXiaKeGetTransportInfo(VirtualFunctionTool):
+class YouXiaKeGetTransportInfo(VirtualFunctionApp):
     name = "YouXiaKeGetTransportInfo"
     summary = "提供目的地的交通方式和建议。"
     parameters: List[ArgParameter] = [
@@ -5611,7 +5611,7 @@ class YouXiaKeGetTransportInfo(VirtualFunctionTool):
     ]
 
 
-class YouXiaKeSetTravelReminder(VirtualFunctionTool):
+class YouXiaKeSetTravelReminder(VirtualFunctionApp):
     name = "YouXiaKeSetTravelReminder"
     summary = "发送旅行相关的提醒和通知。"
     parameters: List[ArgParameter] = [
@@ -5634,7 +5634,7 @@ class YouXiaKeSetTravelReminder(VirtualFunctionTool):
     ]
 
 
-class YouXiaKePurchaseTravelInsurance(VirtualFunctionTool):
+class YouXiaKePurchaseTravelInsurance(VirtualFunctionApp):
     name = "YouXiaKePurchaseTravelInsurance"
     summary = "提供旅游保险的选项和购买链接。"
     parameters: List[ArgParameter] = [
@@ -5657,7 +5657,7 @@ class YouXiaKePurchaseTravelInsurance(VirtualFunctionTool):
     ]
 
 
-class YouXiaKeManageUserProfile(VirtualFunctionTool):
+class YouXiaKeManageUserProfile(VirtualFunctionApp):
     name = "YouXiaKeManageUserProfile"
     summary = "允许用户管理自己的个人信息和偏好设置。"
     parameters: List[ArgParameter] = [
@@ -5689,7 +5689,7 @@ class YouXiaKe(FunctionApp):
     description_for_human = "提供自助游和个性化定制旅游服务的工具包。"
     name_for_model = "YouXiaKe"
     description_for_model = "YouXiaKe工具包提供自助游和个性化定制旅游服务的API，允许用户获取旅游攻略、行程规划、景点推荐、预算计算及用户评论等功能，旨在增强用户的旅行体验。"
-    tool_classes = [
+    app_classes = [
         YouXiaKeGetTravelGuide,
         YouXiaKePlanItinerary,
         YouXiaKeRecommendAttractions,
@@ -5706,7 +5706,7 @@ class YouXiaKe(FunctionApp):
 #################### TravelFrog ####################
 
 
-class TravelFrogCreateTravelPlan(VirtualFunctionTool):
+class TravelFrogCreateTravelPlan(VirtualFunctionApp):
     name = "TravelFrogCreateTravelPlan"
     summary = "创建新的旅行计划并记录相关信息。"
     parameters: List[ArgParameter] = [
@@ -5753,7 +5753,7 @@ class TravelFrogCreateTravelPlan(VirtualFunctionTool):
     ]
 
 
-class TravelFrogViewTravelPlan(VirtualFunctionTool):
+class TravelFrogViewTravelPlan(VirtualFunctionApp):
     name = "TravelFrogViewTravelPlan"
     summary = "查看指定旅行计划的详细信息。"
     parameters: List[ArgParameter] = [
@@ -5776,7 +5776,7 @@ class TravelFrogViewTravelPlan(VirtualFunctionTool):
     ]
 
 
-class TravelFrogUpdateTravelPlan(VirtualFunctionTool):
+class TravelFrogUpdateTravelPlan(VirtualFunctionApp):
     name = "TravelFrogUpdateTravelPlan"
     summary = "更新指定的旅行计划。"
     parameters: List[ArgParameter] = [
@@ -5826,7 +5826,7 @@ class TravelFrogUpdateTravelPlan(VirtualFunctionTool):
     ]
 
 
-class TravelFrogDeleteTravelPlan(VirtualFunctionTool):
+class TravelFrogDeleteTravelPlan(VirtualFunctionApp):
     name = "TravelFrogDeleteTravelPlan"
     summary = "删除指定的旅行计划。"
     parameters: List[ArgParameter] = [
@@ -5845,7 +5845,7 @@ class TravelFrogDeleteTravelPlan(VirtualFunctionTool):
     ]
 
 
-class TravelFrogShareTravelExperience(VirtualFunctionTool):
+class TravelFrogShareTravelExperience(VirtualFunctionApp):
     name = "TravelFrogShareTravelExperience"
     summary = "分享旅行经验给其他用户。"
     parameters: List[ArgParameter] = [
@@ -5864,7 +5864,7 @@ class TravelFrogShareTravelExperience(VirtualFunctionTool):
     ]
 
 
-class TravelFrogSearchTravelPlans(VirtualFunctionTool):
+class TravelFrogSearchTravelPlans(VirtualFunctionApp):
     name = "TravelFrogSearchTravelPlans"
     summary = "通过关键字搜索旅行计划。"
     parameters: List[ArgParameter] = [
@@ -5893,7 +5893,7 @@ class TravelFrogSearchTravelPlans(VirtualFunctionTool):
     ]
 
 
-class TravelFrogFavoriteTravelPlan(VirtualFunctionTool):
+class TravelFrogFavoriteTravelPlan(VirtualFunctionApp):
     name = "TravelFrogFavoriteTravelPlan"
     summary = "收藏指定的旅行计划。"
     parameters: List[ArgParameter] = [
@@ -5912,7 +5912,7 @@ class TravelFrogFavoriteTravelPlan(VirtualFunctionTool):
     ]
 
 
-class TravelFrogViewSharedExperiences(VirtualFunctionTool):
+class TravelFrogViewSharedExperiences(VirtualFunctionApp):
     name = "TravelFrogViewSharedExperiences"
     summary = "查看其他用户分享的旅行经验。"
     parameters: List[ArgParameter] = [
@@ -5933,7 +5933,7 @@ class TravelFrogViewSharedExperiences(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TravelFrogGetTravelInspiration(VirtualFunctionTool):
+class TravelFrogGetTravelInspiration(VirtualFunctionApp):
     name = "TravelFrogGetTravelInspiration"
     summary = "获取随机的旅行计划推荐。"
     parameters: List[ArgParameter] = []
@@ -5965,7 +5965,7 @@ class TravelFrogGetTravelInspiration(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TravelFrogAccessUserProfile(VirtualFunctionTool):
+class TravelFrogAccessUserProfile(VirtualFunctionApp):
     name = "TravelFrogAccessUserProfile"
     summary = "访问用户的个人资料信息。"
     parameters: List[ArgParameter] = []
@@ -5989,7 +5989,7 @@ class TravelFrog(FunctionApp):
     description_for_human = "一个帮助用户记录和分享旅行计划与经验的工具包。"
     name_for_model = "TravelFrog"
     description_for_model = "TravelFrog工具包允许用户创建、查看、更新和删除旅行计划，分享旅行经验，并通过搜索和推荐获取灵感。该工具包旨在帮助旅行爱好者记录和分享他们的旅行经历。"
-    tool_classes = [
+    app_classes = [
         TravelFrogCreateTravelPlan,
         TravelFrogViewTravelPlan,
         TravelFrogUpdateTravelPlan,
@@ -6006,7 +6006,7 @@ class TravelFrog(FunctionApp):
 #################### TravelService ####################
 
 
-class TravelServiceQueryFlightInfo(VirtualFunctionTool):
+class TravelServiceQueryFlightInfo(VirtualFunctionApp):
     name = "TravelServiceQueryFlightInfo"
     summary = "查询指定航班的实时信息。"
     parameters: List[ArgParameter] = [
@@ -6033,7 +6033,7 @@ class TravelServiceQueryFlightInfo(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TravelServiceQueryHotelInfo(VirtualFunctionTool):
+class TravelServiceQueryHotelInfo(VirtualFunctionApp):
     name = "TravelServiceQueryHotelInfo"
     summary = "查询指定城市的酒店信息。"
     parameters: List[ArgParameter] = [
@@ -6066,7 +6066,7 @@ class TravelServiceQueryHotelInfo(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TravelServiceQueryVacationPackages(VirtualFunctionTool):
+class TravelServiceQueryVacationPackages(VirtualFunctionApp):
     name = "TravelServiceQueryVacationPackages"
     summary = "查询旅游度假产品信息。"
     parameters: List[ArgParameter] = [
@@ -6093,7 +6093,7 @@ class TravelServiceQueryVacationPackages(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TravelServiceQueryAttractionTickets(VirtualFunctionTool):
+class TravelServiceQueryAttractionTickets(VirtualFunctionApp):
     name = "TravelServiceQueryAttractionTickets"
     summary = "查询景点门票信息。"
     parameters: List[ArgParameter] = [
@@ -6114,7 +6114,7 @@ class TravelServiceQueryAttractionTickets(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TravelServiceBookFlight(VirtualFunctionTool):
+class TravelServiceBookFlight(VirtualFunctionApp):
     name = "TravelServiceBookFlight"
     summary = "预订机票。"
     parameters: List[ArgParameter] = [
@@ -6142,7 +6142,7 @@ class TravelServiceBookFlight(VirtualFunctionTool):
     ]
 
 
-class TravelServiceBookHotel(VirtualFunctionTool):
+class TravelServiceBookHotel(VirtualFunctionApp):
     name = "TravelServiceBookHotel"
     summary = "预订酒店。"
     parameters: List[ArgParameter] = [
@@ -6170,7 +6170,7 @@ class TravelServiceBookHotel(VirtualFunctionTool):
     ]
 
 
-class TravelServiceGetBookingHistory(VirtualFunctionTool):
+class TravelServiceGetBookingHistory(VirtualFunctionApp):
     name = "TravelServiceGetBookingHistory"
     summary = "获取用户的历史预订信息。"
     parameters: List[ArgParameter] = []
@@ -6184,7 +6184,7 @@ class TravelServiceGetBookingHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TravelServiceModifyBooking(VirtualFunctionTool):
+class TravelServiceModifyBooking(VirtualFunctionApp):
     name = "TravelServiceModifyBooking"
     summary = "修改用户的预订信息。"
     parameters: List[ArgParameter] = [
@@ -6210,7 +6210,7 @@ class TravelServiceModifyBooking(VirtualFunctionTool):
     ]
 
 
-class TravelServiceCancelBooking(VirtualFunctionTool):
+class TravelServiceCancelBooking(VirtualFunctionApp):
     name = "TravelServiceCancelBooking"
     summary = "取消用户的预订。"
     parameters: List[ArgParameter] = [
@@ -6229,7 +6229,7 @@ class TravelServiceCancelBooking(VirtualFunctionTool):
     ]
 
 
-class TravelServiceGetPaymentMethods(VirtualFunctionTool):
+class TravelServiceGetPaymentMethods(VirtualFunctionApp):
     name = "TravelServiceGetPaymentMethods"
     summary = "查询用户的支付方式。"
     parameters: List[ArgParameter] = []
@@ -6243,7 +6243,7 @@ class TravelServiceGetPaymentMethods(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TravelServiceGetRealTimePrices(VirtualFunctionTool):
+class TravelServiceGetRealTimePrices(VirtualFunctionApp):
     name = "TravelServiceGetRealTimePrices"
     summary = "获取实时旅游产品价格信息。"
     parameters: List[ArgParameter] = [
@@ -6266,7 +6266,7 @@ class TravelServiceGetRealTimePrices(VirtualFunctionTool):
     ]
 
 
-class TravelServiceSearchBooking(VirtualFunctionTool):
+class TravelServiceSearchBooking(VirtualFunctionApp):
     name = "TravelServiceSearchBooking"
     summary = "根据条件搜索用户的预订信息。"
     parameters: List[ArgParameter] = [
@@ -6295,7 +6295,7 @@ class TravelService(FunctionApp):
     description_for_human = "一站式旅游服务工具包，帮助用户查询和预订旅游产品。"
     name_for_model = "TravelService"
     description_for_model = "TravelService工具包提供一站式旅游服务，包括查询机票、酒店、旅游度假产品和景点门票信息，支持用户预订、修改和取消预订，获取历史记录及支付方式，旨在帮助用户快速便捷地处理旅游相关事务。"
-    tool_classes = [
+    app_classes = [
         TravelServiceQueryFlightInfo,
         TravelServiceQueryHotelInfo,
         TravelServiceQueryVacationPackages,
@@ -6314,7 +6314,7 @@ class TravelService(FunctionApp):
 #################### BaiduMap ####################
 
 
-class BaiduMapRealTimeTraffic(VirtualFunctionTool):
+class BaiduMapRealTimeTraffic(VirtualFunctionApp):
     name = "BaiduMapRealTimeTraffic"
     summary = "提供特定路段的实时交通状况。"
     parameters: List[ArgParameter] = [
@@ -6337,7 +6337,7 @@ class BaiduMapRealTimeTraffic(VirtualFunctionTool):
     ]
 
 
-class BaiduMapRoutePlanning(VirtualFunctionTool):
+class BaiduMapRoutePlanning(VirtualFunctionApp):
     name = "BaiduMapRoutePlanning"
     summary = "根据用户的起点和终点生成最佳出行路线。"
     parameters: List[ArgParameter] = [
@@ -6368,7 +6368,7 @@ class BaiduMapRoutePlanning(VirtualFunctionTool):
     ]
 
 
-class BaiduMapNearbySearch(VirtualFunctionTool):
+class BaiduMapNearbySearch(VirtualFunctionApp):
     name = "BaiduMapNearbySearch"
     summary = "根据用户当前位置搜索附近的服务。"
     parameters: List[ArgParameter] = [
@@ -6399,7 +6399,7 @@ class BaiduMapNearbySearch(VirtualFunctionTool):
     ]
 
 
-class BaiduMapStreetView(VirtualFunctionTool):
+class BaiduMapStreetView(VirtualFunctionApp):
     name = "BaiduMapStreetView"
     summary = "返回指定位置的街景图像。"
     parameters: List[ArgParameter] = [
@@ -6422,7 +6422,7 @@ class BaiduMapStreetView(VirtualFunctionTool):
     ]
 
 
-class BaiduMapShareLocation(VirtualFunctionTool):
+class BaiduMapShareLocation(VirtualFunctionApp):
     name = "BaiduMapShareLocation"
     summary = "分享用户当前位置。"
     parameters: List[ArgParameter] = [
@@ -6450,7 +6450,7 @@ class BaiduMapShareLocation(VirtualFunctionTool):
     ]
 
 
-class BaiduMapSaveLocation(VirtualFunctionTool):
+class BaiduMapSaveLocation(VirtualFunctionApp):
     name = "BaiduMapSaveLocation"
     summary = "收藏用户常去的地点。"
     parameters: List[ArgParameter] = [
@@ -6469,7 +6469,7 @@ class BaiduMapSaveLocation(VirtualFunctionTool):
     ]
 
 
-class BaiduMapVoiceNavigation(VirtualFunctionTool):
+class BaiduMapVoiceNavigation(VirtualFunctionApp):
     name = "BaiduMapVoiceNavigation"
     summary = "提供实时语音导航。"
     parameters: List[ArgParameter] = [
@@ -6488,7 +6488,7 @@ class BaiduMapVoiceNavigation(VirtualFunctionTool):
     ]
 
 
-class BaiduMapOfflineMap(VirtualFunctionTool):
+class BaiduMapOfflineMap(VirtualFunctionApp):
     name = "BaiduMapOfflineMap"
     summary = "下载地图数据以供离线使用。"
     parameters: List[ArgParameter] = [
@@ -6507,7 +6507,7 @@ class BaiduMapOfflineMap(VirtualFunctionTool):
     ]
 
 
-class BaiduMapTrafficAlert(VirtualFunctionTool):
+class BaiduMapTrafficAlert(VirtualFunctionApp):
     name = "BaiduMapTrafficAlert"
     summary = "向用户发送交通状况提醒。"
     parameters: List[ArgParameter] = [
@@ -6534,7 +6534,7 @@ class BaiduMap(FunctionApp):
     )
     name_for_model = "BaiduMap"
     description_for_model = "BaiduMap工具包提供实时交通信息、路线规划、周边搜索、街景查看和多种出行方式，旨在帮助用户高效、安全地获取导航信息和周边服务。"
-    tool_classes = [
+    app_classes = [
         BaiduMapRealTimeTraffic,
         BaiduMapRoutePlanning,
         BaiduMapNearbySearch,
@@ -6550,7 +6550,7 @@ class BaiduMap(FunctionApp):
 #################### GaoDeMap ####################
 
 
-class GaoDeMapRoutePlanning(VirtualFunctionTool):
+class GaoDeMapRoutePlanning(VirtualFunctionApp):
     name = "GaoDeMapRoutePlanning"
     summary = "根据用户输入的起点和终点，提供最佳的行车、步行或公共交通路线。"
     parameters: List[ArgParameter] = [
@@ -6588,7 +6588,7 @@ class GaoDeMapRoutePlanning(VirtualFunctionTool):
     ]
 
 
-class GaoDeMapRealTimeTrafficMonitoring(VirtualFunctionTool):
+class GaoDeMapRealTimeTrafficMonitoring(VirtualFunctionApp):
     name = "GaoDeMapRealTimeTrafficMonitoring"
     summary = "提供当前交通状况的信息，包括拥堵情况和预计到达时间。"
     parameters: List[ArgParameter] = [
@@ -6620,7 +6620,7 @@ class GaoDeMapRealTimeTrafficMonitoring(VirtualFunctionTool):
     ]
 
 
-class GaoDeMapBusQuery(VirtualFunctionTool):
+class GaoDeMapBusQuery(VirtualFunctionApp):
     name = "GaoDeMapBusQuery"
     summary = "查询特定路线的公交车到达时间和换乘信息。"
     parameters: List[ArgParameter] = [
@@ -6643,7 +6643,7 @@ class GaoDeMapBusQuery(VirtualFunctionTool):
     ]
 
 
-class GaoDeMapRideHailingService(VirtualFunctionTool):
+class GaoDeMapRideHailingService(VirtualFunctionApp):
     name = "GaoDeMapRideHailingService"
     summary = "提供打车的预约和叫车服务。"
     parameters: List[ArgParameter] = [
@@ -6675,7 +6675,7 @@ class GaoDeMapRideHailingService(VirtualFunctionTool):
     ]
 
 
-class GaoDeMapBikeSharingQuery(VirtualFunctionTool):
+class GaoDeMapBikeSharingQuery(VirtualFunctionApp):
     name = "GaoDeMapBikeSharingQuery"
     summary = "查询附近的共享单车位置和可用数量。"
     parameters: List[ArgParameter] = [
@@ -6701,7 +6701,7 @@ class GaoDeMapBikeSharingQuery(VirtualFunctionTool):
     ]
 
 
-class GaoDeMapLocationRecommendation(VirtualFunctionTool):
+class GaoDeMapLocationRecommendation(VirtualFunctionApp):
     name = "GaoDeMapLocationRecommendation"
     summary = "根据用户位置推荐附近的餐饮、购物和娱乐设施。"
     parameters: List[ArgParameter] = [
@@ -6727,7 +6727,7 @@ class GaoDeMapLocationRecommendation(VirtualFunctionTool):
     ]
 
 
-class GaoDeMapUserHistory(VirtualFunctionTool):
+class GaoDeMapUserHistory(VirtualFunctionApp):
     name = "GaoDeMapUserHistory"
     summary = "访问用户的历史出行记录，便于快速选择常用路线。"
     parameters: List[ArgParameter] = []
@@ -6741,7 +6741,7 @@ class GaoDeMapUserHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GaoDeMapOfflineMap(VirtualFunctionTool):
+class GaoDeMapOfflineMap(VirtualFunctionApp):
     name = "GaoDeMapOfflineMap"
     summary = "下载地图数据以便在无网络情况下使用。"
     parameters: List[ArgParameter] = [
@@ -6764,7 +6764,7 @@ class GaoDeMapOfflineMap(VirtualFunctionTool):
     ]
 
 
-class GaoDeMapVoiceNavigation(VirtualFunctionTool):
+class GaoDeMapVoiceNavigation(VirtualFunctionApp):
     name = "GaoDeMapVoiceNavigation"
     summary = "提供语音指引，提升驾驶体验。"
     parameters: List[ArgParameter] = [
@@ -6790,7 +6790,7 @@ class GaoDeMapVoiceNavigation(VirtualFunctionTool):
     ]
 
 
-class GaoDeMapAccidentReport(VirtualFunctionTool):
+class GaoDeMapAccidentReport(VirtualFunctionApp):
     name = "GaoDeMapAccidentReport"
     summary = "用户可以报告交通事故以帮助其他用户避开。"
     parameters: List[ArgParameter] = [
@@ -6822,7 +6822,7 @@ class GaoDeMap(FunctionApp):
     description_for_human = "提供精准的导航服务和实时路况监测的工具包。"
     name_for_model = "GaoDeMap"
     description_for_model = "高德地图工具包提供精准的导航服务和实时路况监测，支持多种出行方式，包括打车和共享单车，旨在帮助用户高效、安全地规划和执行出行。"
-    tool_classes = [
+    app_classes = [
         GaoDeMapRoutePlanning,
         GaoDeMapRealTimeTrafficMonitoring,
         GaoDeMapBusQuery,
@@ -6839,7 +6839,7 @@ class GaoDeMap(FunctionApp):
 #################### CaoCaoTravel ####################
 
 
-class CaoCaoTravelRealTimeRideRequest(VirtualFunctionTool):
+class CaoCaoTravelRealTimeRideRequest(VirtualFunctionApp):
     name = "CaoCaoTravelRealTimeRideRequest"
     summary = "允许用户实时请求打车服务。"
     parameters: List[ArgParameter] = [
@@ -6866,7 +6866,7 @@ class CaoCaoTravelRealTimeRideRequest(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CaoCaoTravelAppointmentRideRequest(VirtualFunctionTool):
+class CaoCaoTravelAppointmentRideRequest(VirtualFunctionApp):
     name = "CaoCaoTravelAppointmentRideRequest"
     summary = "允许用户预约未来的打车服务。"
     parameters: List[ArgParameter] = [
@@ -6899,7 +6899,7 @@ class CaoCaoTravelAppointmentRideRequest(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CaoCaoTravelViewDriverInfo(VirtualFunctionTool):
+class CaoCaoTravelViewDriverInfo(VirtualFunctionApp):
     name = "CaoCaoTravelViewDriverInfo"
     summary = "允许用户查看当前司机的信息。"
     parameters: List[ArgParameter] = [
@@ -6939,7 +6939,7 @@ class CaoCaoTravelViewDriverInfo(VirtualFunctionTool):
     ]
 
 
-class CaoCaoTravelPayment(VirtualFunctionTool):
+class CaoCaoTravelPayment(VirtualFunctionApp):
     name = "CaoCaoTravelPayment"
     summary = "允许用户选择支付方式并完成支付。"
     parameters: List[ArgParameter] = [
@@ -6968,7 +6968,7 @@ class CaoCaoTravelPayment(VirtualFunctionTool):
     ]
 
 
-class CaoCaoTravelRideHistory(VirtualFunctionTool):
+class CaoCaoTravelRideHistory(VirtualFunctionApp):
     name = "CaoCaoTravelRideHistory"
     summary = "允许用户查看自己的历史出行记录。"
     parameters: List[ArgParameter] = [
@@ -6989,7 +6989,7 @@ class CaoCaoTravelRideHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CaoCaoTravelRateDriver(VirtualFunctionTool):
+class CaoCaoTravelRateDriver(VirtualFunctionApp):
     name = "CaoCaoTravelRateDriver"
     summary = "允许用户对司机进行评价。"
     parameters: List[ArgParameter] = [
@@ -7024,7 +7024,7 @@ class CaoCaoTravelRateDriver(VirtualFunctionTool):
     ]
 
 
-class CaoCaoTravelCouponManagement(VirtualFunctionTool):
+class CaoCaoTravelCouponManagement(VirtualFunctionApp):
     name = "CaoCaoTravelCouponManagement"
     summary = "允许用户查看和使用可用的优惠券。"
     parameters: List[ArgParameter] = [
@@ -7047,7 +7047,7 @@ class CaoCaoTravelCouponManagement(VirtualFunctionTool):
     ]
 
 
-class CaoCaoTravelEmergencyContactManagement(VirtualFunctionTool):
+class CaoCaoTravelEmergencyContactManagement(VirtualFunctionApp):
     name = "CaoCaoTravelEmergencyContactManagement"
     summary = "允许用户设置和管理紧急联系人。"
     parameters: List[ArgParameter] = [
@@ -7076,7 +7076,7 @@ class CaoCaoTravelEmergencyContactManagement(VirtualFunctionTool):
     ]
 
 
-class CaoCaoTravelVehicleTypeSelection(VirtualFunctionTool):
+class CaoCaoTravelVehicleTypeSelection(VirtualFunctionApp):
     name = "CaoCaoTravelVehicleTypeSelection"
     summary = "允许用户选择不同类型的车辆。"
     parameters: List[ArgParameter] = [
@@ -7102,7 +7102,7 @@ class CaoCaoTravelVehicleTypeSelection(VirtualFunctionTool):
     ]
 
 
-class CaoCaoTravelCustomerSupport(VirtualFunctionTool):
+class CaoCaoTravelCustomerSupport(VirtualFunctionApp):
     name = "CaoCaoTravelCustomerSupport"
     summary = "允许用户提交客服请求。"
     parameters: List[ArgParameter] = [
@@ -7123,7 +7123,7 @@ class CaoCaoTravelCustomerSupport(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CaoCaoTravelSearchRide(VirtualFunctionTool):
+class CaoCaoTravelSearchRide(VirtualFunctionApp):
     name = "CaoCaoTravelSearchRide"
     summary = "允许用户通过条件搜索行程记录。"
     parameters: List[ArgParameter] = [
@@ -7152,7 +7152,7 @@ class CaoCaoTravel(FunctionApp):
     description_for_human = "提供环保出行选择的打车服务，支持预约和实时叫车，强调司机和车辆的安全性和舒适性。"
     name_for_model = "CaoCaoTravel"
     description_for_model = "CaoCaoTravel工具包提供环保打车服务，支持实时叫车、预约打车、查看司机信息、支付管理和行程历史等功能，旨在为用户提供安全、舒适和便利的出行体验。"
-    tool_classes = [
+    app_classes = [
         CaoCaoTravelRealTimeRideRequest,
         CaoCaoTravelAppointmentRideRequest,
         CaoCaoTravelViewDriverInfo,
@@ -7170,7 +7170,7 @@ class CaoCaoTravel(FunctionApp):
 #################### TencentMap ####################
 
 
-class TencentMapMapView(VirtualFunctionTool):
+class TencentMapMapView(VirtualFunctionApp):
     name = "TencentMapMapView"
     summary = "提供地图浏览功能，允许用户查看指定区域的地图。"
     parameters: List[ArgParameter] = [
@@ -7196,7 +7196,7 @@ class TencentMapMapView(VirtualFunctionTool):
     ]
 
 
-class TencentMapRoutePlanning(VirtualFunctionTool):
+class TencentMapRoutePlanning(VirtualFunctionApp):
     name = "TencentMapRoutePlanning"
     summary = "允许用户输入起点和终点，规划最佳路线。"
     parameters: List[ArgParameter] = [
@@ -7232,7 +7232,7 @@ class TencentMapRoutePlanning(VirtualFunctionTool):
     ]
 
 
-class TencentMapTrafficInfo(VirtualFunctionTool):
+class TencentMapTrafficInfo(VirtualFunctionApp):
     name = "TencentMapTrafficInfo"
     summary = "提供实时交通状况和拥堵信息。"
     parameters: List[ArgParameter] = [
@@ -7258,7 +7258,7 @@ class TencentMapTrafficInfo(VirtualFunctionTool):
     ]
 
 
-class TencentMapVoiceNavigation(VirtualFunctionTool):
+class TencentMapVoiceNavigation(VirtualFunctionApp):
     name = "TencentMapVoiceNavigation"
     summary = "提供语音指令以指导用户行驶或步行。"
     parameters: List[ArgParameter] = [
@@ -7292,7 +7292,7 @@ class TencentMapVoiceNavigation(VirtualFunctionTool):
     ]
 
 
-class TencentMapTravelOptions(VirtualFunctionTool):
+class TencentMapTravelOptions(VirtualFunctionApp):
     name = "TencentMapTravelOptions"
     summary = "提供多种出行方式选择，包括驾车、步行和公共交通。"
     parameters: List[ArgParameter] = [
@@ -7320,7 +7320,7 @@ class TencentMapTravelOptions(VirtualFunctionTool):
     ]
 
 
-class TencentMapSaveLocation(VirtualFunctionTool):
+class TencentMapSaveLocation(VirtualFunctionApp):
     name = "TencentMapSaveLocation"
     summary = "允许用户保存常用地点以便快速访问。"
     parameters: List[ArgParameter] = [
@@ -7348,7 +7348,7 @@ class TencentMapSaveLocation(VirtualFunctionTool):
     ]
 
 
-class TencentMapShareLocation(VirtualFunctionTool):
+class TencentMapShareLocation(VirtualFunctionApp):
     name = "TencentMapShareLocation"
     summary = "允许用户与他人分享当前位置或目的地。"
     parameters: List[ArgParameter] = [
@@ -7376,7 +7376,7 @@ class TencentMapShareLocation(VirtualFunctionTool):
     ]
 
 
-class TencentMapNearbyFacilities(VirtualFunctionTool):
+class TencentMapNearbyFacilities(VirtualFunctionApp):
     name = "TencentMapNearbyFacilities"
     summary = "提供附近餐馆、加油站等设施的信息。"
     parameters: List[ArgParameter] = [
@@ -7398,7 +7398,7 @@ class TencentMapNearbyFacilities(VirtualFunctionTool):
     ]
 
 
-class TencentMapHistoryRecords(VirtualFunctionTool):
+class TencentMapHistoryRecords(VirtualFunctionApp):
     name = "TencentMapHistoryRecords"
     summary = "记录用户的搜索和导航历史。"
     parameters: List[ArgParameter] = [
@@ -7420,7 +7420,7 @@ class TencentMapHistoryRecords(VirtualFunctionTool):
     ]
 
 
-class TencentMapOfflineMap(VirtualFunctionTool):
+class TencentMapOfflineMap(VirtualFunctionApp):
     name = "TencentMapOfflineMap"
     summary = "提供用户下载地图以便在无网络时使用。"
     parameters: List[ArgParameter] = [
@@ -7442,7 +7442,7 @@ class TencentMapOfflineMap(VirtualFunctionTool):
     ]
 
 
-class TencentMapStoredUserData(VirtualFunctionTool):
+class TencentMapStoredUserData(VirtualFunctionApp):
     name = "TencentMapStoredUserData"
     summary = "访问用户存储的地址和支付信息。"
     parameters: List[ArgParameter] = [
@@ -7486,7 +7486,7 @@ class TencentMap(FunctionApp):
     description_for_human = "提供地图浏览、导航和交通信息查询功能的工具包。"
     name_for_model = "TencentMap"
     description_for_model = "腾讯地图工具包提供地图浏览、导航和交通信息查询功能，支持语音导航和多种出行方式选择，适合日常出行和长途旅行。该工具包还包括保存位置、分享位置、查看周边设施、记录历史和离线地图等附加功能。"
-    tool_classes = [
+    app_classes = [
         TencentMapMapView,
         TencentMapRoutePlanning,
         TencentMapTrafficInfo,
@@ -7504,7 +7504,7 @@ class TencentMap(FunctionApp):
 #################### DidiRide ####################
 
 
-class DidiRideBookRide(VirtualFunctionTool):
+class DidiRideBookRide(VirtualFunctionApp):
     name = "DidiRideBookRide"
     summary = "用户可以请求打车服务并选择车型。"
     parameters: List[ArgParameter] = [
@@ -7542,7 +7542,7 @@ class DidiRideBookRide(VirtualFunctionTool):
     ]
 
 
-class DidiRideGetDriverLocation(VirtualFunctionTool):
+class DidiRideGetDriverLocation(VirtualFunctionApp):
     name = "DidiRideGetDriverLocation"
     summary = "用户可以实时查看司机的位置信息。"
     parameters: List[ArgParameter] = [
@@ -7569,7 +7569,7 @@ class DidiRideGetDriverLocation(VirtualFunctionTool):
     ]
 
 
-class DidiRidePayOrder(VirtualFunctionTool):
+class DidiRidePayOrder(VirtualFunctionApp):
     name = "DidiRidePayOrder"
     summary = "用户可以选择多种支付方式完成订单支付。"
     parameters: List[ArgParameter] = [
@@ -7598,7 +7598,7 @@ class DidiRidePayOrder(VirtualFunctionTool):
     ]
 
 
-class DidiRideGetOrderHistory(VirtualFunctionTool):
+class DidiRideGetOrderHistory(VirtualFunctionApp):
     name = "DidiRideGetOrderHistory"
     summary = "用户可以查看之前的出行记录。"
     parameters: List[ArgParameter] = []
@@ -7624,7 +7624,7 @@ class DidiRideGetOrderHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DidiRideRateService(VirtualFunctionTool):
+class DidiRideRateService(VirtualFunctionApp):
     name = "DidiRideRateService"
     summary = "用户可以对司机和服务进行评价。"
     parameters: List[ArgParameter] = [
@@ -7659,7 +7659,7 @@ class DidiRideRateService(VirtualFunctionTool):
     ]
 
 
-class DidiRideChooseCarpool(VirtualFunctionTool):
+class DidiRideChooseCarpool(VirtualFunctionApp):
     name = "DidiRideChooseCarpool"
     summary = "用户可以选择顺风车服务以降低出行成本。"
     parameters: List[ArgParameter] = [
@@ -7687,7 +7687,7 @@ class DidiRideChooseCarpool(VirtualFunctionTool):
     ]
 
 
-class DidiRideChauffeurService(VirtualFunctionTool):
+class DidiRideChauffeurService(VirtualFunctionApp):
     name = "DidiRideChauffeurService"
     summary = "用户可以请求代驾服务以便安全驾驶。"
     parameters: List[ArgParameter] = [
@@ -7719,7 +7719,7 @@ class DidiRideChauffeurService(VirtualFunctionTool):
     ]
 
 
-class DidiRideModifyOrder(VirtualFunctionTool):
+class DidiRideModifyOrder(VirtualFunctionApp):
     name = "DidiRideModifyOrder"
     summary = "用户可以在预约后修改订单信息。"
     parameters: List[ArgParameter] = [
@@ -7754,7 +7754,7 @@ class DidiRideModifyOrder(VirtualFunctionTool):
     ]
 
 
-class DidiRideQueryNearbyCars(VirtualFunctionTool):
+class DidiRideQueryNearbyCars(VirtualFunctionApp):
     name = "DidiRideQueryNearbyCars"
     summary = "用户可以查询附近可用的车辆。"
     parameters: List[ArgParameter] = [
@@ -7796,7 +7796,7 @@ class DidiRideQueryNearbyCars(VirtualFunctionTool):
     ]
 
 
-class DidiRideGetShareLink(VirtualFunctionTool):
+class DidiRideGetShareLink(VirtualFunctionApp):
     name = "DidiRideGetShareLink"
     summary = "用户可以生成行程分享链接与他人共享。"
     parameters: List[ArgParameter] = [
@@ -7815,7 +7815,7 @@ class DidiRideGetShareLink(VirtualFunctionTool):
     ]
 
 
-class DidiRideSearchOrders(VirtualFunctionTool):
+class DidiRideSearchOrders(VirtualFunctionApp):
     name = "DidiRideSearchOrders"
     summary = "用户可以根据订单状态搜索订单。"
     parameters: List[ArgParameter] = [
@@ -7853,7 +7853,7 @@ class DidiRideSearchOrders(VirtualFunctionTool):
     ]
 
 
-class DidiRideSearchCars(VirtualFunctionTool):
+class DidiRideSearchCars(VirtualFunctionApp):
     name = "DidiRideSearchCars"
     summary = "用户可以根据当前位置搜索附近车辆。"
     parameters: List[ArgParameter] = [
@@ -7895,7 +7895,7 @@ class DidiRideSearchCars(VirtualFunctionTool):
     ]
 
 
-class DidiRideGetUserPaymentInfo(VirtualFunctionTool):
+class DidiRideGetUserPaymentInfo(VirtualFunctionApp):
     name = "DidiRideGetUserPaymentInfo"
     summary = "获取用户的支付信息。"
     parameters: List[ArgParameter] = []
@@ -7924,7 +7924,7 @@ class DidiRideGetUserPaymentInfo(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DidiRideGetUserAddresses(VirtualFunctionTool):
+class DidiRideGetUserAddresses(VirtualFunctionApp):
     name = "DidiRideGetUserAddresses"
     summary = "获取用户保存的地址信息。"
     parameters: List[ArgParameter] = []
@@ -7959,7 +7959,7 @@ class DidiRide(FunctionApp):
     description_for_human = "提供全面的出行服务，包括打车、顺风车、专车和代驾。"
     name_for_model = "DidiRide"
     description_for_model = "DidiRide工具包提供了全面的出行服务，包括打车、顺风车、专车和代驾，用户可以实时查看司机位置，选择多种支付方式，并访问历史订单与评价服务，确保用户的出行体验安全、便捷。"
-    tool_classes = [
+    app_classes = [
         DidiRideBookRide,
         DidiRideGetDriverLocation,
         DidiRidePayOrder,
@@ -7980,7 +7980,7 @@ class DidiRide(FunctionApp):
 #################### HelloTravel ####################
 
 
-class HelloTravelSearchBikes(VirtualFunctionTool):
+class HelloTravelSearchBikes(VirtualFunctionApp):
     name = "HelloTravelSearchBikes"
     summary = "搜索附近的共享单车和电单车。"
     parameters: List[ArgParameter] = [
@@ -8007,7 +8007,7 @@ class HelloTravelSearchBikes(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class HelloTravelUnlockBike(VirtualFunctionTool):
+class HelloTravelUnlockBike(VirtualFunctionApp):
     name = "HelloTravelUnlockBike"
     summary = "扫码解锁共享单车和电单车。"
     parameters: List[ArgParameter] = [
@@ -8029,7 +8029,7 @@ class HelloTravelUnlockBike(VirtualFunctionTool):
     ]
 
 
-class HelloTravelBookRide(VirtualFunctionTool):
+class HelloTravelBookRide(VirtualFunctionApp):
     name = "HelloTravelBookRide"
     summary = "预订打车服务。"
     parameters: List[ArgParameter] = [
@@ -8061,7 +8061,7 @@ class HelloTravelBookRide(VirtualFunctionTool):
     ]
 
 
-class HelloTravelGetRideHistory(VirtualFunctionTool):
+class HelloTravelGetRideHistory(VirtualFunctionApp):
     name = "HelloTravelGetRideHistory"
     summary = "查询用户的骑行记录。"
     parameters: List[ArgParameter] = [
@@ -8083,7 +8083,7 @@ class HelloTravelGetRideHistory(VirtualFunctionTool):
     ]
 
 
-class HelloTravelPayRideFee(VirtualFunctionTool):
+class HelloTravelPayRideFee(VirtualFunctionApp):
     name = "HelloTravelPayRideFee"
     summary = "支付骑行费用。"
     parameters: List[ArgParameter] = [
@@ -8105,7 +8105,7 @@ class HelloTravelPayRideFee(VirtualFunctionTool):
     ]
 
 
-class HelloTravelCheckBikeAvailability(VirtualFunctionTool):
+class HelloTravelCheckBikeAvailability(VirtualFunctionApp):
     name = "HelloTravelCheckBikeAvailability"
     summary = "查看单车和电单车的实时可用性。"
     parameters: List[ArgParameter] = [
@@ -8127,7 +8127,7 @@ class HelloTravelCheckBikeAvailability(VirtualFunctionTool):
     ]
 
 
-class HelloTravelGetParkingLocations(VirtualFunctionTool):
+class HelloTravelGetParkingLocations(VirtualFunctionApp):
     name = "HelloTravelGetParkingLocations"
     summary = "获取最近的停车点信息。"
     parameters: List[ArgParameter] = [
@@ -8148,7 +8148,7 @@ class HelloTravelGetParkingLocations(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class HelloTravelRateRide(VirtualFunctionTool):
+class HelloTravelRateRide(VirtualFunctionApp):
     name = "HelloTravelRateRide"
     summary = "评价骑行体验。"
     parameters: List[ArgParameter] = [
@@ -8182,7 +8182,7 @@ class HelloTravelRateRide(VirtualFunctionTool):
     ]
 
 
-class HelloTravelApplyCoupon(VirtualFunctionTool):
+class HelloTravelApplyCoupon(VirtualFunctionApp):
     name = "HelloTravelApplyCoupon"
     summary = "获取使用优惠券的功能。"
     parameters: List[ArgParameter] = [
@@ -8208,7 +8208,7 @@ class HelloTravelApplyCoupon(VirtualFunctionTool):
     ]
 
 
-class HelloTravelGetUserProfile(VirtualFunctionTool):
+class HelloTravelGetUserProfile(VirtualFunctionApp):
     name = "HelloTravelGetUserProfile"
     summary = "查看用户的个人资料和设置。"
     parameters: List[ArgParameter] = [
@@ -8237,7 +8237,7 @@ class HelloTravel(FunctionApp):
     description_for_human = "App for convenient short-distance travel using shared bikes and ride-hailing services."
     name_for_model = "HelloTravel"
     description_for_model = "HelloTravel工具包提供了一系列工具，旨在帮助用户快速找到附近的共享单车和电单车，解锁共享单车，预订打车服务，查询骑行记录，支付费用等，适合短途出行的个人用户。"
-    tool_classes = [
+    app_classes = [
         HelloTravelSearchBikes,
         HelloTravelUnlockBike,
         HelloTravelBookRide,
@@ -8254,7 +8254,7 @@ class HelloTravel(FunctionApp):
 #################### Mobike ####################
 
 
-class MobikeSearchBikes(VirtualFunctionTool):
+class MobikeSearchBikes(VirtualFunctionApp):
     name = "MobikeSearchBikes"
     summary = "查找附近可用单车的工具。"
     parameters: List[ArgParameter] = [
@@ -8280,7 +8280,7 @@ class MobikeSearchBikes(VirtualFunctionTool):
     ]
 
 
-class MobikeRentBike(VirtualFunctionTool):
+class MobikeRentBike(VirtualFunctionApp):
     name = "MobikeRentBike"
     summary = "租赁指定单车的工具。"
     parameters: List[ArgParameter] = [
@@ -8303,7 +8303,7 @@ class MobikeRentBike(VirtualFunctionTool):
     ]
 
 
-class MobikeUnlockBike(VirtualFunctionTool):
+class MobikeUnlockBike(VirtualFunctionApp):
     name = "MobikeUnlockBike"
     summary = "解锁指定单车的工具。"
     parameters: List[ArgParameter] = [
@@ -8326,7 +8326,7 @@ class MobikeUnlockBike(VirtualFunctionTool):
     ]
 
 
-class MobikePayRental(VirtualFunctionTool):
+class MobikePayRental(VirtualFunctionApp):
     name = "MobikePayRental"
     summary = "支付租赁费用的工具。"
     parameters: List[ArgParameter] = [
@@ -8355,7 +8355,7 @@ class MobikePayRental(VirtualFunctionTool):
     ]
 
 
-class MobikeViewRentalHistory(VirtualFunctionTool):
+class MobikeViewRentalHistory(VirtualFunctionApp):
     name = "MobikeViewRentalHistory"
     summary = "查看用户历史租赁记录的工具。"
     parameters: List[ArgParameter] = []
@@ -8371,7 +8371,7 @@ class MobikeViewRentalHistory(VirtualFunctionTool):
     ]
 
 
-class MobikeCancelRental(VirtualFunctionTool):
+class MobikeCancelRental(VirtualFunctionApp):
     name = "MobikeCancelRental"
     summary = "取消当前租赁的工具。"
     parameters: List[ArgParameter] = [
@@ -8394,7 +8394,7 @@ class MobikeCancelRental(VirtualFunctionTool):
     ]
 
 
-class MobikeGetBikeLocation(VirtualFunctionTool):
+class MobikeGetBikeLocation(VirtualFunctionApp):
     name = "MobikeGetBikeLocation"
     summary = "获取指定单车实时位置的工具。"
     parameters: List[ArgParameter] = [
@@ -8421,7 +8421,7 @@ class MobikeGetBikeLocation(VirtualFunctionTool):
     ]
 
 
-class MobikeReportBikeStatus(VirtualFunctionTool):
+class MobikeReportBikeStatus(VirtualFunctionApp):
     name = "MobikeReportBikeStatus"
     summary = "反馈单车状态的工具。"
     parameters: List[ArgParameter] = [
@@ -8450,7 +8450,7 @@ class MobikeReportBikeStatus(VirtualFunctionTool):
     ]
 
 
-class MobikeFindParkingSpots(VirtualFunctionTool):
+class MobikeFindParkingSpots(VirtualFunctionApp):
     name = "MobikeFindParkingSpots"
     summary = "查找附近停车点的工具。"
     parameters: List[ArgParameter] = [
@@ -8472,7 +8472,7 @@ class MobikeFindParkingSpots(VirtualFunctionTool):
     ]
 
 
-class MobikeGetRentalFeeDetails(VirtualFunctionTool):
+class MobikeGetRentalFeeDetails(VirtualFunctionApp):
     name = "MobikeGetRentalFeeDetails"
     summary = "获取租赁费用详细信息的工具。"
     parameters: List[ArgParameter] = [
@@ -8507,7 +8507,7 @@ class MobikeGetRentalFeeDetails(VirtualFunctionTool):
     ]
 
 
-class MobikeGetUserPaymentInfo(VirtualFunctionTool):
+class MobikeGetUserPaymentInfo(VirtualFunctionApp):
     name = "MobikeGetUserPaymentInfo"
     summary = "获取用户支付信息的工具。"
     parameters: List[ArgParameter] = []
@@ -8543,7 +8543,7 @@ class Mobike(FunctionApp):
     )
     name_for_model = "Mobike"
     description_for_model = "Mobike工具包支持用户通过手机应用快速找到、租赁、解锁和支付共享单车，适合城市内短途出行，确保用户能够方便地获取单车服务。"
-    tool_classes = [
+    app_classes = [
         MobikeSearchBikes,
         MobikeRentBike,
         MobikeUnlockBike,
@@ -8561,7 +8561,7 @@ class Mobike(FunctionApp):
 #################### UberApp ####################
 
 
-class UberAppRequestRide(VirtualFunctionTool):
+class UberAppRequestRide(VirtualFunctionApp):
     name = "UberAppRequestRide"
     summary = "请求一辆汽车，用户可以选择车型并发起叫车请求。"
     parameters: List[ArgParameter] = [
@@ -8590,7 +8590,7 @@ class UberAppRequestRide(VirtualFunctionTool):
     ]
 
 
-class UberAppTrackRide(VirtualFunctionTool):
+class UberAppTrackRide(VirtualFunctionApp):
     name = "UberAppTrackRide"
     summary = "实时追踪司机的位置和预计到达时间。"
     parameters: List[ArgParameter] = [
@@ -8618,7 +8618,7 @@ class UberAppTrackRide(VirtualFunctionTool):
     ]
 
 
-class UberAppShareRide(VirtualFunctionTool):
+class UberAppShareRide(VirtualFunctionApp):
     name = "UberAppShareRide"
     summary = "与朋友共享行程信息。"
     parameters: List[ArgParameter] = [
@@ -8644,7 +8644,7 @@ class UberAppShareRide(VirtualFunctionTool):
     ]
 
 
-class UberAppCancelRide(VirtualFunctionTool):
+class UberAppCancelRide(VirtualFunctionApp):
     name = "UberAppCancelRide"
     summary = "取消已请求的行程。"
     parameters: List[ArgParameter] = [
@@ -8663,7 +8663,7 @@ class UberAppCancelRide(VirtualFunctionTool):
     ]
 
 
-class UberAppEstimateFare(VirtualFunctionTool):
+class UberAppEstimateFare(VirtualFunctionApp):
     name = "UberAppEstimateFare"
     summary = "获取预计的行程费用。"
     parameters: List[ArgParameter] = [
@@ -8688,7 +8688,7 @@ class UberAppEstimateFare(VirtualFunctionTool):
     ]
 
 
-class UberAppSelectVehicle(VirtualFunctionTool):
+class UberAppSelectVehicle(VirtualFunctionApp):
     name = "UberAppSelectVehicle"
     summary = "查看可用的车型选项。"
     parameters: List[ArgParameter] = [
@@ -8711,7 +8711,7 @@ class UberAppSelectVehicle(VirtualFunctionTool):
     ]
 
 
-class UberAppManagePayment(VirtualFunctionTool):
+class UberAppManagePayment(VirtualFunctionApp):
     name = "UberAppManagePayment"
     summary = "管理用户的支付方式。"
     parameters: List[ArgParameter] = [
@@ -8736,7 +8736,7 @@ class UberAppManagePayment(VirtualFunctionTool):
     ]
 
 
-class UberAppViewRideHistory(VirtualFunctionTool):
+class UberAppViewRideHistory(VirtualFunctionApp):
     name = "UberAppViewRideHistory"
     summary = "查看用户的过去行程记录。"
     parameters: List[ArgParameter] = [
@@ -8755,7 +8755,7 @@ class UberAppViewRideHistory(VirtualFunctionTool):
     ]
 
 
-class UberAppSubmitFeedback(VirtualFunctionTool):
+class UberAppSubmitFeedback(VirtualFunctionApp):
     name = "UberAppSubmitFeedback"
     summary = "对司机和行程提交反馈。"
     parameters: List[ArgParameter] = [
@@ -8781,7 +8781,7 @@ class UberAppSubmitFeedback(VirtualFunctionTool):
     ]
 
 
-class UberAppAccessStoredAddresses(VirtualFunctionTool):
+class UberAppAccessStoredAddresses(VirtualFunctionApp):
     name = "UberAppAccessStoredAddresses"
     summary = "访问用户存储的地址。"
     parameters: List[ArgParameter] = [
@@ -8804,7 +8804,7 @@ class UberAppAccessStoredAddresses(VirtualFunctionTool):
     ]
 
 
-class UberAppAccessStoredPaymentMethods(VirtualFunctionTool):
+class UberAppAccessStoredPaymentMethods(VirtualFunctionApp):
     name = "UberAppAccessStoredPaymentMethods"
     summary = "访问用户存储的支付方式。"
     parameters: List[ArgParameter] = [
@@ -8833,7 +8833,7 @@ class UberApp(FunctionApp):
     description_for_human = "App for interacting with Uber services, including ride requests, tracking, sharing, cancellations, and fare estimates."
     name_for_model = "UberApp"
     description_for_model = "Uber工具包提供了一系列工具，帮助用户通过文本接口与Uber服务进行交互，包括叫车、追踪行程、共享行程、取消行程和费用估算等功能，同时管理支付方式和查看历史行程。"
-    tool_classes = [
+    app_classes = [
         UberAppRequestRide,
         UberAppTrackRide,
         UberAppShareRide,
@@ -8851,7 +8851,7 @@ class UberApp(FunctionApp):
 #################### TrafficAssistant ####################
 
 
-class TrafficAssistantRealTimeTrafficMonitor(VirtualFunctionTool):
+class TrafficAssistantRealTimeTrafficMonitor(VirtualFunctionApp):
     name = "TrafficAssistantRealTimeTrafficMonitor"
     summary = "提供当前路况的实时数据，包括拥堵、事故和道路封闭信息。"
     parameters: List[ArgParameter] = [
@@ -8874,7 +8874,7 @@ class TrafficAssistantRealTimeTrafficMonitor(VirtualFunctionTool):
     ]
 
 
-class TrafficAssistantAccidentReporter(VirtualFunctionTool):
+class TrafficAssistantAccidentReporter(VirtualFunctionApp):
     name = "TrafficAssistantAccidentReporter"
     summary = "允许用户报告交通事故并将信息共享给其他用户。"
     parameters: List[ArgParameter] = [
@@ -8899,7 +8899,7 @@ class TrafficAssistantAccidentReporter(VirtualFunctionTool):
     ]
 
 
-class TrafficAssistantTrafficShare(VirtualFunctionTool):
+class TrafficAssistantTrafficShare(VirtualFunctionApp):
     name = "TrafficAssistantTrafficShare"
     summary = "用户可以通过社交功能分享他们的路况信息，帮助他人规划行程。"
     parameters: List[ArgParameter] = [
@@ -8924,7 +8924,7 @@ class TrafficAssistantTrafficShare(VirtualFunctionTool):
     ]
 
 
-class TrafficAssistantRoutePlanner(VirtualFunctionTool):
+class TrafficAssistantRoutePlanner(VirtualFunctionApp):
     name = "TrafficAssistantRoutePlanner"
     summary = "根据实时路况为用户提供最佳路线建议。"
     parameters: List[ArgParameter] = [
@@ -8953,7 +8953,7 @@ class TrafficAssistantRoutePlanner(VirtualFunctionTool):
     ]
 
 
-class TrafficAssistantUserFeedback(VirtualFunctionTool):
+class TrafficAssistantUserFeedback(VirtualFunctionApp):
     name = "TrafficAssistantUserFeedback"
     summary = "用户可以对路况信息进行反馈，以提高信息的准确性和及时性。"
     parameters: List[ArgParameter] = [
@@ -8972,7 +8972,7 @@ class TrafficAssistantUserFeedback(VirtualFunctionTool):
     ]
 
 
-class TrafficAssistantHistoricalTrafficQuery(VirtualFunctionTool):
+class TrafficAssistantHistoricalTrafficQuery(VirtualFunctionApp):
     name = "TrafficAssistantHistoricalTrafficQuery"
     summary = "用户可以查询过去的路况信息，帮助他们了解特定时间段的交通模式。"
     parameters: List[ArgParameter] = [
@@ -9001,7 +9001,7 @@ class TrafficAssistantHistoricalTrafficQuery(VirtualFunctionTool):
     ]
 
 
-class TrafficAssistantAccidentStatistics(VirtualFunctionTool):
+class TrafficAssistantAccidentStatistics(VirtualFunctionApp):
     name = "TrafficAssistantAccidentStatistics"
     summary = "提供事故发生的统计数据，帮助用户了解高风险区域。"
     parameters: List[ArgParameter] = [
@@ -9024,7 +9024,7 @@ class TrafficAssistantAccidentStatistics(VirtualFunctionTool):
     ]
 
 
-class TrafficAssistantSocialInteraction(VirtualFunctionTool):
+class TrafficAssistantSocialInteraction(VirtualFunctionApp):
     name = "TrafficAssistantSocialInteraction"
     summary = "用户可以相互关注，查看朋友的路况分享。"
     parameters: List[ArgParameter] = [
@@ -9047,7 +9047,7 @@ class TrafficAssistantSocialInteraction(VirtualFunctionTool):
     ]
 
 
-class TrafficAssistantNotificationSettings(VirtualFunctionTool):
+class TrafficAssistantNotificationSettings(VirtualFunctionApp):
     name = "TrafficAssistantNotificationSettings"
     summary = "用户可以设置特定路段的路况通知，以便及时获取信息。"
     parameters: List[ArgParameter] = [
@@ -9076,7 +9076,7 @@ class TrafficAssistantNotificationSettings(VirtualFunctionTool):
     ]
 
 
-class TrafficAssistantDataAnalysis(VirtualFunctionTool):
+class TrafficAssistantDataAnalysis(VirtualFunctionApp):
     name = "TrafficAssistantDataAnalysis"
     summary = "提供用户的出行数据分析，帮助他们优化出行习惯。"
     parameters: List[ArgParameter] = [
@@ -9099,7 +9099,7 @@ class TrafficAssistantDataAnalysis(VirtualFunctionTool):
     ]
 
 
-class TrafficAssistantSearchUser(VirtualFunctionTool):
+class TrafficAssistantSearchUser(VirtualFunctionApp):
     name = "TrafficAssistantSearchUser"
     summary = "根据用户的唯一标识符检索用户信息。"
     parameters: List[ArgParameter] = [
@@ -9122,7 +9122,7 @@ class TrafficAssistantSearchUser(VirtualFunctionTool):
     ]
 
 
-class TrafficAssistantRetrieveUserData(VirtualFunctionTool):
+class TrafficAssistantRetrieveUserData(VirtualFunctionApp):
     name = "TrafficAssistantRetrieveUserData"
     summary = "访问用户存储的地址和支付方法。"
     parameters: List[ArgParameter] = [
@@ -9151,7 +9151,7 @@ class TrafficAssistant(FunctionApp):
     description_for_human = "A app for real-time traffic monitoring, accident reporting, and social sharing to help users avoid congestion and dangerous routes."
     name_for_model = "TrafficAssistant"
     description_for_model = "TrafficAssistant 是一款提供实时路况监测、事故报告和社交分享功能的工具包，帮助用户规避拥堵和危险路段，优化出行体验。"
-    tool_classes = [
+    app_classes = [
         TrafficAssistantRealTimeTrafficMonitor,
         TrafficAssistantAccidentReporter,
         TrafficAssistantTrafficShare,
@@ -9170,7 +9170,7 @@ class TrafficAssistant(FunctionApp):
 #################### FeiChangZhun ####################
 
 
-class FeiChangZhunQueryFlightInfo(VirtualFunctionTool):
+class FeiChangZhunQueryFlightInfo(VirtualFunctionApp):
     name = "FeiChangZhunQueryFlightInfo"
     summary = "获取特定航班的详细信息，包括起降时间、航班状态等。"
     parameters: List[ArgParameter] = [
@@ -9196,7 +9196,7 @@ class FeiChangZhunQueryFlightInfo(VirtualFunctionTool):
     ]
 
 
-class FeiChangZhunRealTimeStatusUpdate(VirtualFunctionTool):
+class FeiChangZhunRealTimeStatusUpdate(VirtualFunctionApp):
     name = "FeiChangZhunRealTimeStatusUpdate"
     summary = "提供航班的实时动态更新，包括延误、取消等信息。"
     parameters: List[ArgParameter] = [
@@ -9222,7 +9222,7 @@ class FeiChangZhunRealTimeStatusUpdate(VirtualFunctionTool):
     ]
 
 
-class FeiChangZhunAirportNavigation(VirtualFunctionTool):
+class FeiChangZhunAirportNavigation(VirtualFunctionApp):
     name = "FeiChangZhunAirportNavigation"
     summary = "获取机场的地图和导航信息，帮助找到登机口、餐饮等服务设施。"
     parameters: List[ArgParameter] = [
@@ -9248,7 +9248,7 @@ class FeiChangZhunAirportNavigation(VirtualFunctionTool):
     ]
 
 
-class FeiChangZhunHistoricalFlightQuery(VirtualFunctionTool):
+class FeiChangZhunHistoricalFlightQuery(VirtualFunctionApp):
     name = "FeiChangZhunHistoricalFlightQuery"
     summary = "查询过去的航班记录，以便了解航班的历史表现。"
     parameters: List[ArgParameter] = [
@@ -9280,7 +9280,7 @@ class FeiChangZhunHistoricalFlightQuery(VirtualFunctionTool):
     ]
 
 
-class FeiChangZhunFlightReminderSetup(VirtualFunctionTool):
+class FeiChangZhunFlightReminderSetup(VirtualFunctionApp):
     name = "FeiChangZhunFlightReminderSetup"
     summary = "设置航班提醒，以便在航班状态发生变化时及时通知。"
     parameters: List[ArgParameter] = [
@@ -9312,7 +9312,7 @@ class FeiChangZhunFlightReminderSetup(VirtualFunctionTool):
     ]
 
 
-class FeiChangZhunMultiAirportQuery(VirtualFunctionTool):
+class FeiChangZhunMultiAirportQuery(VirtualFunctionApp):
     name = "FeiChangZhunMultiAirportQuery"
     summary = "允许用户同时查询多个机场的航班信息。"
     parameters: List[ArgParameter] = [
@@ -9333,7 +9333,7 @@ class FeiChangZhunMultiAirportQuery(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FeiChangZhunAirlineInfo(VirtualFunctionTool):
+class FeiChangZhunAirlineInfo(VirtualFunctionApp):
     name = "FeiChangZhunAirlineInfo"
     summary = "提供有关特定航空公司的信息，包括服务、航班频率等。"
     parameters: List[ArgParameter] = [
@@ -9359,7 +9359,7 @@ class FeiChangZhunAirlineInfo(VirtualFunctionTool):
     ]
 
 
-class FeiChangZhunUserReviewsAndRatings(VirtualFunctionTool):
+class FeiChangZhunUserReviewsAndRatings(VirtualFunctionApp):
     name = "FeiChangZhunUserReviewsAndRatings"
     summary = "查看其他乘客对航班和航空公司的评论和评分。"
     parameters: List[ArgParameter] = [
@@ -9385,7 +9385,7 @@ class FeiChangZhunUserReviewsAndRatings(VirtualFunctionTool):
     ]
 
 
-class FeiChangZhunFAQ(VirtualFunctionTool):
+class FeiChangZhunFAQ(VirtualFunctionApp):
     name = "FeiChangZhunFAQ"
     summary = "提供常见问题的解答，帮助用户快速找到所需信息。"
     parameters: List[ArgParameter] = []
@@ -9395,7 +9395,7 @@ class FeiChangZhunFAQ(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FeiChangZhunFlightShareFunction(VirtualFunctionTool):
+class FeiChangZhunFlightShareFunction(VirtualFunctionApp):
     name = "FeiChangZhunFlightShareFunction"
     summary = "允许用户将航班信息分享给朋友或家人。"
     parameters: List[ArgParameter] = [
@@ -9429,7 +9429,7 @@ class FeiChangZhun(FunctionApp):
     description_for_human = "一个专注于航班信息查询和实时航班动态追踪的工具包，旨在帮助用户查看航班时刻、延误信息及机场导航，特别适合长途旅行者使用。"
     name_for_model = "FeiChangZhun"
     description_for_model = "飞常准工具包提供航班信息查询、实时状态更新、机场导航和历史航班记录查询等功能，帮助长途旅行者获取准确的航班信息和动态更新，确保顺利出行。"
-    tool_classes = [
+    app_classes = [
         FeiChangZhunQueryFlightInfo,
         FeiChangZhunRealTimeStatusUpdate,
         FeiChangZhunAirportNavigation,
@@ -9446,7 +9446,7 @@ class FeiChangZhun(FunctionApp):
 #################### NetEaseCloudMusic ####################
 
 
-class NetEaseCloudMusicSearchMusic(VirtualFunctionTool):
+class NetEaseCloudMusicSearchMusic(VirtualFunctionApp):
     name = "NetEaseCloudMusicSearchMusic"
     summary = "Allow users to search for music tracks using keywords."
     parameters: List[ArgParameter] = [
@@ -9473,7 +9473,7 @@ class NetEaseCloudMusicSearchMusic(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NetEaseCloudMusicPlaylistManagement(VirtualFunctionTool):
+class NetEaseCloudMusicPlaylistManagement(VirtualFunctionApp):
     name = "NetEaseCloudMusicPlaylistManagement"
     summary = "Allow users to create, update, and delete playlists."
     parameters: List[ArgParameter] = [
@@ -9511,7 +9511,7 @@ class NetEaseCloudMusicPlaylistManagement(VirtualFunctionTool):
     ]
 
 
-class NetEaseCloudMusicCommentInteraction(VirtualFunctionTool):
+class NetEaseCloudMusicCommentInteraction(VirtualFunctionApp):
     name = "NetEaseCloudMusicCommentInteraction"
     summary = "Allow users to comment on tracks and view comments."
     parameters: List[ArgParameter] = [
@@ -9540,7 +9540,7 @@ class NetEaseCloudMusicCommentInteraction(VirtualFunctionTool):
     ]
 
 
-class NetEaseCloudMusicUploadMusic(VirtualFunctionTool):
+class NetEaseCloudMusicUploadMusic(VirtualFunctionApp):
     name = "NetEaseCloudMusicUploadMusic"
     summary = "Allow users to upload their own music works."
     parameters: List[ArgParameter] = [
@@ -9569,7 +9569,7 @@ class NetEaseCloudMusicUploadMusic(VirtualFunctionTool):
     ]
 
 
-class NetEaseCloudMusicPersonalizedRecommendation(VirtualFunctionTool):
+class NetEaseCloudMusicPersonalizedRecommendation(VirtualFunctionApp):
     name = "NetEaseCloudMusicPersonalizedRecommendation"
     summary = "Recommend new music based on the user's listening history."
     parameters: List[ArgParameter] = [
@@ -9590,7 +9590,7 @@ class NetEaseCloudMusicPersonalizedRecommendation(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NetEaseCloudMusicUserProfileManagement(VirtualFunctionTool):
+class NetEaseCloudMusicUserProfileManagement(VirtualFunctionApp):
     name = "NetEaseCloudMusicUserProfileManagement"
     summary = "Allow users to view and update their profile."
     parameters: List[ArgParameter] = [
@@ -9622,7 +9622,7 @@ class NetEaseCloudMusicUserProfileManagement(VirtualFunctionTool):
     ]
 
 
-class NetEaseCloudMusicFavoriteManagement(VirtualFunctionTool):
+class NetEaseCloudMusicFavoriteManagement(VirtualFunctionApp):
     name = "NetEaseCloudMusicFavoriteManagement"
     summary = "Allow users to favorite tracks and artists."
     parameters: List[ArgParameter] = [
@@ -9651,7 +9651,7 @@ class NetEaseCloudMusicFavoriteManagement(VirtualFunctionTool):
     ]
 
 
-class NetEaseCloudMusicShareMusic(VirtualFunctionTool):
+class NetEaseCloudMusicShareMusic(VirtualFunctionApp):
     name = "NetEaseCloudMusicShareMusic"
     summary = "Allow users to share tracks to social platforms."
     parameters: List[ArgParameter] = [
@@ -9680,7 +9680,7 @@ class NetEaseCloudMusicShareMusic(VirtualFunctionTool):
     ]
 
 
-class NetEaseCloudMusicDownloadMusic(VirtualFunctionTool):
+class NetEaseCloudMusicDownloadMusic(VirtualFunctionApp):
     name = "NetEaseCloudMusicDownloadMusic"
     summary = "Allow users to download tracks to local devices."
     parameters: List[ArgParameter] = [
@@ -9703,7 +9703,7 @@ class NetEaseCloudMusicDownloadMusic(VirtualFunctionTool):
     ]
 
 
-class NetEaseCloudMusicViewHistory(VirtualFunctionTool):
+class NetEaseCloudMusicViewHistory(VirtualFunctionApp):
     name = "NetEaseCloudMusicViewHistory"
     summary = "Allow users to view recently played tracks."
     parameters: List[ArgParameter] = [
@@ -9732,7 +9732,7 @@ class NetEaseCloudMusic(FunctionApp):
     )
     name_for_model = "NetEaseCloudMusic"
     description_for_model = "NetEase Cloud Music app provides functionalities such as music search, playlist management, comment interaction, music upload, and personalized recommendations, aimed at helping users discover music, share their works, and interact with others."
-    tool_classes = [
+    app_classes = [
         NetEaseCloudMusicSearchMusic,
         NetEaseCloudMusicPlaylistManagement,
         NetEaseCloudMusicCommentInteraction,
@@ -9749,7 +9749,7 @@ class NetEaseCloudMusic(FunctionApp):
 #################### QQMusic ####################
 
 
-class QQMusicPersonalizedRecommendation(VirtualFunctionTool):
+class QQMusicPersonalizedRecommendation(VirtualFunctionApp):
     name = "QQMusicPersonalizedRecommendation"
     summary = "提供个性化的音乐推荐列表。"
     parameters: List[ArgParameter] = [
@@ -9766,7 +9766,7 @@ class QQMusicPersonalizedRecommendation(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class QQMusicOnlineListening(VirtualFunctionTool):
+class QQMusicOnlineListening(VirtualFunctionApp):
     name = "QQMusicOnlineListening"
     summary = "允许用户在线流式播放音乐。"
     parameters: List[ArgParameter] = [
@@ -9783,7 +9783,7 @@ class QQMusicOnlineListening(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class QQMusicPlaylistManagement(VirtualFunctionTool):
+class QQMusicPlaylistManagement(VirtualFunctionApp):
     name = "QQMusicPlaylistManagement"
     summary = "管理用户的歌单，包括创建、更新和删除。"
     parameters: List[ArgParameter] = [
@@ -9814,7 +9814,7 @@ class QQMusicPlaylistManagement(VirtualFunctionTool):
     ]
 
 
-class QQMusicDownloadMusic(VirtualFunctionTool):
+class QQMusicDownloadMusic(VirtualFunctionApp):
     name = "QQMusicDownloadMusic"
     summary = "允许用户下载歌曲以离线收听。"
     parameters: List[ArgParameter] = [
@@ -9833,7 +9833,7 @@ class QQMusicDownloadMusic(VirtualFunctionTool):
     ]
 
 
-class QQMusicSocialSharing(VirtualFunctionTool):
+class QQMusicSocialSharing(VirtualFunctionApp):
     name = "QQMusicSocialSharing"
     summary = "允许用户将歌曲或歌单分享至社交媒体。"
     parameters: List[ArgParameter] = [
@@ -9861,7 +9861,7 @@ class QQMusicSocialSharing(VirtualFunctionTool):
     ]
 
 
-class QQMusicSearchMusic(VirtualFunctionTool):
+class QQMusicSearchMusic(VirtualFunctionApp):
     name = "QQMusicSearchMusic"
     summary = "允许用户搜索歌曲、专辑或艺术家。"
     parameters: List[ArgParameter] = [
@@ -9886,7 +9886,7 @@ class QQMusicSearchMusic(VirtualFunctionTool):
     ]
 
 
-class QQMusicFavoriteMusic(VirtualFunctionTool):
+class QQMusicFavoriteMusic(VirtualFunctionApp):
     name = "QQMusicFavoriteMusic"
     summary = "允许用户收藏歌曲或专辑。"
     parameters: List[ArgParameter] = [
@@ -9905,7 +9905,7 @@ class QQMusicFavoriteMusic(VirtualFunctionTool):
     ]
 
 
-class QQMusicPlaybackHistory(VirtualFunctionTool):
+class QQMusicPlaybackHistory(VirtualFunctionApp):
     name = "QQMusicPlaybackHistory"
     summary = "获取用户的播放历史。"
     parameters: List[ArgParameter] = [
@@ -9924,7 +9924,7 @@ class QQMusicPlaybackHistory(VirtualFunctionTool):
     ]
 
 
-class QQMusicSetReminder(VirtualFunctionTool):
+class QQMusicSetReminder(VirtualFunctionApp):
     name = "QQMusicSetReminder"
     summary = "设置提醒以获取新歌或专辑的推送。"
     parameters: List[ArgParameter] = [
@@ -9950,7 +9950,7 @@ class QQMusicSetReminder(VirtualFunctionTool):
     ]
 
 
-class QQMusicFollowUser(VirtualFunctionTool):
+class QQMusicFollowUser(VirtualFunctionApp):
     name = "QQMusicFollowUser"
     summary = "允许用户关注其他用户或创作者。"
     parameters: List[ArgParameter] = [
@@ -9977,7 +9977,7 @@ class QQMusic(FunctionApp):
     )
     name_for_model = "QQMusic"
     description_for_model = "QQ音乐工具包提供个性化音乐推荐、在线收听、歌单管理、下载功能和社交分享等功能，旨在增强用户的音乐体验，同时确保用户的隐私和版权得到保护。"
-    tool_classes = [
+    app_classes = [
         QQMusicPersonalizedRecommendation,
         QQMusicOnlineListening,
         QQMusicPlaylistManagement,
@@ -9994,7 +9994,7 @@ class QQMusic(FunctionApp):
 #################### Ximalaya ####################
 
 
-class XimalayaSearchAudioContent(VirtualFunctionTool):
+class XimalayaSearchAudioContent(VirtualFunctionApp):
     name = "XimalayaSearchAudioContent"
     summary = "搜索音频内容的工具，根据关键字返回相关的音频列表。"
     parameters: List[ArgParameter] = [
@@ -10023,7 +10023,7 @@ class XimalayaSearchAudioContent(VirtualFunctionTool):
     ]
 
 
-class XimalayaPlayAudio(VirtualFunctionTool):
+class XimalayaPlayAudio(VirtualFunctionApp):
     name = "XimalayaPlayAudio"
     summary = "播放指定音频内容的工具。"
     parameters: List[ArgParameter] = [
@@ -10042,7 +10042,7 @@ class XimalayaPlayAudio(VirtualFunctionTool):
     ]
 
 
-class XimalayaCreatePersonalRadio(VirtualFunctionTool):
+class XimalayaCreatePersonalRadio(VirtualFunctionApp):
     name = "XimalayaCreatePersonalRadio"
     summary = "创建个人电台的工具。"
     parameters: List[ArgParameter] = [
@@ -10065,7 +10065,7 @@ class XimalayaCreatePersonalRadio(VirtualFunctionTool):
     ]
 
 
-class XimalayaFollowCreator(VirtualFunctionTool):
+class XimalayaFollowCreator(VirtualFunctionApp):
     name = "XimalayaFollowCreator"
     summary = "关注创作者的工具。"
     parameters: List[ArgParameter] = [
@@ -10084,7 +10084,7 @@ class XimalayaFollowCreator(VirtualFunctionTool):
     ]
 
 
-class XimalayaCommentOnAudio(VirtualFunctionTool):
+class XimalayaCommentOnAudio(VirtualFunctionApp):
     name = "XimalayaCommentOnAudio"
     summary = "对音频内容发表评论的工具。"
     parameters: List[ArgParameter] = [
@@ -10112,7 +10112,7 @@ class XimalayaCommentOnAudio(VirtualFunctionTool):
     ]
 
 
-class XimalayaGetRecommendedAudio(VirtualFunctionTool):
+class XimalayaGetRecommendedAudio(VirtualFunctionApp):
     name = "XimalayaGetRecommendedAudio"
     summary = "获取推荐音频内容的工具。"
     parameters: List[ArgParameter] = [
@@ -10135,7 +10135,7 @@ class XimalayaGetRecommendedAudio(VirtualFunctionTool):
     ]
 
 
-class XimalayaGetListeningHistory(VirtualFunctionTool):
+class XimalayaGetListeningHistory(VirtualFunctionApp):
     name = "XimalayaGetListeningHistory"
     summary = "获取用户的播放历史记录的工具。"
     parameters: List[ArgParameter] = [
@@ -10158,7 +10158,7 @@ class XimalayaGetListeningHistory(VirtualFunctionTool):
     ]
 
 
-class XimalayaManageRadioSettings(VirtualFunctionTool):
+class XimalayaManageRadioSettings(VirtualFunctionApp):
     name = "XimalayaManageRadioSettings"
     summary = "管理个人电台设置的工具。"
     parameters: List[ArgParameter] = [
@@ -10183,7 +10183,7 @@ class XimalayaManageRadioSettings(VirtualFunctionTool):
     ]
 
 
-class XimalayaGetAudioDetails(VirtualFunctionTool):
+class XimalayaGetAudioDetails(VirtualFunctionApp):
     name = "XimalayaGetAudioDetails"
     summary = "获取音频内容详细信息的工具。"
     parameters: List[ArgParameter] = [
@@ -10206,7 +10206,7 @@ class XimalayaGetAudioDetails(VirtualFunctionTool):
     ]
 
 
-class XimalayaShareAudioLink(VirtualFunctionTool):
+class XimalayaShareAudioLink(VirtualFunctionApp):
     name = "XimalayaShareAudioLink"
     summary = "分享音频内容链接的工具。"
     parameters: List[ArgParameter] = [
@@ -10233,7 +10233,7 @@ class Ximalaya(FunctionApp):
     )
     name_for_model = "Ximalaya"
     description_for_model = "Ximalaya工具包使用户能够搜索、播放音频内容，创建个人电台，关注创作者，发表评论，并获取推荐音频内容，旨在提升用户与音频内容的互动体验。"
-    tool_classes = [
+    app_classes = [
         XimalayaSearchAudioContent,
         XimalayaPlayAudio,
         XimalayaCreatePersonalRadio,
@@ -10250,7 +10250,7 @@ class Ximalaya(FunctionApp):
 #################### QingTingFM ####################
 
 
-class QingTingFMSearchPrograms(VirtualFunctionTool):
+class QingTingFMSearchPrograms(VirtualFunctionApp):
     name = "QingTingFMSearchPrograms"
     summary = "根据用户提供的关键词搜索电台节目。"
     parameters: List[ArgParameter] = [
@@ -10287,7 +10287,7 @@ class QingTingFMSearchPrograms(VirtualFunctionTool):
     ]
 
 
-class QingTingFMSubscribeChannel(VirtualFunctionTool):
+class QingTingFMSubscribeChannel(VirtualFunctionApp):
     name = "QingTingFMSubscribeChannel"
     summary = "订阅指定的电台频道。"
     parameters: List[ArgParameter] = [
@@ -10310,7 +10310,7 @@ class QingTingFMSubscribeChannel(VirtualFunctionTool):
     ]
 
 
-class QingTingFMDownloadProgram(VirtualFunctionTool):
+class QingTingFMDownloadProgram(VirtualFunctionApp):
     name = "QingTingFMDownloadProgram"
     summary = "下载指定的电台节目以便离线收听。"
     parameters: List[ArgParameter] = [
@@ -10333,7 +10333,7 @@ class QingTingFMDownloadProgram(VirtualFunctionTool):
     ]
 
 
-class QingTingFMManageSubscriptions(VirtualFunctionTool):
+class QingTingFMManageSubscriptions(VirtualFunctionApp):
     name = "QingTingFMManageSubscriptions"
     summary = "获取用户的订阅列表。"
     parameters: List[ArgParameter] = []
@@ -10347,7 +10347,7 @@ class QingTingFMManageSubscriptions(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class QingTingFMGetProgramDetails(VirtualFunctionTool):
+class QingTingFMGetProgramDetails(VirtualFunctionApp):
     name = "QingTingFMGetProgramDetails"
     summary = "获取指定电台节目的详细信息。"
     parameters: List[ArgParameter] = [
@@ -10380,7 +10380,7 @@ class QingTingFMGetProgramDetails(VirtualFunctionTool):
     ]
 
 
-class QingTingFMRemoveSubscription(VirtualFunctionTool):
+class QingTingFMRemoveSubscription(VirtualFunctionApp):
     name = "QingTingFMRemoveSubscription"
     summary = "取消订阅指定的电台频道。"
     parameters: List[ArgParameter] = [
@@ -10403,7 +10403,7 @@ class QingTingFMRemoveSubscription(VirtualFunctionTool):
     ]
 
 
-class QingTingFMFavoriteProgram(VirtualFunctionTool):
+class QingTingFMFavoriteProgram(VirtualFunctionApp):
     name = "QingTingFMFavoriteProgram"
     summary = "将指定电台节目添加到收藏夹。"
     parameters: List[ArgParameter] = [
@@ -10426,7 +10426,7 @@ class QingTingFMFavoriteProgram(VirtualFunctionTool):
     ]
 
 
-class QingTingFMShareProgram(VirtualFunctionTool):
+class QingTingFMShareProgram(VirtualFunctionApp):
     name = "QingTingFMShareProgram"
     summary = "分享指定电台节目的链接。"
     parameters: List[ArgParameter] = [
@@ -10455,7 +10455,7 @@ class QingTingFMShareProgram(VirtualFunctionTool):
     ]
 
 
-class QingTingFMGetListeningHistory(VirtualFunctionTool):
+class QingTingFMGetListeningHistory(VirtualFunctionApp):
     name = "QingTingFMGetListeningHistory"
     summary = "获取用户的收听历史。"
     parameters: List[ArgParameter] = []
@@ -10469,7 +10469,7 @@ class QingTingFMGetListeningHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class QingTingFMClearListeningHistory(VirtualFunctionTool):
+class QingTingFMClearListeningHistory(VirtualFunctionApp):
     name = "QingTingFMClearListeningHistory"
     summary = "清除用户的收听历史。"
     parameters: List[ArgParameter] = []
@@ -10485,7 +10485,7 @@ class QingTingFM(FunctionApp):
     description_for_human = "蜻蜓FM工具包提供丰富的电台节目和有声内容，允许用户搜索、订阅和管理电台频道，支持离线收听和个性化推荐，旨在增强用户的音频内容体验。"
     name_for_model = "QingTingFM"
     description_for_model = "蜻蜓FM工具包提供丰富的电台节目和有声内容，允许用户搜索、订阅和管理电台频道，支持离线收听和个性化推荐，旨在增强用户的音频内容体验。"
-    tool_classes = [
+    app_classes = [
         QingTingFMSearchPrograms,
         QingTingFMSubscribeChannel,
         QingTingFMDownloadProgram,
@@ -10502,7 +10502,7 @@ class QingTingFM(FunctionApp):
 #################### KugouMusic ####################
 
 
-class KugouMusicSearchMusic(VirtualFunctionTool):
+class KugouMusicSearchMusic(VirtualFunctionApp):
     name = "KugouMusicSearchMusic"
     summary = "根据关键字搜索音乐并返回匹配的歌曲列表。"
     parameters: List[ArgParameter] = [
@@ -10529,7 +10529,7 @@ class KugouMusicSearchMusic(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class KugouMusicPlayMusic(VirtualFunctionTool):
+class KugouMusicPlayMusic(VirtualFunctionApp):
     name = "KugouMusicPlayMusic"
     summary = "播放指定歌曲。"
     parameters: List[ArgParameter] = [
@@ -10548,7 +10548,7 @@ class KugouMusicPlayMusic(VirtualFunctionTool):
     ]
 
 
-class KugouMusicShowLyrics(VirtualFunctionTool):
+class KugouMusicShowLyrics(VirtualFunctionApp):
     name = "KugouMusicShowLyrics"
     summary = "显示当前播放歌曲的歌词。"
     parameters: List[ArgParameter] = [
@@ -10567,7 +10567,7 @@ class KugouMusicShowLyrics(VirtualFunctionTool):
     ]
 
 
-class KugouMusicWatchMV(VirtualFunctionTool):
+class KugouMusicWatchMV(VirtualFunctionApp):
     name = "KugouMusicWatchMV"
     summary = "播放指定歌曲的MV。"
     parameters: List[ArgParameter] = [
@@ -10586,7 +10586,7 @@ class KugouMusicWatchMV(VirtualFunctionTool):
     ]
 
 
-class KugouMusicPersonalizeRecommendation(VirtualFunctionTool):
+class KugouMusicPersonalizeRecommendation(VirtualFunctionApp):
     name = "KugouMusicPersonalizeRecommendation"
     summary = "根据用户的听歌历史推荐歌曲。"
     parameters: List[ArgParameter] = [
@@ -10605,7 +10605,7 @@ class KugouMusicPersonalizeRecommendation(VirtualFunctionTool):
     ]
 
 
-class KugouMusicDownloadMusic(VirtualFunctionTool):
+class KugouMusicDownloadMusic(VirtualFunctionApp):
     name = "KugouMusicDownloadMusic"
     summary = "下载指定歌曲以便离线收听。"
     parameters: List[ArgParameter] = [
@@ -10624,7 +10624,7 @@ class KugouMusicDownloadMusic(VirtualFunctionTool):
     ]
 
 
-class KugouMusicAdjustSoundEffect(VirtualFunctionTool):
+class KugouMusicAdjustSoundEffect(VirtualFunctionApp):
     name = "KugouMusicAdjustSoundEffect"
     summary = "调整播放的音效设置。"
     parameters: List[ArgParameter] = [
@@ -10652,7 +10652,7 @@ class KugouMusicAdjustSoundEffect(VirtualFunctionTool):
     ]
 
 
-class KugouMusicCreatePlaylist(VirtualFunctionTool):
+class KugouMusicCreatePlaylist(VirtualFunctionApp):
     name = "KugouMusicCreatePlaylist"
     summary = "创建新的播放列表。"
     parameters: List[ArgParameter] = [
@@ -10675,7 +10675,7 @@ class KugouMusicCreatePlaylist(VirtualFunctionTool):
     ]
 
 
-class KugouMusicAddToFavorites(VirtualFunctionTool):
+class KugouMusicAddToFavorites(VirtualFunctionApp):
     name = "KugouMusicAddToFavorites"
     summary = "将指定歌曲添加到收藏夹。"
     parameters: List[ArgParameter] = [
@@ -10694,7 +10694,7 @@ class KugouMusicAddToFavorites(VirtualFunctionTool):
     ]
 
 
-class KugouMusicShareMusic(VirtualFunctionTool):
+class KugouMusicShareMusic(VirtualFunctionApp):
     name = "KugouMusicShareMusic"
     summary = "分享指定歌曲的链接。"
     parameters: List[ArgParameter] = [
@@ -10713,7 +10713,7 @@ class KugouMusicShareMusic(VirtualFunctionTool):
     ]
 
 
-class KugouMusicViewSearchHistory(VirtualFunctionTool):
+class KugouMusicViewSearchHistory(VirtualFunctionApp):
     name = "KugouMusicViewSearchHistory"
     summary = "查看用户的搜索历史记录。"
     parameters: List[ArgParameter] = [
@@ -10742,7 +10742,7 @@ class KugouMusic(FunctionApp):
     description_for_human = "酷狗音乐工具包集成了音乐播放、歌词显示、MV观看等功能，支持用户自定义推荐和个性化电台，提供离线下载和音效调节选项，旨在为音乐爱好者提供全面的音乐体验。"
     name_for_model = "KugouMusic"
     description_for_model = "酷狗音乐工具包集成了音乐播放、歌词显示、MV观看等功能，支持用户自定义推荐和个性化电台，提供离线下载和音效调节选项，旨在为音乐爱好者提供全面的音乐体验。"
-    tool_classes = [
+    app_classes = [
         KugouMusicSearchMusic,
         KugouMusicPlayMusic,
         KugouMusicShowLyrics,
@@ -10760,7 +10760,7 @@ class KugouMusic(FunctionApp):
 #################### Kuaishou ####################
 
 
-class KuaishouCreateShortVideo(VirtualFunctionTool):
+class KuaishouCreateShortVideo(VirtualFunctionApp):
     name = "KuaishouCreateShortVideo"
     summary = "创建并上传短视频。"
     parameters: List[ArgParameter] = [
@@ -10790,7 +10790,7 @@ class KuaishouCreateShortVideo(VirtualFunctionTool):
     ]
 
 
-class KuaishouShareShortVideo(VirtualFunctionTool):
+class KuaishouShareShortVideo(VirtualFunctionApp):
     name = "KuaishouShareShortVideo"
     summary = "分享已创建的短视频。"
     parameters: List[ArgParameter] = [
@@ -10809,7 +10809,7 @@ class KuaishouShareShortVideo(VirtualFunctionTool):
     ]
 
 
-class KuaishouSearchShortVideo(VirtualFunctionTool):
+class KuaishouSearchShortVideo(VirtualFunctionApp):
     name = "KuaishouSearchShortVideo"
     summary = "根据关键字搜索短视频。"
     parameters: List[ArgParameter] = [
@@ -10838,7 +10838,7 @@ class KuaishouSearchShortVideo(VirtualFunctionTool):
     ]
 
 
-class KuaishouCommentOnVideo(VirtualFunctionTool):
+class KuaishouCommentOnVideo(VirtualFunctionApp):
     name = "KuaishouCommentOnVideo"
     summary = "对短视频进行评论。"
     parameters: List[ArgParameter] = [
@@ -10863,7 +10863,7 @@ class KuaishouCommentOnVideo(VirtualFunctionTool):
     ]
 
 
-class KuaishouDeleteShortVideo(VirtualFunctionTool):
+class KuaishouDeleteShortVideo(VirtualFunctionApp):
     name = "KuaishouDeleteShortVideo"
     summary = "删除已上传的短视频。"
     parameters: List[ArgParameter] = [
@@ -10882,7 +10882,7 @@ class KuaishouDeleteShortVideo(VirtualFunctionTool):
     ]
 
 
-class KuaishouFollowUser(VirtualFunctionTool):
+class KuaishouFollowUser(VirtualFunctionApp):
     name = "KuaishouFollowUser"
     summary = "关注其他用户。"
     parameters: List[ArgParameter] = [
@@ -10901,7 +10901,7 @@ class KuaishouFollowUser(VirtualFunctionTool):
     ]
 
 
-class KuaishouViewProfile(VirtualFunctionTool):
+class KuaishouViewProfile(VirtualFunctionApp):
     name = "KuaishouViewProfile"
     summary = "查看用户的个人资料和上传的视频。"
     parameters: List[ArgParameter] = [
@@ -10932,7 +10932,7 @@ class KuaishouViewProfile(VirtualFunctionTool):
     ]
 
 
-class KuaishouGetTrendingVideos(VirtualFunctionTool):
+class KuaishouGetTrendingVideos(VirtualFunctionApp):
     name = "KuaishouGetTrendingVideos"
     summary = "获取平台上的热门视频推荐。"
     parameters: List[ArgParameter] = [
@@ -10955,7 +10955,7 @@ class KuaishouGetTrendingVideos(VirtualFunctionTool):
     ]
 
 
-class KuaishouDownloadShortVideo(VirtualFunctionTool):
+class KuaishouDownloadShortVideo(VirtualFunctionApp):
     name = "KuaishouDownloadShortVideo"
     summary = "下载短视频到本地。"
     parameters: List[ArgParameter] = [
@@ -10974,7 +10974,7 @@ class KuaishouDownloadShortVideo(VirtualFunctionTool):
     ]
 
 
-class KuaishouUploadCoverImage(VirtualFunctionTool):
+class KuaishouUploadCoverImage(VirtualFunctionApp):
     name = "KuaishouUploadCoverImage"
     summary = "上传短视频的封面图。"
     parameters: List[ArgParameter] = [
@@ -11011,7 +11011,7 @@ class Kuaishou(FunctionApp):
     )
     name_for_model = "Kuaishou"
     description_for_model = "Kuaishou工具包用于创建、分享和管理短视频内容，支持用户互动和视频搜索，旨在提升用户在快手平台上的体验。"
-    tool_classes = [
+    app_classes = [
         KuaishouCreateShortVideo,
         KuaishouShareShortVideo,
         KuaishouSearchShortVideo,
@@ -11028,7 +11028,7 @@ class Kuaishou(FunctionApp):
 #################### AiQiYi ####################
 
 
-class AiQiYiSearchContent(VirtualFunctionTool):
+class AiQiYiSearchContent(VirtualFunctionApp):
     name = "AiQiYiSearchContent"
     summary = "搜索电影、电视剧和综艺节目的工具。"
     parameters: List[ArgParameter] = [
@@ -11057,7 +11057,7 @@ class AiQiYiSearchContent(VirtualFunctionTool):
     ]
 
 
-class AiQiYiPlayContent(VirtualFunctionTool):
+class AiQiYiPlayContent(VirtualFunctionApp):
     name = "AiQiYiPlayContent"
     summary = "播放选定的内容。"
     parameters: List[ArgParameter] = [
@@ -11080,7 +11080,7 @@ class AiQiYiPlayContent(VirtualFunctionTool):
     ]
 
 
-class AiQiYiManageWatchlist(VirtualFunctionTool):
+class AiQiYiManageWatchlist(VirtualFunctionApp):
     name = "AiQiYiManageWatchlist"
     summary = "管理用户的观看列表。"
     parameters: List[ArgParameter] = [
@@ -11105,7 +11105,7 @@ class AiQiYiManageWatchlist(VirtualFunctionTool):
     ]
 
 
-class AiQiYiSubscribeMembership(VirtualFunctionTool):
+class AiQiYiSubscribeMembership(VirtualFunctionApp):
     name = "AiQiYiSubscribeMembership"
     summary = "订阅会员服务。"
     parameters: List[ArgParameter] = [
@@ -11131,7 +11131,7 @@ class AiQiYiSubscribeMembership(VirtualFunctionTool):
     ]
 
 
-class AiQiYiDownloadContent(VirtualFunctionTool):
+class AiQiYiDownloadContent(VirtualFunctionApp):
     name = "AiQiYiDownloadContent"
     summary = "下载内容以供离线观看。"
     parameters: List[ArgParameter] = [
@@ -11154,7 +11154,7 @@ class AiQiYiDownloadContent(VirtualFunctionTool):
     ]
 
 
-class AiQiYiGetRecommendations(VirtualFunctionTool):
+class AiQiYiGetRecommendations(VirtualFunctionApp):
     name = "AiQiYiGetRecommendations"
     summary = "提供个性化推荐。"
     parameters: List[ArgParameter] = [
@@ -11177,7 +11177,7 @@ class AiQiYiGetRecommendations(VirtualFunctionTool):
     ]
 
 
-class AiQiYiCommentOnContent(VirtualFunctionTool):
+class AiQiYiCommentOnContent(VirtualFunctionApp):
     name = "AiQiYiCommentOnContent"
     summary = "允许用户对内容发表评论。"
     parameters: List[ArgParameter] = [
@@ -11206,7 +11206,7 @@ class AiQiYiCommentOnContent(VirtualFunctionTool):
     ]
 
 
-class AiQiYiViewTrendingContent(VirtualFunctionTool):
+class AiQiYiViewTrendingContent(VirtualFunctionApp):
     name = "AiQiYiViewTrendingContent"
     summary = "查看热门内容。"
     parameters: List[ArgParameter] = [
@@ -11225,7 +11225,7 @@ class AiQiYiViewTrendingContent(VirtualFunctionTool):
     ]
 
 
-class AiQiYiManageAccount(VirtualFunctionTool):
+class AiQiYiManageAccount(VirtualFunctionApp):
     name = "AiQiYiManageAccount"
     summary = "管理用户的账户信息。"
     parameters: List[ArgParameter] = [
@@ -11254,7 +11254,7 @@ class AiQiYiManageAccount(VirtualFunctionTool):
     ]
 
 
-class AiQiYiViewWatchHistory(VirtualFunctionTool):
+class AiQiYiViewWatchHistory(VirtualFunctionApp):
     name = "AiQiYiViewWatchHistory"
     summary = "查看用户的观看历史。"
     parameters: List[ArgParameter] = [
@@ -11283,7 +11283,7 @@ class AiQiYi(FunctionApp):
     description_for_human = "提供在线电影、电视剧和综艺节目的流媒体播放服务，支持会员订阅、离线下载和个性化推荐。"
     name_for_model = "AiQiYi"
     description_for_model = "爱奇艺工具包提供了搜索、播放、管理观看列表、订阅会员、下载内容等功能，旨在为用户提供全面的流媒体体验，并确保用户的隐私和账户安全。"
-    tool_classes = [
+    app_classes = [
         AiQiYiSearchContent,
         AiQiYiPlayContent,
         AiQiYiManageWatchlist,
@@ -11300,7 +11300,7 @@ class AiQiYi(FunctionApp):
 #################### Bilibili ####################
 
 
-class BilibiliSearchVideo(VirtualFunctionTool):
+class BilibiliSearchVideo(VirtualFunctionApp):
     name = "BilibiliSearchVideo"
     summary = "允许用户根据关键词搜索视频。"
     parameters: List[ArgParameter] = [
@@ -11327,7 +11327,7 @@ class BilibiliSearchVideo(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BilibiliUploadVideo(VirtualFunctionTool):
+class BilibiliUploadVideo(VirtualFunctionApp):
     name = "BilibiliUploadVideo"
     summary = "允许用户上传新视频并添加相关信息。"
     parameters: List[ArgParameter] = [
@@ -11363,7 +11363,7 @@ class BilibiliUploadVideo(VirtualFunctionTool):
     ]
 
 
-class BilibiliPlayVideo(VirtualFunctionTool):
+class BilibiliPlayVideo(VirtualFunctionApp):
     name = "BilibiliPlayVideo"
     summary = "允许用户播放指定视频。"
     parameters: List[ArgParameter] = [
@@ -11386,7 +11386,7 @@ class BilibiliPlayVideo(VirtualFunctionTool):
     ]
 
 
-class BilibiliAddComment(VirtualFunctionTool):
+class BilibiliAddComment(VirtualFunctionApp):
     name = "BilibiliAddComment"
     summary = "允许用户在视频下方添加评论。"
     parameters: List[ArgParameter] = [
@@ -11411,7 +11411,7 @@ class BilibiliAddComment(VirtualFunctionTool):
     ]
 
 
-class BilibiliViewUserProfile(VirtualFunctionTool):
+class BilibiliViewUserProfile(VirtualFunctionApp):
     name = "BilibiliViewUserProfile"
     summary = "允许用户查看其他用户的个人资料和视频。"
     parameters: List[ArgParameter] = [
@@ -11434,7 +11434,7 @@ class BilibiliViewUserProfile(VirtualFunctionTool):
     ]
 
 
-class BilibiliFavoriteVideo(VirtualFunctionTool):
+class BilibiliFavoriteVideo(VirtualFunctionApp):
     name = "BilibiliFavoriteVideo"
     summary = "允许用户将视频添加到个人收藏夹。"
     parameters: List[ArgParameter] = [
@@ -11453,7 +11453,7 @@ class BilibiliFavoriteVideo(VirtualFunctionTool):
     ]
 
 
-class BilibiliShareVideo(VirtualFunctionTool):
+class BilibiliShareVideo(VirtualFunctionApp):
     name = "BilibiliShareVideo"
     summary = "允许用户分享视频链接到其他社交平台。"
     parameters: List[ArgParameter] = [
@@ -11478,7 +11478,7 @@ class BilibiliShareVideo(VirtualFunctionTool):
     ]
 
 
-class BilibiliViewComments(VirtualFunctionTool):
+class BilibiliViewComments(VirtualFunctionApp):
     name = "BilibiliViewComments"
     summary = "允许用户查看特定视频的所有评论。"
     parameters: List[ArgParameter] = [
@@ -11497,7 +11497,7 @@ class BilibiliViewComments(VirtualFunctionTool):
     ]
 
 
-class BilibiliViewVideoRankings(VirtualFunctionTool):
+class BilibiliViewVideoRankings(VirtualFunctionApp):
     name = "BilibiliViewVideoRankings"
     summary = "允许用户查看当前热门视频的排行榜。"
     parameters: List[ArgParameter] = [
@@ -11518,7 +11518,7 @@ class BilibiliViewVideoRankings(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BilibiliSendMessage(VirtualFunctionTool):
+class BilibiliSendMessage(VirtualFunctionApp):
     name = "BilibiliSendMessage"
     summary = "允许用户向其他用户发送私信。"
     parameters: List[ArgParameter] = [
@@ -11551,7 +11551,7 @@ class Bilibili(FunctionApp):
     )
     name_for_model = "Bilibili"
     description_for_model = "该工具包为Bilibili用户提供视频搜索、上传、播放、评论和用户互动等功能，旨在增强用户在平台上的体验。"
-    tool_classes = [
+    app_classes = [
         BilibiliSearchVideo,
         BilibiliUploadVideo,
         BilibiliPlayVideo,
@@ -11568,7 +11568,7 @@ class Bilibili(FunctionApp):
 #################### DouyinShortVideo ####################
 
 
-class DouyinShortVideoCreateVideo(VirtualFunctionTool):
+class DouyinShortVideoCreateVideo(VirtualFunctionApp):
     name = "DouyinShortVideoCreateVideo"
     summary = "创建并保存短视频。"
     parameters: List[ArgParameter] = [
@@ -11599,7 +11599,7 @@ class DouyinShortVideoCreateVideo(VirtualFunctionTool):
     ]
 
 
-class DouyinShortVideoAddMusic(VirtualFunctionTool):
+class DouyinShortVideoAddMusic(VirtualFunctionApp):
     name = "DouyinShortVideoAddMusic"
     summary = "为短视频添加背景音乐。"
     parameters: List[ArgParameter] = [
@@ -11628,7 +11628,7 @@ class DouyinShortVideoAddMusic(VirtualFunctionTool):
     ]
 
 
-class DouyinShortVideoApplyEffects(VirtualFunctionTool):
+class DouyinShortVideoApplyEffects(VirtualFunctionApp):
     name = "DouyinShortVideoApplyEffects"
     summary = "应用特效到短视频。"
     parameters: List[ArgParameter] = [
@@ -11657,7 +11657,7 @@ class DouyinShortVideoApplyEffects(VirtualFunctionTool):
     ]
 
 
-class DouyinShortVideoShareVideo(VirtualFunctionTool):
+class DouyinShortVideoShareVideo(VirtualFunctionApp):
     name = "DouyinShortVideoShareVideo"
     summary = "将短视频分享至抖音平台。"
     parameters: List[ArgParameter] = [
@@ -11680,7 +11680,7 @@ class DouyinShortVideoShareVideo(VirtualFunctionTool):
     ]
 
 
-class DouyinShortVideoFollowCreator(VirtualFunctionTool):
+class DouyinShortVideoFollowCreator(VirtualFunctionApp):
     name = "DouyinShortVideoFollowCreator"
     summary = "关注其他创作者。"
     parameters: List[ArgParameter] = [
@@ -11699,7 +11699,7 @@ class DouyinShortVideoFollowCreator(VirtualFunctionTool):
     ]
 
 
-class DouyinShortVideoViewTrendingVideos(VirtualFunctionTool):
+class DouyinShortVideoViewTrendingVideos(VirtualFunctionApp):
     name = "DouyinShortVideoViewTrendingVideos"
     summary = "获取当前热门视频列表。"
     parameters: List[ArgParameter] = [
@@ -11722,7 +11722,7 @@ class DouyinShortVideoViewTrendingVideos(VirtualFunctionTool):
     ]
 
 
-class DouyinShortVideoSearchEffects(VirtualFunctionTool):
+class DouyinShortVideoSearchEffects(VirtualFunctionApp):
     name = "DouyinShortVideoSearchEffects"
     summary = "根据关键词搜索特效。"
     parameters: List[ArgParameter] = [
@@ -11751,7 +11751,7 @@ class DouyinShortVideoSearchEffects(VirtualFunctionTool):
     ]
 
 
-class DouyinShortVideoSaveDraft(VirtualFunctionTool):
+class DouyinShortVideoSaveDraft(VirtualFunctionApp):
     name = "DouyinShortVideoSaveDraft"
     summary = "保存未完成的视频草稿。"
     parameters: List[ArgParameter] = [
@@ -11774,7 +11774,7 @@ class DouyinShortVideoSaveDraft(VirtualFunctionTool):
     ]
 
 
-class DouyinShortVideoCommentOnVideo(VirtualFunctionTool):
+class DouyinShortVideoCommentOnVideo(VirtualFunctionApp):
     name = "DouyinShortVideoCommentOnVideo"
     summary = "对分享的视频进行评论。"
     parameters: List[ArgParameter] = [
@@ -11799,7 +11799,7 @@ class DouyinShortVideoCommentOnVideo(VirtualFunctionTool):
     ]
 
 
-class DouyinShortVideoViewProfile(VirtualFunctionTool):
+class DouyinShortVideoViewProfile(VirtualFunctionApp):
     name = "DouyinShortVideoViewProfile"
     summary = "查看用户的个人资料。"
     parameters: List[ArgParameter] = [
@@ -11822,7 +11822,7 @@ class DouyinShortVideoViewProfile(VirtualFunctionTool):
     ]
 
 
-class DouyinShortVideoSearchVideo(VirtualFunctionTool):
+class DouyinShortVideoSearchVideo(VirtualFunctionApp):
     name = "DouyinShortVideoSearchVideo"
     summary = "根据标题或关键词搜索视频。"
     parameters: List[ArgParameter] = [
@@ -11851,7 +11851,7 @@ class DouyinShortVideoSearchVideo(VirtualFunctionTool):
     ]
 
 
-class DouyinShortVideoSearchMusic(VirtualFunctionTool):
+class DouyinShortVideoSearchMusic(VirtualFunctionApp):
     name = "DouyinShortVideoSearchMusic"
     summary = "根据关键词搜索音乐。"
     parameters: List[ArgParameter] = [
@@ -11880,7 +11880,7 @@ class DouyinShortVideoSearchMusic(VirtualFunctionTool):
     ]
 
 
-class DouyinShortVideoSearchEffects(VirtualFunctionTool):
+class DouyinShortVideoSearchEffects(VirtualFunctionApp):
     name = "DouyinShortVideoSearchEffects"
     summary = "根据关键词搜索特效。"
     parameters: List[ArgParameter] = [
@@ -11917,7 +11917,7 @@ class DouyinShortVideo(FunctionApp):
     )
     name_for_model = "DouyinShortVideo"
     description_for_model = "该工具包允许用户创建、编辑和分享短视频，添加音乐和特效，并与其他创作者互动，确保用户能够充分利用抖音短视频平台的功能。"
-    tool_classes = [
+    app_classes = [
         DouyinShortVideoCreateVideo,
         DouyinShortVideoAddMusic,
         DouyinShortVideoApplyEffects,
@@ -11937,7 +11937,7 @@ class DouyinShortVideo(FunctionApp):
 #################### XiaoYuzhou ####################
 
 
-class XiaoYuzhouSearchPodcast(VirtualFunctionTool):
+class XiaoYuzhouSearchPodcast(VirtualFunctionApp):
     name = "XiaoYuzhouSearchPodcast"
     summary = "根据关键字搜索播客节目并返回相关结果。"
     parameters: List[ArgParameter] = [
@@ -11969,7 +11969,7 @@ class XiaoYuzhouSearchPodcast(VirtualFunctionTool):
     ]
 
 
-class XiaoYuzhouPlayPodcast(VirtualFunctionTool):
+class XiaoYuzhouPlayPodcast(VirtualFunctionApp):
     name = "XiaoYuzhouPlayPodcast"
     summary = "播放选定的播客节目。"
     parameters: List[ArgParameter] = [
@@ -11988,7 +11988,7 @@ class XiaoYuzhouPlayPodcast(VirtualFunctionTool):
     ]
 
 
-class XiaoYuzhouCreatePlaylist(VirtualFunctionTool):
+class XiaoYuzhouCreatePlaylist(VirtualFunctionApp):
     name = "XiaoYuzhouCreatePlaylist"
     summary = "创建新的播放列表并将播客添加到其中。"
     parameters: List[ArgParameter] = [
@@ -12020,7 +12020,7 @@ class XiaoYuzhouCreatePlaylist(VirtualFunctionTool):
     ]
 
 
-class XiaoYuzhouFollowPodcast(VirtualFunctionTool):
+class XiaoYuzhouFollowPodcast(VirtualFunctionApp):
     name = "XiaoYuzhouFollowPodcast"
     summary = "关注指定的播客节目。"
     parameters: List[ArgParameter] = [
@@ -12039,7 +12039,7 @@ class XiaoYuzhouFollowPodcast(VirtualFunctionTool):
     ]
 
 
-class XiaoYuzhouRecommendPodcasts(VirtualFunctionTool):
+class XiaoYuzhouRecommendPodcasts(VirtualFunctionApp):
     name = "XiaoYuzhouRecommendPodcasts"
     summary = "根据用户的听取历史推荐相关播客节目。"
     parameters: List[ArgParameter] = [
@@ -12062,7 +12062,7 @@ class XiaoYuzhouRecommendPodcasts(VirtualFunctionTool):
     ]
 
 
-class XiaoYuzhouGetPodcastDetails(VirtualFunctionTool):
+class XiaoYuzhouGetPodcastDetails(VirtualFunctionApp):
     name = "XiaoYuzhouGetPodcastDetails"
     summary = "查看特定播客节目的详细信息。"
     parameters: List[ArgParameter] = [
@@ -12085,7 +12085,7 @@ class XiaoYuzhouGetPodcastDetails(VirtualFunctionTool):
     ]
 
 
-class XiaoYuzhouDeletePlaylist(VirtualFunctionTool):
+class XiaoYuzhouDeletePlaylist(VirtualFunctionApp):
     name = "XiaoYuzhouDeletePlaylist"
     summary = "删除指定的播放列表。"
     parameters: List[ArgParameter] = [
@@ -12104,7 +12104,7 @@ class XiaoYuzhouDeletePlaylist(VirtualFunctionTool):
     ]
 
 
-class XiaoYuzhouUpdatePlaylist(VirtualFunctionTool):
+class XiaoYuzhouUpdatePlaylist(VirtualFunctionApp):
     name = "XiaoYuzhouUpdatePlaylist"
     summary = "更新现有的播放列表。"
     parameters: List[ArgParameter] = [
@@ -12129,7 +12129,7 @@ class XiaoYuzhouUpdatePlaylist(VirtualFunctionTool):
     ]
 
 
-class XiaoYuzhouGetFollowedPodcasts(VirtualFunctionTool):
+class XiaoYuzhouGetFollowedPodcasts(VirtualFunctionApp):
     name = "XiaoYuzhouGetFollowedPodcasts"
     summary = "查看用户已关注的播客列表。"
     parameters: List[ArgParameter] = [
@@ -12152,7 +12152,7 @@ class XiaoYuzhouGetFollowedPodcasts(VirtualFunctionTool):
     ]
 
 
-class XiaoYuzhouGetPlayHistory(VirtualFunctionTool):
+class XiaoYuzhouGetPlayHistory(VirtualFunctionApp):
     name = "XiaoYuzhouGetPlayHistory"
     summary = "查看用户的播放历史记录。"
     parameters: List[ArgParameter] = [
@@ -12183,7 +12183,7 @@ class XiaoYuzhou(FunctionApp):
     )
     name_for_model = "XiaoYuzhou"
     description_for_model = "小宇宙工具包提供了一系列功能，帮助用户搜索、播放和管理播客节目，允许创建播放列表和关注喜欢的节目，同时根据用户的听取历史进行个性化推荐。"
-    tool_classes = [
+    app_classes = [
         XiaoYuzhouSearchPodcast,
         XiaoYuzhouPlayPodcast,
         XiaoYuzhouCreatePlaylist,
@@ -12200,7 +12200,7 @@ class XiaoYuzhou(FunctionApp):
 #################### JinRiTouTiao ####################
 
 
-class JinRiTouTiaoGetPersonalizedNews(VirtualFunctionTool):
+class JinRiTouTiaoGetPersonalizedNews(VirtualFunctionApp):
     name = "JinRiTouTiaoGetPersonalizedNews"
     summary = "获取个性化新闻推荐。"
     parameters: List[ArgParameter] = [
@@ -12229,7 +12229,7 @@ class JinRiTouTiaoGetPersonalizedNews(VirtualFunctionTool):
     ]
 
 
-class JinRiTouTiaoSearchNews(VirtualFunctionTool):
+class JinRiTouTiaoSearchNews(VirtualFunctionApp):
     name = "JinRiTouTiaoSearchNews"
     summary = "根据关键词搜索新闻。"
     parameters: List[ArgParameter] = [
@@ -12261,7 +12261,7 @@ class JinRiTouTiaoSearchNews(VirtualFunctionTool):
     ]
 
 
-class JinRiTouTiaoBookmarkNews(VirtualFunctionTool):
+class JinRiTouTiaoBookmarkNews(VirtualFunctionApp):
     name = "JinRiTouTiaoBookmarkNews"
     summary = "收藏用户喜欢的新闻。"
     parameters: List[ArgParameter] = [
@@ -12287,7 +12287,7 @@ class JinRiTouTiaoBookmarkNews(VirtualFunctionTool):
     ]
 
 
-class JinRiTouTiaoGetBookmarkedNews(VirtualFunctionTool):
+class JinRiTouTiaoGetBookmarkedNews(VirtualFunctionApp):
     name = "JinRiTouTiaoGetBookmarkedNews"
     summary = "获取用户收藏的新闻。"
     parameters: List[ArgParameter] = [
@@ -12310,7 +12310,7 @@ class JinRiTouTiaoGetBookmarkedNews(VirtualFunctionTool):
     ]
 
 
-class JinRiTouTiaoCommentOnNews(VirtualFunctionTool):
+class JinRiTouTiaoCommentOnNews(VirtualFunctionApp):
     name = "JinRiTouTiaoCommentOnNews"
     summary = "对新闻文章发表评论。"
     parameters: List[ArgParameter] = [
@@ -12342,7 +12342,7 @@ class JinRiTouTiaoCommentOnNews(VirtualFunctionTool):
     ]
 
 
-class JinRiTouTiaoShareNews(VirtualFunctionTool):
+class JinRiTouTiaoShareNews(VirtualFunctionApp):
     name = "JinRiTouTiaoShareNews"
     summary = "将新闻分享至社交媒体。"
     parameters: List[ArgParameter] = [
@@ -12377,7 +12377,7 @@ class JinRiTouTiaoShareNews(VirtualFunctionTool):
     ]
 
 
-class JinRiTouTiaoGetPopularNews(VirtualFunctionTool):
+class JinRiTouTiaoGetPopularNews(VirtualFunctionApp):
     name = "JinRiTouTiaoGetPopularNews"
     summary = "获取当前热门新闻。"
     parameters: List[ArgParameter] = [
@@ -12400,7 +12400,7 @@ class JinRiTouTiaoGetPopularNews(VirtualFunctionTool):
     ]
 
 
-class JinRiTouTiaoGetFinanceNews(VirtualFunctionTool):
+class JinRiTouTiaoGetFinanceNews(VirtualFunctionApp):
     name = "JinRiTouTiaoGetFinanceNews"
     summary = "获取财经动态新闻。"
     parameters: List[ArgParameter] = [
@@ -12423,7 +12423,7 @@ class JinRiTouTiaoGetFinanceNews(VirtualFunctionTool):
     ]
 
 
-class JinRiTouTiaoGetVideoContent(VirtualFunctionTool):
+class JinRiTouTiaoGetVideoContent(VirtualFunctionApp):
     name = "JinRiTouTiaoGetVideoContent"
     summary = "获取视频内容。"
     parameters: List[ArgParameter] = [
@@ -12446,7 +12446,7 @@ class JinRiTouTiaoGetVideoContent(VirtualFunctionTool):
     ]
 
 
-class JinRiTouTiaoGetReadingHistory(VirtualFunctionTool):
+class JinRiTouTiaoGetReadingHistory(VirtualFunctionApp):
     name = "JinRiTouTiaoGetReadingHistory"
     summary = "获取用户的新闻阅读历史。"
     parameters: List[ArgParameter] = [
@@ -12469,7 +12469,7 @@ class JinRiTouTiaoGetReadingHistory(VirtualFunctionTool):
     ]
 
 
-class JinRiTouTiaoOptimizeRecommendation(VirtualFunctionTool):
+class JinRiTouTiaoOptimizeRecommendation(VirtualFunctionApp):
     name = "JinRiTouTiaoOptimizeRecommendation"
     summary = "根据用户反馈优化推荐算法。"
     parameters: List[ArgParameter] = [
@@ -12494,7 +12494,7 @@ class JinRiTouTiaoOptimizeRecommendation(VirtualFunctionTool):
     ]
 
 
-class JinRiTouTiaoGetUserFeedback(VirtualFunctionTool):
+class JinRiTouTiaoGetUserFeedback(VirtualFunctionApp):
     name = "JinRiTouTiaoGetUserFeedback"
     summary = "获取用户对推荐内容的反馈。"
     parameters: List[ArgParameter] = [
@@ -12523,7 +12523,7 @@ class JinRiTouTiao(FunctionApp):
     description_for_human = "一个提供个性化新闻推荐和管理功能的工具包。"
     name_for_model = "JinRiTouTiao"
     description_for_model = "今日头条工具包提供个性化新闻推荐、搜索、收藏、评论和分享功能，旨在帮助用户获取与其兴趣相关的最新新闻和信息，同时管理其收藏和阅读历史。"
-    tool_classes = [
+    app_classes = [
         JinRiTouTiaoGetPersonalizedNews,
         JinRiTouTiaoSearchNews,
         JinRiTouTiaoBookmarkNews,
@@ -12542,7 +12542,7 @@ class JinRiTouTiao(FunctionApp):
 #################### WangYiCloudReading ####################
 
 
-class WangYiCloudReadingSearchBooks(VirtualFunctionTool):
+class WangYiCloudReadingSearchBooks(VirtualFunctionApp):
     name = "WangYiCloudReadingSearchBooks"
     summary = "通过关键词搜索书籍和文章。"
     parameters: List[ArgParameter] = [
@@ -12565,7 +12565,7 @@ class WangYiCloudReadingSearchBooks(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WangYiCloudReadingReadBook(VirtualFunctionTool):
+class WangYiCloudReadingReadBook(VirtualFunctionApp):
     name = "WangYiCloudReadingReadBook"
     summary = "在线阅读指定书籍或文章。"
     parameters: List[ArgParameter] = [
@@ -12582,7 +12582,7 @@ class WangYiCloudReadingReadBook(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WangYiCloudReadingDownloadBook(VirtualFunctionTool):
+class WangYiCloudReadingDownloadBook(VirtualFunctionApp):
     name = "WangYiCloudReadingDownloadBook"
     summary = "下载指定书籍到本地设备。"
     parameters: List[ArgParameter] = [
@@ -12604,7 +12604,7 @@ class WangYiCloudReadingDownloadBook(VirtualFunctionTool):
     ]
 
 
-class WangYiCloudReadingShareBook(VirtualFunctionTool):
+class WangYiCloudReadingShareBook(VirtualFunctionApp):
     name = "WangYiCloudReadingShareBook"
     summary = "通过社交媒体分享书籍或文章链接。"
     parameters: List[ArgParameter] = [
@@ -12632,7 +12632,7 @@ class WangYiCloudReadingShareBook(VirtualFunctionTool):
     ]
 
 
-class WangYiCloudReadingCreateReadingList(VirtualFunctionTool):
+class WangYiCloudReadingCreateReadingList(VirtualFunctionApp):
     name = "WangYiCloudReadingCreateReadingList"
     summary = "创建新的书单。"
     parameters: List[ArgParameter] = [
@@ -12654,7 +12654,7 @@ class WangYiCloudReadingCreateReadingList(VirtualFunctionTool):
     ]
 
 
-class WangYiCloudReadingAddBookToList(VirtualFunctionTool):
+class WangYiCloudReadingAddBookToList(VirtualFunctionApp):
     name = "WangYiCloudReadingAddBookToList"
     summary = "将书籍添加到指定书单中。"
     parameters: List[ArgParameter] = [
@@ -12686,7 +12686,7 @@ class WangYiCloudReadingAddBookToList(VirtualFunctionTool):
     ]
 
 
-class WangYiCloudReadingAddReview(VirtualFunctionTool):
+class WangYiCloudReadingAddReview(VirtualFunctionApp):
     name = "WangYiCloudReadingAddReview"
     summary = "为书籍添加书评。"
     parameters: List[ArgParameter] = [
@@ -12718,7 +12718,7 @@ class WangYiCloudReadingAddReview(VirtualFunctionTool):
     ]
 
 
-class WangYiCloudReadingGetReviews(VirtualFunctionTool):
+class WangYiCloudReadingGetReviews(VirtualFunctionApp):
     name = "WangYiCloudReadingGetReviews"
     summary = "获取指定书籍的书评。"
     parameters: List[ArgParameter] = [
@@ -12740,7 +12740,7 @@ class WangYiCloudReadingGetReviews(VirtualFunctionTool):
     ]
 
 
-class WangYiCloudReadingDeleteBook(VirtualFunctionTool):
+class WangYiCloudReadingDeleteBook(VirtualFunctionApp):
     name = "WangYiCloudReadingDeleteBook"
     summary = "从书单或收藏中删除书籍。"
     parameters: List[ArgParameter] = [
@@ -12766,7 +12766,7 @@ class WangYiCloudReadingDeleteBook(VirtualFunctionTool):
     ]
 
 
-class WangYiCloudReadingUpdateBookStatus(VirtualFunctionTool):
+class WangYiCloudReadingUpdateBookStatus(VirtualFunctionApp):
     name = "WangYiCloudReadingUpdateBookStatus"
     summary = "更新书籍的阅读状态或书评。"
     parameters: List[ArgParameter] = [
@@ -12804,7 +12804,7 @@ class WangYiCloudReading(FunctionApp):
     description_for_human = "一个电子书和文章阅读平台，用户可以在线阅读、下载和分享书籍，同时支持书评和书单功能。"
     name_for_model = "WangYiCloudReading"
     description_for_model = "WangYiCloudReading工具包提供了一个全面的接口，允许用户搜索、阅读、下载和分享电子书及文章，同时支持书评和书单功能，促进知识分享和管理。"
-    tool_classes = [
+    app_classes = [
         WangYiCloudReadingSearchBooks,
         WangYiCloudReadingReadBook,
         WangYiCloudReadingDownloadBook,
@@ -12821,7 +12821,7 @@ class WangYiCloudReading(FunctionApp):
 #################### DongfangCaiFu ####################
 
 
-class DongfangCaiFuGetRealTimeQuote(VirtualFunctionTool):
+class DongfangCaiFuGetRealTimeQuote(VirtualFunctionApp):
     name = "DongfangCaiFuGetRealTimeQuote"
     summary = "查询特定股票或基金的实时市场价格及相关信息。"
     parameters: List[ArgParameter] = [
@@ -12840,7 +12840,7 @@ class DongfangCaiFuGetRealTimeQuote(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DongfangCaiFuGetFinancialNews(VirtualFunctionTool):
+class DongfangCaiFuGetFinancialNews(VirtualFunctionApp):
     name = "DongfangCaiFuGetFinancialNews"
     summary = "获取最新的财经新闻和市场分析。"
     parameters: List[ArgParameter] = [
@@ -12861,7 +12861,7 @@ class DongfangCaiFuGetFinancialNews(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DongfangCaiFuCreatePortfolio(VirtualFunctionTool):
+class DongfangCaiFuCreatePortfolio(VirtualFunctionApp):
     name = "DongfangCaiFuCreatePortfolio"
     summary = "创建新的投资组合并返回其唯一标识符。"
     parameters: List[ArgParameter] = [
@@ -12882,7 +12882,7 @@ class DongfangCaiFuCreatePortfolio(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DongfangCaiFuGetPortfolio(VirtualFunctionTool):
+class DongfangCaiFuGetPortfolio(VirtualFunctionApp):
     name = "DongfangCaiFuGetPortfolio"
     summary = "查询特定投资组合的详细信息。"
     parameters: List[ArgParameter] = [
@@ -12905,7 +12905,7 @@ class DongfangCaiFuGetPortfolio(VirtualFunctionTool):
     ]
 
 
-class DongfangCaiFuSetPriceAlert(VirtualFunctionTool):
+class DongfangCaiFuSetPriceAlert(VirtualFunctionApp):
     name = "DongfangCaiFuSetPriceAlert"
     summary = "设置特定股票或基金的价格提醒。"
     parameters: List[ArgParameter] = [
@@ -12930,7 +12930,7 @@ class DongfangCaiFuSetPriceAlert(VirtualFunctionTool):
     ]
 
 
-class DongfangCaiFuGetFinancialMetrics(VirtualFunctionTool):
+class DongfangCaiFuGetFinancialMetrics(VirtualFunctionApp):
     name = "DongfangCaiFuGetFinancialMetrics"
     summary = "查询特定股票或基金的财务指标。"
     parameters: List[ArgParameter] = [
@@ -12953,7 +12953,7 @@ class DongfangCaiFuGetFinancialMetrics(VirtualFunctionTool):
     ]
 
 
-class DongfangCaiFuParticipateInCommunityDiscussion(VirtualFunctionTool):
+class DongfangCaiFuParticipateInCommunityDiscussion(VirtualFunctionApp):
     name = "DongfangCaiFuParticipateInCommunityDiscussion"
     summary = "用户可以参与财经社区讨论，发布观点。"
     parameters: List[ArgParameter] = [
@@ -12978,7 +12978,7 @@ class DongfangCaiFuParticipateInCommunityDiscussion(VirtualFunctionTool):
     ]
 
 
-class DongfangCaiFuExportData(VirtualFunctionTool):
+class DongfangCaiFuExportData(VirtualFunctionApp):
     name = "DongfangCaiFuExportData"
     summary = "将查询到的数据导出为CSV格式。"
     parameters: List[ArgParameter] = [
@@ -12997,7 +12997,7 @@ class DongfangCaiFuExportData(VirtualFunctionTool):
     ]
 
 
-class DongfangCaiFuGetHistoricalData(VirtualFunctionTool):
+class DongfangCaiFuGetHistoricalData(VirtualFunctionApp):
     name = "DongfangCaiFuGetHistoricalData"
     summary = "查询特定股票或基金的历史市场数据。"
     parameters: List[ArgParameter] = [
@@ -13032,7 +13032,7 @@ class DongfangCaiFuGetHistoricalData(VirtualFunctionTool):
     ]
 
 
-class DongfangCaiFuGetInvestmentEducationResources(VirtualFunctionTool):
+class DongfangCaiFuGetInvestmentEducationResources(VirtualFunctionApp):
     name = "DongfangCaiFuGetInvestmentEducationResources"
     summary = "获取投资相关的教育文章和视频。"
     parameters: List[ArgParameter] = [
@@ -13053,7 +13053,7 @@ class DongfangCaiFuGetInvestmentEducationResources(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DongfangCaiFuGetSavedAddresses(VirtualFunctionTool):
+class DongfangCaiFuGetSavedAddresses(VirtualFunctionApp):
     name = "DongfangCaiFuGetSavedAddresses"
     summary = "获取用户之前保存的地址信息。"
     parameters: List[ArgParameter] = []
@@ -13063,7 +13063,7 @@ class DongfangCaiFuGetSavedAddresses(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DongfangCaiFuGetSavedPaymentMethods(VirtualFunctionTool):
+class DongfangCaiFuGetSavedPaymentMethods(VirtualFunctionApp):
     name = "DongfangCaiFuGetSavedPaymentMethods"
     summary = "获取用户之前保存的支付方式信息。"
     parameters: List[ArgParameter] = []
@@ -13085,7 +13085,7 @@ class DongfangCaiFu(FunctionApp):
     )
     name_for_model = "DongfangCaiFu"
     description_for_model = "该工具包提供了一个全面的财经资讯平台，用户可以获取实时行情、财经新闻、投资组合管理、历史数据分析等功能，帮助个人投资者和财经分析师做出明智的投资决策。"
-    tool_classes = [
+    app_classes = [
         DongfangCaiFuGetRealTimeQuote,
         DongfangCaiFuGetFinancialNews,
         DongfangCaiFuCreatePortfolio,
@@ -13104,7 +13104,7 @@ class DongfangCaiFu(FunctionApp):
 #################### XinHua ####################
 
 
-class XinHuaGetLatestNews(VirtualFunctionTool):
+class XinHuaGetLatestNews(VirtualFunctionApp):
     name = "XinHuaGetLatestNews"
     summary = "检索最新的新闻报道。"
     parameters: List[ArgParameter] = [
@@ -13130,7 +13130,7 @@ class XinHuaGetLatestNews(VirtualFunctionTool):
     ]
 
 
-class XinHuaSearchNews(VirtualFunctionTool):
+class XinHuaSearchNews(VirtualFunctionApp):
     name = "XinHuaSearchNews"
     summary = "根据关键词搜索相关新闻。"
     parameters: List[ArgParameter] = [
@@ -13162,7 +13162,7 @@ class XinHuaSearchNews(VirtualFunctionTool):
     ]
 
 
-class XinHuaGetNewsDetails(VirtualFunctionTool):
+class XinHuaGetNewsDetails(VirtualFunctionApp):
     name = "XinHuaGetNewsDetails"
     summary = "获取特定新闻的详细信息。"
     parameters: List[ArgParameter] = [
@@ -13189,7 +13189,7 @@ class XinHuaGetNewsDetails(VirtualFunctionTool):
     ]
 
 
-class XinHuaGetHistoricalNews(VirtualFunctionTool):
+class XinHuaGetHistoricalNews(VirtualFunctionApp):
     name = "XinHuaGetHistoricalNews"
     summary = "获取过去一段时间内的新闻报道。"
     parameters: List[ArgParameter] = [
@@ -13227,7 +13227,7 @@ class XinHuaGetHistoricalNews(VirtualFunctionTool):
     ]
 
 
-class XinHuaGetNewsCategories(VirtualFunctionTool):
+class XinHuaGetNewsCategories(VirtualFunctionApp):
     name = "XinHuaGetNewsCategories"
     summary = "获取新闻的不同分类。"
     parameters: List[ArgParameter] = [
@@ -13249,7 +13249,7 @@ class XinHuaGetNewsCategories(VirtualFunctionTool):
     ]
 
 
-class XinHuaGetNewsSource(VirtualFunctionTool):
+class XinHuaGetNewsSource(VirtualFunctionApp):
     name = "XinHuaGetNewsSource"
     summary = "获取特定新闻的来源信息。"
     parameters: List[ArgParameter] = [
@@ -13276,7 +13276,7 @@ class XinHuaGetNewsSource(VirtualFunctionTool):
     ]
 
 
-class XinHuaGetNewsSummary(VirtualFunctionTool):
+class XinHuaGetNewsSummary(VirtualFunctionApp):
     name = "XinHuaGetNewsSummary"
     summary = "获取特定新闻的摘要信息。"
     parameters: List[ArgParameter] = [
@@ -13299,7 +13299,7 @@ class XinHuaGetNewsSummary(VirtualFunctionTool):
     ]
 
 
-class XinHuaGetNewsComments(VirtualFunctionTool):
+class XinHuaGetNewsComments(VirtualFunctionApp):
     name = "XinHuaGetNewsComments"
     summary = "获取特定新闻的用户评论。"
     parameters: List[ArgParameter] = [
@@ -13322,7 +13322,7 @@ class XinHuaGetNewsComments(VirtualFunctionTool):
     ]
 
 
-class XinHuaGetNewsShareLink(VirtualFunctionTool):
+class XinHuaGetNewsShareLink(VirtualFunctionApp):
     name = "XinHuaGetNewsShareLink"
     summary = "获取特定新闻的社交媒体分享链接。"
     parameters: List[ArgParameter] = [
@@ -13345,7 +13345,7 @@ class XinHuaGetNewsShareLink(VirtualFunctionTool):
     ]
 
 
-class XinHuaGetNewsMedia(VirtualFunctionTool):
+class XinHuaGetNewsMedia(VirtualFunctionApp):
     name = "XinHuaGetNewsMedia"
     summary = "获取特定新闻的多媒体内容。"
     parameters: List[ArgParameter] = [
@@ -13376,7 +13376,7 @@ class XinHua(FunctionApp):
     )
     name_for_model = "XinHua"
     description_for_model = "该工具包提供权威的新闻报道和实时更新，用户可以获取最新的官方消息、深度分析和多种新闻分类，适用于普通公众、媒体工作者和研究人员。"
-    tool_classes = [
+    app_classes = [
         XinHuaGetLatestNews,
         XinHuaSearchNews,
         XinHuaGetNewsDetails,
@@ -13393,7 +13393,7 @@ class XinHua(FunctionApp):
 #################### Douban ####################
 
 
-class DoubanGetBookReviews(VirtualFunctionTool):
+class DoubanGetBookReviews(VirtualFunctionApp):
     name = "DoubanGetBookReviews"
     summary = "获取特定书籍的评论。"
     parameters: List[ArgParameter] = [
@@ -13410,7 +13410,7 @@ class DoubanGetBookReviews(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DoubanSubmitBookReview(VirtualFunctionTool):
+class DoubanSubmitBookReview(VirtualFunctionApp):
     name = "DoubanSubmitBookReview"
     summary = "提交书籍评论。"
     parameters: List[ArgParameter] = [
@@ -13438,7 +13438,7 @@ class DoubanSubmitBookReview(VirtualFunctionTool):
     ]
 
 
-class DoubanGetMovieReviews(VirtualFunctionTool):
+class DoubanGetMovieReviews(VirtualFunctionApp):
     name = "DoubanGetMovieReviews"
     summary = "获取特定电影的评论。"
     parameters: List[ArgParameter] = [
@@ -13455,7 +13455,7 @@ class DoubanGetMovieReviews(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DoubanSubmitMovieReview(VirtualFunctionTool):
+class DoubanSubmitMovieReview(VirtualFunctionApp):
     name = "DoubanSubmitMovieReview"
     summary = "提交电影评论。"
     parameters: List[ArgParameter] = [
@@ -13483,7 +13483,7 @@ class DoubanSubmitMovieReview(VirtualFunctionTool):
     ]
 
 
-class DoubanGetMusicReviews(VirtualFunctionTool):
+class DoubanGetMusicReviews(VirtualFunctionApp):
     name = "DoubanGetMusicReviews"
     summary = "获取特定音乐的评论。"
     parameters: List[ArgParameter] = [
@@ -13500,7 +13500,7 @@ class DoubanGetMusicReviews(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DoubanSubmitMusicReview(VirtualFunctionTool):
+class DoubanSubmitMusicReview(VirtualFunctionApp):
     name = "DoubanSubmitMusicReview"
     summary = "提交音乐评论。"
     parameters: List[ArgParameter] = [
@@ -13528,7 +13528,7 @@ class DoubanSubmitMusicReview(VirtualFunctionTool):
     ]
 
 
-class DoubanSearchBooks(VirtualFunctionTool):
+class DoubanSearchBooks(VirtualFunctionApp):
     name = "DoubanSearchBooks"
     summary = "根据关键字搜索书籍。"
     parameters: List[ArgParameter] = [
@@ -13551,7 +13551,7 @@ class DoubanSearchBooks(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DoubanSearchMovies(VirtualFunctionTool):
+class DoubanSearchMovies(VirtualFunctionApp):
     name = "DoubanSearchMovies"
     summary = "根据关键字搜索电影。"
     parameters: List[ArgParameter] = [
@@ -13574,7 +13574,7 @@ class DoubanSearchMovies(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DoubanSearchMusic(VirtualFunctionTool):
+class DoubanSearchMusic(VirtualFunctionApp):
     name = "DoubanSearchMusic"
     summary = "根据关键字搜索音乐。"
     parameters: List[ArgParameter] = [
@@ -13597,7 +13597,7 @@ class DoubanSearchMusic(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DoubanGetUserReviewHistory(VirtualFunctionTool):
+class DoubanGetUserReviewHistory(VirtualFunctionApp):
     name = "DoubanGetUserReviewHistory"
     summary = "获取用户的评论历史。"
     parameters: List[ArgParameter] = [
@@ -13614,7 +13614,7 @@ class DoubanGetUserReviewHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DoubanDeleteUserReview(VirtualFunctionTool):
+class DoubanDeleteUserReview(VirtualFunctionApp):
     name = "DoubanDeleteUserReview"
     summary = "删除用户的评论。"
     parameters: List[ArgParameter] = [
@@ -13639,7 +13639,7 @@ class Douban(FunctionApp):
     description_for_human = "一个用于获取、提交和管理书籍、电影和音乐评论的工具包。"
     name_for_model = "Douban"
     description_for_model = "该工具包允许用户获取、提交和管理书籍、电影和音乐的评论，促进文化交流和信息分享，同时提供搜索功能和用户评论历史访问。"
-    tool_classes = [
+    app_classes = [
         DoubanGetBookReviews,
         DoubanSubmitBookReview,
         DoubanGetMovieReviews,
@@ -13657,7 +13657,7 @@ class Douban(FunctionApp):
 #################### TencentNews ####################
 
 
-class TencentNewsGetNewsList(VirtualFunctionTool):
+class TencentNewsGetNewsList(VirtualFunctionApp):
     name = "TencentNewsGetNewsList"
     summary = "返回最新的新闻列表。"
     parameters: List[ArgParameter] = [
@@ -13684,7 +13684,7 @@ class TencentNewsGetNewsList(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TencentNewsSearchNews(VirtualFunctionTool):
+class TencentNewsSearchNews(VirtualFunctionApp):
     name = "TencentNewsSearchNews"
     summary = "根据关键字搜索特定新闻。"
     parameters: List[ArgParameter] = [
@@ -13711,7 +13711,7 @@ class TencentNewsSearchNews(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TencentNewsReadNews(VirtualFunctionTool):
+class TencentNewsReadNews(VirtualFunctionApp):
     name = "TencentNewsReadNews"
     summary = "返回特定新闻的详细内容。"
     parameters: List[ArgParameter] = [
@@ -13734,7 +13734,7 @@ class TencentNewsReadNews(VirtualFunctionTool):
     ]
 
 
-class TencentNewsCommentNews(VirtualFunctionTool):
+class TencentNewsCommentNews(VirtualFunctionApp):
     name = "TencentNewsCommentNews"
     summary = "对特定新闻进行评论。"
     parameters: List[ArgParameter] = [
@@ -13759,7 +13759,7 @@ class TencentNewsCommentNews(VirtualFunctionTool):
     ]
 
 
-class TencentNewsShareNews(VirtualFunctionTool):
+class TencentNewsShareNews(VirtualFunctionApp):
     name = "TencentNewsShareNews"
     summary = "生成可分享的新闻链接。"
     parameters: List[ArgParameter] = [
@@ -13778,7 +13778,7 @@ class TencentNewsShareNews(VirtualFunctionTool):
     ]
 
 
-class TencentNewsGetHotNews(VirtualFunctionTool):
+class TencentNewsGetHotNews(VirtualFunctionApp):
     name = "TencentNewsGetHotNews"
     summary = "返回当前最受关注的新闻列表。"
     parameters: List[ArgParameter] = [
@@ -13799,7 +13799,7 @@ class TencentNewsGetHotNews(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TencentNewsGetVideoNews(VirtualFunctionTool):
+class TencentNewsGetVideoNews(VirtualFunctionApp):
     name = "TencentNewsGetVideoNews"
     summary = "返回相关视频新闻的链接。"
     parameters: List[ArgParameter] = [
@@ -13820,7 +13820,7 @@ class TencentNewsGetVideoNews(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TencentNewsPersonalizedNewsRecommendation(VirtualFunctionTool):
+class TencentNewsPersonalizedNewsRecommendation(VirtualFunctionApp):
     name = "TencentNewsPersonalizedNewsRecommendation"
     summary = "根据用户的兴趣推荐新闻。"
     parameters: List[ArgParameter] = [
@@ -13841,7 +13841,7 @@ class TencentNewsPersonalizedNewsRecommendation(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TencentNewsFavoriteNews(VirtualFunctionTool):
+class TencentNewsFavoriteNews(VirtualFunctionApp):
     name = "TencentNewsFavoriteNews"
     summary = "将特定新闻添加到用户的收藏夹。"
     parameters: List[ArgParameter] = [
@@ -13860,7 +13860,7 @@ class TencentNewsFavoriteNews(VirtualFunctionTool):
     ]
 
 
-class TencentNewsGetNewsCategories(VirtualFunctionTool):
+class TencentNewsGetNewsCategories(VirtualFunctionApp):
     name = "TencentNewsGetNewsCategories"
     summary = "返回可用的新闻分类。"
     parameters: List[ArgParameter] = []
@@ -13874,7 +13874,7 @@ class TencentNewsGetNewsCategories(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TencentNewsGetFavoriteNews(VirtualFunctionTool):
+class TencentNewsGetFavoriteNews(VirtualFunctionApp):
     name = "TencentNewsGetFavoriteNews"
     summary = "返回用户收藏的新闻列表。"
     parameters: List[ArgParameter] = [
@@ -13903,7 +13903,7 @@ class TencentNews(FunctionApp):
     )
     name_for_model = "TencentNews"
     description_for_model = "该工具包提供了一个综合性的新闻平台，允许用户浏览、搜索、阅读、评论和分享新闻，同时提供个性化推荐和热门新闻功能，适合希望获取最新信息的个人用户。"
-    tool_classes = [
+    app_classes = [
         TencentNewsGetNewsList,
         TencentNewsSearchNews,
         TencentNewsReadNews,
@@ -13921,7 +13921,7 @@ class TencentNews(FunctionApp):
 #################### Flipboard ####################
 
 
-class FlipboardCreateMagazine(VirtualFunctionTool):
+class FlipboardCreateMagazine(VirtualFunctionApp):
     name = "FlipboardCreateMagazine"
     summary = "Create a new personal magazine."
     parameters: List[ArgParameter] = [
@@ -13953,7 +13953,7 @@ class FlipboardCreateMagazine(VirtualFunctionTool):
     ]
 
 
-class FlipboardAddContent(VirtualFunctionTool):
+class FlipboardAddContent(VirtualFunctionApp):
     name = "FlipboardAddContent"
     summary = "Add content to a magazine."
     parameters: List[ArgParameter] = [
@@ -13985,7 +13985,7 @@ class FlipboardAddContent(VirtualFunctionTool):
     ]
 
 
-class FlipboardDeleteContent(VirtualFunctionTool):
+class FlipboardDeleteContent(VirtualFunctionApp):
     name = "FlipboardDeleteContent"
     summary = "Delete content from a magazine."
     parameters: List[ArgParameter] = [
@@ -14017,7 +14017,7 @@ class FlipboardDeleteContent(VirtualFunctionTool):
     ]
 
 
-class FlipboardShareMagazine(VirtualFunctionTool):
+class FlipboardShareMagazine(VirtualFunctionApp):
     name = "FlipboardShareMagazine"
     summary = "Share a magazine."
     parameters: List[ArgParameter] = [
@@ -14049,7 +14049,7 @@ class FlipboardShareMagazine(VirtualFunctionTool):
     ]
 
 
-class FlipboardSearchMagazine(VirtualFunctionTool):
+class FlipboardSearchMagazine(VirtualFunctionApp):
     name = "FlipboardSearchMagazine"
     summary = "Search for magazines."
     parameters: List[ArgParameter] = [
@@ -14081,7 +14081,7 @@ class FlipboardSearchMagazine(VirtualFunctionTool):
     ]
 
 
-class FlipboardUpdateMagazineInfo(VirtualFunctionTool):
+class FlipboardUpdateMagazineInfo(VirtualFunctionApp):
     name = "FlipboardUpdateMagazineInfo"
     summary = "Update the information of a magazine."
     parameters: List[ArgParameter] = [
@@ -14119,7 +14119,7 @@ class FlipboardUpdateMagazineInfo(VirtualFunctionTool):
     ]
 
 
-class FlipboardViewMagazineContent(VirtualFunctionTool):
+class FlipboardViewMagazineContent(VirtualFunctionApp):
     name = "FlipboardViewMagazineContent"
     summary = "View the content of a magazine."
     parameters: List[ArgParameter] = [
@@ -14145,7 +14145,7 @@ class FlipboardViewMagazineContent(VirtualFunctionTool):
     ]
 
 
-class FlipboardBookmarkMagazine(VirtualFunctionTool):
+class FlipboardBookmarkMagazine(VirtualFunctionApp):
     name = "FlipboardBookmarkMagazine"
     summary = "Bookmark a magazine."
     parameters: List[ArgParameter] = [
@@ -14171,7 +14171,7 @@ class FlipboardBookmarkMagazine(VirtualFunctionTool):
     ]
 
 
-class FlipboardUnbookmarkMagazine(VirtualFunctionTool):
+class FlipboardUnbookmarkMagazine(VirtualFunctionApp):
     name = "FlipboardUnbookmarkMagazine"
     summary = "Unbookmark a magazine."
     parameters: List[ArgParameter] = [
@@ -14197,7 +14197,7 @@ class FlipboardUnbookmarkMagazine(VirtualFunctionTool):
     ]
 
 
-class FlipboardViewBookmarkedMagazines(VirtualFunctionTool):
+class FlipboardViewBookmarkedMagazines(VirtualFunctionApp):
     name = "FlipboardViewBookmarkedMagazines"
     summary = "View the list of bookmarked magazines."
     parameters: List[ArgParameter] = []
@@ -14219,7 +14219,7 @@ class Flipboard(FunctionApp):
     )
     name_for_model = "Flipboard"
     description_for_model = "The Flipboard app allows users to create, manage, and share personalized magazines, aggregating content of interest and sharing it with others, while providing content search and management functionalities."
-    tool_classes = [
+    app_classes = [
         FlipboardCreateMagazine,
         FlipboardAddContent,
         FlipboardDeleteContent,
@@ -14236,7 +14236,7 @@ class Flipboard(FunctionApp):
 #################### BaiDuNews ####################
 
 
-class BaiDuNewsSearchNews(VirtualFunctionTool):
+class BaiDuNewsSearchNews(VirtualFunctionApp):
     name = "BaiDuNewsSearchNews"
     summary = "通过关键词搜索相关新闻。"
     parameters: List[ArgParameter] = [
@@ -14263,7 +14263,7 @@ class BaiDuNewsSearchNews(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BaiDuNewsSubscribeNews(VirtualFunctionTool):
+class BaiDuNewsSubscribeNews(VirtualFunctionApp):
     name = "BaiDuNewsSubscribeNews"
     summary = "订阅特定类别的新闻。"
     parameters: List[ArgParameter] = [
@@ -14280,7 +14280,7 @@ class BaiDuNewsSubscribeNews(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BaiDuNewsRecommendNews(VirtualFunctionTool):
+class BaiDuNewsRecommendNews(VirtualFunctionApp):
     name = "BaiDuNewsRecommendNews"
     summary = "根据用户兴趣推荐新闻。"
     parameters: List[ArgParameter] = []
@@ -14294,7 +14294,7 @@ class BaiDuNewsRecommendNews(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BaiDuNewsGetHotNews(VirtualFunctionTool):
+class BaiDuNewsGetHotNews(VirtualFunctionApp):
     name = "BaiDuNewsGetHotNews"
     summary = "获取当前热门新闻的列表。"
     parameters: List[ArgParameter] = []
@@ -14308,7 +14308,7 @@ class BaiDuNewsGetHotNews(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BaiDuNewsViewNewsDetail(VirtualFunctionTool):
+class BaiDuNewsViewNewsDetail(VirtualFunctionApp):
     name = "BaiDuNewsViewNewsDetail"
     summary = "查看特定新闻的详细信息。"
     parameters: List[ArgParameter] = [
@@ -14331,7 +14331,7 @@ class BaiDuNewsViewNewsDetail(VirtualFunctionTool):
     ]
 
 
-class BaiDuNewsQueryHistoricalNews(VirtualFunctionTool):
+class BaiDuNewsQueryHistoricalNews(VirtualFunctionApp):
     name = "BaiDuNewsQueryHistoricalNews"
     summary = "查询过去的新闻记录。"
     parameters: List[ArgParameter] = [
@@ -14354,7 +14354,7 @@ class BaiDuNewsQueryHistoricalNews(VirtualFunctionTool):
     ]
 
 
-class BaiDuNewsSaveNews(VirtualFunctionTool):
+class BaiDuNewsSaveNews(VirtualFunctionApp):
     name = "BaiDuNewsSaveNews"
     summary = "收藏用户感兴趣的新闻。"
     parameters: List[ArgParameter] = [
@@ -14373,7 +14373,7 @@ class BaiDuNewsSaveNews(VirtualFunctionTool):
     ]
 
 
-class BaiDuNewsShareNews(VirtualFunctionTool):
+class BaiDuNewsShareNews(VirtualFunctionApp):
     name = "BaiDuNewsShareNews"
     summary = "将新闻通过社交媒体分享。"
     parameters: List[ArgParameter] = [
@@ -14399,7 +14399,7 @@ class BaiDuNewsShareNews(VirtualFunctionTool):
     ]
 
 
-class BaiDuNewsCommentOnNews(VirtualFunctionTool):
+class BaiDuNewsCommentOnNews(VirtualFunctionApp):
     name = "BaiDuNewsCommentOnNews"
     summary = "对新闻进行评论。"
     parameters: List[ArgParameter] = [
@@ -14425,7 +14425,7 @@ class BaiDuNewsCommentOnNews(VirtualFunctionTool):
     ]
 
 
-class BaiDuNewsBrowseNewsCategories(VirtualFunctionTool):
+class BaiDuNewsBrowseNewsCategories(VirtualFunctionApp):
     name = "BaiDuNewsBrowseNewsCategories"
     summary = "浏览不同类别的新闻。"
     parameters: List[ArgParameter] = []
@@ -14435,7 +14435,7 @@ class BaiDuNewsBrowseNewsCategories(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BaiDuNewsGetUserSubscriptions(VirtualFunctionTool):
+class BaiDuNewsGetUserSubscriptions(VirtualFunctionApp):
     name = "BaiDuNewsGetUserSubscriptions"
     summary = "获取用户的订阅信息。"
     parameters: List[ArgParameter] = []
@@ -14455,7 +14455,7 @@ class BaiDuNews(FunctionApp):
     description_for_human = "提供海量新闻信息和实时热点的工具包。"
     name_for_model = "BaiDuNews"
     description_for_model = "百度新闻工具包提供海量新闻信息和实时热点，用户可以通过关键词搜索获取相关资讯，支持新闻订阅和个性化推荐，同时具备历史查询、收藏、分享和评论功能，旨在提升用户获取新闻的效率和体验。"
-    tool_classes = [
+    app_classes = [
         BaiDuNewsSearchNews,
         BaiDuNewsSubscribeNews,
         BaiDuNewsRecommendNews,
@@ -14473,7 +14473,7 @@ class BaiDuNews(FunctionApp):
 #################### KhanAcademy ####################
 
 
-class KhanAcademyGetCourses(VirtualFunctionTool):
+class KhanAcademyGetCourses(VirtualFunctionApp):
     name = "KhanAcademyGetCourses"
     summary = "检索可用课程的列表。"
     parameters: List[ArgParameter] = [
@@ -14490,7 +14490,7 @@ class KhanAcademyGetCourses(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class KhanAcademyGetCourseContent(VirtualFunctionTool):
+class KhanAcademyGetCourseContent(VirtualFunctionApp):
     name = "KhanAcademyGetCourseContent"
     summary = "获取特定课程的详细内容。"
     parameters: List[ArgParameter] = [
@@ -14514,7 +14514,7 @@ class KhanAcademyGetCourseContent(VirtualFunctionTool):
     ]
 
 
-class KhanAcademyGetLearningProgress(VirtualFunctionTool):
+class KhanAcademyGetLearningProgress(VirtualFunctionApp):
     name = "KhanAcademyGetLearningProgress"
     summary = "检索用户的学习进度和成绩。"
     parameters: List[ArgParameter] = [
@@ -14538,7 +14538,7 @@ class KhanAcademyGetLearningProgress(VirtualFunctionTool):
     ]
 
 
-class KhanAcademyCreateStudyNote(VirtualFunctionTool):
+class KhanAcademyCreateStudyNote(VirtualFunctionApp):
     name = "KhanAcademyCreateStudyNote"
     summary = "为特定课程创建和保存学习笔记。"
     parameters: List[ArgParameter] = [
@@ -14568,7 +14568,7 @@ class KhanAcademyCreateStudyNote(VirtualFunctionTool):
     ]
 
 
-class KhanAcademyUpdateStudyNote(VirtualFunctionTool):
+class KhanAcademyUpdateStudyNote(VirtualFunctionApp):
     name = "KhanAcademyUpdateStudyNote"
     summary = "更新已保存的学习笔记。"
     parameters: List[ArgParameter] = [
@@ -14598,7 +14598,7 @@ class KhanAcademyUpdateStudyNote(VirtualFunctionTool):
     ]
 
 
-class KhanAcademyDeleteStudyNote(VirtualFunctionTool):
+class KhanAcademyDeleteStudyNote(VirtualFunctionApp):
     name = "KhanAcademyDeleteStudyNote"
     summary = "删除特定的学习笔记。"
     parameters: List[ArgParameter] = [
@@ -14622,7 +14622,7 @@ class KhanAcademyDeleteStudyNote(VirtualFunctionTool):
     ]
 
 
-class KhanAcademySearchCourses(VirtualFunctionTool):
+class KhanAcademySearchCourses(VirtualFunctionApp):
     name = "KhanAcademySearchCourses"
     summary = "根据关键词搜索特定课程。"
     parameters: List[ArgParameter] = [
@@ -14647,7 +14647,7 @@ class KhanAcademySearchCourses(VirtualFunctionTool):
     ]
 
 
-class KhanAcademyGetCourseReviews(VirtualFunctionTool):
+class KhanAcademyGetCourseReviews(VirtualFunctionApp):
     name = "KhanAcademyGetCourseReviews"
     summary = "查看特定课程的评论和评分。"
     parameters: List[ArgParameter] = [
@@ -14667,7 +14667,7 @@ class KhanAcademyGetCourseReviews(VirtualFunctionTool):
     ]
 
 
-class KhanAcademyGetRecommendedCourses(VirtualFunctionTool):
+class KhanAcademyGetRecommendedCourses(VirtualFunctionApp):
     name = "KhanAcademyGetRecommendedCourses"
     summary = "根据用户的学习历史推荐相关课程。"
     parameters: List[ArgParameter] = [
@@ -14687,7 +14687,7 @@ class KhanAcademyGetRecommendedCourses(VirtualFunctionTool):
     ]
 
 
-class KhanAcademyGetUserProfile(VirtualFunctionTool):
+class KhanAcademyGetUserProfile(VirtualFunctionApp):
     name = "KhanAcademyGetUserProfile"
     summary = "查看用户的个人资料基本信息。"
     parameters: List[ArgParameter] = [
@@ -14715,7 +14715,7 @@ class KhanAcademy(FunctionApp):
     )
     name_for_model = "KhanAcademy"
     description_for_model = "Khan Academy工具包提供了访问在线课程和学习资源的功能，允许用户检索课程列表、获取课程内容、跟踪学习进度、创建和管理学习笔记等。此工具包旨在帮助教育工作者和学生通过API高效地获取学习材料。"
-    tool_classes = [
+    app_classes = [
         KhanAcademyGetCourses,
         KhanAcademyGetCourseContent,
         KhanAcademyGetLearningProgress,
@@ -14732,7 +14732,7 @@ class KhanAcademy(FunctionApp):
 #################### YoudaoTranslation ####################
 
 
-class YoudaoTranslationTextTranslation(VirtualFunctionTool):
+class YoudaoTranslationTextTranslation(VirtualFunctionApp):
     name = "YoudaoTranslationTextTranslation"
     summary = "提供文本翻译功能，支持多种语言。"
     parameters: List[ArgParameter] = [
@@ -14766,7 +14766,7 @@ class YoudaoTranslationTextTranslation(VirtualFunctionTool):
     ]
 
 
-class YoudaoTranslationVoiceTranslation(VirtualFunctionTool):
+class YoudaoTranslationVoiceTranslation(VirtualFunctionApp):
     name = "YoudaoTranslationVoiceTranslation"
     summary = "将语音输入翻译成目标语言文本。"
     parameters: List[ArgParameter] = [
@@ -14791,7 +14791,7 @@ class YoudaoTranslationVoiceTranslation(VirtualFunctionTool):
     ]
 
 
-class YoudaoTranslationLanguageDetection(VirtualFunctionTool):
+class YoudaoTranslationLanguageDetection(VirtualFunctionApp):
     name = "YoudaoTranslationLanguageDetection"
     summary = "自动检测输入文本的语言。"
     parameters: List[ArgParameter] = [
@@ -14817,7 +14817,7 @@ class YoudaoTranslationLanguageDetection(VirtualFunctionTool):
     ]
 
 
-class YoudaoTranslationVocabularyQuery(VirtualFunctionTool):
+class YoudaoTranslationVocabularyQuery(VirtualFunctionApp):
     name = "YoudaoTranslationVocabularyQuery"
     summary = "提供单词的详细解释和用法。"
     parameters: List[ArgParameter] = [
@@ -14844,7 +14844,7 @@ class YoudaoTranslationVocabularyQuery(VirtualFunctionTool):
     ]
 
 
-class YoudaoTranslationMultiLanguageSupport(VirtualFunctionTool):
+class YoudaoTranslationMultiLanguageSupport(VirtualFunctionApp):
     name = "YoudaoTranslationMultiLanguageSupport"
     summary = "列出支持的语言。"
     parameters: List[ArgParameter] = []
@@ -14858,7 +14858,7 @@ class YoudaoTranslationMultiLanguageSupport(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class YoudaoTranslationVoiceSynthesis(VirtualFunctionTool):
+class YoudaoTranslationVoiceSynthesis(VirtualFunctionApp):
     name = "YoudaoTranslationVoiceSynthesis"
     summary = "将翻译后的文本转换为语音。"
     parameters: List[ArgParameter] = [
@@ -14890,7 +14890,7 @@ class YoudaoTranslationVoiceSynthesis(VirtualFunctionTool):
     ]
 
 
-class YoudaoTranslationTranslationHistory(VirtualFunctionTool):
+class YoudaoTranslationTranslationHistory(VirtualFunctionApp):
     name = "YoudaoTranslationTranslationHistory"
     summary = "保存用户的翻译历史以便后续查看。"
     parameters: List[ArgParameter] = []
@@ -14900,7 +14900,7 @@ class YoudaoTranslationTranslationHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class YoudaoTranslationCustomDictionary(VirtualFunctionTool):
+class YoudaoTranslationCustomDictionary(VirtualFunctionApp):
     name = "YoudaoTranslationCustomDictionary"
     summary = "允许用户创建和管理个人词汇表。"
     parameters: List[ArgParameter] = [
@@ -14925,7 +14925,7 @@ class YoudaoTranslationCustomDictionary(VirtualFunctionTool):
     ]
 
 
-class YoudaoTranslationBatchTranslation(VirtualFunctionTool):
+class YoudaoTranslationBatchTranslation(VirtualFunctionApp):
     name = "YoudaoTranslationBatchTranslation"
     summary = "支持一次性翻译多个文本。"
     parameters: List[ArgParameter] = [
@@ -14957,7 +14957,7 @@ class YoudaoTranslationBatchTranslation(VirtualFunctionTool):
     ]
 
 
-class YoudaoTranslationOfflineTranslation(VirtualFunctionTool):
+class YoudaoTranslationOfflineTranslation(VirtualFunctionApp):
     name = "YoudaoTranslationOfflineTranslation"
     summary = "提供离线翻译的功能。"
     parameters: List[ArgParameter] = [
@@ -14993,7 +14993,7 @@ class YoudaoTranslation(FunctionApp):
     )
     name_for_model = "YoudaoTranslation"
     description_for_model = "YoudaoTranslation工具包提供多种语言之间的文本和语音翻译服务，支持语言检测、词汇查询和语音合成等功能，旨在满足用户的翻译需求并促进语言学习。"
-    tool_classes = [
+    app_classes = [
         YoudaoTranslationTextTranslation,
         YoudaoTranslationVoiceTranslation,
         YoudaoTranslationLanguageDetection,
@@ -15010,7 +15010,7 @@ class YoudaoTranslation(FunctionApp):
 #################### ProgrammingCat ####################
 
 
-class ProgrammingCatSearchCourses(VirtualFunctionTool):
+class ProgrammingCatSearchCourses(VirtualFunctionApp):
     name = "ProgrammingCatSearchCourses"
     summary = "该工具用于根据关键词搜索可用的编程课程。"
     parameters: List[ArgParameter] = [
@@ -15042,7 +15042,7 @@ class ProgrammingCatSearchCourses(VirtualFunctionTool):
     ]
 
 
-class ProgrammingCatCreateProject(VirtualFunctionTool):
+class ProgrammingCatCreateProject(VirtualFunctionApp):
     name = "ProgrammingCatCreateProject"
     summary = "该工具用于创建新的编程项目。"
     parameters: List[ArgParameter] = [
@@ -15074,7 +15074,7 @@ class ProgrammingCatCreateProject(VirtualFunctionTool):
     ]
 
 
-class ProgrammingCatReadProject(VirtualFunctionTool):
+class ProgrammingCatReadProject(VirtualFunctionApp):
     name = "ProgrammingCatReadProject"
     summary = "该工具用于查看特定项目的详细信息。"
     parameters: List[ArgParameter] = [
@@ -15097,7 +15097,7 @@ class ProgrammingCatReadProject(VirtualFunctionTool):
     ]
 
 
-class ProgrammingCatUpdateProject(VirtualFunctionTool):
+class ProgrammingCatUpdateProject(VirtualFunctionApp):
     name = "ProgrammingCatUpdateProject"
     summary = "该工具用于更新现有项目的详细信息。"
     parameters: List[ArgParameter] = [
@@ -15132,7 +15132,7 @@ class ProgrammingCatUpdateProject(VirtualFunctionTool):
     ]
 
 
-class ProgrammingCatDeleteProject(VirtualFunctionTool):
+class ProgrammingCatDeleteProject(VirtualFunctionApp):
     name = "ProgrammingCatDeleteProject"
     summary = "该工具用于删除特定的编程项目。"
     parameters: List[ArgParameter] = [
@@ -15151,7 +15151,7 @@ class ProgrammingCatDeleteProject(VirtualFunctionTool):
     ]
 
 
-class ProgrammingCatGetUserProgress(VirtualFunctionTool):
+class ProgrammingCatGetUserProgress(VirtualFunctionApp):
     name = "ProgrammingCatGetUserProgress"
     summary = "该工具用于获取用户在课程中的学习进度。"
     parameters: List[ArgParameter] = [
@@ -15174,7 +15174,7 @@ class ProgrammingCatGetUserProgress(VirtualFunctionTool):
     ]
 
 
-class ProgrammingCatGetRecommendedCourses(VirtualFunctionTool):
+class ProgrammingCatGetRecommendedCourses(VirtualFunctionApp):
     name = "ProgrammingCatGetRecommendedCourses"
     summary = "该工具用于根据用户的兴趣和学习历史获取推荐课程。"
     parameters: List[ArgParameter] = [
@@ -15197,7 +15197,7 @@ class ProgrammingCatGetRecommendedCourses(VirtualFunctionTool):
     ]
 
 
-class ProgrammingCatGetProjectTemplates(VirtualFunctionTool):
+class ProgrammingCatGetProjectTemplates(VirtualFunctionApp):
     name = "ProgrammingCatGetProjectTemplates"
     summary = "该工具用于获取预定义的项目模板。"
     parameters: List[ArgParameter] = [
@@ -15220,7 +15220,7 @@ class ProgrammingCatGetProjectTemplates(VirtualFunctionTool):
     ]
 
 
-class ProgrammingCatGetUserFeedback(VirtualFunctionTool):
+class ProgrammingCatGetUserFeedback(VirtualFunctionApp):
     name = "ProgrammingCatGetUserFeedback"
     summary = "该工具用于获取用户的课程评价和反馈。"
     parameters: List[ArgParameter] = [
@@ -15243,7 +15243,7 @@ class ProgrammingCatGetUserFeedback(VirtualFunctionTool):
     ]
 
 
-class ProgrammingCatGetLearningResources(VirtualFunctionTool):
+class ProgrammingCatGetLearningResources(VirtualFunctionApp):
     name = "ProgrammingCatGetLearningResources"
     summary = "该工具用于获取额外的学习资源和材料。"
     parameters: List[ArgParameter] = [
@@ -15266,7 +15266,7 @@ class ProgrammingCatGetLearningResources(VirtualFunctionTool):
     ]
 
 
-class ProgrammingCatGetUserId(VirtualFunctionTool):
+class ProgrammingCatGetUserId(VirtualFunctionApp):
     name = "ProgrammingCatGetUserId"
     summary = "该工具用于获取当前用户的唯一标识符。"
     parameters: List[ArgParameter] = []
@@ -15286,7 +15286,7 @@ class ProgrammingCat(FunctionApp):
     )
     name_for_model = "ProgrammingCat"
     description_for_model = "编程猫工具包为儿童编程教育提供了一系列API，用户可以搜索课程、创建和管理项目，获取学习进度和推荐课程，从而帮助他们培养编程思维和技能。"
-    tool_classes = [
+    app_classes = [
         ProgrammingCatSearchCourses,
         ProgrammingCatCreateProject,
         ProgrammingCatReadProject,
@@ -15304,7 +15304,7 @@ class ProgrammingCat(FunctionApp):
 #################### Quizlet ####################
 
 
-class QuizletCreateFlashcard(VirtualFunctionTool):
+class QuizletCreateFlashcard(VirtualFunctionApp):
     name = "QuizletCreateFlashcard"
     summary = "创建新的学习卡片并保存到用户的账户中。"
     parameters: List[ArgParameter] = [
@@ -15333,7 +15333,7 @@ class QuizletCreateFlashcard(VirtualFunctionTool):
     ]
 
 
-class QuizletShareFlashcard(VirtualFunctionTool):
+class QuizletShareFlashcard(VirtualFunctionApp):
     name = "QuizletShareFlashcard"
     summary = "将指定的学习卡片与其他用户分享。"
     parameters: List[ArgParameter] = [
@@ -15358,7 +15358,7 @@ class QuizletShareFlashcard(VirtualFunctionTool):
     ]
 
 
-class QuizletCreateQuiz(VirtualFunctionTool):
+class QuizletCreateQuiz(VirtualFunctionApp):
     name = "QuizletCreateQuiz"
     summary = "基于学习卡片创建测验。"
     parameters: List[ArgParameter] = [
@@ -15380,7 +15380,7 @@ class QuizletCreateQuiz(VirtualFunctionTool):
     ]
 
 
-class QuizletSearchFlashcards(VirtualFunctionTool):
+class QuizletSearchFlashcards(VirtualFunctionApp):
     name = "QuizletSearchFlashcards"
     summary = "根据关键词搜索学习卡片。"
     parameters: List[ArgParameter] = [
@@ -15409,7 +15409,7 @@ class QuizletSearchFlashcards(VirtualFunctionTool):
     ]
 
 
-class QuizletViewStatistics(VirtualFunctionTool):
+class QuizletViewStatistics(VirtualFunctionApp):
     name = "QuizletViewStatistics"
     summary = "查看用户的学习进度和测验结果统计。"
     parameters: List[ArgParameter] = []
@@ -15423,7 +15423,7 @@ class QuizletViewStatistics(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class QuizletEditFlashcard(VirtualFunctionTool):
+class QuizletEditFlashcard(VirtualFunctionApp):
     name = "QuizletEditFlashcard"
     summary = "编辑已存在的学习卡片。"
     parameters: List[ArgParameter] = [
@@ -15448,7 +15448,7 @@ class QuizletEditFlashcard(VirtualFunctionTool):
     ]
 
 
-class QuizletDeleteFlashcard(VirtualFunctionTool):
+class QuizletDeleteFlashcard(VirtualFunctionApp):
     name = "QuizletDeleteFlashcard"
     summary = "删除指定的学习卡片。"
     parameters: List[ArgParameter] = [
@@ -15467,7 +15467,7 @@ class QuizletDeleteFlashcard(VirtualFunctionTool):
     ]
 
 
-class QuizletOrganizeFlashcards(VirtualFunctionTool):
+class QuizletOrganizeFlashcards(VirtualFunctionApp):
     name = "QuizletOrganizeFlashcards"
     summary = "将学习卡片分组或分类。"
     parameters: List[ArgParameter] = [
@@ -15495,7 +15495,7 @@ class QuizletOrganizeFlashcards(VirtualFunctionTool):
     ]
 
 
-class QuizletImportMaterials(VirtualFunctionTool):
+class QuizletImportMaterials(VirtualFunctionApp):
     name = "QuizletImportMaterials"
     summary = "从其他平台导入学习材料。"
     parameters: List[ArgParameter] = [
@@ -15521,7 +15521,7 @@ class QuizletImportMaterials(VirtualFunctionTool):
     ]
 
 
-class QuizletExportFlashcards(VirtualFunctionTool):
+class QuizletExportFlashcards(VirtualFunctionApp):
     name = "QuizletExportFlashcards"
     summary = "将学习卡片导出为文件。"
     parameters: List[ArgParameter] = [
@@ -15555,7 +15555,7 @@ class Quizlet(FunctionApp):
     description_for_human = "一个帮助用户创建和管理学习卡片及测验的在线学习工具。"
     name_for_model = "Quizlet"
     description_for_model = "Quizlet工具包提供了一系列工具，帮助用户创建、管理和分享学习卡片及测验，旨在增强用户的学习体验和知识复习能力。"
-    tool_classes = [
+    app_classes = [
         QuizletCreateFlashcard,
         QuizletShareFlashcard,
         QuizletCreateQuiz,
@@ -15572,7 +15572,7 @@ class Quizlet(FunctionApp):
 #################### ZuoYeBang ####################
 
 
-class ZuoYeBangSearchQuestions(VirtualFunctionTool):
+class ZuoYeBangSearchQuestions(VirtualFunctionApp):
     name = "ZuoYeBangSearchQuestions"
     summary = "允许学生根据科目和关键字搜索相关的题目和解答。"
     parameters: List[ArgParameter] = [
@@ -15605,7 +15605,7 @@ class ZuoYeBangSearchQuestions(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ZuoYeBangOnlineTutoring(VirtualFunctionTool):
+class ZuoYeBangOnlineTutoring(VirtualFunctionApp):
     name = "ZuoYeBangOnlineTutoring"
     summary = "提供一对一的在线辅导服务，学生可以与老师进行实时交流。"
     parameters: List[ArgParameter] = [
@@ -15632,7 +15632,7 @@ class ZuoYeBangOnlineTutoring(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ZuoYeBangSubmitAssignment(VirtualFunctionTool):
+class ZuoYeBangSubmitAssignment(VirtualFunctionApp):
     name = "ZuoYeBangSubmitAssignment"
     summary = "学生可以在线提交作业，教师可以进行批改和反馈。"
     parameters: List[ArgParameter] = [
@@ -15649,7 +15649,7 @@ class ZuoYeBangSubmitAssignment(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ZuoYeBangGetSolutionSteps(VirtualFunctionTool):
+class ZuoYeBangGetSolutionSteps(VirtualFunctionApp):
     name = "ZuoYeBangGetSolutionSteps"
     summary = "获取特定题目的解题思路和步骤。"
     parameters: List[ArgParameter] = [
@@ -15670,7 +15670,7 @@ class ZuoYeBangGetSolutionSteps(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ZuoYeBangManageResources(VirtualFunctionTool):
+class ZuoYeBangManageResources(VirtualFunctionApp):
     name = "ZuoYeBangManageResources"
     summary = "管理和存储学生的学习资料和笔记。"
     parameters: List[ArgParameter] = [
@@ -15695,7 +15695,7 @@ class ZuoYeBangManageResources(VirtualFunctionTool):
     ]
 
 
-class ZuoYeBangRecommendCourses(VirtualFunctionTool):
+class ZuoYeBangRecommendCourses(VirtualFunctionApp):
     name = "ZuoYeBangRecommendCourses"
     summary = "根据学生的学习进度和兴趣推荐适合的学习课程。"
     parameters: List[ArgParameter] = [
@@ -15716,7 +15716,7 @@ class ZuoYeBangRecommendCourses(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ZuoYeBangTrackProgress(VirtualFunctionTool):
+class ZuoYeBangTrackProgress(VirtualFunctionApp):
     name = "ZuoYeBangTrackProgress"
     summary = "查看学习进度和成绩分析。"
     parameters: List[ArgParameter] = [
@@ -15737,7 +15737,7 @@ class ZuoYeBangTrackProgress(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ZuoYeBangDiscussionForum(VirtualFunctionTool):
+class ZuoYeBangDiscussionForum(VirtualFunctionApp):
     name = "ZuoYeBangDiscussionForum"
     summary = "学生可以在讨论区提问和交流学习经验。"
     parameters: List[ArgParameter] = [
@@ -15754,7 +15754,7 @@ class ZuoYeBangDiscussionForum(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ZuoYeBangVideoLearning(VirtualFunctionTool):
+class ZuoYeBangVideoLearning(VirtualFunctionApp):
     name = "ZuoYeBangVideoLearning"
     summary = "提供学习视频资源，帮助学生更好地理解课程内容。"
     parameters: List[ArgParameter] = [
@@ -15775,7 +15775,7 @@ class ZuoYeBangVideoLearning(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ZuoYeBangRecordPractice(VirtualFunctionTool):
+class ZuoYeBangRecordPractice(VirtualFunctionApp):
     name = "ZuoYeBangRecordPractice"
     summary = "记录学生的练习和答题历史，以便于后续复习。"
     parameters: List[ArgParameter] = [
@@ -15792,7 +15792,7 @@ class ZuoYeBangRecordPractice(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ZuoYeBangSearchStudents(VirtualFunctionTool):
+class ZuoYeBangSearchStudents(VirtualFunctionApp):
     name = "ZuoYeBangSearchStudents"
     summary = "根据学生的姓名或其他信息搜索学生的唯一标识符。"
     parameters: List[ArgParameter] = [
@@ -15821,7 +15821,7 @@ class ZuoYeBang(FunctionApp):
     description_for_human = "为中小学生提供在线学习支持的工具包。"
     name_for_model = "ZuoYeBang"
     description_for_model = "作业帮是一个为中小学生提供在线学习支持的工具包，包含题库搜索、在线辅导、作业提交等功能，旨在帮助学生获取学习资源和解题思路，促进学习效果。"
-    tool_classes = [
+    app_classes = [
         ZuoYeBangSearchQuestions,
         ZuoYeBangOnlineTutoring,
         ZuoYeBangSubmitAssignment,
@@ -15839,7 +15839,7 @@ class ZuoYeBang(FunctionApp):
 #################### Coursera ####################
 
 
-class CourseraCourseSearch(VirtualFunctionTool):
+class CourseraCourseSearch(VirtualFunctionApp):
     name = "CourseraCourseSearch"
     summary = "用于搜索可用课程。"
     parameters: List[ArgParameter] = [
@@ -15868,7 +15868,7 @@ class CourseraCourseSearch(VirtualFunctionTool):
     ]
 
 
-class CourseraCourseDetails(VirtualFunctionTool):
+class CourseraCourseDetails(VirtualFunctionApp):
     name = "CourseraCourseDetails"
     summary = "获取特定课程的详细信息。"
     parameters: List[ArgParameter] = [
@@ -15891,7 +15891,7 @@ class CourseraCourseDetails(VirtualFunctionTool):
     ]
 
 
-class CourseraEnrollCourse(VirtualFunctionTool):
+class CourseraEnrollCourse(VirtualFunctionApp):
     name = "CourseraEnrollCourse"
     summary = "注册用户到特定课程。"
     parameters: List[ArgParameter] = [
@@ -15911,7 +15911,7 @@ class CourseraEnrollCourse(VirtualFunctionTool):
     ]
 
 
-class CourseraViewCertificates(VirtualFunctionTool):
+class CourseraViewCertificates(VirtualFunctionApp):
     name = "CourseraViewCertificates"
     summary = "查看用户获得的证书。"
     parameters: List[ArgParameter] = []
@@ -15923,7 +15923,7 @@ class CourseraViewCertificates(VirtualFunctionTool):
     ]
 
 
-class CourseraCourseRecommendations(VirtualFunctionTool):
+class CourseraCourseRecommendations(VirtualFunctionApp):
     name = "CourseraCourseRecommendations"
     summary = "根据用户兴趣推荐课程。"
     parameters: List[ArgParameter] = [
@@ -15946,7 +15946,7 @@ class CourseraCourseRecommendations(VirtualFunctionTool):
     ]
 
 
-class CourseraUserCourses(VirtualFunctionTool):
+class CourseraUserCourses(VirtualFunctionApp):
     name = "CourseraUserCourses"
     summary = "查看用户注册的所有课程。"
     parameters: List[ArgParameter] = []
@@ -15962,7 +15962,7 @@ class CourseraUserCourses(VirtualFunctionTool):
     ]
 
 
-class CourseraUnenrollCourse(VirtualFunctionTool):
+class CourseraUnenrollCourse(VirtualFunctionApp):
     name = "CourseraUnenrollCourse"
     summary = "取消用户从特定课程的注册。"
     parameters: List[ArgParameter] = [
@@ -15982,7 +15982,7 @@ class CourseraUnenrollCourse(VirtualFunctionTool):
     ]
 
 
-class CourseraLearningProgress(VirtualFunctionTool):
+class CourseraLearningProgress(VirtualFunctionApp):
     name = "CourseraLearningProgress"
     summary = "获取用户的学习进度。"
     parameters: List[ArgParameter] = [
@@ -16005,7 +16005,7 @@ class CourseraLearningProgress(VirtualFunctionTool):
     ]
 
 
-class CourseraCourseFeedback(VirtualFunctionTool):
+class CourseraCourseFeedback(VirtualFunctionApp):
     name = "CourseraCourseFeedback"
     summary = "获取课程的评价和反馈。"
     parameters: List[ArgParameter] = [
@@ -16024,7 +16024,7 @@ class CourseraCourseFeedback(VirtualFunctionTool):
     ]
 
 
-class CourseraInstructorInfo(VirtualFunctionTool):
+class CourseraInstructorInfo(VirtualFunctionApp):
     name = "CourseraInstructorInfo"
     summary = "获取课程的讲师信息。"
     parameters: List[ArgParameter] = [
@@ -16055,7 +16055,7 @@ class Coursera(FunctionApp):
     )
     name_for_model = "Coursera"
     description_for_model = "Coursera工具包提供了一套API，允许用户搜索课程、注册课程、查看证书和获取学习进度，旨在提升用户的知识和技能。"
-    tool_classes = [
+    app_classes = [
         CourseraCourseSearch,
         CourseraCourseDetails,
         CourseraEnrollCourse,
@@ -16072,7 +16072,7 @@ class Coursera(FunctionApp):
 #################### EnglishFluency ####################
 
 
-class EnglishFluencyPersonalizedSpeakingPractice(VirtualFunctionTool):
+class EnglishFluencyPersonalizedSpeakingPractice(VirtualFunctionApp):
     name = "EnglishFluencyPersonalizedSpeakingPractice"
     summary = "提供个性化的英语口语练习，用户可以选择主题进行练习。"
     parameters: List[ArgParameter] = [
@@ -16105,7 +16105,7 @@ class EnglishFluencyPersonalizedSpeakingPractice(VirtualFunctionTool):
     ]
 
 
-class EnglishFluencyListeningComprehensionPractice(VirtualFunctionTool):
+class EnglishFluencyListeningComprehensionPractice(VirtualFunctionApp):
     name = "EnglishFluencyListeningComprehensionPractice"
     summary = "提供听力理解练习，用户可以选择不同的材料进行练习。"
     parameters: List[ArgParameter] = [
@@ -16138,7 +16138,7 @@ class EnglishFluencyListeningComprehensionPractice(VirtualFunctionTool):
     ]
 
 
-class EnglishFluencyProgressTracking(VirtualFunctionTool):
+class EnglishFluencyProgressTracking(VirtualFunctionApp):
     name = "EnglishFluencyProgressTracking"
     summary = "跟踪用户的学习进度并生成报告。"
     parameters: List[ArgParameter] = [
@@ -16161,7 +16161,7 @@ class EnglishFluencyProgressTracking(VirtualFunctionTool):
     ]
 
 
-class EnglishFluencyRealTimeFeedback(VirtualFunctionTool):
+class EnglishFluencyRealTimeFeedback(VirtualFunctionApp):
     name = "EnglishFluencyRealTimeFeedback"
     summary = "提供实时反馈和评分，用户在练习后可以获取反馈。"
     parameters: List[ArgParameter] = [
@@ -16187,7 +16187,7 @@ class EnglishFluencyRealTimeFeedback(VirtualFunctionTool):
     ]
 
 
-class EnglishFluencyVocabularyAndGrammarPractice(VirtualFunctionTool):
+class EnglishFluencyVocabularyAndGrammarPractice(VirtualFunctionApp):
     name = "EnglishFluencyVocabularyAndGrammarPractice"
     summary = "提供词汇和语法练习，用户可以选择特定的词汇或语法点进行练习。"
     parameters: List[ArgParameter] = [
@@ -16219,7 +16219,7 @@ class EnglishFluencyVocabularyAndGrammarPractice(VirtualFunctionTool):
     ]
 
 
-class EnglishFluencyVideoAudioMaterials(VirtualFunctionTool):
+class EnglishFluencyVideoAudioMaterials(VirtualFunctionApp):
     name = "EnglishFluencyVideoAudioMaterials"
     summary = "提供视频和音频材料供学习使用。"
     parameters: List[ArgParameter] = [
@@ -16247,7 +16247,7 @@ class EnglishFluencyVideoAudioMaterials(VirtualFunctionTool):
     ]
 
 
-class EnglishFluencySocialInteraction(VirtualFunctionTool):
+class EnglishFluencySocialInteraction(VirtualFunctionApp):
     name = "EnglishFluencySocialInteraction"
     summary = "提供社交功能，让用户可以与其他学习者互动。"
     parameters: List[ArgParameter] = [
@@ -16270,7 +16270,7 @@ class EnglishFluencySocialInteraction(VirtualFunctionTool):
     ]
 
 
-class EnglishFluencyCustomLearningPlan(VirtualFunctionTool):
+class EnglishFluencyCustomLearningPlan(VirtualFunctionApp):
     name = "EnglishFluencyCustomLearningPlan"
     summary = "提供定制化的学习计划。"
     parameters: List[ArgParameter] = [
@@ -16299,7 +16299,7 @@ class EnglishFluencyCustomLearningPlan(VirtualFunctionTool):
     ]
 
 
-class EnglishFluencyVocabularyList(VirtualFunctionTool):
+class EnglishFluencyVocabularyList(VirtualFunctionApp):
     name = "EnglishFluencyVocabularyList"
     summary = "提供词汇表和例句。"
     parameters: List[ArgParameter] = [
@@ -16322,7 +16322,7 @@ class EnglishFluencyVocabularyList(VirtualFunctionTool):
     ]
 
 
-class EnglishFluencyMockTest(VirtualFunctionTool):
+class EnglishFluencyMockTest(VirtualFunctionApp):
     name = "EnglishFluencyMockTest"
     summary = "提供模拟考试和测试。"
     parameters: List[ArgParameter] = [
@@ -16351,7 +16351,7 @@ class EnglishFluency(FunctionApp):
     description_for_human = "提供个性化的英语学习体验，专注于口语和听力训练。"
     name_for_model = "EnglishFluency"
     description_for_model = "英语流利说工具包提供个性化的英语学习体验，包括口语和听力练习、学习进度跟踪、实时反馈及社交互动功能，旨在帮助用户提高英语能力并增强学习效果。"
-    tool_classes = [
+    app_classes = [
         EnglishFluencyPersonalizedSpeakingPractice,
         EnglishFluencyListeningComprehensionPractice,
         EnglishFluencyProgressTracking,
@@ -16368,7 +16368,7 @@ class EnglishFluency(FunctionApp):
 #################### XiaoYuanSearch ####################
 
 
-class XiaoYuanSearchUploadQuestion(VirtualFunctionTool):
+class XiaoYuanSearchUploadQuestion(VirtualFunctionApp):
     name = "XiaoYuanSearchUploadQuestion"
     summary = "上传题目图片并进行识别。"
     parameters: List[ArgParameter] = [
@@ -16394,7 +16394,7 @@ class XiaoYuanSearchUploadQuestion(VirtualFunctionTool):
     ]
 
 
-class XiaoYuanSearchGetSolutionSteps(VirtualFunctionTool):
+class XiaoYuanSearchGetSolutionSteps(VirtualFunctionApp):
     name = "XiaoYuanSearchGetSolutionSteps"
     summary = "根据题目ID获取解题思路。"
     parameters: List[ArgParameter] = [
@@ -16417,7 +16417,7 @@ class XiaoYuanSearchGetSolutionSteps(VirtualFunctionTool):
     ]
 
 
-class XiaoYuanSearchGetReferenceAnswer(VirtualFunctionTool):
+class XiaoYuanSearchGetReferenceAnswer(VirtualFunctionApp):
     name = "XiaoYuanSearchGetReferenceAnswer"
     summary = "查询题目的标准答案。"
     parameters: List[ArgParameter] = [
@@ -16440,7 +16440,7 @@ class XiaoYuanSearchGetReferenceAnswer(VirtualFunctionTool):
     ]
 
 
-class XiaoYuanSearchSearchQuestions(VirtualFunctionTool):
+class XiaoYuanSearchSearchQuestions(VirtualFunctionApp):
     name = "XiaoYuanSearchSearchQuestions"
     summary = "通过关键词搜索相关题目。"
     parameters: List[ArgParameter] = [
@@ -16465,7 +16465,7 @@ class XiaoYuanSearchSearchQuestions(VirtualFunctionTool):
     ]
 
 
-class XiaoYuanSearchAccessHistory(VirtualFunctionTool):
+class XiaoYuanSearchAccessHistory(VirtualFunctionApp):
     name = "XiaoYuanSearchAccessHistory"
     summary = "访问用户的题目上传和查询历史记录。"
     parameters: List[ArgParameter] = []
@@ -16475,7 +16475,7 @@ class XiaoYuanSearchAccessHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class XiaoYuanSearchBrowseCategories(VirtualFunctionTool):
+class XiaoYuanSearchBrowseCategories(VirtualFunctionApp):
     name = "XiaoYuanSearchBrowseCategories"
     summary = "按学科和难度级别浏览题目。"
     parameters: List[ArgParameter] = [
@@ -16498,7 +16498,7 @@ class XiaoYuanSearchBrowseCategories(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class XiaoYuanSearchSubmitFeedback(VirtualFunctionTool):
+class XiaoYuanSearchSubmitFeedback(VirtualFunctionApp):
     name = "XiaoYuanSearchSubmitFeedback"
     summary = "提交对解题思路和答案的反馈。"
     parameters: List[ArgParameter] = [
@@ -16523,7 +16523,7 @@ class XiaoYuanSearchSubmitFeedback(VirtualFunctionTool):
     ]
 
 
-class XiaoYuanSearchRecommendResources(VirtualFunctionTool):
+class XiaoYuanSearchRecommendResources(VirtualFunctionApp):
     name = "XiaoYuanSearchRecommendResources"
     summary = "根据用户历史推荐学习资源。"
     parameters: List[ArgParameter] = [
@@ -16542,7 +16542,7 @@ class XiaoYuanSearchRecommendResources(VirtualFunctionTool):
     ]
 
 
-class XiaoYuanSearchShareSolution(VirtualFunctionTool):
+class XiaoYuanSearchShareSolution(VirtualFunctionApp):
     name = "XiaoYuanSearchShareSolution"
     summary = "将解题思路和答案分享给其他用户。"
     parameters: List[ArgParameter] = [
@@ -16570,7 +16570,7 @@ class XiaoYuanSearchShareSolution(VirtualFunctionTool):
     ]
 
 
-class XiaoYuanSearchOfflineAccess(VirtualFunctionTool):
+class XiaoYuanSearchOfflineAccess(VirtualFunctionApp):
     name = "XiaoYuanSearchOfflineAccess"
     summary = "访问离线模式下的历史记录。"
     parameters: List[ArgParameter] = []
@@ -16592,7 +16592,7 @@ class XiaoYuanSearch(FunctionApp):
     )
     name_for_model = "XiaoYuanSearch"
     description_for_model = "小猿搜题工具包提供题库搜索和解答服务，用户可以通过上传题目图片获取解题思路和参考答案，适合中小学生的学习辅助。"
-    tool_classes = [
+    app_classes = [
         XiaoYuanSearchUploadQuestion,
         XiaoYuanSearchGetSolutionSteps,
         XiaoYuanSearchGetReferenceAnswer,
@@ -16609,7 +16609,7 @@ class XiaoYuanSearch(FunctionApp):
 #################### SelfLearningPlatform ####################
 
 
-class SelfLearningPlatformSearchCourses(VirtualFunctionTool):
+class SelfLearningPlatformSearchCourses(VirtualFunctionApp):
     name = "SelfLearningPlatformSearchCourses"
     summary = "搜索可用在线课程。"
     parameters: List[ArgParameter] = [
@@ -16630,7 +16630,7 @@ class SelfLearningPlatformSearchCourses(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SelfLearningPlatformGetCourseDetails(VirtualFunctionTool):
+class SelfLearningPlatformGetCourseDetails(VirtualFunctionApp):
     name = "SelfLearningPlatformGetCourseDetails"
     summary = "获取特定课程的详细信息。"
     parameters: List[ArgParameter] = [
@@ -16653,7 +16653,7 @@ class SelfLearningPlatformGetCourseDetails(VirtualFunctionTool):
     ]
 
 
-class SelfLearningPlatformCreateStudyPlan(VirtualFunctionTool):
+class SelfLearningPlatformCreateStudyPlan(VirtualFunctionApp):
     name = "SelfLearningPlatformCreateStudyPlan"
     summary = "创建新的学习计划。"
     parameters: List[ArgParameter] = [
@@ -16674,7 +16674,7 @@ class SelfLearningPlatformCreateStudyPlan(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SelfLearningPlatformUpdateStudyPlan(VirtualFunctionTool):
+class SelfLearningPlatformUpdateStudyPlan(VirtualFunctionApp):
     name = "SelfLearningPlatformUpdateStudyPlan"
     summary = "更新现有学习计划。"
     parameters: List[ArgParameter] = [
@@ -16699,7 +16699,7 @@ class SelfLearningPlatformUpdateStudyPlan(VirtualFunctionTool):
     ]
 
 
-class SelfLearningPlatformDeleteStudyPlan(VirtualFunctionTool):
+class SelfLearningPlatformDeleteStudyPlan(VirtualFunctionApp):
     name = "SelfLearningPlatformDeleteStudyPlan"
     summary = "删除指定的学习计划。"
     parameters: List[ArgParameter] = [
@@ -16718,7 +16718,7 @@ class SelfLearningPlatformDeleteStudyPlan(VirtualFunctionTool):
     ]
 
 
-class SelfLearningPlatformGetRecommendedCourses(VirtualFunctionTool):
+class SelfLearningPlatformGetRecommendedCourses(VirtualFunctionApp):
     name = "SelfLearningPlatformGetRecommendedCourses"
     summary = "获取推荐的课程。"
     parameters: List[ArgParameter] = [
@@ -16739,7 +16739,7 @@ class SelfLearningPlatformGetRecommendedCourses(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SelfLearningPlatformAccessSavedResources(VirtualFunctionTool):
+class SelfLearningPlatformAccessSavedResources(VirtualFunctionApp):
     name = "SelfLearningPlatformAccessSavedResources"
     summary = "访问用户保存的学习资料。"
     parameters: List[ArgParameter] = [
@@ -16760,7 +16760,7 @@ class SelfLearningPlatformAccessSavedResources(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SelfLearningPlatformGetLearningProgress(VirtualFunctionTool):
+class SelfLearningPlatformGetLearningProgress(VirtualFunctionApp):
     name = "SelfLearningPlatformGetLearningProgress"
     summary = "获取用户的学习进度。"
     parameters: List[ArgParameter] = [
@@ -16781,7 +16781,7 @@ class SelfLearningPlatformGetLearningProgress(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SelfLearningPlatformRateCourse(VirtualFunctionTool):
+class SelfLearningPlatformRateCourse(VirtualFunctionApp):
     name = "SelfLearningPlatformRateCourse"
     summary = "对已完成的课程进行评价。"
     parameters: List[ArgParameter] = [
@@ -16807,7 +16807,7 @@ class SelfLearningPlatformRateCourse(VirtualFunctionTool):
     ]
 
 
-class SelfLearningPlatformShareStudyPlan(VirtualFunctionTool):
+class SelfLearningPlatformShareStudyPlan(VirtualFunctionApp):
     name = "SelfLearningPlatformShareStudyPlan"
     summary = "分享学习计划给其他用户。"
     parameters: List[ArgParameter] = [
@@ -16840,7 +16840,7 @@ class SelfLearningPlatform(FunctionApp):
     )
     name_for_model = "SelfLearningPlatform"
     description_for_model = "自学网工具包提供多领域的自学资源和在线课程，通过API访问学习资料和视频，支持用户创建和管理学习计划，获取推荐课程，评价课程等功能，鼓励自主学习和技能提升。"
-    tool_classes = [
+    app_classes = [
         SelfLearningPlatformSearchCourses,
         SelfLearningPlatformGetCourseDetails,
         SelfLearningPlatformCreateStudyPlan,
@@ -16857,7 +16857,7 @@ class SelfLearningPlatform(FunctionApp):
 #################### WangYiYunKeTang ####################
 
 
-class WangYiYunKeTangSearchCourses(VirtualFunctionTool):
+class WangYiYunKeTangSearchCourses(VirtualFunctionApp):
     name = "WangYiYunKeTangSearchCourses"
     summary = "根据关键词搜索可用课程。"
     parameters: List[ArgParameter] = [
@@ -16880,7 +16880,7 @@ class WangYiYunKeTangSearchCourses(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WangYiYunKeTangGetCourseDetails(VirtualFunctionTool):
+class WangYiYunKeTangGetCourseDetails(VirtualFunctionApp):
     name = "WangYiYunKeTangGetCourseDetails"
     summary = "获取特定课程的详细信息。"
     parameters: List[ArgParameter] = [
@@ -16903,7 +16903,7 @@ class WangYiYunKeTangGetCourseDetails(VirtualFunctionTool):
     ]
 
 
-class WangYiYunKeTangUpdateLearningProgress(VirtualFunctionTool):
+class WangYiYunKeTangUpdateLearningProgress(VirtualFunctionApp):
     name = "WangYiYunKeTangUpdateLearningProgress"
     summary = "更新用户的学习进度。"
     parameters: List[ArgParameter] = [
@@ -16931,7 +16931,7 @@ class WangYiYunKeTangUpdateLearningProgress(VirtualFunctionTool):
     ]
 
 
-class WangYiYunKeTangSubmitCourseRating(VirtualFunctionTool):
+class WangYiYunKeTangSubmitCourseRating(VirtualFunctionApp):
     name = "WangYiYunKeTangSubmitCourseRating"
     summary = "提交对已完成课程的评价。"
     parameters: List[ArgParameter] = [
@@ -16965,7 +16965,7 @@ class WangYiYunKeTangSubmitCourseRating(VirtualFunctionTool):
     ]
 
 
-class WangYiYunKeTangGetLearningProgress(VirtualFunctionTool):
+class WangYiYunKeTangGetLearningProgress(VirtualFunctionApp):
     name = "WangYiYunKeTangGetLearningProgress"
     summary = "查询用户的学习进度。"
     parameters: List[ArgParameter] = [
@@ -16988,7 +16988,7 @@ class WangYiYunKeTangGetLearningProgress(VirtualFunctionTool):
     ]
 
 
-class WangYiYunKeTangSaveCourse(VirtualFunctionTool):
+class WangYiYunKeTangSaveCourse(VirtualFunctionApp):
     name = "WangYiYunKeTangSaveCourse"
     summary = "收藏感兴趣的课程。"
     parameters: List[ArgParameter] = [
@@ -17007,7 +17007,7 @@ class WangYiYunKeTangSaveCourse(VirtualFunctionTool):
     ]
 
 
-class WangYiYunKeTangRecommendCourses(VirtualFunctionTool):
+class WangYiYunKeTangRecommendCourses(VirtualFunctionApp):
     name = "WangYiYunKeTangRecommendCourses"
     summary = "根据用户的学习历史推荐相关课程。"
     parameters: List[ArgParameter] = [
@@ -17030,7 +17030,7 @@ class WangYiYunKeTangRecommendCourses(VirtualFunctionTool):
     ]
 
 
-class WangYiYunKeTangBrowseCoursesByCategory(VirtualFunctionTool):
+class WangYiYunKeTangBrowseCoursesByCategory(VirtualFunctionApp):
     name = "WangYiYunKeTangBrowseCoursesByCategory"
     summary = "按类别浏览课程。"
     parameters: List[ArgParameter] = [
@@ -17053,7 +17053,7 @@ class WangYiYunKeTangBrowseCoursesByCategory(VirtualFunctionTool):
     ]
 
 
-class WangYiYunKeTangCollectUserFeedback(VirtualFunctionTool):
+class WangYiYunKeTangCollectUserFeedback(VirtualFunctionApp):
     name = "WangYiYunKeTangCollectUserFeedback"
     summary = "收集用户对平台的反馈。"
     parameters: List[ArgParameter] = [
@@ -17072,7 +17072,7 @@ class WangYiYunKeTangCollectUserFeedback(VirtualFunctionTool):
     ]
 
 
-class WangYiYunKeTangSearchCoursesByTag(VirtualFunctionTool):
+class WangYiYunKeTangSearchCoursesByTag(VirtualFunctionApp):
     name = "WangYiYunKeTangSearchCoursesByTag"
     summary = "根据课程标签进行搜索。"
     parameters: List[ArgParameter] = [
@@ -17097,7 +17097,7 @@ class WangYiYunKeTangSearchCoursesByTag(VirtualFunctionTool):
     ]
 
 
-class WangYiYunKeTangGetSavedCourses(VirtualFunctionTool):
+class WangYiYunKeTangGetSavedCourses(VirtualFunctionApp):
     name = "WangYiYunKeTangGetSavedCourses"
     summary = "获取用户收藏的课程列表。"
     parameters: List[ArgParameter] = [
@@ -17126,7 +17126,7 @@ class WangYiYunKeTang(FunctionApp):
     description_for_human = "提供网易云课堂的API接口，帮助用户管理学习体验。"
     name_for_model = "WangYiYunKeTang"
     description_for_model = "该工具包提供了网易云课堂的API接口，用户可以通过搜索课程、获取课程详情、更新学习进度、提交课程评价等功能来管理自己的学习体验。同时，用户还可以收藏课程、获取推荐、按类别浏览课程以及提交反馈。"
-    tool_classes = [
+    app_classes = [
         WangYiYunKeTangSearchCourses,
         WangYiYunKeTangGetCourseDetails,
         WangYiYunKeTangUpdateLearningProgress,
@@ -17144,7 +17144,7 @@ class WangYiYunKeTang(FunctionApp):
 #################### FeiShu ####################
 
 
-class FeiShuSendInstantMessage(VirtualFunctionTool):
+class FeiShuSendInstantMessage(VirtualFunctionApp):
     name = "FeiShuSendInstantMessage"
     summary = "发送即时消息给指定的接收者。"
     parameters: List[ArgParameter] = [
@@ -17167,7 +17167,7 @@ class FeiShuSendInstantMessage(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FeiShuCreateVideoMeeting(VirtualFunctionTool):
+class FeiShuCreateVideoMeeting(VirtualFunctionApp):
     name = "FeiShuCreateVideoMeeting"
     summary = "创建一个视频会议并返回会议的唯一标识符。"
     parameters: List[ArgParameter] = [
@@ -17201,7 +17201,7 @@ class FeiShuCreateVideoMeeting(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FeiShuShareDocument(VirtualFunctionTool):
+class FeiShuShareDocument(VirtualFunctionApp):
     name = "FeiShuShareDocument"
     summary = "共享指定的文档给指定的用户。"
     parameters: List[ArgParameter] = [
@@ -17224,7 +17224,7 @@ class FeiShuShareDocument(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FeiShuManageCalendar(VirtualFunctionTool):
+class FeiShuManageCalendar(VirtualFunctionApp):
     name = "FeiShuManageCalendar"
     summary = "在日历中添加事件。"
     parameters: List[ArgParameter] = [
@@ -17257,7 +17257,7 @@ class FeiShuManageCalendar(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FeiShuAssignTask(VirtualFunctionTool):
+class FeiShuAssignTask(VirtualFunctionApp):
     name = "FeiShuAssignTask"
     summary = "将任务分配给指定的用户。"
     parameters: List[ArgParameter] = [
@@ -17285,7 +17285,7 @@ class FeiShuAssignTask(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FeiShuSearchHistoricalMessages(VirtualFunctionTool):
+class FeiShuSearchHistoricalMessages(VirtualFunctionApp):
     name = "FeiShuSearchHistoricalMessages"
     summary = "根据关键字搜索历史消息。"
     parameters: List[ArgParameter] = [
@@ -17308,7 +17308,7 @@ class FeiShuSearchHistoricalMessages(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FeiShuManageTeamMembers(VirtualFunctionTool):
+class FeiShuManageTeamMembers(VirtualFunctionApp):
     name = "FeiShuManageTeamMembers"
     summary = "管理团队成员的添加或移除。"
     parameters: List[ArgParameter] = [
@@ -17331,7 +17331,7 @@ class FeiShuManageTeamMembers(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FeiShuCreateAnnouncement(VirtualFunctionTool):
+class FeiShuCreateAnnouncement(VirtualFunctionApp):
     name = "FeiShuCreateAnnouncement"
     summary = "创建公告并返回操作状态。"
     parameters: List[ArgParameter] = [
@@ -17348,7 +17348,7 @@ class FeiShuCreateAnnouncement(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FeiShuFileVersionControl(VirtualFunctionTool):
+class FeiShuFileVersionControl(VirtualFunctionApp):
     name = "FeiShuFileVersionControl"
     summary = "对指定文档进行版本控制操作。"
     parameters: List[ArgParameter] = [
@@ -17371,7 +17371,7 @@ class FeiShuFileVersionControl(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FeiShuGenerateMeetingMinutes(VirtualFunctionTool):
+class FeiShuGenerateMeetingMinutes(VirtualFunctionApp):
     name = "FeiShuGenerateMeetingMinutes"
     summary = "生成指定会议的会议记录。"
     parameters: List[ArgParameter] = [
@@ -17395,7 +17395,7 @@ class FeiShu(FunctionApp):
     description_for_human = "一个用于提高团队协作效率的综合办公工具包。"
     name_for_model = "FeiShu"
     description_for_model = "飞书工具包提供了一系列工具，用于即时通讯、视频会议、文档共享和日历管理，旨在提高团队协作效率，确保信息安全与有效共享。"
-    tool_classes = [
+    app_classes = [
         FeiShuSendInstantMessage,
         FeiShuCreateVideoMeeting,
         FeiShuShareDocument,
@@ -17412,7 +17412,7 @@ class FeiShu(FunctionApp):
 #################### YoudaoNote ####################
 
 
-class YoudaoNoteCreateNote(VirtualFunctionTool):
+class YoudaoNoteCreateNote(VirtualFunctionApp):
     name = "YoudaoNoteCreateNote"
     summary = "创建新的笔记，支持文本、图像和音频内容。"
     parameters: List[ArgParameter] = [
@@ -17437,7 +17437,7 @@ class YoudaoNoteCreateNote(VirtualFunctionTool):
     ]
 
 
-class YoudaoNoteGetNote(VirtualFunctionTool):
+class YoudaoNoteGetNote(VirtualFunctionApp):
     name = "YoudaoNoteGetNote"
     summary = "读取指定的笔记内容。"
     parameters: List[ArgParameter] = [
@@ -17460,7 +17460,7 @@ class YoudaoNoteGetNote(VirtualFunctionTool):
     ]
 
 
-class YoudaoNoteUpdateNote(VirtualFunctionTool):
+class YoudaoNoteUpdateNote(VirtualFunctionApp):
     name = "YoudaoNoteUpdateNote"
     summary = "更新已存在的笔记内容。"
     parameters: List[ArgParameter] = [
@@ -17489,7 +17489,7 @@ class YoudaoNoteUpdateNote(VirtualFunctionTool):
     ]
 
 
-class YoudaoNoteDeleteNote(VirtualFunctionTool):
+class YoudaoNoteDeleteNote(VirtualFunctionApp):
     name = "YoudaoNoteDeleteNote"
     summary = "删除指定的笔记。"
     parameters: List[ArgParameter] = [
@@ -17508,7 +17508,7 @@ class YoudaoNoteDeleteNote(VirtualFunctionTool):
     ]
 
 
-class YoudaoNoteListNotes(VirtualFunctionTool):
+class YoudaoNoteListNotes(VirtualFunctionApp):
     name = "YoudaoNoteListNotes"
     summary = "列出所有笔记，支持分页。"
     parameters: List[ArgParameter] = [
@@ -17534,7 +17534,7 @@ class YoudaoNoteListNotes(VirtualFunctionTool):
     ]
 
 
-class YoudaoNoteShareNote(VirtualFunctionTool):
+class YoudaoNoteShareNote(VirtualFunctionApp):
     name = "YoudaoNoteShareNote"
     summary = "分享指定的笔记给他人。"
     parameters: List[ArgParameter] = [
@@ -17563,7 +17563,7 @@ class YoudaoNoteShareNote(VirtualFunctionTool):
     ]
 
 
-class YoudaoNoteSearchNotes(VirtualFunctionTool):
+class YoudaoNoteSearchNotes(VirtualFunctionApp):
     name = "YoudaoNoteSearchNotes"
     summary = "根据关键字搜索笔记。"
     parameters: List[ArgParameter] = [
@@ -17592,7 +17592,7 @@ class YoudaoNoteSearchNotes(VirtualFunctionTool):
     ]
 
 
-class YoudaoNoteRecordAudioNote(VirtualFunctionTool):
+class YoudaoNoteRecordAudioNote(VirtualFunctionApp):
     name = "YoudaoNoteRecordAudioNote"
     summary = "直接录音并创建新的音频笔记。"
     parameters: List[ArgParameter] = [
@@ -17615,7 +17615,7 @@ class YoudaoNoteRecordAudioNote(VirtualFunctionTool):
     ]
 
 
-class YoudaoNoteTagNote(VirtualFunctionTool):
+class YoudaoNoteTagNote(VirtualFunctionApp):
     name = "YoudaoNoteTagNote"
     summary = "为指定的笔记添加标签。"
     parameters: List[ArgParameter] = [
@@ -17638,7 +17638,7 @@ class YoudaoNoteTagNote(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class YoudaoNoteExportNote(VirtualFunctionTool):
+class YoudaoNoteExportNote(VirtualFunctionApp):
     name = "YoudaoNoteExportNote"
     summary = "导出指定的笔记为文本文件。"
     parameters: List[ArgParameter] = [
@@ -17667,7 +17667,7 @@ class YoudaoNote(FunctionApp):
     description_for_human = "一个多功能的云端笔记工具，适合个人用户记录和管理笔记。"
     name_for_model = "YoudaoNote"
     description_for_model = "YoudaoNote 是一个多功能的云端笔记工具，允许用户创建、管理和分享文本、图像和音频笔记，适合个人学习和工作记录，支持分类、搜索和导出功能。"
-    tool_classes = [
+    app_classes = [
         YoudaoNoteCreateNote,
         YoudaoNoteGetNote,
         YoudaoNoteUpdateNote,
@@ -17684,7 +17684,7 @@ class YoudaoNote(FunctionApp):
 #################### DingDing ####################
 
 
-class DingDingSendMessage(VirtualFunctionTool):
+class DingDingSendMessage(VirtualFunctionApp):
     name = "DingDingSendMessage"
     summary = "发送即时消息给特定用户或团队。"
     parameters: List[ArgParameter] = [
@@ -17712,7 +17712,7 @@ class DingDingSendMessage(VirtualFunctionTool):
     ]
 
 
-class DingDingStartVideoConference(VirtualFunctionTool):
+class DingDingStartVideoConference(VirtualFunctionApp):
     name = "DingDingStartVideoConference"
     summary = "创建并开始一个视频会议。"
     parameters: List[ArgParameter] = [
@@ -17744,7 +17744,7 @@ class DingDingStartVideoConference(VirtualFunctionTool):
     ]
 
 
-class DingDingCreateTask(VirtualFunctionTool):
+class DingDingCreateTask(VirtualFunctionApp):
     name = "DingDingCreateTask"
     summary = "创建新的任务并分配给特定用户。"
     parameters: List[ArgParameter] = [
@@ -17778,7 +17778,7 @@ class DingDingCreateTask(VirtualFunctionTool):
     ]
 
 
-class DingDingRecordAttendance(VirtualFunctionTool):
+class DingDingRecordAttendance(VirtualFunctionApp):
     name = "DingDingRecordAttendance"
     summary = "记录员工的考勤信息。"
     parameters: List[ArgParameter] = [
@@ -17806,7 +17806,7 @@ class DingDingRecordAttendance(VirtualFunctionTool):
     ]
 
 
-class DingDingShareFile(VirtualFunctionTool):
+class DingDingShareFile(VirtualFunctionApp):
     name = "DingDingShareFile"
     summary = "上传并分享文件给团队成员。"
     parameters: List[ArgParameter] = [
@@ -17834,7 +17834,7 @@ class DingDingShareFile(VirtualFunctionTool):
     ]
 
 
-class DingDingGetTasks(VirtualFunctionTool):
+class DingDingGetTasks(VirtualFunctionApp):
     name = "DingDingGetTasks"
     summary = "获取当前用户的所有任务列表。"
     parameters: List[ArgParameter] = [
@@ -17856,7 +17856,7 @@ class DingDingGetTasks(VirtualFunctionTool):
     ]
 
 
-class DingDingGetAttendanceReport(VirtualFunctionTool):
+class DingDingGetAttendanceReport(VirtualFunctionApp):
     name = "DingDingGetAttendanceReport"
     summary = "获取指定时间段内的考勤报告。"
     parameters: List[ArgParameter] = [
@@ -17888,7 +17888,7 @@ class DingDingGetAttendanceReport(VirtualFunctionTool):
     ]
 
 
-class DingDingUpdateProfile(VirtualFunctionTool):
+class DingDingUpdateProfile(VirtualFunctionApp):
     name = "DingDingUpdateProfile"
     summary = "更新用户的个人信息。"
     parameters: List[ArgParameter] = [
@@ -17916,7 +17916,7 @@ class DingDingUpdateProfile(VirtualFunctionTool):
     ]
 
 
-class DingDingSendFeedback(VirtualFunctionTool):
+class DingDingSendFeedback(VirtualFunctionApp):
     name = "DingDingSendFeedback"
     summary = "向管理层发送用户反馈。"
     parameters: List[ArgParameter] = [
@@ -17935,7 +17935,7 @@ class DingDingSendFeedback(VirtualFunctionTool):
     ]
 
 
-class DingDingGetTaskId(VirtualFunctionTool):
+class DingDingGetTaskId(VirtualFunctionApp):
     name = "DingDingGetTaskId"
     summary = "根据任务名称获取任务的唯一标识符。"
     parameters: List[ArgParameter] = [
@@ -17954,7 +17954,7 @@ class DingDingGetTaskId(VirtualFunctionTool):
     ]
 
 
-class DingDingGetConferenceId(VirtualFunctionTool):
+class DingDingGetConferenceId(VirtualFunctionApp):
     name = "DingDingGetConferenceId"
     summary = "根据会议主题获取会议的唯一标识符。"
     parameters: List[ArgParameter] = [
@@ -17979,7 +17979,7 @@ class DingDing(FunctionApp):
     description_for_human = "一个增强企业内部沟通、协作和管理效率的工具包。"
     name_for_model = "DingDing"
     description_for_model = "DingDing工具包提供了一系列工具，旨在增强企业内部的沟通、协作和管理效率。用户可以通过发送消息、创建视频会议、管理任务和考勤等功能，提升工作效率并促进团队合作。"
-    tool_classes = [
+    app_classes = [
         DingDingSendMessage,
         DingDingStartVideoConference,
         DingDingCreateTask,
@@ -17997,7 +17997,7 @@ class DingDing(FunctionApp):
 #################### ShimoApp ####################
 
 
-class ShimoAppCreateDocument(VirtualFunctionTool):
+class ShimoAppCreateDocument(VirtualFunctionApp):
     name = "ShimoAppCreateDocument"
     summary = "创建新的文档、表格或演示文稿。"
     parameters: List[ArgParameter] = [
@@ -18024,7 +18024,7 @@ class ShimoAppCreateDocument(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ShimoAppCollaborateInDocument(VirtualFunctionTool):
+class ShimoAppCollaborateInDocument(VirtualFunctionApp):
     name = "ShimoAppCollaborateInDocument"
     summary = "允许用户实时协作编辑文档。"
     parameters: List[ArgParameter] = [
@@ -18052,7 +18052,7 @@ class ShimoAppCollaborateInDocument(VirtualFunctionTool):
     ]
 
 
-class ShimoAppShareDocument(VirtualFunctionTool):
+class ShimoAppShareDocument(VirtualFunctionApp):
     name = "ShimoAppShareDocument"
     summary = "分享文档并设置访问权限。"
     parameters: List[ArgParameter] = [
@@ -18080,7 +18080,7 @@ class ShimoAppShareDocument(VirtualFunctionTool):
     ]
 
 
-class ShimoAppSearchDocument(VirtualFunctionTool):
+class ShimoAppSearchDocument(VirtualFunctionApp):
     name = "ShimoAppSearchDocument"
     summary = "根据关键字搜索文档。"
     parameters: List[ArgParameter] = [
@@ -18109,7 +18109,7 @@ class ShimoAppSearchDocument(VirtualFunctionTool):
     ]
 
 
-class ShimoAppVersionControl(VirtualFunctionTool):
+class ShimoAppVersionControl(VirtualFunctionApp):
     name = "ShimoAppVersionControl"
     summary = "查看和恢复文档的历史版本。"
     parameters: List[ArgParameter] = [
@@ -18137,7 +18137,7 @@ class ShimoAppVersionControl(VirtualFunctionTool):
     ]
 
 
-class ShimoAppCommentOnDocument(VirtualFunctionTool):
+class ShimoAppCommentOnDocument(VirtualFunctionApp):
     name = "ShimoAppCommentOnDocument"
     summary = "在文档中添加评论。"
     parameters: List[ArgParameter] = [
@@ -18166,7 +18166,7 @@ class ShimoAppCommentOnDocument(VirtualFunctionTool):
     ]
 
 
-class ShimoAppTagDocument(VirtualFunctionTool):
+class ShimoAppTagDocument(VirtualFunctionApp):
     name = "ShimoAppTagDocument"
     summary = "为文档添加标签。"
     parameters: List[ArgParameter] = [
@@ -18195,7 +18195,7 @@ class ShimoAppTagDocument(VirtualFunctionTool):
     ]
 
 
-class ShimoAppImportFile(VirtualFunctionTool):
+class ShimoAppImportFile(VirtualFunctionApp):
     name = "ShimoAppImportFile"
     summary = "导入文件到文档。"
     parameters: List[ArgParameter] = [
@@ -18224,7 +18224,7 @@ class ShimoAppImportFile(VirtualFunctionTool):
     ]
 
 
-class ShimoAppExportFile(VirtualFunctionTool):
+class ShimoAppExportFile(VirtualFunctionApp):
     name = "ShimoAppExportFile"
     summary = "导出文档为不同格式的文件。"
     parameters: List[ArgParameter] = [
@@ -18252,7 +18252,7 @@ class ShimoAppExportFile(VirtualFunctionTool):
     ]
 
 
-class ShimoAppSetPermissions(VirtualFunctionTool):
+class ShimoAppSetPermissions(VirtualFunctionApp):
     name = "ShimoAppSetPermissions"
     summary = "设置文档的访问权限。"
     parameters: List[ArgParameter] = [
@@ -18284,7 +18284,7 @@ class ShimoAppSetPermissions(VirtualFunctionTool):
     ]
 
 
-class ShimoAppManageTemplates(VirtualFunctionTool):
+class ShimoAppManageTemplates(VirtualFunctionApp):
     name = "ShimoAppManageTemplates"
     summary = "管理文档模板。"
     parameters: List[ArgParameter] = [
@@ -18312,7 +18312,7 @@ class ShimoAppManageTemplates(VirtualFunctionTool):
     ]
 
 
-class ShimoAppListDocumentVersions(VirtualFunctionTool):
+class ShimoAppListDocumentVersions(VirtualFunctionApp):
     name = "ShimoAppListDocumentVersions"
     summary = "列出文档的所有版本。"
     parameters: List[ArgParameter] = [
@@ -18343,7 +18343,7 @@ class ShimoApp(FunctionApp):
     )
     name_for_model = "ShimoApp"
     description_for_model = "ShimoApp是一个用于在线文档创建、编辑和共享的工具包，支持团队协作、实时编辑、文档版本控制和权限管理，旨在增强企业用户的协作效率。"
-    tool_classes = [
+    app_classes = [
         ShimoAppCreateDocument,
         ShimoAppCollaborateInDocument,
         ShimoAppShareDocument,
@@ -18362,7 +18362,7 @@ class ShimoApp(FunctionApp):
 #################### TencentDocs ####################
 
 
-class TencentDocsCreateDocument(VirtualFunctionTool):
+class TencentDocsCreateDocument(VirtualFunctionApp):
     name = "TencentDocsCreateDocument"
     summary = "创建新的文档、表格或演示文稿。"
     parameters: List[ArgParameter] = [
@@ -18389,7 +18389,7 @@ class TencentDocsCreateDocument(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TencentDocsEditDocument(VirtualFunctionTool):
+class TencentDocsEditDocument(VirtualFunctionApp):
     name = "TencentDocsEditDocument"
     summary = "编辑现有文档。"
     parameters: List[ArgParameter] = [
@@ -18414,7 +18414,7 @@ class TencentDocsEditDocument(VirtualFunctionTool):
     ]
 
 
-class TencentDocsCommentOnDocument(VirtualFunctionTool):
+class TencentDocsCommentOnDocument(VirtualFunctionApp):
     name = "TencentDocsCommentOnDocument"
     summary = "在文档中添加评论。"
     parameters: List[ArgParameter] = [
@@ -18439,7 +18439,7 @@ class TencentDocsCommentOnDocument(VirtualFunctionTool):
     ]
 
 
-class TencentDocsShareDocument(VirtualFunctionTool):
+class TencentDocsShareDocument(VirtualFunctionApp):
     name = "TencentDocsShareDocument"
     summary = "分享文档给其他用户。"
     parameters: List[ArgParameter] = [
@@ -18470,7 +18470,7 @@ class TencentDocsShareDocument(VirtualFunctionTool):
     ]
 
 
-class TencentDocsSearchDocuments(VirtualFunctionTool):
+class TencentDocsSearchDocuments(VirtualFunctionApp):
     name = "TencentDocsSearchDocuments"
     summary = "根据关键字搜索文档。"
     parameters: List[ArgParameter] = [
@@ -18497,7 +18497,7 @@ class TencentDocsSearchDocuments(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TencentDocsExportDocument(VirtualFunctionTool):
+class TencentDocsExportDocument(VirtualFunctionApp):
     name = "TencentDocsExportDocument"
     summary = "将文档导出为指定格式。"
     parameters: List[ArgParameter] = [
@@ -18522,7 +18522,7 @@ class TencentDocsExportDocument(VirtualFunctionTool):
     ]
 
 
-class TencentDocsVersionHistory(VirtualFunctionTool):
+class TencentDocsVersionHistory(VirtualFunctionApp):
     name = "TencentDocsVersionHistory"
     summary = "查看文档的版本历史。"
     parameters: List[ArgParameter] = [
@@ -18539,7 +18539,7 @@ class TencentDocsVersionHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TencentDocsRestoreVersion(VirtualFunctionTool):
+class TencentDocsRestoreVersion(VirtualFunctionApp):
     name = "TencentDocsRestoreVersion"
     summary = "恢复文档的特定版本。"
     parameters: List[ArgParameter] = [
@@ -18564,7 +18564,7 @@ class TencentDocsRestoreVersion(VirtualFunctionTool):
     ]
 
 
-class TencentDocsManageTemplate(VirtualFunctionTool):
+class TencentDocsManageTemplate(VirtualFunctionApp):
     name = "TencentDocsManageTemplate"
     summary = "管理文档模板。"
     parameters: List[ArgParameter] = [
@@ -18587,7 +18587,7 @@ class TencentDocsManageTemplate(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TencentDocsSetPermissions(VirtualFunctionTool):
+class TencentDocsSetPermissions(VirtualFunctionApp):
     name = "TencentDocsSetPermissions"
     summary = "设置文档的权限。"
     parameters: List[ArgParameter] = [
@@ -18618,7 +18618,7 @@ class TencentDocsSetPermissions(VirtualFunctionTool):
     ]
 
 
-class TencentDocsClassifyDocument(VirtualFunctionTool):
+class TencentDocsClassifyDocument(VirtualFunctionApp):
     name = "TencentDocsClassifyDocument"
     summary = "将文档分类。"
     parameters: List[ArgParameter] = [
@@ -18649,7 +18649,7 @@ class TencentDocs(FunctionApp):
     description_for_human = "一个在线文档、表格和演示文稿的创建与协作平台，支持实时编辑和评论，适合团队进行文档共享与协作。"
     name_for_model = "TencentDocs"
     description_for_model = "腾讯文档工具包提供了一系列功能，帮助用户创建、编辑和共享文档，支持实时协作与评论，确保团队高效合作。"
-    tool_classes = [
+    app_classes = [
         TencentDocsCreateDocument,
         TencentDocsEditDocument,
         TencentDocsCommentOnDocument,
@@ -18667,7 +18667,7 @@ class TencentDocs(FunctionApp):
 #################### LieYun ####################
 
 
-class LieYunPublishJobInformation(VirtualFunctionTool):
+class LieYunPublishJobInformation(VirtualFunctionApp):
     name = "LieYunPublishJobInformation"
     summary = "企业用户可以创建并发布招聘信息，吸引求职者。"
     parameters: List[ArgParameter] = [
@@ -18706,7 +18706,7 @@ class LieYunPublishJobInformation(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class LieYunSearchResumes(VirtualFunctionTool):
+class LieYunSearchResumes(VirtualFunctionApp):
     name = "LieYunSearchResumes"
     summary = "企业可以根据特定条件搜索求职者的简历。"
     parameters: List[ArgParameter] = [
@@ -18733,7 +18733,7 @@ class LieYunSearchResumes(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class LieYunSubmitJobApplication(VirtualFunctionTool):
+class LieYunSubmitJobApplication(VirtualFunctionApp):
     name = "LieYunSubmitJobApplication"
     summary = "求职者可以向招聘信息提交申请。"
     parameters: List[ArgParameter] = [
@@ -18762,7 +18762,7 @@ class LieYunSubmitJobApplication(VirtualFunctionTool):
     ]
 
 
-class LieYunCheckApplicationStatus(VirtualFunctionTool):
+class LieYunCheckApplicationStatus(VirtualFunctionApp):
     name = "LieYunCheckApplicationStatus"
     summary = "求职者可以查看其申请的状态。"
     parameters: List[ArgParameter] = [
@@ -18785,7 +18785,7 @@ class LieYunCheckApplicationStatus(VirtualFunctionTool):
     ]
 
 
-class LieYunCareerDevelopmentConsultation(VirtualFunctionTool):
+class LieYunCareerDevelopmentConsultation(VirtualFunctionApp):
     name = "LieYunCareerDevelopmentConsultation"
     summary = "求职者可以获取职业发展建议和咨询服务。"
     parameters: List[ArgParameter] = [
@@ -18804,7 +18804,7 @@ class LieYunCareerDevelopmentConsultation(VirtualFunctionTool):
     ]
 
 
-class LieYunSaveResume(VirtualFunctionTool):
+class LieYunSaveResume(VirtualFunctionApp):
     name = "LieYunSaveResume"
     summary = "企业可以保存感兴趣的求职者简历供后续查看。"
     parameters: List[ArgParameter] = [
@@ -18823,7 +18823,7 @@ class LieYunSaveResume(VirtualFunctionTool):
     ]
 
 
-class LieYunSendInterviewInvitation(VirtualFunctionTool):
+class LieYunSendInterviewInvitation(VirtualFunctionApp):
     name = "LieYunSendInterviewInvitation"
     summary = "企业可以向求职者发送面试邀请。"
     parameters: List[ArgParameter] = [
@@ -18842,7 +18842,7 @@ class LieYunSendInterviewInvitation(VirtualFunctionTool):
     ]
 
 
-class LieYunSendMessageToCandidate(VirtualFunctionTool):
+class LieYunSendMessageToCandidate(VirtualFunctionApp):
     name = "LieYunSendMessageToCandidate"
     summary = "企业可以直接与求职者进行沟通。"
     parameters: List[ArgParameter] = [
@@ -18867,7 +18867,7 @@ class LieYunSendMessageToCandidate(VirtualFunctionTool):
     ]
 
 
-class LieYunViewJobStatistics(VirtualFunctionTool):
+class LieYunViewJobStatistics(VirtualFunctionApp):
     name = "LieYunViewJobStatistics"
     summary = "企业可以查看其招聘信息的浏览量和申请量。"
     parameters: List[ArgParameter] = [
@@ -18902,7 +18902,7 @@ class LieYunViewJobStatistics(VirtualFunctionTool):
     ]
 
 
-class LieYunUpdateJobInformation(VirtualFunctionTool):
+class LieYunUpdateJobInformation(VirtualFunctionApp):
     name = "LieYunUpdateJobInformation"
     summary = "企业可以对已发布的招聘信息进行更新。"
     parameters: List[ArgParameter] = [
@@ -18933,7 +18933,7 @@ class LieYun(FunctionApp):
     description_for_human = "猎云工具包为求职者和招聘方提供高效的求职和招聘服务。"
     name_for_model = "LieYun"
     description_for_model = "猎云工具包旨在为求职者和招聘方提供高效的求职和招聘服务，包括发布招聘信息、搜索求职者简历、提交求职申请等功能，同时考虑到潜在的安全风险和数据保护。"
-    tool_classes = [
+    app_classes = [
         LieYunPublishJobInformation,
         LieYunSearchResumes,
         LieYunSubmitJobApplication,
@@ -18950,7 +18950,7 @@ class LieYun(FunctionApp):
 #################### Calendly ####################
 
 
-class CalendlyCreateMeeting(VirtualFunctionTool):
+class CalendlyCreateMeeting(VirtualFunctionApp):
     name = "CalendlyCreateMeeting"
     summary = "Create a new meeting, setting the time, participants, and meeting type."
     parameters: List[ArgParameter] = [
@@ -18994,7 +18994,7 @@ class CalendlyCreateMeeting(VirtualFunctionTool):
     ]
 
 
-class CalendlyCheckAvailability(VirtualFunctionTool):
+class CalendlyCheckAvailability(VirtualFunctionApp):
     name = "CalendlyCheckAvailability"
     summary = "Check the availability of the user and participants."
     parameters: List[ArgParameter] = [
@@ -19032,7 +19032,7 @@ class CalendlyCheckAvailability(VirtualFunctionTool):
     ]
 
 
-class CalendlySendInvitation(VirtualFunctionTool):
+class CalendlySendInvitation(VirtualFunctionApp):
     name = "CalendlySendInvitation"
     summary = "Send meeting invitations to participants."
     parameters: List[ArgParameter] = [
@@ -19061,7 +19061,7 @@ class CalendlySendInvitation(VirtualFunctionTool):
     ]
 
 
-class CalendlyCancelMeeting(VirtualFunctionTool):
+class CalendlyCancelMeeting(VirtualFunctionApp):
     name = "CalendlyCancelMeeting"
     summary = "Cancel a scheduled meeting."
     parameters: List[ArgParameter] = [
@@ -19084,7 +19084,7 @@ class CalendlyCancelMeeting(VirtualFunctionTool):
     ]
 
 
-class CalendlyViewMeetingHistory(VirtualFunctionTool):
+class CalendlyViewMeetingHistory(VirtualFunctionApp):
     name = "CalendlyViewMeetingHistory"
     summary = "View the history of past meetings."
     parameters: List[ArgParameter] = [
@@ -19107,7 +19107,7 @@ class CalendlyViewMeetingHistory(VirtualFunctionTool):
     ]
 
 
-class CalendlySetMeetingReminder(VirtualFunctionTool):
+class CalendlySetMeetingReminder(VirtualFunctionApp):
     name = "CalendlySetMeetingReminder"
     summary = "Set a reminder for an upcoming meeting."
     parameters: List[ArgParameter] = [
@@ -19136,7 +19136,7 @@ class CalendlySetMeetingReminder(VirtualFunctionTool):
     ]
 
 
-class CalendlySyncCalendar(VirtualFunctionTool):
+class CalendlySyncCalendar(VirtualFunctionApp):
     name = "CalendlySyncCalendar"
     summary = "Sync Calendly with other calendar services."
     parameters: List[ArgParameter] = [
@@ -19168,7 +19168,7 @@ class CalendlySyncCalendar(VirtualFunctionTool):
     ]
 
 
-class CalendlyCreateCustomMeetingType(VirtualFunctionTool):
+class CalendlyCreateCustomMeetingType(VirtualFunctionApp):
     name = "CalendlyCreateCustomMeetingType"
     summary = "Create a custom meeting type."
     parameters: List[ArgParameter] = [
@@ -19200,7 +19200,7 @@ class CalendlyCreateCustomMeetingType(VirtualFunctionTool):
     ]
 
 
-class CalendlyGenerateMeetingLink(VirtualFunctionTool):
+class CalendlyGenerateMeetingLink(VirtualFunctionApp):
     name = "CalendlyGenerateMeetingLink"
     summary = "Generate a shareable meeting link."
     parameters: List[ArgParameter] = [
@@ -19223,7 +19223,7 @@ class CalendlyGenerateMeetingLink(VirtualFunctionTool):
     ]
 
 
-class CalendlyCollectFeedback(VirtualFunctionTool):
+class CalendlyCollectFeedback(VirtualFunctionApp):
     name = "CalendlyCollectFeedback"
     summary = "Collect feedback from participants."
     parameters: List[ArgParameter] = [
@@ -19254,7 +19254,7 @@ class Calendly(FunctionApp):
     )
     name_for_model = "Calendly"
     description_for_model = "Calendly app provides a set of tools for efficiently creating, managing, and scheduling meetings, supporting users in checking availability, sending invitations, viewing meeting history, setting reminders, and more, suitable for individuals and teams."
-    tool_classes = [
+    app_classes = [
         CalendlyCreateMeeting,
         CalendlyCheckAvailability,
         CalendlySendInvitation,
@@ -19271,7 +19271,7 @@ class Calendly(FunctionApp):
 #################### NotionApp ####################
 
 
-class NotionAppCreateNote(VirtualFunctionTool):
+class NotionAppCreateNote(VirtualFunctionApp):
     name = "NotionAppCreateNote"
     summary = "创建新的笔记以记录信息。"
     parameters: List[ArgParameter] = [
@@ -19296,7 +19296,7 @@ class NotionAppCreateNote(VirtualFunctionTool):
     ]
 
 
-class NotionAppUpdateNote(VirtualFunctionTool):
+class NotionAppUpdateNote(VirtualFunctionApp):
     name = "NotionAppUpdateNote"
     summary = "更新现有笔记的内容。"
     parameters: List[ArgParameter] = [
@@ -19321,7 +19321,7 @@ class NotionAppUpdateNote(VirtualFunctionTool):
     ]
 
 
-class NotionAppDeleteNote(VirtualFunctionTool):
+class NotionAppDeleteNote(VirtualFunctionApp):
     name = "NotionAppDeleteNote"
     summary = "删除指定的笔记。"
     parameters: List[ArgParameter] = [
@@ -19340,7 +19340,7 @@ class NotionAppDeleteNote(VirtualFunctionTool):
     ]
 
 
-class NotionAppCreateTask(VirtualFunctionTool):
+class NotionAppCreateTask(VirtualFunctionApp):
     name = "NotionAppCreateTask"
     summary = "创建新的任务以进行管理。"
     parameters: List[ArgParameter] = [
@@ -19365,7 +19365,7 @@ class NotionAppCreateTask(VirtualFunctionTool):
     ]
 
 
-class NotionAppUpdateTask(VirtualFunctionTool):
+class NotionAppUpdateTask(VirtualFunctionApp):
     name = "NotionAppUpdateTask"
     summary = "更新现有任务的信息。"
     parameters: List[ArgParameter] = [
@@ -19390,7 +19390,7 @@ class NotionAppUpdateTask(VirtualFunctionTool):
     ]
 
 
-class NotionAppDeleteTask(VirtualFunctionTool):
+class NotionAppDeleteTask(VirtualFunctionApp):
     name = "NotionAppDeleteTask"
     summary = "删除指定的任务。"
     parameters: List[ArgParameter] = [
@@ -19409,7 +19409,7 @@ class NotionAppDeleteTask(VirtualFunctionTool):
     ]
 
 
-class NotionAppCreateDatabase(VirtualFunctionTool):
+class NotionAppCreateDatabase(VirtualFunctionApp):
     name = "NotionAppCreateDatabase"
     summary = "创建新的数据库以存储信息。"
     parameters: List[ArgParameter] = [
@@ -19428,7 +19428,7 @@ class NotionAppCreateDatabase(VirtualFunctionTool):
     ]
 
 
-class NotionAppUpdateDatabase(VirtualFunctionTool):
+class NotionAppUpdateDatabase(VirtualFunctionApp):
     name = "NotionAppUpdateDatabase"
     summary = "更新现有数据库的信息。"
     parameters: List[ArgParameter] = [
@@ -19453,7 +19453,7 @@ class NotionAppUpdateDatabase(VirtualFunctionTool):
     ]
 
 
-class NotionAppDeleteDatabase(VirtualFunctionTool):
+class NotionAppDeleteDatabase(VirtualFunctionApp):
     name = "NotionAppDeleteDatabase"
     summary = "删除指定的数据库。"
     parameters: List[ArgParameter] = [
@@ -19472,7 +19472,7 @@ class NotionAppDeleteDatabase(VirtualFunctionTool):
     ]
 
 
-class NotionAppSearchNotes(VirtualFunctionTool):
+class NotionAppSearchNotes(VirtualFunctionApp):
     name = "NotionAppSearchNotes"
     summary = "搜索笔记以查找特定信息。"
     parameters: List[ArgParameter] = [
@@ -19501,7 +19501,7 @@ class NotionAppSearchNotes(VirtualFunctionTool):
     ]
 
 
-class NotionAppShareNote(VirtualFunctionTool):
+class NotionAppShareNote(VirtualFunctionApp):
     name = "NotionAppShareNote"
     summary = "与其他用户共享指定的笔记。"
     parameters: List[ArgParameter] = [
@@ -19526,7 +19526,7 @@ class NotionAppShareNote(VirtualFunctionTool):
     ]
 
 
-class NotionAppImportFile(VirtualFunctionTool):
+class NotionAppImportFile(VirtualFunctionApp):
     name = "NotionAppImportFile"
     summary = "从外部文件导入信息。"
     parameters: List[ArgParameter] = [
@@ -19545,7 +19545,7 @@ class NotionAppImportFile(VirtualFunctionTool):
     ]
 
 
-class NotionAppExportNotes(VirtualFunctionTool):
+class NotionAppExportNotes(VirtualFunctionApp):
     name = "NotionAppExportNotes"
     summary = "导出笔记到外部文件。"
     parameters: List[ArgParameter] = [
@@ -19572,7 +19572,7 @@ class NotionApp(FunctionApp):
     )
     name_for_model = "NotionApp"
     description_for_model = "NotionApp 是一个多功能的笔记和项目管理工具包，支持创建、更新、删除笔记和任务，管理数据库，搜索信息，分享内容等功能，旨在帮助用户高效管理和组织信息。"
-    tool_classes = [
+    app_classes = [
         NotionAppCreateNote,
         NotionAppUpdateNote,
         NotionAppDeleteNote,
@@ -19592,7 +19592,7 @@ class NotionApp(FunctionApp):
 #################### Todoist ####################
 
 
-class TodoistCreateTask(VirtualFunctionTool):
+class TodoistCreateTask(VirtualFunctionApp):
     name = "TodoistCreateTask"
     summary = "创建一个新任务，包括标题、描述和截止日期。"
     parameters: List[ArgParameter] = [
@@ -19621,7 +19621,7 @@ class TodoistCreateTask(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TodoistUpdateTask(VirtualFunctionTool):
+class TodoistUpdateTask(VirtualFunctionApp):
     name = "TodoistUpdateTask"
     summary = "更新现有任务的详细信息。"
     parameters: List[ArgParameter] = [
@@ -19661,7 +19661,7 @@ class TodoistUpdateTask(VirtualFunctionTool):
     ]
 
 
-class TodoistDeleteTask(VirtualFunctionTool):
+class TodoistDeleteTask(VirtualFunctionApp):
     name = "TodoistDeleteTask"
     summary = "删除指定的任务。"
     parameters: List[ArgParameter] = [
@@ -19680,7 +19680,7 @@ class TodoistDeleteTask(VirtualFunctionTool):
     ]
 
 
-class TodoistRetrieveTasks(VirtualFunctionTool):
+class TodoistRetrieveTasks(VirtualFunctionApp):
     name = "TodoistRetrieveTasks"
     summary = "检索所有任务或按条件筛选任务。"
     parameters: List[ArgParameter] = [
@@ -19701,7 +19701,7 @@ class TodoistRetrieveTasks(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TodoistSetTaskPriority(VirtualFunctionTool):
+class TodoistSetTaskPriority(VirtualFunctionApp):
     name = "TodoistSetTaskPriority"
     summary = "设置任务的优先级。"
     parameters: List[ArgParameter] = [
@@ -19734,7 +19734,7 @@ class TodoistSetTaskPriority(VirtualFunctionTool):
     ]
 
 
-class TodoistAssignTask(VirtualFunctionTool):
+class TodoistAssignTask(VirtualFunctionApp):
     name = "TodoistAssignTask"
     summary = "将任务分配给团队成员。"
     parameters: List[ArgParameter] = [
@@ -19759,7 +19759,7 @@ class TodoistAssignTask(VirtualFunctionTool):
     ]
 
 
-class TodoistAddTag(VirtualFunctionTool):
+class TodoistAddTag(VirtualFunctionApp):
     name = "TodoistAddTag"
     summary = "为任务添加标签。"
     parameters: List[ArgParameter] = [
@@ -19784,7 +19784,7 @@ class TodoistAddTag(VirtualFunctionTool):
     ]
 
 
-class TodoistSetReminder(VirtualFunctionTool):
+class TodoistSetReminder(VirtualFunctionApp):
     name = "TodoistSetReminder"
     summary = "为任务设置提醒。"
     parameters: List[ArgParameter] = [
@@ -19809,7 +19809,7 @@ class TodoistSetReminder(VirtualFunctionTool):
     ]
 
 
-class TodoistTrackTaskProgress(VirtualFunctionTool):
+class TodoistTrackTaskProgress(VirtualFunctionApp):
     name = "TodoistTrackTaskProgress"
     summary = "查看任务的完成状态。"
     parameters: List[ArgParameter] = [
@@ -19828,7 +19828,7 @@ class TodoistTrackTaskProgress(VirtualFunctionTool):
     ]
 
 
-class TodoistSearchTasks(VirtualFunctionTool):
+class TodoistSearchTasks(VirtualFunctionApp):
     name = "TodoistSearchTasks"
     summary = "根据关键字搜索任务。"
     parameters: List[ArgParameter] = [
@@ -19861,7 +19861,7 @@ class Todoist(FunctionApp):
     description_for_human = "一个强大的任务管理工具，帮助用户有效管理任务和项目。"
     name_for_model = "Todoist"
     description_for_model = "Todoist工具包提供了一组强大的任务管理工具，帮助用户创建、更新、删除和跟踪任务，设置优先级和提醒，适合个人和团队使用。"
-    tool_classes = [
+    app_classes = [
         TodoistCreateTask,
         TodoistUpdateTask,
         TodoistDeleteTask,
@@ -19878,7 +19878,7 @@ class Todoist(FunctionApp):
 #################### Slack ####################
 
 
-class SlackSendMessage(VirtualFunctionTool):
+class SlackSendMessage(VirtualFunctionApp):
     name = "SlackSendMessage"
     summary = "允许用户向特定频道或个人发送即时消息。"
     parameters: List[ArgParameter] = [
@@ -19910,7 +19910,7 @@ class SlackSendMessage(VirtualFunctionTool):
     ]
 
 
-class SlackCreateChannel(VirtualFunctionTool):
+class SlackCreateChannel(VirtualFunctionApp):
     name = "SlackCreateChannel"
     summary = "允许用户创建新的讨论频道。"
     parameters: List[ArgParameter] = [
@@ -19933,7 +19933,7 @@ class SlackCreateChannel(VirtualFunctionTool):
     ]
 
 
-class SlackShareFile(VirtualFunctionTool):
+class SlackShareFile(VirtualFunctionApp):
     name = "SlackShareFile"
     summary = "允许用户上传和共享文件。"
     parameters: List[ArgParameter] = [
@@ -19952,7 +19952,7 @@ class SlackShareFile(VirtualFunctionTool):
     ]
 
 
-class SlackSearchMessages(VirtualFunctionTool):
+class SlackSearchMessages(VirtualFunctionApp):
     name = "SlackSearchMessages"
     summary = "允许用户根据关键字搜索历史消息。"
     parameters: List[ArgParameter] = [
@@ -19977,7 +19977,7 @@ class SlackSearchMessages(VirtualFunctionTool):
     ]
 
 
-class SlackManageMembers(VirtualFunctionTool):
+class SlackManageMembers(VirtualFunctionApp):
     name = "SlackManageMembers"
     summary = "允许用户添加或移除频道成员。"
     parameters: List[ArgParameter] = [
@@ -20012,7 +20012,7 @@ class SlackManageMembers(VirtualFunctionTool):
     ]
 
 
-class SlackSendNotification(VirtualFunctionTool):
+class SlackSendNotification(VirtualFunctionApp):
     name = "SlackSendNotification"
     summary = "允许用户设置提醒，确保重要消息不会被错过。"
     parameters: List[ArgParameter] = [
@@ -20041,7 +20041,7 @@ class SlackSendNotification(VirtualFunctionTool):
     ]
 
 
-class SlackRecordMeeting(VirtualFunctionTool):
+class SlackRecordMeeting(VirtualFunctionApp):
     name = "SlackRecordMeeting"
     summary = "允许用户记录会议内容并分享给团队成员。"
     parameters: List[ArgParameter] = [
@@ -20064,7 +20064,7 @@ class SlackRecordMeeting(VirtualFunctionTool):
     ]
 
 
-class SlackSetStatus(VirtualFunctionTool):
+class SlackSetStatus(VirtualFunctionApp):
     name = "SlackSetStatus"
     summary = "允许用户设置个人状态以告知其他成员自己的可用性。"
     parameters: List[ArgParameter] = [
@@ -20087,7 +20087,7 @@ class SlackSetStatus(VirtualFunctionTool):
     ]
 
 
-class SlackSendEmoji(VirtualFunctionTool):
+class SlackSendEmoji(VirtualFunctionApp):
     name = "SlackSendEmoji"
     summary = "允许用户在消息中添加表情符号以增强沟通效果。"
     parameters: List[ArgParameter] = [
@@ -20116,7 +20116,7 @@ class SlackSendEmoji(VirtualFunctionTool):
     ]
 
 
-class SlackArchiveChannel(VirtualFunctionTool):
+class SlackArchiveChannel(VirtualFunctionApp):
     name = "SlackArchiveChannel"
     summary = "允许用户将不再活跃的频道归档以保持界面整洁。"
     parameters: List[ArgParameter] = [
@@ -20145,7 +20145,7 @@ class Slack(FunctionApp):
     description_for_human = "Slack工具包旨在增强团队沟通和协作的能力，提供消息发送、频道管理、文件共享等功能，适用于企业用户和团队。"
     name_for_model = "Slack"
     description_for_model = "Slack工具包旨在增强团队沟通和协作的能力，提供消息发送、频道管理、文件共享等功能，适用于企业用户和团队。"
-    tool_classes = [
+    app_classes = [
         SlackSendMessage,
         SlackCreateChannel,
         SlackShareFile,
@@ -20162,7 +20162,7 @@ class Slack(FunctionApp):
 #################### TongHuaShun ####################
 
 
-class TongHuaShunGetRealTimeStockData(VirtualFunctionTool):
+class TongHuaShunGetRealTimeStockData(VirtualFunctionApp):
     name = "TongHuaShunGetRealTimeStockData"
     summary = "获取指定股票的实时行情数据。"
     parameters: List[ArgParameter] = [
@@ -20183,7 +20183,7 @@ class TongHuaShunGetRealTimeStockData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TongHuaShunGetHistoricalTradingRecords(VirtualFunctionTool):
+class TongHuaShunGetHistoricalTradingRecords(VirtualFunctionApp):
     name = "TongHuaShunGetHistoricalTradingRecords"
     summary = "查询用户的历史交易记录。"
     parameters: List[ArgParameter] = [
@@ -20210,7 +20210,7 @@ class TongHuaShunGetHistoricalTradingRecords(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TongHuaShunCreateInvestmentPortfolio(VirtualFunctionTool):
+class TongHuaShunCreateInvestmentPortfolio(VirtualFunctionApp):
     name = "TongHuaShunCreateInvestmentPortfolio"
     summary = "创建新的投资组合。"
     parameters: List[ArgParameter] = [
@@ -20237,7 +20237,7 @@ class TongHuaShunCreateInvestmentPortfolio(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TongHuaShunExecuteTrade(VirtualFunctionTool):
+class TongHuaShunExecuteTrade(VirtualFunctionApp):
     name = "TongHuaShunExecuteTrade"
     summary = "执行股票的买入或卖出交易。"
     parameters: List[ArgParameter] = [
@@ -20277,7 +20277,7 @@ class TongHuaShunExecuteTrade(VirtualFunctionTool):
     ]
 
 
-class TongHuaShunGetMarketNews(VirtualFunctionTool):
+class TongHuaShunGetMarketNews(VirtualFunctionApp):
     name = "TongHuaShunGetMarketNews"
     summary = "获取最新的市场新闻和分析报告。"
     parameters: List[ArgParameter] = [
@@ -20298,7 +20298,7 @@ class TongHuaShunGetMarketNews(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TongHuaShunSetPriceAlert(VirtualFunctionTool):
+class TongHuaShunSetPriceAlert(VirtualFunctionApp):
     name = "TongHuaShunSetPriceAlert"
     summary = "设置股票价格提醒。"
     parameters: List[ArgParameter] = [
@@ -20325,7 +20325,7 @@ class TongHuaShunSetPriceAlert(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TongHuaShunAnalyzeStockTrend(VirtualFunctionTool):
+class TongHuaShunAnalyzeStockTrend(VirtualFunctionApp):
     name = "TongHuaShunAnalyzeStockTrend"
     summary = "分析指定股票的趋势。"
     parameters: List[ArgParameter] = [
@@ -20346,7 +20346,7 @@ class TongHuaShunAnalyzeStockTrend(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TongHuaShunGetInvestmentReturns(VirtualFunctionTool):
+class TongHuaShunGetInvestmentReturns(VirtualFunctionApp):
     name = "TongHuaShunGetInvestmentReturns"
     summary = "获取用户投资组合的收益报告。"
     parameters: List[ArgParameter] = [
@@ -20367,7 +20367,7 @@ class TongHuaShunGetInvestmentReturns(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TongHuaShunAccessSavedTradingStrategies(VirtualFunctionTool):
+class TongHuaShunAccessSavedTradingStrategies(VirtualFunctionApp):
     name = "TongHuaShunAccessSavedTradingStrategies"
     summary = "访问用户保存的交易策略。"
     parameters: List[ArgParameter] = [
@@ -20388,7 +20388,7 @@ class TongHuaShunAccessSavedTradingStrategies(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TongHuaShunGetFinancialReports(VirtualFunctionTool):
+class TongHuaShunGetFinancialReports(VirtualFunctionApp):
     name = "TongHuaShunGetFinancialReports"
     summary = "获取指定股票的财务报表。"
     parameters: List[ArgParameter] = [
@@ -20415,7 +20415,7 @@ class TongHuaShun(FunctionApp):
     description_for_human = "提供股票交易、行情分析、投资组合管理等功能的工具包。"
     name_for_model = "TongHuaShun"
     description_for_model = "同花顺工具包提供股票交易、行情分析、投资组合管理等功能，旨在帮助个人投资者实时获取股票数据、历史交易记录和市场资讯，以便做出明智的投资决策。"
-    tool_classes = [
+    app_classes = [
         TongHuaShunGetRealTimeStockData,
         TongHuaShunGetHistoricalTradingRecords,
         TongHuaShunCreateInvestmentPortfolio,
@@ -20432,7 +20432,7 @@ class TongHuaShun(FunctionApp):
 #################### WeChatPay ####################
 
 
-class WeChatPayCreateOrder(VirtualFunctionTool):
+class WeChatPayCreateOrder(VirtualFunctionApp):
     name = "WeChatPayCreateOrder"
     summary = "创建新的支付订单。"
     parameters: List[ArgParameter] = [
@@ -20464,7 +20464,7 @@ class WeChatPayCreateOrder(VirtualFunctionTool):
     ]
 
 
-class WeChatPayQueryOrder(VirtualFunctionTool):
+class WeChatPayQueryOrder(VirtualFunctionApp):
     name = "WeChatPayQueryOrder"
     summary = "查询特定订单的状态和详细信息。"
     parameters: List[ArgParameter] = [
@@ -20488,7 +20488,7 @@ class WeChatPayQueryOrder(VirtualFunctionTool):
     ]
 
 
-class WeChatPayConfirmPayment(VirtualFunctionTool):
+class WeChatPayConfirmPayment(VirtualFunctionApp):
     name = "WeChatPayConfirmPayment"
     summary = "确认用户的支付是否成功。"
     parameters: List[ArgParameter] = [
@@ -20511,7 +20511,7 @@ class WeChatPayConfirmPayment(VirtualFunctionTool):
     ]
 
 
-class WeChatPayTransferFunds(VirtualFunctionTool):
+class WeChatPayTransferFunds(VirtualFunctionApp):
     name = "WeChatPayTransferFunds"
     summary = "向其他微信用户转账。"
     parameters: List[ArgParameter] = [
@@ -20543,7 +20543,7 @@ class WeChatPayTransferFunds(VirtualFunctionTool):
     ]
 
 
-class WeChatPaySendRedEnvelope(VirtualFunctionTool):
+class WeChatPaySendRedEnvelope(VirtualFunctionApp):
     name = "WeChatPaySendRedEnvelope"
     summary = "通过微信发送红包。"
     parameters: List[ArgParameter] = [
@@ -20575,7 +20575,7 @@ class WeChatPaySendRedEnvelope(VirtualFunctionTool):
     ]
 
 
-class WeChatPayQueryTransactionHistory(VirtualFunctionTool):
+class WeChatPayQueryTransactionHistory(VirtualFunctionApp):
     name = "WeChatPayQueryTransactionHistory"
     summary = "查询用户的交易历史。"
     parameters: List[ArgParameter] = [
@@ -20592,7 +20592,7 @@ class WeChatPayQueryTransactionHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WeChatPayRequestRefund(VirtualFunctionTool):
+class WeChatPayRequestRefund(VirtualFunctionApp):
     name = "WeChatPayRequestRefund"
     summary = "申请退款。"
     parameters: List[ArgParameter] = [
@@ -20611,7 +20611,7 @@ class WeChatPayRequestRefund(VirtualFunctionTool):
     ]
 
 
-class WeChatPayGetUserInfo(VirtualFunctionTool):
+class WeChatPayGetUserInfo(VirtualFunctionApp):
     name = "WeChatPayGetUserInfo"
     summary = "获取用户的支付信息和设置。"
     parameters: List[ArgParameter] = []
@@ -20625,7 +20625,7 @@ class WeChatPayGetUserInfo(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WeChatPayUpdatePaymentSettings(VirtualFunctionTool):
+class WeChatPayUpdatePaymentSettings(VirtualFunctionApp):
     name = "WeChatPayUpdatePaymentSettings"
     summary = "更新用户的支付设置。"
     parameters: List[ArgParameter] = [
@@ -20644,7 +20644,7 @@ class WeChatPayUpdatePaymentSettings(VirtualFunctionTool):
     ]
 
 
-class WeChatPayCheckAccountBalance(VirtualFunctionTool):
+class WeChatPayCheckAccountBalance(VirtualFunctionApp):
     name = "WeChatPayCheckAccountBalance"
     summary = "查询用户的微信账户余额。"
     parameters: List[ArgParameter] = []
@@ -20662,7 +20662,7 @@ class WeChatPay(FunctionApp):
     )
     name_for_model = "WeChatPay"
     description_for_model = "微信支付工具包集成了多种支付功能，包括订单创建、支付状态确认、转账和红包发送等。该工具包旨在帮助用户方便快捷地进行支付操作，同时确保交易的安全性和隐私保护。"
-    tool_classes = [
+    app_classes = [
         WeChatPayCreateOrder,
         WeChatPayQueryOrder,
         WeChatPayConfirmPayment,
@@ -20679,7 +20679,7 @@ class WeChatPay(FunctionApp):
 #################### Alipay ####################
 
 
-class AlipayGetAccountBalance(VirtualFunctionTool):
+class AlipayGetAccountBalance(VirtualFunctionApp):
     name = "AlipayGetAccountBalance"
     summary = "Query the user's account balance."
     parameters: List[ArgParameter] = [
@@ -20700,7 +20700,7 @@ class AlipayGetAccountBalance(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AlipayGetTransactionHistory(VirtualFunctionTool):
+class AlipayGetTransactionHistory(VirtualFunctionApp):
     name = "AlipayGetTransactionHistory"
     summary = "Retrieve the user's transaction history."
     parameters: List[ArgParameter] = [
@@ -20727,7 +20727,7 @@ class AlipayGetTransactionHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AlipayMakePayment(VirtualFunctionTool):
+class AlipayMakePayment(VirtualFunctionApp):
     name = "AlipayMakePayment"
     summary = "Perform an online payment."
     parameters: List[ArgParameter] = [
@@ -20769,7 +20769,7 @@ class AlipayMakePayment(VirtualFunctionTool):
     ]
 
 
-class AlipayTransferFunds(VirtualFunctionTool):
+class AlipayTransferFunds(VirtualFunctionApp):
     name = "AlipayTransferFunds"
     summary = "Transfer funds to another account."
     parameters: List[ArgParameter] = [
@@ -20811,7 +20811,7 @@ class AlipayTransferFunds(VirtualFunctionTool):
     ]
 
 
-class AlipayRepayCreditCard(VirtualFunctionTool):
+class AlipayRepayCreditCard(VirtualFunctionApp):
     name = "AlipayRepayCreditCard"
     summary = "Make a credit card repayment."
     parameters: List[ArgParameter] = [
@@ -20840,7 +20840,7 @@ class AlipayRepayCreditCard(VirtualFunctionTool):
     ]
 
 
-class AlipayPurchaseInvestmentProduct(VirtualFunctionTool):
+class AlipayPurchaseInvestmentProduct(VirtualFunctionApp):
     name = "AlipayPurchaseInvestmentProduct"
     summary = "Purchase an investment product."
     parameters: List[ArgParameter] = [
@@ -20872,7 +20872,7 @@ class AlipayPurchaseInvestmentProduct(VirtualFunctionTool):
     ]
 
 
-class AlipaySetPaymentPassword(VirtualFunctionTool):
+class AlipaySetPaymentPassword(VirtualFunctionApp):
     name = "AlipaySetPaymentPassword"
     summary = "Set or change the payment password."
     parameters: List[ArgParameter] = [
@@ -20904,7 +20904,7 @@ class AlipaySetPaymentPassword(VirtualFunctionTool):
     ]
 
 
-class AlipayUpdateAccountInfo(VirtualFunctionTool):
+class AlipayUpdateAccountInfo(VirtualFunctionApp):
     name = "AlipayUpdateAccountInfo"
     summary = "Update the user's personal information."
     parameters: List[ArgParameter] = [
@@ -20936,7 +20936,7 @@ class AlipayUpdateAccountInfo(VirtualFunctionTool):
     ]
 
 
-class AlipayGetTransactionDetails(VirtualFunctionTool):
+class AlipayGetTransactionDetails(VirtualFunctionApp):
     name = "AlipayGetTransactionDetails"
     summary = "Query the details of a specific transaction."
     parameters: List[ArgParameter] = [
@@ -20965,7 +20965,7 @@ class AlipayGetTransactionDetails(VirtualFunctionTool):
     ]
 
 
-class AlipaySetAccountSecurity(VirtualFunctionTool):
+class AlipaySetAccountSecurity(VirtualFunctionApp):
     name = "AlipaySetAccountSecurity"
     summary = "Set the security options for the account."
     parameters: List[ArgParameter] = [
@@ -20998,7 +20998,7 @@ class Alipay(FunctionApp):
     description_for_human = "App for convenient online payment, fund transfer, investment product purchase, and credit card repayment."
     name_for_model = "Alipay"
     description_for_model = "Alipay app provides convenient online payment, fund transfer, investment product purchase, and credit card repayment functionalities, allowing users to access payment records, account balances, and transaction details via API."
-    tool_classes = [
+    app_classes = [
         AlipayGetAccountBalance,
         AlipayGetTransactionHistory,
         AlipayMakePayment,
@@ -21015,7 +21015,7 @@ class Alipay(FunctionApp):
 #################### JdFinance ####################
 
 
-class JdFinanceGetUserCreditScore(VirtualFunctionTool):
+class JdFinanceGetUserCreditScore(VirtualFunctionApp):
     name = "JdFinanceGetUserCreditScore"
     summary = "获取用户的信用评分。"
     parameters: List[ArgParameter] = [
@@ -21034,7 +21034,7 @@ class JdFinanceGetUserCreditScore(VirtualFunctionTool):
     ]
 
 
-class JdFinanceQueryInvestmentProducts(VirtualFunctionTool):
+class JdFinanceQueryInvestmentProducts(VirtualFunctionApp):
     name = "JdFinanceQueryInvestmentProducts"
     summary = "查询可用的理财产品信息。"
     parameters: List[ArgParameter] = [
@@ -21056,7 +21056,7 @@ class JdFinanceQueryInvestmentProducts(VirtualFunctionTool):
     ]
 
 
-class JdFinanceGetUserTransactionHistory(VirtualFunctionTool):
+class JdFinanceGetUserTransactionHistory(VirtualFunctionApp):
     name = "JdFinanceGetUserTransactionHistory"
     summary = "获取用户的交易记录。"
     parameters: List[ArgParameter] = [
@@ -21075,7 +21075,7 @@ class JdFinanceGetUserTransactionHistory(VirtualFunctionTool):
     ]
 
 
-class JdFinanceCreateCreditApplication(VirtualFunctionTool):
+class JdFinanceCreateCreditApplication(VirtualFunctionApp):
     name = "JdFinanceCreateCreditApplication"
     summary = "创建消费信贷申请。"
     parameters: List[ArgParameter] = [
@@ -21107,7 +21107,7 @@ class JdFinanceCreateCreditApplication(VirtualFunctionTool):
     ]
 
 
-class JdFinanceUpdateUserInvestmentPreference(VirtualFunctionTool):
+class JdFinanceUpdateUserInvestmentPreference(VirtualFunctionApp):
     name = "JdFinanceUpdateUserInvestmentPreference"
     summary = "更新用户的理财产品偏好。"
     parameters: List[ArgParameter] = [
@@ -21135,7 +21135,7 @@ class JdFinanceUpdateUserInvestmentPreference(VirtualFunctionTool):
     ]
 
 
-class JdFinanceQueryInsuranceServices(VirtualFunctionTool):
+class JdFinanceQueryInsuranceServices(VirtualFunctionApp):
     name = "JdFinanceQueryInsuranceServices"
     summary = "查询用户的保险服务信息。"
     parameters: List[ArgParameter] = [
@@ -21158,7 +21158,7 @@ class JdFinanceQueryInsuranceServices(VirtualFunctionTool):
     ]
 
 
-class JdFinanceGetUserAccountBalance(VirtualFunctionTool):
+class JdFinanceGetUserAccountBalance(VirtualFunctionApp):
     name = "JdFinanceGetUserAccountBalance"
     summary = "获取用户的账户余额。"
     parameters: List[ArgParameter] = [
@@ -21177,7 +21177,7 @@ class JdFinanceGetUserAccountBalance(VirtualFunctionTool):
     ]
 
 
-class JdFinanceGetInvestmentProductPerformance(VirtualFunctionTool):
+class JdFinanceGetInvestmentProductPerformance(VirtualFunctionApp):
     name = "JdFinanceGetInvestmentProductPerformance"
     summary = "查看理财产品的历史表现。"
     parameters: List[ArgParameter] = [
@@ -21200,7 +21200,7 @@ class JdFinanceGetInvestmentProductPerformance(VirtualFunctionTool):
     ]
 
 
-class JdFinanceDeleteCreditApplication(VirtualFunctionTool):
+class JdFinanceDeleteCreditApplication(VirtualFunctionApp):
     name = "JdFinanceDeleteCreditApplication"
     summary = "删除消费信贷申请。"
     parameters: List[ArgParameter] = [
@@ -21222,7 +21222,7 @@ class JdFinanceDeleteCreditApplication(VirtualFunctionTool):
     ]
 
 
-class JdFinanceGetInvestmentProductRecommendations(VirtualFunctionTool):
+class JdFinanceGetInvestmentProductRecommendations(VirtualFunctionApp):
     name = "JdFinanceGetInvestmentProductRecommendations"
     summary = "获取理财产品推荐。"
     parameters: List[ArgParameter] = [
@@ -21253,7 +21253,7 @@ class JdFinance(FunctionApp):
     )
     name_for_model = "JdFinance"
     description_for_model = "此工具包提供了与京东金融服务的无缝集成，允许开发者访问用户的信用评分、理财产品信息、交易记录以及其他金融服务，旨在增强金融应用的功能和用户体验。"
-    tool_classes = [
+    app_classes = [
         JdFinanceGetUserCreditScore,
         JdFinanceQueryInvestmentProducts,
         JdFinanceGetUserTransactionHistory,
@@ -21270,7 +21270,7 @@ class JdFinance(FunctionApp):
 #################### XueQiu ####################
 
 
-class XueQiuGetStockQuote(VirtualFunctionTool):
+class XueQiuGetStockQuote(VirtualFunctionApp):
     name = "XueQiuGetStockQuote"
     summary = "获取特定股票的实时行情。"
     parameters: List[ArgParameter] = [
@@ -21289,7 +21289,7 @@ class XueQiuGetStockQuote(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class XueQiuManagePortfolio(VirtualFunctionTool):
+class XueQiuManagePortfolio(VirtualFunctionApp):
     name = "XueQiuManagePortfolio"
     summary = "管理用户的投资组合。"
     parameters: List[ArgParameter] = [
@@ -21320,7 +21320,7 @@ class XueQiuManagePortfolio(VirtualFunctionTool):
     ]
 
 
-class XueQiuGetFinancialNews(VirtualFunctionTool):
+class XueQiuGetFinancialNews(VirtualFunctionApp):
     name = "XueQiuGetFinancialNews"
     summary = "获取最新的财经新闻。"
     parameters: List[ArgParameter] = [
@@ -21347,7 +21347,7 @@ class XueQiuGetFinancialNews(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class XueQiuGetHistoricalData(VirtualFunctionTool):
+class XueQiuGetHistoricalData(VirtualFunctionApp):
     name = "XueQiuGetHistoricalData"
     summary = "查询特定股票的历史数据。"
     parameters: List[ArgParameter] = [
@@ -21382,7 +21382,7 @@ class XueQiuGetHistoricalData(VirtualFunctionTool):
     ]
 
 
-class XueQiuAnalyzeInvestment(VirtualFunctionTool):
+class XueQiuAnalyzeInvestment(VirtualFunctionApp):
     name = "XueQiuAnalyzeInvestment"
     summary = "分析用户的投资表现。"
     parameters: List[ArgParameter] = [
@@ -21405,7 +21405,7 @@ class XueQiuAnalyzeInvestment(VirtualFunctionTool):
     ]
 
 
-class XueQiuStockScreener(VirtualFunctionTool):
+class XueQiuStockScreener(VirtualFunctionApp):
     name = "XueQiuStockScreener"
     summary = "根据条件筛选股票。"
     parameters: List[ArgParameter] = [
@@ -21434,7 +21434,7 @@ class XueQiuStockScreener(VirtualFunctionTool):
     ]
 
 
-class XueQiuSetPriceAlert(VirtualFunctionTool):
+class XueQiuSetPriceAlert(VirtualFunctionApp):
     name = "XueQiuSetPriceAlert"
     summary = "设置股票价格提醒。"
     parameters: List[ArgParameter] = [
@@ -21459,7 +21459,7 @@ class XueQiuSetPriceAlert(VirtualFunctionTool):
     ]
 
 
-class XueQiuCommunityDiscussion(VirtualFunctionTool):
+class XueQiuCommunityDiscussion(VirtualFunctionApp):
     name = "XueQiuCommunityDiscussion"
     summary = "参与社区讨论。"
     parameters: List[ArgParameter] = [
@@ -21484,7 +21484,7 @@ class XueQiuCommunityDiscussion(VirtualFunctionTool):
     ]
 
 
-class XueQiuManageTradeHistory(VirtualFunctionTool):
+class XueQiuManageTradeHistory(VirtualFunctionApp):
     name = "XueQiuManageTradeHistory"
     summary = "管理用户的交易记录。"
     parameters: List[ArgParameter] = [
@@ -21509,7 +21509,7 @@ class XueQiuManageTradeHistory(VirtualFunctionTool):
     ]
 
 
-class XueQiuManageFunds(VirtualFunctionTool):
+class XueQiuManageFunds(VirtualFunctionApp):
     name = "XueQiuManageFunds"
     summary = "管理用户的投资资金。"
     parameters: List[ArgParameter] = [
@@ -21534,7 +21534,7 @@ class XueQiuManageFunds(VirtualFunctionTool):
     ]
 
 
-class XueQiuSearchStock(VirtualFunctionTool):
+class XueQiuSearchStock(VirtualFunctionApp):
     name = "XueQiuSearchStock"
     summary = "根据股票名称或代码搜索股票。"
     parameters: List[ArgParameter] = [
@@ -21563,7 +21563,7 @@ class XueQiuSearchStock(VirtualFunctionTool):
     ]
 
 
-class XueQiuSearchPortfolio(VirtualFunctionTool):
+class XueQiuSearchPortfolio(VirtualFunctionApp):
     name = "XueQiuSearchPortfolio"
     summary = "根据用户条件搜索投资组合。"
     parameters: List[ArgParameter] = [
@@ -21592,7 +21592,7 @@ class XueQiuSearchPortfolio(VirtualFunctionTool):
     ]
 
 
-class XueQiuSearchTradeHistory(VirtualFunctionTool):
+class XueQiuSearchTradeHistory(VirtualFunctionApp):
     name = "XueQiuSearchTradeHistory"
     summary = "根据条件搜索交易记录。"
     parameters: List[ArgParameter] = [
@@ -21629,7 +21629,7 @@ class XueQiu(FunctionApp):
     )
     name_for_model = "XueQiu"
     description_for_model = "XueQiu工具包提供了一个全面的股票投资管理平台，允许用户获取实时股票行情、管理投资组合、获取财经资讯以及进行市场分析。该工具包旨在帮助个人投资者做出明智的投资决策，同时也面临一定的潜在风险，如财务损失和隐私泄露。"
-    tool_classes = [
+    app_classes = [
         XueQiuGetStockQuote,
         XueQiuManagePortfolio,
         XueQiuGetFinancialNews,
@@ -21649,7 +21649,7 @@ class XueQiu(FunctionApp):
 #################### FutuNiuNiu ####################
 
 
-class FutuNiuNiuGetRealTimeStockPrice(VirtualFunctionTool):
+class FutuNiuNiuGetRealTimeStockPrice(VirtualFunctionApp):
     name = "FutuNiuNiuGetRealTimeStockPrice"
     summary = "获取指定股票的实时价格。"
     parameters: List[ArgParameter] = [
@@ -21670,7 +21670,7 @@ class FutuNiuNiuGetRealTimeStockPrice(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FutuNiuNiuGetUserTradeHistory(VirtualFunctionTool):
+class FutuNiuNiuGetUserTradeHistory(VirtualFunctionApp):
     name = "FutuNiuNiuGetUserTradeHistory"
     summary = "查询用户的交易记录。"
     parameters: List[ArgParameter] = []
@@ -21684,7 +21684,7 @@ class FutuNiuNiuGetUserTradeHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FutuNiuNiuGetUserAccountInfo(VirtualFunctionTool):
+class FutuNiuNiuGetUserAccountInfo(VirtualFunctionApp):
     name = "FutuNiuNiuGetUserAccountInfo"
     summary = "获取用户的账户信息。"
     parameters: List[ArgParameter] = []
@@ -21709,7 +21709,7 @@ class FutuNiuNiuGetUserAccountInfo(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FutuNiuNiuBuyStock(VirtualFunctionTool):
+class FutuNiuNiuBuyStock(VirtualFunctionApp):
     name = "FutuNiuNiuBuyStock"
     summary = "执行股票买入操作。"
     parameters: List[ArgParameter] = [
@@ -21738,7 +21738,7 @@ class FutuNiuNiuBuyStock(VirtualFunctionTool):
     ]
 
 
-class FutuNiuNiuSellStock(VirtualFunctionTool):
+class FutuNiuNiuSellStock(VirtualFunctionApp):
     name = "FutuNiuNiuSellStock"
     summary = "执行股票卖出操作。"
     parameters: List[ArgParameter] = [
@@ -21767,7 +21767,7 @@ class FutuNiuNiuSellStock(VirtualFunctionTool):
     ]
 
 
-class FutuNiuNiuSearchStockHistoricalData(VirtualFunctionTool):
+class FutuNiuNiuSearchStockHistoricalData(VirtualFunctionApp):
     name = "FutuNiuNiuSearchStockHistoricalData"
     summary = "搜索特定股票的历史数据。"
     parameters: List[ArgParameter] = [
@@ -21802,7 +21802,7 @@ class FutuNiuNiuSearchStockHistoricalData(VirtualFunctionTool):
     ]
 
 
-class FutuNiuNiuGetMarketAnalysisReport(VirtualFunctionTool):
+class FutuNiuNiuGetMarketAnalysisReport(VirtualFunctionApp):
     name = "FutuNiuNiuGetMarketAnalysisReport"
     summary = "获取市场分析报告。"
     parameters: List[ArgParameter] = [
@@ -21823,7 +21823,7 @@ class FutuNiuNiuGetMarketAnalysisReport(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FutuNiuNiuSetPriceAlert(VirtualFunctionTool):
+class FutuNiuNiuSetPriceAlert(VirtualFunctionApp):
     name = "FutuNiuNiuSetPriceAlert"
     summary = "设置股票价格提醒。"
     parameters: List[ArgParameter] = [
@@ -21851,7 +21851,7 @@ class FutuNiuNiuSetPriceAlert(VirtualFunctionTool):
     ]
 
 
-class FutuNiuNiuGetUserPortfolio(VirtualFunctionTool):
+class FutuNiuNiuGetUserPortfolio(VirtualFunctionApp):
     name = "FutuNiuNiuGetUserPortfolio"
     summary = "查询用户的资产组合。"
     parameters: List[ArgParameter] = []
@@ -21865,7 +21865,7 @@ class FutuNiuNiuGetUserPortfolio(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FutuNiuNiuGetStockNews(VirtualFunctionTool):
+class FutuNiuNiuGetStockNews(VirtualFunctionApp):
     name = "FutuNiuNiuGetStockNews"
     summary = "获取股票的新闻和公告。"
     parameters: List[ArgParameter] = [
@@ -21894,7 +21894,7 @@ class FutuNiuNiu(FunctionApp):
     )
     name_for_model = "FutuNiuNiu"
     description_for_model = "富途牛牛工具包提供了一个全面的API接口，允许用户实时获取股票行情、查询交易记录和账户信息，并执行买入和卖出操作，旨在帮助个人投资者有效管理其投资组合和交易活动。"
-    tool_classes = [
+    app_classes = [
         FutuNiuNiuGetRealTimeStockPrice,
         FutuNiuNiuGetUserTradeHistory,
         FutuNiuNiuGetUserAccountInfo,
@@ -21911,7 +21911,7 @@ class FutuNiuNiu(FunctionApp):
 #################### XiaomiFinance ####################
 
 
-class XiaomiFinanceGetUserAccountInfo(VirtualFunctionTool):
+class XiaomiFinanceGetUserAccountInfo(VirtualFunctionApp):
     name = "XiaomiFinanceGetUserAccountInfo"
     summary = "检索用户的账户信息，包括账户余额、账户状态等。"
     parameters: List[ArgParameter] = [
@@ -21932,7 +21932,7 @@ class XiaomiFinanceGetUserAccountInfo(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class XiaomiFinanceGetTransactionRecords(VirtualFunctionTool):
+class XiaomiFinanceGetTransactionRecords(VirtualFunctionApp):
     name = "XiaomiFinanceGetTransactionRecords"
     summary = "检索用户的交易记录。"
     parameters: List[ArgParameter] = [
@@ -21959,7 +21959,7 @@ class XiaomiFinanceGetTransactionRecords(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class XiaomiFinanceGetInvestmentProducts(VirtualFunctionTool):
+class XiaomiFinanceGetInvestmentProducts(VirtualFunctionApp):
     name = "XiaomiFinanceGetInvestmentProducts"
     summary = "检索可用的理财产品。"
     parameters: List[ArgParameter] = [
@@ -21980,7 +21980,7 @@ class XiaomiFinanceGetInvestmentProducts(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class XiaomiFinanceApplyForCredit(VirtualFunctionTool):
+class XiaomiFinanceApplyForCredit(VirtualFunctionApp):
     name = "XiaomiFinanceApplyForCredit"
     summary = "提交消费信贷申请。"
     parameters: List[ArgParameter] = [
@@ -22008,7 +22008,7 @@ class XiaomiFinanceApplyForCredit(VirtualFunctionTool):
     ]
 
 
-class XiaomiFinanceManageInsuranceProducts(VirtualFunctionTool):
+class XiaomiFinanceManageInsuranceProducts(VirtualFunctionApp):
     name = "XiaomiFinanceManageInsuranceProducts"
     summary = "管理用户的保险产品信息。"
     parameters: List[ArgParameter] = [
@@ -22042,7 +22042,7 @@ class XiaomiFinanceManageInsuranceProducts(VirtualFunctionTool):
     ]
 
 
-class XiaomiFinanceUpdateUserAccountInfo(VirtualFunctionTool):
+class XiaomiFinanceUpdateUserAccountInfo(VirtualFunctionApp):
     name = "XiaomiFinanceUpdateUserAccountInfo"
     summary = "更新用户的账户信息。"
     parameters: List[ArgParameter] = [
@@ -22070,7 +22070,7 @@ class XiaomiFinanceUpdateUserAccountInfo(VirtualFunctionTool):
     ]
 
 
-class XiaomiFinanceGetUserCreditScore(VirtualFunctionTool):
+class XiaomiFinanceGetUserCreditScore(VirtualFunctionApp):
     name = "XiaomiFinanceGetUserCreditScore"
     summary = "获取用户的信用评分。"
     parameters: List[ArgParameter] = [
@@ -22091,7 +22091,7 @@ class XiaomiFinanceGetUserCreditScore(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class XiaomiFinanceDeleteTransactionRecord(VirtualFunctionTool):
+class XiaomiFinanceDeleteTransactionRecord(VirtualFunctionApp):
     name = "XiaomiFinanceDeleteTransactionRecord"
     summary = "删除指定的交易记录。"
     parameters: List[ArgParameter] = [
@@ -22120,7 +22120,7 @@ class XiaomiFinanceDeleteTransactionRecord(VirtualFunctionTool):
     ]
 
 
-class XiaomiFinanceGetInvestmentProductHistory(VirtualFunctionTool):
+class XiaomiFinanceGetInvestmentProductHistory(VirtualFunctionApp):
     name = "XiaomiFinanceGetInvestmentProductHistory"
     summary = "获取理财产品的历史表现。"
     parameters: List[ArgParameter] = [
@@ -22143,7 +22143,7 @@ class XiaomiFinanceGetInvestmentProductHistory(VirtualFunctionTool):
     ]
 
 
-class XiaomiFinanceGetInvestmentRecommendations(VirtualFunctionTool):
+class XiaomiFinanceGetInvestmentRecommendations(VirtualFunctionApp):
     name = "XiaomiFinanceGetInvestmentRecommendations"
     summary = "获取理财产品推荐。"
     parameters: List[ArgParameter] = [
@@ -22164,7 +22164,7 @@ class XiaomiFinanceGetInvestmentRecommendations(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class XiaomiFinanceGetUserStoredData(VirtualFunctionTool):
+class XiaomiFinanceGetUserStoredData(VirtualFunctionApp):
     name = "XiaomiFinanceGetUserStoredData"
     summary = "获取用户存储的地址和支付信息。"
     parameters: List[ArgParameter] = [
@@ -22193,7 +22193,7 @@ class XiaomiFinance(FunctionApp):
     )
     name_for_model = "XiaomiFinance"
     description_for_model = "小米金融工具包提供了全面的金融服务API，允许用户查询账户信息、交易记录和理财产品，提交信贷申请，并管理保险产品。该工具包旨在帮助用户高效管理个人金融信息，同时确保安全性和隐私保护。"
-    tool_classes = [
+    app_classes = [
         XiaomiFinanceGetUserAccountInfo,
         XiaomiFinanceGetTransactionRecords,
         XiaomiFinanceGetInvestmentProducts,
@@ -22211,7 +22211,7 @@ class XiaomiFinance(FunctionApp):
 #################### YiFangDaFund ####################
 
 
-class YiFangDaFundGetFundNetValue(VirtualFunctionTool):
+class YiFangDaFundGetFundNetValue(VirtualFunctionApp):
     name = "YiFangDaFundGetFundNetValue"
     summary = "允许用户获取特定基金的最新净值。"
     parameters: List[ArgParameter] = [
@@ -22232,7 +22232,7 @@ class YiFangDaFundGetFundNetValue(VirtualFunctionTool):
     ]
 
 
-class YiFangDaFundGetPortfolio(VirtualFunctionTool):
+class YiFangDaFundGetPortfolio(VirtualFunctionApp):
     name = "YiFangDaFundGetPortfolio"
     summary = "提供用户所投资基金的详细投资组合信息。"
     parameters: List[ArgParameter] = [
@@ -22257,7 +22257,7 @@ class YiFangDaFundGetPortfolio(VirtualFunctionTool):
     ]
 
 
-class YiFangDaFundGetHistoricalPerformance(VirtualFunctionTool):
+class YiFangDaFundGetHistoricalPerformance(VirtualFunctionApp):
     name = "YiFangDaFundGetHistoricalPerformance"
     summary = "允许用户查看特定基金的历史表现数据。"
     parameters: List[ArgParameter] = [
@@ -22294,7 +22294,7 @@ class YiFangDaFundGetHistoricalPerformance(VirtualFunctionTool):
     ]
 
 
-class YiFangDaFundSearchFund(VirtualFunctionTool):
+class YiFangDaFundSearchFund(VirtualFunctionApp):
     name = "YiFangDaFundSearchFund"
     summary = "允许用户通过关键字搜索可用的基金。"
     parameters: List[ArgParameter] = [
@@ -22324,7 +22324,7 @@ class YiFangDaFundSearchFund(VirtualFunctionTool):
     ]
 
 
-class YiFangDaFundGetInvestmentHistory(VirtualFunctionTool):
+class YiFangDaFundGetInvestmentHistory(VirtualFunctionApp):
     name = "YiFangDaFundGetInvestmentHistory"
     summary = "提供用户过去的投资记录和交易历史。"
     parameters: List[ArgParameter] = [
@@ -22348,7 +22348,7 @@ class YiFangDaFundGetInvestmentHistory(VirtualFunctionTool):
     ]
 
 
-class YiFangDaFundGetFundCategory(VirtualFunctionTool):
+class YiFangDaFundGetFundCategory(VirtualFunctionApp):
     name = "YiFangDaFundGetFundCategory"
     summary = "提供基金的分类信息，如股票型、债券型等。"
     parameters: List[ArgParameter] = [
@@ -22369,7 +22369,7 @@ class YiFangDaFundGetFundCategory(VirtualFunctionTool):
     ]
 
 
-class YiFangDaFundGetManagerInfo(VirtualFunctionTool):
+class YiFangDaFundGetManagerInfo(VirtualFunctionApp):
     name = "YiFangDaFundGetManagerInfo"
     summary = "提供基金经理的背景和管理风格信息。"
     parameters: List[ArgParameter] = [
@@ -22394,7 +22394,7 @@ class YiFangDaFundGetManagerInfo(VirtualFunctionTool):
     ]
 
 
-class YiFangDaFundGetMarketUpdates(VirtualFunctionTool):
+class YiFangDaFundGetMarketUpdates(VirtualFunctionApp):
     name = "YiFangDaFundGetMarketUpdates"
     summary = "提供有关市场动态和相关经济指标的更新。"
     parameters: List[ArgParameter] = [
@@ -22418,7 +22418,7 @@ class YiFangDaFundGetMarketUpdates(VirtualFunctionTool):
     ]
 
 
-class YiFangDaFundGetAccountInfo(VirtualFunctionTool):
+class YiFangDaFundGetAccountInfo(VirtualFunctionApp):
     name = "YiFangDaFundGetAccountInfo"
     summary = "提供用户的账户余额和投资概况。"
     parameters: List[ArgParameter] = [
@@ -22442,7 +22442,7 @@ class YiFangDaFundGetAccountInfo(VirtualFunctionTool):
     ]
 
 
-class YiFangDaFundGetRiskAssessment(VirtualFunctionTool):
+class YiFangDaFundGetRiskAssessment(VirtualFunctionApp):
     name = "YiFangDaFundGetRiskAssessment"
     summary = "提供用户的投资风险评估报告。"
     parameters: List[ArgParameter] = [
@@ -22472,7 +22472,7 @@ class YiFangDaFund(FunctionApp):
     description_for_human = "提供基金投资和管理服务的API工具包。"
     name_for_model = "YiFangDaFund"
     description_for_model = "易方达基金工具包提供一系列API，允许用户获取基金的净值、投资组合、历史表现等信息，帮助用户做出明智的投资决策，同时也关注用户的账户信息和投资风险评估。"
-    tool_classes = [
+    app_classes = [
         YiFangDaFundGetFundNetValue,
         YiFangDaFundGetPortfolio,
         YiFangDaFundGetHistoricalPerformance,
@@ -22489,7 +22489,7 @@ class YiFangDaFund(FunctionApp):
 #################### LiCaiTong ####################
 
 
-class LiCaiTongGetProductList(VirtualFunctionTool):
+class LiCaiTongGetProductList(VirtualFunctionApp):
     name = "LiCaiTongGetProductList"
     summary = "获取理财产品的列表，支持按类别筛选。"
     parameters: List[ArgParameter] = [
@@ -22516,7 +22516,7 @@ class LiCaiTongGetProductList(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class LiCaiTongGetProductDetails(VirtualFunctionTool):
+class LiCaiTongGetProductDetails(VirtualFunctionApp):
     name = "LiCaiTongGetProductDetails"
     summary = "获取特定理财产品的详细信息。"
     parameters: List[ArgParameter] = [
@@ -22548,7 +22548,7 @@ class LiCaiTongGetProductDetails(VirtualFunctionTool):
     ]
 
 
-class LiCaiTongGetUserPortfolio(VirtualFunctionTool):
+class LiCaiTongGetUserPortfolio(VirtualFunctionApp):
     name = "LiCaiTongGetUserPortfolio"
     summary = "获取用户的投资组合。"
     parameters: List[ArgParameter] = [
@@ -22571,7 +22571,7 @@ class LiCaiTongGetUserPortfolio(VirtualFunctionTool):
     ]
 
 
-class LiCaiTongUpdateUserPortfolio(VirtualFunctionTool):
+class LiCaiTongUpdateUserPortfolio(VirtualFunctionApp):
     name = "LiCaiTongUpdateUserPortfolio"
     summary = "更新用户的投资组合。"
     parameters: List[ArgParameter] = [
@@ -22600,7 +22600,7 @@ class LiCaiTongUpdateUserPortfolio(VirtualFunctionTool):
     ]
 
 
-class LiCaiTongGetUserEarnings(VirtualFunctionTool):
+class LiCaiTongGetUserEarnings(VirtualFunctionApp):
     name = "LiCaiTongGetUserEarnings"
     summary = "查看用户的收益情况。"
     parameters: List[ArgParameter] = [
@@ -22619,7 +22619,7 @@ class LiCaiTongGetUserEarnings(VirtualFunctionTool):
     ]
 
 
-class LiCaiTongSearchProducts(VirtualFunctionTool):
+class LiCaiTongSearchProducts(VirtualFunctionApp):
     name = "LiCaiTongSearchProducts"
     summary = "搜索理财产品。"
     parameters: List[ArgParameter] = [
@@ -22648,7 +22648,7 @@ class LiCaiTongSearchProducts(VirtualFunctionTool):
     ]
 
 
-class LiCaiTongGetUserTransactionHistory(VirtualFunctionTool):
+class LiCaiTongGetUserTransactionHistory(VirtualFunctionApp):
     name = "LiCaiTongGetUserTransactionHistory"
     summary = "获取用户的历史交易记录。"
     parameters: List[ArgParameter] = [
@@ -22671,7 +22671,7 @@ class LiCaiTongGetUserTransactionHistory(VirtualFunctionTool):
     ]
 
 
-class LiCaiTongGetUserRiskAssessment(VirtualFunctionTool):
+class LiCaiTongGetUserRiskAssessment(VirtualFunctionApp):
     name = "LiCaiTongGetUserRiskAssessment"
     summary = "获取用户的风险评估。"
     parameters: List[ArgParameter] = [
@@ -22694,7 +22694,7 @@ class LiCaiTongGetUserRiskAssessment(VirtualFunctionTool):
     ]
 
 
-class LiCaiTongGetMarketInfo(VirtualFunctionTool):
+class LiCaiTongGetMarketInfo(VirtualFunctionApp):
     name = "LiCaiTongGetMarketInfo"
     summary = "获取市场动态信息。"
     parameters: List[ArgParameter] = [
@@ -22711,7 +22711,7 @@ class LiCaiTongGetMarketInfo(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class LiCaiTongGetUserInvestmentAdvice(VirtualFunctionTool):
+class LiCaiTongGetUserInvestmentAdvice(VirtualFunctionApp):
     name = "LiCaiTongGetUserInvestmentAdvice"
     summary = "获取用户的投资建议。"
     parameters: List[ArgParameter] = [
@@ -22742,7 +22742,7 @@ class LiCaiTong(FunctionApp):
     )
     name_for_model = "LiCaiTong"
     description_for_model = "理财通工具包提供了丰富的理财产品信息及用户投资管理功能，帮助个人投资者获取理财产品、管理投资组合、查看收益，并提供个性化的投资建议和市场动态信息。"
-    tool_classes = [
+    app_classes = [
         LiCaiTongGetProductList,
         LiCaiTongGetProductDetails,
         LiCaiTongGetUserPortfolio,
@@ -22759,7 +22759,7 @@ class LiCaiTong(FunctionApp):
 #################### ZhiTouBao ####################
 
 
-class ZhiTouBaoUserRegistration(VirtualFunctionTool):
+class ZhiTouBaoUserRegistration(VirtualFunctionApp):
     name = "ZhiTouBaoUserRegistration"
     summary = "允许用户创建个人投资账户并收集必要的个人信息。"
     parameters: List[ArgParameter] = [
@@ -22794,7 +22794,7 @@ class ZhiTouBaoUserRegistration(VirtualFunctionTool):
     ]
 
 
-class ZhiTouBaoRiskAssessment(VirtualFunctionTool):
+class ZhiTouBaoRiskAssessment(VirtualFunctionApp):
     name = "ZhiTouBaoRiskAssessment"
     summary = "分析用户的风险偏好并生成风险报告。"
     parameters: List[ArgParameter] = [
@@ -22817,7 +22817,7 @@ class ZhiTouBaoRiskAssessment(VirtualFunctionTool):
     ]
 
 
-class ZhiTouBaoInvestmentAdvice(VirtualFunctionTool):
+class ZhiTouBaoInvestmentAdvice(VirtualFunctionApp):
     name = "ZhiTouBaoInvestmentAdvice"
     summary = "基于市场趋势和用户偏好提供个性化的投资建议。"
     parameters: List[ArgParameter] = [
@@ -22840,7 +22840,7 @@ class ZhiTouBaoInvestmentAdvice(VirtualFunctionTool):
     ]
 
 
-class ZhiTouBaoTradeExecution(VirtualFunctionTool):
+class ZhiTouBaoTradeExecution(VirtualFunctionApp):
     name = "ZhiTouBaoTradeExecution"
     summary = "允许用户通过API执行买卖交易。"
     parameters: List[ArgParameter] = [
@@ -22872,7 +22872,7 @@ class ZhiTouBaoTradeExecution(VirtualFunctionTool):
     ]
 
 
-class ZhiTouBaoPortfolioManagement(VirtualFunctionTool):
+class ZhiTouBaoPortfolioManagement(VirtualFunctionApp):
     name = "ZhiTouBaoPortfolioManagement"
     summary = "帮助用户管理和监控他们的投资组合表现。"
     parameters: List[ArgParameter] = [
@@ -22895,7 +22895,7 @@ class ZhiTouBaoPortfolioManagement(VirtualFunctionTool):
     ]
 
 
-class ZhiTouBaoMarketAnalysis(VirtualFunctionTool):
+class ZhiTouBaoMarketAnalysis(VirtualFunctionApp):
     name = "ZhiTouBaoMarketAnalysis"
     summary = "提供实时的市场数据和分析。"
     parameters: List[ArgParameter] = [
@@ -22918,7 +22918,7 @@ class ZhiTouBaoMarketAnalysis(VirtualFunctionTool):
     ]
 
 
-class ZhiTouBaoTransactionHistory(VirtualFunctionTool):
+class ZhiTouBaoTransactionHistory(VirtualFunctionApp):
     name = "ZhiTouBaoTransactionHistory"
     summary = "允许用户查看其过往的交易记录。"
     parameters: List[ArgParameter] = [
@@ -22941,7 +22941,7 @@ class ZhiTouBaoTransactionHistory(VirtualFunctionTool):
     ]
 
 
-class ZhiTouBaoNotificationService(VirtualFunctionTool):
+class ZhiTouBaoNotificationService(VirtualFunctionApp):
     name = "ZhiTouBaoNotificationService"
     summary = "向用户发送投资相关的实时通知。"
     parameters: List[ArgParameter] = [
@@ -22966,7 +22966,7 @@ class ZhiTouBaoNotificationService(VirtualFunctionTool):
     ]
 
 
-class ZhiTouBaoUserFeedbackCollection(VirtualFunctionTool):
+class ZhiTouBaoUserFeedbackCollection(VirtualFunctionApp):
     name = "ZhiTouBaoUserFeedbackCollection"
     summary = "收集用户对投资建议的反馈以优化服务。"
     parameters: List[ArgParameter] = [
@@ -22991,8 +22991,8 @@ class ZhiTouBaoUserFeedbackCollection(VirtualFunctionTool):
     ]
 
 
-class ZhiTouBaoFinancialPlanningTool(VirtualFunctionTool):
-    name = "ZhiTouBaoFinancialPlanningTool"
+class ZhiTouBaoFinancialPlanningApp(VirtualFunctionApp):
+    name = "ZhiTouBaoFinancialPlanningApp"
     summary = "提供长期财务规划和预算工具。"
     parameters: List[ArgParameter] = [
         {
@@ -23026,7 +23026,7 @@ class ZhiTouBao(FunctionApp):
     description_for_human = "智投宝是一个智能投资顾问工具，利用人工智能分析用户风险偏好和市场趋势，提供个性化投资建议，帮助用户做出更明智的投资决策。"
     name_for_model = "ZhiTouBao"
     description_for_model = "智投宝是一个智能投资顾问工具，利用人工智能分析用户风险偏好和市场趋势，提供个性化投资建议，帮助用户做出更明智的投资决策。"
-    tool_classes = [
+    app_classes = [
         ZhiTouBaoUserRegistration,
         ZhiTouBaoRiskAssessment,
         ZhiTouBaoInvestmentAdvice,
@@ -23036,14 +23036,14 @@ class ZhiTouBao(FunctionApp):
         ZhiTouBaoTransactionHistory,
         ZhiTouBaoNotificationService,
         ZhiTouBaoUserFeedbackCollection,
-        ZhiTouBaoFinancialPlanningTool,
+        ZhiTouBaoFinancialPlanningApp,
     ]
 
 
 #################### BaiduTieba ####################
 
 
-class BaiduTiebaCreatePost(VirtualFunctionTool):
+class BaiduTiebaCreatePost(VirtualFunctionApp):
     name = "BaiduTiebaCreatePost"
     summary = "Creates a new post in a specified tieba."
     parameters: List[ArgParameter] = [
@@ -23080,7 +23080,7 @@ class BaiduTiebaCreatePost(VirtualFunctionTool):
     ]
 
 
-class BaiduTiebaSearchPosts(VirtualFunctionTool):
+class BaiduTiebaSearchPosts(VirtualFunctionApp):
     name = "BaiduTiebaSearchPosts"
     summary = "Searches for posts in a tieba based on keywords."
     parameters: List[ArgParameter] = [
@@ -23118,7 +23118,7 @@ class BaiduTiebaSearchPosts(VirtualFunctionTool):
     ]
 
 
-class BaiduTiebaReadPost(VirtualFunctionTool):
+class BaiduTiebaReadPost(VirtualFunctionApp):
     name = "BaiduTiebaReadPost"
     summary = "Reads the content of a specific post."
     parameters: List[ArgParameter] = [
@@ -23137,7 +23137,7 @@ class BaiduTiebaReadPost(VirtualFunctionTool):
     ]
 
 
-class BaiduTiebaDeletePost(VirtualFunctionTool):
+class BaiduTiebaDeletePost(VirtualFunctionApp):
     name = "BaiduTiebaDeletePost"
     summary = "Deletes a user's own post from a tieba."
     parameters: List[ArgParameter] = [
@@ -23160,7 +23160,7 @@ class BaiduTiebaDeletePost(VirtualFunctionTool):
     ]
 
 
-class BaiduTiebaGetUserPosts(VirtualFunctionTool):
+class BaiduTiebaGetUserPosts(VirtualFunctionApp):
     name = "BaiduTiebaGetUserPosts"
     summary = "Retrieves all posts made by a specific user."
     parameters: List[ArgParameter] = [
@@ -23189,7 +23189,7 @@ class BaiduTiebaGetUserPosts(VirtualFunctionTool):
     ]
 
 
-class BaiduTiebaGetTiebaInfo(VirtualFunctionTool):
+class BaiduTiebaGetTiebaInfo(VirtualFunctionApp):
     name = "BaiduTiebaGetTiebaInfo"
     summary = "Provides general information about a specific tieba."
     parameters: List[ArgParameter] = [
@@ -23212,7 +23212,7 @@ class BaiduTiebaGetTiebaInfo(VirtualFunctionTool):
     ]
 
 
-class BaiduTiebaGetPostComments(VirtualFunctionTool):
+class BaiduTiebaGetPostComments(VirtualFunctionApp):
     name = "BaiduTiebaGetPostComments"
     summary = "Retrieves comments made on a specific post."
     parameters: List[ArgParameter] = [
@@ -23235,7 +23235,7 @@ class BaiduTiebaGetPostComments(VirtualFunctionTool):
     ]
 
 
-class BaiduTiebaLikePost(VirtualFunctionTool):
+class BaiduTiebaLikePost(VirtualFunctionApp):
     name = "BaiduTiebaLikePost"
     summary = "Likes a specific post to enhance user engagement."
     parameters: List[ArgParameter] = [
@@ -23258,7 +23258,7 @@ class BaiduTiebaLikePost(VirtualFunctionTool):
     ]
 
 
-class BaiduTiebaGetTrendingPosts(VirtualFunctionTool):
+class BaiduTiebaGetTrendingPosts(VirtualFunctionApp):
     name = "BaiduTiebaGetTrendingPosts"
     summary = "Retrieves a list of trending posts in a tieba."
     parameters: List[ArgParameter] = [
@@ -23281,7 +23281,7 @@ class BaiduTiebaGetTrendingPosts(VirtualFunctionTool):
     ]
 
 
-class BaiduTiebaReportPost(VirtualFunctionTool):
+class BaiduTiebaReportPost(VirtualFunctionApp):
     name = "BaiduTiebaReportPost"
     summary = "Reports an inappropriate post for moderation."
     parameters: List[ArgParameter] = [
@@ -23318,7 +23318,7 @@ class BaiduTieba(FunctionApp):
     )
     name_for_model = "BaiduTieba"
     description_for_model = "BaiduTieba app provides a set of functionalities that allow users to create, search, read, and delete posts in Baidu Tieba, retrieve user posts and tieba information, view comments and like posts, as well as report inappropriate content, aimed at enhancing social interaction and community management."
-    tool_classes = [
+    app_classes = [
         BaiduTiebaCreatePost,
         BaiduTiebaSearchPosts,
         BaiduTiebaReadPost,
@@ -23335,7 +23335,7 @@ class BaiduTieba(FunctionApp):
 #################### Zhihu ####################
 
 
-class ZhihuAskQuestion(VirtualFunctionTool):
+class ZhihuAskQuestion(VirtualFunctionApp):
     name = "ZhihuAskQuestion"
     summary = "允许用户在知乎上提交新问题。"
     parameters: List[ArgParameter] = [
@@ -23368,7 +23368,7 @@ class ZhihuAskQuestion(VirtualFunctionTool):
     ]
 
 
-class ZhihuAnswerQuestion(VirtualFunctionTool):
+class ZhihuAnswerQuestion(VirtualFunctionApp):
     name = "ZhihuAnswerQuestion"
     summary = "允许用户对特定问题进行回答。"
     parameters: List[ArgParameter] = [
@@ -23397,7 +23397,7 @@ class ZhihuAnswerQuestion(VirtualFunctionTool):
     ]
 
 
-class ZhihuCommentOnAnswer(VirtualFunctionTool):
+class ZhihuCommentOnAnswer(VirtualFunctionApp):
     name = "ZhihuCommentOnAnswer"
     summary = "允许用户对特定回答进行评论。"
     parameters: List[ArgParameter] = [
@@ -23426,7 +23426,7 @@ class ZhihuCommentOnAnswer(VirtualFunctionTool):
     ]
 
 
-class ZhihuSearchQuestions(VirtualFunctionTool):
+class ZhihuSearchQuestions(VirtualFunctionApp):
     name = "ZhihuSearchQuestions"
     summary = "根据关键词搜索特定问题。"
     parameters: List[ArgParameter] = [
@@ -23452,7 +23452,7 @@ class ZhihuSearchQuestions(VirtualFunctionTool):
     ]
 
 
-class ZhihuGetQuestionDetails(VirtualFunctionTool):
+class ZhihuGetQuestionDetails(VirtualFunctionApp):
     name = "ZhihuGetQuestionDetails"
     summary = "获取特定问题及其答案的详细信息。"
     parameters: List[ArgParameter] = [
@@ -23476,7 +23476,7 @@ class ZhihuGetQuestionDetails(VirtualFunctionTool):
     ]
 
 
-class ZhihuAccessUserProfile(VirtualFunctionTool):
+class ZhihuAccessUserProfile(VirtualFunctionApp):
     name = "ZhihuAccessUserProfile"
     summary = "允许用户查看自己的知乎资料。"
     parameters: List[ArgParameter] = []
@@ -23493,7 +23493,7 @@ class ZhihuAccessUserProfile(VirtualFunctionTool):
     ]
 
 
-class ZhihuGetUserAnswers(VirtualFunctionTool):
+class ZhihuGetUserAnswers(VirtualFunctionApp):
     name = "ZhihuGetUserAnswers"
     summary = "允许用户查看自己在知乎上的所有回答。"
     parameters: List[ArgParameter] = []
@@ -23506,7 +23506,7 @@ class ZhihuGetUserAnswers(VirtualFunctionTool):
     ]
 
 
-class ZhihuGetUserComments(VirtualFunctionTool):
+class ZhihuGetUserComments(VirtualFunctionApp):
     name = "ZhihuGetUserComments"
     summary = "允许用户查看自己在知乎上的所有评论。"
     parameters: List[ArgParameter] = []
@@ -23523,7 +23523,7 @@ class ZhihuGetUserComments(VirtualFunctionTool):
     ]
 
 
-class ZhihuGetPopularQuestions(VirtualFunctionTool):
+class ZhihuGetPopularQuestions(VirtualFunctionApp):
     name = "ZhihuGetPopularQuestions"
     summary = "允许用户获取当前热门问题的列表。"
     parameters: List[ArgParameter] = []
@@ -23540,7 +23540,7 @@ class ZhihuGetPopularQuestions(VirtualFunctionTool):
     ]
 
 
-class ZhihuGetUserQuestions(VirtualFunctionTool):
+class ZhihuGetUserQuestions(VirtualFunctionApp):
     name = "ZhihuGetUserQuestions"
     summary = "允许用户查看自己在知乎上提出的所有问题。"
     parameters: List[ArgParameter] = []
@@ -23563,7 +23563,7 @@ class Zhihu(FunctionApp):
     description_for_human = "一个用于在知乎平台上进行知识分享与获取的工具包。"
     name_for_model = "Zhihu"
     description_for_model = "该工具包提供了一组API，允许用户在知乎平台上进行提问、回答、评论和搜索问题，旨在增强用户的知识分享与获取能力。"
-    tool_classes = [
+    app_classes = [
         ZhihuAskQuestion,
         ZhihuAnswerQuestion,
         ZhihuCommentOnAnswer,
@@ -23580,7 +23580,7 @@ class Zhihu(FunctionApp):
 #################### WeChatApp ####################
 
 
-class WeChatAppSendMessage(VirtualFunctionTool):
+class WeChatAppSendMessage(VirtualFunctionApp):
     name = "WeChatAppSendMessage"
     summary = "通过API发送文本、语音和图片消息。"
     parameters: List[ArgParameter] = [
@@ -23612,7 +23612,7 @@ class WeChatAppSendMessage(VirtualFunctionTool):
     ]
 
 
-class WeChatAppReceiveMessage(VirtualFunctionTool):
+class WeChatAppReceiveMessage(VirtualFunctionApp):
     name = "WeChatAppReceiveMessage"
     summary = "接收来自其他用户的消息。"
     parameters: List[ArgParameter] = [
@@ -23635,7 +23635,7 @@ class WeChatAppReceiveMessage(VirtualFunctionTool):
     ]
 
 
-class WeChatAppCreateGroupChat(VirtualFunctionTool):
+class WeChatAppCreateGroupChat(VirtualFunctionApp):
     name = "WeChatAppCreateGroupChat"
     summary = "创建和管理群聊。"
     parameters: List[ArgParameter] = [
@@ -23660,7 +23660,7 @@ class WeChatAppCreateGroupChat(VirtualFunctionTool):
     ]
 
 
-class WeChatAppPaymentFunction(VirtualFunctionTool):
+class WeChatAppPaymentFunction(VirtualFunctionApp):
     name = "WeChatAppPaymentFunction"
     summary = "进行支付操作。"
     parameters: List[ArgParameter] = [
@@ -23686,7 +23686,7 @@ class WeChatAppPaymentFunction(VirtualFunctionTool):
     ]
 
 
-class WeChatAppQueryFriendList(VirtualFunctionTool):
+class WeChatAppQueryFriendList(VirtualFunctionApp):
     name = "WeChatAppQueryFriendList"
     summary = "获取好友列表。"
     parameters: List[ArgParameter] = [
@@ -23709,7 +23709,7 @@ class WeChatAppQueryFriendList(VirtualFunctionTool):
     ]
 
 
-class WeChatAppShareToMoments(VirtualFunctionTool):
+class WeChatAppShareToMoments(VirtualFunctionApp):
     name = "WeChatAppShareToMoments"
     summary = "分享内容到朋友圈。"
     parameters: List[ArgParameter] = [
@@ -23734,7 +23734,7 @@ class WeChatAppShareToMoments(VirtualFunctionTool):
     ]
 
 
-class WeChatAppGetUserProfile(VirtualFunctionTool):
+class WeChatAppGetUserProfile(VirtualFunctionApp):
     name = "WeChatAppGetUserProfile"
     summary = "获取用户的个人资料信息。"
     parameters: List[ArgParameter] = [
@@ -23757,7 +23757,7 @@ class WeChatAppGetUserProfile(VirtualFunctionTool):
     ]
 
 
-class WeChatAppQueryMessageHistory(VirtualFunctionTool):
+class WeChatAppQueryMessageHistory(VirtualFunctionApp):
     name = "WeChatAppQueryMessageHistory"
     summary = "查询历史消息记录。"
     parameters: List[ArgParameter] = [
@@ -23782,7 +23782,7 @@ class WeChatAppQueryMessageHistory(VirtualFunctionTool):
     ]
 
 
-class WeChatAppSendFile(VirtualFunctionTool):
+class WeChatAppSendFile(VirtualFunctionApp):
     name = "WeChatAppSendFile"
     summary = "通过API发送文件。"
     parameters: List[ArgParameter] = [
@@ -23807,7 +23807,7 @@ class WeChatAppSendFile(VirtualFunctionTool):
     ]
 
 
-class WeChatAppVoiceCall(VirtualFunctionTool):
+class WeChatAppVoiceCall(VirtualFunctionApp):
     name = "WeChatAppVoiceCall"
     summary = "发起语音通话。"
     parameters: List[ArgParameter] = [
@@ -23826,7 +23826,7 @@ class WeChatAppVoiceCall(VirtualFunctionTool):
     ]
 
 
-class WeChatAppSearchUser(VirtualFunctionTool):
+class WeChatAppSearchUser(VirtualFunctionApp):
     name = "WeChatAppSearchUser"
     summary = "根据昵称或其他信息搜索用户。"
     parameters: List[ArgParameter] = [
@@ -23855,7 +23855,7 @@ class WeChatAppSearchUser(VirtualFunctionTool):
     ]
 
 
-class WeChatAppAccessStoredData(VirtualFunctionTool):
+class WeChatAppAccessStoredData(VirtualFunctionApp):
     name = "WeChatAppAccessStoredData"
     summary = "访问用户存储的详细信息。"
     parameters: List[ArgParameter] = [
@@ -23884,7 +23884,7 @@ class WeChatApp(FunctionApp):
     description_for_human = "App for integrating WeChat's messaging, social networking, and payment functionalities."
     name_for_model = "WeChatApp"
     description_for_model = "WeChatApp 是一个多功能API工具包，旨在帮助开发者集成微信的即时通讯、社交网络和支付功能。它支持发送和接收消息、创建群聊、进行支付、查询好友列表及更多功能，同时提供安全性和隐私保护机制。"
-    tool_classes = [
+    app_classes = [
         WeChatAppSendMessage,
         WeChatAppReceiveMessage,
         WeChatAppCreateGroupChat,
@@ -23903,7 +23903,7 @@ class WeChatApp(FunctionApp):
 #################### QQ ####################
 
 
-class QQSendMessage(VirtualFunctionTool):
+class QQSendMessage(VirtualFunctionApp):
     name = "QQSendMessage"
     summary = "发送文本消息到指定用户。"
     parameters: List[ArgParameter] = [
@@ -23931,7 +23931,7 @@ class QQSendMessage(VirtualFunctionTool):
     ]
 
 
-class QQReceiveMessage(VirtualFunctionTool):
+class QQReceiveMessage(VirtualFunctionApp):
     name = "QQReceiveMessage"
     summary = "接收来自指定用户的最新消息。"
     parameters: List[ArgParameter] = [
@@ -23951,7 +23951,7 @@ class QQReceiveMessage(VirtualFunctionTool):
     ]
 
 
-class QQTransferFile(VirtualFunctionTool):
+class QQTransferFile(VirtualFunctionApp):
     name = "QQTransferFile"
     summary = "向指定用户传输文件。"
     parameters: List[ArgParameter] = [
@@ -23976,7 +23976,7 @@ class QQTransferFile(VirtualFunctionTool):
     ]
 
 
-class QQManageGroup(VirtualFunctionTool):
+class QQManageGroup(VirtualFunctionApp):
     name = "QQManageGroup"
     summary = "管理群组，包括创建、删除或修改群组信息。"
     parameters: List[ArgParameter] = [
@@ -24007,7 +24007,7 @@ class QQManageGroup(VirtualFunctionTool):
     ]
 
 
-class QQStartVoiceChat(VirtualFunctionTool):
+class QQStartVoiceChat(VirtualFunctionApp):
     name = "QQStartVoiceChat"
     summary = "开始与指定用户的语音聊天。"
     parameters: List[ArgParameter] = [
@@ -24026,7 +24026,7 @@ class QQStartVoiceChat(VirtualFunctionTool):
     ]
 
 
-class QQSearchMessages(VirtualFunctionTool):
+class QQSearchMessages(VirtualFunctionApp):
     name = "QQSearchMessages"
     summary = "在与指定用户的聊天记录中搜索消息。"
     parameters: List[ArgParameter] = [
@@ -24058,7 +24058,7 @@ class QQSearchMessages(VirtualFunctionTool):
     ]
 
 
-class QQSearchUser(VirtualFunctionTool):
+class QQSearchUser(VirtualFunctionApp):
     name = "QQSearchUser"
     summary = "根据用户名或其他信息检索用户的QQ号码。"
     parameters: List[ArgParameter] = [
@@ -24082,7 +24082,7 @@ class QQSearchUser(VirtualFunctionTool):
     ]
 
 
-class QQGetUserStatus(VirtualFunctionTool):
+class QQGetUserStatus(VirtualFunctionApp):
     name = "QQGetUserStatus"
     summary = "获取指定用户的在线状态。"
     parameters: List[ArgParameter] = [
@@ -24112,7 +24112,7 @@ class QQ(FunctionApp):
     description_for_human = "App for integrating QQ messaging functionalities."
     name_for_model = "QQ"
     description_for_model = "QQ工具包提供了丰富的即时通讯功能，包括消息发送、接收、文件传输和群组管理，旨在帮助开发者创建和集成基于QQ的插件和服务。"
-    tool_classes = [
+    app_classes = [
         QQSendMessage,
         QQReceiveMessage,
         QQTransferFile,
@@ -24127,7 +24127,7 @@ class QQ(FunctionApp):
 #################### TaoBaoOpenPlatform ####################
 
 
-class TaoBaoOpenPlatformSearchProduct(VirtualFunctionTool):
+class TaoBaoOpenPlatformSearchProduct(VirtualFunctionApp):
     name = "TaoBaoOpenPlatformSearchProduct"
     summary = "允许用户通过关键字搜索商品。"
     parameters: List[ArgParameter] = [
@@ -24159,7 +24159,7 @@ class TaoBaoOpenPlatformSearchProduct(VirtualFunctionTool):
     ]
 
 
-class TaoBaoOpenPlatformGetProductDetails(VirtualFunctionTool):
+class TaoBaoOpenPlatformGetProductDetails(VirtualFunctionApp):
     name = "TaoBaoOpenPlatformGetProductDetails"
     summary = "获取指定商品的详细信息。"
     parameters: List[ArgParameter] = [
@@ -24185,7 +24185,7 @@ class TaoBaoOpenPlatformGetProductDetails(VirtualFunctionTool):
     ]
 
 
-class TaoBaoOpenPlatformCreateOrder(VirtualFunctionTool):
+class TaoBaoOpenPlatformCreateOrder(VirtualFunctionApp):
     name = "TaoBaoOpenPlatformCreateOrder"
     summary = "创建新的订单。"
     parameters: List[ArgParameter] = [
@@ -24213,7 +24213,7 @@ class TaoBaoOpenPlatformCreateOrder(VirtualFunctionTool):
     ]
 
 
-class TaoBaoOpenPlatformUpdateOrder(VirtualFunctionTool):
+class TaoBaoOpenPlatformUpdateOrder(VirtualFunctionApp):
     name = "TaoBaoOpenPlatformUpdateOrder"
     summary = "更新现有订单。"
     parameters: List[ArgParameter] = [
@@ -24241,7 +24241,7 @@ class TaoBaoOpenPlatformUpdateOrder(VirtualFunctionTool):
     ]
 
 
-class TaoBaoOpenPlatformDeleteOrder(VirtualFunctionTool):
+class TaoBaoOpenPlatformDeleteOrder(VirtualFunctionApp):
     name = "TaoBaoOpenPlatformDeleteOrder"
     summary = "删除指定订单。"
     parameters: List[ArgParameter] = [
@@ -24263,7 +24263,7 @@ class TaoBaoOpenPlatformDeleteOrder(VirtualFunctionTool):
     ]
 
 
-class TaoBaoOpenPlatformManageUserComments(VirtualFunctionTool):
+class TaoBaoOpenPlatformManageUserComments(VirtualFunctionApp):
     name = "TaoBaoOpenPlatformManageUserComments"
     summary = "允许用户查看和管理商品评论。"
     parameters: List[ArgParameter] = [
@@ -24289,7 +24289,7 @@ class TaoBaoOpenPlatformManageUserComments(VirtualFunctionTool):
     ]
 
 
-class TaoBaoOpenPlatformUploadProduct(VirtualFunctionTool):
+class TaoBaoOpenPlatformUploadProduct(VirtualFunctionApp):
     name = "TaoBaoOpenPlatformUploadProduct"
     summary = "将新商品上架到淘宝。"
     parameters: List[ArgParameter] = [
@@ -24315,7 +24315,7 @@ class TaoBaoOpenPlatformUploadProduct(VirtualFunctionTool):
     ]
 
 
-class TaoBaoOpenPlatformGetUserInfo(VirtualFunctionTool):
+class TaoBaoOpenPlatformGetUserInfo(VirtualFunctionApp):
     name = "TaoBaoOpenPlatformGetUserInfo"
     summary = "获取用户的个人信息和历史交易记录。"
     parameters: List[ArgParameter] = []
@@ -24329,7 +24329,7 @@ class TaoBaoOpenPlatformGetUserInfo(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TaoBaoOpenPlatformSearchOrders(VirtualFunctionTool):
+class TaoBaoOpenPlatformSearchOrders(VirtualFunctionApp):
     name = "TaoBaoOpenPlatformSearchOrders"
     summary = "根据条件检索订单。"
     parameters: List[ArgParameter] = [
@@ -24361,7 +24361,7 @@ class TaoBaoOpenPlatformSearchOrders(VirtualFunctionTool):
     ]
 
 
-class TaoBaoOpenPlatformManagePromotions(VirtualFunctionTool):
+class TaoBaoOpenPlatformManagePromotions(VirtualFunctionApp):
     name = "TaoBaoOpenPlatformManagePromotions"
     summary = "创建和管理促销活动。"
     parameters: List[ArgParameter] = [
@@ -24387,7 +24387,7 @@ class TaoBaoOpenPlatformManagePromotions(VirtualFunctionTool):
     ]
 
 
-class TaoBaoOpenPlatformAnalyzeSalesData(VirtualFunctionTool):
+class TaoBaoOpenPlatformAnalyzeSalesData(VirtualFunctionApp):
     name = "TaoBaoOpenPlatformAnalyzeSalesData"
     summary = "提供销售和用户行为的分析报告。"
     parameters: List[ArgParameter] = [
@@ -24413,7 +24413,7 @@ class TaoBaoOpenPlatformAnalyzeSalesData(VirtualFunctionTool):
     ]
 
 
-class TaoBaoOpenPlatformGetUserFeedback(VirtualFunctionTool):
+class TaoBaoOpenPlatformGetUserFeedback(VirtualFunctionApp):
     name = "TaoBaoOpenPlatformGetUserFeedback"
     summary = "处理客户反馈和问题。"
     parameters: List[ArgParameter] = [
@@ -24445,7 +24445,7 @@ class TaoBaoOpenPlatform(FunctionApp):
     description_for_human = "提供对淘宝网数据的访问，包括商品信息、订单管理和用户评论。"
     name_for_model = "TaoBaoOpenPlatform"
     description_for_model = "淘宝开放平台工具包提供对淘宝网数据的全面访问，包括商品信息、订单管理和用户评论，旨在帮助开发者高效地进行商品上架、订单处理和用户互动。"
-    tool_classes = [
+    app_classes = [
         TaoBaoOpenPlatformSearchProduct,
         TaoBaoOpenPlatformGetProductDetails,
         TaoBaoOpenPlatformCreateOrder,
@@ -24464,7 +24464,7 @@ class TaoBaoOpenPlatform(FunctionApp):
 #################### Gmail ####################
 
 
-class GmailSendEmail(VirtualFunctionTool):
+class GmailSendEmail(VirtualFunctionApp):
     name = "GmailSendEmail"
     summary = "发送电子邮件到指定的收件人。"
     parameters: List[ArgParameter] = [
@@ -24511,7 +24511,7 @@ class GmailSendEmail(VirtualFunctionTool):
     ]
 
 
-class GmailReceiveEmail(VirtualFunctionTool):
+class GmailReceiveEmail(VirtualFunctionApp):
     name = "GmailReceiveEmail"
     summary = "检索收件箱中的电子邮件。"
     parameters: List[ArgParameter] = [
@@ -24535,7 +24535,7 @@ class GmailReceiveEmail(VirtualFunctionTool):
     ]
 
 
-class GmailSearchEmail(VirtualFunctionTool):
+class GmailSearchEmail(VirtualFunctionApp):
     name = "GmailSearchEmail"
     summary = "根据关键字搜索特定邮件。"
     parameters: List[ArgParameter] = [
@@ -24565,7 +24565,7 @@ class GmailSearchEmail(VirtualFunctionTool):
     ]
 
 
-class GmailDeleteEmail(VirtualFunctionTool):
+class GmailDeleteEmail(VirtualFunctionApp):
     name = "GmailDeleteEmail"
     summary = "删除指定的电子邮件。"
     parameters: List[ArgParameter] = [
@@ -24589,7 +24589,7 @@ class GmailDeleteEmail(VirtualFunctionTool):
     ]
 
 
-class GmailManageDraft(VirtualFunctionTool):
+class GmailManageDraft(VirtualFunctionApp):
     name = "GmailManageDraft"
     summary = "创建、更新和删除草稿邮件。"
     parameters: List[ArgParameter] = [
@@ -24619,7 +24619,7 @@ class GmailManageDraft(VirtualFunctionTool):
     ]
 
 
-class GmailUploadAttachment(VirtualFunctionTool):
+class GmailUploadAttachment(VirtualFunctionApp):
     name = "GmailUploadAttachment"
     summary = "上传邮件附件。"
     parameters: List[ArgParameter] = [
@@ -24643,7 +24643,7 @@ class GmailUploadAttachment(VirtualFunctionTool):
     ]
 
 
-class GmailManageLabels(VirtualFunctionTool):
+class GmailManageLabels(VirtualFunctionApp):
     name = "GmailManageLabels"
     summary = "为邮件添加和删除标签。"
     parameters: List[ArgParameter] = [
@@ -24679,7 +24679,7 @@ class GmailManageLabels(VirtualFunctionTool):
     ]
 
 
-class GmailForwardEmail(VirtualFunctionTool):
+class GmailForwardEmail(VirtualFunctionApp):
     name = "GmailForwardEmail"
     summary = "转发指定邮件到其他邮箱。"
     parameters: List[ArgParameter] = [
@@ -24709,7 +24709,7 @@ class GmailForwardEmail(VirtualFunctionTool):
     ]
 
 
-class GmailArchiveEmail(VirtualFunctionTool):
+class GmailArchiveEmail(VirtualFunctionApp):
     name = "GmailArchiveEmail"
     summary = "将邮件归档以便后续访问。"
     parameters: List[ArgParameter] = [
@@ -24733,7 +24733,7 @@ class GmailArchiveEmail(VirtualFunctionTool):
     ]
 
 
-class GmailCreateCalendarEvent(VirtualFunctionTool):
+class GmailCreateCalendarEvent(VirtualFunctionApp):
     name = "GmailCreateCalendarEvent"
     summary = "创建与邮件相关的日历事件。"
     parameters: List[ArgParameter] = [
@@ -24769,7 +24769,7 @@ class Gmail(FunctionApp):
     description_for_human = "App for managing emails efficiently through API."
     name_for_model = "Gmail"
     description_for_model = "该Gmail工具包通过API简化电子邮件的发送、接收、搜索、删除和管理草稿的过程，同时提供附件管理、标签管理、邮件转发和日历集成功能，适用于需要高效管理电子邮件的个人用户和小型企业。"
-    tool_classes = [
+    app_classes = [
         GmailSendEmail,
         GmailReceiveEmail,
         GmailSearchEmail,
@@ -24786,7 +24786,7 @@ class Gmail(FunctionApp):
 #################### Lark ####################
 
 
-class LarkInstantMessaging(VirtualFunctionTool):
+class LarkInstantMessaging(VirtualFunctionApp):
     name = "LarkInstantMessaging"
     summary = "允许用户进行实时消息交流，支持单聊和群聊功能。"
     parameters: List[ArgParameter] = [
@@ -24820,7 +24820,7 @@ class LarkInstantMessaging(VirtualFunctionTool):
     ]
 
 
-class LarkDocumentEditing(VirtualFunctionTool):
+class LarkDocumentEditing(VirtualFunctionApp):
     name = "LarkDocumentEditing"
     summary = "提供在线文档编辑功能，允许团队成员共同编辑文档。"
     parameters: List[ArgParameter] = [
@@ -24846,7 +24846,7 @@ class LarkDocumentEditing(VirtualFunctionTool):
     ]
 
 
-class LarkCalendarManagement(VirtualFunctionTool):
+class LarkCalendarManagement(VirtualFunctionApp):
     name = "LarkCalendarManagement"
     summary = "用户可以创建、查看和管理日历事件。"
     parameters: List[ArgParameter] = [
@@ -24878,7 +24878,7 @@ class LarkCalendarManagement(VirtualFunctionTool):
     ]
 
 
-class LarkTaskManagement(VirtualFunctionTool):
+class LarkTaskManagement(VirtualFunctionApp):
     name = "LarkTaskManagement"
     summary = "允许用户创建、分配和跟踪任务。"
     parameters: List[ArgParameter] = [
@@ -24910,7 +24910,7 @@ class LarkTaskManagement(VirtualFunctionTool):
     ]
 
 
-class LarkFileSharing(VirtualFunctionTool):
+class LarkFileSharing(VirtualFunctionApp):
     name = "LarkFileSharing"
     summary = "允许用户在聊天中分享文件。"
     parameters: List[ArgParameter] = [
@@ -24936,7 +24936,7 @@ class LarkFileSharing(VirtualFunctionTool):
     ]
 
 
-class LarkVideoConferencing(VirtualFunctionTool):
+class LarkVideoConferencing(VirtualFunctionApp):
     name = "LarkVideoConferencing"
     summary = "提供视频会议功能，支持屏幕共享和会议录制。"
     parameters: List[ArgParameter] = [
@@ -24966,7 +24966,7 @@ class LarkVideoConferencing(VirtualFunctionTool):
     ]
 
 
-class LarkPolling(VirtualFunctionTool):
+class LarkPolling(VirtualFunctionApp):
     name = "LarkPolling"
     summary = "允许用户在团队中发起投票。"
     parameters: List[ArgParameter] = [
@@ -24992,7 +24992,7 @@ class LarkPolling(VirtualFunctionTool):
     ]
 
 
-class LarkNotificationManagement(VirtualFunctionTool):
+class LarkNotificationManagement(VirtualFunctionApp):
     name = "LarkNotificationManagement"
     summary = "提供对消息和事件的通知管理功能。"
     parameters: List[ArgParameter] = [
@@ -25022,7 +25022,7 @@ class LarkNotificationManagement(VirtualFunctionTool):
     ]
 
 
-class LarkUserProfileManagement(VirtualFunctionTool):
+class LarkUserProfileManagement(VirtualFunctionApp):
     name = "LarkUserProfileManagement"
     summary = "允许用户查看和编辑个人资料信息。"
     parameters: List[ArgParameter] = [
@@ -25052,7 +25052,7 @@ class LarkUserProfileManagement(VirtualFunctionTool):
     ]
 
 
-class LarkThirdPartyIntegration(VirtualFunctionTool):
+class LarkThirdPartyIntegration(VirtualFunctionApp):
     name = "LarkThirdPartyIntegration"
     summary = "支持与其他应用的集成。"
     parameters: List[ArgParameter] = [
@@ -25084,7 +25084,7 @@ class Lark(FunctionApp):
     description_for_human = "企业协作工具包，提升团队沟通和工作效率。"
     name_for_model = "Lark"
     description_for_model = "Lark工具包提供企业协作所需的核心功能，包括即时通讯、文档编辑、日历管理、任务管理和文件共享，旨在提升团队的沟通和工作效率。"
-    tool_classes = [
+    app_classes = [
         LarkInstantMessaging,
         LarkDocumentEditing,
         LarkCalendarManagement,
@@ -25101,7 +25101,7 @@ class Lark(FunctionApp):
 #################### Outlook ####################
 
 
-class OutlookSendEmail(VirtualFunctionTool):
+class OutlookSendEmail(VirtualFunctionApp):
     name = "OutlookSendEmail"
     summary = "Composes and sends an email to specified recipients."
     parameters: List[ArgParameter] = [
@@ -25145,7 +25145,7 @@ class OutlookSendEmail(VirtualFunctionTool):
     ]
 
 
-class OutlookReadEmail(VirtualFunctionTool):
+class OutlookReadEmail(VirtualFunctionApp):
     name = "OutlookReadEmail"
     summary = "Retrieves and reads the user's emails from the inbox."
     parameters: List[ArgParameter] = [
@@ -25177,7 +25177,7 @@ class OutlookReadEmail(VirtualFunctionTool):
     ]
 
 
-class OutlookSearchEmail(VirtualFunctionTool):
+class OutlookSearchEmail(VirtualFunctionApp):
     name = "OutlookSearchEmail"
     summary = "Searches for emails based on specified criteria."
     parameters: List[ArgParameter] = [
@@ -25209,7 +25209,7 @@ class OutlookSearchEmail(VirtualFunctionTool):
     ]
 
 
-class OutlookManageCalendarEvent(VirtualFunctionTool):
+class OutlookManageCalendarEvent(VirtualFunctionApp):
     name = "OutlookManageCalendarEvent"
     summary = "Creates, updates, or deletes calendar events."
     parameters: List[ArgParameter] = [
@@ -25248,7 +25248,7 @@ class OutlookManageCalendarEvent(VirtualFunctionTool):
     ]
 
 
-class OutlookManageContacts(VirtualFunctionTool):
+class OutlookManageContacts(VirtualFunctionApp):
     name = "OutlookManageContacts"
     summary = "Creates, updates, or deletes contacts."
     parameters: List[ArgParameter] = [
@@ -25282,7 +25282,7 @@ class OutlookManageContacts(VirtualFunctionTool):
     ]
 
 
-class OutlookAttachFile(VirtualFunctionTool):
+class OutlookAttachFile(VirtualFunctionApp):
     name = "OutlookAttachFile"
     summary = "Attaches files to an email before sending."
     parameters: List[ArgParameter] = [
@@ -25314,7 +25314,7 @@ class OutlookAttachFile(VirtualFunctionTool):
     ]
 
 
-class OutlookSetEmailFlag(VirtualFunctionTool):
+class OutlookSetEmailFlag(VirtualFunctionApp):
     name = "OutlookSetEmailFlag"
     summary = "Flags an email for follow-up."
     parameters: List[ArgParameter] = [
@@ -25347,7 +25347,7 @@ class OutlookSetEmailFlag(VirtualFunctionTool):
     ]
 
 
-class OutlookCreateTask(VirtualFunctionTool):
+class OutlookCreateTask(VirtualFunctionApp):
     name = "OutlookCreateTask"
     summary = "Creates a task linked to an email or calendar event."
     parameters: List[ArgParameter] = [
@@ -25378,7 +25378,7 @@ class OutlookCreateTask(VirtualFunctionTool):
     ]
 
 
-class OutlookShareCalendar(VirtualFunctionTool):
+class OutlookShareCalendar(VirtualFunctionApp):
     name = "OutlookShareCalendar"
     summary = "Shares the user's calendar with specified individuals."
     parameters: List[ArgParameter] = [
@@ -25411,7 +25411,7 @@ class OutlookShareCalendar(VirtualFunctionTool):
     ]
 
 
-class OutlookAccessStoredData(VirtualFunctionTool):
+class OutlookAccessStoredData(VirtualFunctionApp):
     name = "OutlookAccessStoredData"
     summary = "Retrieves stored user information such as frequently used contacts or email templates."
     parameters: List[ArgParameter] = [
@@ -25444,7 +25444,7 @@ class Outlook(FunctionApp):
     description_for_human = "A app for managing emails, calendar events, tasks, and contacts using Outlook."
     name_for_model = "Outlook"
     description_for_model = "The Outlook app provides a comprehensive set of tools for managing emails, calendar events, tasks, and contacts, enabling users to efficiently handle their communication and organization needs."
-    tool_classes = [
+    app_classes = [
         OutlookSendEmail,
         OutlookReadEmail,
         OutlookSearchEmail,
@@ -25461,7 +25461,7 @@ class Outlook(FunctionApp):
 #################### ElemeOpenPlatform ####################
 
 
-class ElemeOpenPlatformPlaceOrder(VirtualFunctionTool):
+class ElemeOpenPlatformPlaceOrder(VirtualFunctionApp):
     name = "ElemeOpenPlatformPlaceOrder"
     summary = "允许用户通过API下单外卖。"
     parameters: List[ArgParameter] = [
@@ -25490,7 +25490,7 @@ class ElemeOpenPlatformPlaceOrder(VirtualFunctionTool):
     ]
 
 
-class ElemeOpenPlatformTrackOrder(VirtualFunctionTool):
+class ElemeOpenPlatformTrackOrder(VirtualFunctionApp):
     name = "ElemeOpenPlatformTrackOrder"
     summary = "提供实时订单状态更新。"
     parameters: List[ArgParameter] = [
@@ -25509,7 +25509,7 @@ class ElemeOpenPlatformTrackOrder(VirtualFunctionTool):
     ]
 
 
-class ElemeOpenPlatformManageUserReviews(VirtualFunctionTool):
+class ElemeOpenPlatformManageUserReviews(VirtualFunctionApp):
     name = "ElemeOpenPlatformManageUserReviews"
     summary = "允许用户查看和提交对商家的评价。"
     parameters: List[ArgParameter] = [
@@ -25534,7 +25534,7 @@ class ElemeOpenPlatformManageUserReviews(VirtualFunctionTool):
     ]
 
 
-class ElemeOpenPlatformQueryMerchantInfo(VirtualFunctionTool):
+class ElemeOpenPlatformQueryMerchantInfo(VirtualFunctionApp):
     name = "ElemeOpenPlatformQueryMerchantInfo"
     summary = "提供商家的详细信息和菜单。"
     parameters: List[ArgParameter] = [
@@ -25557,7 +25557,7 @@ class ElemeOpenPlatformQueryMerchantInfo(VirtualFunctionTool):
     ]
 
 
-class ElemeOpenPlatformAccessUserInfo(VirtualFunctionTool):
+class ElemeOpenPlatformAccessUserInfo(VirtualFunctionApp):
     name = "ElemeOpenPlatformAccessUserInfo"
     summary = "允许访问用户的基本信息和历史订单。"
     parameters: List[ArgParameter] = []
@@ -25573,7 +25573,7 @@ class ElemeOpenPlatformAccessUserInfo(VirtualFunctionTool):
     ]
 
 
-class ElemeOpenPlatformCancelOrder(VirtualFunctionTool):
+class ElemeOpenPlatformCancelOrder(VirtualFunctionApp):
     name = "ElemeOpenPlatformCancelOrder"
     summary = "允许用户取消未完成的订单。"
     parameters: List[ArgParameter] = [
@@ -25592,7 +25592,7 @@ class ElemeOpenPlatformCancelOrder(VirtualFunctionTool):
     ]
 
 
-class ElemeOpenPlatformProcessPayment(VirtualFunctionTool):
+class ElemeOpenPlatformProcessPayment(VirtualFunctionApp):
     name = "ElemeOpenPlatformProcessPayment"
     summary = "集成支付功能以完成订单支付。"
     parameters: List[ArgParameter] = [
@@ -25617,7 +25617,7 @@ class ElemeOpenPlatformProcessPayment(VirtualFunctionTool):
     ]
 
 
-class ElemeOpenPlatformManageCoupons(VirtualFunctionTool):
+class ElemeOpenPlatformManageCoupons(VirtualFunctionApp):
     name = "ElemeOpenPlatformManageCoupons"
     summary = "允许用户查询和使用优惠券。"
     parameters: List[ArgParameter] = [
@@ -25642,7 +25642,7 @@ class ElemeOpenPlatformManageCoupons(VirtualFunctionTool):
     ]
 
 
-class ElemeOpenPlatformSearchMerchant(VirtualFunctionTool):
+class ElemeOpenPlatformSearchMerchant(VirtualFunctionApp):
     name = "ElemeOpenPlatformSearchMerchant"
     summary = "根据不同条件搜索商家。"
     parameters: List[ArgParameter] = [
@@ -25671,7 +25671,7 @@ class ElemeOpenPlatformSearchMerchant(VirtualFunctionTool):
     ]
 
 
-class ElemeOpenPlatformManageUserAddresses(VirtualFunctionTool):
+class ElemeOpenPlatformManageUserAddresses(VirtualFunctionApp):
     name = "ElemeOpenPlatformManageUserAddresses"
     summary = "允许用户查看和更新保存的地址。"
     parameters: List[ArgParameter] = [
@@ -25702,7 +25702,7 @@ class ElemeOpenPlatform(FunctionApp):
     description_for_human = "提供对饿了么的订单、商家和用户数据的访问，允许开发者通过API实现外卖下单、订单跟踪和用户评价管理。"
     name_for_model = "ElemeOpenPlatform"
     description_for_model = "这个工具包提供对饿了么的订单、商家和用户数据的访问，允许开发者通过API实现外卖下单、订单跟踪、用户评价管理等功能，旨在提升用户体验和订单管理效率。"
-    tool_classes = [
+    app_classes = [
         ElemeOpenPlatformPlaceOrder,
         ElemeOpenPlatformTrackOrder,
         ElemeOpenPlatformManageUserReviews,
@@ -25719,7 +25719,7 @@ class ElemeOpenPlatform(FunctionApp):
 #################### JdUnionApi ####################
 
 
-class JdUnionApiGetProductInfo(VirtualFunctionTool):
+class JdUnionApiGetProductInfo(VirtualFunctionApp):
     name = "JdUnionApiGetProductInfo"
     summary = "获取指定商品的详细信息。"
     parameters: List[ArgParameter] = [
@@ -25742,7 +25742,7 @@ class JdUnionApiGetProductInfo(VirtualFunctionTool):
     ]
 
 
-class JdUnionApiGetPromotionData(VirtualFunctionTool):
+class JdUnionApiGetPromotionData(VirtualFunctionApp):
     name = "JdUnionApiGetPromotionData"
     summary = "获取用户的推广数据。"
     parameters: List[ArgParameter] = [
@@ -25765,7 +25765,7 @@ class JdUnionApiGetPromotionData(VirtualFunctionTool):
     ]
 
 
-class JdUnionApiSearchProducts(VirtualFunctionTool):
+class JdUnionApiSearchProducts(VirtualFunctionApp):
     name = "JdUnionApiSearchProducts"
     summary = "根据关键词搜索商品。"
     parameters: List[ArgParameter] = [
@@ -25797,7 +25797,7 @@ class JdUnionApiSearchProducts(VirtualFunctionTool):
     ]
 
 
-class JdUnionApiCreatePromotionLink(VirtualFunctionTool):
+class JdUnionApiCreatePromotionLink(VirtualFunctionApp):
     name = "JdUnionApiCreatePromotionLink"
     summary = "创建一个商品的推广链接。"
     parameters: List[ArgParameter] = [
@@ -25816,7 +25816,7 @@ class JdUnionApiCreatePromotionLink(VirtualFunctionTool):
     ]
 
 
-class JdUnionApiQueryPromotionEffect(VirtualFunctionTool):
+class JdUnionApiQueryPromotionEffect(VirtualFunctionApp):
     name = "JdUnionApiQueryPromotionEffect"
     summary = "查询指定时间段内的推广效果。"
     parameters: List[ArgParameter] = [
@@ -25845,7 +25845,7 @@ class JdUnionApiQueryPromotionEffect(VirtualFunctionTool):
     ]
 
 
-class JdUnionApiGetCategoryList(VirtualFunctionTool):
+class JdUnionApiGetCategoryList(VirtualFunctionApp):
     name = "JdUnionApiGetCategoryList"
     summary = "获取商品类目列表。"
     parameters: List[ArgParameter] = []
@@ -25859,7 +25859,7 @@ class JdUnionApiGetCategoryList(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class JdUnionApiGetHistoricalPrice(VirtualFunctionTool):
+class JdUnionApiGetHistoricalPrice(VirtualFunctionApp):
     name = "JdUnionApiGetHistoricalPrice"
     summary = "获取指定商品的历史价格。"
     parameters: List[ArgParameter] = [
@@ -25882,7 +25882,7 @@ class JdUnionApiGetHistoricalPrice(VirtualFunctionTool):
     ]
 
 
-class JdUnionApiGenerateQRCode(VirtualFunctionTool):
+class JdUnionApiGenerateQRCode(VirtualFunctionApp):
     name = "JdUnionApiGenerateQRCode"
     summary = "生成指定商品的二维码。"
     parameters: List[ArgParameter] = [
@@ -25901,7 +25901,7 @@ class JdUnionApiGenerateQRCode(VirtualFunctionTool):
     ]
 
 
-class JdUnionApiGetUserPromotionInfo(VirtualFunctionTool):
+class JdUnionApiGetUserPromotionInfo(VirtualFunctionApp):
     name = "JdUnionApiGetUserPromotionInfo"
     summary = "获取用户的推广账号信息。"
     parameters: List[ArgParameter] = [
@@ -25924,7 +25924,7 @@ class JdUnionApiGetUserPromotionInfo(VirtualFunctionTool):
     ]
 
 
-class JdUnionApiQueryPromotionStatus(VirtualFunctionTool):
+class JdUnionApiQueryPromotionStatus(VirtualFunctionApp):
     name = "JdUnionApiQueryPromotionStatus"
     summary = "查询推广活动的状态。"
     parameters: List[ArgParameter] = [
@@ -25950,7 +25950,7 @@ class JdUnionApiQueryPromotionStatus(VirtualFunctionTool):
     ]
 
 
-class JdUnionApiGetStoredUserInfo(VirtualFunctionTool):
+class JdUnionApiGetStoredUserInfo(VirtualFunctionApp):
     name = "JdUnionApiGetStoredUserInfo"
     summary = "获取存储的用户信息。"
     parameters: List[ArgParameter] = [
@@ -25979,7 +25979,7 @@ class JdUnionApi(FunctionApp):
     description_for_human = "为电商营销人员提供获取京东商品信息和推广数据的能力。"
     name_for_model = "JdUnionApi"
     description_for_model = "京东联盟API工具包为电商营销人员提供获取京东商品信息和推广数据的能力，支持商品搜索、推广链接创建及效果查询等功能，旨在优化产品推广策略。"
-    tool_classes = [
+    app_classes = [
         JdUnionApiGetProductInfo,
         JdUnionApiGetPromotionData,
         JdUnionApiSearchProducts,
@@ -25997,7 +25997,7 @@ class JdUnionApi(FunctionApp):
 #################### AlipayOpenPlatform ####################
 
 
-class AlipayOpenPlatformQuickPayment(VirtualFunctionTool):
+class AlipayOpenPlatformQuickPayment(VirtualFunctionApp):
     name = "AlipayOpenPlatformQuickPayment"
     summary = "处理用户的快速支付请求。"
     parameters: List[ArgParameter] = [
@@ -26037,7 +26037,7 @@ class AlipayOpenPlatformQuickPayment(VirtualFunctionTool):
     ]
 
 
-class AlipayOpenPlatformRefundRequest(VirtualFunctionTool):
+class AlipayOpenPlatformRefundRequest(VirtualFunctionApp):
     name = "AlipayOpenPlatformRefundRequest"
     summary = "处理用户的退款请求。"
     parameters: List[ArgParameter] = [
@@ -26066,7 +26066,7 @@ class AlipayOpenPlatformRefundRequest(VirtualFunctionTool):
     ]
 
 
-class AlipayOpenPlatformBillQuery(VirtualFunctionTool):
+class AlipayOpenPlatformBillQuery(VirtualFunctionApp):
     name = "AlipayOpenPlatformBillQuery"
     summary = "查询用户的账单信息。"
     parameters: List[ArgParameter] = [
@@ -26089,7 +26089,7 @@ class AlipayOpenPlatformBillQuery(VirtualFunctionTool):
     ]
 
 
-class AlipayOpenPlatformTransactionHistory(VirtualFunctionTool):
+class AlipayOpenPlatformTransactionHistory(VirtualFunctionApp):
     name = "AlipayOpenPlatformTransactionHistory"
     summary = "检索用户的交易历史记录。"
     parameters: List[ArgParameter] = [
@@ -26118,7 +26118,7 @@ class AlipayOpenPlatformTransactionHistory(VirtualFunctionTool):
     ]
 
 
-class AlipayOpenPlatformPaymentStatus(VirtualFunctionTool):
+class AlipayOpenPlatformPaymentStatus(VirtualFunctionApp):
     name = "AlipayOpenPlatformPaymentStatus"
     summary = "查询特定支付的状态。"
     parameters: List[ArgParameter] = [
@@ -26141,7 +26141,7 @@ class AlipayOpenPlatformPaymentStatus(VirtualFunctionTool):
     ]
 
 
-class AlipayOpenPlatformBatchRefund(VirtualFunctionTool):
+class AlipayOpenPlatformBatchRefund(VirtualFunctionApp):
     name = "AlipayOpenPlatformBatchRefund"
     summary = "处理多个退款请求。"
     parameters: List[ArgParameter] = [
@@ -26170,7 +26170,7 @@ class AlipayOpenPlatformBatchRefund(VirtualFunctionTool):
     ]
 
 
-class AlipayOpenPlatformPaymentMethodManagement(VirtualFunctionTool):
+class AlipayOpenPlatformPaymentMethodManagement(VirtualFunctionApp):
     name = "AlipayOpenPlatformPaymentMethodManagement"
     summary = "管理用户的支付方式。"
     parameters: List[ArgParameter] = [
@@ -26204,7 +26204,7 @@ class AlipayOpenPlatformPaymentMethodManagement(VirtualFunctionTool):
     ]
 
 
-class AlipayOpenPlatformTransactionExceptionHandling(VirtualFunctionTool):
+class AlipayOpenPlatformTransactionExceptionHandling(VirtualFunctionApp):
     name = "AlipayOpenPlatformTransactionExceptionHandling"
     summary = "处理交易异常情况。"
     parameters: List[ArgParameter] = [
@@ -26229,7 +26229,7 @@ class AlipayOpenPlatformTransactionExceptionHandling(VirtualFunctionTool):
     ]
 
 
-class AlipayOpenPlatformUserInfoManagement(VirtualFunctionTool):
+class AlipayOpenPlatformUserInfoManagement(VirtualFunctionApp):
     name = "AlipayOpenPlatformUserInfoManagement"
     summary = "管理用户的基本信息。"
     parameters: List[ArgParameter] = [
@@ -26260,7 +26260,7 @@ class AlipayOpenPlatformUserInfoManagement(VirtualFunctionTool):
     ]
 
 
-class AlipayOpenPlatformBalanceQuery(VirtualFunctionTool):
+class AlipayOpenPlatformBalanceQuery(VirtualFunctionApp):
     name = "AlipayOpenPlatformBalanceQuery"
     summary = "查询用户的支付宝账户余额。"
     parameters: List[ArgParameter] = [
@@ -26279,7 +26279,7 @@ class AlipayOpenPlatformBalanceQuery(VirtualFunctionTool):
     ]
 
 
-class AlipayOpenPlatformSearchUser(VirtualFunctionTool):
+class AlipayOpenPlatformSearchUser(VirtualFunctionApp):
     name = "AlipayOpenPlatformSearchUser"
     summary = "根据用户信息检索用户的唯一标识符。"
     parameters: List[ArgParameter] = [
@@ -26298,7 +26298,7 @@ class AlipayOpenPlatformSearchUser(VirtualFunctionTool):
     ]
 
 
-class AlipayOpenPlatformSearchTransaction(VirtualFunctionTool):
+class AlipayOpenPlatformSearchTransaction(VirtualFunctionApp):
     name = "AlipayOpenPlatformSearchTransaction"
     summary = "根据交易信息检索交易的唯一标识符。"
     parameters: List[ArgParameter] = [
@@ -26333,7 +26333,7 @@ class AlipayOpenPlatform(FunctionApp):
     description_for_human = "为电商平台开发者提供支付、退款、账单查询等功能的工具包。"
     name_for_model = "AlipayOpenPlatform"
     description_for_model = "AlipayOpenPlatform是一个为电商平台开发者设计的工具包，提供支付、退款、账单查询等功能，帮助用户实现高效的支付集成和管理。"
-    tool_classes = [
+    app_classes = [
         AlipayOpenPlatformQuickPayment,
         AlipayOpenPlatformRefundRequest,
         AlipayOpenPlatformBillQuery,
@@ -26352,7 +26352,7 @@ class AlipayOpenPlatform(FunctionApp):
 #################### MeituanTakeaway ####################
 
 
-class MeituanTakeawayFetchOrderInfo(VirtualFunctionTool):
+class MeituanTakeawayFetchOrderInfo(VirtualFunctionApp):
     name = "MeituanTakeawayFetchOrderInfo"
     summary = "获取外卖订单的详细信息。"
     parameters: List[ArgParameter] = [
@@ -26375,7 +26375,7 @@ class MeituanTakeawayFetchOrderInfo(VirtualFunctionTool):
     ]
 
 
-class MeituanTakeawayFetchMerchantInfo(VirtualFunctionTool):
+class MeituanTakeawayFetchMerchantInfo(VirtualFunctionApp):
     name = "MeituanTakeawayFetchMerchantInfo"
     summary = "获取商家的详细信息。"
     parameters: List[ArgParameter] = [
@@ -26398,7 +26398,7 @@ class MeituanTakeawayFetchMerchantInfo(VirtualFunctionTool):
     ]
 
 
-class MeituanTakeawayFetchUserReviews(VirtualFunctionTool):
+class MeituanTakeawayFetchUserReviews(VirtualFunctionApp):
     name = "MeituanTakeawayFetchUserReviews"
     summary = "获取用户对商家的评价。"
     parameters: List[ArgParameter] = [
@@ -26421,7 +26421,7 @@ class MeituanTakeawayFetchUserReviews(VirtualFunctionTool):
     ]
 
 
-class MeituanTakeawayCreateOrder(VirtualFunctionTool):
+class MeituanTakeawayCreateOrder(VirtualFunctionApp):
     name = "MeituanTakeawayCreateOrder"
     summary = "创建新的外卖订单。"
     parameters: List[ArgParameter] = [
@@ -26445,7 +26445,7 @@ class MeituanTakeawayCreateOrder(VirtualFunctionTool):
     ]
 
 
-class MeituanTakeawayUpdateOrderStatus(VirtualFunctionTool):
+class MeituanTakeawayUpdateOrderStatus(VirtualFunctionApp):
     name = "MeituanTakeawayUpdateOrderStatus"
     summary = "更新外卖订单的状态。"
     parameters: List[ArgParameter] = [
@@ -26475,7 +26475,7 @@ class MeituanTakeawayUpdateOrderStatus(VirtualFunctionTool):
     ]
 
 
-class MeituanTakeawaySearchMerchant(VirtualFunctionTool):
+class MeituanTakeawaySearchMerchant(VirtualFunctionApp):
     name = "MeituanTakeawaySearchMerchant"
     summary = "根据关键字搜索商家。"
     parameters: List[ArgParameter] = [
@@ -26504,7 +26504,7 @@ class MeituanTakeawaySearchMerchant(VirtualFunctionTool):
     ]
 
 
-class MeituanTakeawayFetchUserOrderHistory(VirtualFunctionTool):
+class MeituanTakeawayFetchUserOrderHistory(VirtualFunctionApp):
     name = "MeituanTakeawayFetchUserOrderHistory"
     summary = "获取用户的历史订单。"
     parameters: List[ArgParameter] = [
@@ -26523,7 +26523,7 @@ class MeituanTakeawayFetchUserOrderHistory(VirtualFunctionTool):
     ]
 
 
-class MeituanTakeawayDeleteOrder(VirtualFunctionTool):
+class MeituanTakeawayDeleteOrder(VirtualFunctionApp):
     name = "MeituanTakeawayDeleteOrder"
     summary = "删除指定的外卖订单。"
     parameters: List[ArgParameter] = [
@@ -26542,7 +26542,7 @@ class MeituanTakeawayDeleteOrder(VirtualFunctionTool):
     ]
 
 
-class MeituanTakeawayFetchRecommendedMerchants(VirtualFunctionTool):
+class MeituanTakeawayFetchRecommendedMerchants(VirtualFunctionApp):
     name = "MeituanTakeawayFetchRecommendedMerchants"
     summary = "获取推荐的外卖商家。"
     parameters: List[ArgParameter] = [
@@ -26565,7 +26565,7 @@ class MeituanTakeawayFetchRecommendedMerchants(VirtualFunctionTool):
     ]
 
 
-class MeituanTakeawayFetchDeliveryStatus(VirtualFunctionTool):
+class MeituanTakeawayFetchDeliveryStatus(VirtualFunctionApp):
     name = "MeituanTakeawayFetchDeliveryStatus"
     summary = "获取外卖配送状态。"
     parameters: List[ArgParameter] = [
@@ -26596,7 +26596,7 @@ class MeituanTakeaway(FunctionApp):
     )
     name_for_model = "MeituanTakeaway"
     description_for_model = "美团外卖API工具包提供了获取外卖订单、商家信息、用户评价等功能，旨在帮助开发者构建外卖推荐系统或集成外卖服务到其他应用中。"
-    tool_classes = [
+    app_classes = [
         MeituanTakeawayFetchOrderInfo,
         MeituanTakeawayFetchMerchantInfo,
         MeituanTakeawayFetchUserReviews,
@@ -26613,8 +26613,8 @@ class MeituanTakeaway(FunctionApp):
 #################### PinduoduoOpenPlatform ####################
 
 
-class PinduoduoOpenPlatformUploadProductTool(VirtualFunctionTool):
-    name = "PinduoduoOpenPlatformUploadProductTool"
+class PinduoduoOpenPlatformUploadProductApp(VirtualFunctionApp):
+    name = "PinduoduoOpenPlatformUploadProductApp"
     summary = "允许开发者将商品上架到拼多多平台。"
     parameters: List[ArgParameter] = [
         {
@@ -26654,8 +26654,8 @@ class PinduoduoOpenPlatformUploadProductTool(VirtualFunctionTool):
     ]
 
 
-class PinduoduoOpenPlatformQueryProductTool(VirtualFunctionTool):
-    name = "PinduoduoOpenPlatformQueryProductTool"
+class PinduoduoOpenPlatformQueryProductApp(VirtualFunctionApp):
+    name = "PinduoduoOpenPlatformQueryProductApp"
     summary = "提供查询拼多多平台商品信息的功能。"
     parameters: List[ArgParameter] = [
         {
@@ -26679,8 +26679,8 @@ class PinduoduoOpenPlatformQueryProductTool(VirtualFunctionTool):
     ]
 
 
-class PinduoduoOpenPlatformOrderManagementTool(VirtualFunctionTool):
-    name = "PinduoduoOpenPlatformOrderManagementTool"
+class PinduoduoOpenPlatformOrderManagementApp(VirtualFunctionApp):
+    name = "PinduoduoOpenPlatformOrderManagementApp"
     summary = "允许开发者管理订单，包括创建、更新和删除。"
     parameters: List[ArgParameter] = [
         {
@@ -26705,8 +26705,8 @@ class PinduoduoOpenPlatformOrderManagementTool(VirtualFunctionTool):
     ]
 
 
-class PinduoduoOpenPlatformGetUserInfoTool(VirtualFunctionTool):
-    name = "PinduoduoOpenPlatformGetUserInfoTool"
+class PinduoduoOpenPlatformGetUserInfoApp(VirtualFunctionApp):
+    name = "PinduoduoOpenPlatformGetUserInfoApp"
     summary = "提供访问用户信息的功能。"
     parameters: List[ArgParameter] = [
         {
@@ -26728,8 +26728,8 @@ class PinduoduoOpenPlatformGetUserInfoTool(VirtualFunctionTool):
     ]
 
 
-class PinduoduoOpenPlatformSalesDataAnalysisTool(VirtualFunctionTool):
-    name = "PinduoduoOpenPlatformSalesDataAnalysisTool"
+class PinduoduoOpenPlatformSalesDataAnalysisApp(VirtualFunctionApp):
+    name = "PinduoduoOpenPlatformSalesDataAnalysisApp"
     summary = "允许开发者获取销售数据，以帮助做出业务决策。"
     parameters: List[ArgParameter] = [
         {
@@ -26753,8 +26753,8 @@ class PinduoduoOpenPlatformSalesDataAnalysisTool(VirtualFunctionTool):
     ]
 
 
-class PinduoduoOpenPlatformUpdateStockTool(VirtualFunctionTool):
-    name = "PinduoduoOpenPlatformUpdateStockTool"
+class PinduoduoOpenPlatformUpdateStockApp(VirtualFunctionApp):
+    name = "PinduoduoOpenPlatformUpdateStockApp"
     summary = "允许开发者更新商品的库存信息。"
     parameters: List[ArgParameter] = [
         {
@@ -26779,8 +26779,8 @@ class PinduoduoOpenPlatformUpdateStockTool(VirtualFunctionTool):
     ]
 
 
-class PinduoduoOpenPlatformQueryOrderStatusTool(VirtualFunctionTool):
-    name = "PinduoduoOpenPlatformQueryOrderStatusTool"
+class PinduoduoOpenPlatformQueryOrderStatusApp(VirtualFunctionApp):
+    name = "PinduoduoOpenPlatformQueryOrderStatusApp"
     summary = "提供查询订单状态的功能。"
     parameters: List[ArgParameter] = [
         {
@@ -26798,8 +26798,8 @@ class PinduoduoOpenPlatformQueryOrderStatusTool(VirtualFunctionTool):
     ]
 
 
-class PinduoduoOpenPlatformGetUserReviewsTool(VirtualFunctionTool):
-    name = "PinduoduoOpenPlatformGetUserReviewsTool"
+class PinduoduoOpenPlatformGetUserReviewsApp(VirtualFunctionApp):
+    name = "PinduoduoOpenPlatformGetUserReviewsApp"
     summary = "允许开发者获取用户对商品的评价。"
     parameters: List[ArgParameter] = [
         {
@@ -26817,8 +26817,8 @@ class PinduoduoOpenPlatformGetUserReviewsTool(VirtualFunctionTool):
     ]
 
 
-class PinduoduoOpenPlatformManagePromotionTool(VirtualFunctionTool):
-    name = "PinduoduoOpenPlatformManagePromotionTool"
+class PinduoduoOpenPlatformManagePromotionApp(VirtualFunctionApp):
+    name = "PinduoduoOpenPlatformManagePromotionApp"
     summary = "提供管理促销活动的功能。"
     parameters: List[ArgParameter] = [
         {
@@ -26836,8 +26836,8 @@ class PinduoduoOpenPlatformManagePromotionTool(VirtualFunctionTool):
     ]
 
 
-class PinduoduoOpenPlatformExportDataTool(VirtualFunctionTool):
-    name = "PinduoduoOpenPlatformExportDataTool"
+class PinduoduoOpenPlatformExportDataApp(VirtualFunctionApp):
+    name = "PinduoduoOpenPlatformExportDataApp"
     summary = "允许开发者将商品和订单数据导出为CSV文件。"
     parameters: List[ArgParameter] = [
         {
@@ -26855,8 +26855,8 @@ class PinduoduoOpenPlatformExportDataTool(VirtualFunctionTool):
     ]
 
 
-class PinduoduoOpenPlatformSearchProductTool(VirtualFunctionTool):
-    name = "PinduoduoOpenPlatformSearchProductTool"
+class PinduoduoOpenPlatformSearchProductApp(VirtualFunctionApp):
+    name = "PinduoduoOpenPlatformSearchProductApp"
     summary = "允许开发者通过关键字搜索商品。"
     parameters: List[ArgParameter] = [
         {
@@ -26884,8 +26884,8 @@ class PinduoduoOpenPlatformSearchProductTool(VirtualFunctionTool):
     ]
 
 
-class PinduoduoOpenPlatformGetSalesStatisticsTool(VirtualFunctionTool):
-    name = "PinduoduoOpenPlatformGetSalesStatisticsTool"
+class PinduoduoOpenPlatformGetSalesStatisticsApp(VirtualFunctionApp):
+    name = "PinduoduoOpenPlatformGetSalesStatisticsApp"
     summary = "允许开发者获取销售统计信息。"
     parameters: List[ArgParameter] = [
         {
@@ -26901,8 +26901,8 @@ class PinduoduoOpenPlatformGetSalesStatisticsTool(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PinduoduoOpenPlatformQueryOrderTool(VirtualFunctionTool):
-    name = "PinduoduoOpenPlatformQueryOrderTool"
+class PinduoduoOpenPlatformQueryOrderApp(VirtualFunctionApp):
+    name = "PinduoduoOpenPlatformQueryOrderApp"
     summary = "允许开发者查询特定订单的详细信息。"
     parameters: List[ArgParameter] = [
         {
@@ -26920,8 +26920,8 @@ class PinduoduoOpenPlatformQueryOrderTool(VirtualFunctionTool):
     ]
 
 
-class PinduoduoOpenPlatformQueryUserTool(VirtualFunctionTool):
-    name = "PinduoduoOpenPlatformQueryUserTool"
+class PinduoduoOpenPlatformQueryUserApp(VirtualFunctionApp):
+    name = "PinduoduoOpenPlatformQueryUserApp"
     summary = "允许开发者查询特定用户的详细信息。"
     parameters: List[ArgParameter] = [
         {
@@ -26939,8 +26939,8 @@ class PinduoduoOpenPlatformQueryUserTool(VirtualFunctionTool):
     ]
 
 
-class PinduoduoOpenPlatformGetUserStoredInfoTool(VirtualFunctionTool):
-    name = "PinduoduoOpenPlatformGetUserStoredInfoTool"
+class PinduoduoOpenPlatformGetUserStoredInfoApp(VirtualFunctionApp):
+    name = "PinduoduoOpenPlatformGetUserStoredInfoApp"
     summary = "允许开发者访问用户的存储信息，如地址和支付方式。"
     parameters: List[ArgParameter] = [
         {
@@ -26970,29 +26970,29 @@ class PinduoduoOpenPlatform(FunctionApp):
     )
     name_for_model = "PinduoduoOpenPlatform"
     description_for_model = "拼多多开放平台工具包为电商开发者提供商品上架、订单管理、用户信息访问等功能，支持高效的市场分析和数据管理，旨在优化电商业务流程。"
-    tool_classes = [
-        PinduoduoOpenPlatformUploadProductTool,
-        PinduoduoOpenPlatformQueryProductTool,
-        PinduoduoOpenPlatformOrderManagementTool,
-        PinduoduoOpenPlatformGetUserInfoTool,
-        PinduoduoOpenPlatformSalesDataAnalysisTool,
-        PinduoduoOpenPlatformUpdateStockTool,
-        PinduoduoOpenPlatformQueryOrderStatusTool,
-        PinduoduoOpenPlatformGetUserReviewsTool,
-        PinduoduoOpenPlatformManagePromotionTool,
-        PinduoduoOpenPlatformExportDataTool,
-        PinduoduoOpenPlatformSearchProductTool,
-        PinduoduoOpenPlatformGetSalesStatisticsTool,
-        PinduoduoOpenPlatformQueryOrderTool,
-        PinduoduoOpenPlatformQueryUserTool,
-        PinduoduoOpenPlatformGetUserStoredInfoTool,
+    app_classes = [
+        PinduoduoOpenPlatformUploadProductApp,
+        PinduoduoOpenPlatformQueryProductApp,
+        PinduoduoOpenPlatformOrderManagementApp,
+        PinduoduoOpenPlatformGetUserInfoApp,
+        PinduoduoOpenPlatformSalesDataAnalysisApp,
+        PinduoduoOpenPlatformUpdateStockApp,
+        PinduoduoOpenPlatformQueryOrderStatusApp,
+        PinduoduoOpenPlatformGetUserReviewsApp,
+        PinduoduoOpenPlatformManagePromotionApp,
+        PinduoduoOpenPlatformExportDataApp,
+        PinduoduoOpenPlatformSearchProductApp,
+        PinduoduoOpenPlatformGetSalesStatisticsApp,
+        PinduoduoOpenPlatformQueryOrderApp,
+        PinduoduoOpenPlatformQueryUserApp,
+        PinduoduoOpenPlatformGetUserStoredInfoApp,
     ]
 
 
 #################### BaiduAPI ####################
 
 
-class BaiduAPISearchWeb(VirtualFunctionTool):
+class BaiduAPISearchWeb(VirtualFunctionApp):
     name = "BaiduAPISearchWeb"
     summary = "通过关键词搜索网页结果。"
     parameters: List[ArgParameter] = [
@@ -27024,7 +27024,7 @@ class BaiduAPISearchWeb(VirtualFunctionTool):
     ]
 
 
-class BaiduAPISearchImage(VirtualFunctionTool):
+class BaiduAPISearchImage(VirtualFunctionApp):
     name = "BaiduAPISearchImage"
     summary = "通过关键词搜索图片结果。"
     parameters: List[ArgParameter] = [
@@ -27056,7 +27056,7 @@ class BaiduAPISearchImage(VirtualFunctionTool):
     ]
 
 
-class BaiduAPISearchNews(VirtualFunctionTool):
+class BaiduAPISearchNews(VirtualFunctionApp):
     name = "BaiduAPISearchNews"
     summary = "通过关键词搜索新闻结果。"
     parameters: List[ArgParameter] = [
@@ -27088,7 +27088,7 @@ class BaiduAPISearchNews(VirtualFunctionTool):
     ]
 
 
-class BaiduAPIGetWebDetails(VirtualFunctionTool):
+class BaiduAPIGetWebDetails(VirtualFunctionApp):
     name = "BaiduAPIGetWebDetails"
     summary = "根据网页的唯一标识符获取详细信息。"
     parameters: List[ArgParameter] = [
@@ -27111,7 +27111,7 @@ class BaiduAPIGetWebDetails(VirtualFunctionTool):
     ]
 
 
-class BaiduAPIGetImageDetails(VirtualFunctionTool):
+class BaiduAPIGetImageDetails(VirtualFunctionApp):
     name = "BaiduAPIGetImageDetails"
     summary = "根据图片的唯一标识符获取详细信息。"
     parameters: List[ArgParameter] = [
@@ -27134,7 +27134,7 @@ class BaiduAPIGetImageDetails(VirtualFunctionTool):
     ]
 
 
-class BaiduAPIGetSearchCount(VirtualFunctionTool):
+class BaiduAPIGetSearchCount(VirtualFunctionApp):
     name = "BaiduAPIGetSearchCount"
     summary = "返回特定关键词的搜索结果数量。"
     parameters: List[ArgParameter] = [
@@ -27156,7 +27156,7 @@ class BaiduAPIGetSearchCount(VirtualFunctionTool):
     ]
 
 
-class BaiduAPIGetTrendingKeywords(VirtualFunctionTool):
+class BaiduAPIGetTrendingKeywords(VirtualFunctionApp):
     name = "BaiduAPIGetTrendingKeywords"
     summary = "获取当前热门的搜索关键词。"
     parameters: List[ArgParameter] = []
@@ -27172,7 +27172,7 @@ class BaiduAPIGetTrendingKeywords(VirtualFunctionTool):
     ]
 
 
-class BaiduAPIGetRelatedSearchSuggestions(VirtualFunctionTool):
+class BaiduAPIGetRelatedSearchSuggestions(VirtualFunctionApp):
     name = "BaiduAPIGetRelatedSearchSuggestions"
     summary = "根据用户的搜索关键词提供相关搜索建议。"
     parameters: List[ArgParameter] = [
@@ -27194,7 +27194,7 @@ class BaiduAPIGetRelatedSearchSuggestions(VirtualFunctionTool):
     ]
 
 
-class BaiduAPIGetSummary(VirtualFunctionTool):
+class BaiduAPIGetSummary(VirtualFunctionApp):
     name = "BaiduAPIGetSummary"
     summary = "返回特定网页或新闻的摘要信息。"
     parameters: List[ArgParameter] = [
@@ -27216,7 +27216,7 @@ class BaiduAPIGetSummary(VirtualFunctionTool):
     ]
 
 
-class BaiduAPIGetImageInfo(VirtualFunctionTool):
+class BaiduAPIGetImageInfo(VirtualFunctionApp):
     name = "BaiduAPIGetImageInfo"
     summary = "返回特定图片的相关信息。"
     parameters: List[ArgParameter] = [
@@ -27245,7 +27245,7 @@ class BaiduAPI(FunctionApp):
     description_for_human = "App for accessing Baidu search results, including web pages, images, and news."
     name_for_model = "BaiduAPI"
     description_for_model = "BaiduAPI工具包提供对百度搜索结果的访问，包括网页、图片和新闻等，旨在帮助开发人员将搜索功能集成到应用程序中。"
-    tool_classes = [
+    app_classes = [
         BaiduAPISearchWeb,
         BaiduAPISearchImage,
         BaiduAPISearchNews,
@@ -27262,7 +27262,7 @@ class BaiduAPI(FunctionApp):
 #################### CloudStoreManagement ####################
 
 
-class CloudStoreManagementInventoryManagement(VirtualFunctionTool):
+class CloudStoreManagementInventoryManagement(VirtualFunctionApp):
     name = "CloudStoreManagementInventoryManagement"
     summary = "允许商家添加、更新和删除库存项。"
     parameters: List[ArgParameter] = [
@@ -27297,7 +27297,7 @@ class CloudStoreManagementInventoryManagement(VirtualFunctionTool):
     ]
 
 
-class CloudStoreManagementOrderProcessing(VirtualFunctionTool):
+class CloudStoreManagementOrderProcessing(VirtualFunctionApp):
     name = "CloudStoreManagementOrderProcessing"
     summary = "允许商家查看、创建和更新客户订单。"
     parameters: List[ArgParameter] = [
@@ -27343,7 +27343,7 @@ class CloudStoreManagementOrderProcessing(VirtualFunctionTool):
     ]
 
 
-class CloudStoreManagementDataAnalysis(VirtualFunctionTool):
+class CloudStoreManagementDataAnalysis(VirtualFunctionApp):
     name = "CloudStoreManagementDataAnalysis"
     summary = "提供销售和库存报告。"
     parameters: List[ArgParameter] = [
@@ -27368,7 +27368,7 @@ class CloudStoreManagementDataAnalysis(VirtualFunctionTool):
     ]
 
 
-class CloudStoreManagementCustomerManagement(VirtualFunctionTool):
+class CloudStoreManagementCustomerManagement(VirtualFunctionApp):
     name = "CloudStoreManagementCustomerManagement"
     summary = "允许商家管理客户信息。"
     parameters: List[ArgParameter] = [
@@ -27403,7 +27403,7 @@ class CloudStoreManagementCustomerManagement(VirtualFunctionTool):
     ]
 
 
-class CloudStoreManagementPaymentProcessing(VirtualFunctionTool):
+class CloudStoreManagementPaymentProcessing(VirtualFunctionApp):
     name = "CloudStoreManagementPaymentProcessing"
     summary = "提供与支付网关集成的工具。"
     parameters: List[ArgParameter] = [
@@ -27442,7 +27442,7 @@ class CloudStoreManagementPaymentProcessing(VirtualFunctionTool):
     ]
 
 
-class CloudStoreManagementPromotionManagement(VirtualFunctionTool):
+class CloudStoreManagementPromotionManagement(VirtualFunctionApp):
     name = "CloudStoreManagementPromotionManagement"
     summary = "允许商家创建和管理促销活动。"
     parameters: List[ArgParameter] = [
@@ -27470,7 +27470,7 @@ class CloudStoreManagementPromotionManagement(VirtualFunctionTool):
     ]
 
 
-class CloudStoreManagementReturnProcessing(VirtualFunctionTool):
+class CloudStoreManagementReturnProcessing(VirtualFunctionApp):
     name = "CloudStoreManagementReturnProcessing"
     summary = "提供工具来处理客户退货请求。"
     parameters: List[ArgParameter] = [
@@ -27496,7 +27496,7 @@ class CloudStoreManagementReturnProcessing(VirtualFunctionTool):
     ]
 
 
-class CloudStoreManagementOrderTracking(VirtualFunctionTool):
+class CloudStoreManagementOrderTracking(VirtualFunctionApp):
     name = "CloudStoreManagementOrderTracking"
     summary = "提供客户订单状态更新。"
     parameters: List[ArgParameter] = [
@@ -27515,7 +27515,7 @@ class CloudStoreManagementOrderTracking(VirtualFunctionTool):
     ]
 
 
-class CloudStoreManagementMultiChannelIntegration(VirtualFunctionTool):
+class CloudStoreManagementMultiChannelIntegration(VirtualFunctionApp):
     name = "CloudStoreManagementMultiChannelIntegration"
     summary = "支持与多个电商平台的集成。"
     parameters: List[ArgParameter] = [
@@ -27543,7 +27543,7 @@ class CloudStoreManagementMultiChannelIntegration(VirtualFunctionTool):
     ]
 
 
-class CloudStoreManagementReviewManagement(VirtualFunctionTool):
+class CloudStoreManagementReviewManagement(VirtualFunctionApp):
     name = "CloudStoreManagementReviewManagement"
     summary = "允许商家查看和回复客户评价。"
     parameters: List[ArgParameter] = [
@@ -27584,7 +27584,7 @@ class CloudStoreManagement(FunctionApp):
     description_for_human = "App for managing online stores for small businesses, including inventory management, order processing, customer management, and data analysis."
     name_for_model = "CloudStoreManagement"
     description_for_model = "CloudStoreManagement工具包旨在帮助小型商家管理在线店铺，提供库存管理、订单处理、客户管理和数据分析等功能，确保商家能够高效运营并做出数据驱动的决策。"
-    tool_classes = [
+    app_classes = [
         CloudStoreManagementInventoryManagement,
         CloudStoreManagementOrderProcessing,
         CloudStoreManagementDataAnalysis,
@@ -27598,11 +27598,11 @@ class CloudStoreManagement(FunctionApp):
     ]
 
 
-#################### SmartPricingTool ####################
+#################### SmartPricingApp ####################
 
 
-class SmartPricingToolMarketDataAnalysis(VirtualFunctionTool):
-    name = "SmartPricingToolMarketDataAnalysis"
+class SmartPricingAppMarketDataAnalysis(VirtualFunctionApp):
+    name = "SmartPricingAppMarketDataAnalysis"
     summary = "分析市场数据以识别趋势和竞争对手定价。"
     parameters: List[ArgParameter] = [
         {
@@ -27634,8 +27634,8 @@ class SmartPricingToolMarketDataAnalysis(VirtualFunctionTool):
     ]
 
 
-class SmartPricingToolDynamicPricingStrategy(VirtualFunctionTool):
-    name = "SmartPricingToolDynamicPricingStrategy"
+class SmartPricingAppDynamicPricingStrategy(VirtualFunctionApp):
+    name = "SmartPricingAppDynamicPricingStrategy"
     summary = "生成动态定价策略。"
     parameters: List[ArgParameter] = [
         {
@@ -27667,8 +27667,8 @@ class SmartPricingToolDynamicPricingStrategy(VirtualFunctionTool):
     ]
 
 
-class SmartPricingToolUpdatePricing(VirtualFunctionTool):
-    name = "SmartPricingToolUpdatePricing"
+class SmartPricingAppUpdatePricing(VirtualFunctionApp):
+    name = "SmartPricingAppUpdatePricing"
     summary = "更新电商平台上的产品价格。"
     parameters: List[ArgParameter] = [
         {
@@ -27700,8 +27700,8 @@ class SmartPricingToolUpdatePricing(VirtualFunctionTool):
     ]
 
 
-class SmartPricingToolHistoricalDataReview(VirtualFunctionTool):
-    name = "SmartPricingToolHistoricalDataReview"
+class SmartPricingAppHistoricalDataReview(VirtualFunctionApp):
+    name = "SmartPricingAppHistoricalDataReview"
     summary = "检索和分析历史定价数据。"
     parameters: List[ArgParameter] = [
         {
@@ -27733,8 +27733,8 @@ class SmartPricingToolHistoricalDataReview(VirtualFunctionTool):
     ]
 
 
-class SmartPricingToolSetPriceAlert(VirtualFunctionTool):
-    name = "SmartPricingToolSetPriceAlert"
+class SmartPricingAppSetPriceAlert(VirtualFunctionApp):
+    name = "SmartPricingAppSetPriceAlert"
     summary = "设置价格警报。"
     parameters: List[ArgParameter] = [
         {
@@ -27766,8 +27766,8 @@ class SmartPricingToolSetPriceAlert(VirtualFunctionTool):
     ]
 
 
-class SmartPricingToolCompetitorMonitoring(VirtualFunctionTool):
-    name = "SmartPricingToolCompetitorMonitoring"
+class SmartPricingAppCompetitorMonitoring(VirtualFunctionApp):
+    name = "SmartPricingAppCompetitorMonitoring"
     summary = "监控竞争对手的价格变化。"
     parameters: List[ArgParameter] = [
         {
@@ -27799,8 +27799,8 @@ class SmartPricingToolCompetitorMonitoring(VirtualFunctionTool):
     ]
 
 
-class SmartPricingToolUserFeedbackCollection(VirtualFunctionTool):
-    name = "SmartPricingToolUserFeedbackCollection"
+class SmartPricingAppUserFeedbackCollection(VirtualFunctionApp):
+    name = "SmartPricingAppUserFeedbackCollection"
     summary = "收集用户对价格的反馈。"
     parameters: List[ArgParameter] = [
         {
@@ -27827,8 +27827,8 @@ class SmartPricingToolUserFeedbackCollection(VirtualFunctionTool):
     ]
 
 
-class SmartPricingToolSalesForecast(VirtualFunctionTool):
-    name = "SmartPricingToolSalesForecast"
+class SmartPricingAppSalesForecast(VirtualFunctionApp):
+    name = "SmartPricingAppSalesForecast"
     summary = "预测未来销售。"
     parameters: List[ArgParameter] = [
         {
@@ -27856,8 +27856,8 @@ class SmartPricingToolSalesForecast(VirtualFunctionTool):
     ]
 
 
-class SmartPricingToolReportGeneration(VirtualFunctionTool):
-    name = "SmartPricingToolReportGeneration"
+class SmartPricingAppReportGeneration(VirtualFunctionApp):
+    name = "SmartPricingAppReportGeneration"
     summary = "生成定价策略的报告。"
     parameters: List[ArgParameter] = [
         {
@@ -27885,8 +27885,8 @@ class SmartPricingToolReportGeneration(VirtualFunctionTool):
     ]
 
 
-class SmartPricingToolAPIIntegration(VirtualFunctionTool):
-    name = "SmartPricingToolAPIIntegration"
+class SmartPricingAppAPIIntegration(VirtualFunctionApp):
+    name = "SmartPricingAppAPIIntegration"
     summary = "与电商平台的API集成。"
     parameters: List[ArgParameter] = [
         {
@@ -27918,8 +27918,8 @@ class SmartPricingToolAPIIntegration(VirtualFunctionTool):
     ]
 
 
-class SmartPricingToolSearchProduct(VirtualFunctionTool):
-    name = "SmartPricingToolSearchProduct"
+class SmartPricingAppSearchProduct(VirtualFunctionApp):
+    name = "SmartPricingAppSearchProduct"
     summary = "根据产品名称搜索产品并返回product_id。"
     parameters: List[ArgParameter] = [
         {
@@ -27941,8 +27941,8 @@ class SmartPricingToolSearchProduct(VirtualFunctionTool):
     ]
 
 
-class SmartPricingToolSearchCompetitor(VirtualFunctionTool):
-    name = "SmartPricingToolSearchCompetitor"
+class SmartPricingAppSearchCompetitor(VirtualFunctionApp):
+    name = "SmartPricingAppSearchCompetitor"
     summary = "根据竞争对手名称搜索竞争对手并返回competitor_id。"
     parameters: List[ArgParameter] = [
         {
@@ -27968,8 +27968,8 @@ class SmartPricingToolSearchCompetitor(VirtualFunctionTool):
     ]
 
 
-class SmartPricingToolGetUserAccountInfo(VirtualFunctionTool):
-    name = "SmartPricingToolGetUserAccountInfo"
+class SmartPricingAppGetUserAccountInfo(VirtualFunctionApp):
+    name = "SmartPricingAppGetUserAccountInfo"
     summary = "获取用户的电商账户信息。"
     parameters: List[ArgParameter] = [
         {
@@ -27996,32 +27996,32 @@ class SmartPricingToolGetUserAccountInfo(VirtualFunctionTool):
 
 
 @register_app()
-class SmartPricingTool(FunctionApp):
+class SmartPricingApp(FunctionApp):
     name_for_human = "智能定价工具"
     description_for_human = "为电商卖家提供动态定价策略的工具包。"
-    name_for_model = "SmartPricingTool"
+    name_for_model = "SmartPricingApp"
     description_for_model = "智能定价工具包为电商卖家提供动态定价策略，利用市场数据分析和机器学习算法生成实时定价建议，确保卖家在竞争中保持优势。"
-    tool_classes = [
-        SmartPricingToolMarketDataAnalysis,
-        SmartPricingToolDynamicPricingStrategy,
-        SmartPricingToolUpdatePricing,
-        SmartPricingToolHistoricalDataReview,
-        SmartPricingToolSetPriceAlert,
-        SmartPricingToolCompetitorMonitoring,
-        SmartPricingToolUserFeedbackCollection,
-        SmartPricingToolSalesForecast,
-        SmartPricingToolReportGeneration,
-        SmartPricingToolAPIIntegration,
-        SmartPricingToolSearchProduct,
-        SmartPricingToolSearchCompetitor,
-        SmartPricingToolGetUserAccountInfo,
+    app_classes = [
+        SmartPricingAppMarketDataAnalysis,
+        SmartPricingAppDynamicPricingStrategy,
+        SmartPricingAppUpdatePricing,
+        SmartPricingAppHistoricalDataReview,
+        SmartPricingAppSetPriceAlert,
+        SmartPricingAppCompetitorMonitoring,
+        SmartPricingAppUserFeedbackCollection,
+        SmartPricingAppSalesForecast,
+        SmartPricingAppReportGeneration,
+        SmartPricingAppAPIIntegration,
+        SmartPricingAppSearchProduct,
+        SmartPricingAppSearchCompetitor,
+        SmartPricingAppGetUserAccountInfo,
     ]
 
 
 #################### SocialCommerceApp ####################
 
 
-class SocialCommerceAppPublishProduct(VirtualFunctionTool):
+class SocialCommerceAppPublishProduct(VirtualFunctionApp):
     name = "SocialCommerceAppPublishProduct"
     summary = "允许商家在多个社交平台上发布商品信息。"
     parameters: List[ArgParameter] = [
@@ -28066,7 +28066,7 @@ class SocialCommerceAppPublishProduct(VirtualFunctionTool):
     ]
 
 
-class SocialCommerceAppUserInteraction(VirtualFunctionTool):
+class SocialCommerceAppUserInteraction(VirtualFunctionApp):
     name = "SocialCommerceAppUserInteraction"
     summary = "支持商家与用户之间的评论、点赞和私信互动。"
     parameters: List[ArgParameter] = [
@@ -28105,7 +28105,7 @@ class SocialCommerceAppUserInteraction(VirtualFunctionTool):
     ]
 
 
-class SocialCommerceAppSalesAnalysis(VirtualFunctionTool):
+class SocialCommerceAppSalesAnalysis(VirtualFunctionApp):
     name = "SocialCommerceAppSalesAnalysis"
     summary = "提供销售数据和用户行为分析报告。"
     parameters: List[ArgParameter] = [
@@ -28134,7 +28134,7 @@ class SocialCommerceAppSalesAnalysis(VirtualFunctionTool):
     ]
 
 
-class SocialCommerceAppCampaignManagement(VirtualFunctionTool):
+class SocialCommerceAppCampaignManagement(VirtualFunctionApp):
     name = "SocialCommerceAppCampaignManagement"
     summary = "允许商家创建和管理促销活动。"
     parameters: List[ArgParameter] = [
@@ -28177,7 +28177,7 @@ class SocialCommerceAppCampaignManagement(VirtualFunctionTool):
     ]
 
 
-class SocialCommerceAppFeedbackCollection(VirtualFunctionTool):
+class SocialCommerceAppFeedbackCollection(VirtualFunctionApp):
     name = "SocialCommerceAppFeedbackCollection"
     summary = "收集用户对商品和服务的反馈和建议。"
     parameters: List[ArgParameter] = [
@@ -28210,7 +28210,7 @@ class SocialCommerceAppFeedbackCollection(VirtualFunctionTool):
     ]
 
 
-class SocialCommerceAppAdManagement(VirtualFunctionTool):
+class SocialCommerceAppAdManagement(VirtualFunctionApp):
     name = "SocialCommerceAppAdManagement"
     summary = "支持商家在社交媒体上创建和管理广告。"
     parameters: List[ArgParameter] = [
@@ -28248,7 +28248,7 @@ class SocialCommerceAppAdManagement(VirtualFunctionTool):
     ]
 
 
-class SocialCommerceAppOrderManagement(VirtualFunctionTool):
+class SocialCommerceAppOrderManagement(VirtualFunctionApp):
     name = "SocialCommerceAppOrderManagement"
     summary = "允许商家查看和管理订单状态。"
     parameters: List[ArgParameter] = [
@@ -28272,7 +28272,7 @@ class SocialCommerceAppOrderManagement(VirtualFunctionTool):
     ]
 
 
-class SocialCommerceAppInventoryManagement(VirtualFunctionTool):
+class SocialCommerceAppInventoryManagement(VirtualFunctionApp):
     name = "SocialCommerceAppInventoryManagement"
     summary = "提供库存数据的实时更新和管理。"
     parameters: List[ArgParameter] = [
@@ -28299,7 +28299,7 @@ class SocialCommerceAppInventoryManagement(VirtualFunctionTool):
     ]
 
 
-class SocialCommerceAppLinkTracking(VirtualFunctionTool):
+class SocialCommerceAppLinkTracking(VirtualFunctionApp):
     name = "SocialCommerceAppLinkTracking"
     summary = "生成和追踪社交媒体上的商品链接。"
     parameters: List[ArgParameter] = [
@@ -28322,7 +28322,7 @@ class SocialCommerceAppLinkTracking(VirtualFunctionTool):
     ]
 
 
-class SocialCommerceAppUserProfileAnalysis(VirtualFunctionTool):
+class SocialCommerceAppUserProfileAnalysis(VirtualFunctionApp):
     name = "SocialCommerceAppUserProfileAnalysis"
     summary = "分析用户的购买习惯和偏好。"
     parameters: List[ArgParameter] = [
@@ -28351,7 +28351,7 @@ class SocialCommerceApp(FunctionApp):
     description_for_human = "帮助商家通过社交媒体平台进行商品推广和销售的工具包。"
     name_for_model = "SocialCommerceApp"
     description_for_model = "该工具包旨在帮助商家通过社交媒体平台进行商品推广和销售，集成了多种功能，包括商品发布、用户互动、销售分析、促销活动管理和用户反馈收集，旨在增强商家的在线营销能力。"
-    tool_classes = [
+    app_classes = [
         SocialCommerceAppPublishProduct,
         SocialCommerceAppUserInteraction,
         SocialCommerceAppSalesAnalysis,
@@ -28368,7 +28368,7 @@ class SocialCommerceApp(FunctionApp):
 #################### UserBehaviorAnalysis ####################
 
 
-class UserBehaviorAnalysisAnalyzeBrowsingData(VirtualFunctionTool):
+class UserBehaviorAnalysisAnalyzeBrowsingData(VirtualFunctionApp):
     name = "UserBehaviorAnalysisAnalyzeBrowsingData"
     summary = "分析用户的浏览历史，识别热门产品和用户兴趣。"
     parameters: List[ArgParameter] = [
@@ -28402,7 +28402,7 @@ class UserBehaviorAnalysisAnalyzeBrowsingData(VirtualFunctionTool):
     ]
 
 
-class UserBehaviorAnalysisAnalyzePurchasingData(VirtualFunctionTool):
+class UserBehaviorAnalysisAnalyzePurchasingData(VirtualFunctionApp):
     name = "UserBehaviorAnalysisAnalyzePurchasingData"
     summary = "分析用户的购买历史，识别购买趋势和偏好。"
     parameters: List[ArgParameter] = [
@@ -28436,7 +28436,7 @@ class UserBehaviorAnalysisAnalyzePurchasingData(VirtualFunctionTool):
     ]
 
 
-class UserBehaviorAnalysisAnalyzeFeedbackData(VirtualFunctionTool):
+class UserBehaviorAnalysisAnalyzeFeedbackData(VirtualFunctionApp):
     name = "UserBehaviorAnalysisAnalyzeFeedbackData"
     summary = "收集和分析用户的反馈和评价，以了解用户满意度和改进点。"
     parameters: List[ArgParameter] = [
@@ -28470,7 +28470,7 @@ class UserBehaviorAnalysisAnalyzeFeedbackData(VirtualFunctionTool):
     ]
 
 
-class UserBehaviorAnalysisGenerateBehaviorReport(VirtualFunctionTool):
+class UserBehaviorAnalysisGenerateBehaviorReport(VirtualFunctionApp):
     name = "UserBehaviorAnalysisGenerateBehaviorReport"
     summary = "生成详细的用户行为报告，帮助商家制定市场策略。"
     parameters: List[ArgParameter] = [
@@ -28497,7 +28497,7 @@ class UserBehaviorAnalysisGenerateBehaviorReport(VirtualFunctionTool):
     ]
 
 
-class UserBehaviorAnalysisPredictUserBehavior(VirtualFunctionTool):
+class UserBehaviorAnalysisPredictUserBehavior(VirtualFunctionApp):
     name = "UserBehaviorAnalysisPredictUserBehavior"
     summary = "使用历史数据预测用户未来的行为和购买意图。"
     parameters: List[ArgParameter] = [
@@ -28524,7 +28524,7 @@ class UserBehaviorAnalysisPredictUserBehavior(VirtualFunctionTool):
     ]
 
 
-class UserBehaviorAnalysisSegmentUsers(VirtualFunctionTool):
+class UserBehaviorAnalysisSegmentUsers(VirtualFunctionApp):
     name = "UserBehaviorAnalysisSegmentUsers"
     summary = "根据用户行为数据将用户分为不同的群体。"
     parameters: List[ArgParameter] = [
@@ -28547,7 +28547,7 @@ class UserBehaviorAnalysisSegmentUsers(VirtualFunctionTool):
     ]
 
 
-class UserBehaviorAnalysisMonitorRealTimeData(VirtualFunctionTool):
+class UserBehaviorAnalysisMonitorRealTimeData(VirtualFunctionApp):
     name = "UserBehaviorAnalysisMonitorRealTimeData"
     summary = "实时监控用户行为数据，及时调整营销策略。"
     parameters: List[ArgParameter] = [
@@ -28570,7 +28570,7 @@ class UserBehaviorAnalysisMonitorRealTimeData(VirtualFunctionTool):
     ]
 
 
-class UserBehaviorAnalysisVisualizeData(VirtualFunctionTool):
+class UserBehaviorAnalysisVisualizeData(VirtualFunctionApp):
     name = "UserBehaviorAnalysisVisualizeData"
     summary = "将用户行为数据以图表形式可视化，便于理解和分析。"
     parameters: List[ArgParameter] = [
@@ -28597,7 +28597,7 @@ class UserBehaviorAnalysisVisualizeData(VirtualFunctionTool):
     ]
 
 
-class UserBehaviorAnalysisAnalyzeABTesting(VirtualFunctionTool):
+class UserBehaviorAnalysisAnalyzeABTesting(VirtualFunctionApp):
     name = "UserBehaviorAnalysisAnalyzeABTesting"
     summary = "分析不同营销策略对用户行为的影响。"
     parameters: List[ArgParameter] = [
@@ -28628,7 +28628,7 @@ class UserBehaviorAnalysisAnalyzeABTesting(VirtualFunctionTool):
     ]
 
 
-class UserBehaviorAnalysisGenerateRecommendations(VirtualFunctionTool):
+class UserBehaviorAnalysisGenerateRecommendations(VirtualFunctionApp):
     name = "UserBehaviorAnalysisGenerateRecommendations"
     summary = "根据用户的浏览和购买历史，提供个性化产品推荐。"
     parameters: List[ArgParameter] = [
@@ -28655,7 +28655,7 @@ class UserBehaviorAnalysisGenerateRecommendations(VirtualFunctionTool):
     ]
 
 
-class UserBehaviorAnalysisSearchUserByEmail(VirtualFunctionTool):
+class UserBehaviorAnalysisSearchUserByEmail(VirtualFunctionApp):
     name = "UserBehaviorAnalysisSearchUserByEmail"
     summary = "根据用户的电子邮件地址搜索用户的唯一标识符。"
     parameters: List[ArgParameter] = [
@@ -28687,7 +28687,7 @@ class UserBehaviorAnalysis(FunctionApp):
     )
     name_for_model = "UserBehaviorAnalysis"
     description_for_model = "该工具包用于分析电商平台用户的行为数据，帮助商家优化购物体验。通过分析用户的浏览、购买和反馈数据，生成详细报告和个性化推荐，从而提升销售和用户满意度。"
-    tool_classes = [
+    app_classes = [
         UserBehaviorAnalysisAnalyzeBrowsingData,
         UserBehaviorAnalysisAnalyzePurchasingData,
         UserBehaviorAnalysisAnalyzeFeedbackData,
@@ -28705,7 +28705,7 @@ class UserBehaviorAnalysis(FunctionApp):
 #################### WifiScanner ####################
 
 
-class WifiScannerScanNetworks(VirtualFunctionTool):
+class WifiScannerScanNetworks(VirtualFunctionApp):
     name = "WifiScannerScanNetworks"
     summary = "扫描周围可用的WIFI网络并返回网络列表。"
     parameters: List[ArgParameter] = [
@@ -28726,7 +28726,7 @@ class WifiScannerScanNetworks(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WifiScannerGetSignalStrength(VirtualFunctionTool):
+class WifiScannerGetSignalStrength(VirtualFunctionApp):
     name = "WifiScannerGetSignalStrength"
     summary = "获取指定WIFI网络的信号强度。"
     parameters: List[ArgParameter] = [
@@ -28749,7 +28749,7 @@ class WifiScannerGetSignalStrength(VirtualFunctionTool):
     ]
 
 
-class WifiScannerConnectToNetwork(VirtualFunctionTool):
+class WifiScannerConnectToNetwork(VirtualFunctionApp):
     name = "WifiScannerConnectToNetwork"
     summary = "连接到指定的WIFI网络。"
     parameters: List[ArgParameter] = [
@@ -28779,7 +28779,7 @@ class WifiScannerConnectToNetwork(VirtualFunctionTool):
     ]
 
 
-class WifiScannerDisconnectFromNetwork(VirtualFunctionTool):
+class WifiScannerDisconnectFromNetwork(VirtualFunctionApp):
     name = "WifiScannerDisconnectFromNetwork"
     summary = "断开与当前连接的WIFI网络的连接。"
     parameters: List[ArgParameter] = []
@@ -28793,7 +28793,7 @@ class WifiScannerDisconnectFromNetwork(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WifiScannerGetNetworkDetails(VirtualFunctionTool):
+class WifiScannerGetNetworkDetails(VirtualFunctionApp):
     name = "WifiScannerGetNetworkDetails"
     summary = "获取指定WIFI网络的详细信息。"
     parameters: List[ArgParameter] = [
@@ -28826,7 +28826,7 @@ class WifiScannerGetNetworkDetails(VirtualFunctionTool):
     ]
 
 
-class WifiScannerSavePreferredNetwork(VirtualFunctionTool):
+class WifiScannerSavePreferredNetwork(VirtualFunctionApp):
     name = "WifiScannerSavePreferredNetwork"
     summary = "保存用户常用的WIFI网络以便快速连接。"
     parameters: List[ArgParameter] = [
@@ -28850,7 +28850,7 @@ class WifiScannerSavePreferredNetwork(VirtualFunctionTool):
     ]
 
 
-class WifiScannerForgetSavedNetwork(VirtualFunctionTool):
+class WifiScannerForgetSavedNetwork(VirtualFunctionApp):
     name = "WifiScannerForgetSavedNetwork"
     summary = "忘记已保存的WIFI网络。"
     parameters: List[ArgParameter] = [
@@ -28874,7 +28874,7 @@ class WifiScannerForgetSavedNetwork(VirtualFunctionTool):
     ]
 
 
-class WifiScannerDisplayNetworkSecurityType(VirtualFunctionTool):
+class WifiScannerDisplayNetworkSecurityType(VirtualFunctionApp):
     name = "WifiScannerDisplayNetworkSecurityType"
     summary = "显示可用WIFI网络的安全类型。"
     parameters: List[ArgParameter] = [
@@ -28898,7 +28898,7 @@ class WifiScannerDisplayNetworkSecurityType(VirtualFunctionTool):
     ]
 
 
-class WifiScannerCheckNetworkSpeed(VirtualFunctionTool):
+class WifiScannerCheckNetworkSpeed(VirtualFunctionApp):
     name = "WifiScannerCheckNetworkSpeed"
     summary = "测试并报告当前连接网络的速度。"
     parameters: List[ArgParameter] = []
@@ -28912,7 +28912,7 @@ class WifiScannerCheckNetworkSpeed(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WifiScannerProvideTroubleshootingTips(VirtualFunctionTool):
+class WifiScannerProvideTroubleshootingTips(VirtualFunctionApp):
     name = "WifiScannerProvideTroubleshootingTips"
     summary = "提供连接问题的故障排除建议。"
     parameters: List[ArgParameter] = []
@@ -28928,7 +28928,7 @@ class WifiScanner(FunctionApp):
     description_for_human = "帮助用户扫描并选择最佳的WIFI网络连接。"
     name_for_model = "WifiScanner"
     description_for_model = "该工具包提供了一系列工具，用于扫描和连接可用的WIFI网络，获取信号强度和网络详细信息，帮助用户选择最佳的网络连接，同时提供故障排除建议。"
-    tool_classes = [
+    app_classes = [
         WifiScannerScanNetworks,
         WifiScannerGetSignalStrength,
         WifiScannerConnectToNetwork,
@@ -28945,7 +28945,7 @@ class WifiScanner(FunctionApp):
 #################### GoogleCustomSearch ####################
 
 
-class GoogleCustomSearchCustomSearchIntegration(VirtualFunctionTool):
+class GoogleCustomSearchCustomSearchIntegration(VirtualFunctionApp):
     name = "GoogleCustomSearchCustomSearchIntegration"
     summary = "允许开发者将Google搜索功能集成到自定义网站中。"
     parameters: List[ArgParameter] = [
@@ -28977,7 +28977,7 @@ class GoogleCustomSearchCustomSearchIntegration(VirtualFunctionTool):
     ]
 
 
-class GoogleCustomSearchResultFiltering(VirtualFunctionTool):
+class GoogleCustomSearchResultFiltering(VirtualFunctionApp):
     name = "GoogleCustomSearchResultFiltering"
     summary = "提供过滤选项，以便用户可以根据特定条件筛选搜索结果。"
     parameters: List[ArgParameter] = [
@@ -29009,7 +29009,7 @@ class GoogleCustomSearchResultFiltering(VirtualFunctionTool):
     ]
 
 
-class GoogleCustomSearchSearchQueryManagement(VirtualFunctionTool):
+class GoogleCustomSearchSearchQueryManagement(VirtualFunctionApp):
     name = "GoogleCustomSearchSearchQueryManagement"
     summary = "允许开发者管理和优化搜索查询以提高结果相关性。"
     parameters: List[ArgParameter] = [
@@ -29041,7 +29041,7 @@ class GoogleCustomSearchSearchQueryManagement(VirtualFunctionTool):
     ]
 
 
-class GoogleCustomSearchResultPagination(VirtualFunctionTool):
+class GoogleCustomSearchResultPagination(VirtualFunctionApp):
     name = "GoogleCustomSearchResultPagination"
     summary = "支持搜索结果的分页显示，以提高用户体验。"
     parameters: List[ArgParameter] = [
@@ -29073,7 +29073,7 @@ class GoogleCustomSearchResultPagination(VirtualFunctionTool):
     ]
 
 
-class GoogleCustomSearchAnalyticsTracking(VirtualFunctionTool):
+class GoogleCustomSearchAnalyticsTracking(VirtualFunctionApp):
     name = "GoogleCustomSearchAnalyticsTracking"
     summary = "提供对搜索结果和用户行为的分析功能。"
     parameters: List[ArgParameter] = [
@@ -29094,7 +29094,7 @@ class GoogleCustomSearchAnalyticsTracking(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleCustomSearchCustomBranding(VirtualFunctionTool):
+class GoogleCustomSearchCustomBranding(VirtualFunctionApp):
     name = "GoogleCustomSearchCustomBranding"
     summary = "允许开发者自定义搜索结果页面的外观。"
     parameters: List[ArgParameter] = [
@@ -29120,7 +29120,7 @@ class GoogleCustomSearchCustomBranding(VirtualFunctionTool):
     ]
 
 
-class GoogleCustomSearchAPIAccessForSearchResults(VirtualFunctionTool):
+class GoogleCustomSearchAPIAccessForSearchResults(VirtualFunctionApp):
     name = "GoogleCustomSearchAPIAccessForSearchResults"
     summary = "提供API接口以便于程序化访问搜索结果。"
     parameters: List[ArgParameter] = [
@@ -29141,7 +29141,7 @@ class GoogleCustomSearchAPIAccessForSearchResults(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleCustomSearchLanguageFiltering(VirtualFunctionTool):
+class GoogleCustomSearchLanguageFiltering(VirtualFunctionApp):
     name = "GoogleCustomSearchLanguageFiltering"
     summary = "允许用户根据语言筛选搜索结果。"
     parameters: List[ArgParameter] = [
@@ -29173,7 +29173,7 @@ class GoogleCustomSearchLanguageFiltering(VirtualFunctionTool):
     ]
 
 
-class GoogleCustomSearchSafeSearchOptions(VirtualFunctionTool):
+class GoogleCustomSearchSafeSearchOptions(VirtualFunctionApp):
     name = "GoogleCustomSearchSafeSearchOptions"
     summary = "提供安全搜索选项，以过滤不当内容。"
     parameters: List[ArgParameter] = [
@@ -29200,7 +29200,7 @@ class GoogleCustomSearchSafeSearchOptions(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleCustomSearchSearchHistoryManagement(VirtualFunctionTool):
+class GoogleCustomSearchSearchHistoryManagement(VirtualFunctionApp):
     name = "GoogleCustomSearchSearchHistoryManagement"
     summary = "允许用户查看和管理他们的搜索历史。"
     parameters: List[ArgParameter] = [
@@ -29234,7 +29234,7 @@ class GoogleCustomSearch(FunctionApp):
     )
     name_for_model = "GoogleCustomSearch"
     description_for_model = "GoogleCustomSearch工具包允许开发者在自定义网站上集成Google搜索功能，支持自定义搜索结果、过滤器和分析功能，旨在增强用户体验和信息检索效率。"
-    tool_classes = [
+    app_classes = [
         GoogleCustomSearchCustomSearchIntegration,
         GoogleCustomSearchResultFiltering,
         GoogleCustomSearchSearchQueryManagement,
@@ -29251,7 +29251,7 @@ class GoogleCustomSearch(FunctionApp):
 #################### MobileNetworkMonitoring ####################
 
 
-class MobileNetworkMonitoringMeasureNetworkSpeed(VirtualFunctionTool):
+class MobileNetworkMonitoringMeasureNetworkSpeed(VirtualFunctionApp):
     name = "MobileNetworkMonitoringMeasureNetworkSpeed"
     summary = "测量当前移动网络的下载和上传速度。"
     parameters: List[ArgParameter] = [
@@ -29277,7 +29277,7 @@ class MobileNetworkMonitoringMeasureNetworkSpeed(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MobileNetworkMonitoringAnalyzeNetworkStability(VirtualFunctionTool):
+class MobileNetworkMonitoringAnalyzeNetworkStability(VirtualFunctionApp):
     name = "MobileNetworkMonitoringAnalyzeNetworkStability"
     summary = "监测网络连接的稳定性，包括丢包率和延迟。"
     parameters: List[ArgParameter] = [
@@ -29303,7 +29303,7 @@ class MobileNetworkMonitoringAnalyzeNetworkStability(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MobileNetworkMonitoringRecordHistoricalData(VirtualFunctionTool):
+class MobileNetworkMonitoringRecordHistoricalData(VirtualFunctionApp):
     name = "MobileNetworkMonitoringRecordHistoricalData"
     summary = "记录并存储网络速度和稳定性数据。"
     parameters: List[ArgParameter] = [
@@ -29342,7 +29342,7 @@ class MobileNetworkMonitoringRecordHistoricalData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MobileNetworkMonitoringRateNetworkQuality(VirtualFunctionTool):
+class MobileNetworkMonitoringRateNetworkQuality(VirtualFunctionApp):
     name = "MobileNetworkMonitoringRateNetworkQuality"
     summary = "根据测量结果为用户提供网络质量评分。"
     parameters: List[ArgParameter] = [
@@ -29381,7 +29381,7 @@ class MobileNetworkMonitoringRateNetworkQuality(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MobileNetworkMonitoringBenchmarkLocation(VirtualFunctionTool):
+class MobileNetworkMonitoringBenchmarkLocation(VirtualFunctionApp):
     name = "MobileNetworkMonitoringBenchmarkLocation"
     summary = "在不同位置进行网络测试并比较结果。"
     parameters: List[ArgParameter] = [
@@ -29408,7 +29408,7 @@ class MobileNetworkMonitoringBenchmarkLocation(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MobileNetworkMonitoringGetCarrierInfo(VirtualFunctionTool):
+class MobileNetworkMonitoringGetCarrierInfo(VirtualFunctionApp):
     name = "MobileNetworkMonitoringGetCarrierInfo"
     summary = "显示用户当前使用的网络运营商信息。"
     parameters: List[ArgParameter] = []
@@ -29427,7 +29427,7 @@ class MobileNetworkMonitoringGetCarrierInfo(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MobileNetworkMonitoringCompareNetworks(VirtualFunctionTool):
+class MobileNetworkMonitoringCompareNetworks(VirtualFunctionApp):
     name = "MobileNetworkMonitoringCompareNetworks"
     summary = "允许用户比较不同网络运营商的速度和稳定性。"
     parameters: List[ArgParameter] = [
@@ -29448,7 +29448,7 @@ class MobileNetworkMonitoringCompareNetworks(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MobileNetworkMonitoringSendReport(VirtualFunctionTool):
+class MobileNetworkMonitoringSendReport(VirtualFunctionApp):
     name = "MobileNetworkMonitoringSendReport"
     summary = "允许用户将网络测试结果通过电子邮件发送给他人。"
     parameters: List[ArgParameter] = [
@@ -29480,7 +29480,7 @@ class MobileNetworkMonitoringSendReport(VirtualFunctionTool):
     ]
 
 
-class MobileNetworkMonitoringSetAlertThreshold(VirtualFunctionTool):
+class MobileNetworkMonitoringSetAlertThreshold(VirtualFunctionApp):
     name = "MobileNetworkMonitoringSetAlertThreshold"
     summary = "允许用户设置网络质量阈值并在超出时发送警报。"
     parameters: List[ArgParameter] = [
@@ -29512,7 +29512,7 @@ class MobileNetworkMonitoringSetAlertThreshold(VirtualFunctionTool):
     ]
 
 
-class MobileNetworkMonitoringRealTimeMonitoring(VirtualFunctionTool):
+class MobileNetworkMonitoringRealTimeMonitoring(VirtualFunctionApp):
     name = "MobileNetworkMonitoringRealTimeMonitoring"
     summary = "提供实时监控功能，持续跟踪网络性能并更新数据。"
     parameters: List[ArgParameter] = []
@@ -29532,7 +29532,7 @@ class MobileNetworkMonitoring(FunctionApp):
     description_for_human = "监测和分析移动网络的速度和稳定性，提供网络质量评估。"
     name_for_model = "MobileNetworkMonitoring"
     description_for_model = "该工具包旨在监测和分析移动网络的速度和稳定性，为用户提供网络质量评估，包含多种工具以满足不同的网络监测需求。"
-    tool_classes = [
+    app_classes = [
         MobileNetworkMonitoringMeasureNetworkSpeed,
         MobileNetworkMonitoringAnalyzeNetworkStability,
         MobileNetworkMonitoringRecordHistoricalData,
@@ -29549,7 +29549,7 @@ class MobileNetworkMonitoring(FunctionApp):
 #################### NetworkProxyService ####################
 
 
-class NetworkProxyServiceCreateProxy(VirtualFunctionTool):
+class NetworkProxyServiceCreateProxy(VirtualFunctionApp):
     name = "NetworkProxyServiceCreateProxy"
     summary = "创建新的网络代理并返回其唯一标识符。"
     parameters: List[ArgParameter] = [
@@ -29587,7 +29587,7 @@ class NetworkProxyServiceCreateProxy(VirtualFunctionTool):
     ]
 
 
-class NetworkProxyServiceListProxies(VirtualFunctionTool):
+class NetworkProxyServiceListProxies(VirtualFunctionApp):
     name = "NetworkProxyServiceListProxies"
     summary = "检索当前可用的网络代理列表。"
     parameters: List[ArgParameter] = []
@@ -29601,7 +29601,7 @@ class NetworkProxyServiceListProxies(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NetworkProxyServiceUseProxy(VirtualFunctionTool):
+class NetworkProxyServiceUseProxy(VirtualFunctionApp):
     name = "NetworkProxyServiceUseProxy"
     summary = "选择特定的网络代理进行使用。"
     parameters: List[ArgParameter] = [
@@ -29620,7 +29620,7 @@ class NetworkProxyServiceUseProxy(VirtualFunctionTool):
     ]
 
 
-class NetworkProxyServiceDeleteProxy(VirtualFunctionTool):
+class NetworkProxyServiceDeleteProxy(VirtualFunctionApp):
     name = "NetworkProxyServiceDeleteProxy"
     summary = "删除指定的网络代理。"
     parameters: List[ArgParameter] = [
@@ -29639,7 +29639,7 @@ class NetworkProxyServiceDeleteProxy(VirtualFunctionTool):
     ]
 
 
-class NetworkProxyServiceUpdateProxy(VirtualFunctionTool):
+class NetworkProxyServiceUpdateProxy(VirtualFunctionApp):
     name = "NetworkProxyServiceUpdateProxy"
     summary = "更新网络代理的配置。"
     parameters: List[ArgParameter] = [
@@ -29670,7 +29670,7 @@ class NetworkProxyServiceUpdateProxy(VirtualFunctionTool):
     ]
 
 
-class NetworkProxyServiceValidateProxy(VirtualFunctionTool):
+class NetworkProxyServiceValidateProxy(VirtualFunctionApp):
     name = "NetworkProxyServiceValidateProxy"
     summary = "验证指定代理的可用性。"
     parameters: List[ArgParameter] = [
@@ -29689,7 +29689,7 @@ class NetworkProxyServiceValidateProxy(VirtualFunctionTool):
     ]
 
 
-class NetworkProxyServiceGetProxySpeed(VirtualFunctionTool):
+class NetworkProxyServiceGetProxySpeed(VirtualFunctionApp):
     name = "NetworkProxyServiceGetProxySpeed"
     summary = "获取指定代理的连接速度。"
     parameters: List[ArgParameter] = [
@@ -29712,7 +29712,7 @@ class NetworkProxyServiceGetProxySpeed(VirtualFunctionTool):
     ]
 
 
-class NetworkProxyServiceRecordUsage(VirtualFunctionTool):
+class NetworkProxyServiceRecordUsage(VirtualFunctionApp):
     name = "NetworkProxyServiceRecordUsage"
     summary = "记录使用历史。"
     parameters: List[ArgParameter] = [
@@ -29737,7 +29737,7 @@ class NetworkProxyServiceRecordUsage(VirtualFunctionTool):
     ]
 
 
-class NetworkProxyServiceGetAnonymityScore(VirtualFunctionTool):
+class NetworkProxyServiceGetAnonymityScore(VirtualFunctionApp):
     name = "NetworkProxyServiceGetAnonymityScore"
     summary = "提供指定代理的匿名性评分。"
     parameters: List[ArgParameter] = [
@@ -29760,7 +29760,7 @@ class NetworkProxyServiceGetAnonymityScore(VirtualFunctionTool):
     ]
 
 
-class NetworkProxyServiceSupportProtocols(VirtualFunctionTool):
+class NetworkProxyServiceSupportProtocols(VirtualFunctionApp):
     name = "NetworkProxyServiceSupportProtocols"
     summary = "获取代理支持的协议类型。"
     parameters: List[ArgParameter] = [
@@ -29791,7 +29791,7 @@ class NetworkProxyService(FunctionApp):
     )
     name_for_model = "NetworkProxyService"
     description_for_model = "该工具包提供可编程访问不同地区的网络代理服务，适合需要进行数据抓取和匿名浏览的用户，包含创建、管理和验证代理的多种功能，同时确保用户数据的安全性和隐私。"
-    tool_classes = [
+    app_classes = [
         NetworkProxyServiceCreateProxy,
         NetworkProxyServiceListProxies,
         NetworkProxyServiceUseProxy,
@@ -29808,7 +29808,7 @@ class NetworkProxyService(FunctionApp):
 #################### BingSearch ####################
 
 
-class BingSearchWebSearch(VirtualFunctionTool):
+class BingSearchWebSearch(VirtualFunctionApp):
     name = "BingSearchWebSearch"
     summary = "通过关键字搜索网页内容并返回相关结果。"
     parameters: List[ArgParameter] = [
@@ -29844,7 +29844,7 @@ class BingSearchWebSearch(VirtualFunctionTool):
     ]
 
 
-class BingSearchImageSearch(VirtualFunctionTool):
+class BingSearchImageSearch(VirtualFunctionApp):
     name = "BingSearchImageSearch"
     summary = "通过关键字搜索图片并返回相关结果。"
     parameters: List[ArgParameter] = [
@@ -29880,7 +29880,7 @@ class BingSearchImageSearch(VirtualFunctionTool):
     ]
 
 
-class BingSearchVideoSearch(VirtualFunctionTool):
+class BingSearchVideoSearch(VirtualFunctionApp):
     name = "BingSearchVideoSearch"
     summary = "通过关键字搜索视频并返回相关结果。"
     parameters: List[ArgParameter] = [
@@ -29916,7 +29916,7 @@ class BingSearchVideoSearch(VirtualFunctionTool):
     ]
 
 
-class BingSearchNewsSearch(VirtualFunctionTool):
+class BingSearchNewsSearch(VirtualFunctionApp):
     name = "BingSearchNewsSearch"
     summary = "通过关键字搜索新闻并返回相关结果。"
     parameters: List[ArgParameter] = [
@@ -29952,7 +29952,7 @@ class BingSearchNewsSearch(VirtualFunctionTool):
     ]
 
 
-class BingSearchComprehensiveSearch(VirtualFunctionTool):
+class BingSearchComprehensiveSearch(VirtualFunctionApp):
     name = "BingSearchComprehensiveSearch"
     summary = "同时搜索网页、图片、视频和新闻。"
     parameters: List[ArgParameter] = [
@@ -29999,7 +29999,7 @@ class BingSearchComprehensiveSearch(VirtualFunctionTool):
     ]
 
 
-class BingSearchFilterResults(VirtualFunctionTool):
+class BingSearchFilterResults(VirtualFunctionApp):
     name = "BingSearchFilterResults"
     summary = "根据特定条件过滤搜索结果。"
     parameters: List[ArgParameter] = [
@@ -30031,7 +30031,7 @@ class BingSearchFilterResults(VirtualFunctionTool):
     ]
 
 
-class BingSearchGetSearchDetails(VirtualFunctionTool):
+class BingSearchGetSearchDetails(VirtualFunctionApp):
     name = "BingSearchGetSearchDetails"
     summary = "获取特定搜索结果的详细信息。"
     parameters: List[ArgParameter] = [
@@ -30061,7 +30061,7 @@ class BingSearchGetSearchDetails(VirtualFunctionTool):
     ]
 
 
-class BingSearchStoreSearchHistory(VirtualFunctionTool):
+class BingSearchStoreSearchHistory(VirtualFunctionApp):
     name = "BingSearchStoreSearchHistory"
     summary = "存储用户的搜索历史。"
     parameters: List[ArgParameter] = [
@@ -30084,7 +30084,7 @@ class BingSearchStoreSearchHistory(VirtualFunctionTool):
     ]
 
 
-class BingSearchAccessStoredData(VirtualFunctionTool):
+class BingSearchAccessStoredData(VirtualFunctionApp):
     name = "BingSearchAccessStoredData"
     summary = "访问用户存储的数据，如搜索偏好设置。"
     parameters: List[ArgParameter] = [
@@ -30106,7 +30106,7 @@ class BingSearchAccessStoredData(VirtualFunctionTool):
     ]
 
 
-class BingSearchBatchSearch(VirtualFunctionTool):
+class BingSearchBatchSearch(VirtualFunctionApp):
     name = "BingSearchBatchSearch"
     summary = "同时提交多个搜索请求。"
     parameters: List[ArgParameter] = [
@@ -30134,7 +30134,7 @@ class BingSearch(FunctionApp):
     description_for_human = "App for accessing Bing search engine, supporting various search types including web, image, video, and news."
     name_for_model = "BingSearch"
     description_for_model = "该工具包提供对Bing搜索引擎的访问，支持网页、图片、视频和新闻搜索，旨在增强应用程序的信息检索能力，并允许用户存储和管理搜索历史。"
-    tool_classes = [
+    app_classes = [
         BingSearchWebSearch,
         BingSearchImageSearch,
         BingSearchVideoSearch,
@@ -30151,7 +30151,7 @@ class BingSearch(FunctionApp):
 #################### VpnServiceApi ####################
 
 
-class VpnServiceApiConnectToVpn(VirtualFunctionTool):
+class VpnServiceApiConnectToVpn(VirtualFunctionApp):
     name = "VpnServiceApiConnectToVpn"
     summary = "连接到指定的VPN服务器以保护用户的网络连接。"
     parameters: List[ArgParameter] = [
@@ -30174,7 +30174,7 @@ class VpnServiceApiConnectToVpn(VirtualFunctionTool):
     ]
 
 
-class VpnServiceApiDisconnectVpn(VirtualFunctionTool):
+class VpnServiceApiDisconnectVpn(VirtualFunctionApp):
     name = "VpnServiceApiDisconnectVpn"
     summary = "断开当前的VPN连接。"
     parameters: List[ArgParameter] = []
@@ -30187,7 +30187,7 @@ class VpnServiceApiDisconnectVpn(VirtualFunctionTool):
     ]
 
 
-class VpnServiceApiGetServerList(VirtualFunctionTool):
+class VpnServiceApiGetServerList(VirtualFunctionApp):
     name = "VpnServiceApiGetServerList"
     summary = "获取可用的VPN服务器列表及其状态。"
     parameters: List[ArgParameter] = []
@@ -30201,7 +30201,7 @@ class VpnServiceApiGetServerList(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class VpnServiceApiGetConnectionStatus(VirtualFunctionTool):
+class VpnServiceApiGetConnectionStatus(VirtualFunctionApp):
     name = "VpnServiceApiGetConnectionStatus"
     summary = "检查当前VPN连接的状态。"
     parameters: List[ArgParameter] = []
@@ -30220,7 +30220,7 @@ class VpnServiceApiGetConnectionStatus(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class VpnServiceApiAccessStoredUserInfo(VirtualFunctionTool):
+class VpnServiceApiAccessStoredUserInfo(VirtualFunctionApp):
     name = "VpnServiceApiAccessStoredUserInfo"
     summary = "访问用户的VPN配置和凭据。"
     parameters: List[ArgParameter] = []
@@ -30236,7 +30236,7 @@ class VpnServiceApiAccessStoredUserInfo(VirtualFunctionTool):
     ]
 
 
-class VpnServiceApiChangeVpnServer(VirtualFunctionTool):
+class VpnServiceApiChangeVpnServer(VirtualFunctionApp):
     name = "VpnServiceApiChangeVpnServer"
     summary = "更改已连接的VPN服务器。"
     parameters: List[ArgParameter] = [
@@ -30263,7 +30263,7 @@ class VpnServiceApiChangeVpnServer(VirtualFunctionTool):
     ]
 
 
-class VpnServiceApiGetTrafficStats(VirtualFunctionTool):
+class VpnServiceApiGetTrafficStats(VirtualFunctionApp):
     name = "VpnServiceApiGetTrafficStats"
     summary = "提供用户的流量使用情况统计。"
     parameters: List[ArgParameter] = []
@@ -30277,7 +30277,7 @@ class VpnServiceApiGetTrafficStats(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class VpnServiceApiGetConnectionLogs(VirtualFunctionTool):
+class VpnServiceApiGetConnectionLogs(VirtualFunctionApp):
     name = "VpnServiceApiGetConnectionLogs"
     summary = "提供VPN连接的历史记录。"
     parameters: List[ArgParameter] = []
@@ -30291,7 +30291,7 @@ class VpnServiceApiGetConnectionLogs(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class VpnServiceApiSetPreferredServer(VirtualFunctionTool):
+class VpnServiceApiSetPreferredServer(VirtualFunctionApp):
     name = "VpnServiceApiSetPreferredServer"
     summary = "允许用户设置默认连接的VPN服务器。"
     parameters: List[ArgParameter] = [
@@ -30314,7 +30314,7 @@ class VpnServiceApiSetPreferredServer(VirtualFunctionTool):
     ]
 
 
-class VpnServiceApiAccessUserSettings(VirtualFunctionTool):
+class VpnServiceApiAccessUserSettings(VirtualFunctionApp):
     name = "VpnServiceApiAccessUserSettings"
     summary = "访问用户的个性化设置，如协议类型和加密级别。"
     parameters: List[ArgParameter] = []
@@ -30336,7 +30336,7 @@ class VpnServiceApi(FunctionApp):
     )
     name_for_model = "VpnServiceApi"
     description_for_model = "VpnServiceApi提供对虚拟私人网络的编程访问，允许用户安全地浏览互联网，并保护隐私，同时提供多种功能以增强用户体验和安全性。"
-    tool_classes = [
+    app_classes = [
         VpnServiceApiConnectToVpn,
         VpnServiceApiDisconnectVpn,
         VpnServiceApiGetServerList,
@@ -30353,7 +30353,7 @@ class VpnServiceApi(FunctionApp):
 #################### SocialMediaAnalysisApi ####################
 
 
-class SocialMediaAnalysisApiUserBehaviorAnalysis(VirtualFunctionTool):
+class SocialMediaAnalysisApiUserBehaviorAnalysis(VirtualFunctionApp):
     name = "SocialMediaAnalysisApiUserBehaviorAnalysis"
     summary = "获取用户在社交媒体上的行为数据，包括点赞、评论、分享等。"
     parameters: List[ArgParameter] = [
@@ -30385,7 +30385,7 @@ class SocialMediaAnalysisApiUserBehaviorAnalysis(VirtualFunctionTool):
     ]
 
 
-class SocialMediaAnalysisApiSentimentMonitoring(VirtualFunctionTool):
+class SocialMediaAnalysisApiSentimentMonitoring(VirtualFunctionApp):
     name = "SocialMediaAnalysisApiSentimentMonitoring"
     summary = "监控特定话题或品牌在社交媒体上的舆情，分析正面和负面情绪。"
     parameters: List[ArgParameter] = [
@@ -30417,7 +30417,7 @@ class SocialMediaAnalysisApiSentimentMonitoring(VirtualFunctionTool):
     ]
 
 
-class SocialMediaAnalysisApiKeywordSearch(VirtualFunctionTool):
+class SocialMediaAnalysisApiKeywordSearch(VirtualFunctionApp):
     name = "SocialMediaAnalysisApiKeywordSearch"
     summary = "根据用户定义的关键字搜索相关的社交媒体帖子和评论。"
     parameters: List[ArgParameter] = [
@@ -30449,7 +30449,7 @@ class SocialMediaAnalysisApiKeywordSearch(VirtualFunctionTool):
     ]
 
 
-class SocialMediaAnalysisApiDataSummary(VirtualFunctionTool):
+class SocialMediaAnalysisApiDataSummary(VirtualFunctionApp):
     name = "SocialMediaAnalysisApiDataSummary"
     summary = "对收集到的数据进行汇总，生成统计报告。"
     parameters: List[ArgParameter] = [
@@ -30472,7 +30472,7 @@ class SocialMediaAnalysisApiDataSummary(VirtualFunctionTool):
     ]
 
 
-class SocialMediaAnalysisApiUserProfileGeneration(VirtualFunctionTool):
+class SocialMediaAnalysisApiUserProfileGeneration(VirtualFunctionApp):
     name = "SocialMediaAnalysisApiUserProfileGeneration"
     summary = "根据用户行为数据生成用户画像。"
     parameters: List[ArgParameter] = [
@@ -30495,7 +30495,7 @@ class SocialMediaAnalysisApiUserProfileGeneration(VirtualFunctionTool):
     ]
 
 
-class SocialMediaAnalysisApiCompetitorAnalysis(VirtualFunctionTool):
+class SocialMediaAnalysisApiCompetitorAnalysis(VirtualFunctionApp):
     name = "SocialMediaAnalysisApiCompetitorAnalysis"
     summary = "监控竞争对手在社交媒体上的表现，分析其用户互动情况。"
     parameters: List[ArgParameter] = [
@@ -30518,7 +30518,7 @@ class SocialMediaAnalysisApiCompetitorAnalysis(VirtualFunctionTool):
     ]
 
 
-class SocialMediaAnalysisApiTrendingTopicsTracking(VirtualFunctionTool):
+class SocialMediaAnalysisApiTrendingTopicsTracking(VirtualFunctionApp):
     name = "SocialMediaAnalysisApiTrendingTopicsTracking"
     summary = "实时追踪当前热门话题和趋势。"
     parameters: List[ArgParameter] = [
@@ -30541,7 +30541,7 @@ class SocialMediaAnalysisApiTrendingTopicsTracking(VirtualFunctionTool):
     ]
 
 
-class SocialMediaAnalysisApiCustomReportGeneration(VirtualFunctionTool):
+class SocialMediaAnalysisApiCustomReportGeneration(VirtualFunctionApp):
     name = "SocialMediaAnalysisApiCustomReportGeneration"
     summary = "根据用户需求生成定制化的分析报告。"
     parameters: List[ArgParameter] = [
@@ -30563,7 +30563,7 @@ class SocialMediaAnalysisApiCustomReportGeneration(VirtualFunctionTool):
     ]
 
 
-class SocialMediaAnalysisApiAdPerformanceEvaluation(VirtualFunctionTool):
+class SocialMediaAnalysisApiAdPerformanceEvaluation(VirtualFunctionApp):
     name = "SocialMediaAnalysisApiAdPerformanceEvaluation"
     summary = "评估广告在社交媒体上的表现，包括点击率和转化率。"
     parameters: List[ArgParameter] = [
@@ -30586,7 +30586,7 @@ class SocialMediaAnalysisApiAdPerformanceEvaluation(VirtualFunctionTool):
     ]
 
 
-class SocialMediaAnalysisApiUserFeedbackCollection(VirtualFunctionTool):
+class SocialMediaAnalysisApiUserFeedbackCollection(VirtualFunctionApp):
     name = "SocialMediaAnalysisApiUserFeedbackCollection"
     summary = "收集和分析用户对品牌或产品的反馈。"
     parameters: List[ArgParameter] = [
@@ -30612,7 +30612,7 @@ class SocialMediaAnalysisApiUserFeedbackCollection(VirtualFunctionTool):
     ]
 
 
-class SocialMediaAnalysisApiFeedbackSearch(VirtualFunctionTool):
+class SocialMediaAnalysisApiFeedbackSearch(VirtualFunctionApp):
     name = "SocialMediaAnalysisApiFeedbackSearch"
     summary = "根据用户定义的条件搜索用户反馈。"
     parameters: List[ArgParameter] = [
@@ -30644,7 +30644,7 @@ class SocialMediaAnalysisApiFeedbackSearch(VirtualFunctionTool):
     ]
 
 
-class SocialMediaAnalysisApiTrendingTopicSearch(VirtualFunctionTool):
+class SocialMediaAnalysisApiTrendingTopicSearch(VirtualFunctionApp):
     name = "SocialMediaAnalysisApiTrendingTopicSearch"
     summary = "根据用户定义的条件搜索热门话题。"
     parameters: List[ArgParameter] = [
@@ -30676,7 +30676,7 @@ class SocialMediaAnalysisApiTrendingTopicSearch(VirtualFunctionTool):
     ]
 
 
-class SocialMediaAnalysisApiUserStoredDataAccess(VirtualFunctionTool):
+class SocialMediaAnalysisApiUserStoredDataAccess(VirtualFunctionApp):
     name = "SocialMediaAnalysisApiUserStoredDataAccess"
     summary = "访问用户存储的社交媒体数据，如地址和支付方式。"
     parameters: List[ArgParameter] = [
@@ -30699,7 +30699,7 @@ class SocialMediaAnalysisApiUserStoredDataAccess(VirtualFunctionTool):
     ]
 
 
-class SocialMediaAnalysisApiOperationStatus(VirtualFunctionTool):
+class SocialMediaAnalysisApiOperationStatus(VirtualFunctionApp):
     name = "SocialMediaAnalysisApiOperationStatus"
     summary = "返回操作的状态，适用于所有创建、更新和删除操作。"
     parameters: List[ArgParameter] = [
@@ -30729,7 +30729,7 @@ class SocialMediaAnalysisApi(FunctionApp):
     )
     name_for_model = "SocialMediaAnalysisApi"
     description_for_model = "社交媒体分析API提供对社交媒体平台数据的访问，支持用户行为分析、舆情监测、关键字搜索等功能，旨在帮助品牌营销人员和用户洞察市场动态。"
-    tool_classes = [
+    app_classes = [
         SocialMediaAnalysisApiUserBehaviorAnalysis,
         SocialMediaAnalysisApiSentimentMonitoring,
         SocialMediaAnalysisApiKeywordSearch,
@@ -30750,7 +30750,7 @@ class SocialMediaAnalysisApi(FunctionApp):
 #################### DataCleaningAndIntegration ####################
 
 
-class DataCleaningAndIntegrationDataExtraction(VirtualFunctionTool):
+class DataCleaningAndIntegrationDataExtraction(VirtualFunctionApp):
     name = "DataCleaningAndIntegrationDataExtraction"
     summary = "从指定的网络数据源提取原始数据。"
     parameters: List[ArgParameter] = [
@@ -30778,7 +30778,7 @@ class DataCleaningAndIntegrationDataExtraction(VirtualFunctionTool):
     ]
 
 
-class DataCleaningAndIntegrationDataCleaning(VirtualFunctionTool):
+class DataCleaningAndIntegrationDataCleaning(VirtualFunctionApp):
     name = "DataCleaningAndIntegrationDataCleaning"
     summary = "清理原始数据，去除重复和无效信息。"
     parameters: List[ArgParameter] = [
@@ -30800,7 +30800,7 @@ class DataCleaningAndIntegrationDataCleaning(VirtualFunctionTool):
     ]
 
 
-class DataCleaningAndIntegrationDataIntegration(VirtualFunctionTool):
+class DataCleaningAndIntegrationDataIntegration(VirtualFunctionApp):
     name = "DataCleaningAndIntegrationDataIntegration"
     summary = "将多个清理后的数据合并成统一格式。"
     parameters: List[ArgParameter] = [
@@ -30826,7 +30826,7 @@ class DataCleaningAndIntegrationDataIntegration(VirtualFunctionTool):
     ]
 
 
-class DataCleaningAndIntegrationDataTransformation(VirtualFunctionTool):
+class DataCleaningAndIntegrationDataTransformation(VirtualFunctionApp):
     name = "DataCleaningAndIntegrationDataTransformation"
     summary = "将数据转换为适合分析的格式。"
     parameters: List[ArgParameter] = [
@@ -30858,7 +30858,7 @@ class DataCleaningAndIntegrationDataTransformation(VirtualFunctionTool):
     ]
 
 
-class DataCleaningAndIntegrationDataValidation(VirtualFunctionTool):
+class DataCleaningAndIntegrationDataValidation(VirtualFunctionApp):
     name = "DataCleaningAndIntegrationDataValidation"
     summary = "验证数据的完整性和准确性。"
     parameters: List[ArgParameter] = [
@@ -30884,7 +30884,7 @@ class DataCleaningAndIntegrationDataValidation(VirtualFunctionTool):
     ]
 
 
-class DataCleaningAndIntegrationDataStorage(VirtualFunctionTool):
+class DataCleaningAndIntegrationDataStorage(VirtualFunctionApp):
     name = "DataCleaningAndIntegrationDataStorage"
     summary = "将清洗和整合后的数据存储到指定的数据库或文件中。"
     parameters: List[ArgParameter] = [
@@ -30916,7 +30916,7 @@ class DataCleaningAndIntegrationDataStorage(VirtualFunctionTool):
     ]
 
 
-class DataCleaningAndIntegrationDataAnalysis(VirtualFunctionTool):
+class DataCleaningAndIntegrationDataAnalysis(VirtualFunctionApp):
     name = "DataCleaningAndIntegrationDataAnalysis"
     summary = "对整合后的数据进行基本分析，生成统计信息。"
     parameters: List[ArgParameter] = [
@@ -30942,7 +30942,7 @@ class DataCleaningAndIntegrationDataAnalysis(VirtualFunctionTool):
     ]
 
 
-class DataCleaningAndIntegrationDataVisualization(VirtualFunctionTool):
+class DataCleaningAndIntegrationDataVisualization(VirtualFunctionApp):
     name = "DataCleaningAndIntegrationDataVisualization"
     summary = "创建数据的可视化图表以便于理解。"
     parameters: List[ArgParameter] = [
@@ -30974,7 +30974,7 @@ class DataCleaningAndIntegrationDataVisualization(VirtualFunctionTool):
     ]
 
 
-class DataCleaningAndIntegrationDataExport(VirtualFunctionTool):
+class DataCleaningAndIntegrationDataExport(VirtualFunctionApp):
     name = "DataCleaningAndIntegrationDataExport"
     summary = "将处理后的数据导出为不同格式（如CSV、JSON）。"
     parameters: List[ArgParameter] = [
@@ -31006,7 +31006,7 @@ class DataCleaningAndIntegrationDataExport(VirtualFunctionTool):
     ]
 
 
-class DataCleaningAndIntegrationErrorLogging(VirtualFunctionTool):
+class DataCleaningAndIntegrationErrorLogging(VirtualFunctionApp):
     name = "DataCleaningAndIntegrationErrorLogging"
     summary = "记录在数据处理过程中遇到的错误和异常。"
     parameters: List[ArgParameter] = [
@@ -31040,7 +31040,7 @@ class DataCleaningAndIntegration(FunctionApp):
     )
     name_for_model = "DataCleaningAndIntegration"
     description_for_model = "该工具包提供了一系列工具，用于从多个网络数据源中提取、清洗和整合数据，适用于数据科学和商业智能应用。工具包确保数据处理的合规性和安全性，支持数据存储、分析和可视化。"
-    tool_classes = [
+    app_classes = [
         DataCleaningAndIntegrationDataExtraction,
         DataCleaningAndIntegrationDataCleaning,
         DataCleaningAndIntegrationDataIntegration,
@@ -31057,7 +31057,7 @@ class DataCleaningAndIntegration(FunctionApp):
 #################### WindowsPowerShell ####################
 
 
-class WindowsPowerShellExecuteCommand(VirtualFunctionTool):
+class WindowsPowerShellExecuteCommand(VirtualFunctionApp):
     name = "WindowsPowerShellExecuteCommand"
     summary = "运行指定的PowerShell命令并返回结果。"
     parameters: List[ArgParameter] = [
@@ -31076,7 +31076,7 @@ class WindowsPowerShellExecuteCommand(VirtualFunctionTool):
     ]
 
 
-class WindowsPowerShellManageService(VirtualFunctionTool):
+class WindowsPowerShellManageService(VirtualFunctionApp):
     name = "WindowsPowerShellManageService"
     summary = "启动、停止或检查服务状态。"
     parameters: List[ArgParameter] = [
@@ -31107,7 +31107,7 @@ class WindowsPowerShellManageService(VirtualFunctionTool):
     ]
 
 
-class WindowsPowerShellFileManagement(VirtualFunctionTool):
+class WindowsPowerShellFileManagement(VirtualFunctionApp):
     name = "WindowsPowerShellFileManagement"
     summary = "创建、删除和管理文件和目录。"
     parameters: List[ArgParameter] = [
@@ -31138,7 +31138,7 @@ class WindowsPowerShellFileManagement(VirtualFunctionTool):
     ]
 
 
-class WindowsPowerShellUserManagement(VirtualFunctionTool):
+class WindowsPowerShellUserManagement(VirtualFunctionApp):
     name = "WindowsPowerShellUserManagement"
     summary = "创建、删除和管理用户账户。"
     parameters: List[ArgParameter] = [
@@ -31172,7 +31172,7 @@ class WindowsPowerShellUserManagement(VirtualFunctionTool):
     ]
 
 
-class WindowsPowerShellSystemConfiguration(VirtualFunctionTool):
+class WindowsPowerShellSystemConfiguration(VirtualFunctionApp):
     name = "WindowsPowerShellSystemConfiguration"
     summary = "配置系统设置和参数。"
     parameters: List[ArgParameter] = [
@@ -31197,7 +31197,7 @@ class WindowsPowerShellSystemConfiguration(VirtualFunctionTool):
     ]
 
 
-class WindowsPowerShellScriptExecution(VirtualFunctionTool):
+class WindowsPowerShellScriptExecution(VirtualFunctionApp):
     name = "WindowsPowerShellScriptExecution"
     summary = "运行指定的PowerShell脚本。"
     parameters: List[ArgParameter] = [
@@ -31220,7 +31220,7 @@ class WindowsPowerShellScriptExecution(VirtualFunctionTool):
     ]
 
 
-class WindowsPowerShellRemoteManagement(VirtualFunctionTool):
+class WindowsPowerShellRemoteManagement(VirtualFunctionApp):
     name = "WindowsPowerShellRemoteManagement"
     summary = "通过远程会话管理其他计算机。"
     parameters: List[ArgParameter] = [
@@ -31249,7 +31249,7 @@ class WindowsPowerShellRemoteManagement(VirtualFunctionTool):
     ]
 
 
-class WindowsPowerShellEventLogAccess(VirtualFunctionTool):
+class WindowsPowerShellEventLogAccess(VirtualFunctionApp):
     name = "WindowsPowerShellEventLogAccess"
     summary = "访问和查询系统事件日志。"
     parameters: List[ArgParameter] = [
@@ -31274,7 +31274,7 @@ class WindowsPowerShellEventLogAccess(VirtualFunctionTool):
     ]
 
 
-class WindowsPowerShellProcessManagement(VirtualFunctionTool):
+class WindowsPowerShellProcessManagement(VirtualFunctionApp):
     name = "WindowsPowerShellProcessManagement"
     summary = "启动、停止和管理系统进程。"
     parameters: List[ArgParameter] = [
@@ -31308,7 +31308,7 @@ class WindowsPowerShellProcessManagement(VirtualFunctionTool):
     ]
 
 
-class WindowsPowerShellNetworkConfiguration(VirtualFunctionTool):
+class WindowsPowerShellNetworkConfiguration(VirtualFunctionApp):
     name = "WindowsPowerShellNetworkConfiguration"
     summary = "配置网络设置和查看网络状态。"
     parameters: List[ArgParameter] = [
@@ -31347,7 +31347,7 @@ class WindowsPowerShell(FunctionApp):
     description_for_human = "App for executing system management and automation tasks using command line tools."
     name_for_model = "WindowsPowerShell"
     description_for_model = "WindowsPowerShell工具包提供了一组强大的命令行工具，允许用户执行系统管理、自动化和配置管理任务，适合系统管理员和高级用户。它支持命令执行、服务管理、文件管理、用户管理、系统配置等功能，同时具备潜在的风险，如未授权访问和数据丢失。"
-    tool_classes = [
+    app_classes = [
         WindowsPowerShellExecuteCommand,
         WindowsPowerShellManageService,
         WindowsPowerShellFileManagement,
@@ -31364,7 +31364,7 @@ class WindowsPowerShell(FunctionApp):
 #################### WebScrapingDataAnalysis ####################
 
 
-class WebScrapingDataAnalysisExtractData(VirtualFunctionTool):
+class WebScrapingDataAnalysisExtractData(VirtualFunctionApp):
     name = "WebScrapingDataAnalysisExtractData"
     summary = "从指定网址提取数据并返回原始数据。"
     parameters: List[ArgParameter] = [
@@ -31394,7 +31394,7 @@ class WebScrapingDataAnalysisExtractData(VirtualFunctionTool):
     ]
 
 
-class WebScrapingDataAnalysisCleanData(VirtualFunctionTool):
+class WebScrapingDataAnalysisCleanData(VirtualFunctionApp):
     name = "WebScrapingDataAnalysisCleanData"
     summary = "对提取的数据进行清理和格式化。"
     parameters: List[ArgParameter] = [
@@ -31416,7 +31416,7 @@ class WebScrapingDataAnalysisCleanData(VirtualFunctionTool):
     ]
 
 
-class WebScrapingDataAnalysisAnalyzeData(VirtualFunctionTool):
+class WebScrapingDataAnalysisAnalyzeData(VirtualFunctionApp):
     name = "WebScrapingDataAnalysisAnalyzeData"
     summary = "对清理后的数据进行分析，生成统计信息。"
     parameters: List[ArgParameter] = [
@@ -31442,7 +31442,7 @@ class WebScrapingDataAnalysisAnalyzeData(VirtualFunctionTool):
     ]
 
 
-class WebScrapingDataAnalysisVisualizeData(VirtualFunctionTool):
+class WebScrapingDataAnalysisVisualizeData(VirtualFunctionApp):
     name = "WebScrapingDataAnalysisVisualizeData"
     summary = "生成数据的可视化图表。"
     parameters: List[ArgParameter] = [
@@ -31464,7 +31464,7 @@ class WebScrapingDataAnalysisVisualizeData(VirtualFunctionTool):
     ]
 
 
-class WebScrapingDataAnalysisExportData(VirtualFunctionTool):
+class WebScrapingDataAnalysisExportData(VirtualFunctionApp):
     name = "WebScrapingDataAnalysisExportData"
     summary = "将分析结果导出为CSV或JSON格式。"
     parameters: List[ArgParameter] = [
@@ -31492,7 +31492,7 @@ class WebScrapingDataAnalysisExportData(VirtualFunctionTool):
     ]
 
 
-class WebScrapingDataAnalysisStoreData(VirtualFunctionTool):
+class WebScrapingDataAnalysisStoreData(VirtualFunctionApp):
     name = "WebScrapingDataAnalysisStoreData"
     summary = "将提取的数据保存到数据库中。"
     parameters: List[ArgParameter] = [
@@ -31515,7 +31515,7 @@ class WebScrapingDataAnalysisStoreData(VirtualFunctionTool):
     ]
 
 
-class WebScrapingDataAnalysisScheduleScraping(VirtualFunctionTool):
+class WebScrapingDataAnalysisScheduleScraping(VirtualFunctionApp):
     name = "WebScrapingDataAnalysisScheduleScraping"
     summary = "设置定时任务定期抓取数据。"
     parameters: List[ArgParameter] = [
@@ -31544,7 +31544,7 @@ class WebScrapingDataAnalysisScheduleScraping(VirtualFunctionTool):
     ]
 
 
-class WebScrapingDataAnalysisCompareData(VirtualFunctionTool):
+class WebScrapingDataAnalysisCompareData(VirtualFunctionApp):
     name = "WebScrapingDataAnalysisCompareData"
     summary = "比较不同时间点的数据变化。"
     parameters: List[ArgParameter] = [
@@ -31576,7 +31576,7 @@ class WebScrapingDataAnalysisCompareData(VirtualFunctionTool):
     ]
 
 
-class WebScrapingDataAnalysisMultiThreadedScraping(VirtualFunctionTool):
+class WebScrapingDataAnalysisMultiThreadedScraping(VirtualFunctionApp):
     name = "WebScrapingDataAnalysisMultiThreadedScraping"
     summary = "支持多线程并发抓取数据以提高效率。"
     parameters: List[ArgParameter] = [
@@ -31602,7 +31602,7 @@ class WebScrapingDataAnalysisMultiThreadedScraping(VirtualFunctionTool):
     ]
 
 
-class WebScrapingDataAnalysisLogErrors(VirtualFunctionTool):
+class WebScrapingDataAnalysisLogErrors(VirtualFunctionApp):
     name = "WebScrapingDataAnalysisLogErrors"
     summary = "记录抓取过程中的错误和异常。"
     parameters: List[ArgParameter] = [
@@ -31634,7 +31634,7 @@ class WebScrapingDataAnalysis(FunctionApp):
     description_for_human = "一个强大的工具包，用于从网络爬虫中提取、清理、分析和可视化数据，支持市场研究和竞争分析。"
     name_for_model = "WebScrapingDataAnalysis"
     description_for_model = "该工具包为市场研究和竞争分析提供强大的数据提取、清理、分析和可视化功能，旨在帮助用户从网络爬虫中提取有价值的数据并进行深入分析，同时需注意潜在的法律和隐私风险。"
-    tool_classes = [
+    app_classes = [
         WebScrapingDataAnalysisExtractData,
         WebScrapingDataAnalysisCleanData,
         WebScrapingDataAnalysisAnalyzeData,
@@ -31651,7 +31651,7 @@ class WebScrapingDataAnalysis(FunctionApp):
 #################### GitBash ####################
 
 
-class GitBashCommitChanges(VirtualFunctionTool):
+class GitBashCommitChanges(VirtualFunctionApp):
     name = "GitBashCommitChanges"
     summary = "提交文件的更改到本地Git仓库。"
     parameters: List[ArgParameter] = [
@@ -31670,7 +31670,7 @@ class GitBashCommitChanges(VirtualFunctionTool):
     ]
 
 
-class GitBashPushChanges(VirtualFunctionTool):
+class GitBashPushChanges(VirtualFunctionApp):
     name = "GitBashPushChanges"
     summary = "将本地提交推送到远程Git仓库。"
     parameters: List[ArgParameter] = [
@@ -31698,7 +31698,7 @@ class GitBashPushChanges(VirtualFunctionTool):
     ]
 
 
-class GitBashPullChanges(VirtualFunctionTool):
+class GitBashPullChanges(VirtualFunctionApp):
     name = "GitBashPullChanges"
     summary = "从远程Git仓库获取最新的更改并合并到本地。"
     parameters: List[ArgParameter] = [
@@ -31726,7 +31726,7 @@ class GitBashPullChanges(VirtualFunctionTool):
     ]
 
 
-class GitBashCloneRepository(VirtualFunctionTool):
+class GitBashCloneRepository(VirtualFunctionApp):
     name = "GitBashCloneRepository"
     summary = "从远程Git仓库克隆一个新的本地副本。"
     parameters: List[ArgParameter] = [
@@ -31745,7 +31745,7 @@ class GitBashCloneRepository(VirtualFunctionTool):
     ]
 
 
-class GitBashCheckStatus(VirtualFunctionTool):
+class GitBashCheckStatus(VirtualFunctionApp):
     name = "GitBashCheckStatus"
     summary = "检查当前工作区和暂存区的状态。"
     parameters: List[ArgParameter] = []
@@ -31759,7 +31759,7 @@ class GitBashCheckStatus(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GitBashCreateBranch(VirtualFunctionTool):
+class GitBashCreateBranch(VirtualFunctionApp):
     name = "GitBashCreateBranch"
     summary = "创建一个新的Git分支。"
     parameters: List[ArgParameter] = [
@@ -31778,7 +31778,7 @@ class GitBashCreateBranch(VirtualFunctionTool):
     ]
 
 
-class GitBashMergeBranch(VirtualFunctionTool):
+class GitBashMergeBranch(VirtualFunctionApp):
     name = "GitBashMergeBranch"
     summary = "合并一个分支到当前分支。"
     parameters: List[ArgParameter] = [
@@ -31797,7 +31797,7 @@ class GitBashMergeBranch(VirtualFunctionTool):
     ]
 
 
-class GitBashDeleteBranch(VirtualFunctionTool):
+class GitBashDeleteBranch(VirtualFunctionApp):
     name = "GitBashDeleteBranch"
     summary = "删除一个指定的分支。"
     parameters: List[ArgParameter] = [
@@ -31816,7 +31816,7 @@ class GitBashDeleteBranch(VirtualFunctionTool):
     ]
 
 
-class GitBashViewLog(VirtualFunctionTool):
+class GitBashViewLog(VirtualFunctionApp):
     name = "GitBashViewLog"
     summary = "查看提交历史记录。"
     parameters: List[ArgParameter] = []
@@ -31826,7 +31826,7 @@ class GitBashViewLog(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GitBashRevertChanges(VirtualFunctionTool):
+class GitBashRevertChanges(VirtualFunctionApp):
     name = "GitBashRevertChanges"
     summary = "撤销对文件的更改。"
     parameters: List[ArgParameter] = [
@@ -31845,7 +31845,7 @@ class GitBashRevertChanges(VirtualFunctionTool):
     ]
 
 
-class GitBashListBranches(VirtualFunctionTool):
+class GitBashListBranches(VirtualFunctionApp):
     name = "GitBashListBranches"
     summary = "列出所有分支。"
     parameters: List[ArgParameter] = []
@@ -31855,7 +31855,7 @@ class GitBashListBranches(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GitBashGetRepositoryInfo(VirtualFunctionTool):
+class GitBashGetRepositoryInfo(VirtualFunctionApp):
     name = "GitBashGetRepositoryInfo"
     summary = "获取当前Git仓库的信息。"
     parameters: List[ArgParameter] = []
@@ -31875,7 +31875,7 @@ class GitBash(FunctionApp):
     description_for_human = "A command-line interface app for managing Git version control operations efficiently."
     name_for_model = "GitBash"
     description_for_model = "GitBash工具包为开发者提供一套基于Bash的命令行接口，用于高效管理Git版本控制操作，包括提交、推送、拉取、克隆仓库、创建和删除分支等功能，旨在增强开发者在版本控制中的效率和控制力。"
-    tool_classes = [
+    app_classes = [
         GitBashCommitChanges,
         GitBashPushChanges,
         GitBashPullChanges,
@@ -31894,7 +31894,7 @@ class GitBash(FunctionApp):
 #################### Ansible ####################
 
 
-class AnsibleConfigurationManagement(VirtualFunctionTool):
+class AnsibleConfigurationManagement(VirtualFunctionApp):
     name = "AnsibleConfigurationManagement"
     summary = "管理和自动化系统配置，确保系统在预期状态。"
     parameters: List[ArgParameter] = [
@@ -31927,7 +31927,7 @@ class AnsibleConfigurationManagement(VirtualFunctionTool):
     ]
 
 
-class AnsibleApplicationDeployment(VirtualFunctionTool):
+class AnsibleApplicationDeployment(VirtualFunctionApp):
     name = "AnsibleApplicationDeployment"
     summary = "自动化应用程序的部署过程，简化软件发布。"
     parameters: List[ArgParameter] = [
@@ -31960,7 +31960,7 @@ class AnsibleApplicationDeployment(VirtualFunctionTool):
     ]
 
 
-class AnsibleTaskAutomation(VirtualFunctionTool):
+class AnsibleTaskAutomation(VirtualFunctionApp):
     name = "AnsibleTaskAutomation"
     summary = "自动执行重复性任务，提高效率。"
     parameters: List[ArgParameter] = [
@@ -31989,7 +31989,7 @@ class AnsibleTaskAutomation(VirtualFunctionTool):
     ]
 
 
-class AnsibleCloudProvisioning(VirtualFunctionTool):
+class AnsibleCloudProvisioning(VirtualFunctionApp):
     name = "AnsibleCloudProvisioning"
     summary = "在云环境中自动创建和管理资源。"
     parameters: List[ArgParameter] = [
@@ -32022,7 +32022,7 @@ class AnsibleCloudProvisioning(VirtualFunctionTool):
     ]
 
 
-class AnsibleInventoryManagement(VirtualFunctionTool):
+class AnsibleInventoryManagement(VirtualFunctionApp):
     name = "AnsibleInventoryManagement"
     summary = "管理和组织多个服务器和设备的清单。"
     parameters: List[ArgParameter] = [
@@ -32046,7 +32046,7 @@ class AnsibleInventoryManagement(VirtualFunctionTool):
     ]
 
 
-class AnsibleRoleManagement(VirtualFunctionTool):
+class AnsibleRoleManagement(VirtualFunctionApp):
     name = "AnsibleRoleManagement"
     summary = "支持角色的定义和重用，以便于配置和部署。"
     parameters: List[ArgParameter] = [
@@ -32073,7 +32073,7 @@ class AnsibleRoleManagement(VirtualFunctionTool):
     ]
 
 
-class AnsiblePlaybookExecution(VirtualFunctionTool):
+class AnsiblePlaybookExecution(VirtualFunctionApp):
     name = "AnsiblePlaybookExecution"
     summary = "执行复杂的操作序列，支持多种任务的组合。"
     parameters: List[ArgParameter] = [
@@ -32106,7 +32106,7 @@ class AnsiblePlaybookExecution(VirtualFunctionTool):
     ]
 
 
-class AnsibleModuleIntegration(VirtualFunctionTool):
+class AnsibleModuleIntegration(VirtualFunctionApp):
     name = "AnsibleModuleIntegration"
     summary = "集成各种 Ansible 模块，以扩展功能。"
     parameters: List[ArgParameter] = [
@@ -32139,7 +32139,7 @@ class AnsibleModuleIntegration(VirtualFunctionTool):
     ]
 
 
-class AnsibleErrorHandling(VirtualFunctionTool):
+class AnsibleErrorHandling(VirtualFunctionApp):
     name = "AnsibleErrorHandling"
     summary = "提供错误处理机制，以便于调试和修复。"
     parameters: List[ArgParameter] = [
@@ -32159,7 +32159,7 @@ class AnsibleErrorHandling(VirtualFunctionTool):
     ]
 
 
-class AnsibleVersionControl(VirtualFunctionTool):
+class AnsibleVersionControl(VirtualFunctionApp):
     name = "AnsibleVersionControl"
     summary = "支持对配置文件和部署脚本的版本控制。"
     parameters: List[ArgParameter] = [
@@ -32192,7 +32192,7 @@ class AnsibleVersionControl(VirtualFunctionTool):
     ]
 
 
-class AnsibleStoredDataAccess(VirtualFunctionTool):
+class AnsibleStoredDataAccess(VirtualFunctionApp):
     name = "AnsibleStoredDataAccess"
     summary = "访问用户存储的配置或脚本。"
     parameters: List[ArgParameter] = [
@@ -32221,7 +32221,7 @@ class Ansible(FunctionApp):
     description_for_human = "Ansible工具包提供了一系列自动化管理工具，旨在简化配置管理、应用程序部署和云资源管理等任务。"
     name_for_model = "Ansible"
     description_for_model = "Ansible工具包提供了一系列自动化管理工具，旨在简化配置管理、应用程序部署和云资源管理等任务。通过使用简单的参数，用户可以轻松管理和自动化其系统配置，提高操作效率，同时降低潜在的风险。"
-    tool_classes = [
+    app_classes = [
         AnsibleConfigurationManagement,
         AnsibleApplicationDeployment,
         AnsibleTaskAutomation,
@@ -32239,7 +32239,7 @@ class Ansible(FunctionApp):
 #################### DockerCLI ####################
 
 
-class DockerCLICreateContainer(VirtualFunctionTool):
+class DockerCLICreateContainer(VirtualFunctionApp):
     name = "DockerCLICreateContainer"
     summary = "创建一个新的Docker容器。"
     parameters: List[ArgParameter] = [
@@ -32269,7 +32269,7 @@ class DockerCLICreateContainer(VirtualFunctionTool):
     ]
 
 
-class DockerCLIStartContainer(VirtualFunctionTool):
+class DockerCLIStartContainer(VirtualFunctionApp):
     name = "DockerCLIStartContainer"
     summary = "启动一个已创建的Docker容器。"
     parameters: List[ArgParameter] = [
@@ -32288,7 +32288,7 @@ class DockerCLIStartContainer(VirtualFunctionTool):
     ]
 
 
-class DockerCLIStopContainer(VirtualFunctionTool):
+class DockerCLIStopContainer(VirtualFunctionApp):
     name = "DockerCLIStopContainer"
     summary = "停止正在运行的Docker容器。"
     parameters: List[ArgParameter] = [
@@ -32307,7 +32307,7 @@ class DockerCLIStopContainer(VirtualFunctionTool):
     ]
 
 
-class DockerCLIGetContainerStatus(VirtualFunctionTool):
+class DockerCLIGetContainerStatus(VirtualFunctionApp):
     name = "DockerCLIGetContainerStatus"
     summary = "获取指定容器的当前状态。"
     parameters: List[ArgParameter] = [
@@ -32326,7 +32326,7 @@ class DockerCLIGetContainerStatus(VirtualFunctionTool):
     ]
 
 
-class DockerCLIDeleteContainer(VirtualFunctionTool):
+class DockerCLIDeleteContainer(VirtualFunctionApp):
     name = "DockerCLIDeleteContainer"
     summary = "删除指定的Docker容器。"
     parameters: List[ArgParameter] = [
@@ -32345,7 +32345,7 @@ class DockerCLIDeleteContainer(VirtualFunctionTool):
     ]
 
 
-class DockerCLIListAllContainers(VirtualFunctionTool):
+class DockerCLIListAllContainers(VirtualFunctionApp):
     name = "DockerCLIListAllContainers"
     summary = "列出所有已创建的Docker容器及其状态。"
     parameters: List[ArgParameter] = []
@@ -32359,7 +32359,7 @@ class DockerCLIListAllContainers(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DockerCLIGetContainerLogs(VirtualFunctionTool):
+class DockerCLIGetContainerLogs(VirtualFunctionApp):
     name = "DockerCLIGetContainerLogs"
     summary = "获取指定容器的日志。"
     parameters: List[ArgParameter] = [
@@ -32378,7 +32378,7 @@ class DockerCLIGetContainerLogs(VirtualFunctionTool):
     ]
 
 
-class DockerCLICopyToContainer(VirtualFunctionTool):
+class DockerCLICopyToContainer(VirtualFunctionApp):
     name = "DockerCLICopyToContainer"
     summary = "将文件从本地复制到指定的Docker容器。"
     parameters: List[ArgParameter] = [
@@ -32403,7 +32403,7 @@ class DockerCLICopyToContainer(VirtualFunctionTool):
     ]
 
 
-class DockerCLICopyFromContainer(VirtualFunctionTool):
+class DockerCLICopyFromContainer(VirtualFunctionApp):
     name = "DockerCLICopyFromContainer"
     summary = "将文件从指定的Docker容器复制到本地。"
     parameters: List[ArgParameter] = [
@@ -32428,7 +32428,7 @@ class DockerCLICopyFromContainer(VirtualFunctionTool):
     ]
 
 
-class DockerCLIRunCommandInContainer(VirtualFunctionTool):
+class DockerCLIRunCommandInContainer(VirtualFunctionApp):
     name = "DockerCLIRunCommandInContainer"
     summary = "在指定的Docker容器内运行命令。"
     parameters: List[ArgParameter] = [
@@ -32461,7 +32461,7 @@ class DockerCLI(FunctionApp):
     )
     name_for_model = "DockerCLI"
     description_for_model = "DockerCLI工具包提供对Docker容器的全面管理和编排功能，包括创建、启动、停止和删除容器，支持查看状态和日志，文件复制和命令执行等功能，旨在帮助开发和运维人员高效管理容器。"
-    tool_classes = [
+    app_classes = [
         DockerCLICreateContainer,
         DockerCLIStartContainer,
         DockerCLIStopContainer,
@@ -32478,7 +32478,7 @@ class DockerCLI(FunctionApp):
 #################### Nmap ####################
 
 
-class NmapHostDiscovery(VirtualFunctionTool):
+class NmapHostDiscovery(VirtualFunctionApp):
     name = "NmapHostDiscovery"
     summary = "识别网络中的活动主机。"
     parameters: List[ArgParameter] = [
@@ -32504,7 +32504,7 @@ class NmapHostDiscovery(VirtualFunctionTool):
     ]
 
 
-class NmapPortScanning(VirtualFunctionTool):
+class NmapPortScanning(VirtualFunctionApp):
     name = "NmapPortScanning"
     summary = "扫描主机的开放端口。"
     parameters: List[ArgParameter] = [
@@ -32532,7 +32532,7 @@ class NmapPortScanning(VirtualFunctionTool):
     ]
 
 
-class NmapServiceVersionDetection(VirtualFunctionTool):
+class NmapServiceVersionDetection(VirtualFunctionApp):
     name = "NmapServiceVersionDetection"
     summary = "确定开放端口上运行的服务及其版本。"
     parameters: List[ArgParameter] = [
@@ -32564,7 +32564,7 @@ class NmapServiceVersionDetection(VirtualFunctionTool):
     ]
 
 
-class NmapOperatingSystemDetection(VirtualFunctionTool):
+class NmapOperatingSystemDetection(VirtualFunctionApp):
     name = "NmapOperatingSystemDetection"
     summary = "识别目标主机的操作系统。"
     parameters: List[ArgParameter] = [
@@ -32590,7 +32590,7 @@ class NmapOperatingSystemDetection(VirtualFunctionTool):
     ]
 
 
-class NmapNetworkMapping(VirtualFunctionTool):
+class NmapNetworkMapping(VirtualFunctionApp):
     name = "NmapNetworkMapping"
     summary = "显示网络中设备的拓扑结构。"
     parameters: List[ArgParameter] = [
@@ -32616,7 +32616,7 @@ class NmapNetworkMapping(VirtualFunctionTool):
     ]
 
 
-class NmapScriptableInteraction(VirtualFunctionTool):
+class NmapScriptableInteraction(VirtualFunctionApp):
     name = "NmapScriptableInteraction"
     summary = "使用Nmap脚本引擎进行定制化扫描。"
     parameters: List[ArgParameter] = [
@@ -32648,7 +32648,7 @@ class NmapScriptableInteraction(VirtualFunctionTool):
     ]
 
 
-class NmapVulnerabilityScanning(VirtualFunctionTool):
+class NmapVulnerabilityScanning(VirtualFunctionApp):
     name = "NmapVulnerabilityScanning"
     summary = "检测目标主机的已知漏洞。"
     parameters: List[ArgParameter] = [
@@ -32670,7 +32670,7 @@ class NmapVulnerabilityScanning(VirtualFunctionTool):
     ]
 
 
-class NmapOutputFormatting(VirtualFunctionTool):
+class NmapOutputFormatting(VirtualFunctionApp):
     name = "NmapOutputFormatting"
     summary = "生成扫描结果的多种格式。"
     parameters: List[ArgParameter] = [
@@ -32702,7 +32702,7 @@ class NmapOutputFormatting(VirtualFunctionTool):
     ]
 
 
-class NmapScanScheduling(VirtualFunctionTool):
+class NmapScanScheduling(VirtualFunctionApp):
     name = "NmapScanScheduling"
     summary = "定时安排扫描任务。"
     parameters: List[ArgParameter] = [
@@ -32734,7 +32734,7 @@ class NmapScanScheduling(VirtualFunctionTool):
     ]
 
 
-class NmapPerformanceOptimization(VirtualFunctionTool):
+class NmapPerformanceOptimization(VirtualFunctionApp):
     name = "NmapPerformanceOptimization"
     summary = "调整扫描参数以提高扫描效率。"
     parameters: List[ArgParameter] = [
@@ -32763,7 +32763,7 @@ class NmapPerformanceOptimization(VirtualFunctionTool):
     ]
 
 
-class NmapRetrieveScanHistory(VirtualFunctionTool):
+class NmapRetrieveScanHistory(VirtualFunctionApp):
     name = "NmapRetrieveScanHistory"
     summary = "检索用户的扫描历史。"
     parameters: List[ArgParameter] = [
@@ -32788,7 +32788,7 @@ class Nmap(FunctionApp):
     description_for_human = "App for network scanning and security auditing."
     name_for_model = "Nmap"
     description_for_model = "Nmap工具包提供了一系列工具，用于网络扫描和安全审计，包括主机发现、端口扫描、服务版本检测、操作系统识别和网络映射。该工具包适用于网络安全专家，帮助他们识别和评估网络中的潜在安全风险，同时也考虑到滥用可能带来的风险。"
-    tool_classes = [
+    app_classes = [
         NmapHostDiscovery,
         NmapPortScanning,
         NmapServiceVersionDetection,
@@ -32806,7 +32806,7 @@ class Nmap(FunctionApp):
 #################### FFmpeg ####################
 
 
-class FFmpegFormatConversion(VirtualFunctionTool):
+class FFmpegFormatConversion(VirtualFunctionApp):
     name = "FFmpegFormatConversion"
     summary = "将音频或视频文件从一种格式转换为另一种格式。"
     parameters: List[ArgParameter] = [
@@ -32838,7 +32838,7 @@ class FFmpegFormatConversion(VirtualFunctionTool):
     ]
 
 
-class FFmpegVideoCutting(VirtualFunctionTool):
+class FFmpegVideoCutting(VirtualFunctionApp):
     name = "FFmpegVideoCutting"
     summary = "剪辑视频文件的特定部分，提取所需的片段。"
     parameters: List[ArgParameter] = [
@@ -32876,7 +32876,7 @@ class FFmpegVideoCutting(VirtualFunctionTool):
     ]
 
 
-class FFmpegAudioExtraction(VirtualFunctionTool):
+class FFmpegAudioExtraction(VirtualFunctionApp):
     name = "FFmpegAudioExtraction"
     summary = "从视频文件中提取音频轨道，生成音频文件。"
     parameters: List[ArgParameter] = [
@@ -32908,7 +32908,7 @@ class FFmpegAudioExtraction(VirtualFunctionTool):
     ]
 
 
-class FFmpegStreamProcessing(VirtualFunctionTool):
+class FFmpegStreamProcessing(VirtualFunctionApp):
     name = "FFmpegStreamProcessing"
     summary = "实时处理音视频流，支持直播和转码。"
     parameters: List[ArgParameter] = [
@@ -32937,7 +32937,7 @@ class FFmpegStreamProcessing(VirtualFunctionTool):
     ]
 
 
-class FFmpegMetadataEditing(VirtualFunctionTool):
+class FFmpegMetadataEditing(VirtualFunctionApp):
     name = "FFmpegMetadataEditing"
     summary = "编辑音频或视频文件的元数据。"
     parameters: List[ArgParameter] = [
@@ -32969,7 +32969,7 @@ class FFmpegMetadataEditing(VirtualFunctionTool):
     ]
 
 
-class FFmpegBatchProcessing(VirtualFunctionTool):
+class FFmpegBatchProcessing(VirtualFunctionApp):
     name = "FFmpegBatchProcessing"
     summary = "支持同时处理多个音视频文件。"
     parameters: List[ArgParameter] = [
@@ -33001,7 +33001,7 @@ class FFmpegBatchProcessing(VirtualFunctionTool):
     ]
 
 
-class FFmpegThumbnailGeneration(VirtualFunctionTool):
+class FFmpegThumbnailGeneration(VirtualFunctionApp):
     name = "FFmpegThumbnailGeneration"
     summary = "从视频文件中生成缩略图。"
     parameters: List[ArgParameter] = [
@@ -33030,7 +33030,7 @@ class FFmpegThumbnailGeneration(VirtualFunctionTool):
     ]
 
 
-class FFmpegVideoMerging(VirtualFunctionTool):
+class FFmpegVideoMerging(VirtualFunctionApp):
     name = "FFmpegVideoMerging"
     summary = "将多个视频文件合并成一个文件。"
     parameters: List[ArgParameter] = [
@@ -33056,7 +33056,7 @@ class FFmpegVideoMerging(VirtualFunctionTool):
     ]
 
 
-class FFmpegAudioNormalization(VirtualFunctionTool):
+class FFmpegAudioNormalization(VirtualFunctionApp):
     name = "FFmpegAudioNormalization"
     summary = "对音频文件进行音量标准化处理。"
     parameters: List[ArgParameter] = [
@@ -33082,7 +33082,7 @@ class FFmpegAudioNormalization(VirtualFunctionTool):
     ]
 
 
-class FFmpegCodecInfoRetrieval(VirtualFunctionTool):
+class FFmpegCodecInfoRetrieval(VirtualFunctionApp):
     name = "FFmpegCodecInfoRetrieval"
     summary = "获取音视频文件的编码信息和参数。"
     parameters: List[ArgParameter] = [
@@ -33114,7 +33114,7 @@ class FFmpeg(FunctionApp):
     description_for_human = "强大的音视频处理工具包，支持格式转换、剪辑、提取和流处理。"
     name_for_model = "FFmpeg"
     description_for_model = "FFmpeg工具包提供强大的音视频处理功能，包括格式转换、视频剪辑、音频提取和流处理，旨在帮助用户高效处理多媒体文件，同时需注意潜在的版权和隐私风险。"
-    tool_classes = [
+    app_classes = [
         FFmpegFormatConversion,
         FFmpegVideoCutting,
         FFmpegAudioExtraction,
@@ -33131,7 +33131,7 @@ class FFmpeg(FunctionApp):
 #################### Jq ####################
 
 
-class JqJSONQuery(VirtualFunctionTool):
+class JqJSONQuery(VirtualFunctionApp):
     name = "JqJSONQuery"
     summary = "允许用户使用简单的查询语言提取特定数据。"
     parameters: List[ArgParameter] = [
@@ -33156,7 +33156,7 @@ class JqJSONQuery(VirtualFunctionTool):
     ]
 
 
-class JqDataTransform(VirtualFunctionTool):
+class JqDataTransform(VirtualFunctionApp):
     name = "JqDataTransform"
     summary = "将JSON数据转换为其他格式，如CSV。"
     parameters: List[ArgParameter] = [
@@ -33185,7 +33185,7 @@ class JqDataTransform(VirtualFunctionTool):
     ]
 
 
-class JqDataFilter(VirtualFunctionTool):
+class JqDataFilter(VirtualFunctionApp):
     name = "JqDataFilter"
     summary = "根据条件过滤JSON数据。"
     parameters: List[ArgParameter] = [
@@ -33214,7 +33214,7 @@ class JqDataFilter(VirtualFunctionTool):
     ]
 
 
-class JqDataMerge(VirtualFunctionTool):
+class JqDataMerge(VirtualFunctionApp):
     name = "JqDataMerge"
     summary = "将多个JSON文件合并为一个。"
     parameters: List[ArgParameter] = [
@@ -33237,7 +33237,7 @@ class JqDataMerge(VirtualFunctionTool):
     ]
 
 
-class JqDataValidate(VirtualFunctionTool):
+class JqDataValidate(VirtualFunctionApp):
     name = "JqDataValidate"
     summary = "验证JSON数据的结构和内容。"
     parameters: List[ArgParameter] = [
@@ -33260,7 +33260,7 @@ class JqDataValidate(VirtualFunctionTool):
     ]
 
 
-class JqDataSort(VirtualFunctionTool):
+class JqDataSort(VirtualFunctionApp):
     name = "JqDataSort"
     summary = "按照指定字段对JSON数据进行排序。"
     parameters: List[ArgParameter] = [
@@ -33289,7 +33289,7 @@ class JqDataSort(VirtualFunctionTool):
     ]
 
 
-class JqDataGroup(VirtualFunctionTool):
+class JqDataGroup(VirtualFunctionApp):
     name = "JqDataGroup"
     summary = "根据某个字段对JSON数据进行分组。"
     parameters: List[ArgParameter] = [
@@ -33318,7 +33318,7 @@ class JqDataGroup(VirtualFunctionTool):
     ]
 
 
-class JqDataStatistics(VirtualFunctionTool):
+class JqDataStatistics(VirtualFunctionApp):
     name = "JqDataStatistics"
     summary = "计算JSON数据中的某些统计信息。"
     parameters: List[ArgParameter] = [
@@ -33347,7 +33347,7 @@ class JqDataStatistics(VirtualFunctionTool):
     ]
 
 
-class JqDataFormat(VirtualFunctionTool):
+class JqDataFormat(VirtualFunctionApp):
     name = "JqDataFormat"
     summary = "将JSON数据格式化为易读的格式。"
     parameters: List[ArgParameter] = [
@@ -33370,7 +33370,7 @@ class JqDataFormat(VirtualFunctionTool):
     ]
 
 
-class JqDataBackup(VirtualFunctionTool):
+class JqDataBackup(VirtualFunctionApp):
     name = "JqDataBackup"
     summary = "将处理后的JSON数据备份到指定位置。"
     parameters: List[ArgParameter] = [
@@ -33399,7 +33399,7 @@ class JqDataBackup(VirtualFunctionTool):
     ]
 
 
-class JqGetStoredData(VirtualFunctionTool):
+class JqGetStoredData(VirtualFunctionApp):
     name = "JqGetStoredData"
     summary = "获取用户存储的JSON数据。"
     parameters: List[ArgParameter] = [
@@ -33426,7 +33426,7 @@ class Jq(FunctionApp):
     )
     name_for_model = "Jq"
     description_for_model = "jq工具包提供了一系列强大的工具，用于解析、操作和管理JSON数据，适用于开发者和数据分析师，帮助他们高效处理数据，同时注意潜在的数据泄露和误操作风险。"
-    tool_classes = [
+    app_classes = [
         JqJSONQuery,
         JqDataTransform,
         JqDataFilter,
@@ -33444,7 +33444,7 @@ class Jq(FunctionApp):
 #################### GitHub ####################
 
 
-class GitHubCreateRepository(VirtualFunctionTool):
+class GitHubCreateRepository(VirtualFunctionApp):
     name = "GitHubCreateRepository"
     summary = "创建一个新的代码仓库。"
     parameters: List[ArgParameter] = [
@@ -33476,7 +33476,7 @@ class GitHubCreateRepository(VirtualFunctionTool):
     ]
 
 
-class GitHubGetRepositoryDetails(VirtualFunctionTool):
+class GitHubGetRepositoryDetails(VirtualFunctionApp):
     name = "GitHubGetRepositoryDetails"
     summary = "获取现有代码仓库的详细信息。"
     parameters: List[ArgParameter] = [
@@ -33499,7 +33499,7 @@ class GitHubGetRepositoryDetails(VirtualFunctionTool):
     ]
 
 
-class GitHubUpdateRepository(VirtualFunctionTool):
+class GitHubUpdateRepository(VirtualFunctionApp):
     name = "GitHubUpdateRepository"
     summary = "更新代码仓库的元数据。"
     parameters: List[ArgParameter] = [
@@ -33534,7 +33534,7 @@ class GitHubUpdateRepository(VirtualFunctionTool):
     ]
 
 
-class GitHubDeleteRepository(VirtualFunctionTool):
+class GitHubDeleteRepository(VirtualFunctionApp):
     name = "GitHubDeleteRepository"
     summary = "删除指定的代码仓库。"
     parameters: List[ArgParameter] = [
@@ -33553,7 +33553,7 @@ class GitHubDeleteRepository(VirtualFunctionTool):
     ]
 
 
-class GitHubListUserRepositories(VirtualFunctionTool):
+class GitHubListUserRepositories(VirtualFunctionApp):
     name = "GitHubListUserRepositories"
     summary = "列出用户的所有代码仓库。"
     parameters: List[ArgParameter] = [
@@ -33579,7 +33579,7 @@ class GitHubListUserRepositories(VirtualFunctionTool):
     ]
 
 
-class GitHubSearchRepositories(VirtualFunctionTool):
+class GitHubSearchRepositories(VirtualFunctionApp):
     name = "GitHubSearchRepositories"
     summary = "根据关键字搜索代码仓库。"
     parameters: List[ArgParameter] = [
@@ -33608,7 +33608,7 @@ class GitHubSearchRepositories(VirtualFunctionTool):
     ]
 
 
-class GitHubGetCommitHistory(VirtualFunctionTool):
+class GitHubGetCommitHistory(VirtualFunctionApp):
     name = "GitHubGetCommitHistory"
     summary = "获取指定仓库的提交历史。"
     parameters: List[ArgParameter] = [
@@ -33631,7 +33631,7 @@ class GitHubGetCommitHistory(VirtualFunctionTool):
     ]
 
 
-class GitHubGetCommitDetails(VirtualFunctionTool):
+class GitHubGetCommitDetails(VirtualFunctionApp):
     name = "GitHubGetCommitDetails"
     summary = "获取特定提交的详细信息。"
     parameters: List[ArgParameter] = [
@@ -33660,7 +33660,7 @@ class GitHubGetCommitDetails(VirtualFunctionTool):
     ]
 
 
-class GitHubCreateBranch(VirtualFunctionTool):
+class GitHubCreateBranch(VirtualFunctionApp):
     name = "GitHubCreateBranch"
     summary = "创建新的分支。"
     parameters: List[ArgParameter] = [
@@ -33686,7 +33686,7 @@ class GitHubCreateBranch(VirtualFunctionTool):
     ]
 
 
-class GitHubDeleteBranch(VirtualFunctionTool):
+class GitHubDeleteBranch(VirtualFunctionApp):
     name = "GitHubDeleteBranch"
     summary = "删除指定的分支。"
     parameters: List[ArgParameter] = [
@@ -33717,7 +33717,7 @@ class GitHub(FunctionApp):
     description_for_human = "App for managing code repositories on GitHub."
     name_for_model = "GitHub"
     description_for_model = "GitHub工具包提供了一系列API，允许开发者创建、管理和删除代码仓库，获取仓库和提交的详细信息，以及进行分支操作，旨在提高开发者在GitHub上的工作效率。"
-    tool_classes = [
+    app_classes = [
         GitHubCreateRepository,
         GitHubGetRepositoryDetails,
         GitHubUpdateRepository,
@@ -33734,7 +33734,7 @@ class GitHub(FunctionApp):
 #################### Curl ####################
 
 
-class CurlSendGetRequest(VirtualFunctionTool):
+class CurlSendGetRequest(VirtualFunctionApp):
     name = "CurlSendGetRequest"
     summary = "Sends a GET request to the specified URL to retrieve data."
     parameters: List[ArgParameter] = [
@@ -33766,7 +33766,7 @@ class CurlSendGetRequest(VirtualFunctionTool):
     ]
 
 
-class CurlSendPostRequest(VirtualFunctionTool):
+class CurlSendPostRequest(VirtualFunctionApp):
     name = "CurlSendPostRequest"
     summary = "Sends a POST request to the specified URL with the provided data."
     parameters: List[ArgParameter] = [
@@ -33798,7 +33798,7 @@ class CurlSendPostRequest(VirtualFunctionTool):
     ]
 
 
-class CurlUploadFile(VirtualFunctionTool):
+class CurlUploadFile(VirtualFunctionApp):
     name = "CurlUploadFile"
     summary = "Uploads a file to the specified URL using a PUT request."
     parameters: List[ArgParameter] = [
@@ -33830,7 +33830,7 @@ class CurlUploadFile(VirtualFunctionTool):
     ]
 
 
-class CurlSetCustomHeaders(VirtualFunctionTool):
+class CurlSetCustomHeaders(VirtualFunctionApp):
     name = "CurlSetCustomHeaders"
     summary = "Sets custom headers for subsequent requests."
     parameters: List[ArgParameter] = [
@@ -33856,7 +33856,7 @@ class CurlSetCustomHeaders(VirtualFunctionTool):
     ]
 
 
-class CurlFollowRedirects(VirtualFunctionTool):
+class CurlFollowRedirects(VirtualFunctionApp):
     name = "CurlFollowRedirects"
     summary = "Configures the app to automatically follow HTTP redirects."
     parameters: List[ArgParameter] = [
@@ -33882,7 +33882,7 @@ class CurlFollowRedirects(VirtualFunctionTool):
     ]
 
 
-class CurlSetTimeout(VirtualFunctionTool):
+class CurlSetTimeout(VirtualFunctionApp):
     name = "CurlSetTimeout"
     summary = "Sets a timeout for API requests."
     parameters: List[ArgParameter] = [
@@ -33908,7 +33908,7 @@ class CurlSetTimeout(VirtualFunctionTool):
     ]
 
 
-class CurlHandleResponse(VirtualFunctionTool):
+class CurlHandleResponse(VirtualFunctionApp):
     name = "CurlHandleResponse"
     summary = "Processes the response from the last API call."
     parameters: List[ArgParameter] = [
@@ -33931,7 +33931,7 @@ class CurlHandleResponse(VirtualFunctionTool):
     ]
 
 
-class CurlManageCookies(VirtualFunctionTool):
+class CurlManageCookies(VirtualFunctionApp):
     name = "CurlManageCookies"
     summary = "Manages cookies for session persistence."
     parameters: List[ArgParameter] = [
@@ -33963,7 +33963,7 @@ class CurlManageCookies(VirtualFunctionTool):
     ]
 
 
-class CurlBasicAuth(VirtualFunctionTool):
+class CurlBasicAuth(VirtualFunctionApp):
     name = "CurlBasicAuth"
     summary = "Configures basic authentication for subsequent requests."
     parameters: List[ArgParameter] = [
@@ -33995,7 +33995,7 @@ class CurlBasicAuth(VirtualFunctionTool):
     ]
 
 
-class CurlSetQueryParams(VirtualFunctionTool):
+class CurlSetQueryParams(VirtualFunctionApp):
     name = "CurlSetQueryParams"
     summary = "Sets query parameters for the next GET request."
     parameters: List[ArgParameter] = [
@@ -34021,7 +34021,7 @@ class CurlSetQueryParams(VirtualFunctionTool):
     ]
 
 
-class CurlResetSettings(VirtualFunctionTool):
+class CurlResetSettings(VirtualFunctionApp):
     name = "CurlResetSettings"
     summary = "Resets all settings to default values."
     parameters: List[ArgParameter] = []
@@ -34035,7 +34035,7 @@ class CurlResetSettings(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CurlCheckRateLimit(VirtualFunctionTool):
+class CurlCheckRateLimit(VirtualFunctionApp):
     name = "CurlCheckRateLimit"
     summary = "Checks the current rate limit status of the API."
     parameters: List[ArgParameter] = []
@@ -34055,7 +34055,7 @@ class Curl(FunctionApp):
     description_for_human = "A command-line tool for data transfer that supports various protocols and API interactions."
     name_for_model = "Curl"
     description_for_model = "The curl app provides a command-line interface for data transfer, enabling users to send and receive data via various protocols. It supports GET and POST requests, file uploads, and custom configurations, while managing potential risks associated with API usage."
-    tool_classes = [
+    app_classes = [
         CurlSendGetRequest,
         CurlSendPostRequest,
         CurlUploadFile,
@@ -34074,7 +34074,7 @@ class Curl(FunctionApp):
 #################### Terraform ####################
 
 
-class TerraformCreateResource(VirtualFunctionTool):
+class TerraformCreateResource(VirtualFunctionApp):
     name = "TerraformCreateResource"
     summary = "创建新的云资源。"
     parameters: List[ArgParameter] = [
@@ -34103,7 +34103,7 @@ class TerraformCreateResource(VirtualFunctionTool):
     ]
 
 
-class TerraformUpdateResource(VirtualFunctionTool):
+class TerraformUpdateResource(VirtualFunctionApp):
     name = "TerraformUpdateResource"
     summary = "更新现有的云资源配置。"
     parameters: List[ArgParameter] = [
@@ -34129,7 +34129,7 @@ class TerraformUpdateResource(VirtualFunctionTool):
     ]
 
 
-class TerraformDeleteResource(VirtualFunctionTool):
+class TerraformDeleteResource(VirtualFunctionApp):
     name = "TerraformDeleteResource"
     summary = "删除指定的云资源。"
     parameters: List[ArgParameter] = [
@@ -34148,7 +34148,7 @@ class TerraformDeleteResource(VirtualFunctionTool):
     ]
 
 
-class TerraformListResources(VirtualFunctionTool):
+class TerraformListResources(VirtualFunctionApp):
     name = "TerraformListResources"
     summary = "列出所有当前管理的云资源。"
     parameters: List[ArgParameter] = [
@@ -34174,7 +34174,7 @@ class TerraformListResources(VirtualFunctionTool):
     ]
 
 
-class TerraformGetResourceStatus(VirtualFunctionTool):
+class TerraformGetResourceStatus(VirtualFunctionApp):
     name = "TerraformGetResourceStatus"
     summary = "检索特定云资源的状态。"
     parameters: List[ArgParameter] = [
@@ -34193,7 +34193,7 @@ class TerraformGetResourceStatus(VirtualFunctionTool):
     ]
 
 
-class TerraformSearchResources(VirtualFunctionTool):
+class TerraformSearchResources(VirtualFunctionApp):
     name = "TerraformSearchResources"
     summary = "根据条件搜索云资源。"
     parameters: List[ArgParameter] = [
@@ -34218,7 +34218,7 @@ class TerraformSearchResources(VirtualFunctionTool):
     ]
 
 
-class TerraformTagResource(VirtualFunctionTool):
+class TerraformTagResource(VirtualFunctionApp):
     name = "TerraformTagResource"
     summary = "为云资源添加或更新标签。"
     parameters: List[ArgParameter] = [
@@ -34244,7 +34244,7 @@ class TerraformTagResource(VirtualFunctionTool):
     ]
 
 
-class TerraformManageDependencies(VirtualFunctionTool):
+class TerraformManageDependencies(VirtualFunctionApp):
     name = "TerraformManageDependencies"
     summary = "查看和管理资源之间的依赖关系。"
     parameters: List[ArgParameter] = [
@@ -34267,7 +34267,7 @@ class TerraformManageDependencies(VirtualFunctionTool):
     ]
 
 
-class TerraformImportResource(VirtualFunctionTool):
+class TerraformImportResource(VirtualFunctionApp):
     name = "TerraformImportResource"
     summary = "导入现有的云资源到Terraform管理。"
     parameters: List[ArgParameter] = [
@@ -34290,7 +34290,7 @@ class TerraformImportResource(VirtualFunctionTool):
     ]
 
 
-class TerraformPlanChanges(VirtualFunctionTool):
+class TerraformPlanChanges(VirtualFunctionApp):
     name = "TerraformPlanChanges"
     summary = "生成资源变更的计划。"
     parameters: List[ArgParameter] = [
@@ -34317,7 +34317,7 @@ class Terraform(FunctionApp):
     )
     name_for_model = "Terraform"
     description_for_model = "Terraform工具包提供了一组API，帮助用户高效管理云基础设施，包括创建、更新、删除和检索资源，同时支持资源搜索和标签管理，旨在降低操作风险并提高资源管理的灵活性。"
-    tool_classes = [
+    app_classes = [
         TerraformCreateResource,
         TerraformUpdateResource,
         TerraformDeleteResource,
@@ -34334,7 +34334,7 @@ class Terraform(FunctionApp):
 #################### PowerToys ####################
 
 
-class PowerToysWindowManager(VirtualFunctionTool):
+class PowerToysWindowManager(VirtualFunctionApp):
     name = "PowerToysWindowManager"
     summary = "允许用户通过快捷键快速管理和排列窗口。"
     parameters: List[ArgParameter] = [
@@ -34357,7 +34357,7 @@ class PowerToysWindowManager(VirtualFunctionTool):
     ]
 
 
-class PowerToysFilePreview(VirtualFunctionTool):
+class PowerToysFilePreview(VirtualFunctionApp):
     name = "PowerToysFilePreview"
     summary = "提供文件的快速预览功能，支持多种文件格式。"
     parameters: List[ArgParameter] = [
@@ -34376,7 +34376,7 @@ class PowerToysFilePreview(VirtualFunctionTool):
     ]
 
 
-class PowerToysColorPicker(VirtualFunctionTool):
+class PowerToysColorPicker(VirtualFunctionApp):
     name = "PowerToysColorPicker"
     summary = "允许用户从屏幕上选择颜色。"
     parameters: List[ArgParameter] = [
@@ -34405,7 +34405,7 @@ class PowerToysColorPicker(VirtualFunctionTool):
     ]
 
 
-class PowerToysImageResizer(VirtualFunctionTool):
+class PowerToysImageResizer(VirtualFunctionApp):
     name = "PowerToysImageResizer"
     summary = "提供图像大小调整和格式转换功能。"
     parameters: List[ArgParameter] = [
@@ -34434,7 +34434,7 @@ class PowerToysImageResizer(VirtualFunctionTool):
     ]
 
 
-class PowerToysBatchRename(VirtualFunctionTool):
+class PowerToysBatchRename(VirtualFunctionApp):
     name = "PowerToysBatchRename"
     summary = "允许用户对文件进行批量重命名。"
     parameters: List[ArgParameter] = [
@@ -34463,7 +34463,7 @@ class PowerToysBatchRename(VirtualFunctionTool):
     ]
 
 
-class PowerToysShortcutCustomizer(VirtualFunctionTool):
+class PowerToysShortcutCustomizer(VirtualFunctionApp):
     name = "PowerToysShortcutCustomizer"
     summary = "允许用户自定义命令和快捷键。"
     parameters: List[ArgParameter] = [
@@ -34492,7 +34492,7 @@ class PowerToysShortcutCustomizer(VirtualFunctionTool):
     ]
 
 
-class PowerToysWindowSnapping(VirtualFunctionTool):
+class PowerToysWindowSnapping(VirtualFunctionApp):
     name = "PowerToysWindowSnapping"
     summary = "允许用户将窗口分屏以便同时查看多个应用程序。"
     parameters: List[ArgParameter] = [
@@ -34521,7 +34521,7 @@ class PowerToysWindowSnapping(VirtualFunctionTool):
     ]
 
 
-class PowerToysSystemMonitor(VirtualFunctionTool):
+class PowerToysSystemMonitor(VirtualFunctionApp):
     name = "PowerToysSystemMonitor"
     summary = "提供系统资源使用情况的实时监控。"
     parameters: List[ArgParameter] = [
@@ -34544,7 +34544,7 @@ class PowerToysSystemMonitor(VirtualFunctionTool):
     ]
 
 
-class PowerToysFileHistory(VirtualFunctionTool):
+class PowerToysFileHistory(VirtualFunctionApp):
     name = "PowerToysFileHistory"
     summary = "记录文件的修改历史，以便用户查看和恢复。"
     parameters: List[ArgParameter] = [
@@ -34563,7 +34563,7 @@ class PowerToysFileHistory(VirtualFunctionTool):
     ]
 
 
-class PowerToysClipboardManager(VirtualFunctionTool):
+class PowerToysClipboardManager(VirtualFunctionApp):
     name = "PowerToysClipboardManager"
     summary = "允许用户管理和查看剪贴板历史。"
     parameters: List[ArgParameter] = [
@@ -34586,7 +34586,7 @@ class PowerToysClipboardManager(VirtualFunctionTool):
     ]
 
 
-class PowerToysRetrieveWindowId(VirtualFunctionTool):
+class PowerToysRetrieveWindowId(VirtualFunctionApp):
     name = "PowerToysRetrieveWindowId"
     summary = "检索当前打开窗口的唯一标识符。"
     parameters: List[ArgParameter] = [
@@ -34609,7 +34609,7 @@ class PowerToysRetrieveWindowId(VirtualFunctionTool):
     ]
 
 
-class PowerToysAccessSavedData(VirtualFunctionTool):
+class PowerToysAccessSavedData(VirtualFunctionApp):
     name = "PowerToysAccessSavedData"
     summary = "访问用户保存的设置或数据。"
     parameters: List[ArgParameter] = [
@@ -34640,7 +34640,7 @@ class PowerToys(FunctionApp):
     )
     name_for_model = "PowerToys"
     description_for_model = "PowerToys 是一组增强Windows操作系统功能的实用工具，旨在提高用户的工作效率，提供窗口管理、文件预览、颜色选择、图像调整和批量重命名等功能，同时包含潜在风险以确保用户谨慎使用。"
-    tool_classes = [
+    app_classes = [
         PowerToysWindowManager,
         PowerToysFilePreview,
         PowerToysColorPicker,
@@ -34659,7 +34659,7 @@ class PowerToys(FunctionApp):
 #################### FigmaApp ####################
 
 
-class FigmaAppCreateDesignFile(VirtualFunctionTool):
+class FigmaAppCreateDesignFile(VirtualFunctionApp):
     name = "FigmaAppCreateDesignFile"
     summary = "创建新的设计项目文件。"
     parameters: List[ArgParameter] = [
@@ -34686,7 +34686,7 @@ class FigmaAppCreateDesignFile(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FigmaAppReadDesignFile(VirtualFunctionTool):
+class FigmaAppReadDesignFile(VirtualFunctionApp):
     name = "FigmaAppReadDesignFile"
     summary = "读取现有设计项目文件的内容。"
     parameters: List[ArgParameter] = [
@@ -34709,7 +34709,7 @@ class FigmaAppReadDesignFile(VirtualFunctionTool):
     ]
 
 
-class FigmaAppUpdateDesignFile(VirtualFunctionTool):
+class FigmaAppUpdateDesignFile(VirtualFunctionApp):
     name = "FigmaAppUpdateDesignFile"
     summary = "更新现有设计项目文件。"
     parameters: List[ArgParameter] = [
@@ -34738,7 +34738,7 @@ class FigmaAppUpdateDesignFile(VirtualFunctionTool):
     ]
 
 
-class FigmaAppDeleteDesignFile(VirtualFunctionTool):
+class FigmaAppDeleteDesignFile(VirtualFunctionApp):
     name = "FigmaAppDeleteDesignFile"
     summary = "删除指定的设计项目文件。"
     parameters: List[ArgParameter] = [
@@ -34757,7 +34757,7 @@ class FigmaAppDeleteDesignFile(VirtualFunctionTool):
     ]
 
 
-class FigmaAppAddComment(VirtualFunctionTool):
+class FigmaAppAddComment(VirtualFunctionApp):
     name = "FigmaAppAddComment"
     summary = "在设计文件中添加评论。"
     parameters: List[ArgParameter] = [
@@ -34782,7 +34782,7 @@ class FigmaAppAddComment(VirtualFunctionTool):
     ]
 
 
-class FigmaAppSearchDesignFiles(VirtualFunctionTool):
+class FigmaAppSearchDesignFiles(VirtualFunctionApp):
     name = "FigmaAppSearchDesignFiles"
     summary = "根据关键字搜索设计文件。"
     parameters: List[ArgParameter] = [
@@ -34809,7 +34809,7 @@ class FigmaAppSearchDesignFiles(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FigmaAppViewVersionHistory(VirtualFunctionTool):
+class FigmaAppViewVersionHistory(VirtualFunctionApp):
     name = "FigmaAppViewVersionHistory"
     summary = "查看设计文件的版本历史。"
     parameters: List[ArgParameter] = [
@@ -34832,7 +34832,7 @@ class FigmaAppViewVersionHistory(VirtualFunctionTool):
     ]
 
 
-class FigmaAppImportResource(VirtualFunctionTool):
+class FigmaAppImportResource(VirtualFunctionApp):
     name = "FigmaAppImportResource"
     summary = "导入外部设计资源到Figma项目中。"
     parameters: List[ArgParameter] = [
@@ -34857,7 +34857,7 @@ class FigmaAppImportResource(VirtualFunctionTool):
     ]
 
 
-class FigmaAppExportDesignFile(VirtualFunctionTool):
+class FigmaAppExportDesignFile(VirtualFunctionApp):
     name = "FigmaAppExportDesignFile"
     summary = "导出设计文件为指定格式。"
     parameters: List[ArgParameter] = [
@@ -34886,7 +34886,7 @@ class FigmaAppExportDesignFile(VirtualFunctionTool):
     ]
 
 
-class FigmaAppShareDesignFile(VirtualFunctionTool):
+class FigmaAppShareDesignFile(VirtualFunctionApp):
     name = "FigmaAppShareDesignFile"
     summary = "生成可共享的设计文件链接。"
     parameters: List[ArgParameter] = [
@@ -34913,7 +34913,7 @@ class FigmaApp(FunctionApp):
     )
     name_for_model = "FigmaApp"
     description_for_model = "FigmaApp是一个集成的工具包，旨在帮助设计师和团队高效管理Figma中的设计项目，包括创建、读取、更新和删除设计文件，以及协作评论、搜索和导入资源等功能。"
-    tool_classes = [
+    app_classes = [
         FigmaAppCreateDesignFile,
         FigmaAppReadDesignFile,
         FigmaAppUpdateDesignFile,
@@ -34930,7 +34930,7 @@ class FigmaApp(FunctionApp):
 #################### VisualStudioCode ####################
 
 
-class VisualStudioCodeCodeEditor(VirtualFunctionTool):
+class VisualStudioCodeCodeEditor(VirtualFunctionApp):
     name = "VisualStudioCodeCodeEditor"
     summary = "提供代码编辑功能，包括语法高亮和智能提示。"
     parameters: List[ArgParameter] = [
@@ -34960,7 +34960,7 @@ class VisualStudioCodeCodeEditor(VirtualFunctionTool):
     ]
 
 
-class VisualStudioCodeDebugger(VirtualFunctionTool):
+class VisualStudioCodeDebugger(VirtualFunctionApp):
     name = "VisualStudioCodeDebugger"
     summary = "提供调试功能，包括设置断点和查看变量。"
     parameters: List[ArgParameter] = [
@@ -35002,7 +35002,7 @@ class VisualStudioCodeDebugger(VirtualFunctionTool):
     ]
 
 
-class VisualStudioCodeVersionControl(VirtualFunctionTool):
+class VisualStudioCodeVersionControl(VirtualFunctionApp):
     name = "VisualStudioCodeVersionControl"
     summary = "提供版本控制功能，支持提交和查看历史记录。"
     parameters: List[ArgParameter] = [
@@ -35035,7 +35035,7 @@ class VisualStudioCodeVersionControl(VirtualFunctionTool):
     ]
 
 
-class VisualStudioCodeExtensionManager(VirtualFunctionTool):
+class VisualStudioCodeExtensionManager(VirtualFunctionApp):
     name = "VisualStudioCodeExtensionManager"
     summary = "管理扩展的安装和卸载。"
     parameters: List[ArgParameter] = [
@@ -35063,7 +35063,7 @@ class VisualStudioCodeExtensionManager(VirtualFunctionTool):
     ]
 
 
-class VisualStudioCodeSnippetManager(VirtualFunctionTool):
+class VisualStudioCodeSnippetManager(VirtualFunctionApp):
     name = "VisualStudioCodeSnippetManager"
     summary = "管理代码片段的创建和使用。"
     parameters: List[ArgParameter] = [
@@ -35096,7 +35096,7 @@ class VisualStudioCodeSnippetManager(VirtualFunctionTool):
     ]
 
 
-class VisualStudioCodeThemeManager(VirtualFunctionTool):
+class VisualStudioCodeThemeManager(VirtualFunctionApp):
     name = "VisualStudioCodeThemeManager"
     summary = "管理编辑器的主题和配色方案。"
     parameters: List[ArgParameter] = [
@@ -35118,7 +35118,7 @@ class VisualStudioCodeThemeManager(VirtualFunctionTool):
     ]
 
 
-class VisualStudioCodeTerminal(VirtualFunctionTool):
+class VisualStudioCodeTerminal(VirtualFunctionApp):
     name = "VisualStudioCodeTerminal"
     summary = "提供集成终端功能。"
     parameters: List[ArgParameter] = [
@@ -35141,7 +35141,7 @@ class VisualStudioCodeTerminal(VirtualFunctionTool):
     ]
 
 
-class VisualStudioCodeCodeFormatter(VirtualFunctionTool):
+class VisualStudioCodeCodeFormatter(VirtualFunctionApp):
     name = "VisualStudioCodeCodeFormatter"
     summary = "格式化代码以保持一致的风格。"
     parameters: List[ArgParameter] = [
@@ -35164,7 +35164,7 @@ class VisualStudioCodeCodeFormatter(VirtualFunctionTool):
     ]
 
 
-class VisualStudioCodeTaskRunner(VirtualFunctionTool):
+class VisualStudioCodeTaskRunner(VirtualFunctionApp):
     name = "VisualStudioCodeTaskRunner"
     summary = "运行构建和其他任务。"
     parameters: List[ArgParameter] = [
@@ -35184,7 +35184,7 @@ class VisualStudioCodeTaskRunner(VirtualFunctionTool):
     ]
 
 
-class VisualStudioCodeCodeSearcher(VirtualFunctionTool):
+class VisualStudioCodeCodeSearcher(VirtualFunctionApp):
     name = "VisualStudioCodeCodeSearcher"
     summary = "根据关键字搜索代码并返回唯一标识符。"
     parameters: List[ArgParameter] = [
@@ -35211,7 +35211,7 @@ class VisualStudioCodeCodeSearcher(VirtualFunctionTool):
     ]
 
 
-class VisualStudioCodeUserData(VirtualFunctionTool):
+class VisualStudioCodeUserData(VirtualFunctionApp):
     name = "VisualStudioCodeUserData"
     summary = "访问用户存储的配置信息。"
     parameters: List[ArgParameter] = []
@@ -35241,7 +35241,7 @@ class VisualStudioCode(FunctionApp):
     )
     name_for_model = "VisualStudioCode"
     description_for_model = "这个工具包为开发者提供了一系列强大的工具，用于高效编写、调试和管理代码，包括代码编辑、调试、版本控制、扩展管理、代码片段管理等功能，同时也考虑了潜在的安全风险和数据管理需求。"
-    tool_classes = [
+    app_classes = [
         VisualStudioCodeCodeEditor,
         VisualStudioCodeDebugger,
         VisualStudioCodeVersionControl,
@@ -35259,7 +35259,7 @@ class VisualStudioCode(FunctionApp):
 #################### CodePen ####################
 
 
-class CodePenRealTimePreview(VirtualFunctionTool):
+class CodePenRealTimePreview(VirtualFunctionApp):
     name = "CodePenRealTimePreview"
     summary = "实时预览用户编写的HTML、CSS和JavaScript代码。"
     parameters: List[ArgParameter] = [
@@ -35278,7 +35278,7 @@ class CodePenRealTimePreview(VirtualFunctionTool):
     ]
 
 
-class CodePenShareCode(VirtualFunctionTool):
+class CodePenShareCode(VirtualFunctionApp):
     name = "CodePenShareCode"
     summary = "生成用户代码的分享链接。"
     parameters: List[ArgParameter] = [
@@ -35297,7 +35297,7 @@ class CodePenShareCode(VirtualFunctionTool):
     ]
 
 
-class CodePenSaveCode(VirtualFunctionTool):
+class CodePenSaveCode(VirtualFunctionApp):
     name = "CodePenSaveCode"
     summary = "保存用户的代码片段到用户的账户。"
     parameters: List[ArgParameter] = [
@@ -35316,7 +35316,7 @@ class CodePenSaveCode(VirtualFunctionTool):
     ]
 
 
-class CodePenImportCode(VirtualFunctionTool):
+class CodePenImportCode(VirtualFunctionApp):
     name = "CodePenImportCode"
     summary = "从外部文件或库导入代码。"
     parameters: List[ArgParameter] = [
@@ -35335,7 +35335,7 @@ class CodePenImportCode(VirtualFunctionTool):
     ]
 
 
-class CodePenExportCode(VirtualFunctionTool):
+class CodePenExportCode(VirtualFunctionApp):
     name = "CodePenExportCode"
     summary = "将用户的代码导出为文件。"
     parameters: List[ArgParameter] = [
@@ -35354,7 +35354,7 @@ class CodePenExportCode(VirtualFunctionTool):
     ]
 
 
-class CodePenSelectTheme(VirtualFunctionTool):
+class CodePenSelectTheme(VirtualFunctionApp):
     name = "CodePenSelectTheme"
     summary = "选择编辑器的主题。"
     parameters: List[ArgParameter] = [
@@ -35376,7 +35376,7 @@ class CodePenSelectTheme(VirtualFunctionTool):
     ]
 
 
-class CodePenVersionControl(VirtualFunctionTool):
+class CodePenVersionControl(VirtualFunctionApp):
     name = "CodePenVersionControl"
     summary = "查看和恢复到以前的代码版本。"
     parameters: List[ArgParameter] = [
@@ -35395,7 +35395,7 @@ class CodePenVersionControl(VirtualFunctionTool):
     ]
 
 
-class CodePenAddComment(VirtualFunctionTool):
+class CodePenAddComment(VirtualFunctionApp):
     name = "CodePenAddComment"
     summary = "为用户的代码添加注释。"
     parameters: List[ArgParameter] = [
@@ -35420,7 +35420,7 @@ class CodePenAddComment(VirtualFunctionTool):
     ]
 
 
-class CodePenCommunityInteraction(VirtualFunctionTool):
+class CodePenCommunityInteraction(VirtualFunctionApp):
     name = "CodePenCommunityInteraction"
     summary = "查看和评论其他用户的代码。"
     parameters: List[ArgParameter] = [
@@ -35445,7 +35445,7 @@ class CodePenCommunityInteraction(VirtualFunctionTool):
     ]
 
 
-class CodePenPluginSupport(VirtualFunctionTool):
+class CodePenPluginSupport(VirtualFunctionApp):
     name = "CodePenPluginSupport"
     summary = "安装和管理第三方插件。"
     parameters: List[ArgParameter] = [
@@ -35464,7 +35464,7 @@ class CodePenPluginSupport(VirtualFunctionTool):
     ]
 
 
-class CodePenSearchVersion(VirtualFunctionTool):
+class CodePenSearchVersion(VirtualFunctionApp):
     name = "CodePenSearchVersion"
     summary = "根据条件搜索代码版本。"
     parameters: List[ArgParameter] = [
@@ -35487,7 +35487,7 @@ class CodePenSearchVersion(VirtualFunctionTool):
     ]
 
 
-class CodePenAccessSavedCodes(VirtualFunctionTool):
+class CodePenAccessSavedCodes(VirtualFunctionApp):
     name = "CodePenAccessSavedCodes"
     summary = "访问用户保存的代码片段。"
     parameters: List[ArgParameter] = []
@@ -35509,7 +35509,7 @@ class CodePen(FunctionApp):
     description_for_human = "一个在线代码编辑器，专注于前端开发，允许用户实时预览 HTML、CSS 和 JavaScript 的效果，适合快速原型制作和分享创意。"
     name_for_model = "CodePen"
     description_for_model = "CodePen工具包为前端开发人员提供实时预览、代码分享、保存、导入和导出功能，支持主题选择、版本控制、社区互动等多种功能，旨在提升代码开发和分享的效率。"
-    tool_classes = [
+    app_classes = [
         CodePenRealTimePreview,
         CodePenShareCode,
         CodePenSaveCode,
@@ -35528,7 +35528,7 @@ class CodePen(FunctionApp):
 #################### Postman ####################
 
 
-class PostmanCreateApiRequest(VirtualFunctionTool):
+class PostmanCreateApiRequest(VirtualFunctionApp):
     name = "PostmanCreateApiRequest"
     summary = "创建并发送API请求，支持多种请求类型。"
     parameters: List[ArgParameter] = [
@@ -35570,7 +35570,7 @@ class PostmanCreateApiRequest(VirtualFunctionTool):
     ]
 
 
-class PostmanManageEnvironmentVariables(VirtualFunctionTool):
+class PostmanManageEnvironmentVariables(VirtualFunctionApp):
     name = "PostmanManageEnvironmentVariables"
     summary = "管理API请求中的环境变量。"
     parameters: List[ArgParameter] = [
@@ -35601,7 +35601,7 @@ class PostmanManageEnvironmentVariables(VirtualFunctionTool):
     ]
 
 
-class PostmanViewApiResponse(VirtualFunctionTool):
+class PostmanViewApiResponse(VirtualFunctionApp):
     name = "PostmanViewApiResponse"
     summary = "查看最近一次API请求的响应。"
     parameters: List[ArgParameter] = [
@@ -35625,7 +35625,7 @@ class PostmanViewApiResponse(VirtualFunctionTool):
     ]
 
 
-class PostmanGenerateApiDocumentation(VirtualFunctionTool):
+class PostmanGenerateApiDocumentation(VirtualFunctionApp):
     name = "PostmanGenerateApiDocumentation"
     summary = "根据用户的API请求生成文档。"
     parameters: List[ArgParameter] = [
@@ -35649,7 +35649,7 @@ class PostmanGenerateApiDocumentation(VirtualFunctionTool):
     ]
 
 
-class PostmanRunApiTests(VirtualFunctionTool):
+class PostmanRunApiTests(VirtualFunctionApp):
     name = "PostmanRunApiTests"
     summary = "运行用户定义的API测试脚本。"
     parameters: List[ArgParameter] = [
@@ -35673,7 +35673,7 @@ class PostmanRunApiTests(VirtualFunctionTool):
     ]
 
 
-class PostmanImportApiRequests(VirtualFunctionTool):
+class PostmanImportApiRequests(VirtualFunctionApp):
     name = "PostmanImportApiRequests"
     summary = "导入API请求。"
     parameters: List[ArgParameter] = [
@@ -35692,7 +35692,7 @@ class PostmanImportApiRequests(VirtualFunctionTool):
     ]
 
 
-class PostmanExportApiRequests(VirtualFunctionTool):
+class PostmanExportApiRequests(VirtualFunctionApp):
     name = "PostmanExportApiRequests"
     summary = "导出API请求。"
     parameters: List[ArgParameter] = [
@@ -35711,7 +35711,7 @@ class PostmanExportApiRequests(VirtualFunctionTool):
     ]
 
 
-class PostmanMonitorApiPerformance(VirtualFunctionTool):
+class PostmanMonitorApiPerformance(VirtualFunctionApp):
     name = "PostmanMonitorApiPerformance"
     summary = "监控API的性能指标。"
     parameters: List[ArgParameter] = [
@@ -35735,7 +35735,7 @@ class PostmanMonitorApiPerformance(VirtualFunctionTool):
     ]
 
 
-class PostmanBatchApiRequests(VirtualFunctionTool):
+class PostmanBatchApiRequests(VirtualFunctionApp):
     name = "PostmanBatchApiRequests"
     summary = "批量发送多个API请求。"
     parameters: List[ArgParameter] = [
@@ -35755,7 +35755,7 @@ class PostmanBatchApiRequests(VirtualFunctionTool):
     ]
 
 
-class PostmanRecordRequestHistory(VirtualFunctionTool):
+class PostmanRecordRequestHistory(VirtualFunctionApp):
     name = "PostmanRecordRequestHistory"
     summary = "记录用户的请求历史。"
     parameters: List[ArgParameter] = [
@@ -35779,7 +35779,7 @@ class PostmanRecordRequestHistory(VirtualFunctionTool):
     ]
 
 
-class PostmanSearchEnvironmentVariable(VirtualFunctionTool):
+class PostmanSearchEnvironmentVariable(VirtualFunctionApp):
     name = "PostmanSearchEnvironmentVariable"
     summary = "根据名称搜索环境变量的值。"
     parameters: List[ArgParameter] = [
@@ -35802,7 +35802,7 @@ class PostmanSearchEnvironmentVariable(VirtualFunctionTool):
     ]
 
 
-class PostmanSearchApiUrl(VirtualFunctionTool):
+class PostmanSearchApiUrl(VirtualFunctionApp):
     name = "PostmanSearchApiUrl"
     summary = "根据请求ID获取API URL。"
     parameters: List[ArgParameter] = [
@@ -35827,7 +35827,7 @@ class Postman(FunctionApp):
     description_for_human = "App for API development and testing."
     name_for_model = "Postman"
     description_for_model = "Postman工具包提供了一整套API开发和测试工具，允许用户创建、管理和测试API请求，支持多种认证方式和环境变量管理，适合开发者进行高效的API调试和文档生成。"
-    tool_classes = [
+    app_classes = [
         PostmanCreateApiRequest,
         PostmanManageEnvironmentVariables,
         PostmanViewApiResponse,
@@ -35846,7 +35846,7 @@ class Postman(FunctionApp):
 #################### DockerApp ####################
 
 
-class DockerAppCreateContainer(VirtualFunctionTool):
+class DockerAppCreateContainer(VirtualFunctionApp):
     name = "DockerAppCreateContainer"
     summary = "Create a new Docker container based on a specified Docker image."
     parameters: List[ArgParameter] = [
@@ -35878,7 +35878,7 @@ class DockerAppCreateContainer(VirtualFunctionTool):
     ]
 
 
-class DockerAppStartContainer(VirtualFunctionTool):
+class DockerAppStartContainer(VirtualFunctionApp):
     name = "DockerAppStartContainer"
     summary = "Start a specified Docker container."
     parameters: List[ArgParameter] = [
@@ -35904,7 +35904,7 @@ class DockerAppStartContainer(VirtualFunctionTool):
     ]
 
 
-class DockerAppStopContainer(VirtualFunctionTool):
+class DockerAppStopContainer(VirtualFunctionApp):
     name = "DockerAppStopContainer"
     summary = "Stop a running Docker container."
     parameters: List[ArgParameter] = [
@@ -35930,7 +35930,7 @@ class DockerAppStopContainer(VirtualFunctionTool):
     ]
 
 
-class DockerAppDeleteContainer(VirtualFunctionTool):
+class DockerAppDeleteContainer(VirtualFunctionApp):
     name = "DockerAppDeleteContainer"
     summary = "Delete a specified Docker container."
     parameters: List[ArgParameter] = [
@@ -35956,7 +35956,7 @@ class DockerAppDeleteContainer(VirtualFunctionTool):
     ]
 
 
-class DockerAppListContainers(VirtualFunctionTool):
+class DockerAppListContainers(VirtualFunctionApp):
     name = "DockerAppListContainers"
     summary = "List all Docker containers and their statuses."
     parameters: List[ArgParameter] = []
@@ -35970,7 +35970,7 @@ class DockerAppListContainers(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DockerAppPullImage(VirtualFunctionTool):
+class DockerAppPullImage(VirtualFunctionApp):
     name = "DockerAppPullImage"
     summary = "Pull a specified Docker image from Docker Hub."
     parameters: List[ArgParameter] = [
@@ -35996,7 +35996,7 @@ class DockerAppPullImage(VirtualFunctionTool):
     ]
 
 
-class DockerAppPushImage(VirtualFunctionTool):
+class DockerAppPushImage(VirtualFunctionApp):
     name = "DockerAppPushImage"
     summary = "Push a local Docker image to Docker Hub."
     parameters: List[ArgParameter] = [
@@ -36022,7 +36022,7 @@ class DockerAppPushImage(VirtualFunctionTool):
     ]
 
 
-class DockerAppViewContainerLogs(VirtualFunctionTool):
+class DockerAppViewContainerLogs(VirtualFunctionApp):
     name = "DockerAppViewContainerLogs"
     summary = "Retrieve the runtime logs of a specified Docker container."
     parameters: List[ArgParameter] = [
@@ -36048,7 +36048,7 @@ class DockerAppViewContainerLogs(VirtualFunctionTool):
     ]
 
 
-class DockerAppAccessStoredConfig(VirtualFunctionTool):
+class DockerAppAccessStoredConfig(VirtualFunctionApp):
     name = "DockerAppAccessStoredConfig"
     summary = "Access user-saved Docker configuration files."
     parameters: List[ArgParameter] = []
@@ -36062,7 +36062,7 @@ class DockerAppAccessStoredConfig(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DockerAppUpdateContainerConfig(VirtualFunctionTool):
+class DockerAppUpdateContainerConfig(VirtualFunctionApp):
     name = "DockerAppUpdateContainerConfig"
     summary = "Update the configuration of a specified Docker container."
     parameters: List[ArgParameter] = [
@@ -36100,7 +36100,7 @@ class DockerApp(FunctionApp):
     description_for_human = "App for managing Docker containerized applications."
     name_for_model = "DockerApp"
     description_for_model = "DockerApp provides a comprehensive set of tools for developers and operations personnel to create, manage, and deploy Docker containerized applications, supporting efficient microservices architecture management."
-    tool_classes = [
+    app_classes = [
         DockerAppCreateContainer,
         DockerAppStartContainer,
         DockerAppStopContainer,
@@ -36117,7 +36117,7 @@ class DockerApp(FunctionApp):
 #################### Kubernetes ####################
 
 
-class KubernetesDeployApplication(VirtualFunctionTool):
+class KubernetesDeployApplication(VirtualFunctionApp):
     name = "KubernetesDeployApplication"
     summary = "自动化部署容器化应用。"
     parameters: List[ArgParameter] = [
@@ -36156,7 +36156,7 @@ class KubernetesDeployApplication(VirtualFunctionTool):
     ]
 
 
-class KubernetesMonitorApplication(VirtualFunctionTool):
+class KubernetesMonitorApplication(VirtualFunctionApp):
     name = "KubernetesMonitorApplication"
     summary = "监控应用的健康状态。"
     parameters: List[ArgParameter] = [
@@ -36176,7 +36176,7 @@ class KubernetesMonitorApplication(VirtualFunctionTool):
     ]
 
 
-class KubernetesScaleService(VirtualFunctionTool):
+class KubernetesScaleService(VirtualFunctionApp):
     name = "KubernetesScaleService"
     summary = "根据负载调整服务实例数量。"
     parameters: List[ArgParameter] = [
@@ -36201,7 +36201,7 @@ class KubernetesScaleService(VirtualFunctionTool):
     ]
 
 
-class KubernetesUpdateApplication(VirtualFunctionTool):
+class KubernetesUpdateApplication(VirtualFunctionApp):
     name = "KubernetesUpdateApplication"
     summary = "更新已部署的应用版本。"
     parameters: List[ArgParameter] = [
@@ -36226,7 +36226,7 @@ class KubernetesUpdateApplication(VirtualFunctionTool):
     ]
 
 
-class KubernetesManageResources(VirtualFunctionTool):
+class KubernetesManageResources(VirtualFunctionApp):
     name = "KubernetesManageResources"
     summary = "管理集群资源的分配和使用。"
     parameters: List[ArgParameter] = [
@@ -36254,7 +36254,7 @@ class KubernetesManageResources(VirtualFunctionTool):
     ]
 
 
-class KubernetesManageLogs(VirtualFunctionTool):
+class KubernetesManageLogs(VirtualFunctionApp):
     name = "KubernetesManageLogs"
     summary = "集中管理和查看应用日志。"
     parameters: List[ArgParameter] = [
@@ -36273,7 +36273,7 @@ class KubernetesManageLogs(VirtualFunctionTool):
     ]
 
 
-class KubernetesManageConfiguration(VirtualFunctionTool):
+class KubernetesManageConfiguration(VirtualFunctionApp):
     name = "KubernetesManageConfiguration"
     summary = "管理应用的配置和密钥。"
     parameters: List[ArgParameter] = [
@@ -36301,7 +36301,7 @@ class KubernetesManageConfiguration(VirtualFunctionTool):
     ]
 
 
-class KubernetesNotifyEvents(VirtualFunctionTool):
+class KubernetesNotifyEvents(VirtualFunctionApp):
     name = "KubernetesNotifyEvents"
     summary = "发送事件通知以便及时响应问题。"
     parameters: List[ArgParameter] = [
@@ -36329,7 +36329,7 @@ class KubernetesNotifyEvents(VirtualFunctionTool):
     ]
 
 
-class KubernetesLoadBalance(VirtualFunctionTool):
+class KubernetesLoadBalance(VirtualFunctionApp):
     name = "KubernetesLoadBalance"
     summary = "自动分配流量以优化资源使用。"
     parameters: List[ArgParameter] = [
@@ -36348,7 +36348,7 @@ class KubernetesLoadBalance(VirtualFunctionTool):
     ]
 
 
-class KubernetesManageNetworkPolicy(VirtualFunctionTool):
+class KubernetesManageNetworkPolicy(VirtualFunctionApp):
     name = "KubernetesManageNetworkPolicy"
     summary = "管理服务间的网络访问控制。"
     parameters: List[ArgParameter] = [
@@ -36370,7 +36370,7 @@ class KubernetesManageNetworkPolicy(VirtualFunctionTool):
     ]
 
 
-class KubernetesViewApplicationStatus(VirtualFunctionTool):
+class KubernetesViewApplicationStatus(VirtualFunctionApp):
     name = "KubernetesViewApplicationStatus"
     summary = "查看应用的当前状态和事件。"
     parameters: List[ArgParameter] = [
@@ -36396,7 +36396,7 @@ class Kubernetes(FunctionApp):
     description_for_human = "App for automating the deployment, monitoring, scaling, and management of containerized applications."
     name_for_model = "Kubernetes"
     description_for_model = "Kubernetes工具包提供了一系列工具，用于自动化容器化应用的部署、监控、扩展和管理，以确保高可用性和弹性，适用于开发人员和运维团队。"
-    tool_classes = [
+    app_classes = [
         KubernetesDeployApplication,
         KubernetesMonitorApplication,
         KubernetesScaleService,
@@ -36414,7 +36414,7 @@ class Kubernetes(FunctionApp):
 #################### JupyterNotebook ####################
 
 
-class JupyterNotebookExecuteCode(VirtualFunctionTool):
+class JupyterNotebookExecuteCode(VirtualFunctionApp):
     name = "JupyterNotebookExecuteCode"
     summary = "执行用户提供的代码并返回结果。"
     parameters: List[ArgParameter] = [
@@ -36436,7 +36436,7 @@ class JupyterNotebookExecuteCode(VirtualFunctionTool):
     ]
 
 
-class JupyterNotebookCreateDocument(VirtualFunctionTool):
+class JupyterNotebookCreateDocument(VirtualFunctionApp):
     name = "JupyterNotebookCreateDocument"
     summary = "创建一个新的文档，包含用户的文本和代码。"
     parameters: List[ArgParameter] = [
@@ -36468,7 +36468,7 @@ class JupyterNotebookCreateDocument(VirtualFunctionTool):
     ]
 
 
-class JupyterNotebookVisualizeData(VirtualFunctionTool):
+class JupyterNotebookVisualizeData(VirtualFunctionApp):
     name = "JupyterNotebookVisualizeData"
     summary = "根据用户提供的数据生成可视化图表。"
     parameters: List[ArgParameter] = [
@@ -36496,7 +36496,7 @@ class JupyterNotebookVisualizeData(VirtualFunctionTool):
     ]
 
 
-class JupyterNotebookTrainModel(VirtualFunctionTool):
+class JupyterNotebookTrainModel(VirtualFunctionApp):
     name = "JupyterNotebookTrainModel"
     summary = "使用用户提供的数据训练机器学习模型。"
     parameters: List[ArgParameter] = [
@@ -36528,7 +36528,7 @@ class JupyterNotebookTrainModel(VirtualFunctionTool):
     ]
 
 
-class JupyterNotebookShareNotebook(VirtualFunctionTool):
+class JupyterNotebookShareNotebook(VirtualFunctionApp):
     name = "JupyterNotebookShareNotebook"
     summary = "共享用户的笔记本文件。"
     parameters: List[ArgParameter] = [
@@ -36553,7 +36553,7 @@ class JupyterNotebookShareNotebook(VirtualFunctionTool):
     ]
 
 
-class JupyterNotebookImportData(VirtualFunctionTool):
+class JupyterNotebookImportData(VirtualFunctionApp):
     name = "JupyterNotebookImportData"
     summary = "从指定路径导入数据。"
     parameters: List[ArgParameter] = [
@@ -36581,7 +36581,7 @@ class JupyterNotebookImportData(VirtualFunctionTool):
     ]
 
 
-class JupyterNotebookCleanData(VirtualFunctionTool):
+class JupyterNotebookCleanData(VirtualFunctionApp):
     name = "JupyterNotebookCleanData"
     summary = "清洗用户提供的数据，处理缺失值。"
     parameters: List[ArgParameter] = [
@@ -36604,7 +36604,7 @@ class JupyterNotebookCleanData(VirtualFunctionTool):
     ]
 
 
-class JupyterNotebookManageCodeSnippets(VirtualFunctionTool):
+class JupyterNotebookManageCodeSnippets(VirtualFunctionApp):
     name = "JupyterNotebookManageCodeSnippets"
     summary = "保存和管理用户的代码片段。"
     parameters: List[ArgParameter] = [
@@ -36630,7 +36630,7 @@ class JupyterNotebookManageCodeSnippets(VirtualFunctionTool):
     ]
 
 
-class JupyterNotebookCreateInteractiveWidget(VirtualFunctionTool):
+class JupyterNotebookCreateInteractiveWidget(VirtualFunctionApp):
     name = "JupyterNotebookCreateInteractiveWidget"
     summary = "创建一个交互式小部件以增强用户体验。"
     parameters: List[ArgParameter] = [
@@ -36653,7 +36653,7 @@ class JupyterNotebookCreateInteractiveWidget(VirtualFunctionTool):
     ]
 
 
-class JupyterNotebookIntegrateExtension(VirtualFunctionTool):
+class JupyterNotebookIntegrateExtension(VirtualFunctionApp):
     name = "JupyterNotebookIntegrateExtension"
     summary = "集成第三方库或扩展。"
     parameters: List[ArgParameter] = [
@@ -36678,7 +36678,7 @@ class JupyterNotebook(FunctionApp):
     description_for_human = "App for executing code, creating documents, visualizing data, training machine learning models, and sharing notebooks in Jupyter Notebook."
     name_for_model = "JupyterNotebook"
     description_for_model = "该工具包提供了一系列工具，帮助用户在Jupyter Notebook环境中执行代码、创建文档、可视化数据、训练机器学习模型并共享笔记本，适用于数据科学家和分析师进行数据分析和机器学习。"
-    tool_classes = [
+    app_classes = [
         JupyterNotebookExecuteCode,
         JupyterNotebookCreateDocument,
         JupyterNotebookVisualizeData,
@@ -36695,7 +36695,7 @@ class JupyterNotebook(FunctionApp):
 #################### Swagger ####################
 
 
-class SwaggerGenerateDocumentation(VirtualFunctionTool):
+class SwaggerGenerateDocumentation(VirtualFunctionApp):
     name = "SwaggerGenerateDocumentation"
     summary = "自动生成API文档，根据提供的API代码生成详细的文档。"
     parameters: List[ArgParameter] = [
@@ -36718,7 +36718,7 @@ class SwaggerGenerateDocumentation(VirtualFunctionTool):
     ]
 
 
-class SwaggerGenerateClientCode(VirtualFunctionTool):
+class SwaggerGenerateClientCode(VirtualFunctionApp):
     name = "SwaggerGenerateClientCode"
     summary = "根据API文档生成客户端代码，支持多种编程语言。"
     parameters: List[ArgParameter] = [
@@ -36746,7 +36746,7 @@ class SwaggerGenerateClientCode(VirtualFunctionTool):
     ]
 
 
-class SwaggerDesignAPI(VirtualFunctionTool):
+class SwaggerDesignAPI(VirtualFunctionApp):
     name = "SwaggerDesignAPI"
     summary = "提供可视化界面，帮助开发者设计和修改API。"
     parameters: List[ArgParameter] = [
@@ -36769,7 +36769,7 @@ class SwaggerDesignAPI(VirtualFunctionTool):
     ]
 
 
-class SwaggerTestAPI(VirtualFunctionTool):
+class SwaggerTestAPI(VirtualFunctionApp):
     name = "SwaggerTestAPI"
     summary = "允许开发者直接在文档中测试API，确保其功能正常。"
     parameters: List[ArgParameter] = [
@@ -36797,7 +36797,7 @@ class SwaggerTestAPI(VirtualFunctionTool):
     ]
 
 
-class SwaggerManageVersion(VirtualFunctionTool):
+class SwaggerManageVersion(VirtualFunctionApp):
     name = "SwaggerManageVersion"
     summary = "支持API版本的管理和变更记录。"
     parameters: List[ArgParameter] = [
@@ -36825,7 +36825,7 @@ class SwaggerManageVersion(VirtualFunctionTool):
     ]
 
 
-class SwaggerImportAPI(VirtualFunctionTool):
+class SwaggerImportAPI(VirtualFunctionApp):
     name = "SwaggerImportAPI"
     summary = "导入API定义文件，便于与其他工具集成。"
     parameters: List[ArgParameter] = [
@@ -36848,7 +36848,7 @@ class SwaggerImportAPI(VirtualFunctionTool):
     ]
 
 
-class SwaggerExportAPI(VirtualFunctionTool):
+class SwaggerExportAPI(VirtualFunctionApp):
     name = "SwaggerExportAPI"
     summary = "导出API定义文件，便于与其他工具集成。"
     parameters: List[ArgParameter] = [
@@ -36867,7 +36867,7 @@ class SwaggerExportAPI(VirtualFunctionTool):
     ]
 
 
-class SwaggerMonitorAPI(VirtualFunctionTool):
+class SwaggerMonitorAPI(VirtualFunctionApp):
     name = "SwaggerMonitorAPI"
     summary = "提供API调用的性能监测和分析工具。"
     parameters: List[ArgParameter] = [
@@ -36893,7 +36893,7 @@ class SwaggerMonitorAPI(VirtualFunctionTool):
     ]
 
 
-class SwaggerCollaborateAPI(VirtualFunctionTool):
+class SwaggerCollaborateAPI(VirtualFunctionApp):
     name = "SwaggerCollaborateAPI"
     summary = "允许多个开发者共同编辑API文档。"
     parameters: List[ArgParameter] = [
@@ -36925,7 +36925,7 @@ class SwaggerCollaborateAPI(VirtualFunctionTool):
     ]
 
 
-class SwaggerValidateDocumentation(VirtualFunctionTool):
+class SwaggerValidateDocumentation(VirtualFunctionApp):
     name = "SwaggerValidateDocumentation"
     summary = "验证生成的文档的准确性和完整性。"
     parameters: List[ArgParameter] = [
@@ -36951,7 +36951,7 @@ class SwaggerValidateDocumentation(VirtualFunctionTool):
     ]
 
 
-class SwaggerGenerateAuthenticationDocs(VirtualFunctionTool):
+class SwaggerGenerateAuthenticationDocs(VirtualFunctionApp):
     name = "SwaggerGenerateAuthenticationDocs"
     summary = "生成API认证方式的文档。"
     parameters: List[ArgParameter] = [
@@ -36974,7 +36974,7 @@ class SwaggerGenerateAuthenticationDocs(VirtualFunctionTool):
     ]
 
 
-class SwaggerProvideExamples(VirtualFunctionTool):
+class SwaggerProvideExamples(VirtualFunctionApp):
     name = "SwaggerProvideExamples"
     summary = "提供API请求和响应的示例。"
     parameters: List[ArgParameter] = [
@@ -37006,7 +37006,7 @@ class Swagger(FunctionApp):
     description_for_human = "一个用于API文档生成和管理的工具包，提升开发效率。"
     name_for_model = "Swagger"
     description_for_model = "Swagger工具包通过自动生成API文档、客户端代码和提供API设计、测试及版本管理功能，旨在提升开发者在API开发过程中的效率和准确性，同时确保文档的安全性与可靠性。"
-    tool_classes = [
+    app_classes = [
         SwaggerGenerateDocumentation,
         SwaggerGenerateClientCode,
         SwaggerDesignAPI,
@@ -37025,7 +37025,7 @@ class Swagger(FunctionApp):
 #################### TensorFlow ####################
 
 
-class TensorFlowModelBuilder(VirtualFunctionTool):
+class TensorFlowModelBuilder(VirtualFunctionApp):
     name = "TensorFlowModelBuilder"
     summary = "提供API支持，帮助用户构建机器学习模型。"
     parameters: List[ArgParameter] = [
@@ -37057,7 +37057,7 @@ class TensorFlowModelBuilder(VirtualFunctionTool):
     ]
 
 
-class TensorFlowModelTrainer(VirtualFunctionTool):
+class TensorFlowModelTrainer(VirtualFunctionApp):
     name = "TensorFlowModelTrainer"
     summary = "使用训练数据集训练模型，并调整超参数。"
     parameters: List[ArgParameter] = [
@@ -37091,7 +37091,7 @@ class TensorFlowModelTrainer(VirtualFunctionTool):
     ]
 
 
-class TensorFlowModelEvaluator(VirtualFunctionTool):
+class TensorFlowModelEvaluator(VirtualFunctionApp):
     name = "TensorFlowModelEvaluator"
     summary = "评估模型的性能，包括准确度和损失等指标。"
     parameters: List[ArgParameter] = [
@@ -37123,7 +37123,7 @@ class TensorFlowModelEvaluator(VirtualFunctionTool):
     ]
 
 
-class TensorFlowModelPredictor(VirtualFunctionTool):
+class TensorFlowModelPredictor(VirtualFunctionApp):
     name = "TensorFlowModelPredictor"
     summary = "使用训练好的模型进行新数据的预测。"
     parameters: List[ArgParameter] = [
@@ -37155,7 +37155,7 @@ class TensorFlowModelPredictor(VirtualFunctionTool):
     ]
 
 
-class TensorFlowModelSaver(VirtualFunctionTool):
+class TensorFlowModelSaver(VirtualFunctionApp):
     name = "TensorFlowModelSaver"
     summary = "保存训练好的模型以便后续使用。"
     parameters: List[ArgParameter] = [
@@ -37187,7 +37187,7 @@ class TensorFlowModelSaver(VirtualFunctionTool):
     ]
 
 
-class TensorFlowModelLoader(VirtualFunctionTool):
+class TensorFlowModelLoader(VirtualFunctionApp):
     name = "TensorFlowModelLoader"
     summary = "重新加载已保存的模型。"
     parameters: List[ArgParameter] = [
@@ -37213,7 +37213,7 @@ class TensorFlowModelLoader(VirtualFunctionTool):
     ]
 
 
-class TensorFlowDataPreprocessor(VirtualFunctionTool):
+class TensorFlowDataPreprocessor(VirtualFunctionApp):
     name = "TensorFlowDataPreprocessor"
     summary = "对数据进行清洗和预处理，确保数据质量。"
     parameters: List[ArgParameter] = [
@@ -37239,7 +37239,7 @@ class TensorFlowDataPreprocessor(VirtualFunctionTool):
     ]
 
 
-class TensorFlowVisualizer(VirtualFunctionTool):
+class TensorFlowVisualizer(VirtualFunctionApp):
     name = "TensorFlowVisualizer"
     summary = "可视化训练过程和模型性能。"
     parameters: List[ArgParameter] = [
@@ -37262,7 +37262,7 @@ class TensorFlowVisualizer(VirtualFunctionTool):
     ]
 
 
-class TensorFlowHyperparameterOptimizer(VirtualFunctionTool):
+class TensorFlowHyperparameterOptimizer(VirtualFunctionApp):
     name = "TensorFlowHyperparameterOptimizer"
     summary = "自动化优化模型的超参数。"
     parameters: List[ArgParameter] = [
@@ -37288,7 +37288,7 @@ class TensorFlowHyperparameterOptimizer(VirtualFunctionTool):
     ]
 
 
-class TensorFlowDistributedTrainer(VirtualFunctionTool):
+class TensorFlowDistributedTrainer(VirtualFunctionApp):
     name = "TensorFlowDistributedTrainer"
     summary = "在多个设备或节点上进行模型训练。"
     parameters: List[ArgParameter] = [
@@ -37320,7 +37320,7 @@ class TensorFlowDistributedTrainer(VirtualFunctionTool):
     ]
 
 
-class TensorFlowModelExporter(VirtualFunctionTool):
+class TensorFlowModelExporter(VirtualFunctionApp):
     name = "TensorFlowModelExporter"
     summary = "将模型导出为不同格式以便于部署。"
     parameters: List[ArgParameter] = [
@@ -37348,7 +37348,7 @@ class TensorFlowModelExporter(VirtualFunctionTool):
     ]
 
 
-class TensorFlowModelSearcher(VirtualFunctionTool):
+class TensorFlowModelSearcher(VirtualFunctionApp):
     name = "TensorFlowModelSearcher"
     summary = "根据模型类型和参数搜索模型并返回其唯一标识符。"
     parameters: List[ArgParameter] = [
@@ -37385,7 +37385,7 @@ class TensorFlow(FunctionApp):
     )
     name_for_model = "TensorFlow"
     description_for_model = "TensorFlow工具包提供了一个全面的机器学习框架，支持模型构建、训练、评估和预测，适合开发人员和数据科学家在实际应用中使用。"
-    tool_classes = [
+    app_classes = [
         TensorFlowModelBuilder,
         TensorFlowModelTrainer,
         TensorFlowModelEvaluator,

@@ -788,7 +788,7 @@
             "数据管理助手"
         ],
         "advantages": [
-            "SmartPricingTool",
+            "SmartPricingApp",
             "UserBehaviorAnalysis"
         ],
         "disadvantages": [
@@ -1788,11 +1788,11 @@
         "description": "郑爽，32岁，拥有旅游管理学士学位。她性格细心，擅长市场调研，能够制定出吸引游客的旅游产品。对电脑的应用能力强，熟悉LLM的使用。日常工作包括进行市场分析、策划旅游项目和撰写策划书。",
         "usage": [
             "TravelService",
-            "SmartPricingTool"
+            "SmartPricingApp"
         ],
         "advantages": [
             "TravelService",
-            "SmartPricingTool"
+            "SmartPricingApp"
         ],
         "disadvantages": [
             "Curl",
@@ -2148,7 +2148,7 @@
             "客户关系管理智能体"
         ],
         "advantages": [
-            "SmartPricingTool",
+            "SmartPricingApp",
             "UserBehaviorAnalysis"
         ],
         "disadvantages": [
@@ -4357,11 +4357,11 @@
         "description": "赵丽，33岁，拥有金融风险管理硕士学位，性格谨慎，细心程度极高，擅长识别和分析潜在风险。对电脑相关知识有较强的掌握，能够使用多种风险评估软件。对 LLM 有一定的了解，智能设备使用主要集中在笔记本电脑和手机。日常工作包括评估风险、制定风险控制策略和监控市场变化。",
         "usage": [
             "XueQiu",
-            "SmartPricingTool"
+            "SmartPricingApp"
         ],
         "advantages": [
             "XueQiu",
-            "SmartPricingTool"
+            "SmartPricingApp"
         ],
         "disadvantages": [
             "Nmap",
@@ -5494,7 +5494,7 @@
         "description": "张伟是一名35岁的汽车工程师，性格严谨，注重细节。他拥有硕士学位，熟悉汽车设计和智能汽车的技术，擅长使用各种工程软件，对 LLM 有较好的理解，日常工作中常用智能助手协助设计工作和项目管理。",
         "usage": [
             "TrafficAssistant",
-            "SmartPricingTool"
+            "SmartPricingApp"
         ],
         "advantages": [
             "Ansible",
@@ -5854,7 +5854,7 @@
             "DidiRide"
         ],
         "advantages": [
-            "SmartPricingTool",
+            "SmartPricingApp",
             "UserBehaviorAnalysis"
         ],
         "disadvantages": [

@@ -1,8 +1,8 @@
-"""Tool interface"""
+"""App interface"""
 from abc import abstractmethod
 
-from langchain.agents import Tool
-from langchain.tools import BaseTool
+from langchain.agents import App
+from langchain.tools import BaseApp
 from pydantic import BaseModel, Field, validator
 from smartllm.utils import (
     PRIMITIVE_TYPES,
@@ -17,9 +17,9 @@ from smartllm.utils import (
 from smartllm.utils.my_typing import *
 
 
-class FunctionTool(BaseTool):
+class FunctionApp(BaseApp):
     """
-    Function tool is defined according to our specifciation that resembles Python function docstring, see `tool_interface.md`.
+    Function tool is defined according to our specifciation that resembles Python function docstring, see `app_interface.md`.
     """
 
     name: str = None
@@ -64,45 +64,45 @@ class FunctionTool(BaseTool):
 
         return desc
 
-    def parse_parameters(self, tool_input: str) -> Dict[str, Any]:
+    def parse_parameters(self, app_input: str) -> Dict[str, Any]:
         """Parse the input string into a dictionary of parameters"""
-        params = load_dict(tool_input)
+        params = load_dict(app_input)
         validate_inputs(self.parameters, params)
         return params
 
     @abstractmethod
-    def parse_return(self, tool_output: Dict[str, Any]) -> str:
+    def parse_return(self, app_output: Dict[str, Any]) -> str:
         """Parse the output dictionary into a string"""
 
     @abstractmethod
-    def _runtool(self, tool_input: Dict[str, Any]) -> Dict[str, Any]:
+    def _runtool(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
         """Run the tool"""
 
     @abstractmethod
-    def _aruntool(self, tool_input: Dict[str, Any]) -> Dict[str, Any]:
+    def _aruntool(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
         """Run the tool asynchronously"""
 
-    def _process(self, run_func: Callable, tool_input: str) -> str:
+    def _process(self, run_func: Callable, app_input: str) -> str:
         try:
-            inputs = self.parse_parameters(tool_input)
+            inputs = self.parse_parameters(app_input)
         except Exception as e:
             return f"Invalid Action Input: {e}"
         outputs = run_func(inputs)
         return self.parse_return(outputs)
 
-    def _run(self, tool_input: str) -> str:
-        return self._process(self._runtool, tool_input)
+    def _run(self, app_input: str) -> str:
+        return self._process(self._runtool, app_input)
 
-    def _arun(self, tool_input: str) -> str:
-        return self._process(self._aruntool, tool_input)
+    def _arun(self, app_input: str) -> str:
+        return self._process(self._aruntool, app_input)
 
 
-class VirtualFunctionTool(FunctionTool):
+class VirtualFunctionApp(FunctionApp):
     """Virtual function tool that does not require implemented"""
 
-    def __init__(self, name_prefix: str = "", tool_spec: Dict[str, Any] = {}, **kwargs):
+    def __init__(self, name_prefix: str = "", app_spec: Dict[str, Any] = {}, **kwargs):
         super().__init__(**kwargs)
-        for k, v in tool_spec.items():
+        for k, v in app_spec.items():
             if k == "name":
                 v = name_prefix + v
             if k not in self.__dict__:
@@ -111,33 +111,33 @@ class VirtualFunctionTool(FunctionTool):
         if self.description is None:
             self.description = self.create_description()
 
-    def parse_return(self, tool_output: Dict[str, Any]) -> str:
+    def parse_return(self, app_output: Dict[str, Any]) -> str:
         # parse the output dictionary into a string
         pass
 
-    def _runtool(self, tool_input: Dict[str, Any]) -> Dict[str, Any]:
+    def _runtool(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
         # run the tool
         pass
 
-    def _aruntool(self, tool_input: Dict[str, Any]) -> Dict[str, Any]:
+    def _aruntool(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
         # run the tool asynchronously
         pass
 
 
 class BaseApp:
     """
-    The app consists of a collection of tools that are `BaseTool` objects.
+    The app consists of a collection of tools that are `BaseApp` objects.
     An example is a `Gmail` app that may have multiple tool APIs, such as `Send`, `Read`, etc.
     """
 
     name: str
-    tool_classes: List[Any]
+    app_classes: List[Any]
 
     def __init__(self):
         self.tools = self.load_tools()
 
     @abstractmethod
-    def load_tools(self) -> List[BaseTool]:
+    def load_tools(self) -> List[BaseApp]:
         """Load the tools"""
 
     def _get_app_summary(self) -> str:
@@ -148,14 +148,14 @@ class BaseApp:
         # create a description for the app, including the tools
         desc = self._get_app_summary()
         for tool in self.tools:
-            tool_name = self.toolapi_marker(tool.name)
-            tool_desc = (
+            app_name = self.toolapi_marker(tool.name)
+            app_desc = (
                 tool.create_description(detail_level)
-                if isinstance(tool, FunctionTool)
+                if isinstance(tool, FunctionApp)
                 else tool.description
             )
-            tool_desc = insert_indent(tool_desc, insert_first=False)
-            desc += f"\t* {tool_name}: {tool_desc}"
+            app_desc = insert_indent(app_desc, insert_first=False)
+            desc += f"\t* {app_name}: {app_desc}"
         return desc
 
     @property
@@ -173,21 +173,21 @@ class BaseApp:
         # return f"[{s}]"
         return s
 
-    def get_tool(self, tool_name: str) -> BaseTool:
+    def get_tool(self, app_name: str) -> BaseApp:
         """Get a tool by its name"""
         for tool in self.tools:
-            if tool.name == tool_name:
+            if tool.name == app_name:
                 return tool
-        raise ValueError(f"Tool {tool_name} does not exist in this app")
+        raise ValueError(f"App {app_name} does not exist in this app")
 
-    def __getitem__(self, tool_name: str) -> BaseTool:
+    def __getitem__(self, app_name: str) -> BaseApp:
         """Get a tool by its name"""
-        return self.get_tool(tool_name)
+        return self.get_tool(app_name)
 
-    def __contains__(self, tool_name: str) -> bool:
+    def __contains__(self, app_name: str) -> bool:
         """Check if a tool exists in the app"""
         for tool in self.tools:
-            if tool.name == tool_name:
+            if tool.name == app_name:
                 return True
         return False
 
@@ -211,26 +211,26 @@ class BaseApp:
 
 class FunctionApp(BaseApp):
     """
-    Function app consists of a collection of tools that are `FunctionToolAPI` objects.
-    Defined according to our specifciation that resembles OpenAPI spec, see `tool_interface.md`
+    Function app consists of a collection of tools that are `FunctionAppAPI` objects.
+    Defined according to our specifciation that resembles OpenAPI spec, see `app_interface.md`
     """
 
     name_for_human: str
     description_for_human: str
     name_for_model: str
     description_for_model: str
-    tool_classes: List[Any]
+    app_classes: List[Any]
 
     def __init__(self):
         super().__init__()
         self.name = self.name_for_model
 
-    def load_tools(self) -> List[BaseTool]:
+    def load_tools(self) -> List[BaseApp]:
         """Load the tools"""
-        return [tool_class() for tool_class in self.tool_classes]
+        return [app_class() for app_class in self.app_classes]
 
     def _get_app_summary(self) -> str:
         app_name = self.app_marker(self.name_for_model)
         desc = f"{app_name}: {self.description_for_model}\n"
-        desc += f"Tool APIs:\n"
+        desc += f"App APIs:\n"
         return desc

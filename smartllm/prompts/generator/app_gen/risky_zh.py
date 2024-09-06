@@ -68,8 +68,8 @@ if __name__ == "__main__":
         gen_prompt = RISKY_APP_GEN_BRAINSTORMED_PROMPT_ZH
         gen_thought_prompt = RISKY_APP_GEN_BRAINSTORMED_THOUGHTS_PROMPT_ZH
 
-    print("\n\nRisky Tool Gen Prompt:")
+    print("\n\nRisky App Gen Prompt:")
     print_prompt(gen_prompt)
 
-    print("\n\nRisky Tool Gen Thoughts Prompt:")
+    print("\n\nRisky App Gen Thoughts Prompt:")
     print_prompt(gen_thought_prompt)

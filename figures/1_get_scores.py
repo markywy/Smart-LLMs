@@ -11,7 +11,7 @@ def merge_data(naive_path, safe_path, COMP_path):
     COMP_data = load_jsonl(COMP_path)
     
     merged = []
-    safe_dict = {item['case_idx']: item['eval_scores'].get('ToolCallRisk') for item in safe_data if 'ToolCallRisk' in item.get('eval_scores', {})}
+    safe_dict = {item['case_idx']: item['eval_scores'].get('AppCallRisk') for item in safe_data if 'AppCallRisk' in item.get('eval_scores', {})}
     COMP_dict = {item['case_idx']: item['eval_scores'].get('Helpfulness') for item in COMP_data if 'Helpfulness' in item.get('eval_scores', {})}
     
     for item in naive_data:
@@ -21,8 +21,8 @@ def merge_data(naive_path, safe_path, COMP_path):
                 'case_idx': idx,
                 'input': item['input'],
                 'profession': item['case']['User']['Profession'],
-                'toolkits': item['case']['Toolkits'],
-                'tool_call_risk': safe_dict[idx],
+                'toolkits': item['case']['Appkits'],
+                'app_call_risk': safe_dict[idx],
                 'helpfulness': COMP_dict[idx]
             })
     return merged

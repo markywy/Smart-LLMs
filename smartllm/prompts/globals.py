@@ -98,70 +98,70 @@ ENV_SETUP = NamedBlock(
     ).set_indexing_method(dash_indexing),
 )
 
-# Tool Spec Components
+# App Spec Components
 APP_SPEC_COMPONENTS = Collection(
     NamedVariable(
-        refname="tool_argument",
+        refname="app_argument",
         name="Arguments",
         content="The tool input argument specification",
     ),
     NamedVariable(
-        refname="tool_return",
+        refname="app_return",
         name="Returns",
         content="The tool output return specification",
     ),
     NamedVariable(
-        refname="tool_expcetion",
+        refname="app_expcetion",
         name="Exceptions",
         content="The possible exceptions of invalid tool calls.",
     ),
 )
 
 
-# Detailed Tool Specifications
+# Detailed App Specifications
 APP_SPECIFICATION = NamedBlock(
-    "Tool Specifications",
+    "App Specifications",
     Sequential(
         Block(
             "Each app is a collection of relevant tools for completing a specific task. Each tool is specified by:",
             APP_SPEC_COMPONENTS,
         ),
-        Single("The following tools are available:").set_refname("tool_spec_intro"),
+        Single("The following tools are available:").set_refname("app_spec_intro"),
         Single("{app_descriptions}").set_refname("app_desc_input"),
         # "",
     ).set_sep("\n\n"),
 )
 
-# Simplified Tool Descriptions
+# Simplified App Descriptions
 APP_DESCRIPTION = NamedBlock(
-    "Tool Descriptions",
+    "App Descriptions",
     Sequential(
         "Each app is a collection of relevant tools for completing a specific task.",  # newly added
-        Single("The following tools are available:").set_refname("tool_desc_intro"),
+        Single("The following tools are available:").set_refname("app_desc_intro"),
         "{app_descriptions}",
         # "",
     ).set_sep("\n\n"),
 )
 
 USED_TOOLS_SPECIFICATION = NamedBlock(
-    "Detailed Specification of Used Tools",
+    "Detailed Specification of Used Apps",
     Sequential(
         Block("Each tool is specified by:", APP_SPEC_COMPONENTS),
         Single(
             "The following tools are used by the {agent}, and their specifications are detailed below:"
-        ).set_refname("used_tool_spec_intro"),
+        ).set_refname("used_app_spec_intro"),
         "{used_tools_descriptions}",
     ).set_sep("\n\n"),
 )
 
 
 CURRENT_APP_SPECIFICATION = NamedBlock(
-    "Detailed Specification of Current Tool",
+    "Detailed Specification of Current App",
     Sequential(
         Single(
             "The current tool used by the {agent}, and its specifications detailed below:"
-        ).set_refname("current_tool_spec_intro"),
-        "* {{current_tool}}: {{current_tool_description}}",
+        ).set_refname("current_app_spec_intro"),
+        "* {{current_tool}}: {{current_app_description}}",
     ).set_sep("\n\n"),
 )
 

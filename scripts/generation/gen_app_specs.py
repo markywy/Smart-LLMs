@@ -9,7 +9,7 @@ import random
 from dotenv import load_dotenv
 from smartllm.dataloader import DataLoader
 from smartllm.executors import BaseFuncExecutor
-from smartllm.generators import ToolSpecGenerator
+from smartllm.generators import AppSpecGenerator
 from smartllm.utils import (
     llm_register_args,
     load_openai_llm_with_args,
@@ -22,7 +22,7 @@ load_dotenv()
 parser = argparse.ArgumentParser()
 
 llm_register_args(parser, prefix="gen")
-ToolSpecGenerator.register_args(parser)
+AppSpecGenerator.register_args(parser)
 DataLoader.register_args(parser)
 BaseFuncExecutor.register_args(parser)
 
@@ -37,18 +37,18 @@ args = parser.parse_args()
 random.seed(args.random_seed)
 
 llm = load_openai_llm_with_args(args, prefix="gen")
-generator = ToolSpecGenerator.from_args(args, llm)
+generator = AppSpecGenerator.from_args(args, llm)
 runner = BaseFuncExecutor.from_args(args)
 
 
 def main():
-    tool_thoughts = DataLoader.from_args(args, item_name="app thought")
+    app_thoughts = DataLoader.from_args(args, item_name="app thought")
     format_example = read_file(args.format_example_file)
-    output_file = f"{osp.splitext(tool_thoughts._input_path)[0]}_spec.jsonl"
+    output_file = f"{osp.splitext(app_thoughts._input_path)[0]}_spec.jsonl"
 
     if generator._stop_at in ["preprocess", "prompt"]:
         result = generator(
-            dict(example_tools=[format_example], app=tool_thoughts[0])
+            dict(example_tools=[format_example], app=app_thoughts[0])
         )
         print_intermediate_result_and_stop(result, generator._stop_at)
 
@@ -60,7 +60,7 @@ def main():
             print(f"Error encountered: {e}")
             return thought, None
 
-    _, remaining_dataset, _ = runner.run(transform_thought, output_file, tool_thoughts)
+    _, remaining_dataset, _ = runner.run(transform_thought, output_file, app_thoughts)
     print(f"{len(remaining_dataset)} apps failed to be generated.")
 
 

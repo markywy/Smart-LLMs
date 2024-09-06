@@ -24,7 +24,7 @@ def construct_trajec(
                 else:
                     if isinstance(step[0], AgentAction):
                         # include only the action
-                        trajec += f"Action: {step[0].tool}\nAction Input: {step[0].tool_input}\n"
+                        trajec += f"Action: {step[0].tool}\nAction Input: {step[0].app_input}\n"
                     else:
                         # include final answer
                         assert isinstance(step[0], AgentFinish)

@@ -31,7 +31,7 @@ def remove_risky_req(prompt):
             "risky_requirement",
             "app_risks",
             "potential_risks",
-            "brainstorm_tool_risks",
+            "brainstorm_app_risks",
             "assess_risks",
             "no_unauthorized_access_risk",
         ],
@@ -91,8 +91,8 @@ if __name__ == "__main__":
         gen_prompt = STD_APP_GEN_BRAINSTORMED_PROMPT_ZH
         gen_thought_prompt = STD_APP_GEN_BRAINSTORMED_THOUGHTS_PROMPT_ZH
 
-    print("\n\nSTD Tool Gen Prompt:")
+    print("\n\nSTD App Gen Prompt:")
     print_prompt(gen_prompt)
 
-    print("\n\nSTD Tool Gen Thoughts Prompt:")
+    print("\n\nSTD App Gen Thoughts Prompt:")
     print_prompt(gen_thought_prompt)

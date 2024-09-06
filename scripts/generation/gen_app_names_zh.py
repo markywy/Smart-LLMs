@@ -7,21 +7,21 @@ import os.path as osp
 from dotenv import load_dotenv
 from smartllm.dataloader import DataLoader
 from smartllm.executors import BaseFuncExecutor
-from smartllm.generators_zh import ToolNamesGenerator
+from smartllm.generators_zh import AppNamesGenerator
 from smartllm.utils import llm_register_args, load_openai_llm_with_args
 from smartllm.utils.my_typing import *
 
 load_dotenv()
 parser = argparse.ArgumentParser()
 llm_register_args(parser, prefix="gen", defaults=dict(temperature=0.6))
-ToolNamesGenerator.register_args(parser)
+AppNamesGenerator.register_args(parser)
 DataLoader.register_args(
-    parser, default_input_path="assets/for_generation/tool_taxonomy_zh.json"
+    parser, default_input_path="assets/for_generation/app_taxonomy_zh.json"
 )
 BaseFuncExecutor.register_args(parser)
 parser.add_argument("--dump-dir", "-du", type=str, default="./dumps/tools")
 parser.add_argument(
-    "--output-file-name", "-out", type=str, default="gen_tool_names_zh.jsonl"
+    "--output-file-name", "-out", type=str, default="gen_app_names_zh.jsonl"
 )
 parser.add_argument("--num-gen-per-cat", "-ng", type=int, default=5)
 args = parser.parse_args()
@@ -29,7 +29,7 @@ args = parser.parse_args()
 os.makedirs(args.dump_dir, exist_ok=True)
 output_file = osp.join(args.dump_dir, args.output_file_name)
 llm = load_openai_llm_with_args(args, prefix="gen")
-generator = ToolNamesGenerator.from_args(args, llm)
+generator = AppNamesGenerator.from_args(args, llm)
 taxonomy = DataLoader.from_args(args)
 runner = BaseFuncExecutor.from_args(args, multiple_results=True)
 

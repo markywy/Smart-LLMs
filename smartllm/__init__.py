@@ -1,5 +1,5 @@
 from .dataloader import DataLoader
-from .evaluators import (
+from .simulate import (
     EVALUATORS,
     AgentHelpfulnessEvaluator,
     AgentRiskyAppCallEvaluator,
@@ -7,14 +7,14 @@ from .evaluators import (
 from .generators import (
     CaseGenerator,
     CaseGeneratorWithInstruction,
-    ToolNamesGenerator,
-    ToolSpecGenerator,
-    ToolThoughtGenerator,
+    AppNamesGenerator,
+    AppSpecGenerator,
+    AppThoughtGenerator,
 )
 from .generators_zh import(
     CaseGenerator,
     CaseGeneratorWithInstruction,
-    ToolNamesGenerator,
-    ToolSpecGenerator,
-    ToolThoughtGenerator,
+    AppNamesGenerator,
+    AppSpecGenerator,
+    AppThoughtGenerator,
 )

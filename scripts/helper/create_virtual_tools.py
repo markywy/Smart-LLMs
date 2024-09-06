@@ -13,13 +13,13 @@ from smartllm.utils import read_file
 
 PY_HEADER = """
 \"\"\"Virtual tools created from json files.\"\"\"
-from smartllm.tools.tool_interface import (
+from smartllm.tools.app_interface import (
     ArgException,
     ArgParameter,
     ArgReturn,
-    FunctionTool,
     FunctionApp,
-    VirtualFunctionTool,
+    FunctionApp,
+    VirtualFunctionApp,
 )
 from smartllm.utils.my_typing import *
 
@@ -37,13 +37,13 @@ class {app_name}(FunctionApp):
     description_for_human = "{app_description_for_human}"
     name_for_model = "{app_name_for_model}"
     description_for_model = "{app_description_for_model}"
-    tool_classes = {tool_class_names}
+    app_classes = {app_class_names}
 """
 
 APP_CLASS_TEMPLATE = """
-class {tool_cls_name}(VirtualFunctionTool):
-    name = "{tool_cls_name}"
-    summary = "{tool_summary}"
+class {app_cls_name}(VirtualFunctionApp):
+    name = "{app_cls_name}"
+    summary = "{app_summary}"
     parameters: List[ArgParameter] = {parameters}
     returns: List[ArgReturn] = {returns}
     exceptions: List[ArgException] = {exceptions}
@@ -75,18 +75,18 @@ args = args.parse_args()
 
 
 def main():
-    tool_specs = []
+    app_specs = []
     # load tool specifications from json file
-    for filename in args.tool_spec_files:
-        filepath = os.path.join(args.tool_spec_dir, filename)
-        tool_specs.extend(read_file(filepath))
+    for filename in args.app_spec_files:
+        filepath = os.path.join(args.app_spec_dir, filename)
+        app_specs.extend(read_file(filepath))
 
     # the output file
     out_py = open(args.out_py_path, "w", encoding='utf-8')
     out_py.write(PY_HEADER)
 
     # create virtual tools
-    for toolspec in tool_specs:
+    for toolspec in app_specs:
         app_name = toolspec["app"]
         app_name_for_human = toolspec["name_for_human"]
         app_name_for_model = toolspec["name_for_model"]
@@ -95,23 +95,23 @@ def main():
 
         out_py.write(SEPERATOR.format(app_name=app_name))
 
-        tool_class_names = []
-        for tool in toolspec["tools"]:
-            tool_name = tool["name"]
-            tool_cls_name = app_name_for_model + tool_name
-            tool_class_names.append(tool_cls_name)
-            tool_summary = tool["summary"]
-            tool_parameters = tool.get("parameters", [])
-            tool_returns = tool.get("returns", [])
-            tool_exceptions = tool.get("exceptions", [])
+        app_class_names = []
+        for tool in toolspec["api"]:
+            app_name = tool["name"]
+            app_cls_name = app_name_for_model + app_name
+            app_class_names.append(app_cls_name)
+            app_summary = tool["summary"]
+            app_parameters = tool.get("parameters", [])
+            app_returns = tool.get("returns", [])
+            app_exceptions = tool.get("exceptions", [])
 
             out_py.write(
                 APP_CLASS_TEMPLATE.format(
-                    tool_cls_name=tool_cls_name,
-                    tool_summary=tool_summary,
-                    parameters=tool_parameters,
-                    returns=tool_returns,
-                    exceptions=tool_exceptions,
+                    app_cls_name=app_cls_name,
+                    app_summary=app_summary,
+                    parameters=app_parameters,
+                    returns=app_returns,
+                    exceptions=app_exceptions,
                 )
             )
 
@@ -122,7 +122,7 @@ def main():
                 app_name_for_model=app_name_for_model,
                 app_description_for_human=app_description_for_human,
                 app_description_for_model=app_description_for_model,
-                tool_class_names="[{}]".format(", ".join(tool_class_names)),
+                app_class_names="[{}]".format(", ".join(app_class_names)),
             )
         )
 

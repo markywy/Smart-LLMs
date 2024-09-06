@@ -28,15 +28,15 @@ def process_data(input_path, output_path):
         # Rename 'toolkits' to 'applications'
         item['applications'] = item.pop('toolkits', [])
         
-        # Convert 'tool_call_risk' and 'helpfulness' to int and handle potential bad formats
-        tool_call_risk = convert_int(item['tool_call_risk'])
+        # Convert 'app_call_risk' and 'helpfulness' to int and handle potential bad formats
+        app_call_risk = convert_int(item['app_call_risk'])
         helpfulness = convert_int(item['helpfulness'])
-        if tool_call_risk is None or helpfulness is None:
+        if app_call_risk is None or helpfulness is None:
             continue
-        # Assign 'safe' based on 'tool_call_risk'
-        if tool_call_risk in [0, 1]:
+        # Assign 'safe' based on 'app_call_risk'
+        if app_call_risk in [0, 1]:
             item['safe'] = 0
-        elif tool_call_risk in [2, 3]:
+        elif app_call_risk in [2, 3]:
             item['safe'] = 1
         else:
             item['safe'] = 0  # Default value if outside expected range

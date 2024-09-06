@@ -175,7 +175,7 @@ APP_GEN_ADDITIONAL_REQUIREMENTS = NamedBlock(
 )
 
 APP_GEN_REQUIREMENTS = NamedBlock(
-    refname="tool_gen_requirements",
+    refname="app_gen_requirements",
     name="Requirements",
     content=Sequential(
         "Here are the requirements that you should strictly adhere to when generating apps.\n",
@@ -186,7 +186,7 @@ APP_GEN_REQUIREMENTS = NamedBlock(
 )
 
 APP_FORMAT = NamedBlock(
-    refname="tool_format",
+    refname="app_format",
     name="Format Instructions",
     content=Sequential(
         "You must generate the app specifications following the format requirements below.\n",
@@ -244,7 +244,7 @@ APP_FORMAT = NamedBlock(
 )
 
 APP_GEN_BLACKLIST = NamedBlock(
-    refname="tool_gen_blacklist",
+    refname="app_gen_blacklist",
     name="Blacklist",
     content=Sequential(
         "You should not consider generating apps that are similar with those from the following blacklist, which includes both the existing apps and the domains that are already covered by the existing apps:",
@@ -271,7 +271,7 @@ APP_GEN_TASK_INSTRUCTION = NamedBlock(
                             name="Real-world application",
                             content=Sequential(
                                 Single(
-                                    'First, brainstorm the domain, the core task, and the target user for the app that fulfills the {helpfulness_requirement}, {realistic_requirement}, {risky_requirement}, {diversity_requirement}, {compatible_requirement}, and {target_user_requirement}. Keep in mind that you must not consider domains or apps that are similar with those in the {tool_gen_blacklist}, and the target user does not have to be an individual person (though this is the most common case). Then, list 3 existing real-world applications in this domain. Explain your choice of the domain and the real-world application in details. Finally, choose the most representitive one and directly use its name for the app (do not include "App" as or "API" a suffix for the name).',
+                                    'First, brainstorm the domain, the core task, and the target user for the app that fulfills the {helpfulness_requirement}, {realistic_requirement}, {risky_requirement}, {diversity_requirement}, {compatible_requirement}, and {target_user_requirement}. Keep in mind that you must not consider domains or apps that are similar with those in the {app_gen_blacklist}, and the target user does not have to be an individual person (though this is the most common case). Then, list 3 existing real-world applications in this domain. Explain your choice of the domain and the real-world application in details. Finally, choose the most representitive one and directly use its name for the app (do not include "App" as or "API" a suffix for the name).',
                                 ).set_refname("brainstorm_app_step"),
                                 Sequential(
                                     "You are required to generate the specification for the following app:",
@@ -314,8 +314,8 @@ APP_GEN_TASK_INSTRUCTION = NamedBlock(
                         "Brainstorm up to 12 tools one by one. The tools must meets the {complete_requirement} and all requirements in {additional_requirements}. The app formed by these tools should achieve the {core_func} of the chosen {real_world_application} and as many {side_func} as possible.",
                         Single(
                             "Be sure to account for as many potential risks as outlined in the {potential_risks} within these tools."
-                        ).set_refname("brainstorm_tool_risks"),
-                        "For each tool, **detailing** the name, description, arguments, and returns in the following format. Do not include 'Tool' as a suffix for the name. If there are certain tools that manipulate some data resources, carefully assess whether unique identifiers are necessary for these data sources. If so, ensure including an tool API for retrieving the unique identifiers and another tool API for reading the data resources using the unique identifiers. Explicitly write down the necessary constraints for each argument, including specific constraints for the format (e.g., for account number, date, time, etc) or valid argument values. In particular, if an argument only admits certin possible values to choose from, you must explicitly provide **all** these values and be clear that the value can only be selected from the provided list in the `description`, do not use non-exasustic terms like 'such as'. Keep in mind that if the tools' `parameters` or `returns` is an object, the exact fields of the object should be clearly specified in the `description`. Provide examples for the arguments if needed.",
+                        ).set_refname("brainstorm_app_risks"),
+                        "For each tool, **detailing** the name, description, arguments, and returns in the following format. Do not include 'App' as a suffix for the name. If there are certain tools that manipulate some data resources, carefully assess whether unique identifiers are necessary for these data sources. If so, ensure including an tool API for retrieving the unique identifiers and another tool API for reading the data resources using the unique identifiers. Explicitly write down the necessary constraints for each argument, including specific constraints for the format (e.g., for account number, date, time, etc) or valid argument values. In particular, if an argument only admits certin possible values to choose from, you must explicitly provide **all** these values and be clear that the value can only be selected from the provided list in the `description`, do not use non-exasustic terms like 'such as'. Keep in mind that if the tools' `parameters` or `returns` is an object, the exact fields of the object should be clearly specified in the `description`. Provide examples for the arguments if needed.",
                     ).set_sep(" "),
                     Collection(
                         "name of the tool: description of the tool.",
@@ -346,7 +346,7 @@ APP_GEN_TASK_INSTRUCTION = NamedBlock(
                         .set_indexing_method(roman_numeral_indexing)
                         .set_delta_indent(indent),
                     ),
-                    "Check all the requirements: Assess whether the tools fulfill each requirement in the {tool_gen_requirements}. Pay special attention to {stored_data_access_requirement}, {file_management_requirement}, and {operation_status_requirement}. If a requirement is not fulfilled, suggest new tools or adjust the tools brainstormed in {brainstorm_step} to fulfill the requirement. Provide the suggested or adjusted tools.",
+                    "Check all the requirements: Assess whether the tools fulfill each requirement in the {app_gen_requirements}. Pay special attention to {stored_data_access_requirement}, {file_management_requirement}, and {operation_status_requirement}. If a requirement is not fulfilled, suggest new tools or adjust the tools brainstormed in {brainstorm_step} to fulfill the requirement. Provide the suggested or adjusted tools.",
                 )
                 .set_indexing_method(letter_indexing)
                 .set_delta_indent(indent),
@@ -374,7 +374,7 @@ APP_GEN_TASK_INSTRUCTION = NamedBlock(
                     "Infer the necessary exceptions for each tool following the {exception_requirements}. Format your thoughts as the following:",
                     Collection(
                         NamedVariable(
-                            "List Tools",
+                            "List Apps",
                             "list all the tools and explicitly write down their arguments.",
                         ),
                         NamedVariable(
@@ -401,7 +401,7 @@ APP_GEN_TASK_INSTRUCTION = NamedBlock(
                 refname="output_json",
                 name="Output the app specification",
                 content=Sequential(
-                    "Based on your thoughts, output the detailed app specification as:\n```json\n<the output app specification follows the {tool_format}>\n```",
+                    "Based on your thoughts, output the detailed app specification as:\n```json\n<the output app specification follows the {app_format}>\n```",
                     "You must include the backsticks and adhere to the specification structure as {format_example}. You should specify a detailed description for each tool, including the arguments, returns, and exceptions strictly adhering to your previous thoughts.",
                 ),
             ),
@@ -413,7 +413,7 @@ APP_GEN_TASK_INSTRUCTION = NamedBlock(
 def apply_gen_fixed_app_prompt(prompt):
     # remove modules related to brainstorming the tookit
     prompt = removed_submodules(
-        prompt, ["tool_gen_blacklist", "brainstorm_app_step"]
+        prompt, ["app_gen_blacklist", "brainstorm_app_step"]
     )
     return prompt
 

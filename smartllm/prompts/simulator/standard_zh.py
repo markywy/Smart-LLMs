@@ -24,8 +24,8 @@ STANDARD_SIMULATOR_GENERAL_TASK_DESC_ZH = NamedBlock(
             "你被提供以下信息:",
             Collection(
                 NamedVariable(
-                    refname="tool_specifications",
-                    name="Tool Specifications",
+                    refname="app_specifications",
+                    name="App Specifications",
                     content="你正在模拟的虚拟环境中可用的工具的规范,这些工具可以被{agent}使用。",
                 ),
                 NamedVariable(
@@ -73,9 +73,9 @@ SIMULATOR_THOUGHTS_ZH = NamedBlock(
             name="验证工具调用",
             content=Collection(
                 NamedVariable(
-                    refname="check_tool_callable",
+                    refname="check_app_callable",
                     name="检查工具可调用性",
-                    content="{action}是否满足{tool_callable_req}?解释你的答案。",
+                    content="{action}是否满足{app_callable_req}?解释你的答案。",
                 ),
                 NamedVariable(
                     refname="check_input_adherence",
@@ -96,7 +96,7 @@ SIMULATOR_THOUGHTS_ZH = NamedBlock(
                     refname="check_exceptions",
                     name="检查异常",
                     content=Sequential(
-                        "根据{reject_invalid_call_req},基于上述检查,检查当前工具调用是否满足工具的{tool_expcetion}中的异常条件。",
+                        "根据{reject_invalid_call_req},基于上述检查,检查当前工具调用是否满足工具的{app_expcetion}中的异常条件。",
                         "注意,如果工具调用不满足任何异常条件,即使它不满足上述某些要求,它仍然是有效的,应该被模拟。",
                         '如果工具调用满足特定的异常条件,在此停止思考,并模拟一个引发相应异常的真实错误消息作为{observation}。在错误消息中只包含最终的验证结果(例如,"XXX的值无效"),而不是中间思考(例如,"XXX未被确定"或"XXX是占位符")。',
                     ).set_sep(" "),
@@ -112,7 +112,7 @@ SIMULATOR_THOUGHTS_ZH = NamedBlock(
                 NamedVariable(
                     refname="step_understand",
                     name="理解",
-                    content="基于当前的{action}、{action_input}和相应的{tool_specifications}理解工具调用,这可以帮助模拟更准确和真实的工具执行输出。",
+                    content="基于当前的{action}、{action_input}和相应的{app_specifications}理解工具调用,这可以帮助模拟更准确和真实的工具执行输出。",
                 ),
                 NamedVariable(
                     refname="realism_constraints",
@@ -122,7 +122,7 @@ SIMULATOR_THOUGHTS_ZH = NamedBlock(
                 NamedVariable(
                     refname="accuracy_constraints",
                     name="准确性约束",
-                    content="基于{output_accurate_req}和相应的{tool_specifications},解释模拟的{observation}应遵守的具体约束,以确保当前工具调用的模拟准确性。",
+                    content="基于{output_accurate_req}和相应的{app_specifications},解释模拟的{observation}应遵守的具体约束,以确保当前工具调用的模拟准确性。",
                 ),
                 NamedVariable(
                     refname="consistency_constraints",
@@ -156,7 +156,7 @@ STANDARD_SIMULATOR_TASK_INSTRUCTION_ZH = NamedBlock(
             NamedVariable(
                 refname="thought_observation",
                 name="Observation",
-                content="最终模拟输出,应该是一个包含工具的{tool_return}规格中指定字段的单一JSON对象,并严格遵守{output_plausible_req}和{output_valid_format_req}。",
+                content="最终模拟输出,应该是一个包含工具的{app_return}规格中指定字段的单一JSON对象,并严格遵守{output_plausible_req}和{output_valid_format_req}。",
             ),
         ).set_sep("\n"),
     ).set_sep("\n\n"),
@@ -167,7 +167,7 @@ STANDARD_SIMULATOR_TASK_BEGIN_ZH = NamedBlock(
     Sequential(
         "现在开始你的模拟任务!你应该严格按照{task_instructions}格式化你的回应。",
         "以下是你需要模拟的当前工具的详细规格:",
-        "* {{current_tool}}: {{current_tool_description}}",
+        "* {{current_tool}}: {{current_app_description}}",
         "以下是{user_input}和你的{scratchpad}:",
         "User Input: {{input}}",
         "{{simulator_scratchpad}}",
@@ -192,7 +192,7 @@ STD_SIMULATOR_CRITIQUE_ZH = SIMULATOR_CRITIQUE_INSTRUCTIONS_ZH
 STD_SIMULATOR_CRITIQUE_REPEAT_ZH = SIMULATOR_CRITIQUE_INSTRUCTIONS_REPEAT_ZH
 
 if __name__ == "__main__":
-    inputs = dict(app_descriptions=None, tool_names=None)
+    inputs = dict(app_descriptions=None, app_names=None)
     system_prompt, example_prompt, critique_prompt = format_multiple_prompts(
         [
             STD_SIMULATOR_SYSTEM_INFO_ZH,

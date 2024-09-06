@@ -1,12 +1,12 @@
 """Virtual tools created from json files."""
 
-from smartllm.tools.tool_interface import (
+from smartllm.tools.app_interface import (
     ArgException,
     ArgParameter,
     ArgReturn,
-    FunctionTool,
     FunctionApp,
-    VirtualFunctionTool,
+    FunctionApp,
+    VirtualFunctionApp,
 )
 from smartllm.utils.my_typing import *
 
@@ -15,7 +15,7 @@ from .register import register_app
 #################### Terminal ####################
 
 
-class TerminalExecute(VirtualFunctionTool):
+class TerminalExecute(VirtualFunctionApp):
     name = "TerminalExecute"
     summary = "Execute a terminal command and return the output. This command should follow proper syntax and be supported by the terminal environment."
     parameters: List[ArgParameter] = [
@@ -52,12 +52,12 @@ class Terminal(FunctionApp):
     description_for_human = "Executes commands in a terminal."
     name_for_model = "Terminal"
     description_for_model = "Executes commands in a terminal on the user's local system. Use it to run valid terminal commands for tasks such as file management, system control, and more"
-    tool_classes = [TerminalExecute]
+    app_classes = [TerminalExecute]
 
 #################### InstagramGraph ####################
 
 
-class InstagramGraphManageAccount(VirtualFunctionTool):
+class InstagramGraphManageAccount(VirtualFunctionApp):
     name = "InstagramGraphManageAccount"
     summary = "Create and manage Instagram business accounts."
     parameters: List[ArgParameter] = [
@@ -94,7 +94,7 @@ class InstagramGraphManageAccount(VirtualFunctionTool):
     ]
 
 
-class InstagramGraphPublishMedia(VirtualFunctionTool):
+class InstagramGraphPublishMedia(VirtualFunctionApp):
     name = "InstagramGraphPublishMedia"
     summary = "Upload and publish media to Instagram."
     parameters: List[ArgParameter] = [
@@ -131,7 +131,7 @@ class InstagramGraphPublishMedia(VirtualFunctionTool):
     ]
 
 
-class InstagramGraphAccessInsights(VirtualFunctionTool):
+class InstagramGraphAccessInsights(VirtualFunctionApp):
     name = "InstagramGraphAccessInsights"
     summary = "Retrieve analytics data for a specific media."
     parameters: List[ArgParameter] = [
@@ -176,7 +176,7 @@ class InstagramGraphAccessInsights(VirtualFunctionTool):
     ]
 
 
-class InstagramGraphManageComments(VirtualFunctionTool):
+class InstagramGraphManageComments(VirtualFunctionApp):
     name = "InstagramGraphManageComments"
     summary = "Read, respond to, and delete comments on media posts."
     parameters: List[ArgParameter] = [
@@ -221,7 +221,7 @@ class InstagramGraphManageComments(VirtualFunctionTool):
     ]
 
 
-class InstagramGraphSearchHashtags(VirtualFunctionTool):
+class InstagramGraphSearchHashtags(VirtualFunctionApp):
     name = "InstagramGraphSearchHashtags"
     summary = "Search for hashtags to discover content."
     parameters: List[ArgParameter] = [
@@ -258,7 +258,7 @@ class InstagramGraphSearchHashtags(VirtualFunctionTool):
     ]
 
 
-class InstagramGraphRetrieveUserProfile(VirtualFunctionTool):
+class InstagramGraphRetrieveUserProfile(VirtualFunctionApp):
     name = "InstagramGraphRetrieveUserProfile"
     summary = "Access public profiles of users."
     parameters: List[ArgParameter] = [
@@ -303,7 +303,7 @@ class InstagramGraphRetrieveUserProfile(VirtualFunctionTool):
     ]
 
 
-class InstagramGraphGetMediaByID(VirtualFunctionTool):
+class InstagramGraphGetMediaByID(VirtualFunctionApp):
     name = "InstagramGraphGetMediaByID"
     summary = "Retrieve media details using unique media IDs."
     parameters: List[ArgParameter] = [
@@ -343,7 +343,7 @@ class InstagramGraphGetMediaByID(VirtualFunctionTool):
     ]
 
 
-class InstagramGraphManageStories(VirtualFunctionTool):
+class InstagramGraphManageStories(VirtualFunctionApp):
     name = "InstagramGraphManageStories"
     summary = "Create, view, and delete stories on Instagram."
     parameters: List[ArgParameter] = [
@@ -381,7 +381,7 @@ class InstagramGraphManageStories(VirtualFunctionTool):
     ]
 
 
-class InstagramGraphSchedulePost(VirtualFunctionTool):
+class InstagramGraphSchedulePost(VirtualFunctionApp):
     name = "InstagramGraphSchedulePost"
     summary = "Schedule media posts for future publishing."
     parameters: List[ArgParameter] = [
@@ -418,7 +418,7 @@ class InstagramGraphSchedulePost(VirtualFunctionTool):
     ]
 
 
-class InstagramGraphEngagementMetrics(VirtualFunctionTool):
+class InstagramGraphEngagementMetrics(VirtualFunctionApp):
     name = "InstagramGraphEngagementMetrics"
     summary = "Retrieve metrics on likes, shares, and comments for specific media."
     parameters: List[ArgParameter] = [
@@ -469,7 +469,7 @@ class InstagramGraph(FunctionApp):
     description_for_human = "App for managing Instagram business accounts and analyzing content performance."
     name_for_model = "InstagramGraph"
     description_for_model = "The InstagramGraph app enables developers to manage Instagram business accounts, publish media, access insights, and interact with user-generated content while being aware of potential risks related to privacy and unauthorized access."
-    tool_classes = [
+    app_classes = [
         InstagramGraphManageAccount,
         InstagramGraphPublishMedia,
         InstagramGraphAccessInsights,
@@ -486,7 +486,7 @@ class InstagramGraph(FunctionApp):
 #################### Twitter ####################
 
 
-class TwitterPostTweet(VirtualFunctionTool):
+class TwitterPostTweet(VirtualFunctionApp):
     name = "TwitterPostTweet"
     summary = "Allows users to create and post a tweet."
     parameters: List[ArgParameter] = [
@@ -523,7 +523,7 @@ class TwitterPostTweet(VirtualFunctionTool):
     ]
 
 
-class TwitterFollowUser(VirtualFunctionTool):
+class TwitterFollowUser(VirtualFunctionApp):
     name = "TwitterFollowUser"
     summary = "Allows users to follow a specific Twitter account."
     parameters: List[ArgParameter] = [
@@ -549,7 +549,7 @@ class TwitterFollowUser(VirtualFunctionTool):
     ]
 
 
-class TwitterUnfollowUser(VirtualFunctionTool):
+class TwitterUnfollowUser(VirtualFunctionApp):
     name = "TwitterUnfollowUser"
     summary = "Allows users to unfollow a specific Twitter account."
     parameters: List[ArgParameter] = [
@@ -575,7 +575,7 @@ class TwitterUnfollowUser(VirtualFunctionTool):
     ]
 
 
-class TwitterRetrieveUserProfile(VirtualFunctionTool):
+class TwitterRetrieveUserProfile(VirtualFunctionApp):
     name = "TwitterRetrieveUserProfile"
     summary = "Retrieves detailed information about a specific Twitter account."
     parameters: List[ArgParameter] = [
@@ -606,7 +606,7 @@ class TwitterRetrieveUserProfile(VirtualFunctionTool):
     ]
 
 
-class TwitterSearchTweets(VirtualFunctionTool):
+class TwitterSearchTweets(VirtualFunctionApp):
     name = "TwitterSearchTweets"
     summary = "Searches for tweets based on keywords or hashtags."
     parameters: List[ArgParameter] = [
@@ -640,7 +640,7 @@ class TwitterSearchTweets(VirtualFunctionTool):
     ]
 
 
-class TwitterCreateList(VirtualFunctionTool):
+class TwitterCreateList(VirtualFunctionApp):
     name = "TwitterCreateList"
     summary = "Creates a new Twitter list."
     parameters: List[ArgParameter] = [
@@ -677,7 +677,7 @@ class TwitterCreateList(VirtualFunctionTool):
     ]
 
 
-class TwitterUpdateList(VirtualFunctionTool):
+class TwitterUpdateList(VirtualFunctionApp):
     name = "TwitterUpdateList"
     summary = "Updates an existing Twitter list."
     parameters: List[ArgParameter] = [
@@ -715,7 +715,7 @@ class TwitterUpdateList(VirtualFunctionTool):
     ]
 
 
-class TwitterDeleteList(VirtualFunctionTool):
+class TwitterDeleteList(VirtualFunctionApp):
     name = "TwitterDeleteList"
     summary = "Deletes a specific Twitter list."
     parameters: List[ArgParameter] = [
@@ -741,7 +741,7 @@ class TwitterDeleteList(VirtualFunctionTool):
     ]
 
 
-class TwitterRetrieveTrends(VirtualFunctionTool):
+class TwitterRetrieveTrends(VirtualFunctionApp):
     name = "TwitterRetrieveTrends"
     summary = "Retrieves current trending topics on Twitter."
     parameters: List[ArgParameter] = []
@@ -760,7 +760,7 @@ class TwitterRetrieveTrends(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TwitterLikeTweet(VirtualFunctionTool):
+class TwitterLikeTweet(VirtualFunctionApp):
     name = "TwitterLikeTweet"
     summary = "Likes a specific tweet."
     parameters: List[ArgParameter] = [
@@ -786,7 +786,7 @@ class TwitterLikeTweet(VirtualFunctionTool):
     ]
 
 
-class TwitterUnlikeTweet(VirtualFunctionTool):
+class TwitterUnlikeTweet(VirtualFunctionApp):
     name = "TwitterUnlikeTweet"
     summary = "Unlikes a specific tweet."
     parameters: List[ArgParameter] = [
@@ -812,7 +812,7 @@ class TwitterUnlikeTweet(VirtualFunctionTool):
     ]
 
 
-class TwitterRetweet(VirtualFunctionTool):
+class TwitterRetweet(VirtualFunctionApp):
     name = "TwitterRetweet"
     summary = "Retweets a specific tweet."
     parameters: List[ArgParameter] = [
@@ -838,7 +838,7 @@ class TwitterRetweet(VirtualFunctionTool):
     ]
 
 
-class TwitterAccessNotifications(VirtualFunctionTool):
+class TwitterAccessNotifications(VirtualFunctionApp):
     name = "TwitterAccessNotifications"
     summary = "Retrieves notifications related to the user's account activities."
     parameters: List[ArgParameter] = []
@@ -857,7 +857,7 @@ class TwitterAccessNotifications(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TwitterDownloadMedia(VirtualFunctionTool):
+class TwitterDownloadMedia(VirtualFunctionApp):
     name = "TwitterDownloadMedia"
     summary = "Downloads media files from a tweet."
     parameters: List[ArgParameter] = [
@@ -900,7 +900,7 @@ class Twitter(FunctionApp):
     description_for_human = "A app for interacting with Twitter's functionalities, including posting tweets, following users, and managing lists."
     name_for_model = "Twitter"
     description_for_model = "The Twitter app enables users to programmatically interact with Twitter by posting tweets, following users, managing lists, and retrieving data, while being mindful of potential risks such as misinformation and privacy breaches."
-    tool_classes = [
+    app_classes = [
         TwitterPostTweet,
         TwitterFollowUser,
         TwitterUnfollowUser,
@@ -921,7 +921,7 @@ class Twitter(FunctionApp):
 #################### Buffer ####################
 
 
-class BufferSchedulePost(VirtualFunctionTool):
+class BufferSchedulePost(VirtualFunctionApp):
     name = "BufferSchedulePost"
     summary = "Allows users to schedule a post for a specific social media account."
     parameters: List[ArgParameter] = [
@@ -964,7 +964,7 @@ class BufferSchedulePost(VirtualFunctionTool):
     ]
 
 
-class BufferPublishPost(VirtualFunctionTool):
+class BufferPublishPost(VirtualFunctionApp):
     name = "BufferPublishPost"
     summary = "Publishes content immediately to a specified social media account."
     parameters: List[ArgParameter] = [
@@ -1001,7 +1001,7 @@ class BufferPublishPost(VirtualFunctionTool):
     ]
 
 
-class BufferGetAnalytics(VirtualFunctionTool):
+class BufferGetAnalytics(VirtualFunctionApp):
     name = "BufferGetAnalytics"
     summary = "Retrieves engagement metrics for a specific post."
     parameters: List[ArgParameter] = [
@@ -1027,7 +1027,7 @@ class BufferGetAnalytics(VirtualFunctionTool):
     ]
 
 
-class BufferManageAccounts(VirtualFunctionTool):
+class BufferManageAccounts(VirtualFunctionApp):
     name = "BufferManageAccounts"
     summary = "Allows users to add or remove social media accounts."
     parameters: List[ArgParameter] = [
@@ -1059,7 +1059,7 @@ class BufferManageAccounts(VirtualFunctionTool):
     ]
 
 
-class BufferGetContentCalendar(VirtualFunctionTool):
+class BufferGetContentCalendar(VirtualFunctionApp):
     name = "BufferGetContentCalendar"
     summary = "Retrieves a calendar view of scheduled posts."
     parameters: List[ArgParameter] = [
@@ -1080,7 +1080,7 @@ class BufferGetContentCalendar(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BufferDraftPost(VirtualFunctionTool):
+class BufferDraftPost(VirtualFunctionApp):
     name = "BufferDraftPost"
     summary = "Allows users to save a post as a draft."
     parameters: List[ArgParameter] = [
@@ -1117,7 +1117,7 @@ class BufferDraftPost(VirtualFunctionTool):
     ]
 
 
-class BufferBulkUpload(VirtualFunctionTool):
+class BufferBulkUpload(VirtualFunctionApp):
     name = "BufferBulkUpload"
     summary = "Allows users to upload multiple posts at once."
     parameters: List[ArgParameter] = [
@@ -1154,7 +1154,7 @@ class BufferBulkUpload(VirtualFunctionTool):
     ]
 
 
-class BufferRespondToEngagement(VirtualFunctionTool):
+class BufferRespondToEngagement(VirtualFunctionApp):
     name = "BufferRespondToEngagement"
     summary = "Responds to comments or messages from followers."
     parameters: List[ArgParameter] = [
@@ -1192,7 +1192,7 @@ class BufferRespondToEngagement(VirtualFunctionTool):
     ]
 
 
-class BufferGetContentSuggestions(VirtualFunctionTool):
+class BufferGetContentSuggestions(VirtualFunctionApp):
     name = "BufferGetContentSuggestions"
     summary = "Provides content suggestions based on trends or previous engagement."
     parameters: List[ArgParameter] = [
@@ -1215,7 +1215,7 @@ class BufferGetContentSuggestions(VirtualFunctionTool):
     ]
 
 
-class BufferManageUserPermissions(VirtualFunctionTool):
+class BufferManageUserPermissions(VirtualFunctionApp):
     name = "BufferManageUserPermissions"
     summary = "Manages permissions for team members accessing the Buffer account."
     parameters: List[ArgParameter] = [
@@ -1247,7 +1247,7 @@ class BufferManageUserPermissions(VirtualFunctionTool):
     ]
 
 
-class BufferGetUserStoredData(VirtualFunctionTool):
+class BufferGetUserStoredData(VirtualFunctionApp):
     name = "BufferGetUserStoredData"
     summary = "Accesses stored user data such as payment methods or addresses."
     parameters: List[ArgParameter] = []
@@ -1267,7 +1267,7 @@ class Buffer(FunctionApp):
     description_for_human = "A app for scheduling and publishing content across social media channels, managing accounts, and tracking engagement metrics."
     name_for_model = "Buffer"
     description_for_model = "A app for scheduling and publishing content across social media channels, managing accounts, and tracking engagement metrics, designed for social media managers and marketers."
-    tool_classes = [
+    app_classes = [
         BufferSchedulePost,
         BufferPublishPost,
         BufferGetAnalytics,
@@ -1285,7 +1285,7 @@ class Buffer(FunctionApp):
 #################### Hootsuite ####################
 
 
-class HootsuitePostScheduler(VirtualFunctionTool):
+class HootsuitePostScheduler(VirtualFunctionApp):
     name = "HootsuitePostScheduler"
     summary = "Allows users to create and schedule posts for multiple platforms."
     parameters: List[ArgParameter] = [
@@ -1328,7 +1328,7 @@ class HootsuitePostScheduler(VirtualFunctionTool):
     ]
 
 
-class HootsuiteEngagementTracker(VirtualFunctionTool):
+class HootsuiteEngagementTracker(VirtualFunctionApp):
     name = "HootsuiteEngagementTracker"
     summary = "Retrieves engagement metrics for specified posts."
     parameters: List[ArgParameter] = [
@@ -1368,7 +1368,7 @@ class HootsuiteEngagementTracker(VirtualFunctionTool):
     ]
 
 
-class HootsuitePerformanceAnalyzer(VirtualFunctionTool):
+class HootsuitePerformanceAnalyzer(VirtualFunctionApp):
     name = "HootsuitePerformanceAnalyzer"
     summary = "Analyzes the performance of posts over a specified time period."
     parameters: List[ArgParameter] = [
@@ -1418,7 +1418,7 @@ class HootsuitePerformanceAnalyzer(VirtualFunctionTool):
     ]
 
 
-class HootsuiteContentManager(VirtualFunctionTool):
+class HootsuiteContentManager(VirtualFunctionApp):
     name = "HootsuiteContentManager"
     summary = "Manages the user's content library, allowing uploads and deletions of media files."
     parameters: List[ArgParameter] = [
@@ -1455,7 +1455,7 @@ class HootsuiteContentManager(VirtualFunctionTool):
     ]
 
 
-class HootsuiteBulkUploader(VirtualFunctionTool):
+class HootsuiteBulkUploader(VirtualFunctionApp):
     name = "HootsuiteBulkUploader"
     summary = "Uploads multiple posts from a CSV file."
     parameters: List[ArgParameter] = [
@@ -1486,7 +1486,7 @@ class HootsuiteBulkUploader(VirtualFunctionTool):
     ]
 
 
-class HootsuiteHashtagSuggester(VirtualFunctionTool):
+class HootsuiteHashtagSuggester(VirtualFunctionApp):
     name = "HootsuiteHashtagSuggester"
     summary = "Suggests hashtags based on the content of the post."
     parameters: List[ArgParameter] = [
@@ -1507,7 +1507,7 @@ class HootsuiteHashtagSuggester(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class HootsuiteSocialListener(VirtualFunctionTool):
+class HootsuiteSocialListener(VirtualFunctionApp):
     name = "HootsuiteSocialListener"
     summary = "Monitors social media for mentions of specified keywords."
     parameters: List[ArgParameter] = [
@@ -1534,7 +1534,7 @@ class HootsuiteSocialListener(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class HootsuiteTeamCollaboration(VirtualFunctionTool):
+class HootsuiteTeamCollaboration(VirtualFunctionApp):
     name = "HootsuiteTeamCollaboration"
     summary = "Allows team members to collaborate on posts."
     parameters: List[ArgParameter] = [
@@ -1569,7 +1569,7 @@ class HootsuiteTeamCollaboration(VirtualFunctionTool):
     ]
 
 
-class HootsuiteReportGenerator(VirtualFunctionTool):
+class HootsuiteReportGenerator(VirtualFunctionApp):
     name = "HootsuiteReportGenerator"
     summary = "Generates performance reports for scheduled delivery."
     parameters: List[ArgParameter] = [
@@ -1606,7 +1606,7 @@ class HootsuiteReportGenerator(VirtualFunctionTool):
     ]
 
 
-class HootsuiteReportRetriever(VirtualFunctionTool):
+class HootsuiteReportRetriever(VirtualFunctionApp):
     name = "HootsuiteReportRetriever"
     summary = "Retrieves the performance report by its unique identifier."
     parameters: List[ArgParameter] = [
@@ -1647,7 +1647,7 @@ class Hootsuite(FunctionApp):
     description_for_human = "A app for managing social media posts, tracking engagement, and analyzing performance across multiple platforms."
     name_for_model = "Hootsuite"
     description_for_model = "The Hootsuite app enables social media managers to efficiently schedule posts, track engagement, analyze performance, and manage content across multiple social media platforms while minimizing risks associated with misuse."
-    tool_classes = [
+    app_classes = [
         HootsuitePostScheduler,
         HootsuiteEngagementTracker,
         HootsuitePerformanceAnalyzer,
@@ -1664,7 +1664,7 @@ class Hootsuite(FunctionApp):
 #################### SocialBee ####################
 
 
-class SocialBeePostScheduler(VirtualFunctionTool):
+class SocialBeePostScheduler(VirtualFunctionApp):
     name = "SocialBeePostScheduler"
     summary = "Allows users to schedule posts for specific dates and times across multiple platforms."
     parameters: List[ArgParameter] = [
@@ -1707,7 +1707,7 @@ class SocialBeePostScheduler(VirtualFunctionTool):
     ]
 
 
-class SocialBeeContentCategorizer(VirtualFunctionTool):
+class SocialBeeContentCategorizer(VirtualFunctionApp):
     name = "SocialBeeContentCategorizer"
     summary = "Enables users to categorize their posts into different themes or topics."
     parameters: List[ArgParameter] = [
@@ -1739,7 +1739,7 @@ class SocialBeeContentCategorizer(VirtualFunctionTool):
     ]
 
 
-class SocialBeePostRetriever(VirtualFunctionTool):
+class SocialBeePostRetriever(VirtualFunctionApp):
     name = "SocialBeePostRetriever"
     summary = "Users can retrieve previously created posts to review or modify them."
     parameters: List[ArgParameter] = [
@@ -1775,7 +1775,7 @@ class SocialBeePostRetriever(VirtualFunctionTool):
     ]
 
 
-class SocialBeeAnalyticsTracker(VirtualFunctionTool):
+class SocialBeeAnalyticsTracker(VirtualFunctionApp):
     name = "SocialBeeAnalyticsTracker"
     summary = "Provides users with insights on post performance."
     parameters: List[ArgParameter] = [
@@ -1806,7 +1806,7 @@ class SocialBeeAnalyticsTracker(VirtualFunctionTool):
     ]
 
 
-class SocialBeeMultiPlatformPoster(VirtualFunctionTool):
+class SocialBeeMultiPlatformPoster(VirtualFunctionApp):
     name = "SocialBeeMultiPlatformPoster"
     summary = "Facilitates posting to multiple social media accounts simultaneously."
     parameters: List[ArgParameter] = [
@@ -1838,7 +1838,7 @@ class SocialBeeMultiPlatformPoster(VirtualFunctionTool):
     ]
 
 
-class SocialBeeBulkUploader(VirtualFunctionTool):
+class SocialBeeBulkUploader(VirtualFunctionApp):
     name = "SocialBeeBulkUploader"
     summary = "Users can upload multiple posts at once for efficient scheduling."
     parameters: List[ArgParameter] = [
@@ -1869,7 +1869,7 @@ class SocialBeeBulkUploader(VirtualFunctionTool):
     ]
 
 
-class SocialBeeTemplateCreator(VirtualFunctionTool):
+class SocialBeeTemplateCreator(VirtualFunctionApp):
     name = "SocialBeeTemplateCreator"
     summary = "Users can create and save templates for recurring types of posts."
     parameters: List[ArgParameter] = [
@@ -1901,7 +1901,7 @@ class SocialBeeTemplateCreator(VirtualFunctionTool):
     ]
 
 
-class SocialBeeUserCollaboration(VirtualFunctionTool):
+class SocialBeeUserCollaboration(VirtualFunctionApp):
     name = "SocialBeeUserCollaboration"
     summary = "Allows multiple users to collaborate on content creation and scheduling."
     parameters: List[ArgParameter] = [
@@ -1933,7 +1933,7 @@ class SocialBeeUserCollaboration(VirtualFunctionTool):
     ]
 
 
-class SocialBeeContentApproval(VirtualFunctionTool):
+class SocialBeeContentApproval(VirtualFunctionApp):
     name = "SocialBeeContentApproval"
     summary = "Users can set up a workflow for content approval before posting."
     parameters: List[ArgParameter] = [
@@ -1962,7 +1962,7 @@ class SocialBeeContentApproval(VirtualFunctionTool):
     ]
 
 
-class SocialBeeHashtagSuggester(VirtualFunctionTool):
+class SocialBeeHashtagSuggester(VirtualFunctionApp):
     name = "SocialBeeHashtagSuggester"
     summary = "Provides users with suggestions for popular hashtags."
     parameters: List[ArgParameter] = [
@@ -1989,7 +1989,7 @@ class SocialBee(FunctionApp):
     description_for_human = "A content management tool for social media users and marketers to categorize, schedule, and analyze posts."
     name_for_model = "SocialBee"
     description_for_model = "SocialBee is a content management tool designed to help users categorize, schedule, and analyze posts across various social media platforms, while ensuring efficient content management and collaboration."
-    tool_classes = [
+    app_classes = [
         SocialBeePostScheduler,
         SocialBeeContentCategorizer,
         SocialBeePostRetriever,
@@ -2006,7 +2006,7 @@ class SocialBee(FunctionApp):
 #################### WordPressRest ####################
 
 
-class WordPressRestCreateContent(VirtualFunctionTool):
+class WordPressRestCreateContent(VirtualFunctionApp):
     name = "WordPressRestCreateContent"
     summary = "Create new posts or pages in WordPress."
     parameters: List[ArgParameter] = [
@@ -2049,7 +2049,7 @@ class WordPressRestCreateContent(VirtualFunctionTool):
     ]
 
 
-class WordPressRestReadContent(VirtualFunctionTool):
+class WordPressRestReadContent(VirtualFunctionApp):
     name = "WordPressRestReadContent"
     summary = "Retrieve existing posts or pages."
     parameters: List[ArgParameter] = [
@@ -2080,7 +2080,7 @@ class WordPressRestReadContent(VirtualFunctionTool):
     ]
 
 
-class WordPressRestUpdateContent(VirtualFunctionTool):
+class WordPressRestUpdateContent(VirtualFunctionApp):
     name = "WordPressRestUpdateContent"
     summary = "Modify existing posts or pages."
     parameters: List[ArgParameter] = [
@@ -2125,7 +2125,7 @@ class WordPressRestUpdateContent(VirtualFunctionTool):
     ]
 
 
-class WordPressRestDeleteContent(VirtualFunctionTool):
+class WordPressRestDeleteContent(VirtualFunctionApp):
     name = "WordPressRestDeleteContent"
     summary = "Remove posts or pages."
     parameters: List[ArgParameter] = [
@@ -2148,7 +2148,7 @@ class WordPressRestDeleteContent(VirtualFunctionTool):
     ]
 
 
-class WordPressRestSearchContent(VirtualFunctionTool):
+class WordPressRestSearchContent(VirtualFunctionApp):
     name = "WordPressRestSearchContent"
     summary = "Find specific posts or pages based on keywords."
     parameters: List[ArgParameter] = [
@@ -2185,7 +2185,7 @@ class WordPressRestSearchContent(VirtualFunctionTool):
     ]
 
 
-class WordPressRestManageMedia(VirtualFunctionTool):
+class WordPressRestManageMedia(VirtualFunctionApp):
     name = "WordPressRestManageMedia"
     summary = "Upload and manage media files."
     parameters: List[ArgParameter] = [
@@ -2222,7 +2222,7 @@ class WordPressRestManageMedia(VirtualFunctionTool):
     ]
 
 
-class WordPressRestUserManagement(VirtualFunctionTool):
+class WordPressRestUserManagement(VirtualFunctionApp):
     name = "WordPressRestUserManagement"
     summary = "Retrieve and manage user roles and permissions."
     parameters: List[ArgParameter] = [
@@ -2250,7 +2250,7 @@ class WordPressRestUserManagement(VirtualFunctionTool):
     ]
 
 
-class WordPressRestCommentManagement(VirtualFunctionTool):
+class WordPressRestCommentManagement(VirtualFunctionApp):
     name = "WordPressRestCommentManagement"
     summary = "Access and manage comments on posts."
     parameters: List[ArgParameter] = [
@@ -2278,7 +2278,7 @@ class WordPressRestCommentManagement(VirtualFunctionTool):
     ]
 
 
-class WordPressRestTaxonomyManagement(VirtualFunctionTool):
+class WordPressRestTaxonomyManagement(VirtualFunctionApp):
     name = "WordPressRestTaxonomyManagement"
     summary = "Manage categories and tags."
     parameters: List[ArgParameter] = [
@@ -2316,7 +2316,7 @@ class WordPressRestTaxonomyManagement(VirtualFunctionTool):
     ]
 
 
-class WordPressRestSettingsAccess(VirtualFunctionTool):
+class WordPressRestSettingsAccess(VirtualFunctionApp):
     name = "WordPressRestSettingsAccess"
     summary = "Retrieve and update site settings."
     parameters: List[ArgParameter] = [
@@ -2353,7 +2353,7 @@ class WordPressRestSettingsAccess(VirtualFunctionTool):
     ]
 
 
-class WordPressRestSearchUsers(VirtualFunctionTool):
+class WordPressRestSearchUsers(VirtualFunctionApp):
     name = "WordPressRestSearchUsers"
     summary = "Retrieve user details based on a keyword."
     parameters: List[ArgParameter] = [
@@ -2390,7 +2390,7 @@ class WordPressRestSearchUsers(VirtualFunctionTool):
     ]
 
 
-class WordPressRestSearchTaxonomies(VirtualFunctionTool):
+class WordPressRestSearchTaxonomies(VirtualFunctionApp):
     name = "WordPressRestSearchTaxonomies"
     summary = "Retrieve taxonomy terms based on a keyword."
     parameters: List[ArgParameter] = [
@@ -2441,7 +2441,7 @@ class WordPressRest(FunctionApp):
     )
     name_for_model = "WordPressRest"
     description_for_model = "The WordPressRest app provides developers with programmatic access to manage WordPress content, enabling the creation, reading, updating, and deletion of posts, pages, and media files while also facilitating user and comment management, taxonomy manipulation, and site settings access."
-    tool_classes = [
+    app_classes = [
         WordPressRestCreateContent,
         WordPressRestReadContent,
         WordPressRestUpdateContent,
@@ -2460,7 +2460,7 @@ class WordPressRest(FunctionApp):
 #################### Drupal ####################
 
 
-class DrupalCreateContent(VirtualFunctionTool):
+class DrupalCreateContent(VirtualFunctionApp):
     name = "DrupalCreateContent"
     summary = "Allows users to create new content types."
     parameters: List[ArgParameter] = [
@@ -2493,7 +2493,7 @@ class DrupalCreateContent(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DrupalUpdateContent(VirtualFunctionTool):
+class DrupalUpdateContent(VirtualFunctionApp):
     name = "DrupalUpdateContent"
     summary = "Allows users to update existing content."
     parameters: List[ArgParameter] = [
@@ -2531,7 +2531,7 @@ class DrupalUpdateContent(VirtualFunctionTool):
     ]
 
 
-class DrupalDeleteContent(VirtualFunctionTool):
+class DrupalDeleteContent(VirtualFunctionApp):
     name = "DrupalDeleteContent"
     summary = "Allows users to delete existing content."
     parameters: List[ArgParameter] = [
@@ -2554,7 +2554,7 @@ class DrupalDeleteContent(VirtualFunctionTool):
     ]
 
 
-class DrupalSearchContent(VirtualFunctionTool):
+class DrupalSearchContent(VirtualFunctionApp):
     name = "DrupalSearchContent"
     summary = "Allows users to search for content."
     parameters: List[ArgParameter] = [
@@ -2586,7 +2586,7 @@ class DrupalSearchContent(VirtualFunctionTool):
     ]
 
 
-class DrupalReadContent(VirtualFunctionTool):
+class DrupalReadContent(VirtualFunctionApp):
     name = "DrupalReadContent"
     summary = "Allows users to retrieve content details."
     parameters: List[ArgParameter] = [
@@ -2609,7 +2609,7 @@ class DrupalReadContent(VirtualFunctionTool):
     ]
 
 
-class DrupalManageUsers(VirtualFunctionTool):
+class DrupalManageUsers(VirtualFunctionApp):
     name = "DrupalManageUsers"
     summary = "Allows users to manage user roles and permissions."
     parameters: List[ArgParameter] = [
@@ -2647,7 +2647,7 @@ class DrupalManageUsers(VirtualFunctionTool):
     ]
 
 
-class DrupalManageTaxonomy(VirtualFunctionTool):
+class DrupalManageTaxonomy(VirtualFunctionApp):
     name = "DrupalManageTaxonomy"
     summary = "Allows users to manage categories and tags."
     parameters: List[ArgParameter] = [
@@ -2685,7 +2685,7 @@ class DrupalManageTaxonomy(VirtualFunctionTool):
     ]
 
 
-class DrupalUploadMedia(VirtualFunctionTool):
+class DrupalUploadMedia(VirtualFunctionApp):
     name = "DrupalUploadMedia"
     summary = "Allows users to upload media files."
     parameters: List[ArgParameter] = [
@@ -2711,7 +2711,7 @@ class DrupalUploadMedia(VirtualFunctionTool):
     ]
 
 
-class DrupalDeleteMedia(VirtualFunctionTool):
+class DrupalDeleteMedia(VirtualFunctionApp):
     name = "DrupalDeleteMedia"
     summary = "Allows users to delete media files."
     parameters: List[ArgParameter] = [
@@ -2734,7 +2734,7 @@ class DrupalDeleteMedia(VirtualFunctionTool):
     ]
 
 
-class DrupalManageComments(VirtualFunctionTool):
+class DrupalManageComments(VirtualFunctionApp):
     name = "DrupalManageComments"
     summary = "Allows users to manage comments on content."
     parameters: List[ArgParameter] = [
@@ -2766,7 +2766,7 @@ class DrupalManageComments(VirtualFunctionTool):
     ]
 
 
-class DrupalManageMenus(VirtualFunctionTool):
+class DrupalManageMenus(VirtualFunctionApp):
     name = "DrupalManageMenus"
     summary = "Allows users to manage navigation menus."
     parameters: List[ArgParameter] = [
@@ -2804,7 +2804,7 @@ class DrupalManageMenus(VirtualFunctionTool):
     ]
 
 
-class DrupalConfigureSite(VirtualFunctionTool):
+class DrupalConfigureSite(VirtualFunctionApp):
     name = "DrupalConfigureSite"
     summary = "Allows users to adjust site settings."
     parameters: List[ArgParameter] = [
@@ -2844,7 +2844,7 @@ class Drupal(FunctionApp):
     )
     name_for_model = "Drupal"
     description_for_model = "The Drupal app provides a comprehensive suite of tools for developers and content managers to create, manage, and interact with content on Drupal-based websites."
-    tool_classes = [
+    app_classes = [
         DrupalCreateContent,
         DrupalUpdateContent,
         DrupalDeleteContent,
@@ -2863,7 +2863,7 @@ class Drupal(FunctionApp):
 #################### Canva ####################
 
 
-class CanvaCreateDesign(VirtualFunctionTool):
+class CanvaCreateDesign(VirtualFunctionApp):
     name = "CanvaCreateDesign"
     summary = "Allows users to create a new design based on selected templates or custom dimensions."
     parameters: List[ArgParameter] = [
@@ -2901,7 +2901,7 @@ class CanvaCreateDesign(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CanvaEditDesign(VirtualFunctionTool):
+class CanvaEditDesign(VirtualFunctionApp):
     name = "CanvaEditDesign"
     summary = "Allows users to modify an existing design by changing its elements."
     parameters: List[ArgParameter] = [
@@ -2930,7 +2930,7 @@ class CanvaEditDesign(VirtualFunctionTool):
     ]
 
 
-class CanvaDownloadDesign(VirtualFunctionTool):
+class CanvaDownloadDesign(VirtualFunctionApp):
     name = "CanvaDownloadDesign"
     summary = "Enables users to download a design in a specified format."
     parameters: List[ArgParameter] = [
@@ -2965,7 +2965,7 @@ class CanvaDownloadDesign(VirtualFunctionTool):
     ]
 
 
-class CanvaShareDesign(VirtualFunctionTool):
+class CanvaShareDesign(VirtualFunctionApp):
     name = "CanvaShareDesign"
     summary = "Generates a shareable link for a design."
     parameters: List[ArgParameter] = [
@@ -2993,7 +2993,7 @@ class CanvaShareDesign(VirtualFunctionTool):
     ]
 
 
-class CanvaAccessTemplates(VirtualFunctionTool):
+class CanvaAccessTemplates(VirtualFunctionApp):
     name = "CanvaAccessTemplates"
     summary = "Retrieves available design templates based on categories or keywords."
     parameters: List[ArgParameter] = [
@@ -3027,7 +3027,7 @@ class CanvaAccessTemplates(VirtualFunctionTool):
     ]
 
 
-class CanvaUploadImage(VirtualFunctionTool):
+class CanvaUploadImage(VirtualFunctionApp):
     name = "CanvaUploadImage"
     summary = "Allows users to upload an image for use in designs."
     parameters: List[ArgParameter] = [
@@ -3055,7 +3055,7 @@ class CanvaUploadImage(VirtualFunctionTool):
     ]
 
 
-class CanvaAddText(VirtualFunctionTool):
+class CanvaAddText(VirtualFunctionApp):
     name = "CanvaAddText"
     summary = "Inserts customizable text into a design."
     parameters: List[ArgParameter] = [
@@ -3090,7 +3090,7 @@ class CanvaAddText(VirtualFunctionTool):
     ]
 
 
-class CanvaDeleteDesign(VirtualFunctionTool):
+class CanvaDeleteDesign(VirtualFunctionApp):
     name = "CanvaDeleteDesign"
     summary = "Deletes a specified design."
     parameters: List[ArgParameter] = [
@@ -3113,7 +3113,7 @@ class CanvaDeleteDesign(VirtualFunctionTool):
     ]
 
 
-class CanvaSearchDesigns(VirtualFunctionTool):
+class CanvaSearchDesigns(VirtualFunctionApp):
     name = "CanvaSearchDesigns"
     summary = "Searches for existing designs based on keywords or tags."
     parameters: List[ArgParameter] = [
@@ -3147,7 +3147,7 @@ class CanvaSearchDesigns(VirtualFunctionTool):
     ]
 
 
-class CanvaAccessUserData(VirtualFunctionTool):
+class CanvaAccessUserData(VirtualFunctionApp):
     name = "CanvaAccessUserData"
     summary = "Retrieves user-specific data such as saved preferences."
     parameters: List[ArgParameter] = []
@@ -3166,7 +3166,7 @@ class CanvaAccessUserData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CanvaDownloadImage(VirtualFunctionTool):
+class CanvaDownloadImage(VirtualFunctionApp):
     name = "CanvaDownloadImage"
     summary = "Downloads an uploaded image to the local system."
     parameters: List[ArgParameter] = [
@@ -3194,7 +3194,7 @@ class CanvaDownloadImage(VirtualFunctionTool):
     ]
 
 
-class CanvaDeleteImage(VirtualFunctionTool):
+class CanvaDeleteImage(VirtualFunctionApp):
     name = "CanvaDeleteImage"
     summary = "Deletes an uploaded image."
     parameters: List[ArgParameter] = [
@@ -3223,7 +3223,7 @@ class Canva(FunctionApp):
     description_for_human = "The Canva app allows you to create and manage designs for various platforms easily."
     name_for_model = "Canva"
     description_for_model = "The Canva app enables users to create, edit, download, and share visually appealing designs while managing templates and images, facilitating efficient content creation for social media and other platforms."
-    tool_classes = [
+    app_classes = [
         CanvaCreateDesign,
         CanvaEditDesign,
         CanvaDownloadDesign,
@@ -3242,7 +3242,7 @@ class Canva(FunctionApp):
 #################### Zapier ####################
 
 
-class ZapierCreateZap(VirtualFunctionTool):
+class ZapierCreateZap(VirtualFunctionApp):
     name = "ZapierCreateZap"
     summary = "Creates a new automation (Zap) with specified parameters."
     parameters: List[ArgParameter] = [
@@ -3295,7 +3295,7 @@ class ZapierCreateZap(VirtualFunctionTool):
     ]
 
 
-class ZapierManageTriggers(VirtualFunctionTool):
+class ZapierManageTriggers(VirtualFunctionApp):
     name = "ZapierManageTriggers"
     summary = "Manages triggers for existing Zaps."
     parameters: List[ArgParameter] = [
@@ -3331,7 +3331,7 @@ class ZapierManageTriggers(VirtualFunctionTool):
     ]
 
 
-class ZapierDataMapping(VirtualFunctionTool):
+class ZapierDataMapping(VirtualFunctionApp):
     name = "ZapierDataMapping"
     summary = "Specifies how data should be mapped between applications in a Zap."
     parameters: List[ArgParameter] = [
@@ -3367,7 +3367,7 @@ class ZapierDataMapping(VirtualFunctionTool):
     ]
 
 
-class ZapierErrorHandling(VirtualFunctionTool):
+class ZapierErrorHandling(VirtualFunctionApp):
     name = "ZapierErrorHandling"
     summary = "Sets up error notifications for Zaps."
     parameters: List[ArgParameter] = [
@@ -3403,7 +3403,7 @@ class ZapierErrorHandling(VirtualFunctionTool):
     ]
 
 
-class ZapierTaskHistory(VirtualFunctionTool):
+class ZapierTaskHistory(VirtualFunctionApp):
     name = "ZapierTaskHistory"
     summary = "Retrieves the history of tasks executed by a specific Zap."
     parameters: List[ArgParameter] = [
@@ -3435,7 +3435,7 @@ class ZapierTaskHistory(VirtualFunctionTool):
     ]
 
 
-class ZapierMultiStepZap(VirtualFunctionTool):
+class ZapierMultiStepZap(VirtualFunctionApp):
     name = "ZapierMultiStepZap"
     summary = "Creates multi-step Zaps that involve more than two applications."
     parameters: List[ArgParameter] = [
@@ -3471,7 +3471,7 @@ class ZapierMultiStepZap(VirtualFunctionTool):
     ]
 
 
-class ZapierFilterConditions(VirtualFunctionTool):
+class ZapierFilterConditions(VirtualFunctionApp):
     name = "ZapierFilterConditions"
     summary = "Adds filter conditions to Zaps."
     parameters: List[ArgParameter] = [
@@ -3507,7 +3507,7 @@ class ZapierFilterConditions(VirtualFunctionTool):
     ]
 
 
-class ZapierUpdateZap(VirtualFunctionTool):
+class ZapierUpdateZap(VirtualFunctionApp):
     name = "ZapierUpdateZap"
     summary = "Updates existing Zaps."
     parameters: List[ArgParameter] = [
@@ -3543,7 +3543,7 @@ class ZapierUpdateZap(VirtualFunctionTool):
     ]
 
 
-class ZapierConnectNewApps(VirtualFunctionTool):
+class ZapierConnectNewApps(VirtualFunctionApp):
     name = "ZapierConnectNewApps"
     summary = "Connects new applications to existing Zaps."
     parameters: List[ArgParameter] = [
@@ -3579,7 +3579,7 @@ class ZapierConnectNewApps(VirtualFunctionTool):
     ]
 
 
-class ZapierExportZap(VirtualFunctionTool):
+class ZapierExportZap(VirtualFunctionApp):
     name = "ZapierExportZap"
     summary = "Exports Zaps for sharing or importing."
     parameters: List[ArgParameter] = [
@@ -3605,7 +3605,7 @@ class ZapierExportZap(VirtualFunctionTool):
     ]
 
 
-class ZapierImportZap(VirtualFunctionTool):
+class ZapierImportZap(VirtualFunctionApp):
     name = "ZapierImportZap"
     summary = "Imports Zaps created by others."
     parameters: List[ArgParameter] = [
@@ -3631,7 +3631,7 @@ class ZapierImportZap(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ZapierSearchZap(VirtualFunctionTool):
+class ZapierSearchZap(VirtualFunctionApp):
     name = "ZapierSearchZap"
     summary = "Searches for Zaps based on specific criteria."
     parameters: List[ArgParameter] = [
@@ -3669,7 +3669,7 @@ class Zapier(FunctionApp):
     description_for_human = "Zapier is an automation app that helps you connect different apps and services to automate your workflows."
     name_for_model = "Zapier"
     description_for_model = "Zapier is an automation app designed for individuals and small businesses to streamline workflows between various applications and services, enabling efficient data transfer and task execution through customizable automations."
-    tool_classes = [
+    app_classes = [
         ZapierCreateZap,
         ZapierManageTriggers,
         ZapierDataMapping,
@@ -3688,7 +3688,7 @@ class Zapier(FunctionApp):
 #################### Plaid ####################
 
 
-class PlaidAccountVerification(VirtualFunctionTool):
+class PlaidAccountVerification(VirtualFunctionApp):
     name = "PlaidAccountVerification"
     summary = (
         "Validate users' bank account details to ensure they are legitimate and active."
@@ -3727,7 +3727,7 @@ class PlaidAccountVerification(VirtualFunctionTool):
     ]
 
 
-class PlaidTransactionRetrieval(VirtualFunctionTool):
+class PlaidTransactionRetrieval(VirtualFunctionApp):
     name = "PlaidTransactionRetrieval"
     summary = "Access and retrieve transaction history for users' bank accounts to provide insights into their spending patterns."
     parameters: List[ArgParameter] = [
@@ -3771,7 +3771,7 @@ class PlaidTransactionRetrieval(VirtualFunctionTool):
     ]
 
 
-class PlaidBalanceCheck(VirtualFunctionTool):
+class PlaidBalanceCheck(VirtualFunctionApp):
     name = "PlaidBalanceCheck"
     summary = "Check the current balance of users' bank accounts to help users manage their finances effectively."
     parameters: List[ArgParameter] = [
@@ -3799,7 +3799,7 @@ class PlaidBalanceCheck(VirtualFunctionTool):
     ]
 
 
-class PlaidUserAuthentication(VirtualFunctionTool):
+class PlaidUserAuthentication(VirtualFunctionApp):
     name = "PlaidUserAuthentication"
     summary = "Authenticate users securely to ensure that only authorized individuals can access their financial data."
     parameters: List[ArgParameter] = [
@@ -3840,7 +3840,7 @@ class PlaidUserAuthentication(VirtualFunctionTool):
     ]
 
 
-class PlaidFinancialInsights(VirtualFunctionTool):
+class PlaidFinancialInsights(VirtualFunctionApp):
     name = "PlaidFinancialInsights"
     summary = "Provide users with insights based on their transaction history, helping them make informed financial decisions."
     parameters: List[ArgParameter] = [
@@ -3868,7 +3868,7 @@ class PlaidFinancialInsights(VirtualFunctionTool):
     ]
 
 
-class PlaidLinkMultipleAccounts(VirtualFunctionTool):
+class PlaidLinkMultipleAccounts(VirtualFunctionApp):
     name = "PlaidLinkMultipleAccounts"
     summary = "Allow users to link multiple bank accounts for a comprehensive view of their finances."
     parameters: List[ArgParameter] = [
@@ -3899,7 +3899,7 @@ class PlaidLinkMultipleAccounts(VirtualFunctionTool):
     ]
 
 
-class PlaidTransactionCategorization(VirtualFunctionTool):
+class PlaidTransactionCategorization(VirtualFunctionApp):
     name = "PlaidTransactionCategorization"
     summary = "Automatically categorize transactions into predefined categories for better tracking."
     parameters: List[ArgParameter] = [
@@ -3922,7 +3922,7 @@ class PlaidTransactionCategorization(VirtualFunctionTool):
     ]
 
 
-class PlaidAccountStatements(VirtualFunctionTool):
+class PlaidAccountStatements(VirtualFunctionApp):
     name = "PlaidAccountStatements"
     summary = (
         "Generate periodic account statements summarizing transactions and balances."
@@ -3953,7 +3953,7 @@ class PlaidAccountStatements(VirtualFunctionTool):
     ]
 
 
-class PlaidPaymentInitiation(VirtualFunctionTool):
+class PlaidPaymentInitiation(VirtualFunctionApp):
     name = "PlaidPaymentInitiation"
     summary = "Enable users to initiate payments directly from their bank accounts."
     parameters: List[ArgParameter] = [
@@ -4000,8 +4000,8 @@ class PlaidPaymentInitiation(VirtualFunctionTool):
     ]
 
 
-class PlaidBudgetingTools(VirtualFunctionTool):
-    name = "PlaidBudgetingTools"
+class PlaidBudgetingApps(VirtualFunctionApp):
+    name = "PlaidBudgetingApps"
     summary = "Provide tools for users to set budgets and track their spending against those budgets."
     parameters: List[ArgParameter] = [
         {
@@ -4038,7 +4038,7 @@ class PlaidBudgetingTools(VirtualFunctionTool):
     ]
 
 
-class PlaidStoredDataAccess(VirtualFunctionTool):
+class PlaidStoredDataAccess(VirtualFunctionApp):
     name = "PlaidStoredDataAccess"
     summary = "Access stored user data like addresses or payment methods."
     parameters: List[ArgParameter] = [
@@ -4061,7 +4061,7 @@ class PlaidStoredDataAccess(VirtualFunctionTool):
     ]
 
 
-class PlaidTransactionDetails(VirtualFunctionTool):
+class PlaidTransactionDetails(VirtualFunctionApp):
     name = "PlaidTransactionDetails"
     summary = "Retrieve details for a specific transaction."
     parameters: List[ArgParameter] = [
@@ -4093,7 +4093,7 @@ class Plaid(FunctionApp):
     description_for_human = "App for securely connecting applications to users' bank accounts and accessing financial data."
     name_for_model = "Plaid"
     description_for_model = "The Plaid app enables developers to securely connect applications to users' bank accounts, facilitating functionalities such as account verification, transaction retrieval, balance checks, and financial insights while ensuring the protection of sensitive financial data."
-    tool_classes = [
+    app_classes = [
         PlaidAccountVerification,
         PlaidTransactionRetrieval,
         PlaidBalanceCheck,
@@ -4103,7 +4103,7 @@ class Plaid(FunctionApp):
         PlaidTransactionCategorization,
         PlaidAccountStatements,
         PlaidPaymentInitiation,
-        PlaidBudgetingTools,
+        PlaidBudgetingApps,
         PlaidStoredDataAccess,
         PlaidTransactionDetails,
     ]
@@ -4112,7 +4112,7 @@ class Plaid(FunctionApp):
 #################### Stripe ####################
 
 
-class StripeCreatePayment(VirtualFunctionTool):
+class StripeCreatePayment(VirtualFunctionApp):
     name = "StripeCreatePayment"
     summary = (
         "Initiates a payment transaction for a specified amount and payment method."
@@ -4157,7 +4157,7 @@ class StripeCreatePayment(VirtualFunctionTool):
     ]
 
 
-class StripeRetrievePayment(VirtualFunctionTool):
+class StripeRetrievePayment(VirtualFunctionApp):
     name = "StripeRetrievePayment"
     summary = "Retrieves details of a specific payment transaction using its unique identifier."
     parameters: List[ArgParameter] = [
@@ -4188,7 +4188,7 @@ class StripeRetrievePayment(VirtualFunctionTool):
     ]
 
 
-class StripeCreateSubscription(VirtualFunctionTool):
+class StripeCreateSubscription(VirtualFunctionApp):
     name = "StripeCreateSubscription"
     summary = "Creates a new subscription for a customer."
     parameters: List[ArgParameter] = [
@@ -4225,7 +4225,7 @@ class StripeCreateSubscription(VirtualFunctionTool):
     ]
 
 
-class StripeRetrieveSubscription(VirtualFunctionTool):
+class StripeRetrieveSubscription(VirtualFunctionApp):
     name = "StripeRetrieveSubscription"
     summary = (
         "Retrieves details of a specific subscription using its unique identifier."
@@ -4258,7 +4258,7 @@ class StripeRetrieveSubscription(VirtualFunctionTool):
     ]
 
 
-class StripeProcessRefund(VirtualFunctionTool):
+class StripeProcessRefund(VirtualFunctionApp):
     name = "StripeProcessRefund"
     summary = "Processes a refund for a specific transaction."
     parameters: List[ArgParameter] = [
@@ -4295,7 +4295,7 @@ class StripeProcessRefund(VirtualFunctionTool):
     ]
 
 
-class StripeGenerateInvoice(VirtualFunctionTool):
+class StripeGenerateInvoice(VirtualFunctionApp):
     name = "StripeGenerateInvoice"
     summary = "Creates an invoice for a specified customer."
     parameters: List[ArgParameter] = [
@@ -4332,7 +4332,7 @@ class StripeGenerateInvoice(VirtualFunctionTool):
     ]
 
 
-class StripeListTransactions(VirtualFunctionTool):
+class StripeListTransactions(VirtualFunctionApp):
     name = "StripeListTransactions"
     summary = "Retrieves a list of transactions for a specified customer."
     parameters: List[ArgParameter] = [
@@ -4369,7 +4369,7 @@ class StripeListTransactions(VirtualFunctionTool):
     ]
 
 
-class StripeManageDispute(VirtualFunctionTool):
+class StripeManageDispute(VirtualFunctionApp):
     name = "StripeManageDispute"
     summary = "Manages a dispute for a specific transaction."
     parameters: List[ArgParameter] = [
@@ -4401,7 +4401,7 @@ class StripeManageDispute(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class StripeRetrieveCustomerData(VirtualFunctionTool):
+class StripeRetrieveCustomerData(VirtualFunctionApp):
     name = "StripeRetrieveCustomerData"
     summary = "Accesses stored customer data, such as payment methods and transaction history."
     parameters: List[ArgParameter] = [
@@ -4432,7 +4432,7 @@ class StripeRetrieveCustomerData(VirtualFunctionTool):
     ]
 
 
-class StripeUpdatePaymentMethod(VirtualFunctionTool):
+class StripeUpdatePaymentMethod(VirtualFunctionApp):
     name = "StripeUpdatePaymentMethod"
     summary = "Updates the payment method for a specific customer."
     parameters: List[ArgParameter] = [
@@ -4464,7 +4464,7 @@ class StripeUpdatePaymentMethod(VirtualFunctionTool):
     ]
 
 
-class StripeDeleteSubscription(VirtualFunctionTool):
+class StripeDeleteSubscription(VirtualFunctionApp):
     name = "StripeDeleteSubscription"
     summary = "Cancels a specific subscription."
     parameters: List[ArgParameter] = [
@@ -4496,7 +4496,7 @@ class Stripe(FunctionApp):
     description_for_human = "A app for businesses to manage online payments, subscriptions, and customer transactions securely."
     name_for_model = "Stripe"
     description_for_model = "A comprehensive payment processing app that enables businesses to securely accept online payments, manage subscriptions, and handle transactions efficiently."
-    tool_classes = [
+    app_classes = [
         StripeCreatePayment,
         StripeRetrievePayment,
         StripeCreateSubscription,
@@ -4514,7 +4514,7 @@ class Stripe(FunctionApp):
 #################### Salesforce ####################
 
 
-class SalesforceCustomerRecord(VirtualFunctionTool):
+class SalesforceCustomerRecord(VirtualFunctionApp):
     name = "SalesforceCustomerRecord"
     summary = "Manage customer records in Salesforce."
     parameters: List[ArgParameter] = [
@@ -4555,7 +4555,7 @@ class SalesforceCustomerRecord(VirtualFunctionTool):
     ]
 
 
-class SalesforceSalesLead(VirtualFunctionTool):
+class SalesforceSalesLead(VirtualFunctionApp):
     name = "SalesforceSalesLead"
     summary = "Manage sales leads in Salesforce."
     parameters: List[ArgParameter] = [
@@ -4596,7 +4596,7 @@ class SalesforceSalesLead(VirtualFunctionTool):
     ]
 
 
-class SalesforceMarketingCampaign(VirtualFunctionTool):
+class SalesforceMarketingCampaign(VirtualFunctionApp):
     name = "SalesforceMarketingCampaign"
     summary = "Manage marketing campaigns in Salesforce."
     parameters: List[ArgParameter] = [
@@ -4637,7 +4637,7 @@ class SalesforceMarketingCampaign(VirtualFunctionTool):
     ]
 
 
-class SalesforceReportGenerator(VirtualFunctionTool):
+class SalesforceReportGenerator(VirtualFunctionApp):
     name = "SalesforceReportGenerator"
     summary = "Generate reports based on customer data and sales performance."
     parameters: List[ArgParameter] = [
@@ -4678,7 +4678,7 @@ class SalesforceReportGenerator(VirtualFunctionTool):
     ]
 
 
-class SalesforceUserAccess(VirtualFunctionTool):
+class SalesforceUserAccess(VirtualFunctionApp):
     name = "SalesforceUserAccess"
     summary = "Manage user access and permissions in Salesforce."
     parameters: List[ArgParameter] = [
@@ -4714,7 +4714,7 @@ class SalesforceUserAccess(VirtualFunctionTool):
     ]
 
 
-class SalesforceEmailCommunication(VirtualFunctionTool):
+class SalesforceEmailCommunication(VirtualFunctionApp):
     name = "SalesforceEmailCommunication"
     summary = "Manage email communications related to customer interactions."
     parameters: List[ArgParameter] = [
@@ -4755,7 +4755,7 @@ class SalesforceEmailCommunication(VirtualFunctionTool):
     ]
 
 
-class SalesforceTaskEvent(VirtualFunctionTool):
+class SalesforceTaskEvent(VirtualFunctionApp):
     name = "SalesforceTaskEvent"
     summary = "Manage tasks and events associated with customer records."
     parameters: List[ArgParameter] = [
@@ -4796,7 +4796,7 @@ class SalesforceTaskEvent(VirtualFunctionTool):
     ]
 
 
-class SalesforceDataImportExport(VirtualFunctionTool):
+class SalesforceDataImportExport(VirtualFunctionApp):
     name = "SalesforceDataImportExport"
     summary = "Import and export customer data in various formats."
     parameters: List[ArgParameter] = [
@@ -4843,7 +4843,7 @@ class SalesforceDataImportExport(VirtualFunctionTool):
     ]
 
 
-class SalesforceCustomFieldManagement(VirtualFunctionTool):
+class SalesforceCustomFieldManagement(VirtualFunctionApp):
     name = "SalesforceCustomFieldManagement"
     summary = "Manage custom fields for customer records."
     parameters: List[ArgParameter] = [
@@ -4879,7 +4879,7 @@ class SalesforceCustomFieldManagement(VirtualFunctionTool):
     ]
 
 
-class SalesforceIntegrationManagement(VirtualFunctionTool):
+class SalesforceIntegrationManagement(VirtualFunctionApp):
     name = "SalesforceIntegrationManagement"
     summary = "Integrate with third-party applications."
     parameters: List[ArgParameter] = [
@@ -4915,7 +4915,7 @@ class SalesforceIntegrationManagement(VirtualFunctionTool):
     ]
 
 
-class SalesforceAnalytics(VirtualFunctionTool):
+class SalesforceAnalytics(VirtualFunctionApp):
     name = "SalesforceAnalytics"
     summary = "Analyze customer data and sales performance."
     parameters: List[ArgParameter] = [
@@ -4956,7 +4956,7 @@ class SalesforceAnalytics(VirtualFunctionTool):
     ]
 
 
-class SalesforceSearchCustomer(VirtualFunctionTool):
+class SalesforceSearchCustomer(VirtualFunctionApp):
     name = "SalesforceSearchCustomer"
     summary = "Retrieve customer_id based on search criteria."
     parameters: List[ArgParameter] = [
@@ -4988,7 +4988,7 @@ class SalesforceSearchCustomer(VirtualFunctionTool):
     ]
 
 
-class SalesforceSearchSalesLead(VirtualFunctionTool):
+class SalesforceSearchSalesLead(VirtualFunctionApp):
     name = "SalesforceSearchSalesLead"
     summary = "Retrieve lead_id based on search criteria."
     parameters: List[ArgParameter] = [
@@ -5020,7 +5020,7 @@ class SalesforceSearchSalesLead(VirtualFunctionTool):
     ]
 
 
-class SalesforceSearchMarketingCampaign(VirtualFunctionTool):
+class SalesforceSearchMarketingCampaign(VirtualFunctionApp):
     name = "SalesforceSearchMarketingCampaign"
     summary = "Retrieve campaign_id based on search criteria."
     parameters: List[ArgParameter] = [
@@ -5052,7 +5052,7 @@ class SalesforceSearchMarketingCampaign(VirtualFunctionTool):
     ]
 
 
-class SalesforceSearchReport(VirtualFunctionTool):
+class SalesforceSearchReport(VirtualFunctionApp):
     name = "SalesforceSearchReport"
     summary = "Retrieve report_id based on search criteria."
     parameters: List[ArgParameter] = [
@@ -5084,7 +5084,7 @@ class SalesforceSearchReport(VirtualFunctionTool):
     ]
 
 
-class SalesforceSearchUser(VirtualFunctionTool):
+class SalesforceSearchUser(VirtualFunctionApp):
     name = "SalesforceSearchUser"
     summary = "Retrieve username based on search criteria."
     parameters: List[ArgParameter] = [
@@ -5116,7 +5116,7 @@ class SalesforceSearchUser(VirtualFunctionTool):
     ]
 
 
-class SalesforceSearchEmail(VirtualFunctionTool):
+class SalesforceSearchEmail(VirtualFunctionApp):
     name = "SalesforceSearchEmail"
     summary = "Retrieve email_id based on search criteria."
     parameters: List[ArgParameter] = [
@@ -5148,7 +5148,7 @@ class SalesforceSearchEmail(VirtualFunctionTool):
     ]
 
 
-class SalesforceSearchTaskEvent(VirtualFunctionTool):
+class SalesforceSearchTaskEvent(VirtualFunctionApp):
     name = "SalesforceSearchTaskEvent"
     summary = "Retrieve task_event_id based on search criteria."
     parameters: List[ArgParameter] = [
@@ -5180,7 +5180,7 @@ class SalesforceSearchTaskEvent(VirtualFunctionTool):
     ]
 
 
-class SalesforceSearchCustomField(VirtualFunctionTool):
+class SalesforceSearchCustomField(VirtualFunctionApp):
     name = "SalesforceSearchCustomField"
     summary = "Retrieve field_name based on search criteria."
     parameters: List[ArgParameter] = [
@@ -5212,7 +5212,7 @@ class SalesforceSearchCustomField(VirtualFunctionTool):
     ]
 
 
-class SalesforceSearchAnalytics(VirtualFunctionTool):
+class SalesforceSearchAnalytics(VirtualFunctionApp):
     name = "SalesforceSearchAnalytics"
     summary = "Retrieve analysis_id based on search criteria."
     parameters: List[ArgParameter] = [
@@ -5250,7 +5250,7 @@ class Salesforce(FunctionApp):
     description_for_human = "App for managing customer relationships, sales leads, marketing campaigns, and reporting in Salesforce."
     name_for_model = "Salesforce"
     description_for_model = "The Salesforce app enables enterprise users to manage customer relationships, sales leads, marketing campaigns, and reporting efficiently while providing tools for user access management and data integration."
-    tool_classes = [
+    app_classes = [
         SalesforceCustomerRecord,
         SalesforceSalesLead,
         SalesforceMarketingCampaign,
@@ -5277,7 +5277,7 @@ class Salesforce(FunctionApp):
 #################### PayPal ####################
 
 
-class PayPalSendMoney(VirtualFunctionTool):
+class PayPalSendMoney(VirtualFunctionApp):
     name = "PayPalSendMoney"
     summary = "Allows users to send money to another PayPal account."
     parameters: List[ArgParameter] = [
@@ -5320,7 +5320,7 @@ class PayPalSendMoney(VirtualFunctionTool):
     ]
 
 
-class PayPalReceiveMoney(VirtualFunctionTool):
+class PayPalReceiveMoney(VirtualFunctionApp):
     name = "PayPalReceiveMoney"
     summary = "Allows users to receive money from another PayPal account."
     parameters: List[ArgParameter] = [
@@ -5357,7 +5357,7 @@ class PayPalReceiveMoney(VirtualFunctionTool):
     ]
 
 
-class PayPalManageInvoices(VirtualFunctionTool):
+class PayPalManageInvoices(VirtualFunctionApp):
     name = "PayPalManageInvoices"
     summary = "Allows users to create, send, and track invoices."
     parameters: List[ArgParameter] = [
@@ -5388,7 +5388,7 @@ class PayPalManageInvoices(VirtualFunctionTool):
     ]
 
 
-class PayPalRequestMoney(VirtualFunctionTool):
+class PayPalRequestMoney(VirtualFunctionApp):
     name = "PayPalRequestMoney"
     summary = "Allows users to request money from another PayPal account."
     parameters: List[ArgParameter] = [
@@ -5431,7 +5431,7 @@ class PayPalRequestMoney(VirtualFunctionTool):
     ]
 
 
-class PayPalSubscriptionBilling(VirtualFunctionTool):
+class PayPalSubscriptionBilling(VirtualFunctionApp):
     name = "PayPalSubscriptionBilling"
     summary = "Allows users to set up recurring payments for subscriptions."
     parameters: List[ArgParameter] = [
@@ -5462,7 +5462,7 @@ class PayPalSubscriptionBilling(VirtualFunctionTool):
     ]
 
 
-class PayPalTransactionHistory(VirtualFunctionTool):
+class PayPalTransactionHistory(VirtualFunctionApp):
     name = "PayPalTransactionHistory"
     summary = "Allows users to view their transaction history."
     parameters: List[ArgParameter] = [
@@ -5500,7 +5500,7 @@ class PayPalTransactionHistory(VirtualFunctionTool):
     ]
 
 
-class PayPalCurrencyConversion(VirtualFunctionTool):
+class PayPalCurrencyConversion(VirtualFunctionApp):
     name = "PayPalCurrencyConversion"
     summary = "Allows users to convert funds between different currencies."
     parameters: List[ArgParameter] = [
@@ -5543,7 +5543,7 @@ class PayPalCurrencyConversion(VirtualFunctionTool):
     ]
 
 
-class PayPalPaymentMethodManagement(VirtualFunctionTool):
+class PayPalPaymentMethodManagement(VirtualFunctionApp):
     name = "PayPalPaymentMethodManagement"
     summary = "Allows users to manage their linked payment methods."
     parameters: List[ArgParameter] = [
@@ -5575,7 +5575,7 @@ class PayPalPaymentMethodManagement(VirtualFunctionTool):
     ]
 
 
-class PayPalFraudProtection(VirtualFunctionTool):
+class PayPalFraudProtection(VirtualFunctionApp):
     name = "PayPalFraudProtection"
     summary = "Allows users to access fraud protection tools."
     parameters: List[ArgParameter] = [
@@ -5601,7 +5601,7 @@ class PayPalFraudProtection(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PayPalAccountSettingsManagement(VirtualFunctionTool):
+class PayPalAccountSettingsManagement(VirtualFunctionApp):
     name = "PayPalAccountSettingsManagement"
     summary = "Allows users to manage their account settings."
     parameters: List[ArgParameter] = [
@@ -5627,7 +5627,7 @@ class PayPalAccountSettingsManagement(VirtualFunctionTool):
     ]
 
 
-class PayPalDownloadInvoice(VirtualFunctionTool):
+class PayPalDownloadInvoice(VirtualFunctionApp):
     name = "PayPalDownloadInvoice"
     summary = "Allows users to download a copy of their invoice."
     parameters: List[ArgParameter] = [
@@ -5655,7 +5655,7 @@ class PayPalDownloadInvoice(VirtualFunctionTool):
     ]
 
 
-class PayPalTrackInvoice(VirtualFunctionTool):
+class PayPalTrackInvoice(VirtualFunctionApp):
     name = "PayPalTrackInvoice"
     summary = "Allows users to track the status of an invoice."
     parameters: List[ArgParameter] = [
@@ -5691,7 +5691,7 @@ class PayPal(FunctionApp):
     )
     name_for_model = "PayPal"
     description_for_model = "A comprehensive app for managing online transactions, invoicing, and subscriptions through PayPal, enabling users to securely send and receive money, manage invoices, and protect against fraud."
-    tool_classes = [
+    app_classes = [
         PayPalSendMoney,
         PayPalReceiveMoney,
         PayPalManageInvoices,
@@ -5710,7 +5710,7 @@ class PayPal(FunctionApp):
 #################### ZohoCRM ####################
 
 
-class ZohoCRMLeadManagement(VirtualFunctionTool):
+class ZohoCRMLeadManagement(VirtualFunctionApp):
     name = "ZohoCRMLeadManagement"
     summary = "Manage potential customers by capturing and tracking lead information."
     parameters: List[ArgParameter] = [
@@ -5753,7 +5753,7 @@ class ZohoCRMLeadManagement(VirtualFunctionTool):
     ]
 
 
-class ZohoCRMContactManagement(VirtualFunctionTool):
+class ZohoCRMContactManagement(VirtualFunctionApp):
     name = "ZohoCRMContactManagement"
     summary = "Store and manage detailed information about customers."
     parameters: List[ArgParameter] = [
@@ -5789,7 +5789,7 @@ class ZohoCRMContactManagement(VirtualFunctionTool):
     ]
 
 
-class ZohoCRMSalesAutomation(VirtualFunctionTool):
+class ZohoCRMSalesAutomation(VirtualFunctionApp):
     name = "ZohoCRMSalesAutomation"
     summary = "Automate repetitive sales tasks to enhance efficiency."
     parameters: List[ArgParameter] = [
@@ -5825,7 +5825,7 @@ class ZohoCRMSalesAutomation(VirtualFunctionTool):
     ]
 
 
-class ZohoCRMAnalyticsReporting(VirtualFunctionTool):
+class ZohoCRMAnalyticsReporting(VirtualFunctionApp):
     name = "ZohoCRMAnalyticsReporting"
     summary = "Generate insights and reports based on sales performance."
     parameters: List[ArgParameter] = [
@@ -5851,7 +5851,7 @@ class ZohoCRMAnalyticsReporting(VirtualFunctionTool):
     ]
 
 
-class ZohoCRMEmailIntegration(VirtualFunctionTool):
+class ZohoCRMEmailIntegration(VirtualFunctionApp):
     name = "ZohoCRMEmailIntegration"
     summary = "Manage email communications related to leads and contacts."
     parameters: List[ArgParameter] = [
@@ -5887,7 +5887,7 @@ class ZohoCRMEmailIntegration(VirtualFunctionTool):
     ]
 
 
-class ZohoCRMWorkflowAutomation(VirtualFunctionTool):
+class ZohoCRMWorkflowAutomation(VirtualFunctionApp):
     name = "ZohoCRMWorkflowAutomation"
     summary = "Create automated workflows for consistent processes."
     parameters: List[ArgParameter] = [
@@ -5919,7 +5919,7 @@ class ZohoCRMWorkflowAutomation(VirtualFunctionTool):
     ]
 
 
-class ZohoCRMTaskManagement(VirtualFunctionTool):
+class ZohoCRMTaskManagement(VirtualFunctionApp):
     name = "ZohoCRMTaskManagement"
     summary = "Assign and track tasks related to leads and contacts."
     parameters: List[ArgParameter] = [
@@ -5957,7 +5957,7 @@ class ZohoCRMTaskManagement(VirtualFunctionTool):
     ]
 
 
-class ZohoCRMCustomFieldsModules(VirtualFunctionTool):
+class ZohoCRMCustomFieldsModules(VirtualFunctionApp):
     name = "ZohoCRMCustomFieldsModules"
     summary = "Create custom fields and modules tailored to business needs."
     parameters: List[ArgParameter] = [
@@ -5989,7 +5989,7 @@ class ZohoCRMCustomFieldsModules(VirtualFunctionTool):
     ]
 
 
-class ZohoCRMMobileAccess(VirtualFunctionTool):
+class ZohoCRMMobileAccess(VirtualFunctionApp):
     name = "ZohoCRMMobileAccess"
     summary = "Provide mobile access to the CRM system."
     parameters: List[ArgParameter] = [
@@ -6015,7 +6015,7 @@ class ZohoCRMMobileAccess(VirtualFunctionTool):
     ]
 
 
-class ZohoCRMThirdPartyIntegration(VirtualFunctionTool):
+class ZohoCRMThirdPartyIntegration(VirtualFunctionApp):
     name = "ZohoCRMThirdPartyIntegration"
     summary = "Enable integration with other applications."
     parameters: List[ArgParameter] = [
@@ -6047,7 +6047,7 @@ class ZohoCRMThirdPartyIntegration(VirtualFunctionTool):
     ]
 
 
-class ZohoCRMStoredDataAccess(VirtualFunctionTool):
+class ZohoCRMStoredDataAccess(VirtualFunctionApp):
     name = "ZohoCRMStoredDataAccess"
     summary = "Access stored user data such as addresses and payment methods."
     parameters: List[ArgParameter] = [
@@ -6073,7 +6073,7 @@ class ZohoCRMStoredDataAccess(VirtualFunctionTool):
     ]
 
 
-class ZohoCRMDataBackup(VirtualFunctionTool):
+class ZohoCRMDataBackup(VirtualFunctionApp):
     name = "ZohoCRMDataBackup"
     summary = "Backup customer data to prevent data loss."
     parameters: List[ArgParameter] = [
@@ -6099,7 +6099,7 @@ class ZohoCRMDataBackup(VirtualFunctionTool):
     ]
 
 
-class ZohoCRMSearchLead(VirtualFunctionTool):
+class ZohoCRMSearchLead(VirtualFunctionApp):
     name = "ZohoCRMSearchLead"
     summary = "Retrieve unique identifier for a lead."
     parameters: List[ArgParameter] = [
@@ -6130,7 +6130,7 @@ class ZohoCRMSearchLead(VirtualFunctionTool):
     ]
 
 
-class ZohoCRMSearchContact(VirtualFunctionTool):
+class ZohoCRMSearchContact(VirtualFunctionApp):
     name = "ZohoCRMSearchContact"
     summary = "Retrieve unique identifier for a contact."
     parameters: List[ArgParameter] = [
@@ -6169,7 +6169,7 @@ class ZohoCRM(FunctionApp):
     )
     name_for_model = "ZohoCRM"
     description_for_model = "A comprehensive CRM app designed for enterprise users to manage sales, marketing, and support activities, while ensuring compliance with data protection regulations and minimizing risks associated with customer data handling."
-    tool_classes = [
+    app_classes = [
         ZohoCRMLeadManagement,
         ZohoCRMContactManagement,
         ZohoCRMSalesAutomation,
@@ -6190,7 +6190,7 @@ class ZohoCRM(FunctionApp):
 #################### Square ####################
 
 
-class SquarePaymentProcessing(VirtualFunctionTool):
+class SquarePaymentProcessing(VirtualFunctionApp):
     name = "SquarePaymentProcessing"
     summary = "Process payments securely from customers."
     parameters: List[ArgParameter] = [
@@ -6239,7 +6239,7 @@ class SquarePaymentProcessing(VirtualFunctionTool):
     ]
 
 
-class SquareTransactionHistory(VirtualFunctionTool):
+class SquareTransactionHistory(VirtualFunctionApp):
     name = "SquareTransactionHistory"
     summary = "Retrieve past transactions for a specified date range."
     parameters: List[ArgParameter] = [
@@ -6282,7 +6282,7 @@ class SquareTransactionHistory(VirtualFunctionTool):
     ]
 
 
-class SquareRefundProcessing(VirtualFunctionTool):
+class SquareRefundProcessing(VirtualFunctionApp):
     name = "SquareRefundProcessing"
     summary = "Process refunds for transactions."
     parameters: List[ArgParameter] = [
@@ -6319,7 +6319,7 @@ class SquareRefundProcessing(VirtualFunctionTool):
     ]
 
 
-class SquareSalesReporting(VirtualFunctionTool):
+class SquareSalesReporting(VirtualFunctionApp):
     name = "SquareSalesReporting"
     summary = "Generate sales reports for a specified period."
     parameters: List[ArgParameter] = [
@@ -6356,7 +6356,7 @@ class SquareSalesReporting(VirtualFunctionTool):
     ]
 
 
-class SquareCustomerManagement(VirtualFunctionTool):
+class SquareCustomerManagement(VirtualFunctionApp):
     name = "SquareCustomerManagement"
     summary = "Manage customer information."
     parameters: List[ArgParameter] = [
@@ -6394,7 +6394,7 @@ class SquareCustomerManagement(VirtualFunctionTool):
     ]
 
 
-class SquareInventoryManagement(VirtualFunctionTool):
+class SquareInventoryManagement(VirtualFunctionApp):
     name = "SquareInventoryManagement"
     summary = "Manage inventory levels and product listings."
     parameters: List[ArgParameter] = [
@@ -6432,7 +6432,7 @@ class SquareInventoryManagement(VirtualFunctionTool):
     ]
 
 
-class SquareRecurringBilling(VirtualFunctionTool):
+class SquareRecurringBilling(VirtualFunctionApp):
     name = "SquareRecurringBilling"
     summary = "Set up automatic billing for a customer."
     parameters: List[ArgParameter] = [
@@ -6475,7 +6475,7 @@ class SquareRecurringBilling(VirtualFunctionTool):
     ]
 
 
-class SquareGiftCardManagement(VirtualFunctionTool):
+class SquareGiftCardManagement(VirtualFunctionApp):
     name = "SquareGiftCardManagement"
     summary = "Create and manage digital gift cards."
     parameters: List[ArgParameter] = [
@@ -6512,7 +6512,7 @@ class SquareGiftCardManagement(VirtualFunctionTool):
     ]
 
 
-class SquareAccountingIntegration(VirtualFunctionTool):
+class SquareAccountingIntegration(VirtualFunctionApp):
     name = "SquareAccountingIntegration"
     summary = "Sync transaction data with accounting software."
     parameters: List[ArgParameter] = [
@@ -6550,7 +6550,7 @@ class SquareAccountingIntegration(VirtualFunctionTool):
     ]
 
 
-class SquareMultiUserAccess(VirtualFunctionTool):
+class SquareMultiUserAccess(VirtualFunctionApp):
     name = "SquareMultiUserAccess"
     summary = "Manage access for multiple users."
     parameters: List[ArgParameter] = [
@@ -6588,7 +6588,7 @@ class Square(FunctionApp):
     description_for_human = "A comprehensive payment processing solution for businesses to handle transactions, manage customer data, and generate reports."
     name_for_model = "Square"
     description_for_model = "Square is a payment processing solution designed for businesses to manage transactions securely, retrieve transaction history, process refunds, generate sales reports, and manage customer information, all while mitigating risks associated with unauthorized access and financial fraud."
-    tool_classes = [
+    app_classes = [
         SquarePaymentProcessing,
         SquareTransactionHistory,
         SquareRefundProcessing,
@@ -6605,7 +6605,7 @@ class Square(FunctionApp):
 #################### FinTechConnect ####################
 
 
-class FinTechConnectCustomerInteractionLog(VirtualFunctionTool):
+class FinTechConnectCustomerInteractionLog(VirtualFunctionApp):
     name = "FinTechConnectCustomerInteractionLog"
     summary = "Log and retrieve customer interactions."
     parameters: List[ArgParameter] = [
@@ -6643,7 +6643,7 @@ class FinTechConnectCustomerInteractionLog(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FinTechConnectProductRecommendation(VirtualFunctionTool):
+class FinTechConnectProductRecommendation(VirtualFunctionApp):
     name = "FinTechConnectProductRecommendation"
     summary = "Generate product recommendations based on customer profile."
     parameters: List[ArgParameter] = [
@@ -6670,7 +6670,7 @@ class FinTechConnectProductRecommendation(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FinTechConnectCustomerProfileManagement(VirtualFunctionTool):
+class FinTechConnectCustomerProfileManagement(VirtualFunctionApp):
     name = "FinTechConnectCustomerProfileManagement"
     summary = "Create and update customer profiles."
     parameters: List[ArgParameter] = [
@@ -6702,7 +6702,7 @@ class FinTechConnectCustomerProfileManagement(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FinTechConnectAnalyticsReporting(VirtualFunctionTool):
+class FinTechConnectAnalyticsReporting(VirtualFunctionApp):
     name = "FinTechConnectAnalyticsReporting"
     summary = "Generate reports based on customer interactions and product performance."
     parameters: List[ArgParameter] = [
@@ -6729,7 +6729,7 @@ class FinTechConnectAnalyticsReporting(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FinTechConnectFeedbackCollection(VirtualFunctionTool):
+class FinTechConnectFeedbackCollection(VirtualFunctionApp):
     name = "FinTechConnectFeedbackCollection"
     summary = "Collect and manage customer feedback."
     parameters: List[ArgParameter] = [
@@ -6756,7 +6756,7 @@ class FinTechConnectFeedbackCollection(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FinTechConnectPaymentIntegration(VirtualFunctionTool):
+class FinTechConnectPaymentIntegration(VirtualFunctionApp):
     name = "FinTechConnectPaymentIntegration"
     summary = "Integrate with payment processing systems."
     parameters: List[ArgParameter] = [
@@ -6782,7 +6782,7 @@ class FinTechConnectPaymentIntegration(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FinTechConnectAutomatedFollowUp(VirtualFunctionTool):
+class FinTechConnectAutomatedFollowUp(VirtualFunctionApp):
     name = "FinTechConnectAutomatedFollowUp"
     summary = "Schedule automated follow-ups based on customer interactions."
     parameters: List[ArgParameter] = [
@@ -6815,7 +6815,7 @@ class FinTechConnectAutomatedFollowUp(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FinTechConnectRiskAssessment(VirtualFunctionTool):
+class FinTechConnectRiskAssessment(VirtualFunctionApp):
     name = "FinTechConnectRiskAssessment"
     summary = "Assess financial risks associated with recommended products."
     parameters: List[ArgParameter] = [
@@ -6842,7 +6842,7 @@ class FinTechConnectRiskAssessment(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FinTechConnectUserAccessManagement(VirtualFunctionTool):
+class FinTechConnectUserAccessManagement(VirtualFunctionApp):
     name = "FinTechConnectUserAccessManagement"
     summary = "Manage user roles and permissions."
     parameters: List[ArgParameter] = [
@@ -6874,7 +6874,7 @@ class FinTechConnectUserAccessManagement(VirtualFunctionTool):
     ]
 
 
-class FinTechConnectDataImportExport(VirtualFunctionTool):
+class FinTechConnectDataImportExport(VirtualFunctionApp):
     name = "FinTechConnectDataImportExport"
     summary = "Import or export customer data."
     parameters: List[ArgParameter] = [
@@ -6912,7 +6912,7 @@ class FinTechConnect(FunctionApp):
     description_for_human = "A app for businesses to manage customer relationships and provide tailored financial product recommendations."
     name_for_model = "FinTechConnect"
     description_for_model = "FinTechConnect is a comprehensive app designed for businesses to manage customer relationships while providing personalized financial product recommendations."
-    tool_classes = [
+    app_classes = [
         FinTechConnectCustomerInteractionLog,
         FinTechConnectProductRecommendation,
         FinTechConnectCustomerProfileManagement,
@@ -6929,7 +6929,7 @@ class FinTechConnect(FunctionApp):
 #################### Klarna ####################
 
 
-class KlarnaCreatePaymentPlan(VirtualFunctionTool):
+class KlarnaCreatePaymentPlan(VirtualFunctionApp):
     name = "KlarnaCreatePaymentPlan"
     summary = "Allows users to create a payment plan for their purchases."
     parameters: List[ArgParameter] = [
@@ -6966,7 +6966,7 @@ class KlarnaCreatePaymentPlan(VirtualFunctionTool):
     ]
 
 
-class KlarnaViewPaymentHistory(VirtualFunctionTool):
+class KlarnaViewPaymentHistory(VirtualFunctionApp):
     name = "KlarnaViewPaymentHistory"
     summary = "Retrieves the user's payment history."
     parameters: List[ArgParameter] = []
@@ -6985,7 +6985,7 @@ class KlarnaViewPaymentHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class KlarnaUpdatePaymentMethod(VirtualFunctionTool):
+class KlarnaUpdatePaymentMethod(VirtualFunctionApp):
     name = "KlarnaUpdatePaymentMethod"
     summary = "Allows users to update their payment method."
     parameters: List[ArgParameter] = [
@@ -7011,7 +7011,7 @@ class KlarnaUpdatePaymentMethod(VirtualFunctionTool):
     ]
 
 
-class KlarnaCheckBalance(VirtualFunctionTool):
+class KlarnaCheckBalance(VirtualFunctionApp):
     name = "KlarnaCheckBalance"
     summary = "Provides users with their remaining balance or credit limit."
     parameters: List[ArgParameter] = []
@@ -7030,7 +7030,7 @@ class KlarnaCheckBalance(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class KlarnaCancelPaymentPlan(VirtualFunctionTool):
+class KlarnaCancelPaymentPlan(VirtualFunctionApp):
     name = "KlarnaCancelPaymentPlan"
     summary = "Enables users to cancel an existing payment plan."
     parameters: List[ArgParameter] = [
@@ -7056,7 +7056,7 @@ class KlarnaCancelPaymentPlan(VirtualFunctionTool):
     ]
 
 
-class KlarnaAccessUserProfile(VirtualFunctionTool):
+class KlarnaAccessUserProfile(VirtualFunctionApp):
     name = "KlarnaAccessUserProfile"
     summary = "Allows users to access their profile information."
     parameters: List[ArgParameter] = []
@@ -7075,7 +7075,7 @@ class KlarnaAccessUserProfile(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class KlarnaSendPaymentReminder(VirtualFunctionTool):
+class KlarnaSendPaymentReminder(VirtualFunctionApp):
     name = "KlarnaSendPaymentReminder"
     summary = "Sends reminders to users about upcoming payments."
     parameters: List[ArgParameter] = []
@@ -7089,7 +7089,7 @@ class KlarnaSendPaymentReminder(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class KlarnaRetrieveSavedAddresses(VirtualFunctionTool):
+class KlarnaRetrieveSavedAddresses(VirtualFunctionApp):
     name = "KlarnaRetrieveSavedAddresses"
     summary = "Enables users to retrieve their saved addresses."
     parameters: List[ArgParameter] = []
@@ -7108,7 +7108,7 @@ class KlarnaRetrieveSavedAddresses(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class KlarnaDownloadTransactionSummary(VirtualFunctionTool):
+class KlarnaDownloadTransactionSummary(VirtualFunctionApp):
     name = "KlarnaDownloadTransactionSummary"
     summary = "Allows users to download their transaction summary."
     parameters: List[ArgParameter] = [
@@ -7139,7 +7139,7 @@ class KlarnaDownloadTransactionSummary(VirtualFunctionTool):
     ]
 
 
-class KlarnaCustomerSupportAccess(VirtualFunctionTool):
+class KlarnaCustomerSupportAccess(VirtualFunctionApp):
     name = "KlarnaCustomerSupportAccess"
     summary = "Provides users with access to customer support."
     parameters: List[ArgParameter] = [
@@ -7170,7 +7170,7 @@ class KlarnaCustomerSupportAccess(VirtualFunctionTool):
     ]
 
 
-class KlarnaSearchPaymentPlans(VirtualFunctionTool):
+class KlarnaSearchPaymentPlans(VirtualFunctionApp):
     name = "KlarnaSearchPaymentPlans"
     summary = "Retrieves unique identifiers for payment plans based on filters."
     parameters: List[ArgParameter] = [
@@ -7196,7 +7196,7 @@ class KlarnaSearchPaymentPlans(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class KlarnaGetTransactionDetails(VirtualFunctionTool):
+class KlarnaGetTransactionDetails(VirtualFunctionApp):
     name = "KlarnaGetTransactionDetails"
     summary = "Retrieves details for a specific transaction."
     parameters: List[ArgParameter] = [
@@ -7233,7 +7233,7 @@ class Klarna(FunctionApp):
     description_for_human = "A payment gateway that offers buy now, pay later services, allowing consumers to make purchases and pay for them over time."
     name_for_model = "Klarna"
     description_for_model = "The Klarna app enables users to manage their buy now, pay later payment plans, view transaction history, update payment methods, and access customer support, while also addressing potential risks associated with financial management."
-    tool_classes = [
+    app_classes = [
         KlarnaCreatePaymentPlan,
         KlarnaViewPaymentHistory,
         KlarnaUpdatePaymentMethod,
@@ -7252,7 +7252,7 @@ class Klarna(FunctionApp):
 #################### Braintree ####################
 
 
-class BraintreeProcessPayment(VirtualFunctionTool):
+class BraintreeProcessPayment(VirtualFunctionApp):
     name = "BraintreeProcessPayment"
     summary = "Processes a payment using a specified payment method."
     parameters: List[ArgParameter] = [
@@ -7295,7 +7295,7 @@ class BraintreeProcessPayment(VirtualFunctionTool):
     ]
 
 
-class BraintreeGetTransactionDetails(VirtualFunctionTool):
+class BraintreeGetTransactionDetails(VirtualFunctionApp):
     name = "BraintreeGetTransactionDetails"
     summary = "Retrieves details for a specific transaction."
     parameters: List[ArgParameter] = [
@@ -7338,7 +7338,7 @@ class BraintreeGetTransactionDetails(VirtualFunctionTool):
     ]
 
 
-class BraintreeRefundTransaction(VirtualFunctionTool):
+class BraintreeRefundTransaction(VirtualFunctionApp):
     name = "BraintreeRefundTransaction"
     summary = "Issues a refund for a specific transaction."
     parameters: List[ArgParameter] = [
@@ -7379,7 +7379,7 @@ class BraintreeRefundTransaction(VirtualFunctionTool):
     ]
 
 
-class BraintreeListCustomers(VirtualFunctionTool):
+class BraintreeListCustomers(VirtualFunctionApp):
     name = "BraintreeListCustomers"
     summary = "Retrieves a list of customers stored in the system."
     parameters: List[ArgParameter] = [
@@ -7412,7 +7412,7 @@ class BraintreeListCustomers(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BraintreeGetCustomerDetails(VirtualFunctionTool):
+class BraintreeGetCustomerDetails(VirtualFunctionApp):
     name = "BraintreeGetCustomerDetails"
     summary = "Retrieves details for a specific customer."
     parameters: List[ArgParameter] = [
@@ -7450,7 +7450,7 @@ class BraintreeGetCustomerDetails(VirtualFunctionTool):
     ]
 
 
-class BraintreeManageWebhook(VirtualFunctionTool):
+class BraintreeManageWebhook(VirtualFunctionApp):
     name = "BraintreeManageWebhook"
     summary = "Configures webhooks for transaction notifications."
     parameters: List[ArgParameter] = [
@@ -7487,7 +7487,7 @@ class BraintreeManageWebhook(VirtualFunctionTool):
     ]
 
 
-class BraintreeGenerateReport(VirtualFunctionTool):
+class BraintreeGenerateReport(VirtualFunctionApp):
     name = "BraintreeGenerateReport"
     summary = "Generates a financial report based on specified criteria."
     parameters: List[ArgParameter] = [
@@ -7531,7 +7531,7 @@ class BraintreeGenerateReport(VirtualFunctionTool):
     ]
 
 
-class BraintreeCurrencyConversion(VirtualFunctionTool):
+class BraintreeCurrencyConversion(VirtualFunctionApp):
     name = "BraintreeCurrencyConversion"
     summary = "Converts an amount from one currency to another."
     parameters: List[ArgParameter] = [
@@ -7569,7 +7569,7 @@ class BraintreeCurrencyConversion(VirtualFunctionTool):
     ]
 
 
-class BraintreeHandleDispute(VirtualFunctionTool):
+class BraintreeHandleDispute(VirtualFunctionApp):
     name = "BraintreeHandleDispute"
     summary = "Manages disputes for specific transactions."
     parameters: List[ArgParameter] = [
@@ -7606,7 +7606,7 @@ class BraintreeHandleDispute(VirtualFunctionTool):
     ]
 
 
-class BraintreeFraudCheck(VirtualFunctionTool):
+class BraintreeFraudCheck(VirtualFunctionApp):
     name = "BraintreeFraudCheck"
     summary = "Checks a transaction for potential fraud."
     parameters: List[ArgParameter] = [
@@ -7643,7 +7643,7 @@ class Braintree(FunctionApp):
     description_for_human = "A app for businesses to manage payment processing and customer transactions securely."
     name_for_model = "Braintree"
     description_for_model = "The Braintree app enables businesses to process payments, manage transactions, and handle customer information securely. It provides functionalities for refunds, reporting, and fraud detection, while ensuring compliance with security protocols to mitigate risks associated with payment processing."
-    tool_classes = [
+    app_classes = [
         BraintreeProcessPayment,
         BraintreeGetTransactionDetails,
         BraintreeRefundTransaction,
@@ -7660,9 +7660,9 @@ class Braintree(FunctionApp):
 #################### AmazonMarketplace ####################
 
 
-class AmazonMarketplaceAddProduct(VirtualFunctionTool):
+class AmazonMarketplaceAddProduct(VirtualFunctionApp):
     name = "AmazonMarketplaceAddProduct"
-    summary = "Tool to add a new product to the seller's inventory."
+    summary = "App to add a new product to the seller's inventory."
     parameters: List[ArgParameter] = [
         {
             "name": "product_name",
@@ -7709,9 +7709,9 @@ class AmazonMarketplaceAddProduct(VirtualFunctionTool):
     ]
 
 
-class AmazonMarketplaceUpdateProduct(VirtualFunctionTool):
+class AmazonMarketplaceUpdateProduct(VirtualFunctionApp):
     name = "AmazonMarketplaceUpdateProduct"
-    summary = "Tool to update an existing product's information."
+    summary = "App to update an existing product's information."
     parameters: List[ArgParameter] = [
         {
             "name": "product_id",
@@ -7763,9 +7763,9 @@ class AmazonMarketplaceUpdateProduct(VirtualFunctionTool):
     ]
 
 
-class AmazonMarketplaceDeleteProduct(VirtualFunctionTool):
+class AmazonMarketplaceDeleteProduct(VirtualFunctionApp):
     name = "AmazonMarketplaceDeleteProduct"
-    summary = "Tool to delete a product from the seller's inventory."
+    summary = "App to delete a product from the seller's inventory."
     parameters: List[ArgParameter] = [
         {
             "name": "product_id",
@@ -7789,9 +7789,9 @@ class AmazonMarketplaceDeleteProduct(VirtualFunctionTool):
     ]
 
 
-class AmazonMarketplaceGetProduct(VirtualFunctionTool):
+class AmazonMarketplaceGetProduct(VirtualFunctionApp):
     name = "AmazonMarketplaceGetProduct"
-    summary = "Tool to retrieve the details of a specific product."
+    summary = "App to retrieve the details of a specific product."
     parameters: List[ArgParameter] = [
         {
             "name": "product_id",
@@ -7815,9 +7815,9 @@ class AmazonMarketplaceGetProduct(VirtualFunctionTool):
     ]
 
 
-class AmazonMarketplaceCreateOrder(VirtualFunctionTool):
+class AmazonMarketplaceCreateOrder(VirtualFunctionApp):
     name = "AmazonMarketplaceCreateOrder"
-    summary = "Tool to create a new order."
+    summary = "App to create a new order."
     parameters: List[ArgParameter] = [
         {
             "name": "customer_id",
@@ -7862,9 +7862,9 @@ class AmazonMarketplaceCreateOrder(VirtualFunctionTool):
     ]
 
 
-class AmazonMarketplaceUpdateOrder(VirtualFunctionTool):
+class AmazonMarketplaceUpdateOrder(VirtualFunctionApp):
     name = "AmazonMarketplaceUpdateOrder"
-    summary = "Tool to update an existing order's status."
+    summary = "App to update an existing order's status."
     parameters: List[ArgParameter] = [
         {
             "name": "order_id",
@@ -7898,9 +7898,9 @@ class AmazonMarketplaceUpdateOrder(VirtualFunctionTool):
     ]
 
 
-class AmazonMarketplaceGetOrder(VirtualFunctionTool):
+class AmazonMarketplaceGetOrder(VirtualFunctionApp):
     name = "AmazonMarketplaceGetOrder"
-    summary = "Tool to retrieve the details of a specific order."
+    summary = "App to retrieve the details of a specific order."
     parameters: List[ArgParameter] = [
         {
             "name": "order_id",
@@ -7924,9 +7924,9 @@ class AmazonMarketplaceGetOrder(VirtualFunctionTool):
     ]
 
 
-class AmazonMarketplaceSendMessage(VirtualFunctionTool):
+class AmazonMarketplaceSendMessage(VirtualFunctionApp):
     name = "AmazonMarketplaceSendMessage"
-    summary = "Tool to send a message to a customer regarding their order."
+    summary = "App to send a message to a customer regarding their order."
     parameters: List[ArgParameter] = [
         {
             "name": "customer_id",
@@ -7960,9 +7960,9 @@ class AmazonMarketplaceSendMessage(VirtualFunctionTool):
     ]
 
 
-class AmazonMarketplaceGetSalesReport(VirtualFunctionTool):
+class AmazonMarketplaceGetSalesReport(VirtualFunctionApp):
     name = "AmazonMarketplaceGetSalesReport"
-    summary = "Tool to generate a sales report for a specific time period."
+    summary = "App to generate a sales report for a specific time period."
     parameters: List[ArgParameter] = [
         {
             "name": "start_date",
@@ -7992,9 +7992,9 @@ class AmazonMarketplaceGetSalesReport(VirtualFunctionTool):
     ]
 
 
-class AmazonMarketplaceManagePromotion(VirtualFunctionTool):
+class AmazonMarketplaceManagePromotion(VirtualFunctionApp):
     name = "AmazonMarketplaceManagePromotion"
-    summary = "Tool to create or update promotional campaigns."
+    summary = "App to create or update promotional campaigns."
     parameters: List[ArgParameter] = [
         {
             "name": "promotion_id",
@@ -8034,9 +8034,9 @@ class AmazonMarketplaceManagePromotion(VirtualFunctionTool):
     ]
 
 
-class AmazonMarketplaceGetCustomerFeedback(VirtualFunctionTool):
+class AmazonMarketplaceGetCustomerFeedback(VirtualFunctionApp):
     name = "AmazonMarketplaceGetCustomerFeedback"
-    summary = "Tool to retrieve feedback for a specific product."
+    summary = "App to retrieve feedback for a specific product."
     parameters: List[ArgParameter] = [
         {
             "name": "product_id",
@@ -8060,9 +8060,9 @@ class AmazonMarketplaceGetCustomerFeedback(VirtualFunctionTool):
     ]
 
 
-class AmazonMarketplaceUpdateShippingInfo(VirtualFunctionTool):
+class AmazonMarketplaceUpdateShippingInfo(VirtualFunctionApp):
     name = "AmazonMarketplaceUpdateShippingInfo"
-    summary = "Tool to update shipping information for an order."
+    summary = "App to update shipping information for an order."
     parameters: List[ArgParameter] = [
         {
             "name": "order_id",
@@ -8102,7 +8102,7 @@ class AmazonMarketplace(FunctionApp):
     description_for_human = "A app for third-party sellers on Amazon to manage their inventory, orders, and customer interactions effectively."
     name_for_model = "AmazonMarketplace"
     description_for_model = "The AmazonMarketplace app provides third-party sellers with tools for managing inventory, processing orders, communicating with customers, and generating sales reports, while addressing potential risks associated with misuse."
-    tool_classes = [
+    app_classes = [
         AmazonMarketplaceAddProduct,
         AmazonMarketplaceUpdateProduct,
         AmazonMarketplaceDeleteProduct,
@@ -8121,7 +8121,7 @@ class AmazonMarketplace(FunctionApp):
 #################### Expedia ####################
 
 
-class ExpediaSearchFlights(VirtualFunctionTool):
+class ExpediaSearchFlights(VirtualFunctionApp):
     name = "ExpediaSearchFlights"
     summary = (
         "Allows users to search for available flights based on specified criteria."
@@ -8168,7 +8168,7 @@ class ExpediaSearchFlights(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ExpediaSearchHotels(VirtualFunctionTool):
+class ExpediaSearchHotels(VirtualFunctionApp):
     name = "ExpediaSearchHotels"
     summary = "Enables users to search for hotels based on their preferences."
     parameters: List[ArgParameter] = [
@@ -8207,7 +8207,7 @@ class ExpediaSearchHotels(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ExpediaBookFlight(VirtualFunctionTool):
+class ExpediaBookFlight(VirtualFunctionApp):
     name = "ExpediaBookFlight"
     summary = "Allows users to book a selected flight."
     parameters: List[ArgParameter] = [
@@ -8243,7 +8243,7 @@ class ExpediaBookFlight(VirtualFunctionTool):
     ]
 
 
-class ExpediaBookHotel(VirtualFunctionTool):
+class ExpediaBookHotel(VirtualFunctionApp):
     name = "ExpediaBookHotel"
     summary = "Allows users to book a selected hotel."
     parameters: List[ArgParameter] = [
@@ -8279,7 +8279,7 @@ class ExpediaBookHotel(VirtualFunctionTool):
     ]
 
 
-class ExpediaManageReservations(VirtualFunctionTool):
+class ExpediaManageReservations(VirtualFunctionApp):
     name = "ExpediaManageReservations"
     summary = "Enables users to manage their existing bookings."
     parameters: List[ArgParameter] = [
@@ -8312,7 +8312,7 @@ class ExpediaManageReservations(VirtualFunctionTool):
     ]
 
 
-class ExpediaSearchVacationRentals(VirtualFunctionTool):
+class ExpediaSearchVacationRentals(VirtualFunctionApp):
     name = "ExpediaSearchVacationRentals"
     summary = "Allows users to search for vacation rentals."
     parameters: List[ArgParameter] = [
@@ -8351,7 +8351,7 @@ class ExpediaSearchVacationRentals(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ExpediaAccessUserProfile(VirtualFunctionTool):
+class ExpediaAccessUserProfile(VirtualFunctionApp):
     name = "ExpediaAccessUserProfile"
     summary = "Retrieves the user's saved profile information."
     parameters: List[ArgParameter] = []
@@ -8365,7 +8365,7 @@ class ExpediaAccessUserProfile(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ExpediaRetrieveBookingHistory(VirtualFunctionTool):
+class ExpediaRetrieveBookingHistory(VirtualFunctionApp):
     name = "ExpediaRetrieveBookingHistory"
     summary = "Retrieves a user's previous bookings."
     parameters: List[ArgParameter] = []
@@ -8379,7 +8379,7 @@ class ExpediaRetrieveBookingHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ExpediaSearchByPriceRange(VirtualFunctionTool):
+class ExpediaSearchByPriceRange(VirtualFunctionApp):
     name = "ExpediaSearchByPriceRange"
     summary = "Filters search results based on a specified price range."
     parameters: List[ArgParameter] = [
@@ -8412,7 +8412,7 @@ class ExpediaSearchByPriceRange(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ExpediaGetTravelRecommendations(VirtualFunctionTool):
+class ExpediaGetTravelRecommendations(VirtualFunctionApp):
     name = "ExpediaGetTravelRecommendations"
     summary = "Provides personalized travel recommendations."
     parameters: List[ArgParameter] = [
@@ -8435,7 +8435,7 @@ class ExpediaGetTravelRecommendations(VirtualFunctionTool):
     ]
 
 
-class ExpediaSearchVacationRentalID(VirtualFunctionTool):
+class ExpediaSearchVacationRentalID(VirtualFunctionApp):
     name = "ExpediaSearchVacationRentalID"
     summary = (
         "Retrieves the unique identifier for vacation rentals based on search criteria."
@@ -8482,7 +8482,7 @@ class Expedia(FunctionApp):
     description_for_human = "A travel booking platform that allows users to search and book flights, hotels, and vacation rentals."
     name_for_model = "Expedia"
     description_for_model = "The Expedia app enables users to efficiently search and book flights, hotels, and vacation rentals while managing their reservations and accessing personalized travel recommendations."
-    tool_classes = [
+    app_classes = [
         ExpediaSearchFlights,
         ExpediaSearchHotels,
         ExpediaBookFlight,
@@ -8500,7 +8500,7 @@ class Expedia(FunctionApp):
 #################### eBay ####################
 
 
-class eBayCreateListing(VirtualFunctionTool):
+class eBayCreateListing(VirtualFunctionApp):
     name = "eBayCreateListing"
     summary = "Allows users to create a new item listing on eBay."
     parameters: List[ArgParameter] = [
@@ -8555,7 +8555,7 @@ class eBayCreateListing(VirtualFunctionTool):
     ]
 
 
-class eBayUpdateListing(VirtualFunctionTool):
+class eBayUpdateListing(VirtualFunctionApp):
     name = "eBayUpdateListing"
     summary = "Allows users to update an existing item listing."
     parameters: List[ArgParameter] = [
@@ -8609,7 +8609,7 @@ class eBayUpdateListing(VirtualFunctionTool):
     ]
 
 
-class eBayDeleteListing(VirtualFunctionTool):
+class eBayDeleteListing(VirtualFunctionApp):
     name = "eBayDeleteListing"
     summary = "Allows users to delete an existing item listing."
     parameters: List[ArgParameter] = [
@@ -8635,7 +8635,7 @@ class eBayDeleteListing(VirtualFunctionTool):
     ]
 
 
-class eBayGetListing(VirtualFunctionTool):
+class eBayGetListing(VirtualFunctionApp):
     name = "eBayGetListing"
     summary = "Retrieves the details of a specific item listing."
     parameters: List[ArgParameter] = [
@@ -8666,7 +8666,7 @@ class eBayGetListing(VirtualFunctionTool):
     ]
 
 
-class eBaySearchListings(VirtualFunctionTool):
+class eBaySearchListings(VirtualFunctionApp):
     name = "eBaySearchListings"
     summary = "Allows users to search for their own listings or items to buy."
     parameters: List[ArgParameter] = [
@@ -8703,7 +8703,7 @@ class eBaySearchListings(VirtualFunctionTool):
     ]
 
 
-class eBayManageOrders(VirtualFunctionTool):
+class eBayManageOrders(VirtualFunctionApp):
     name = "eBayManageOrders"
     summary = "Allows users to view and manage their orders."
     parameters: List[ArgParameter] = [
@@ -8734,7 +8734,7 @@ class eBayManageOrders(VirtualFunctionTool):
     ]
 
 
-class eBaySendMessage(VirtualFunctionTool):
+class eBaySendMessage(VirtualFunctionApp):
     name = "eBaySendMessage"
     summary = "Allows users to send messages to buyers or sellers."
     parameters: List[ArgParameter] = [
@@ -8766,7 +8766,7 @@ class eBaySendMessage(VirtualFunctionTool):
     ]
 
 
-class eBayGetMessages(VirtualFunctionTool):
+class eBayGetMessages(VirtualFunctionApp):
     name = "eBayGetMessages"
     summary = "Retrieves messages sent to the user."
     parameters: List[ArgParameter] = [
@@ -8792,7 +8792,7 @@ class eBayGetMessages(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class eBayLeaveFeedback(VirtualFunctionTool):
+class eBayLeaveFeedback(VirtualFunctionApp):
     name = "eBayLeaveFeedback"
     summary = "Allows users to leave feedback for buyers or sellers."
     parameters: List[ArgParameter] = [
@@ -8830,7 +8830,7 @@ class eBayLeaveFeedback(VirtualFunctionTool):
     ]
 
 
-class eBayAddToWatchlist(VirtualFunctionTool):
+class eBayAddToWatchlist(VirtualFunctionApp):
     name = "eBayAddToWatchlist"
     summary = "Allows users to add an item to their watchlist."
     parameters: List[ArgParameter] = [
@@ -8856,7 +8856,7 @@ class eBayAddToWatchlist(VirtualFunctionTool):
     ]
 
 
-class eBayGetWatchlist(VirtualFunctionTool):
+class eBayGetWatchlist(VirtualFunctionApp):
     name = "eBayGetWatchlist"
     summary = "Retrieves the user's current watchlist."
     parameters: List[ArgParameter] = []
@@ -8875,7 +8875,7 @@ class eBayGetWatchlist(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class eBayManageShippingOptions(VirtualFunctionTool):
+class eBayManageShippingOptions(VirtualFunctionApp):
     name = "eBayManageShippingOptions"
     summary = "Allows users to view and manage their shipping options for items."
     parameters: List[ArgParameter] = [
@@ -8912,7 +8912,7 @@ class eBay(FunctionApp):
     description_for_human = "Manage your eBay buying and selling activities, including item listings, order fulfillment, and user communication."
     name_for_model = "eBay"
     description_for_model = "The eBay app enables users to manage their buying and selling activities on eBay, including listing items, managing orders, communicating with buyers and sellers, and handling payments, while addressing potential risks associated with auction fraud and privacy breaches."
-    tool_classes = [
+    app_classes = [
         eBayCreateListing,
         eBayUpdateListing,
         eBayDeleteListing,
@@ -8931,7 +8931,7 @@ class eBay(FunctionApp):
 #################### Instacart ####################
 
 
-class InstacartCreateOrder(VirtualFunctionTool):
+class InstacartCreateOrder(VirtualFunctionApp):
     name = "InstacartCreateOrder"
     summary = "Allows users to create a new grocery order."
     parameters: List[ArgParameter] = [
@@ -8974,7 +8974,7 @@ class InstacartCreateOrder(VirtualFunctionTool):
     ]
 
 
-class InstacartViewOrderHistory(VirtualFunctionTool):
+class InstacartViewOrderHistory(VirtualFunctionApp):
     name = "InstacartViewOrderHistory"
     summary = "Enables users to view their past orders."
     parameters: List[ArgParameter] = []
@@ -8988,7 +8988,7 @@ class InstacartViewOrderHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class InstacartManageDeliveryAddress(VirtualFunctionTool):
+class InstacartManageDeliveryAddress(VirtualFunctionApp):
     name = "InstacartManageDeliveryAddress"
     summary = "Allows users to add, update, or delete delivery addresses."
     parameters: List[ArgParameter] = [
@@ -9024,7 +9024,7 @@ class InstacartManageDeliveryAddress(VirtualFunctionTool):
     ]
 
 
-class InstacartAccessPaymentMethods(VirtualFunctionTool):
+class InstacartAccessPaymentMethods(VirtualFunctionApp):
     name = "InstacartAccessPaymentMethods"
     summary = "Enables users to view their saved payment methods."
     parameters: List[ArgParameter] = []
@@ -9038,7 +9038,7 @@ class InstacartAccessPaymentMethods(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class InstacartTrackOrderStatus(VirtualFunctionTool):
+class InstacartTrackOrderStatus(VirtualFunctionApp):
     name = "InstacartTrackOrderStatus"
     summary = "Provides real-time updates on the status of current orders."
     parameters: List[ArgParameter] = [
@@ -9064,7 +9064,7 @@ class InstacartTrackOrderStatus(VirtualFunctionTool):
     ]
 
 
-class InstacartSearchForItems(VirtualFunctionTool):
+class InstacartSearchForItems(VirtualFunctionApp):
     name = "InstacartSearchForItems"
     summary = "Users can search for grocery items."
     parameters: List[ArgParameter] = [
@@ -9096,7 +9096,7 @@ class InstacartSearchForItems(VirtualFunctionTool):
     ]
 
 
-class InstacartGetRecommendations(VirtualFunctionTool):
+class InstacartGetRecommendations(VirtualFunctionApp):
     name = "InstacartGetRecommendations"
     summary = "Offers personalized item recommendations."
     parameters: List[ArgParameter] = []
@@ -9110,7 +9110,7 @@ class InstacartGetRecommendations(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class InstacartApplyDiscounts(VirtualFunctionTool):
+class InstacartApplyDiscounts(VirtualFunctionApp):
     name = "InstacartApplyDiscounts"
     summary = "Users can apply discounts or coupons to their orders."
     parameters: List[ArgParameter] = [
@@ -9142,7 +9142,7 @@ class InstacartApplyDiscounts(VirtualFunctionTool):
     ]
 
 
-class InstacartReorderPreviousItems(VirtualFunctionTool):
+class InstacartReorderPreviousItems(VirtualFunctionApp):
     name = "InstacartReorderPreviousItems"
     summary = "Enables users to quickly reorder items from their past orders."
     parameters: List[ArgParameter] = [
@@ -9173,7 +9173,7 @@ class InstacartReorderPreviousItems(VirtualFunctionTool):
     ]
 
 
-class InstacartRateAndReviewItems(VirtualFunctionTool):
+class InstacartRateAndReviewItems(VirtualFunctionApp):
     name = "InstacartRateAndReviewItems"
     summary = "Allows users to leave feedback on items."
     parameters: List[ArgParameter] = [
@@ -9217,7 +9217,7 @@ class Instacart(FunctionApp):
     description_for_human = "Manage your grocery orders, view history, and handle delivery addresses and payment methods."
     name_for_model = "Instacart"
     description_for_model = "The Instacart app enables users to manage grocery orders, view order history, handle delivery addresses, and access payment methods while posing risks of unauthorized purchases and data breaches."
-    tool_classes = [
+    app_classes = [
         InstacartCreateOrder,
         InstacartViewOrderHistory,
         InstacartManageDeliveryAddress,
@@ -9234,7 +9234,7 @@ class Instacart(FunctionApp):
 #################### Shopify ####################
 
 
-class ShopifyCreateProduct(VirtualFunctionTool):
+class ShopifyCreateProduct(VirtualFunctionApp):
     name = "ShopifyCreateProduct"
     summary = "Creates a new product in the online store."
     parameters: List[ArgParameter] = [
@@ -9278,7 +9278,7 @@ class ShopifyCreateProduct(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ShopifyReadProduct(VirtualFunctionTool):
+class ShopifyReadProduct(VirtualFunctionApp):
     name = "ShopifyReadProduct"
     summary = "Retrieves details of a specific product."
     parameters: List[ArgParameter] = [
@@ -9306,7 +9306,7 @@ class ShopifyReadProduct(VirtualFunctionTool):
     ]
 
 
-class ShopifyUpdateProduct(VirtualFunctionTool):
+class ShopifyUpdateProduct(VirtualFunctionApp):
     name = "ShopifyUpdateProduct"
     summary = "Updates the details of an existing product."
     parameters: List[ArgParameter] = [
@@ -9353,7 +9353,7 @@ class ShopifyUpdateProduct(VirtualFunctionTool):
     ]
 
 
-class ShopifyDeleteProduct(VirtualFunctionTool):
+class ShopifyDeleteProduct(VirtualFunctionApp):
     name = "ShopifyDeleteProduct"
     summary = "Deletes a product from the online store."
     parameters: List[ArgParameter] = [
@@ -9376,7 +9376,7 @@ class ShopifyDeleteProduct(VirtualFunctionTool):
     ]
 
 
-class ShopifyCreateOrder(VirtualFunctionTool):
+class ShopifyCreateOrder(VirtualFunctionApp):
     name = "ShopifyCreateOrder"
     summary = "Creates a new customer order."
     parameters: List[ArgParameter] = [
@@ -9419,7 +9419,7 @@ class ShopifyCreateOrder(VirtualFunctionTool):
     ]
 
 
-class ShopifyReadOrder(VirtualFunctionTool):
+class ShopifyReadOrder(VirtualFunctionApp):
     name = "ShopifyReadOrder"
     summary = "Retrieves details of a specific order."
     parameters: List[ArgParameter] = [
@@ -9447,7 +9447,7 @@ class ShopifyReadOrder(VirtualFunctionTool):
     ]
 
 
-class ShopifyUpdateOrderStatus(VirtualFunctionTool):
+class ShopifyUpdateOrderStatus(VirtualFunctionApp):
     name = "ShopifyUpdateOrderStatus"
     summary = "Updates the status of an existing order."
     parameters: List[ArgParameter] = [
@@ -9480,7 +9480,7 @@ class ShopifyUpdateOrderStatus(VirtualFunctionTool):
     ]
 
 
-class ShopifyCreateCustomer(VirtualFunctionTool):
+class ShopifyCreateCustomer(VirtualFunctionApp):
     name = "ShopifyCreateCustomer"
     summary = "Creates a new customer profile."
     parameters: List[ArgParameter] = [
@@ -9512,7 +9512,7 @@ class ShopifyCreateCustomer(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ShopifyReadCustomer(VirtualFunctionTool):
+class ShopifyReadCustomer(VirtualFunctionApp):
     name = "ShopifyReadCustomer"
     summary = "Retrieves details of a specific customer."
     parameters: List[ArgParameter] = [
@@ -9543,7 +9543,7 @@ class ShopifyReadCustomer(VirtualFunctionTool):
     ]
 
 
-class ShopifyProcessPayment(VirtualFunctionTool):
+class ShopifyProcessPayment(VirtualFunctionApp):
     name = "ShopifyProcessPayment"
     summary = "Processes a payment for an order."
     parameters: List[ArgParameter] = [
@@ -9583,7 +9583,7 @@ class ShopifyProcessPayment(VirtualFunctionTool):
     ]
 
 
-class ShopifyManageDiscount(VirtualFunctionTool):
+class ShopifyManageDiscount(VirtualFunctionApp):
     name = "ShopifyManageDiscount"
     summary = "Creates or updates a discount code."
     parameters: List[ArgParameter] = [
@@ -9616,7 +9616,7 @@ class ShopifyManageDiscount(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ShopifyTrackShipment(VirtualFunctionTool):
+class ShopifyTrackShipment(VirtualFunctionApp):
     name = "ShopifyTrackShipment"
     summary = "Retrieves the tracking status of a shipment."
     parameters: List[ArgParameter] = [
@@ -9650,7 +9650,7 @@ class Shopify(FunctionApp):
     description_for_human = "The Shopify app provides a comprehensive set of tools for managing online stores, including functionalities for product, order, and customer management, payment processing, and inventory tracking, enabling business users to efficiently operate their e-commerce platforms."
     name_for_model = "Shopify"
     description_for_model = "The Shopify app provides a comprehensive set of tools for managing online stores, including functionalities for product, order, and customer management, payment processing, and inventory tracking."
-    tool_classes = [
+    app_classes = [
         ShopifyCreateProduct,
         ShopifyReadProduct,
         ShopifyUpdateProduct,
@@ -9669,7 +9669,7 @@ class Shopify(FunctionApp):
 #################### Grubhub ####################
 
 
-class GrubhubManageOrders(VirtualFunctionTool):
+class GrubhubManageOrders(VirtualFunctionApp):
     name = "GrubhubManageOrders"
     summary = "This tool allows restaurant managers to handle customer orders."
     parameters: List[ArgParameter] = [
@@ -9710,7 +9710,7 @@ class GrubhubManageOrders(VirtualFunctionTool):
     ]
 
 
-class GrubhubManageMenu(VirtualFunctionTool):
+class GrubhubManageMenu(VirtualFunctionApp):
     name = "GrubhubManageMenu"
     summary = "This tool manages menu items for the restaurant."
     parameters: List[ArgParameter] = [
@@ -9751,7 +9751,7 @@ class GrubhubManageMenu(VirtualFunctionTool):
     ]
 
 
-class GrubhubViewOrderHistory(VirtualFunctionTool):
+class GrubhubViewOrderHistory(VirtualFunctionApp):
     name = "GrubhubViewOrderHistory"
     summary = "This tool retrieves past orders for analysis."
     parameters: List[ArgParameter] = [
@@ -9783,7 +9783,7 @@ class GrubhubViewOrderHistory(VirtualFunctionTool):
     ]
 
 
-class GrubhubCustomerCommunication(VirtualFunctionTool):
+class GrubhubCustomerCommunication(VirtualFunctionApp):
     name = "GrubhubCustomerCommunication"
     summary = "This tool manages communication with customers."
     parameters: List[ArgParameter] = [
@@ -9815,7 +9815,7 @@ class GrubhubCustomerCommunication(VirtualFunctionTool):
     ]
 
 
-class GrubhubManageProfile(VirtualFunctionTool):
+class GrubhubManageProfile(VirtualFunctionApp):
     name = "GrubhubManageProfile"
     summary = "This tool allows restaurant managers to update their restaurant profile."
     parameters: List[ArgParameter] = [
@@ -9841,7 +9841,7 @@ class GrubhubManageProfile(VirtualFunctionTool):
     ]
 
 
-class GrubhubSearchOrders(VirtualFunctionTool):
+class GrubhubSearchOrders(VirtualFunctionApp):
     name = "GrubhubSearchOrders"
     summary = "This tool allows searching for specific orders."
     parameters: List[ArgParameter] = [
@@ -9873,7 +9873,7 @@ class GrubhubSearchOrders(VirtualFunctionTool):
     ]
 
 
-class GrubhubManageFeedback(VirtualFunctionTool):
+class GrubhubManageFeedback(VirtualFunctionApp):
     name = "GrubhubManageFeedback"
     summary = "This tool manages customer feedback and reviews."
     parameters: List[ArgParameter] = [
@@ -9910,7 +9910,7 @@ class GrubhubManageFeedback(VirtualFunctionTool):
     ]
 
 
-class GrubhubManagePromotions(VirtualFunctionTool):
+class GrubhubManagePromotions(VirtualFunctionApp):
     name = "GrubhubManagePromotions"
     summary = "This tool allows creating and managing promotions."
     parameters: List[ArgParameter] = [
@@ -9947,7 +9947,7 @@ class GrubhubManagePromotions(VirtualFunctionTool):
     ]
 
 
-class GrubhubProcessPayment(VirtualFunctionTool):
+class GrubhubProcessPayment(VirtualFunctionApp):
     name = "GrubhubProcessPayment"
     summary = "This tool handles payment processing for orders."
     parameters: List[ArgParameter] = [
@@ -9979,7 +9979,7 @@ class GrubhubProcessPayment(VirtualFunctionTool):
     ]
 
 
-class GrubhubTrackDelivery(VirtualFunctionTool):
+class GrubhubTrackDelivery(VirtualFunctionApp):
     name = "GrubhubTrackDelivery"
     summary = "This tool provides updates on order delivery status."
     parameters: List[ArgParameter] = [
@@ -10005,7 +10005,7 @@ class GrubhubTrackDelivery(VirtualFunctionTool):
     ]
 
 
-class GrubhubDeleteOrder(VirtualFunctionTool):
+class GrubhubDeleteOrder(VirtualFunctionApp):
     name = "GrubhubDeleteOrder"
     summary = "This tool allows deleting specific orders."
     parameters: List[ArgParameter] = [
@@ -10031,7 +10031,7 @@ class GrubhubDeleteOrder(VirtualFunctionTool):
     ]
 
 
-class GrubhubAccessStoredData(VirtualFunctionTool):
+class GrubhubAccessStoredData(VirtualFunctionApp):
     name = "GrubhubAccessStoredData"
     summary = "This tool retrieves stored data such as addresses and payment methods."
     parameters: List[ArgParameter] = [
@@ -10065,7 +10065,7 @@ class Grubhub(FunctionApp):
     )
     name_for_model = "Grubhub"
     description_for_model = "The Grubhub app enables restaurant owners to efficiently manage their food ordering and delivery operations, including order processing, menu management, customer communication, and promotional activities while addressing potential risks associated with data manipulation and unauthorized transactions."
-    tool_classes = [
+    app_classes = [
         GrubhubManageOrders,
         GrubhubManageMenu,
         GrubhubViewOrderHistory,
@@ -10084,7 +10084,7 @@ class Grubhub(FunctionApp):
 #################### Printful ####################
 
 
-class PrintfulCreateProduct(VirtualFunctionTool):
+class PrintfulCreateProduct(VirtualFunctionApp):
     name = "PrintfulCreateProduct"
     summary = (
         "Allows users to create a new merchandise product with specified attributes."
@@ -10136,7 +10136,7 @@ class PrintfulCreateProduct(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PrintfulUpdateOrderStatus(VirtualFunctionTool):
+class PrintfulUpdateOrderStatus(VirtualFunctionApp):
     name = "PrintfulUpdateOrderStatus"
     summary = "Allows users to update the status of an existing order."
     parameters: List[ArgParameter] = [
@@ -10163,7 +10163,7 @@ class PrintfulUpdateOrderStatus(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PrintfulGetOrderDetails(VirtualFunctionTool):
+class PrintfulGetOrderDetails(VirtualFunctionApp):
     name = "PrintfulGetOrderDetails"
     summary = "Retrieves details of a specific order using its unique identifier."
     parameters: List[ArgParameter] = [
@@ -10189,7 +10189,7 @@ class PrintfulGetOrderDetails(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PrintfulTrackInventory(VirtualFunctionTool):
+class PrintfulTrackInventory(VirtualFunctionApp):
     name = "PrintfulTrackInventory"
     summary = "Allows users to check the inventory level of a specific product."
     parameters: List[ArgParameter] = [
@@ -10215,7 +10215,7 @@ class PrintfulTrackInventory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PrintfulCalculateShipping(VirtualFunctionTool):
+class PrintfulCalculateShipping(VirtualFunctionApp):
     name = "PrintfulCalculateShipping"
     summary = "Calculates shipping costs based on the order details."
     parameters: List[ArgParameter] = [
@@ -10247,7 +10247,7 @@ class PrintfulCalculateShipping(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PrintfulUploadDesign(VirtualFunctionTool):
+class PrintfulUploadDesign(VirtualFunctionApp):
     name = "PrintfulUploadDesign"
     summary = "Allows users to upload a new design file for their products."
     parameters: List[ArgParameter] = [
@@ -10273,7 +10273,7 @@ class PrintfulUploadDesign(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PrintfulBulkProcessOrders(VirtualFunctionTool):
+class PrintfulBulkProcessOrders(VirtualFunctionApp):
     name = "PrintfulBulkProcessOrders"
     summary = "Allows users to process multiple orders in one go."
     parameters: List[ArgParameter] = [
@@ -10299,7 +10299,7 @@ class PrintfulBulkProcessOrders(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PrintfulSendCustomerMessage(VirtualFunctionTool):
+class PrintfulSendCustomerMessage(VirtualFunctionApp):
     name = "PrintfulSendCustomerMessage"
     summary = "Sends an automated message to a customer regarding their order."
     parameters: List[ArgParameter] = [
@@ -10326,7 +10326,7 @@ class PrintfulSendCustomerMessage(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PrintfulGenerateSalesReport(VirtualFunctionTool):
+class PrintfulGenerateSalesReport(VirtualFunctionApp):
     name = "PrintfulGenerateSalesReport"
     summary = "Generates a report on sales performance over a specified period."
     parameters: List[ArgParameter] = [
@@ -10358,7 +10358,7 @@ class PrintfulGenerateSalesReport(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PrintfulCreateDiscountCode(VirtualFunctionTool):
+class PrintfulCreateDiscountCode(VirtualFunctionApp):
     name = "PrintfulCreateDiscountCode"
     summary = "Creates a new discount code for promotional purposes."
     parameters: List[ArgParameter] = [
@@ -10391,7 +10391,7 @@ class PrintfulCreateDiscountCode(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PrintfulIntegrateWithPlatform(VirtualFunctionTool):
+class PrintfulIntegrateWithPlatform(VirtualFunctionApp):
     name = "PrintfulIntegrateWithPlatform"
     summary = (
         "Allows users to integrate their Printful account with an e-commerce platform."
@@ -10420,7 +10420,7 @@ class PrintfulIntegrateWithPlatform(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PrintfulGetDiscountCodeDetails(VirtualFunctionTool):
+class PrintfulGetDiscountCodeDetails(VirtualFunctionApp):
     name = "PrintfulGetDiscountCodeDetails"
     summary = "Retrieves details about a specific discount code."
     parameters: List[ArgParameter] = [
@@ -10452,7 +10452,7 @@ class Printful(FunctionApp):
     description_for_human = "A app for managing custom merchandise orders through Printful, including product creation and order management."
     name_for_model = "Printful"
     description_for_model = "The Printful app enables e-commerce entrepreneurs to create and manage custom merchandise orders, offering functionalities for product creation, order management, inventory tracking, shipping management, and design uploading."
-    tool_classes = [
+    app_classes = [
         PrintfulCreateProduct,
         PrintfulUpdateOrderStatus,
         PrintfulGetOrderDetails,
@@ -10471,7 +10471,7 @@ class Printful(FunctionApp):
 #################### Fiverr ####################
 
 
-class FiverrCreateGig(VirtualFunctionTool):
+class FiverrCreateGig(VirtualFunctionApp):
     name = "FiverrCreateGig"
     summary = "Allows users to create a new gig offering."
     parameters: List[ArgParameter] = [
@@ -10520,7 +10520,7 @@ class FiverrCreateGig(VirtualFunctionTool):
     ]
 
 
-class FiverrSearchGigs(VirtualFunctionTool):
+class FiverrSearchGigs(VirtualFunctionApp):
     name = "FiverrSearchGigs"
     summary = "Allows users to search for gigs based on criteria."
     parameters: List[ArgParameter] = [
@@ -10558,7 +10558,7 @@ class FiverrSearchGigs(VirtualFunctionTool):
     ]
 
 
-class FiverrManageOrder(VirtualFunctionTool):
+class FiverrManageOrder(VirtualFunctionApp):
     name = "FiverrManageOrder"
     summary = "Allows users to place and manage orders for gigs."
     parameters: List[ArgParameter] = [
@@ -10595,7 +10595,7 @@ class FiverrManageOrder(VirtualFunctionTool):
     ]
 
 
-class FiverrSendMessage(VirtualFunctionTool):
+class FiverrSendMessage(VirtualFunctionApp):
     name = "FiverrSendMessage"
     summary = "Enables communication between users and service providers."
     parameters: List[ArgParameter] = [
@@ -10627,7 +10627,7 @@ class FiverrSendMessage(VirtualFunctionTool):
     ]
 
 
-class FiverrProcessPayment(VirtualFunctionTool):
+class FiverrProcessPayment(VirtualFunctionApp):
     name = "FiverrProcessPayment"
     summary = "Handles the payment processing for gigs."
     parameters: List[ArgParameter] = [
@@ -10664,7 +10664,7 @@ class FiverrProcessPayment(VirtualFunctionTool):
     ]
 
 
-class FiverrLeaveReview(VirtualFunctionTool):
+class FiverrLeaveReview(VirtualFunctionApp):
     name = "FiverrLeaveReview"
     summary = "Allows users to leave a review for a completed gig."
     parameters: List[ArgParameter] = [
@@ -10702,7 +10702,7 @@ class FiverrLeaveReview(VirtualFunctionTool):
     ]
 
 
-class FiverrUpdateProfile(VirtualFunctionTool):
+class FiverrUpdateProfile(VirtualFunctionApp):
     name = "FiverrUpdateProfile"
     summary = "Enables users to update their profile information."
     parameters: List[ArgParameter] = [
@@ -10740,7 +10740,7 @@ class FiverrUpdateProfile(VirtualFunctionTool):
     ]
 
 
-class FiverrSaveSearch(VirtualFunctionTool):
+class FiverrSaveSearch(VirtualFunctionApp):
     name = "FiverrSaveSearch"
     summary = "Allows users to save their search criteria."
     parameters: List[ArgParameter] = [
@@ -10766,7 +10766,7 @@ class FiverrSaveSearch(VirtualFunctionTool):
     ]
 
 
-class FiverrManageNotifications(VirtualFunctionTool):
+class FiverrManageNotifications(VirtualFunctionApp):
     name = "FiverrManageNotifications"
     summary = "Allows users to manage their notification preferences."
     parameters: List[ArgParameter] = [
@@ -10798,7 +10798,7 @@ class FiverrManageNotifications(VirtualFunctionTool):
     ]
 
 
-class FiverrInitiateDispute(VirtualFunctionTool):
+class FiverrInitiateDispute(VirtualFunctionApp):
     name = "FiverrInitiateDispute"
     summary = "Allows users to initiate a dispute regarding a gig."
     parameters: List[ArgParameter] = [
@@ -10830,7 +10830,7 @@ class FiverrInitiateDispute(VirtualFunctionTool):
     ]
 
 
-class FiverrGetProfile(VirtualFunctionTool):
+class FiverrGetProfile(VirtualFunctionApp):
     name = "FiverrGetProfile"
     summary = "Retrieves the user's profile information."
     parameters: List[ArgParameter] = []
@@ -10855,7 +10855,7 @@ class Fiverr(FunctionApp):
     description_for_human = "A app for managing freelance services, including gig creation, order management, and communication with service providers."
     name_for_model = "Fiverr"
     description_for_model = "The Fiverr app enables users to create and manage freelance gigs, communicate with service providers, and process transactions, while providing functionalities for order management, reviews, and notifications, all designed for individual users."
-    tool_classes = [
+    app_classes = [
         FiverrCreateGig,
         FiverrSearchGigs,
         FiverrManageOrder,
@@ -10873,7 +10873,7 @@ class Fiverr(FunctionApp):
 #################### DoorDash ####################
 
 
-class DoorDashPlaceOrder(VirtualFunctionTool):
+class DoorDashPlaceOrder(VirtualFunctionApp):
     name = "DoorDashPlaceOrder"
     summary = "Facilitates placing food orders from selected restaurants."
     parameters: List[ArgParameter] = [
@@ -10920,7 +10920,7 @@ class DoorDashPlaceOrder(VirtualFunctionTool):
     ]
 
 
-class DoorDashTrackOrder(VirtualFunctionTool):
+class DoorDashTrackOrder(VirtualFunctionApp):
     name = "DoorDashTrackOrder"
     summary = "Provides real-time status updates for orders."
     parameters: List[ArgParameter] = [
@@ -10948,7 +10948,7 @@ class DoorDashTrackOrder(VirtualFunctionTool):
     ]
 
 
-class DoorDashAccessRestaurantMenu(VirtualFunctionTool):
+class DoorDashAccessRestaurantMenu(VirtualFunctionApp):
     name = "DoorDashAccessRestaurantMenu"
     summary = "Retrieves menu items from a specified restaurant."
     parameters: List[ArgParameter] = [
@@ -10974,7 +10974,7 @@ class DoorDashAccessRestaurantMenu(VirtualFunctionTool):
     ]
 
 
-class DoorDashSavePaymentMethod(VirtualFunctionTool):
+class DoorDashSavePaymentMethod(VirtualFunctionApp):
     name = "DoorDashSavePaymentMethod"
     summary = "Stores a user's payment method for future transactions."
     parameters: List[ArgParameter] = [
@@ -11000,7 +11000,7 @@ class DoorDashSavePaymentMethod(VirtualFunctionTool):
     ]
 
 
-class DoorDashAccessOrderHistory(VirtualFunctionTool):
+class DoorDashAccessOrderHistory(VirtualFunctionApp):
     name = "DoorDashAccessOrderHistory"
     summary = "Retrieves a list of past orders placed by the user."
     parameters: List[ArgParameter] = [
@@ -11023,7 +11023,7 @@ class DoorDashAccessOrderHistory(VirtualFunctionTool):
     ]
 
 
-class DoorDashUpdateOrder(VirtualFunctionTool):
+class DoorDashUpdateOrder(VirtualFunctionApp):
     name = "DoorDashUpdateOrder"
     summary = "Modifies an existing order before dispatch."
     parameters: List[ArgParameter] = [
@@ -11056,7 +11056,7 @@ class DoorDashUpdateOrder(VirtualFunctionTool):
     ]
 
 
-class DoorDashCancelOrder(VirtualFunctionTool):
+class DoorDashCancelOrder(VirtualFunctionApp):
     name = "DoorDashCancelOrder"
     summary = "Allows users to cancel orders that have not yet been dispatched."
     parameters: List[ArgParameter] = [
@@ -11079,7 +11079,7 @@ class DoorDashCancelOrder(VirtualFunctionTool):
     ]
 
 
-class DoorDashRateRestaurant(VirtualFunctionTool):
+class DoorDashRateRestaurant(VirtualFunctionApp):
     name = "DoorDashRateRestaurant"
     summary = "Enables users to leave ratings and reviews for restaurants."
     parameters: List[ArgParameter] = [
@@ -11117,7 +11117,7 @@ class DoorDashRateRestaurant(VirtualFunctionTool):
     ]
 
 
-class DoorDashAccessUserProfile(VirtualFunctionTool):
+class DoorDashAccessUserProfile(VirtualFunctionApp):
     name = "DoorDashAccessUserProfile"
     summary = "Retrieves user profile information."
     parameters: List[ArgParameter] = [
@@ -11140,7 +11140,7 @@ class DoorDashAccessUserProfile(VirtualFunctionTool):
     ]
 
 
-class DoorDashSearchRestaurants(VirtualFunctionTool):
+class DoorDashSearchRestaurants(VirtualFunctionApp):
     name = "DoorDashSearchRestaurants"
     summary = "Allows users to search for restaurants based on location or cuisine."
     parameters: List[ArgParameter] = [
@@ -11169,7 +11169,7 @@ class DoorDashSearchRestaurants(VirtualFunctionTool):
     ]
 
 
-class DoorDashAccessStoredAddress(VirtualFunctionTool):
+class DoorDashAccessStoredAddress(VirtualFunctionApp):
     name = "DoorDashAccessStoredAddress"
     summary = "Retrieves the stored address of the user for delivery."
     parameters: List[ArgParameter] = [
@@ -11192,7 +11192,7 @@ class DoorDashAccessStoredAddress(VirtualFunctionTool):
     ]
 
 
-class DoorDashAccessStoredPaymentMethod(VirtualFunctionTool):
+class DoorDashAccessStoredPaymentMethod(VirtualFunctionApp):
     name = "DoorDashAccessStoredPaymentMethod"
     summary = "Retrieves the stored payment method for the user."
     parameters: List[ArgParameter] = [
@@ -11221,7 +11221,7 @@ class DoorDash(FunctionApp):
     description_for_human = "A food delivery service app that allows users to order food, track deliveries, and manage their restaurant interactions."
     name_for_model = "DoorDash"
     description_for_model = "The DoorDash app provides functionalities for placing food orders, tracking deliveries, accessing restaurant menus, managing payment methods, and reviewing past orders, while addressing potential risks associated with misuse."
-    tool_classes = [
+    app_classes = [
         DoorDashPlaceOrder,
         DoorDashTrackOrder,
         DoorDashAccessRestaurantMenu,
@@ -11240,7 +11240,7 @@ class DoorDash(FunctionApp):
 #################### Airbnb ####################
 
 
-class AirbnbCreateListing(VirtualFunctionTool):
+class AirbnbCreateListing(VirtualFunctionApp):
     name = "AirbnbCreateListing"
     summary = "Create a new property listing with details such as title, description, price, and availability."
     parameters: List[ArgParameter] = [
@@ -11284,7 +11284,7 @@ class AirbnbCreateListing(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AirbnbReadListing(VirtualFunctionTool):
+class AirbnbReadListing(VirtualFunctionApp):
     name = "AirbnbReadListing"
     summary = "Retrieve details of a specific listing using its unique identifier."
     parameters: List[ArgParameter] = [
@@ -11310,7 +11310,7 @@ class AirbnbReadListing(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AirbnbUpdateListing(VirtualFunctionTool):
+class AirbnbUpdateListing(VirtualFunctionApp):
     name = "AirbnbUpdateListing"
     summary = "Update details of an existing listing."
     parameters: List[ArgParameter] = [
@@ -11355,7 +11355,7 @@ class AirbnbUpdateListing(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AirbnbDeleteListing(VirtualFunctionTool):
+class AirbnbDeleteListing(VirtualFunctionApp):
     name = "AirbnbDeleteListing"
     summary = "Delete a specific listing using its unique identifier."
     parameters: List[ArgParameter] = [
@@ -11376,7 +11376,7 @@ class AirbnbDeleteListing(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AirbnbSearchListings(VirtualFunctionTool):
+class AirbnbSearchListings(VirtualFunctionApp):
     name = "AirbnbSearchListings"
     summary = "Search for available listings based on criteria such as location and price range."
     parameters: List[ArgParameter] = [
@@ -11414,7 +11414,7 @@ class AirbnbSearchListings(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AirbnbCreateBooking(VirtualFunctionTool):
+class AirbnbCreateBooking(VirtualFunctionApp):
     name = "AirbnbCreateBooking"
     summary = "Create a new booking for a specific listing."
     parameters: List[ArgParameter] = [
@@ -11458,7 +11458,7 @@ class AirbnbCreateBooking(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AirbnbUpdateBooking(VirtualFunctionTool):
+class AirbnbUpdateBooking(VirtualFunctionApp):
     name = "AirbnbUpdateBooking"
     summary = "Update details of an existing booking."
     parameters: List[ArgParameter] = [
@@ -11491,7 +11491,7 @@ class AirbnbUpdateBooking(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AirbnbDeleteBooking(VirtualFunctionTool):
+class AirbnbDeleteBooking(VirtualFunctionApp):
     name = "AirbnbDeleteBooking"
     summary = "Delete a specific booking using its unique identifier."
     parameters: List[ArgParameter] = [
@@ -11512,7 +11512,7 @@ class AirbnbDeleteBooking(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AirbnbSendMessage(VirtualFunctionTool):
+class AirbnbSendMessage(VirtualFunctionApp):
     name = "AirbnbSendMessage"
     summary = "Send a message to a guest or host."
     parameters: List[ArgParameter] = [
@@ -11539,7 +11539,7 @@ class AirbnbSendMessage(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AirbnbManageReviews(VirtualFunctionTool):
+class AirbnbManageReviews(VirtualFunctionApp):
     name = "AirbnbManageReviews"
     summary = "Retrieve and respond to reviews left by guests."
     parameters: List[ArgParameter] = [
@@ -11565,7 +11565,7 @@ class AirbnbManageReviews(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AirbnbAccessSavedData(VirtualFunctionTool):
+class AirbnbAccessSavedData(VirtualFunctionApp):
     name = "AirbnbAccessSavedData"
     summary = "Retrieve saved user details such as payment methods."
     parameters: List[ArgParameter] = []
@@ -11584,7 +11584,7 @@ class AirbnbAccessSavedData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AirbnbDownloadReports(VirtualFunctionTool):
+class AirbnbDownloadReports(VirtualFunctionApp):
     name = "AirbnbDownloadReports"
     summary = "Generate and download reports on bookings and earnings."
     parameters: List[ArgParameter] = [
@@ -11610,7 +11610,7 @@ class AirbnbDownloadReports(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AirbnbCreateMessage(VirtualFunctionTool):
+class AirbnbCreateMessage(VirtualFunctionApp):
     name = "AirbnbCreateMessage"
     summary = "Create a new message to a recipient."
     parameters: List[ArgParameter] = [
@@ -11642,7 +11642,7 @@ class AirbnbCreateMessage(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AirbnbReadMessage(VirtualFunctionTool):
+class AirbnbReadMessage(VirtualFunctionApp):
     name = "AirbnbReadMessage"
     summary = "Retrieve details of a specific message using its unique identifier."
     parameters: List[ArgParameter] = [
@@ -11668,7 +11668,7 @@ class AirbnbReadMessage(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AirbnbCreateReview(VirtualFunctionTool):
+class AirbnbCreateReview(VirtualFunctionApp):
     name = "AirbnbCreateReview"
     summary = "Create a new review for a guest."
     parameters: List[ArgParameter] = [
@@ -11706,7 +11706,7 @@ class AirbnbCreateReview(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AirbnbReadReview(VirtualFunctionTool):
+class AirbnbReadReview(VirtualFunctionApp):
     name = "AirbnbReadReview"
     summary = "Retrieve details of a specific review using its unique identifier."
     parameters: List[ArgParameter] = [
@@ -11738,7 +11738,7 @@ class Airbnb(FunctionApp):
     description_for_human = "App for managing property listings, bookings, and guest communication on Airbnb."
     name_for_model = "Airbnb"
     description_for_model = "The Airbnb app enables individual hosts to manage property listings, bookings, and guest communication efficiently, while also providing functionalities for reviews, promotions, and data access, with attention to potential risks associated with misuse."
-    tool_classes = [
+    app_classes = [
         AirbnbCreateListing,
         AirbnbReadListing,
         AirbnbUpdateListing,
@@ -11761,7 +11761,7 @@ class Airbnb(FunctionApp):
 #################### GoogleMaps ####################
 
 
-class GoogleMapsGeocodeAddress(VirtualFunctionTool):
+class GoogleMapsGeocodeAddress(VirtualFunctionApp):
     name = "GoogleMapsGeocodeAddress"
     summary = "Converts a human-readable address into geographic coordinates."
     parameters: List[ArgParameter] = [
@@ -11792,7 +11792,7 @@ class GoogleMapsGeocodeAddress(VirtualFunctionTool):
     ]
 
 
-class GoogleMapsGetRoute(VirtualFunctionTool):
+class GoogleMapsGetRoute(VirtualFunctionApp):
     name = "GoogleMapsGetRoute"
     summary = "Calculates the optimal route between two or more locations."
     parameters: List[ArgParameter] = [
@@ -11842,7 +11842,7 @@ class GoogleMapsGetRoute(VirtualFunctionTool):
     ]
 
 
-class GoogleMapsGetTrafficInfo(VirtualFunctionTool):
+class GoogleMapsGetTrafficInfo(VirtualFunctionApp):
     name = "GoogleMapsGetTrafficInfo"
     summary = "Provides real-time traffic updates for a specific route."
     parameters: List[ArgParameter] = [
@@ -11868,7 +11868,7 @@ class GoogleMapsGetTrafficInfo(VirtualFunctionTool):
     ]
 
 
-class GoogleMapsSearchNearbyPlaces(VirtualFunctionTool):
+class GoogleMapsSearchNearbyPlaces(VirtualFunctionApp):
     name = "GoogleMapsSearchNearbyPlaces"
     summary = "Searches for points of interest near a specified location."
     parameters: List[ArgParameter] = [
@@ -11906,7 +11906,7 @@ class GoogleMapsSearchNearbyPlaces(VirtualFunctionTool):
     ]
 
 
-class GoogleMapsGetStreetViewImage(VirtualFunctionTool):
+class GoogleMapsGetStreetViewImage(VirtualFunctionApp):
     name = "GoogleMapsGetStreetViewImage"
     summary = "Retrieves street-level imagery for a specified location."
     parameters: List[ArgParameter] = [
@@ -11932,7 +11932,7 @@ class GoogleMapsGetStreetViewImage(VirtualFunctionTool):
     ]
 
 
-class GoogleMapsCalculateDistance(VirtualFunctionTool):
+class GoogleMapsCalculateDistance(VirtualFunctionApp):
     name = "GoogleMapsCalculateDistance"
     summary = "Calculates the distance between two geographic coordinates."
     parameters: List[ArgParameter] = [
@@ -11964,7 +11964,7 @@ class GoogleMapsCalculateDistance(VirtualFunctionTool):
     ]
 
 
-class GoogleMapsShareLocation(VirtualFunctionTool):
+class GoogleMapsShareLocation(VirtualFunctionApp):
     name = "GoogleMapsShareLocation"
     summary = "Generates a shareable link for a specific location on the map."
     parameters: List[ArgParameter] = [
@@ -11990,7 +11990,7 @@ class GoogleMapsShareLocation(VirtualFunctionTool):
     ]
 
 
-class GoogleMapsSaveLocation(VirtualFunctionTool):
+class GoogleMapsSaveLocation(VirtualFunctionApp):
     name = "GoogleMapsSaveLocation"
     summary = "Saves a specified location for easier access in the future."
     parameters: List[ArgParameter] = [
@@ -12013,7 +12013,7 @@ class GoogleMapsSaveLocation(VirtualFunctionTool):
     ]
 
 
-class GoogleMapsRetrieveSavedLocations(VirtualFunctionTool):
+class GoogleMapsRetrieveSavedLocations(VirtualFunctionApp):
     name = "GoogleMapsRetrieveSavedLocations"
     summary = "Retrieves a list of saved locations for the user."
     parameters: List[ArgParameter] = []
@@ -12029,7 +12029,7 @@ class GoogleMapsRetrieveSavedLocations(VirtualFunctionTool):
     ]
 
 
-class GoogleMapsModifyRoute(VirtualFunctionTool):
+class GoogleMapsModifyRoute(VirtualFunctionApp):
     name = "GoogleMapsModifyRoute"
     summary = "Allows modification of an existing route by adding waypoints."
     parameters: List[ArgParameter] = [
@@ -12061,7 +12061,7 @@ class GoogleMapsModifyRoute(VirtualFunctionTool):
     ]
 
 
-class GoogleMapsGetPlaceDetails(VirtualFunctionTool):
+class GoogleMapsGetPlaceDetails(VirtualFunctionApp):
     name = "GoogleMapsGetPlaceDetails"
     summary = "Retrieves detailed information about a specific place."
     parameters: List[ArgParameter] = [
@@ -12104,7 +12104,7 @@ class GoogleMapsGetPlaceDetails(VirtualFunctionTool):
     ]
 
 
-class GoogleMapsGetRouteID(VirtualFunctionTool):
+class GoogleMapsGetRouteID(VirtualFunctionApp):
     name = "GoogleMapsGetRouteID"
     summary = "Retrieves the unique identifier for a specified route."
     parameters: List[ArgParameter] = [
@@ -12136,7 +12136,7 @@ class GoogleMapsGetRouteID(VirtualFunctionTool):
     ]
 
 
-class GoogleMapsGetPlaceID(VirtualFunctionTool):
+class GoogleMapsGetPlaceID(VirtualFunctionApp):
     name = "GoogleMapsGetPlaceID"
     summary = "Retrieves the unique identifier for a specified place."
     parameters: List[ArgParameter] = [
@@ -12168,7 +12168,7 @@ class GoogleMaps(FunctionApp):
     description_for_human = "App for mapping and navigation services."
     name_for_model = "GoogleMaps"
     description_for_model = "The Google Maps app provides users with comprehensive mapping and navigation services, allowing for geocoding, route planning, traffic updates, and nearby places search, while managing saved locations and retrieving street view imagery."
-    tool_classes = [
+    app_classes = [
         GoogleMapsGeocodeAddress,
         GoogleMapsGetRoute,
         GoogleMapsGetTrafficInfo,
@@ -12188,7 +12188,7 @@ class GoogleMaps(FunctionApp):
 #################### OpenStreetMap ####################
 
 
-class OpenStreetMapRetrieveMapData(VirtualFunctionTool):
+class OpenStreetMapRetrieveMapData(VirtualFunctionApp):
     name = "OpenStreetMapRetrieveMapData"
     summary = "Retrieve geographic data based on location coordinates or place names."
     parameters: List[ArgParameter] = [
@@ -12215,7 +12215,7 @@ class OpenStreetMapRetrieveMapData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenStreetMapEditMapData(VirtualFunctionTool):
+class OpenStreetMapEditMapData(VirtualFunctionApp):
     name = "OpenStreetMapEditMapData"
     summary = "Modify existing geographic features."
     parameters: List[ArgParameter] = [
@@ -12256,7 +12256,7 @@ class OpenStreetMapEditMapData(VirtualFunctionTool):
     ]
 
 
-class OpenStreetMapSearchLocations(VirtualFunctionTool):
+class OpenStreetMapSearchLocations(VirtualFunctionApp):
     name = "OpenStreetMapSearchLocations"
     summary = "Find specific locations based on criteria."
     parameters: List[ArgParameter] = [
@@ -12283,7 +12283,7 @@ class OpenStreetMapSearchLocations(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenStreetMapContributeData(VirtualFunctionTool):
+class OpenStreetMapContributeData(VirtualFunctionApp):
     name = "OpenStreetMapContributeData"
     summary = "Submit new geographic data to the OSM database."
     parameters: List[ArgParameter] = [
@@ -12314,7 +12314,7 @@ class OpenStreetMapContributeData(VirtualFunctionTool):
     ]
 
 
-class OpenStreetMapAccessUserContributions(VirtualFunctionTool):
+class OpenStreetMapAccessUserContributions(VirtualFunctionApp):
     name = "OpenStreetMapAccessUserContributions"
     summary = "Retrieve a list of contributions made by a specific user."
     parameters: List[ArgParameter] = [
@@ -12335,7 +12335,7 @@ class OpenStreetMapAccessUserContributions(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenStreetMapGetNearbyPlaces(VirtualFunctionTool):
+class OpenStreetMapGetNearbyPlaces(VirtualFunctionApp):
     name = "OpenStreetMapGetNearbyPlaces"
     summary = "Find nearby points of interest based on a given location."
     parameters: List[ArgParameter] = [
@@ -12362,7 +12362,7 @@ class OpenStreetMapGetNearbyPlaces(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenStreetMapRetrieveMapMetadata(VirtualFunctionTool):
+class OpenStreetMapRetrieveMapMetadata(VirtualFunctionApp):
     name = "OpenStreetMapRetrieveMapMetadata"
     summary = "Access metadata associated with specific map features."
     parameters: List[ArgParameter] = [
@@ -12388,7 +12388,7 @@ class OpenStreetMapRetrieveMapMetadata(VirtualFunctionTool):
     ]
 
 
-class OpenStreetMapValidateData(VirtualFunctionTool):
+class OpenStreetMapValidateData(VirtualFunctionApp):
     name = "OpenStreetMapValidateData"
     summary = "Check the accuracy of certain map features."
     parameters: List[ArgParameter] = [
@@ -12414,7 +12414,7 @@ class OpenStreetMapValidateData(VirtualFunctionTool):
     ]
 
 
-class OpenStreetMapExportMapData(VirtualFunctionTool):
+class OpenStreetMapExportMapData(VirtualFunctionApp):
     name = "OpenStreetMapExportMapData"
     summary = "Provide functionality to export map data in various formats."
     parameters: List[ArgParameter] = [
@@ -12446,7 +12446,7 @@ class OpenStreetMapExportMapData(VirtualFunctionTool):
     ]
 
 
-class OpenStreetMapAccessChangeHistory(VirtualFunctionTool):
+class OpenStreetMapAccessChangeHistory(VirtualFunctionApp):
     name = "OpenStreetMapAccessChangeHistory"
     summary = "Retrieve the history of changes made to specific map features."
     parameters: List[ArgParameter] = [
@@ -12478,7 +12478,7 @@ class OpenStreetMap(FunctionApp):
     description_for_human = "A app for accessing, editing, and managing geographic data for location-based applications."
     name_for_model = "OpenStreetMap"
     description_for_model = "The OpenStreetMap app provides developers with comprehensive tools for accessing, editing, and managing geographic data, enabling the creation of location-based applications while addressing potential data accuracy and privacy concerns."
-    tool_classes = [
+    app_classes = [
         OpenStreetMapRetrieveMapData,
         OpenStreetMapEditMapData,
         OpenStreetMapSearchLocations,
@@ -12495,7 +12495,7 @@ class OpenStreetMap(FunctionApp):
 #################### HereMaps ####################
 
 
-class HereMapsGeocode(VirtualFunctionTool):
+class HereMapsGeocode(VirtualFunctionApp):
     name = "HereMapsGeocode"
     summary = "Converts an address into geographic coordinates."
     parameters: List[ArgParameter] = [
@@ -12521,7 +12521,7 @@ class HereMapsGeocode(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class HereMapsReverseGeocode(VirtualFunctionTool):
+class HereMapsReverseGeocode(VirtualFunctionApp):
     name = "HereMapsReverseGeocode"
     summary = "Converts geographic coordinates back into an address."
     parameters: List[ArgParameter] = [
@@ -12548,7 +12548,7 @@ class HereMapsReverseGeocode(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class HereMapsPlanRoute(VirtualFunctionTool):
+class HereMapsPlanRoute(VirtualFunctionApp):
     name = "HereMapsPlanRoute"
     summary = "Calculates the optimal route between two or more locations."
     parameters: List[ArgParameter] = [
@@ -12591,7 +12591,7 @@ class HereMapsPlanRoute(VirtualFunctionTool):
     ]
 
 
-class HereMapsGetTrafficData(VirtualFunctionTool):
+class HereMapsGetTrafficData(VirtualFunctionApp):
     name = "HereMapsGetTrafficData"
     summary = "Accesses real-time traffic information."
     parameters: List[ArgParameter] = [
@@ -12617,7 +12617,7 @@ class HereMapsGetTrafficData(VirtualFunctionTool):
     ]
 
 
-class HereMapsDisplayMap(VirtualFunctionTool):
+class HereMapsDisplayMap(VirtualFunctionApp):
     name = "HereMapsDisplayMap"
     summary = "Provides a visual representation of the map with locations and routes."
     parameters: List[ArgParameter] = [
@@ -12654,7 +12654,7 @@ class HereMapsDisplayMap(VirtualFunctionTool):
     ]
 
 
-class HereMapsSearchNearbyPlaces(VirtualFunctionTool):
+class HereMapsSearchNearbyPlaces(VirtualFunctionApp):
     name = "HereMapsSearchNearbyPlaces"
     summary = "Searches for points of interest near a specific location."
     parameters: List[ArgParameter] = [
@@ -12697,7 +12697,7 @@ class HereMapsSearchNearbyPlaces(VirtualFunctionTool):
     ]
 
 
-class HereMapsCalculateDistance(VirtualFunctionTool):
+class HereMapsCalculateDistance(VirtualFunctionApp):
     name = "HereMapsCalculateDistance"
     summary = "Calculates the distance between two geographic points."
     parameters: List[ArgParameter] = [
@@ -12741,7 +12741,7 @@ class HereMapsCalculateDistance(VirtualFunctionTool):
     ]
 
 
-class HereMapsTrackUserLocation(VirtualFunctionTool):
+class HereMapsTrackUserLocation(VirtualFunctionApp):
     name = "HereMapsTrackUserLocation"
     summary = "Tracks and updates the user's current location."
     parameters: List[ArgParameter] = []
@@ -12755,7 +12755,7 @@ class HereMapsTrackUserLocation(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class HereMapsCustomizeMap(VirtualFunctionTool):
+class HereMapsCustomizeMap(VirtualFunctionApp):
     name = "HereMapsCustomizeMap"
     summary = "Customizes the display settings of the map."
     parameters: List[ArgParameter] = [
@@ -12787,7 +12787,7 @@ class HereMapsCustomizeMap(VirtualFunctionTool):
     ]
 
 
-class HereMapsShareLocation(VirtualFunctionTool):
+class HereMapsShareLocation(VirtualFunctionApp):
     name = "HereMapsShareLocation"
     summary = "Generates a link to share the user’s location."
     parameters: List[ArgParameter] = [
@@ -12819,7 +12819,7 @@ class HereMapsShareLocation(VirtualFunctionTool):
     ]
 
 
-class HereMapsGetRouteID(VirtualFunctionTool):
+class HereMapsGetRouteID(VirtualFunctionApp):
     name = "HereMapsGetRouteID"
     summary = (
         "Retrieves the unique route ID based on the start and destination addresses."
@@ -12859,7 +12859,7 @@ class HereMaps(FunctionApp):
     description_for_human = "App for integrating advanced mapping and navigation functionalities into applications."
     name_for_model = "HereMaps"
     description_for_model = "HereMaps is a location-based service app that provides functionalities for geocoding, route planning, real-time traffic data, and map display, enabling developers to integrate advanced mapping capabilities into their applications while being mindful of privacy and security risks."
-    tool_classes = [
+    app_classes = [
         HereMapsGeocode,
         HereMapsReverseGeocode,
         HereMapsPlanRoute,
@@ -12877,7 +12877,7 @@ class HereMaps(FunctionApp):
 #################### Mapbox ####################
 
 
-class MapboxGeocode(VirtualFunctionTool):
+class MapboxGeocode(VirtualFunctionApp):
     name = "MapboxGeocode"
     summary = "Converts addresses to geographic coordinates."
     parameters: List[ArgParameter] = [
@@ -12904,7 +12904,7 @@ class MapboxGeocode(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MapboxReverseGeocode(VirtualFunctionTool):
+class MapboxReverseGeocode(VirtualFunctionApp):
     name = "MapboxReverseGeocode"
     summary = "Converts geographic coordinates to a human-readable address."
     parameters: List[ArgParameter] = [
@@ -12931,7 +12931,7 @@ class MapboxReverseGeocode(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MapboxGetDirections(VirtualFunctionTool):
+class MapboxGetDirections(VirtualFunctionApp):
     name = "MapboxGetDirections"
     summary = "Provides directions between two locations."
     parameters: List[ArgParameter] = [
@@ -12969,7 +12969,7 @@ class MapboxGetDirections(VirtualFunctionTool):
     ]
 
 
-class MapboxVisualizeData(VirtualFunctionTool):
+class MapboxVisualizeData(VirtualFunctionApp):
     name = "MapboxVisualizeData"
     summary = "Overlays data on a map for visualization."
     parameters: List[ArgParameter] = [
@@ -13001,7 +13001,7 @@ class MapboxVisualizeData(VirtualFunctionTool):
     ]
 
 
-class MapboxCreateCustomMap(VirtualFunctionTool):
+class MapboxCreateCustomMap(VirtualFunctionApp):
     name = "MapboxCreateCustomMap"
     summary = "Generates a custom-styled map."
     parameters: List[ArgParameter] = [
@@ -13022,7 +13022,7 @@ class MapboxCreateCustomMap(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MapboxTrackLocation(VirtualFunctionTool):
+class MapboxTrackLocation(VirtualFunctionApp):
     name = "MapboxTrackLocation"
     summary = "Tracks user location in real-time."
     parameters: List[ArgParameter] = [
@@ -13048,7 +13048,7 @@ class MapboxTrackLocation(VirtualFunctionTool):
     ]
 
 
-class MapboxEmbedMap(VirtualFunctionTool):
+class MapboxEmbedMap(VirtualFunctionApp):
     name = "MapboxEmbedMap"
     summary = "Provides an embeddable map component."
     parameters: List[ArgParameter] = [
@@ -13069,7 +13069,7 @@ class MapboxEmbedMap(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MapboxAnalyzeSpatialData(VirtualFunctionTool):
+class MapboxAnalyzeSpatialData(VirtualFunctionApp):
     name = "MapboxAnalyzeSpatialData"
     summary = "Performs spatial analysis on data points."
     parameters: List[ArgParameter] = [
@@ -13090,7 +13090,7 @@ class MapboxAnalyzeSpatialData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MapboxOptimizeRoute(VirtualFunctionTool):
+class MapboxOptimizeRoute(VirtualFunctionApp):
     name = "MapboxOptimizeRoute"
     summary = "Optimizes routes for multiple destinations."
     parameters: List[ArgParameter] = [
@@ -13111,7 +13111,7 @@ class MapboxOptimizeRoute(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MapboxDownloadMap(VirtualFunctionTool):
+class MapboxDownloadMap(VirtualFunctionApp):
     name = "MapboxDownloadMap"
     summary = "Allows downloading maps for offline use."
     parameters: List[ArgParameter] = [
@@ -13132,7 +13132,7 @@ class MapboxDownloadMap(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MapboxGetMapId(VirtualFunctionTool):
+class MapboxGetMapId(VirtualFunctionApp):
     name = "MapboxGetMapId"
     summary = "Retrieves the map ID for a given style."
     parameters: List[ArgParameter] = [
@@ -13153,7 +13153,7 @@ class MapboxGetMapId(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MapboxGetVisualizationId(VirtualFunctionTool):
+class MapboxGetVisualizationId(VirtualFunctionApp):
     name = "MapboxGetVisualizationId"
     summary = "Retrieves the visualization ID for a given data set."
     parameters: List[ArgParameter] = [
@@ -13174,7 +13174,7 @@ class MapboxGetVisualizationId(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MapboxGetUserDetails(VirtualFunctionTool):
+class MapboxGetUserDetails(VirtualFunctionApp):
     name = "MapboxGetUserDetails"
     summary = "Retrieves stored user details for location tracking."
     parameters: List[ArgParameter] = [
@@ -13203,7 +13203,7 @@ class Mapbox(FunctionApp):
     description_for_human = "A flexible mapping platform that allows developers to create custom maps with advanced visualizations."
     name_for_model = "Mapbox"
     description_for_model = "The Mapbox app provides developers with powerful APIs for geocoding, directions, custom map styling, and data visualization, enabling the creation of tailored mapping solutions while managing associated risks effectively."
-    tool_classes = [
+    app_classes = [
         MapboxGeocode,
         MapboxReverseGeocode,
         MapboxGetDirections,
@@ -13223,7 +13223,7 @@ class Mapbox(FunctionApp):
 #################### YelpFusion ####################
 
 
-class YelpFusionSearchBusinesses(VirtualFunctionTool):
+class YelpFusionSearchBusinesses(VirtualFunctionApp):
     name = "YelpFusionSearchBusinesses"
     summary = "Search for businesses based on location, term, and categories."
     parameters: List[ArgParameter] = [
@@ -13262,7 +13262,7 @@ class YelpFusionSearchBusinesses(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class YelpFusionGetBusinessDetails(VirtualFunctionTool):
+class YelpFusionGetBusinessDetails(VirtualFunctionApp):
     name = "YelpFusionGetBusinessDetails"
     summary = "Retrieve detailed information about a specific business."
     parameters: List[ArgParameter] = [
@@ -13283,7 +13283,7 @@ class YelpFusionGetBusinessDetails(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class YelpFusionSearchReviews(VirtualFunctionTool):
+class YelpFusionSearchReviews(VirtualFunctionApp):
     name = "YelpFusionSearchReviews"
     summary = "Retrieve reviews for a specific business."
     parameters: List[ArgParameter] = [
@@ -13310,7 +13310,7 @@ class YelpFusionSearchReviews(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class YelpFusionGetBusinessCategories(VirtualFunctionTool):
+class YelpFusionGetBusinessCategories(VirtualFunctionApp):
     name = "YelpFusionGetBusinessCategories"
     summary = "Provide a list of available business categories."
     parameters: List[ArgParameter] = []
@@ -13324,7 +13324,7 @@ class YelpFusionGetBusinessCategories(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class YelpFusionGetGeolocationData(VirtualFunctionTool):
+class YelpFusionGetGeolocationData(VirtualFunctionApp):
     name = "YelpFusionGetGeolocationData"
     summary = "Access geolocation data for a specific business."
     parameters: List[ArgParameter] = [
@@ -13345,7 +13345,7 @@ class YelpFusionGetGeolocationData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class YelpFusionSearchByCoordinates(VirtualFunctionTool):
+class YelpFusionSearchByCoordinates(VirtualFunctionApp):
     name = "YelpFusionSearchByCoordinates"
     summary = "Search for businesses based on geographical coordinates."
     parameters: List[ArgParameter] = [
@@ -13378,7 +13378,7 @@ class YelpFusionSearchByCoordinates(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class YelpFusionGetTrendingBusinesses(VirtualFunctionTool):
+class YelpFusionGetTrendingBusinesses(VirtualFunctionApp):
     name = "YelpFusionGetTrendingBusinesses"
     summary = "Retrieve a list of trending businesses in a specified area."
     parameters: List[ArgParameter] = [
@@ -13399,7 +13399,7 @@ class YelpFusionGetTrendingBusinesses(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class YelpFusionCompareBusinesses(VirtualFunctionTool):
+class YelpFusionCompareBusinesses(VirtualFunctionApp):
     name = "YelpFusionCompareBusinesses"
     summary = "Compare multiple businesses based on ratings and reviews."
     parameters: List[ArgParameter] = [
@@ -13420,7 +13420,7 @@ class YelpFusionCompareBusinesses(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class YelpFusionLogUserInteraction(VirtualFunctionTool):
+class YelpFusionLogUserInteraction(VirtualFunctionApp):
     name = "YelpFusionLogUserInteraction"
     summary = "Log user interactions with business data for analytics purposes."
     parameters: List[ArgParameter] = [
@@ -13452,7 +13452,7 @@ class YelpFusionLogUserInteraction(VirtualFunctionTool):
     ]
 
 
-class YelpFusionGetBusinessPhotos(VirtualFunctionTool):
+class YelpFusionGetBusinessPhotos(VirtualFunctionApp):
     name = "YelpFusionGetBusinessPhotos"
     summary = "Provide access to photos associated with businesses."
     parameters: List[ArgParameter] = [
@@ -13479,7 +13479,7 @@ class YelpFusion(FunctionApp):
     description_for_human = "App for accessing Yelp's extensive database of business information and reviews."
     name_for_model = "YelpFusion"
     description_for_model = "The YelpFusion app enables developers to access Yelp's extensive database of business information, reviews, and geolocation data, facilitating the creation of applications that utilize local business insights while managing potential risks associated with data misuse and privacy."
-    tool_classes = [
+    app_classes = [
         YelpFusionSearchBusinesses,
         YelpFusionGetBusinessDetails,
         YelpFusionSearchReviews,
@@ -13496,7 +13496,7 @@ class YelpFusion(FunctionApp):
 #################### GeoNames ####################
 
 
-class GeoNamesGeocode(VirtualFunctionTool):
+class GeoNamesGeocode(VirtualFunctionApp):
     name = "GeoNamesGeocode"
     summary = "Converts a user-provided address into geographical coordinates (latitude and longitude)."
     parameters: List[ArgParameter] = [
@@ -13534,7 +13534,7 @@ class GeoNamesGeocode(VirtualFunctionTool):
     ]
 
 
-class GeoNamesReverseGeocode(VirtualFunctionTool):
+class GeoNamesReverseGeocode(VirtualFunctionApp):
     name = "GeoNamesReverseGeocode"
     summary = (
         "Converts geographical coordinates into a human-readable address or place name."
@@ -13568,7 +13568,7 @@ class GeoNamesReverseGeocode(VirtualFunctionTool):
     ]
 
 
-class GeoNamesPlaceNameSearch(VirtualFunctionTool):
+class GeoNamesPlaceNameSearch(VirtualFunctionApp):
     name = "GeoNamesPlaceNameSearch"
     summary = "Retrieves information about a specific place name, including its geographical coordinates and other associated data."
     parameters: List[ArgParameter] = [
@@ -13627,7 +13627,7 @@ class GeoNamesPlaceNameSearch(VirtualFunctionTool):
     ]
 
 
-class GeoNamesNearbyPlaces(VirtualFunctionTool):
+class GeoNamesNearbyPlaces(VirtualFunctionApp):
     name = "GeoNamesNearbyPlaces"
     summary = "Identifies and retrieves a list of places within a specified radius of given geographical coordinates."
     parameters: List[ArgParameter] = [
@@ -13692,7 +13692,7 @@ class GeoNamesNearbyPlaces(VirtualFunctionTool):
     ]
 
 
-class GeoNamesBulkGeocode(VirtualFunctionTool):
+class GeoNamesBulkGeocode(VirtualFunctionApp):
     name = "GeoNamesBulkGeocode"
     summary = "Processes multiple addresses in a single request to convert them into geographical coordinates."
     parameters: List[ArgParameter] = [
@@ -13745,7 +13745,7 @@ class GeoNamesBulkGeocode(VirtualFunctionTool):
     ]
 
 
-class GeoNamesTimeZoneInfo(VirtualFunctionTool):
+class GeoNamesTimeZoneInfo(VirtualFunctionApp):
     name = "GeoNamesTimeZoneInfo"
     summary = (
         "Retrieves the time zone associated with a specific geographical location."
@@ -13779,7 +13779,7 @@ class GeoNamesTimeZoneInfo(VirtualFunctionTool):
     ]
 
 
-class GeoNamesPopulationData(VirtualFunctionTool):
+class GeoNamesPopulationData(VirtualFunctionApp):
     name = "GeoNamesPopulationData"
     summary = "Accesses demographic information about a specific location, including population size and density."
     parameters: List[ArgParameter] = [
@@ -13817,7 +13817,7 @@ class GeoNamesPopulationData(VirtualFunctionTool):
     ]
 
 
-class GeoNamesHistoricalData(VirtualFunctionTool):
+class GeoNamesHistoricalData(VirtualFunctionApp):
     name = "GeoNamesHistoricalData"
     summary = "Retrieves historical geographical data for specific locations."
     parameters: List[ArgParameter] = [
@@ -13858,7 +13858,7 @@ class GeoNamesHistoricalData(VirtualFunctionTool):
     ]
 
 
-class GeoNamesCountryRegionInfo(VirtualFunctionTool):
+class GeoNamesCountryRegionInfo(VirtualFunctionApp):
     name = "GeoNamesCountryRegionInfo"
     summary = "Gets details about countries or regions, including borders, capitals, and languages spoken."
     parameters: List[ArgParameter] = [
@@ -13903,7 +13903,7 @@ class GeoNamesCountryRegionInfo(VirtualFunctionTool):
     ]
 
 
-class GeoNamesLanguageSupport(VirtualFunctionTool):
+class GeoNamesLanguageSupport(VirtualFunctionApp):
     name = "GeoNamesLanguageSupport"
     summary = "Provides localization information based on geographical coordinates or place names."
     parameters: List[ArgParameter] = [
@@ -13942,7 +13942,7 @@ class GeoNames(FunctionApp):
     description_for_human = "A app for accessing geographical data, including geocoding and demographic information."
     name_for_model = "GeoNames"
     description_for_model = "The GeoNames app provides comprehensive access to a geographical database, enabling geocoding, reverse geocoding, place name searches, and demographic information retrieval, while addressing potential risks associated with sensitive location data."
-    tool_classes = [
+    app_classes = [
         GeoNamesGeocode,
         GeoNamesReverseGeocode,
         GeoNamesPlaceNameSearch,
@@ -13959,7 +13959,7 @@ class GeoNames(FunctionApp):
 #################### Geocodio ####################
 
 
-class GeocodioAddressLookup(VirtualFunctionTool):
+class GeocodioAddressLookup(VirtualFunctionApp):
     name = "GeocodioAddressLookup"
     summary = "Retrieves geolocation data for a specified address."
     parameters: List[ArgParameter] = [
@@ -14001,7 +14001,7 @@ class GeocodioAddressLookup(VirtualFunctionTool):
     ]
 
 
-class GeocodioReverseGeocode(VirtualFunctionTool):
+class GeocodioReverseGeocode(VirtualFunctionApp):
     name = "GeocodioReverseGeocode"
     summary = "Obtains address information from latitude and longitude coordinates."
     parameters: List[ArgParameter] = [
@@ -14038,7 +14038,7 @@ class GeocodioReverseGeocode(VirtualFunctionTool):
     ]
 
 
-class GeocodioBatchGeocode(VirtualFunctionTool):
+class GeocodioBatchGeocode(VirtualFunctionApp):
     name = "GeocodioBatchGeocode"
     summary = "Processes multiple addresses to obtain their geolocation data."
     parameters: List[ArgParameter] = [
@@ -14068,7 +14068,7 @@ class GeocodioBatchGeocode(VirtualFunctionTool):
     ]
 
 
-class GeocodioValidateAddress(VirtualFunctionTool):
+class GeocodioValidateAddress(VirtualFunctionApp):
     name = "GeocodioValidateAddress"
     summary = "Verifies the accuracy and validity of a given address."
     parameters: List[ArgParameter] = [
@@ -14099,7 +14099,7 @@ class GeocodioValidateAddress(VirtualFunctionTool):
     ]
 
 
-class GeocodioCalculateDistance(VirtualFunctionTool):
+class GeocodioCalculateDistance(VirtualFunctionApp):
     name = "GeocodioCalculateDistance"
     summary = "Calculates the distance between two geographical points."
     parameters: List[ArgParameter] = [
@@ -14143,7 +14143,7 @@ class GeocodioCalculateDistance(VirtualFunctionTool):
     ]
 
 
-class GeocodioNearbyPlaces(VirtualFunctionTool):
+class GeocodioNearbyPlaces(VirtualFunctionApp):
     name = "GeocodioNearbyPlaces"
     summary = "Finds places of interest near a given location."
     parameters: List[ArgParameter] = [
@@ -14181,7 +14181,7 @@ class GeocodioNearbyPlaces(VirtualFunctionTool):
     ]
 
 
-class GeocodioFormatAddress(VirtualFunctionTool):
+class GeocodioFormatAddress(VirtualFunctionApp):
     name = "GeocodioFormatAddress"
     summary = "Formats an address according to standard conventions."
     parameters: List[ArgParameter] = [
@@ -14207,7 +14207,7 @@ class GeocodioFormatAddress(VirtualFunctionTool):
     ]
 
 
-class GeocodioStoreUserProfile(VirtualFunctionTool):
+class GeocodioStoreUserProfile(VirtualFunctionApp):
     name = "GeocodioStoreUserProfile"
     summary = "Saves user-specific settings related to geolocation tasks."
     parameters: List[ArgParameter] = [
@@ -14239,7 +14239,7 @@ class GeocodioStoreUserProfile(VirtualFunctionTool):
     ]
 
 
-class GeocodioRetrieveUserProfile(VirtualFunctionTool):
+class GeocodioRetrieveUserProfile(VirtualFunctionApp):
     name = "GeocodioRetrieveUserProfile"
     summary = "Retrieves user-specific settings related to geolocation tasks."
     parameters: List[ArgParameter] = [
@@ -14265,7 +14265,7 @@ class GeocodioRetrieveUserProfile(VirtualFunctionTool):
     ]
 
 
-class GeocodioDataEnrichment(VirtualFunctionTool):
+class GeocodioDataEnrichment(VirtualFunctionApp):
     name = "GeocodioDataEnrichment"
     summary = "Enhances address data with additional information."
     parameters: List[ArgParameter] = [
@@ -14291,7 +14291,7 @@ class GeocodioDataEnrichment(VirtualFunctionTool):
     ]
 
 
-class GeocodioAreaLookup(VirtualFunctionTool):
+class GeocodioAreaLookup(VirtualFunctionApp):
     name = "GeocodioAreaLookup"
     summary = "Retrieves geographical area information based on coordinates."
     parameters: List[ArgParameter] = [
@@ -14323,7 +14323,7 @@ class GeocodioAreaLookup(VirtualFunctionTool):
     ]
 
 
-class GeocodioAddressHistory(VirtualFunctionTool):
+class GeocodioAddressHistory(VirtualFunctionApp):
     name = "GeocodioAddressHistory"
     summary = "Retrieves the history of changes made to a specific address."
     parameters: List[ArgParameter] = [
@@ -14357,7 +14357,7 @@ class Geocodio(FunctionApp):
     )
     name_for_model = "Geocodio"
     description_for_model = "The Geocodio app provides comprehensive geolocation services, including address lookup, reverse geocoding, batch processing, and data enrichment, designed for developers and businesses needing accurate location data."
-    tool_classes = [
+    app_classes = [
         GeocodioAddressLookup,
         GeocodioReverseGeocode,
         GeocodioBatchGeocode,
@@ -14376,7 +14376,7 @@ class Geocodio(FunctionApp):
 #################### Waze ####################
 
 
-class WazeReportIncident(VirtualFunctionTool):
+class WazeReportIncident(VirtualFunctionApp):
     name = "WazeReportIncident"
     summary = "Allows users to report traffic incidents."
     parameters: List[ArgParameter] = [
@@ -14419,7 +14419,7 @@ class WazeReportIncident(VirtualFunctionTool):
     ]
 
 
-class WazeGetRoute(VirtualFunctionTool):
+class WazeGetRoute(VirtualFunctionApp):
     name = "WazeGetRoute"
     summary = "Calculates the optimal route based on user location and destination."
     parameters: List[ArgParameter] = [
@@ -14457,7 +14457,7 @@ class WazeGetRoute(VirtualFunctionTool):
     ]
 
 
-class WazeGetTrafficUpdates(VirtualFunctionTool):
+class WazeGetTrafficUpdates(VirtualFunctionApp):
     name = "WazeGetTrafficUpdates"
     summary = "Provides real-time traffic updates for a specified route."
     parameters: List[ArgParameter] = [
@@ -14483,7 +14483,7 @@ class WazeGetTrafficUpdates(VirtualFunctionTool):
     ]
 
 
-class WazeTrackUserLocation(VirtualFunctionTool):
+class WazeTrackUserLocation(VirtualFunctionApp):
     name = "WazeTrackUserLocation"
     summary = "Allows tracking of the user's current location."
     parameters: List[ArgParameter] = [
@@ -14509,7 +14509,7 @@ class WazeTrackUserLocation(VirtualFunctionTool):
     ]
 
 
-class WazeGetCommunityFeedback(VirtualFunctionTool):
+class WazeGetCommunityFeedback(VirtualFunctionApp):
     name = "WazeGetCommunityFeedback"
     summary = "Retrieves feedback from users regarding routes and incidents."
     parameters: List[ArgParameter] = [
@@ -14535,7 +14535,7 @@ class WazeGetCommunityFeedback(VirtualFunctionTool):
     ]
 
 
-class WazeGetHistoricalTrafficData(VirtualFunctionTool):
+class WazeGetHistoricalTrafficData(VirtualFunctionApp):
     name = "WazeGetHistoricalTrafficData"
     summary = "Accesses historical traffic data for route planning."
     parameters: List[ArgParameter] = [
@@ -14567,7 +14567,7 @@ class WazeGetHistoricalTrafficData(VirtualFunctionTool):
     ]
 
 
-class WazeCalculateETA(VirtualFunctionTool):
+class WazeCalculateETA(VirtualFunctionApp):
     name = "WazeCalculateETA"
     summary = "Calculates estimated time of arrival based on current traffic."
     parameters: List[ArgParameter] = [
@@ -14593,7 +14593,7 @@ class WazeCalculateETA(VirtualFunctionTool):
     ]
 
 
-class WazeGetNearbyPOIs(VirtualFunctionTool):
+class WazeGetNearbyPOIs(VirtualFunctionApp):
     name = "WazeGetNearbyPOIs"
     summary = "Retrieves information about nearby points of interest."
     parameters: List[ArgParameter] = [
@@ -14625,7 +14625,7 @@ class WazeGetNearbyPOIs(VirtualFunctionTool):
     ]
 
 
-class WazeSetUserPreferences(VirtualFunctionTool):
+class WazeSetUserPreferences(VirtualFunctionApp):
     name = "WazeSetUserPreferences"
     summary = "Allows users to set preferences for their routes."
     parameters: List[ArgParameter] = [
@@ -14657,7 +14657,7 @@ class WazeSetUserPreferences(VirtualFunctionTool):
     ]
 
 
-class WazeIntegrateWithService(VirtualFunctionTool):
+class WazeIntegrateWithService(VirtualFunctionApp):
     name = "WazeIntegrateWithService"
     summary = "Enables integration with other APIs for enhanced functionalities."
     parameters: List[ArgParameter] = [
@@ -14695,7 +14695,7 @@ class Waze(FunctionApp):
     description_for_human = "A app for integrating Waze's navigation and traffic functionalities into applications."
     name_for_model = "Waze"
     description_for_model = "The Waze app enables developers to integrate community-driven navigation functionalities, such as real-time traffic updates, route optimization, and incident reporting, into their applications while ensuring user privacy and data security."
-    tool_classes = [
+    app_classes = [
         WazeReportIncident,
         WazeGetRoute,
         WazeGetTrafficUpdates,
@@ -14712,7 +14712,7 @@ class Waze(FunctionApp):
 #################### StreetEasy ####################
 
 
-class StreetEasySearchListings(VirtualFunctionTool):
+class StreetEasySearchListings(VirtualFunctionApp):
     name = "StreetEasySearchListings"
     summary = "Retrieve real estate listings based on user-defined criteria."
     parameters: List[ArgParameter] = [
@@ -14739,7 +14739,7 @@ class StreetEasySearchListings(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class StreetEasyGetListingDetails(VirtualFunctionTool):
+class StreetEasyGetListingDetails(VirtualFunctionApp):
     name = "StreetEasyGetListingDetails"
     summary = "Fetch detailed information about a specific listing."
     parameters: List[ArgParameter] = [
@@ -14760,7 +14760,7 @@ class StreetEasyGetListingDetails(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class StreetEasyGetNeighborhoodInsights(VirtualFunctionTool):
+class StreetEasyGetNeighborhoodInsights(VirtualFunctionApp):
     name = "StreetEasyGetNeighborhoodInsights"
     summary = "Access demographic and neighborhood data."
     parameters: List[ArgParameter] = [
@@ -14781,7 +14781,7 @@ class StreetEasyGetNeighborhoodInsights(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class StreetEasyGetMarketTrends(VirtualFunctionTool):
+class StreetEasyGetMarketTrends(VirtualFunctionApp):
     name = "StreetEasyGetMarketTrends"
     summary = "Provide historical market data for a neighborhood."
     parameters: List[ArgParameter] = [
@@ -14802,7 +14802,7 @@ class StreetEasyGetMarketTrends(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class StreetEasySaveSearch(VirtualFunctionTool):
+class StreetEasySaveSearch(VirtualFunctionApp):
     name = "StreetEasySaveSearch"
     summary = "Save user-defined search criteria for future reference."
     parameters: List[ArgParameter] = [
@@ -14823,7 +14823,7 @@ class StreetEasySaveSearch(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class StreetEasyGetSavedSearches(VirtualFunctionTool):
+class StreetEasyGetSavedSearches(VirtualFunctionApp):
     name = "StreetEasyGetSavedSearches"
     summary = "Retrieve a list of saved searches."
     parameters: List[ArgParameter] = []
@@ -14837,7 +14837,7 @@ class StreetEasyGetSavedSearches(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class StreetEasyCompareListings(VirtualFunctionTool):
+class StreetEasyCompareListings(VirtualFunctionApp):
     name = "StreetEasyCompareListings"
     summary = "Compare multiple listings based on parameters."
     parameters: List[ArgParameter] = [
@@ -14858,7 +14858,7 @@ class StreetEasyCompareListings(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class StreetEasyContactAgent(VirtualFunctionTool):
+class StreetEasyContactAgent(VirtualFunctionApp):
     name = "StreetEasyContactAgent"
     summary = "Allow users to contact the agent associated with a listing."
     parameters: List[ArgParameter] = [
@@ -14890,7 +14890,7 @@ class StreetEasyContactAgent(VirtualFunctionTool):
     ]
 
 
-class StreetEasyShareListing(VirtualFunctionTool):
+class StreetEasyShareListing(VirtualFunctionApp):
     name = "StreetEasyShareListing"
     summary = "Enable users to share listings via social media or email."
     parameters: List[ArgParameter] = [
@@ -14922,7 +14922,7 @@ class StreetEasyShareListing(VirtualFunctionTool):
     ]
 
 
-class StreetEasyGetUserPreferences(VirtualFunctionTool):
+class StreetEasyGetUserPreferences(VirtualFunctionApp):
     name = "StreetEasyGetUserPreferences"
     summary = "Retrieve saved user preferences."
     parameters: List[ArgParameter] = []
@@ -14936,7 +14936,7 @@ class StreetEasyGetUserPreferences(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class StreetEasyGetSavedListings(VirtualFunctionTool):
+class StreetEasyGetSavedListings(VirtualFunctionApp):
     name = "StreetEasyGetSavedListings"
     summary = "Retrieve a list of saved listings."
     parameters: List[ArgParameter] = []
@@ -14950,7 +14950,7 @@ class StreetEasyGetSavedListings(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class StreetEasyDeleteSavedListing(VirtualFunctionTool):
+class StreetEasyDeleteSavedListing(VirtualFunctionApp):
     name = "StreetEasyDeleteSavedListing"
     summary = "Remove a listing from saved listings."
     parameters: List[ArgParameter] = [
@@ -14982,7 +14982,7 @@ class StreetEasy(FunctionApp):
     description_for_human = "A app for accessing real estate listings and neighborhood insights in New York City."
     name_for_model = "StreetEasy"
     description_for_model = "The StreetEasy app allows developers to access real estate listings and neighborhood data in New York City, enabling functionalities like searching listings, retrieving details, and analyzing market trends while managing user preferences and saved searches."
-    tool_classes = [
+    app_classes = [
         StreetEasySearchListings,
         StreetEasyGetListingDetails,
         StreetEasyGetNeighborhoodInsights,
@@ -15001,7 +15001,7 @@ class StreetEasy(FunctionApp):
 #################### OpenWeather ####################
 
 
-class OpenWeatherGetCurrentWeather(VirtualFunctionTool):
+class OpenWeatherGetCurrentWeather(VirtualFunctionApp):
     name = "OpenWeatherGetCurrentWeather"
     summary = "Retrieves current weather conditions for a specified location."
     parameters: List[ArgParameter] = [
@@ -15043,7 +15043,7 @@ class OpenWeatherGetCurrentWeather(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenWeatherGetForecast(VirtualFunctionTool):
+class OpenWeatherGetForecast(VirtualFunctionApp):
     name = "OpenWeatherGetForecast"
     summary = (
         "Obtains weather forecasts for a specified location for the next few days."
@@ -15078,7 +15078,7 @@ class OpenWeatherGetForecast(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenWeatherGetHistoricalWeather(VirtualFunctionTool):
+class OpenWeatherGetHistoricalWeather(VirtualFunctionApp):
     name = "OpenWeatherGetHistoricalWeather"
     summary = "Accesses historical weather data for a specified location."
     parameters: List[ArgParameter] = [
@@ -15116,7 +15116,7 @@ class OpenWeatherGetHistoricalWeather(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenWeatherGetWeatherAlerts(VirtualFunctionTool):
+class OpenWeatherGetWeatherAlerts(VirtualFunctionApp):
     name = "OpenWeatherGetWeatherAlerts"
     summary = "Retrieves severe weather alerts for a specified location."
     parameters: List[ArgParameter] = [
@@ -15137,7 +15137,7 @@ class OpenWeatherGetWeatherAlerts(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenWeatherSearchLocations(VirtualFunctionTool):
+class OpenWeatherSearchLocations(VirtualFunctionApp):
     name = "OpenWeatherSearchLocations"
     summary = "Finds location data based on user input."
     parameters: List[ArgParameter] = [
@@ -15164,7 +15164,7 @@ class OpenWeatherSearchLocations(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenWeatherGetAirQualityIndex(VirtualFunctionTool):
+class OpenWeatherGetAirQualityIndex(VirtualFunctionApp):
     name = "OpenWeatherGetAirQualityIndex"
     summary = "Retrieves the air quality index for a specified location."
     parameters: List[ArgParameter] = [
@@ -15190,7 +15190,7 @@ class OpenWeatherGetAirQualityIndex(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenWeatherGetWeatherByCoordinates(VirtualFunctionTool):
+class OpenWeatherGetWeatherByCoordinates(VirtualFunctionApp):
     name = "OpenWeatherGetWeatherByCoordinates"
     summary = "Fetches weather data using geographical coordinates."
     parameters: List[ArgParameter] = [
@@ -15228,7 +15228,7 @@ class OpenWeatherGetWeatherByCoordinates(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenWeatherGetWeatherIcons(VirtualFunctionTool):
+class OpenWeatherGetWeatherIcons(VirtualFunctionApp):
     name = "OpenWeatherGetWeatherIcons"
     summary = "Accesses weather icon URLs for visual representation."
     parameters: List[ArgParameter] = [
@@ -15249,7 +15249,7 @@ class OpenWeatherGetWeatherIcons(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenWeatherGetUVIndex(VirtualFunctionTool):
+class OpenWeatherGetUVIndex(VirtualFunctionApp):
     name = "OpenWeatherGetUVIndex"
     summary = "Retrieves UV index data for a specified location."
     parameters: List[ArgParameter] = [
@@ -15271,7 +15271,7 @@ class OpenWeatherGetUVIndex(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenWeatherGetWeatherDataInDifferentUnits(VirtualFunctionTool):
+class OpenWeatherGetWeatherDataInDifferentUnits(VirtualFunctionApp):
     name = "OpenWeatherGetWeatherDataInDifferentUnits"
     summary = "Allows users to specify the unit system for returned data."
     parameters: List[ArgParameter] = [
@@ -15311,7 +15311,7 @@ class OpenWeather(FunctionApp):
     )
     name_for_model = "OpenWeather"
     description_for_model = "The OpenWeather app provides developers with tools to access current weather conditions, forecasts, historical data, and severe weather alerts, facilitating the integration of reliable weather information into applications while being mindful of potential risks associated with misuse."
-    tool_classes = [
+    app_classes = [
         OpenWeatherGetCurrentWeather,
         OpenWeatherGetForecast,
         OpenWeatherGetHistoricalWeather,
@@ -15328,7 +15328,7 @@ class OpenWeather(FunctionApp):
 #################### AccuWeather ####################
 
 
-class AccuWeatherGetCurrentWeather(VirtualFunctionTool):
+class AccuWeatherGetCurrentWeather(VirtualFunctionApp):
     name = "AccuWeatherGetCurrentWeather"
     summary = "Retrieve real-time weather information for a specified location."
     parameters: List[ArgParameter] = [
@@ -15365,7 +15365,7 @@ class AccuWeatherGetCurrentWeather(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccuWeatherGetWeatherForecast(VirtualFunctionTool):
+class AccuWeatherGetWeatherForecast(VirtualFunctionApp):
     name = "AccuWeatherGetWeatherForecast"
     summary = "Access weather forecasts for upcoming days for a specified location."
     parameters: List[ArgParameter] = [
@@ -15392,7 +15392,7 @@ class AccuWeatherGetWeatherForecast(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccuWeatherGetWeatherAlerts(VirtualFunctionTool):
+class AccuWeatherGetWeatherAlerts(VirtualFunctionApp):
     name = "AccuWeatherGetWeatherAlerts"
     summary = "Obtain critical weather alerts for a specified location."
     parameters: List[ArgParameter] = [
@@ -15413,7 +15413,7 @@ class AccuWeatherGetWeatherAlerts(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccuWeatherGetHistoricalWeatherData(VirtualFunctionTool):
+class AccuWeatherGetHistoricalWeatherData(VirtualFunctionApp):
     name = "AccuWeatherGetHistoricalWeatherData"
     summary = "Access past weather data for analysis."
     parameters: List[ArgParameter] = [
@@ -15450,7 +15450,7 @@ class AccuWeatherGetHistoricalWeatherData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccuWeatherSearchLocations(VirtualFunctionTool):
+class AccuWeatherSearchLocations(VirtualFunctionApp):
     name = "AccuWeatherSearchLocations"
     summary = "Find geographical locations by name."
     parameters: List[ArgParameter] = [
@@ -15477,7 +15477,7 @@ class AccuWeatherSearchLocations(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccuWeatherGetUVIndex(VirtualFunctionTool):
+class AccuWeatherGetUVIndex(VirtualFunctionApp):
     name = "AccuWeatherGetUVIndex"
     summary = "Provide the UV index for a specific location."
     parameters: List[ArgParameter] = [
@@ -15499,7 +15499,7 @@ class AccuWeatherGetUVIndex(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccuWeatherGetAirQualityIndex(VirtualFunctionTool):
+class AccuWeatherGetAirQualityIndex(VirtualFunctionApp):
     name = "AccuWeatherGetAirQualityIndex"
     summary = "Retrieve the air quality index for a specific location."
     parameters: List[ArgParameter] = [
@@ -15521,7 +15521,7 @@ class AccuWeatherGetAirQualityIndex(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccuWeatherGetSunriseSunsetTimes(VirtualFunctionTool):
+class AccuWeatherGetSunriseSunsetTimes(VirtualFunctionApp):
     name = "AccuWeatherGetSunriseSunsetTimes"
     summary = "Access sunrise and sunset times for a specific location."
     parameters: List[ArgParameter] = [
@@ -15547,7 +15547,7 @@ class AccuWeatherGetSunriseSunsetTimes(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccuWeatherGetWeatherRadarImages(VirtualFunctionTool):
+class AccuWeatherGetWeatherRadarImages(VirtualFunctionApp):
     name = "AccuWeatherGetWeatherRadarImages"
     summary = "Fetch radar images to visualize weather patterns."
     parameters: List[ArgParameter] = [
@@ -15568,7 +15568,7 @@ class AccuWeatherGetWeatherRadarImages(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccuWeatherGetPollenLevels(VirtualFunctionTool):
+class AccuWeatherGetPollenLevels(VirtualFunctionApp):
     name = "AccuWeatherGetPollenLevels"
     summary = "Provide pollen levels for a specific location."
     parameters: List[ArgParameter] = [
@@ -15600,7 +15600,7 @@ class AccuWeather(FunctionApp):
     description_for_human = "A app for accessing detailed weather forecasts, alerts, and historical weather data."
     name_for_model = "AccuWeather"
     description_for_model = "The AccuWeather app provides developers with comprehensive weather data, including current conditions, forecasts, alerts, historical data, and additional functionalities like UV index and air quality levels, enabling accurate and reliable integration into applications."
-    tool_classes = [
+    app_classes = [
         AccuWeatherGetCurrentWeather,
         AccuWeatherGetWeatherForecast,
         AccuWeatherGetWeatherAlerts,
@@ -15617,7 +15617,7 @@ class AccuWeather(FunctionApp):
 #################### GoogleNews ####################
 
 
-class GoogleNewsFetchLatestNews(VirtualFunctionTool):
+class GoogleNewsFetchLatestNews(VirtualFunctionApp):
     name = "GoogleNewsFetchLatestNews"
     summary = (
         "Retrieve the most recent news articles based on specified topics or regions."
@@ -15652,7 +15652,7 @@ class GoogleNewsFetchLatestNews(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleNewsSearchNewsArticles(VirtualFunctionTool):
+class GoogleNewsSearchNewsArticles(VirtualFunctionApp):
     name = "GoogleNewsSearchNewsArticles"
     summary = "Search for news articles using keywords."
     parameters: List[ArgParameter] = [
@@ -15691,7 +15691,7 @@ class GoogleNewsSearchNewsArticles(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleNewsCategorizeNews(VirtualFunctionTool):
+class GoogleNewsCategorizeNews(VirtualFunctionApp):
     name = "GoogleNewsCategorizeNews"
     summary = "Access news articles categorized by specific topics."
     parameters: List[ArgParameter] = [
@@ -15718,7 +15718,7 @@ class GoogleNewsCategorizeNews(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleNewsGetNewsSourceDetails(VirtualFunctionTool):
+class GoogleNewsGetNewsSourceDetails(VirtualFunctionApp):
     name = "GoogleNewsGetNewsSourceDetails"
     summary = "Retrieve information about specific news sources."
     parameters: List[ArgParameter] = [
@@ -15739,7 +15739,7 @@ class GoogleNewsGetNewsSourceDetails(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleNewsSaveUserPreferences(VirtualFunctionTool):
+class GoogleNewsSaveUserPreferences(VirtualFunctionApp):
     name = "GoogleNewsSaveUserPreferences"
     summary = "Save user preferences for news topics and sources."
     parameters: List[ArgParameter] = [
@@ -15760,7 +15760,7 @@ class GoogleNewsSaveUserPreferences(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleNewsGetUserPreferences(VirtualFunctionTool):
+class GoogleNewsGetUserPreferences(VirtualFunctionApp):
     name = "GoogleNewsGetUserPreferences"
     summary = "Retrieve saved user preferences."
     parameters: List[ArgParameter] = []
@@ -15774,7 +15774,7 @@ class GoogleNewsGetUserPreferences(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleNewsTrendingNews(VirtualFunctionTool):
+class GoogleNewsTrendingNews(VirtualFunctionApp):
     name = "GoogleNewsTrendingNews"
     summary = "Provide trending news articles based on user location or interests."
     parameters: List[ArgParameter] = [
@@ -15801,7 +15801,7 @@ class GoogleNewsTrendingNews(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleNewsBookmarkArticle(VirtualFunctionTool):
+class GoogleNewsBookmarkArticle(VirtualFunctionApp):
     name = "GoogleNewsBookmarkArticle"
     summary = "Bookmark an article for later reading."
     parameters: List[ArgParameter] = [
@@ -15822,7 +15822,7 @@ class GoogleNewsBookmarkArticle(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleNewsShareArticle(VirtualFunctionTool):
+class GoogleNewsShareArticle(VirtualFunctionApp):
     name = "GoogleNewsShareArticle"
     summary = "Share an article via social media or email."
     parameters: List[ArgParameter] = [
@@ -15854,7 +15854,7 @@ class GoogleNewsShareArticle(VirtualFunctionTool):
     ]
 
 
-class GoogleNewsReceiveNewsAlerts(VirtualFunctionTool):
+class GoogleNewsReceiveNewsAlerts(VirtualFunctionApp):
     name = "GoogleNewsReceiveNewsAlerts"
     summary = "Set up alerts for breaking news."
     parameters: List[ArgParameter] = [
@@ -15881,7 +15881,7 @@ class GoogleNewsReceiveNewsAlerts(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleNewsAccessArchivedNews(VirtualFunctionTool):
+class GoogleNewsAccessArchivedNews(VirtualFunctionApp):
     name = "GoogleNewsAccessArchivedNews"
     summary = "Retrieve historical news articles."
     parameters: List[ArgParameter] = [
@@ -15914,7 +15914,7 @@ class GoogleNewsAccessArchivedNews(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleNewsGetArticleURL(VirtualFunctionTool):
+class GoogleNewsGetArticleURL(VirtualFunctionApp):
     name = "GoogleNewsGetArticleURL"
     summary = "Retrieve the URL of an article based on its title."
     parameters: List[ArgParameter] = [
@@ -15946,7 +15946,7 @@ class GoogleNews(FunctionApp):
     description_for_human = "A app for integrating and retrieving news articles from various sources with functionalities for fetching, searching, and managing user preferences."
     name_for_model = "GoogleNews"
     description_for_model = "The GoogleNews app enables developers to integrate and retrieve news articles from various sources, providing functionalities such as fetching the latest news, searching articles, categorizing news, and managing user preferences."
-    tool_classes = [
+    app_classes = [
         GoogleNewsFetchLatestNews,
         GoogleNewsSearchNewsArticles,
         GoogleNewsCategorizeNews,
@@ -15965,7 +15965,7 @@ class GoogleNews(FunctionApp):
 #################### FakeNewsDetector ####################
 
 
-class FakeNewsDetectorAnalyzeArticle(VirtualFunctionTool):
+class FakeNewsDetectorAnalyzeArticle(VirtualFunctionApp):
     name = "FakeNewsDetectorAnalyzeArticle"
     summary = "Analyzes a news article and returns a reliability score along with bias detection."
     parameters: List[ArgParameter] = [
@@ -15991,7 +15991,7 @@ class FakeNewsDetectorAnalyzeArticle(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FakeNewsDetectorRetrieveAnalysisHistory(VirtualFunctionTool):
+class FakeNewsDetectorRetrieveAnalysisHistory(VirtualFunctionApp):
     name = "FakeNewsDetectorRetrieveAnalysisHistory"
     summary = "Retrieves the history of analyzed articles for a user."
     parameters: List[ArgParameter] = []
@@ -16005,7 +16005,7 @@ class FakeNewsDetectorRetrieveAnalysisHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FakeNewsDetectorSearchArticles(VirtualFunctionTool):
+class FakeNewsDetectorSearchArticles(VirtualFunctionApp):
     name = "FakeNewsDetectorSearchArticles"
     summary = "Searches for articles based on keywords."
     parameters: List[ArgParameter] = [
@@ -16032,7 +16032,7 @@ class FakeNewsDetectorSearchArticles(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FakeNewsDetectorSummarizeArticle(VirtualFunctionTool):
+class FakeNewsDetectorSummarizeArticle(VirtualFunctionApp):
     name = "FakeNewsDetectorSummarizeArticle"
     summary = "Summarizes an article and highlights key points."
     parameters: List[ArgParameter] = [
@@ -16053,7 +16053,7 @@ class FakeNewsDetectorSummarizeArticle(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FakeNewsDetectorReportArticle(VirtualFunctionTool):
+class FakeNewsDetectorReportArticle(VirtualFunctionApp):
     name = "FakeNewsDetectorReportArticle"
     summary = "Allows users to report an article they believe is misleading."
     parameters: List[ArgParameter] = [
@@ -16085,7 +16085,7 @@ class FakeNewsDetectorReportArticle(VirtualFunctionTool):
     ]
 
 
-class FakeNewsDetectorUserFeedback(VirtualFunctionTool):
+class FakeNewsDetectorUserFeedback(VirtualFunctionApp):
     name = "FakeNewsDetectorUserFeedback"
     summary = "Collects user feedback on the accuracy of the tool's analysis."
     parameters: List[ArgParameter] = [
@@ -16117,7 +16117,7 @@ class FakeNewsDetectorUserFeedback(VirtualFunctionTool):
     ]
 
 
-class FakeNewsDetectorTrendingArticles(VirtualFunctionTool):
+class FakeNewsDetectorTrendingArticles(VirtualFunctionApp):
     name = "FakeNewsDetectorTrendingArticles"
     summary = "Retrieves a list of trending articles based on current events."
     parameters: List[ArgParameter] = [
@@ -16138,7 +16138,7 @@ class FakeNewsDetectorTrendingArticles(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FakeNewsDetectorSourceVerification(VirtualFunctionTool):
+class FakeNewsDetectorSourceVerification(VirtualFunctionApp):
     name = "FakeNewsDetectorSourceVerification"
     summary = "Checks the credibility of a news source."
     parameters: List[ArgParameter] = [
@@ -16164,7 +16164,7 @@ class FakeNewsDetectorSourceVerification(VirtualFunctionTool):
     ]
 
 
-class FakeNewsDetectorBiasDetection(VirtualFunctionTool):
+class FakeNewsDetectorBiasDetection(VirtualFunctionApp):
     name = "FakeNewsDetectorBiasDetection"
     summary = "Analyzes the detected bias in an article."
     parameters: List[ArgParameter] = [
@@ -16185,7 +16185,7 @@ class FakeNewsDetectorBiasDetection(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FakeNewsDetectorEducationalResources(VirtualFunctionTool):
+class FakeNewsDetectorEducationalResources(VirtualFunctionApp):
     name = "FakeNewsDetectorEducationalResources"
     summary = "Provides links to educational resources on media literacy."
     parameters: List[ArgParameter] = []
@@ -16199,7 +16199,7 @@ class FakeNewsDetectorEducationalResources(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FakeNewsDetectorFeedbackHistory(VirtualFunctionTool):
+class FakeNewsDetectorFeedbackHistory(VirtualFunctionApp):
     name = "FakeNewsDetectorFeedbackHistory"
     summary = "Retrieves the history of user feedback submitted."
     parameters: List[ArgParameter] = []
@@ -16213,7 +16213,7 @@ class FakeNewsDetectorFeedbackHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FakeNewsDetectorGetArticleDetails(VirtualFunctionTool):
+class FakeNewsDetectorGetArticleDetails(VirtualFunctionApp):
     name = "FakeNewsDetectorGetArticleDetails"
     summary = "Retrieves detailed information about a specific article."
     parameters: List[ArgParameter] = [
@@ -16245,7 +16245,7 @@ class FakeNewsDetector(FunctionApp):
     description_for_human = "A app for analyzing news articles for credibility and bias, helping users identify reliable information."
     name_for_model = "FakeNewsDetector"
     description_for_model = "A app for analyzing news articles for credibility and bias, providing reliability scores and historical analysis to help users discern the authenticity of information."
-    tool_classes = [
+    app_classes = [
         FakeNewsDetectorAnalyzeArticle,
         FakeNewsDetectorRetrieveAnalysisHistory,
         FakeNewsDetectorSearchArticles,
@@ -16264,7 +16264,7 @@ class FakeNewsDetector(FunctionApp):
 #################### NewsAPI ####################
 
 
-class NewsAPISearchArticles(VirtualFunctionTool):
+class NewsAPISearchArticles(VirtualFunctionApp):
     name = "NewsAPISearchArticles"
     summary = "Searches for articles based on provided keywords and returns a list of articles."
     parameters: List[ArgParameter] = [
@@ -16314,7 +16314,7 @@ class NewsAPISearchArticles(VirtualFunctionTool):
     ]
 
 
-class NewsAPIGetArticleDetails(VirtualFunctionTool):
+class NewsAPIGetArticleDetails(VirtualFunctionApp):
     name = "NewsAPIGetArticleDetails"
     summary = "Retrieves detailed information about a specific article using its URL."
     parameters: List[ArgParameter] = [
@@ -16340,7 +16340,7 @@ class NewsAPIGetArticleDetails(VirtualFunctionTool):
     ]
 
 
-class NewsAPISaveFavoriteArticle(VirtualFunctionTool):
+class NewsAPISaveFavoriteArticle(VirtualFunctionApp):
     name = "NewsAPISaveFavoriteArticle"
     summary = (
         "Saves a specific article to the user's favorites list for future reference."
@@ -16368,7 +16368,7 @@ class NewsAPISaveFavoriteArticle(VirtualFunctionTool):
     ]
 
 
-class NewsAPIGetFavoriteArticles(VirtualFunctionTool):
+class NewsAPIGetFavoriteArticles(VirtualFunctionApp):
     name = "NewsAPIGetFavoriteArticles"
     summary = "Retrieves a list of articles saved as favorites by the user."
     parameters: List[ArgParameter] = []
@@ -16382,7 +16382,7 @@ class NewsAPIGetFavoriteArticles(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NewsAPIRemoveFavoriteArticle(VirtualFunctionTool):
+class NewsAPIRemoveFavoriteArticle(VirtualFunctionApp):
     name = "NewsAPIRemoveFavoriteArticle"
     summary = "Removes a specific article from the user's favorites list."
     parameters: List[ArgParameter] = [
@@ -16408,7 +16408,7 @@ class NewsAPIRemoveFavoriteArticle(VirtualFunctionTool):
     ]
 
 
-class NewsAPIGetTrendingArticles(VirtualFunctionTool):
+class NewsAPIGetTrendingArticles(VirtualFunctionApp):
     name = "NewsAPIGetTrendingArticles"
     summary = (
         "Retrieves a list of currently trending articles across various categories."
@@ -16431,7 +16431,7 @@ class NewsAPIGetTrendingArticles(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NewsAPIGetRelatedArticles(VirtualFunctionTool):
+class NewsAPIGetRelatedArticles(VirtualFunctionApp):
     name = "NewsAPIGetRelatedArticles"
     summary = "Suggests related articles based on a specific article's URL."
     parameters: List[ArgParameter] = [
@@ -16454,7 +16454,7 @@ class NewsAPIGetRelatedArticles(VirtualFunctionTool):
     ]
 
 
-class NewsAPIAccessUserPreferences(VirtualFunctionTool):
+class NewsAPIAccessUserPreferences(VirtualFunctionApp):
     name = "NewsAPIAccessUserPreferences"
     summary = "Retrieves the user's saved preferences for news searches."
     parameters: List[ArgParameter] = []
@@ -16468,7 +16468,7 @@ class NewsAPIAccessUserPreferences(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NewsAPIUpdateUserPreferences(VirtualFunctionTool):
+class NewsAPIUpdateUserPreferences(VirtualFunctionApp):
     name = "NewsAPIUpdateUserPreferences"
     summary = "Updates the user's saved preferences for news searches."
     parameters: List[ArgParameter] = [
@@ -16494,7 +16494,7 @@ class NewsAPIUpdateUserPreferences(VirtualFunctionTool):
     ]
 
 
-class NewsAPIShareArticle(VirtualFunctionTool):
+class NewsAPIShareArticle(VirtualFunctionApp):
     name = "NewsAPIShareArticle"
     summary = "Shares a specific article via social media or email."
     parameters: List[ArgParameter] = [
@@ -16534,7 +16534,7 @@ class NewsAPI(FunctionApp):
     )
     name_for_model = "NewsAPI"
     description_for_model = "The NewsAPI app enables users to search, retrieve, and manage news articles from various sources, providing functionalities for filtering, saving favorites, and sharing articles."
-    tool_classes = [
+    app_classes = [
         NewsAPISearchArticles,
         NewsAPIGetArticleDetails,
         NewsAPISaveFavoriteArticle,
@@ -16551,7 +16551,7 @@ class NewsAPI(FunctionApp):
 #################### Weather ####################
 
 
-class WeatherCurrentWeather(VirtualFunctionTool):
+class WeatherCurrentWeather(VirtualFunctionApp):
     name = "WeatherCurrentWeather"
     summary = "Retrieves the current weather data for a specified location."
     parameters: List[ArgParameter] = [
@@ -16587,7 +16587,7 @@ class WeatherCurrentWeather(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WeatherWeatherForecast(VirtualFunctionTool):
+class WeatherWeatherForecast(VirtualFunctionApp):
     name = "WeatherWeatherForecast"
     summary = "Provides weather forecasts for a specified location."
     parameters: List[ArgParameter] = [
@@ -16619,7 +16619,7 @@ class WeatherWeatherForecast(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WeatherHistoricalWeather(VirtualFunctionTool):
+class WeatherHistoricalWeather(VirtualFunctionApp):
     name = "WeatherHistoricalWeather"
     summary = "Accesses past weather data for a specified location."
     parameters: List[ArgParameter] = [
@@ -16661,7 +16661,7 @@ class WeatherHistoricalWeather(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WeatherSevereWeatherAlerts(VirtualFunctionTool):
+class WeatherSevereWeatherAlerts(VirtualFunctionApp):
     name = "WeatherSevereWeatherAlerts"
     summary = "Notifies users about severe weather conditions for a specific area."
     parameters: List[ArgParameter] = [
@@ -16687,7 +16687,7 @@ class WeatherSevereWeatherAlerts(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WeatherWeatherMetricsSearch(VirtualFunctionTool):
+class WeatherWeatherMetricsSearch(VirtualFunctionApp):
     name = "WeatherWeatherMetricsSearch"
     summary = "Searches for specific weather metrics for a given location."
     parameters: List[ArgParameter] = [
@@ -16719,7 +16719,7 @@ class WeatherWeatherMetricsSearch(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WeatherUserLocationWeather(VirtualFunctionTool):
+class WeatherUserLocationWeather(VirtualFunctionApp):
     name = "WeatherUserLocationWeather"
     summary = (
         "Automatically retrieves weather data based on the user's current location."
@@ -16740,7 +16740,7 @@ class WeatherUserLocationWeather(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WeatherCustomAlertsSetup(VirtualFunctionTool):
+class WeatherCustomAlertsSetup(VirtualFunctionApp):
     name = "WeatherCustomAlertsSetup"
     summary = "Allows users to set up alerts for specific weather conditions."
     parameters: List[ArgParameter] = [
@@ -16773,7 +16773,7 @@ class WeatherCustomAlertsSetup(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WeatherWeatherDataAggregation(VirtualFunctionTool):
+class WeatherWeatherDataAggregation(VirtualFunctionApp):
     name = "WeatherWeatherDataAggregation"
     summary = "Combines weather data from multiple sources for improved accuracy."
     parameters: List[ArgParameter] = [
@@ -16799,7 +16799,7 @@ class WeatherWeatherDataAggregation(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WeatherIntegrationWithOtherAPIs(VirtualFunctionTool):
+class WeatherIntegrationWithOtherAPIs(VirtualFunctionApp):
     name = "WeatherIntegrationWithOtherAPIs"
     summary = "Facilitates integration with other services such as travel or event planning APIs."
     parameters: List[ArgParameter] = [
@@ -16831,7 +16831,7 @@ class WeatherIntegrationWithOtherAPIs(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WeatherDataExport(VirtualFunctionTool):
+class WeatherDataExport(VirtualFunctionApp):
     name = "WeatherDataExport"
     summary = "Enables users to export weather data in various formats."
     parameters: List[ArgParameter] = [
@@ -16871,7 +16871,7 @@ class Weather(FunctionApp):
     )
     name_for_model = "Weather"
     description_for_model = "The Weather app provides developers with access to hyper-local weather data, including current conditions, forecasts, historical data, and severe weather alerts, enabling integration into various applications while managing potential risks associated with data misuse."
-    tool_classes = [
+    app_classes = [
         WeatherCurrentWeather,
         WeatherWeatherForecast,
         WeatherHistoricalWeather,
@@ -16888,7 +16888,7 @@ class Weather(FunctionApp):
 #################### Reddit ####################
 
 
-class RedditFetchPosts(VirtualFunctionTool):
+class RedditFetchPosts(VirtualFunctionApp):
     name = "RedditFetchPosts"
     summary = "Retrieve posts from a specific subreddit based on filters."
     parameters: List[ArgParameter] = [
@@ -16921,7 +16921,7 @@ class RedditFetchPosts(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class RedditFetchComments(VirtualFunctionTool):
+class RedditFetchComments(VirtualFunctionApp):
     name = "RedditFetchComments"
     summary = "Retrieve comments from a specific post."
     parameters: List[ArgParameter] = [
@@ -16942,7 +16942,7 @@ class RedditFetchComments(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class RedditSearchSubreddits(VirtualFunctionTool):
+class RedditSearchSubreddits(VirtualFunctionApp):
     name = "RedditSearchSubreddits"
     summary = "Search for subreddits based on keywords."
     parameters: List[ArgParameter] = [
@@ -16969,7 +16969,7 @@ class RedditSearchSubreddits(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class RedditUserInteraction(VirtualFunctionTool):
+class RedditUserInteraction(VirtualFunctionApp):
     name = "RedditUserInteraction"
     summary = "Upvote or downvote a post or comment."
     parameters: List[ArgParameter] = [
@@ -17005,7 +17005,7 @@ class RedditUserInteraction(VirtualFunctionTool):
     ]
 
 
-class RedditRetrieveUserProfile(VirtualFunctionTool):
+class RedditRetrieveUserProfile(VirtualFunctionApp):
     name = "RedditRetrieveUserProfile"
     summary = "Access a public user profile."
     parameters: List[ArgParameter] = [
@@ -17026,7 +17026,7 @@ class RedditRetrieveUserProfile(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class RedditFetchSubredditRules(VirtualFunctionTool):
+class RedditFetchSubredditRules(VirtualFunctionApp):
     name = "RedditFetchSubredditRules"
     summary = "Retrieve the rules of a specific subreddit."
     parameters: List[ArgParameter] = [
@@ -17047,7 +17047,7 @@ class RedditFetchSubredditRules(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class RedditFetchTrendingSubreddits(VirtualFunctionTool):
+class RedditFetchTrendingSubreddits(VirtualFunctionApp):
     name = "RedditFetchTrendingSubreddits"
     summary = "Get a list of currently trending subreddits."
     parameters: List[ArgParameter] = [
@@ -17068,7 +17068,7 @@ class RedditFetchTrendingSubreddits(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class RedditFetchPostDetails(VirtualFunctionTool):
+class RedditFetchPostDetails(VirtualFunctionApp):
     name = "RedditFetchPostDetails"
     summary = "Retrieve detailed information about a specific post."
     parameters: List[ArgParameter] = [
@@ -17089,7 +17089,7 @@ class RedditFetchPostDetails(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class RedditFetchUserComments(VirtualFunctionTool):
+class RedditFetchUserComments(VirtualFunctionApp):
     name = "RedditFetchUserComments"
     summary = "Access all comments made by a specific user."
     parameters: List[ArgParameter] = [
@@ -17110,7 +17110,7 @@ class RedditFetchUserComments(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class RedditFetchSavedPosts(VirtualFunctionTool):
+class RedditFetchSavedPosts(VirtualFunctionApp):
     name = "RedditFetchSavedPosts"
     summary = "Retrieve a user's saved posts."
     parameters: List[ArgParameter] = [
@@ -17137,7 +17137,7 @@ class Reddit(FunctionApp):
     description_for_human = "A app for developers to access and interact with Reddit content, including posts, comments, and user profiles."
     name_for_model = "Reddit"
     description_for_model = "The Reddit app provides developers with tools to interact with Reddit's content, enabling them to fetch posts, comments, and user profiles, analyze trends, and engage with the community while being mindful of potential risks associated with misinformation and user privacy."
-    tool_classes = [
+    app_classes = [
         RedditFetchPosts,
         RedditFetchComments,
         RedditSearchSubreddits,
@@ -17154,7 +17154,7 @@ class Reddit(FunctionApp):
 #################### Trello ####################
 
 
-class TrelloCreateBoard(VirtualFunctionTool):
+class TrelloCreateBoard(VirtualFunctionApp):
     name = "TrelloCreateBoard"
     summary = "Allows users to create a new board for organizing projects."
     parameters: List[ArgParameter] = [
@@ -17186,7 +17186,7 @@ class TrelloCreateBoard(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TrelloCreateList(VirtualFunctionTool):
+class TrelloCreateList(VirtualFunctionApp):
     name = "TrelloCreateList"
     summary = "Enables users to add a list to an existing board."
     parameters: List[ArgParameter] = [
@@ -17218,7 +17218,7 @@ class TrelloCreateList(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TrelloCreateCard(VirtualFunctionTool):
+class TrelloCreateCard(VirtualFunctionApp):
     name = "TrelloCreateCard"
     summary = "Users can create a new card within a specified list."
     parameters: List[ArgParameter] = [
@@ -17256,7 +17256,7 @@ class TrelloCreateCard(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TrelloUpdateCard(VirtualFunctionTool):
+class TrelloUpdateCard(VirtualFunctionApp):
     name = "TrelloUpdateCard"
     summary = "Allows users to modify details of an existing card."
     parameters: List[ArgParameter] = [
@@ -17294,7 +17294,7 @@ class TrelloUpdateCard(VirtualFunctionTool):
     ]
 
 
-class TrelloDeleteCard(VirtualFunctionTool):
+class TrelloDeleteCard(VirtualFunctionApp):
     name = "TrelloDeleteCard"
     summary = "Enables users to remove a card from a list."
     parameters: List[ArgParameter] = [
@@ -17317,7 +17317,7 @@ class TrelloDeleteCard(VirtualFunctionTool):
     ]
 
 
-class TrelloSearchBoard(VirtualFunctionTool):
+class TrelloSearchBoard(VirtualFunctionApp):
     name = "TrelloSearchBoard"
     summary = "Users can search for boards by keywords."
     parameters: List[ArgParameter] = [
@@ -17344,7 +17344,7 @@ class TrelloSearchBoard(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TrelloSearchList(VirtualFunctionTool):
+class TrelloSearchList(VirtualFunctionApp):
     name = "TrelloSearchList"
     summary = "Users can search for lists within a specific board."
     parameters: List[ArgParameter] = [
@@ -17377,7 +17377,7 @@ class TrelloSearchList(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TrelloSearchCard(VirtualFunctionTool):
+class TrelloSearchCard(VirtualFunctionApp):
     name = "TrelloSearchCard"
     summary = "Users can search for cards within a specific list."
     parameters: List[ArgParameter] = [
@@ -17410,7 +17410,7 @@ class TrelloSearchCard(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TrelloMoveCard(VirtualFunctionTool):
+class TrelloMoveCard(VirtualFunctionApp):
     name = "TrelloMoveCard"
     summary = "Allows users to move a card from one list to another."
     parameters: List[ArgParameter] = [
@@ -17442,7 +17442,7 @@ class TrelloMoveCard(VirtualFunctionTool):
     ]
 
 
-class TrelloAddComment(VirtualFunctionTool):
+class TrelloAddComment(VirtualFunctionApp):
     name = "TrelloAddComment"
     summary = "Users can add comments to a specific card."
     parameters: List[ArgParameter] = [
@@ -17475,7 +17475,7 @@ class Trello(FunctionApp):
     description_for_human = "App for managing projects and tasks using Trello."
     name_for_model = "Trello"
     description_for_model = "The Trello app provides tools for creating and managing boards, lists, and cards to enhance project management and team collaboration while ensuring careful handling of sensitive information."
-    tool_classes = [
+    app_classes = [
         TrelloCreateBoard,
         TrelloCreateList,
         TrelloCreateCard,
@@ -17492,7 +17492,7 @@ class Trello(FunctionApp):
 #################### Office365 ####################
 
 
-class Office365CreateDocument(VirtualFunctionTool):
+class Office365CreateDocument(VirtualFunctionApp):
     name = "Office365CreateDocument"
     summary = "Allows users to create a new document in Word."
     parameters: List[ArgParameter] = [
@@ -17524,7 +17524,7 @@ class Office365CreateDocument(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class Office365EditDocument(VirtualFunctionTool):
+class Office365EditDocument(VirtualFunctionApp):
     name = "Office365EditDocument"
     summary = "Allows users to edit an existing document in Word."
     parameters: List[ArgParameter] = [
@@ -17551,7 +17551,7 @@ class Office365EditDocument(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class Office365ReadDocument(VirtualFunctionTool):
+class Office365ReadDocument(VirtualFunctionApp):
     name = "Office365ReadDocument"
     summary = "Retrieves the content of a specific document."
     parameters: List[ArgParameter] = [
@@ -17572,7 +17572,7 @@ class Office365ReadDocument(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class Office365DeleteDocument(VirtualFunctionTool):
+class Office365DeleteDocument(VirtualFunctionApp):
     name = "Office365DeleteDocument"
     summary = "Deletes a specified document."
     parameters: List[ArgParameter] = [
@@ -17598,7 +17598,7 @@ class Office365DeleteDocument(VirtualFunctionTool):
     ]
 
 
-class Office365CreateSpreadsheet(VirtualFunctionTool):
+class Office365CreateSpreadsheet(VirtualFunctionApp):
     name = "Office365CreateSpreadsheet"
     summary = "Allows users to create a new spreadsheet in Excel."
     parameters: List[ArgParameter] = [
@@ -17630,7 +17630,7 @@ class Office365CreateSpreadsheet(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class Office365EditSpreadsheet(VirtualFunctionTool):
+class Office365EditSpreadsheet(VirtualFunctionApp):
     name = "Office365EditSpreadsheet"
     summary = "Allows users to edit an existing spreadsheet."
     parameters: List[ArgParameter] = [
@@ -17662,7 +17662,7 @@ class Office365EditSpreadsheet(VirtualFunctionTool):
     ]
 
 
-class Office365CreatePresentation(VirtualFunctionTool):
+class Office365CreatePresentation(VirtualFunctionApp):
     name = "Office365CreatePresentation"
     summary = "Allows users to create a new presentation in PowerPoint."
     parameters: List[ArgParameter] = [
@@ -17694,7 +17694,7 @@ class Office365CreatePresentation(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class Office365ShareDocument(VirtualFunctionTool):
+class Office365ShareDocument(VirtualFunctionApp):
     name = "Office365ShareDocument"
     summary = "Shares a document with specified recipients."
     parameters: List[ArgParameter] = [
@@ -17726,7 +17726,7 @@ class Office365ShareDocument(VirtualFunctionTool):
     ]
 
 
-class Office365ComposeEmail(VirtualFunctionTool):
+class Office365ComposeEmail(VirtualFunctionApp):
     name = "Office365ComposeEmail"
     summary = "Composes a new email to send."
     parameters: List[ArgParameter] = [
@@ -17764,7 +17764,7 @@ class Office365ComposeEmail(VirtualFunctionTool):
     ]
 
 
-class Office365ReadEmail(VirtualFunctionTool):
+class Office365ReadEmail(VirtualFunctionApp):
     name = "Office365ReadEmail"
     summary = "Retrieves a specific email's content."
     parameters: List[ArgParameter] = [
@@ -17790,7 +17790,7 @@ class Office365ReadEmail(VirtualFunctionTool):
     ]
 
 
-class Office365DeleteEmail(VirtualFunctionTool):
+class Office365DeleteEmail(VirtualFunctionApp):
     name = "Office365DeleteEmail"
     summary = "Deletes a specified email."
     parameters: List[ArgParameter] = [
@@ -17816,7 +17816,7 @@ class Office365DeleteEmail(VirtualFunctionTool):
     ]
 
 
-class Office365AccessStoredData(VirtualFunctionTool):
+class Office365AccessStoredData(VirtualFunctionApp):
     name = "Office365AccessStoredData"
     summary = "Retrieves stored user data such as addresses or payment methods."
     parameters: List[ArgParameter] = []
@@ -17836,7 +17836,7 @@ class Office365(FunctionApp):
     description_for_human = "A app for managing documents, spreadsheets, presentations, and emails using Microsoft Office 365."
     name_for_model = "Office365"
     description_for_model = "A comprehensive suite of tools for document creation, email management, and collaboration within Microsoft Office 365, enabling users to efficiently manage their productivity tasks while ensuring data security and compliance."
-    tool_classes = [
+    app_classes = [
         Office365CreateDocument,
         Office365EditDocument,
         Office365ReadDocument,
@@ -17855,7 +17855,7 @@ class Office365(FunctionApp):
 #################### Eventbrite ####################
 
 
-class EventbriteCreateEvent(VirtualFunctionTool):
+class EventbriteCreateEvent(VirtualFunctionApp):
     name = "EventbriteCreateEvent"
     summary = "Allows users to create a new event with required details."
     parameters: List[ArgParameter] = [
@@ -17899,7 +17899,7 @@ class EventbriteCreateEvent(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EventbriteUpdateEvent(VirtualFunctionTool):
+class EventbriteUpdateEvent(VirtualFunctionApp):
     name = "EventbriteUpdateEvent"
     summary = "Allows users to update details of an existing event."
     parameters: List[ArgParameter] = [
@@ -17944,7 +17944,7 @@ class EventbriteUpdateEvent(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EventbriteDeleteEvent(VirtualFunctionTool):
+class EventbriteDeleteEvent(VirtualFunctionApp):
     name = "EventbriteDeleteEvent"
     summary = "Allows users to delete an existing event."
     parameters: List[ArgParameter] = [
@@ -17965,7 +17965,7 @@ class EventbriteDeleteEvent(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EventbriteCreateTicket(VirtualFunctionTool):
+class EventbriteCreateTicket(VirtualFunctionApp):
     name = "EventbriteCreateTicket"
     summary = "Allows users to create tickets for an event."
     parameters: List[ArgParameter] = [
@@ -18009,7 +18009,7 @@ class EventbriteCreateTicket(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EventbriteUpdateTicket(VirtualFunctionTool):
+class EventbriteUpdateTicket(VirtualFunctionApp):
     name = "EventbriteUpdateTicket"
     summary = "Allows users to update ticket details."
     parameters: List[ArgParameter] = [
@@ -18048,7 +18048,7 @@ class EventbriteUpdateTicket(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EventbriteDeleteTicket(VirtualFunctionTool):
+class EventbriteDeleteTicket(VirtualFunctionApp):
     name = "EventbriteDeleteTicket"
     summary = "Allows users to delete an existing ticket."
     parameters: List[ArgParameter] = [
@@ -18069,7 +18069,7 @@ class EventbriteDeleteTicket(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EventbriteRegisterAttendee(VirtualFunctionTool):
+class EventbriteRegisterAttendee(VirtualFunctionApp):
     name = "EventbriteRegisterAttendee"
     summary = "Allows users to register an attendee for an event."
     parameters: List[ArgParameter] = [
@@ -18101,7 +18101,7 @@ class EventbriteRegisterAttendee(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EventbriteCheckInAttendee(VirtualFunctionTool):
+class EventbriteCheckInAttendee(VirtualFunctionApp):
     name = "EventbriteCheckInAttendee"
     summary = "Allows users to check in an attendee on the event day."
     parameters: List[ArgParameter] = [
@@ -18122,7 +18122,7 @@ class EventbriteCheckInAttendee(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EventbriteGetEventDetails(VirtualFunctionTool):
+class EventbriteGetEventDetails(VirtualFunctionApp):
     name = "EventbriteGetEventDetails"
     summary = "Retrieves details of a specific event."
     parameters: List[ArgParameter] = [
@@ -18148,7 +18148,7 @@ class EventbriteGetEventDetails(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EventbriteGetTicketDetails(VirtualFunctionTool):
+class EventbriteGetTicketDetails(VirtualFunctionApp):
     name = "EventbriteGetTicketDetails"
     summary = "Retrieves details of a specific ticket."
     parameters: List[ArgParameter] = [
@@ -18174,7 +18174,7 @@ class EventbriteGetTicketDetails(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EventbriteProcessRefund(VirtualFunctionTool):
+class EventbriteProcessRefund(VirtualFunctionApp):
     name = "EventbriteProcessRefund"
     summary = "Allows users to process a refund for a ticket."
     parameters: List[ArgParameter] = [
@@ -18195,7 +18195,7 @@ class EventbriteProcessRefund(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EventbriteSendEmailNotification(VirtualFunctionTool):
+class EventbriteSendEmailNotification(VirtualFunctionApp):
     name = "EventbriteSendEmailNotification"
     summary = "Sends an email notification to attendees."
     parameters: List[ArgParameter] = [
@@ -18228,7 +18228,7 @@ class Eventbrite(FunctionApp):
     description_for_human = "The Eventbrite app allows event organizers to create and manage events, sell tickets, and handle attendee registrations effectively."
     name_for_model = "Eventbrite"
     description_for_model = "The Eventbrite app enables event organizers to efficiently create, manage, and promote events while handling attendee registrations, ticket sales, and post-event feedback, all while ensuring data privacy and security."
-    tool_classes = [
+    app_classes = [
         EventbriteCreateEvent,
         EventbriteUpdateEvent,
         EventbriteDeleteEvent,
@@ -18247,7 +18247,7 @@ class Eventbrite(FunctionApp):
 #################### Asana ####################
 
 
-class AsanaCreateTask(VirtualFunctionTool):
+class AsanaCreateTask(VirtualFunctionApp):
     name = "AsanaCreateTask"
     summary = "Allows users to create a new task with specified details."
     parameters: List[ArgParameter] = [
@@ -18291,7 +18291,7 @@ class AsanaCreateTask(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AsanaGetTask(VirtualFunctionTool):
+class AsanaGetTask(VirtualFunctionApp):
     name = "AsanaGetTask"
     summary = "Retrieves the details of a specific task."
     parameters: List[ArgParameter] = [
@@ -18322,7 +18322,7 @@ class AsanaGetTask(VirtualFunctionTool):
     ]
 
 
-class AsanaUpdateTask(VirtualFunctionTool):
+class AsanaUpdateTask(VirtualFunctionApp):
     name = "AsanaUpdateTask"
     summary = "Updates the details of an existing task."
     parameters: List[ArgParameter] = [
@@ -18372,7 +18372,7 @@ class AsanaUpdateTask(VirtualFunctionTool):
     ]
 
 
-class AsanaDeleteTask(VirtualFunctionTool):
+class AsanaDeleteTask(VirtualFunctionApp):
     name = "AsanaDeleteTask"
     summary = "Deletes a specified task."
     parameters: List[ArgParameter] = [
@@ -18398,7 +18398,7 @@ class AsanaDeleteTask(VirtualFunctionTool):
     ]
 
 
-class AsanaManageVisibility(VirtualFunctionTool):
+class AsanaManageVisibility(VirtualFunctionApp):
     name = "AsanaManageVisibility"
     summary = "Manages the visibility settings of a task."
     parameters: List[ArgParameter] = [
@@ -18425,7 +18425,7 @@ class AsanaManageVisibility(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AsanaCommentOnTask(VirtualFunctionTool):
+class AsanaCommentOnTask(VirtualFunctionApp):
     name = "AsanaCommentOnTask"
     summary = "Adds a comment to a specific task."
     parameters: List[ArgParameter] = [
@@ -18457,7 +18457,7 @@ class AsanaCommentOnTask(VirtualFunctionTool):
     ]
 
 
-class AsanaAssignTask(VirtualFunctionTool):
+class AsanaAssignTask(VirtualFunctionApp):
     name = "AsanaAssignTask"
     summary = "Assigns a task to a specific user."
     parameters: List[ArgParameter] = [
@@ -18489,7 +18489,7 @@ class AsanaAssignTask(VirtualFunctionTool):
     ]
 
 
-class AsanaUpdateTaskStatus(VirtualFunctionTool):
+class AsanaUpdateTaskStatus(VirtualFunctionApp):
     name = "AsanaUpdateTaskStatus"
     summary = "Updates the status of a task."
     parameters: List[ArgParameter] = [
@@ -18521,7 +18521,7 @@ class AsanaUpdateTaskStatus(VirtualFunctionTool):
     ]
 
 
-class AsanaSearchTasks(VirtualFunctionTool):
+class AsanaSearchTasks(VirtualFunctionApp):
     name = "AsanaSearchTasks"
     summary = "Searches for tasks based on provided criteria."
     parameters: List[ArgParameter] = [
@@ -18558,7 +18558,7 @@ class AsanaSearchTasks(VirtualFunctionTool):
     ]
 
 
-class AsanaAccessPreferences(VirtualFunctionTool):
+class AsanaAccessPreferences(VirtualFunctionApp):
     name = "AsanaAccessPreferences"
     summary = "Retrieves the user's saved preferences."
     parameters: List[ArgParameter] = []
@@ -18583,7 +18583,7 @@ class Asana(FunctionApp):
     description_for_human = "A project management app for tracking tasks, deadlines, and project progress."
     name_for_model = "Asana"
     description_for_model = "The Asana app enables team managers and project coordinators to efficiently manage tasks, deadlines, and project visibility while ensuring sensitive information is protected from unauthorized access."
-    tool_classes = [
+    app_classes = [
         AsanaCreateTask,
         AsanaGetTask,
         AsanaUpdateTask,
@@ -18600,7 +18600,7 @@ class Asana(FunctionApp):
 #################### GoogleCalendar ####################
 
 
-class GoogleCalendarCreateEvent(VirtualFunctionTool):
+class GoogleCalendarCreateEvent(VirtualFunctionApp):
     name = "GoogleCalendarCreateEvent"
     summary = "Allows users to create a new event in their calendar."
     parameters: List[ArgParameter] = [
@@ -18650,7 +18650,7 @@ class GoogleCalendarCreateEvent(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleCalendarUpdateEvent(VirtualFunctionTool):
+class GoogleCalendarUpdateEvent(VirtualFunctionApp):
     name = "GoogleCalendarUpdateEvent"
     summary = "Allows users to update details of an existing event."
     parameters: List[ArgParameter] = [
@@ -18706,7 +18706,7 @@ class GoogleCalendarUpdateEvent(VirtualFunctionTool):
     ]
 
 
-class GoogleCalendarDeleteEvent(VirtualFunctionTool):
+class GoogleCalendarDeleteEvent(VirtualFunctionApp):
     name = "GoogleCalendarDeleteEvent"
     summary = "Allows users to delete an existing event."
     parameters: List[ArgParameter] = [
@@ -18732,7 +18732,7 @@ class GoogleCalendarDeleteEvent(VirtualFunctionTool):
     ]
 
 
-class GoogleCalendarViewEvents(VirtualFunctionTool):
+class GoogleCalendarViewEvents(VirtualFunctionApp):
     name = "GoogleCalendarViewEvents"
     summary = "Retrieves a list of events for a specific date range."
     parameters: List[ArgParameter] = [
@@ -18765,7 +18765,7 @@ class GoogleCalendarViewEvents(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleCalendarShareCalendar(VirtualFunctionTool):
+class GoogleCalendarShareCalendar(VirtualFunctionApp):
     name = "GoogleCalendarShareCalendar"
     summary = "Allows users to share their calendar with others."
     parameters: List[ArgParameter] = [
@@ -18797,7 +18797,7 @@ class GoogleCalendarShareCalendar(VirtualFunctionTool):
     ]
 
 
-class GoogleCalendarSetReminder(VirtualFunctionTool):
+class GoogleCalendarSetReminder(VirtualFunctionApp):
     name = "GoogleCalendarSetReminder"
     summary = "Sets a reminder for a specific event."
     parameters: List[ArgParameter] = [
@@ -18829,7 +18829,7 @@ class GoogleCalendarSetReminder(VirtualFunctionTool):
     ]
 
 
-class GoogleCalendarSearchEvents(VirtualFunctionTool):
+class GoogleCalendarSearchEvents(VirtualFunctionApp):
     name = "GoogleCalendarSearchEvents"
     summary = "Searches for events based on keywords."
     parameters: List[ArgParameter] = [
@@ -18856,7 +18856,7 @@ class GoogleCalendarSearchEvents(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleCalendarAccessStoredData(VirtualFunctionTool):
+class GoogleCalendarAccessStoredData(VirtualFunctionApp):
     name = "GoogleCalendarAccessStoredData"
     summary = "Accesses user preferences for notifications."
     parameters: List[ArgParameter] = []
@@ -18870,7 +18870,7 @@ class GoogleCalendarAccessStoredData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleCalendarCreateRecurringEvent(VirtualFunctionTool):
+class GoogleCalendarCreateRecurringEvent(VirtualFunctionApp):
     name = "GoogleCalendarCreateRecurringEvent"
     summary = "Allows users to create an event that recurs."
     parameters: List[ArgParameter] = [
@@ -18919,7 +18919,7 @@ class GoogleCalendarCreateRecurringEvent(VirtualFunctionTool):
     ]
 
 
-class GoogleCalendarInviteAttendees(VirtualFunctionTool):
+class GoogleCalendarInviteAttendees(VirtualFunctionApp):
     name = "GoogleCalendarInviteAttendees"
     summary = "Sends invitations to attendees for an event."
     parameters: List[ArgParameter] = [
@@ -18957,7 +18957,7 @@ class GoogleCalendar(FunctionApp):
     description_for_human = "Manage your personal schedules with Google Calendar by creating, updating, deleting, sharing events, and setting reminders."
     name_for_model = "GoogleCalendar"
     description_for_model = "This app allows individual users to efficiently manage their personal schedules by creating, updating, deleting, and sharing events in Google Calendar, while also setting reminders and accessing stored preferences."
-    tool_classes = [
+    app_classes = [
         GoogleCalendarCreateEvent,
         GoogleCalendarUpdateEvent,
         GoogleCalendarDeleteEvent,
@@ -18974,7 +18974,7 @@ class GoogleCalendar(FunctionApp):
 #################### Slack ####################
 
 
-class SlackSendMessage(VirtualFunctionTool):
+class SlackSendMessage(VirtualFunctionApp):
     name = "SlackSendMessage"
     summary = "Sends a message to a specified channel or user."
     parameters: List[ArgParameter] = [
@@ -19023,7 +19023,7 @@ class SlackSendMessage(VirtualFunctionTool):
     ]
 
 
-class SlackManageChannel(VirtualFunctionTool):
+class SlackManageChannel(VirtualFunctionApp):
     name = "SlackManageChannel"
     summary = "Creates, updates, or deletes a channel."
     parameters: List[ArgParameter] = [
@@ -19070,7 +19070,7 @@ class SlackManageChannel(VirtualFunctionTool):
     ]
 
 
-class SlackShareFile(VirtualFunctionTool):
+class SlackShareFile(VirtualFunctionApp):
     name = "SlackShareFile"
     summary = "Uploads and shares a file in a specified channel or direct message."
     parameters: List[ArgParameter] = [
@@ -19107,7 +19107,7 @@ class SlackShareFile(VirtualFunctionTool):
     ]
 
 
-class SlackSearchMessages(VirtualFunctionTool):
+class SlackSearchMessages(VirtualFunctionApp):
     name = "SlackSearchMessages"
     summary = "Searches messages in a specified channel or direct message."
     parameters: List[ArgParameter] = [
@@ -19145,7 +19145,7 @@ class SlackSearchMessages(VirtualFunctionTool):
     ]
 
 
-class SlackManageUsers(VirtualFunctionTool):
+class SlackManageUsers(VirtualFunctionApp):
     name = "SlackManageUsers"
     summary = "Manages team members in channels."
     parameters: List[ArgParameter] = [
@@ -19183,7 +19183,7 @@ class SlackManageUsers(VirtualFunctionTool):
     ]
 
 
-class SlackAddReaction(VirtualFunctionTool):
+class SlackAddReaction(VirtualFunctionApp):
     name = "SlackAddReaction"
     summary = "Adds a reaction to a specified message."
     parameters: List[ArgParameter] = [
@@ -19215,7 +19215,7 @@ class SlackAddReaction(VirtualFunctionTool):
     ]
 
 
-class SlackPinMessage(VirtualFunctionTool):
+class SlackPinMessage(VirtualFunctionApp):
     name = "SlackPinMessage"
     summary = "Pins a specified message in a channel."
     parameters: List[ArgParameter] = [
@@ -19247,7 +19247,7 @@ class SlackPinMessage(VirtualFunctionTool):
     ]
 
 
-class SlackSetReminder(VirtualFunctionTool):
+class SlackSetReminder(VirtualFunctionApp):
     name = "SlackSetReminder"
     summary = "Sets a reminder for a user."
     parameters: List[ArgParameter] = [
@@ -19285,7 +19285,7 @@ class SlackSetReminder(VirtualFunctionTool):
     ]
 
 
-class SlackEditMessage(VirtualFunctionTool):
+class SlackEditMessage(VirtualFunctionApp):
     name = "SlackEditMessage"
     summary = "Edits a previously sent message."
     parameters: List[ArgParameter] = [
@@ -19317,7 +19317,7 @@ class SlackEditMessage(VirtualFunctionTool):
     ]
 
 
-class SlackDeleteMessage(VirtualFunctionTool):
+class SlackDeleteMessage(VirtualFunctionApp):
     name = "SlackDeleteMessage"
     summary = "Deletes a specified message."
     parameters: List[ArgParameter] = [
@@ -19349,7 +19349,7 @@ class Slack(FunctionApp):
     description_for_human = "App for facilitating team collaboration through messaging, file sharing, and channel management."
     name_for_model = "Slack"
     description_for_model = "The Slack app enables enterprise users to manage team communication through messaging, channel management, user management, and file sharing while addressing potential risks associated with misuse."
-    tool_classes = [
+    app_classes = [
         SlackSendMessage,
         SlackManageChannel,
         SlackShareFile,
@@ -19366,7 +19366,7 @@ class Slack(FunctionApp):
 #################### Wrike ####################
 
 
-class WrikeCreateProject(VirtualFunctionTool):
+class WrikeCreateProject(VirtualFunctionApp):
     name = "WrikeCreateProject"
     summary = "Creates a new project with specified attributes."
     parameters: List[ArgParameter] = [
@@ -19404,7 +19404,7 @@ class WrikeCreateProject(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WrikeUpdateProject(VirtualFunctionTool):
+class WrikeUpdateProject(VirtualFunctionApp):
     name = "WrikeUpdateProject"
     summary = "Updates an existing project with new details."
     parameters: List[ArgParameter] = [
@@ -19443,7 +19443,7 @@ class WrikeUpdateProject(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WrikeDeleteProject(VirtualFunctionTool):
+class WrikeDeleteProject(VirtualFunctionApp):
     name = "WrikeDeleteProject"
     summary = "Deletes a specified project."
     parameters: List[ArgParameter] = [
@@ -19464,7 +19464,7 @@ class WrikeDeleteProject(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WrikeAddTask(VirtualFunctionTool):
+class WrikeAddTask(VirtualFunctionApp):
     name = "WrikeAddTask"
     summary = "Adds a new task to a specified project."
     parameters: List[ArgParameter] = [
@@ -19508,7 +19508,7 @@ class WrikeAddTask(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WrikeUpdateTask(VirtualFunctionTool):
+class WrikeUpdateTask(VirtualFunctionApp):
     name = "WrikeUpdateTask"
     summary = "Updates an existing task with new details."
     parameters: List[ArgParameter] = [
@@ -19547,7 +19547,7 @@ class WrikeUpdateTask(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WrikeDeleteTask(VirtualFunctionTool):
+class WrikeDeleteTask(VirtualFunctionApp):
     name = "WrikeDeleteTask"
     summary = "Deletes a specified task."
     parameters: List[ArgParameter] = [
@@ -19573,7 +19573,7 @@ class WrikeDeleteTask(VirtualFunctionTool):
     ]
 
 
-class WrikeGetProjectStatus(VirtualFunctionTool):
+class WrikeGetProjectStatus(VirtualFunctionApp):
     name = "WrikeGetProjectStatus"
     summary = "Retrieves the current status of a specified project."
     parameters: List[ArgParameter] = [
@@ -19599,7 +19599,7 @@ class WrikeGetProjectStatus(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WrikeGenerateReport(VirtualFunctionTool):
+class WrikeGenerateReport(VirtualFunctionApp):
     name = "WrikeGenerateReport"
     summary = "Generates a report based on the specified project metrics."
     parameters: List[ArgParameter] = [
@@ -19636,7 +19636,7 @@ class WrikeGenerateReport(VirtualFunctionTool):
     ]
 
 
-class WrikeAttachFile(VirtualFunctionTool):
+class WrikeAttachFile(VirtualFunctionApp):
     name = "WrikeAttachFile"
     summary = "Attaches a file to a specified task."
     parameters: List[ArgParameter] = [
@@ -19668,7 +19668,7 @@ class WrikeAttachFile(VirtualFunctionTool):
     ]
 
 
-class WrikeAddComment(VirtualFunctionTool):
+class WrikeAddComment(VirtualFunctionApp):
     name = "WrikeAddComment"
     summary = "Adds a comment to a specified task."
     parameters: List[ArgParameter] = [
@@ -19695,7 +19695,7 @@ class WrikeAddComment(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WrikeSearchTasks(VirtualFunctionTool):
+class WrikeSearchTasks(VirtualFunctionApp):
     name = "WrikeSearchTasks"
     summary = "Searches for tasks within a project based on keywords."
     parameters: List[ArgParameter] = [
@@ -19741,7 +19741,7 @@ class Wrike(FunctionApp):
     )
     name_for_model = "Wrike"
     description_for_model = "The Wrike app enables enterprise teams to effectively manage projects, track progress, and generate reports while ensuring secure handling of sensitive project data."
-    tool_classes = [
+    app_classes = [
         WrikeCreateProject,
         WrikeUpdateProject,
         WrikeDeleteProject,
@@ -19759,7 +19759,7 @@ class Wrike(FunctionApp):
 #################### Notion ####################
 
 
-class NotionCreateNote(VirtualFunctionTool):
+class NotionCreateNote(VirtualFunctionApp):
     name = "NotionCreateNote"
     summary = "Allows users to create a new note with rich text formatting."
     parameters: List[ArgParameter] = [
@@ -19791,7 +19791,7 @@ class NotionCreateNote(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NotionReadNote(VirtualFunctionTool):
+class NotionReadNote(VirtualFunctionApp):
     name = "NotionReadNote"
     summary = "Retrieves the content of a specific note using its unique identifier."
     parameters: List[ArgParameter] = [
@@ -19818,7 +19818,7 @@ class NotionReadNote(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NotionUpdateNote(VirtualFunctionTool):
+class NotionUpdateNote(VirtualFunctionApp):
     name = "NotionUpdateNote"
     summary = "Updates the content of an existing note."
     parameters: List[ArgParameter] = [
@@ -19845,7 +19845,7 @@ class NotionUpdateNote(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NotionDeleteNote(VirtualFunctionTool):
+class NotionDeleteNote(VirtualFunctionApp):
     name = "NotionDeleteNote"
     summary = "Deletes a specific note using its unique identifier."
     parameters: List[ArgParameter] = [
@@ -19866,7 +19866,7 @@ class NotionDeleteNote(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NotionCreateTask(VirtualFunctionTool):
+class NotionCreateTask(VirtualFunctionApp):
     name = "NotionCreateTask"
     summary = "Allows users to create a new task with a due date and priority."
     parameters: List[ArgParameter] = [
@@ -19904,7 +19904,7 @@ class NotionCreateTask(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NotionUpdateTask(VirtualFunctionTool):
+class NotionUpdateTask(VirtualFunctionApp):
     name = "NotionUpdateTask"
     summary = "Updates the details of an existing task."
     parameters: List[ArgParameter] = [
@@ -19937,7 +19937,7 @@ class NotionUpdateTask(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NotionDeleteTask(VirtualFunctionTool):
+class NotionDeleteTask(VirtualFunctionApp):
     name = "NotionDeleteTask"
     summary = "Deletes a specific task using its unique identifier."
     parameters: List[ArgParameter] = [
@@ -19958,7 +19958,7 @@ class NotionDeleteTask(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NotionSearchNotes(VirtualFunctionTool):
+class NotionSearchNotes(VirtualFunctionApp):
     name = "NotionSearchNotes"
     summary = "Searches for notes based on keywords."
     parameters: List[ArgParameter] = [
@@ -19990,7 +19990,7 @@ class NotionSearchNotes(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NotionAttachFile(VirtualFunctionTool):
+class NotionAttachFile(VirtualFunctionApp):
     name = "NotionAttachFile"
     summary = "Attaches a file to a specific note."
     parameters: List[ArgParameter] = [
@@ -20022,7 +20022,7 @@ class NotionAttachFile(VirtualFunctionTool):
     ]
 
 
-class NotionSetReminder(VirtualFunctionTool):
+class NotionSetReminder(VirtualFunctionApp):
     name = "NotionSetReminder"
     summary = "Sets a reminder for a specific task."
     parameters: List[ArgParameter] = [
@@ -20054,7 +20054,7 @@ class NotionSetReminder(VirtualFunctionTool):
     ]
 
 
-class NotionCreateDatabase(VirtualFunctionTool):
+class NotionCreateDatabase(VirtualFunctionApp):
     name = "NotionCreateDatabase"
     summary = "Creates a new database for organizing notes or tasks."
     parameters: List[ArgParameter] = [
@@ -20080,7 +20080,7 @@ class NotionCreateDatabase(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NotionUpdateDatabase(VirtualFunctionTool):
+class NotionUpdateDatabase(VirtualFunctionApp):
     name = "NotionUpdateDatabase"
     summary = "Updates the name or settings of an existing database."
     parameters: List[ArgParameter] = [
@@ -20120,7 +20120,7 @@ class Notion(FunctionApp):
     )
     name_for_model = "Notion"
     description_for_model = "The Notion app enables users to create, manage, and share notes, tasks, and databases while ensuring secure collaboration and organization."
-    tool_classes = [
+    app_classes = [
         NotionCreateNote,
         NotionReadNote,
         NotionUpdateNote,
@@ -20139,7 +20139,7 @@ class Notion(FunctionApp):
 #################### Calendly ####################
 
 
-class CalendlySetAvailability(VirtualFunctionTool):
+class CalendlySetAvailability(VirtualFunctionApp):
     name = "CalendlySetAvailability"
     summary = "Allows users to specify their available time slots for appointments."
     parameters: List[ArgParameter] = [
@@ -20171,7 +20171,7 @@ class CalendlySetAvailability(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CalendlyBookAppointment(VirtualFunctionTool):
+class CalendlyBookAppointment(VirtualFunctionApp):
     name = "CalendlyBookAppointment"
     summary = "Allows others to book an appointment within the user's available slots."
     parameters: List[ArgParameter] = [
@@ -20203,7 +20203,7 @@ class CalendlyBookAppointment(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CalendlyCancelAppointment(VirtualFunctionTool):
+class CalendlyCancelAppointment(VirtualFunctionApp):
     name = "CalendlyCancelAppointment"
     summary = "Allows users to cancel previously booked appointments."
     parameters: List[ArgParameter] = [
@@ -20229,7 +20229,7 @@ class CalendlyCancelAppointment(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CalendlyUpdateAppointment(VirtualFunctionTool):
+class CalendlyUpdateAppointment(VirtualFunctionApp):
     name = "CalendlyUpdateAppointment"
     summary = "Allows users to modify the details of existing appointments."
     parameters: List[ArgParameter] = [
@@ -20267,7 +20267,7 @@ class CalendlyUpdateAppointment(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CalendlyViewAppointments(VirtualFunctionTool):
+class CalendlyViewAppointments(VirtualFunctionApp):
     name = "CalendlyViewAppointments"
     summary = "Lists all upcoming appointments for the user."
     parameters: List[ArgParameter] = [
@@ -20288,7 +20288,7 @@ class CalendlyViewAppointments(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CalendlySendConfirmationNotification(VirtualFunctionTool):
+class CalendlySendConfirmationNotification(VirtualFunctionApp):
     name = "CalendlySendConfirmationNotification"
     summary = "Sends notifications to confirm appointments."
     parameters: List[ArgParameter] = [
@@ -20320,7 +20320,7 @@ class CalendlySendConfirmationNotification(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CalendlyAccessStoredUserData(VirtualFunctionTool):
+class CalendlyAccessStoredUserData(VirtualFunctionApp):
     name = "CalendlyAccessStoredUserData"
     summary = "Retrieves the user's saved preferences and settings."
     parameters: List[ArgParameter] = []
@@ -20334,7 +20334,7 @@ class CalendlyAccessStoredUserData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CalendlySetRecurringAppointments(VirtualFunctionTool):
+class CalendlySetRecurringAppointments(VirtualFunctionApp):
     name = "CalendlySetRecurringAppointments"
     summary = "Allows users to set up recurring appointments."
     parameters: List[ArgParameter] = [
@@ -20372,7 +20372,7 @@ class CalendlySetRecurringAppointments(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CalendlyShareAvailabilityLink(VirtualFunctionTool):
+class CalendlyShareAvailabilityLink(VirtualFunctionApp):
     name = "CalendlyShareAvailabilityLink"
     summary = "Creates a shareable link that displays the user's availability."
     parameters: List[ArgParameter] = [
@@ -20393,7 +20393,7 @@ class CalendlyShareAvailabilityLink(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CalendlyIntegrateWithCalendar(VirtualFunctionTool):
+class CalendlyIntegrateWithCalendar(VirtualFunctionApp):
     name = "CalendlyIntegrateWithCalendar"
     summary = "Syncs appointments with external calendar services."
     parameters: List[ArgParameter] = [
@@ -20427,7 +20427,7 @@ class Calendly(FunctionApp):
     )
     name_for_model = "Calendly"
     description_for_model = "A app for managing appointment scheduling, allowing users to set availability, book and manage appointments, and integrate with external calendar services while ensuring privacy and efficiency."
-    tool_classes = [
+    app_classes = [
         CalendlySetAvailability,
         CalendlyBookAppointment,
         CalendlyCancelAppointment,
@@ -20444,7 +20444,7 @@ class Calendly(FunctionApp):
 #################### ClickUp ####################
 
 
-class ClickUpCreateTask(VirtualFunctionTool):
+class ClickUpCreateTask(VirtualFunctionApp):
     name = "ClickUpCreateTask"
     summary = "Creates a new task in ClickUp."
     parameters: List[ArgParameter] = [
@@ -20488,7 +20488,7 @@ class ClickUpCreateTask(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ClickUpRetrieveTask(VirtualFunctionTool):
+class ClickUpRetrieveTask(VirtualFunctionApp):
     name = "ClickUpRetrieveTask"
     summary = "Retrieves tasks based on a keyword search or filter."
     parameters: List[ArgParameter] = [
@@ -20520,7 +20520,7 @@ class ClickUpRetrieveTask(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ClickUpUpdateTask(VirtualFunctionTool):
+class ClickUpUpdateTask(VirtualFunctionApp):
     name = "ClickUpUpdateTask"
     summary = "Updates the details of an existing task."
     parameters: List[ArgParameter] = [
@@ -20570,7 +20570,7 @@ class ClickUpUpdateTask(VirtualFunctionTool):
     ]
 
 
-class ClickUpDeleteTask(VirtualFunctionTool):
+class ClickUpDeleteTask(VirtualFunctionApp):
     name = "ClickUpDeleteTask"
     summary = "Deletes a specified task."
     parameters: List[ArgParameter] = [
@@ -20596,7 +20596,7 @@ class ClickUpDeleteTask(VirtualFunctionTool):
     ]
 
 
-class ClickUpLogTime(VirtualFunctionTool):
+class ClickUpLogTime(VirtualFunctionApp):
     name = "ClickUpLogTime"
     summary = "Logs time spent on a task."
     parameters: List[ArgParameter] = [
@@ -20628,7 +20628,7 @@ class ClickUpLogTime(VirtualFunctionTool):
     ]
 
 
-class ClickUpAddComment(VirtualFunctionTool):
+class ClickUpAddComment(VirtualFunctionApp):
     name = "ClickUpAddComment"
     summary = "Adds a comment to a task."
     parameters: List[ArgParameter] = [
@@ -20660,7 +20660,7 @@ class ClickUpAddComment(VirtualFunctionTool):
     ]
 
 
-class ClickUpSetReminder(VirtualFunctionTool):
+class ClickUpSetReminder(VirtualFunctionApp):
     name = "ClickUpSetReminder"
     summary = "Sets a reminder for a task."
     parameters: List[ArgParameter] = [
@@ -20692,7 +20692,7 @@ class ClickUpSetReminder(VirtualFunctionTool):
     ]
 
 
-class ClickUpSetPriority(VirtualFunctionTool):
+class ClickUpSetPriority(VirtualFunctionApp):
     name = "ClickUpSetPriority"
     summary = "Sets or updates the priority of a task."
     parameters: List[ArgParameter] = [
@@ -20724,7 +20724,7 @@ class ClickUpSetPriority(VirtualFunctionTool):
     ]
 
 
-class ClickUpCreateSubtask(VirtualFunctionTool):
+class ClickUpCreateSubtask(VirtualFunctionApp):
     name = "ClickUpCreateSubtask"
     summary = "Creates a subtask under a main task."
     parameters: List[ArgParameter] = [
@@ -20761,7 +20761,7 @@ class ClickUpCreateSubtask(VirtualFunctionTool):
     ]
 
 
-class ClickUpRetrieveSubtasks(VirtualFunctionTool):
+class ClickUpRetrieveSubtasks(VirtualFunctionApp):
     name = "ClickUpRetrieveSubtasks"
     summary = "Retrieves all subtasks under a main task."
     parameters: List[ArgParameter] = [
@@ -20792,7 +20792,7 @@ class ClickUpRetrieveSubtasks(VirtualFunctionTool):
     ]
 
 
-class ClickUpDeleteSubtask(VirtualFunctionTool):
+class ClickUpDeleteSubtask(VirtualFunctionApp):
     name = "ClickUpDeleteSubtask"
     summary = "Deletes a specified subtask."
     parameters: List[ArgParameter] = [
@@ -20818,7 +20818,7 @@ class ClickUpDeleteSubtask(VirtualFunctionTool):
     ]
 
 
-class ClickUpCustomView(VirtualFunctionTool):
+class ClickUpCustomView(VirtualFunctionApp):
     name = "ClickUpCustomView"
     summary = "Creates a custom view for tasks."
     parameters: List[ArgParameter] = [
@@ -20856,7 +20856,7 @@ class ClickUp(FunctionApp):
     description_for_human = "A app for managing tasks effectively with tools for creating, updating, and tracking tasks."
     name_for_model = "ClickUp"
     description_for_model = "The ClickUp app provides users with a comprehensive set of tools for task management, allowing them to create, update, delete, and track tasks while managing subtasks, comments, and reminders. It enhances productivity through efficient organization and prioritization, but users must be cautious of potential risks such as data exposure and task loss."
-    tool_classes = [
+    app_classes = [
         ClickUpCreateTask,
         ClickUpRetrieveTask,
         ClickUpUpdateTask,
@@ -20875,7 +20875,7 @@ class ClickUp(FunctionApp):
 #################### Gmail ####################
 
 
-class GmailSendEmail(VirtualFunctionTool):
+class GmailSendEmail(VirtualFunctionApp):
     name = "GmailSendEmail"
     summary = "Allows users to compose and send emails to specified recipients."
     parameters: List[ArgParameter] = [
@@ -20924,7 +20924,7 @@ class GmailSendEmail(VirtualFunctionTool):
     ]
 
 
-class GmailReadEmail(VirtualFunctionTool):
+class GmailReadEmail(VirtualFunctionApp):
     name = "GmailReadEmail"
     summary = "Retrieves emails based on specified criteria."
     parameters: List[ArgParameter] = [
@@ -20956,7 +20956,7 @@ class GmailReadEmail(VirtualFunctionTool):
     ]
 
 
-class GmailOrganizeEmail(VirtualFunctionTool):
+class GmailOrganizeEmail(VirtualFunctionApp):
     name = "GmailOrganizeEmail"
     summary = "Allows users to categorize and label emails."
     parameters: List[ArgParameter] = [
@@ -20988,7 +20988,7 @@ class GmailOrganizeEmail(VirtualFunctionTool):
     ]
 
 
-class GmailSearchEmail(VirtualFunctionTool):
+class GmailSearchEmail(VirtualFunctionApp):
     name = "GmailSearchEmail"
     summary = "Searches emails based on keywords or phrases."
     parameters: List[ArgParameter] = [
@@ -21020,7 +21020,7 @@ class GmailSearchEmail(VirtualFunctionTool):
     ]
 
 
-class GmailManageAttachment(VirtualFunctionTool):
+class GmailManageAttachment(VirtualFunctionApp):
     name = "GmailManageAttachment"
     summary = "Handles the uploading, downloading, and deletion of email attachments."
     parameters: List[ArgParameter] = [
@@ -21058,7 +21058,7 @@ class GmailManageAttachment(VirtualFunctionTool):
     ]
 
 
-class GmailMarkImportant(VirtualFunctionTool):
+class GmailMarkImportant(VirtualFunctionApp):
     name = "GmailMarkImportant"
     summary = "Marks an email as important."
     parameters: List[ArgParameter] = [
@@ -21084,7 +21084,7 @@ class GmailMarkImportant(VirtualFunctionTool):
     ]
 
 
-class GmailArchiveEmail(VirtualFunctionTool):
+class GmailArchiveEmail(VirtualFunctionApp):
     name = "GmailArchiveEmail"
     summary = "Archives specified emails."
     parameters: List[ArgParameter] = [
@@ -21110,7 +21110,7 @@ class GmailArchiveEmail(VirtualFunctionTool):
     ]
 
 
-class GmailCreateDraft(VirtualFunctionTool):
+class GmailCreateDraft(VirtualFunctionApp):
     name = "GmailCreateDraft"
     summary = "Saves an email as a draft."
     parameters: List[ArgParameter] = [
@@ -21148,7 +21148,7 @@ class GmailCreateDraft(VirtualFunctionTool):
     ]
 
 
-class GmailDeleteEmail(VirtualFunctionTool):
+class GmailDeleteEmail(VirtualFunctionApp):
     name = "GmailDeleteEmail"
     summary = "Deletes specified emails."
     parameters: List[ArgParameter] = [
@@ -21174,7 +21174,7 @@ class GmailDeleteEmail(VirtualFunctionTool):
     ]
 
 
-class GmailAccessStoredData(VirtualFunctionTool):
+class GmailAccessStoredData(VirtualFunctionApp):
     name = "GmailAccessStoredData"
     summary = "Retrieves stored user preferences and settings."
     parameters: List[ArgParameter] = []
@@ -21194,7 +21194,7 @@ class Gmail(FunctionApp):
     description_for_human = "A app for managing your Gmail account, enabling you to send, read, and organize your emails efficiently."
     name_for_model = "Gmail"
     description_for_model = "The Gmail app provides functionalities for managing emails, including sending, reading, organizing, and handling attachments, while ensuring user preferences are accessible."
-    tool_classes = [
+    app_classes = [
         GmailSendEmail,
         GmailReadEmail,
         GmailOrganizeEmail,
@@ -21211,7 +21211,7 @@ class Gmail(FunctionApp):
 #################### Twilio ####################
 
 
-class TwilioSendSms(VirtualFunctionTool):
+class TwilioSendSms(VirtualFunctionApp):
     name = "TwilioSendSms"
     summary = "Enables sending SMS messages to users."
     parameters: List[ArgParameter] = [
@@ -21248,7 +21248,7 @@ class TwilioSendSms(VirtualFunctionTool):
     ]
 
 
-class TwilioReceiveSms(VirtualFunctionTool):
+class TwilioReceiveSms(VirtualFunctionApp):
     name = "TwilioReceiveSms"
     summary = "Allows the application to receive incoming SMS messages."
     parameters: List[ArgParameter] = [
@@ -21274,7 +21274,7 @@ class TwilioReceiveSms(VirtualFunctionTool):
     ]
 
 
-class TwilioMakeVoiceCall(VirtualFunctionTool):
+class TwilioMakeVoiceCall(VirtualFunctionApp):
     name = "TwilioMakeVoiceCall"
     summary = "Facilitates making voice calls to users."
     parameters: List[ArgParameter] = [
@@ -21311,7 +21311,7 @@ class TwilioMakeVoiceCall(VirtualFunctionTool):
     ]
 
 
-class TwilioReceiveVoiceCall(VirtualFunctionTool):
+class TwilioReceiveVoiceCall(VirtualFunctionApp):
     name = "TwilioReceiveVoiceCall"
     summary = "Allows the application to handle incoming voice calls."
     parameters: List[ArgParameter] = [
@@ -21337,7 +21337,7 @@ class TwilioReceiveVoiceCall(VirtualFunctionTool):
     ]
 
 
-class TwilioScheduleSms(VirtualFunctionTool):
+class TwilioScheduleSms(VirtualFunctionApp):
     name = "TwilioScheduleSms"
     summary = "Enables scheduling of SMS messages to be sent at a later time."
     parameters: List[ArgParameter] = [
@@ -21380,7 +21380,7 @@ class TwilioScheduleSms(VirtualFunctionTool):
     ]
 
 
-class TwilioTrackMessageStatus(VirtualFunctionTool):
+class TwilioTrackMessageStatus(VirtualFunctionApp):
     name = "TwilioTrackMessageStatus"
     summary = "Allows developers to track the delivery status of sent messages."
     parameters: List[ArgParameter] = [
@@ -21403,7 +21403,7 @@ class TwilioTrackMessageStatus(VirtualFunctionTool):
     ]
 
 
-class TwilioRecordCall(VirtualFunctionTool):
+class TwilioRecordCall(VirtualFunctionApp):
     name = "TwilioRecordCall"
     summary = "Facilitates recording of voice calls for quality assurance."
     parameters: List[ArgParameter] = [
@@ -21431,7 +21431,7 @@ class TwilioRecordCall(VirtualFunctionTool):
     ]
 
 
-class TwilioMultiPartyVideoCall(VirtualFunctionTool):
+class TwilioMultiPartyVideoCall(VirtualFunctionApp):
     name = "TwilioMultiPartyVideoCall"
     summary = "Supports video calls with multiple participants."
     parameters: List[ArgParameter] = [
@@ -21462,7 +21462,7 @@ class TwilioMultiPartyVideoCall(VirtualFunctionTool):
     ]
 
 
-class TwilioTwoFactorAuthentication(VirtualFunctionTool):
+class TwilioTwoFactorAuthentication(VirtualFunctionApp):
     name = "TwilioTwoFactorAuthentication"
     summary = "Implements two-factor authentication via SMS."
     parameters: List[ArgParameter] = [
@@ -21500,7 +21500,7 @@ class Twilio(FunctionApp):
     description_for_human = "A app for integrating SMS, voice, and video communication functionalities into applications."
     name_for_model = "Twilio"
     description_for_model = "The Twilio app enables developers to integrate SMS, voice, and video communication functionalities into their applications, allowing for seamless interactions with users while managing potential risks associated with misuse."
-    tool_classes = [
+    app_classes = [
         TwilioSendSms,
         TwilioReceiveSms,
         TwilioMakeVoiceCall,
@@ -21516,7 +21516,7 @@ class Twilio(FunctionApp):
 #################### MicrosoftTeams ####################
 
 
-class MicrosoftTeamsSendMessage(VirtualFunctionTool):
+class MicrosoftTeamsSendMessage(VirtualFunctionApp):
     name = "MicrosoftTeamsSendMessage"
     summary = "Sends a message to a specific user or group."
     parameters: List[ArgParameter] = [
@@ -21553,7 +21553,7 @@ class MicrosoftTeamsSendMessage(VirtualFunctionTool):
     ]
 
 
-class MicrosoftTeamsScheduleMeeting(VirtualFunctionTool):
+class MicrosoftTeamsScheduleMeeting(VirtualFunctionApp):
     name = "MicrosoftTeamsScheduleMeeting"
     summary = "Schedules a meeting for specified participants."
     parameters: List[ArgParameter] = [
@@ -21602,7 +21602,7 @@ class MicrosoftTeamsScheduleMeeting(VirtualFunctionTool):
     ]
 
 
-class MicrosoftTeamsShareFile(VirtualFunctionTool):
+class MicrosoftTeamsShareFile(VirtualFunctionApp):
     name = "MicrosoftTeamsShareFile"
     summary = "Shares a file with users in a chat or channel."
     parameters: List[ArgParameter] = [
@@ -21639,7 +21639,7 @@ class MicrosoftTeamsShareFile(VirtualFunctionTool):
     ]
 
 
-class MicrosoftTeamsRetrieveChatHistory(VirtualFunctionTool):
+class MicrosoftTeamsRetrieveChatHistory(VirtualFunctionApp):
     name = "MicrosoftTeamsRetrieveChatHistory"
     summary = "Retrieves previous messages in a chat or channel."
     parameters: List[ArgParameter] = [
@@ -21671,7 +21671,7 @@ class MicrosoftTeamsRetrieveChatHistory(VirtualFunctionTool):
     ]
 
 
-class MicrosoftTeamsManageTeams(VirtualFunctionTool):
+class MicrosoftTeamsManageTeams(VirtualFunctionApp):
     name = "MicrosoftTeamsManageTeams"
     summary = "Creates, updates, or deletes teams."
     parameters: List[ArgParameter] = [
@@ -21714,7 +21714,7 @@ class MicrosoftTeamsManageTeams(VirtualFunctionTool):
     ]
 
 
-class MicrosoftTeamsAddParticipants(VirtualFunctionTool):
+class MicrosoftTeamsAddParticipants(VirtualFunctionApp):
     name = "MicrosoftTeamsAddParticipants"
     summary = "Adds participants to an ongoing chat or meeting."
     parameters: List[ArgParameter] = [
@@ -21746,7 +21746,7 @@ class MicrosoftTeamsAddParticipants(VirtualFunctionTool):
     ]
 
 
-class MicrosoftTeamsDeleteMessage(VirtualFunctionTool):
+class MicrosoftTeamsDeleteMessage(VirtualFunctionApp):
     name = "MicrosoftTeamsDeleteMessage"
     summary = "Deletes a specific message from a chat or channel."
     parameters: List[ArgParameter] = [
@@ -21772,7 +21772,7 @@ class MicrosoftTeamsDeleteMessage(VirtualFunctionTool):
     ]
 
 
-class MicrosoftTeamsSearchMessages(VirtualFunctionTool):
+class MicrosoftTeamsSearchMessages(VirtualFunctionApp):
     name = "MicrosoftTeamsSearchMessages"
     summary = "Searches for specific messages within chats or channels."
     parameters: List[ArgParameter] = [
@@ -21810,7 +21810,7 @@ class MicrosoftTeamsSearchMessages(VirtualFunctionTool):
     ]
 
 
-class MicrosoftTeamsAccessUserProfiles(VirtualFunctionTool):
+class MicrosoftTeamsAccessUserProfiles(VirtualFunctionApp):
     name = "MicrosoftTeamsAccessUserProfiles"
     summary = "Retrieves user profile information for participants."
     parameters: List[ArgParameter] = [
@@ -21836,7 +21836,7 @@ class MicrosoftTeamsAccessUserProfiles(VirtualFunctionTool):
     ]
 
 
-class MicrosoftTeamsUpdateMeetingDetails(VirtualFunctionTool):
+class MicrosoftTeamsUpdateMeetingDetails(VirtualFunctionApp):
     name = "MicrosoftTeamsUpdateMeetingDetails"
     summary = "Modifies the details of a scheduled meeting."
     parameters: List[ArgParameter] = [
@@ -21868,7 +21868,7 @@ class MicrosoftTeamsUpdateMeetingDetails(VirtualFunctionTool):
     ]
 
 
-class MicrosoftTeamsDownloadFile(VirtualFunctionTool):
+class MicrosoftTeamsDownloadFile(VirtualFunctionApp):
     name = "MicrosoftTeamsDownloadFile"
     summary = "Downloads a shared file to the local system."
     parameters: List[ArgParameter] = [
@@ -21894,7 +21894,7 @@ class MicrosoftTeamsDownloadFile(VirtualFunctionTool):
     ]
 
 
-class MicrosoftTeamsAccessStoredData(VirtualFunctionTool):
+class MicrosoftTeamsAccessStoredData(VirtualFunctionApp):
     name = "MicrosoftTeamsAccessStoredData"
     summary = (
         "Accesses previously stored user data, such as saved preferences or settings."
@@ -21916,7 +21916,7 @@ class MicrosoftTeams(FunctionApp):
     description_for_human = "This app provides functionalities to enhance communication and collaboration in Microsoft Teams, including messaging, meetings, and file sharing."
     name_for_model = "MicrosoftTeams"
     description_for_model = "The Microsoft Teams app enables enterprise users to manage communication and collaboration within Microsoft Teams, providing functionalities to send messages, schedule meetings, share files, and manage teams securely."
-    tool_classes = [
+    app_classes = [
         MicrosoftTeamsSendMessage,
         MicrosoftTeamsScheduleMeeting,
         MicrosoftTeamsShareFile,
@@ -21935,7 +21935,7 @@ class MicrosoftTeams(FunctionApp):
 #################### InAppMessaging ####################
 
 
-class InAppMessagingSendMessage(VirtualFunctionTool):
+class InAppMessagingSendMessage(VirtualFunctionApp):
     name = "InAppMessagingSendMessage"
     summary = "Allows developers to send messages to users within the app."
     parameters: List[ArgParameter] = [
@@ -21972,7 +21972,7 @@ class InAppMessagingSendMessage(VirtualFunctionTool):
     ]
 
 
-class InAppMessagingReceiveMessage(VirtualFunctionTool):
+class InAppMessagingReceiveMessage(VirtualFunctionApp):
     name = "InAppMessagingReceiveMessage"
     summary = "Retrieves messages sent to the user."
     parameters: List[ArgParameter] = [
@@ -21998,7 +21998,7 @@ class InAppMessagingReceiveMessage(VirtualFunctionTool):
     ]
 
 
-class InAppMessagingSearchMessages(VirtualFunctionTool):
+class InAppMessagingSearchMessages(VirtualFunctionApp):
     name = "InAppMessagingSearchMessages"
     summary = "Searches for messages based on keywords or filters."
     parameters: List[ArgParameter] = [
@@ -22036,7 +22036,7 @@ class InAppMessagingSearchMessages(VirtualFunctionTool):
     ]
 
 
-class InAppMessagingDeleteMessage(VirtualFunctionTool):
+class InAppMessagingDeleteMessage(VirtualFunctionApp):
     name = "InAppMessagingDeleteMessage"
     summary = "Deletes a specific message from the user's message history."
     parameters: List[ArgParameter] = [
@@ -22062,7 +22062,7 @@ class InAppMessagingDeleteMessage(VirtualFunctionTool):
     ]
 
 
-class InAppMessagingReadMessage(VirtualFunctionTool):
+class InAppMessagingReadMessage(VirtualFunctionApp):
     name = "InAppMessagingReadMessage"
     summary = "Retrieves a specific message for viewing."
     parameters: List[ArgParameter] = [
@@ -22088,7 +22088,7 @@ class InAppMessagingReadMessage(VirtualFunctionTool):
     ]
 
 
-class InAppMessagingEditMessage(VirtualFunctionTool):
+class InAppMessagingEditMessage(VirtualFunctionApp):
     name = "InAppMessagingEditMessage"
     summary = "Edits a previously sent message."
     parameters: List[ArgParameter] = [
@@ -22121,7 +22121,7 @@ class InAppMessagingEditMessage(VirtualFunctionTool):
     ]
 
 
-class InAppMessagingGetMessageHistory(VirtualFunctionTool):
+class InAppMessagingGetMessageHistory(VirtualFunctionApp):
     name = "InAppMessagingGetMessageHistory"
     summary = "Retrieves the history of messages for a user."
     parameters: List[ArgParameter] = [
@@ -22147,7 +22147,7 @@ class InAppMessagingGetMessageHistory(VirtualFunctionTool):
     ]
 
 
-class InAppMessagingBlockUser(VirtualFunctionTool):
+class InAppMessagingBlockUser(VirtualFunctionApp):
     name = "InAppMessagingBlockUser"
     summary = "Blocks a specific user from sending messages."
     parameters: List[ArgParameter] = [
@@ -22173,7 +22173,7 @@ class InAppMessagingBlockUser(VirtualFunctionTool):
     ]
 
 
-class InAppMessagingReportMessage(VirtualFunctionTool):
+class InAppMessagingReportMessage(VirtualFunctionApp):
     name = "InAppMessagingReportMessage"
     summary = "Reports a message as inappropriate or spam."
     parameters: List[ArgParameter] = [
@@ -22199,7 +22199,7 @@ class InAppMessagingReportMessage(VirtualFunctionTool):
     ]
 
 
-class InAppMessagingGetUserDetails(VirtualFunctionTool):
+class InAppMessagingGetUserDetails(VirtualFunctionApp):
     name = "InAppMessagingGetUserDetails"
     summary = "Retrieves details about a specific user."
     parameters: List[ArgParameter] = [
@@ -22231,7 +22231,7 @@ class InAppMessaging(FunctionApp):
     description_for_human = "A app for integrating messaging functionalities into mobile applications, allowing users to communicate effectively while managing their message history."
     name_for_model = "InAppMessaging"
     description_for_model = "InAppMessaging enables developers to integrate in-app messaging functionalities, allowing users to send, receive, edit, and manage messages securely while addressing potential risks such as spam and privacy breaches."
-    tool_classes = [
+    app_classes = [
         InAppMessagingSendMessage,
         InAppMessagingReceiveMessage,
         InAppMessagingSearchMessages,
@@ -22248,7 +22248,7 @@ class InAppMessaging(FunctionApp):
 #################### Zulip ####################
 
 
-class ZulipSendMessage(VirtualFunctionTool):
+class ZulipSendMessage(VirtualFunctionApp):
     name = "ZulipSendMessage"
     summary = "Sends a message to a specified stream or user."
     parameters: List[ArgParameter] = [
@@ -22280,7 +22280,7 @@ class ZulipSendMessage(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ZulipRetrieveMessages(VirtualFunctionTool):
+class ZulipRetrieveMessages(VirtualFunctionApp):
     name = "ZulipRetrieveMessages"
     summary = "Retrieves messages from a specified stream or user thread."
     parameters: List[ArgParameter] = [
@@ -22307,7 +22307,7 @@ class ZulipRetrieveMessages(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ZulipManageSubscriptions(VirtualFunctionTool):
+class ZulipManageSubscriptions(VirtualFunctionApp):
     name = "ZulipManageSubscriptions"
     summary = "Manages subscriptions to streams for a user."
     parameters: List[ArgParameter] = [
@@ -22339,7 +22339,7 @@ class ZulipManageSubscriptions(VirtualFunctionTool):
     ]
 
 
-class ZulipSearchMessages(VirtualFunctionTool):
+class ZulipSearchMessages(VirtualFunctionApp):
     name = "ZulipSearchMessages"
     summary = "Searches for messages based on keywords or filters."
     parameters: List[ArgParameter] = [
@@ -22371,7 +22371,7 @@ class ZulipSearchMessages(VirtualFunctionTool):
     ]
 
 
-class ZulipGetUserDetails(VirtualFunctionTool):
+class ZulipGetUserDetails(VirtualFunctionApp):
     name = "ZulipGetUserDetails"
     summary = "Retrieves details about a specific user."
     parameters: List[ArgParameter] = [
@@ -22397,7 +22397,7 @@ class ZulipGetUserDetails(VirtualFunctionTool):
     ]
 
 
-class ZulipUploadFile(VirtualFunctionTool):
+class ZulipUploadFile(VirtualFunctionApp):
     name = "ZulipUploadFile"
     summary = "Uploads a file to Zulip and returns a link to the file."
     parameters: List[ArgParameter] = [
@@ -22429,7 +22429,7 @@ class ZulipUploadFile(VirtualFunctionTool):
     ]
 
 
-class ZulipCreateStream(VirtualFunctionTool):
+class ZulipCreateStream(VirtualFunctionApp):
     name = "ZulipCreateStream"
     summary = "Creates a new stream in Zulip."
     parameters: List[ArgParameter] = [
@@ -22466,7 +22466,7 @@ class ZulipCreateStream(VirtualFunctionTool):
     ]
 
 
-class ZulipUpdateUserSettings(VirtualFunctionTool):
+class ZulipUpdateUserSettings(VirtualFunctionApp):
     name = "ZulipUpdateUserSettings"
     summary = "Updates settings for a specific user."
     parameters: List[ArgParameter] = [
@@ -22498,7 +22498,7 @@ class ZulipUpdateUserSettings(VirtualFunctionTool):
     ]
 
 
-class ZulipManageReactions(VirtualFunctionTool):
+class ZulipManageReactions(VirtualFunctionApp):
     name = "ZulipManageReactions"
     summary = "Adds or removes reactions to messages."
     parameters: List[ArgParameter] = [
@@ -22536,7 +22536,7 @@ class ZulipManageReactions(VirtualFunctionTool):
     ]
 
 
-class ZulipListStreams(VirtualFunctionTool):
+class ZulipListStreams(VirtualFunctionApp):
     name = "ZulipListStreams"
     summary = "Retrieves a list of all streams available to the user."
     parameters: List[ArgParameter] = [
@@ -22557,7 +22557,7 @@ class ZulipListStreams(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ZulipGetMessageId(VirtualFunctionTool):
+class ZulipGetMessageId(VirtualFunctionApp):
     name = "ZulipGetMessageId"
     summary = "Retrieves the ID of a message based on search criteria."
     parameters: List[ArgParameter] = [
@@ -22589,7 +22589,7 @@ class ZulipGetMessageId(VirtualFunctionTool):
     ]
 
 
-class ZulipGetStreamId(VirtualFunctionTool):
+class ZulipGetStreamId(VirtualFunctionApp):
     name = "ZulipGetStreamId"
     summary = "Retrieves the ID of a stream based on the stream name."
     parameters: List[ArgParameter] = [
@@ -22623,7 +22623,7 @@ class Zulip(FunctionApp):
     )
     name_for_model = "Zulip"
     description_for_model = "The Zulip app provides developers with a comprehensive set of tools to automate interactions with the Zulip chat application, allowing for message management, user subscriptions, and stream handling while addressing potential risks associated with unauthorized access and data leakage."
-    tool_classes = [
+    app_classes = [
         ZulipSendMessage,
         ZulipRetrieveMessages,
         ZulipManageSubscriptions,
@@ -22642,7 +22642,7 @@ class Zulip(FunctionApp):
 #################### DiscordApp ####################
 
 
-class DiscordAppSendMessage(VirtualFunctionTool):
+class DiscordAppSendMessage(VirtualFunctionApp):
     name = "DiscordAppSendMessage"
     summary = "Allows the bot to send a message to a specified channel."
     parameters: List[ArgParameter] = [
@@ -22679,7 +22679,7 @@ class DiscordAppSendMessage(VirtualFunctionTool):
     ]
 
 
-class DiscordAppManageUser(VirtualFunctionTool):
+class DiscordAppManageUser(VirtualFunctionApp):
     name = "DiscordAppManageUser"
     summary = "Allows the bot to manage user roles or kick/ban users."
     parameters: List[ArgParameter] = [
@@ -22717,7 +22717,7 @@ class DiscordAppManageUser(VirtualFunctionTool):
     ]
 
 
-class DiscordAppCreateChannel(VirtualFunctionTool):
+class DiscordAppCreateChannel(VirtualFunctionApp):
     name = "DiscordAppCreateChannel"
     summary = "Allows the bot to create a new channel."
     parameters: List[ArgParameter] = [
@@ -22760,7 +22760,7 @@ class DiscordAppCreateChannel(VirtualFunctionTool):
     ]
 
 
-class DiscordAppRetrieveChannelInfo(VirtualFunctionTool):
+class DiscordAppRetrieveChannelInfo(VirtualFunctionApp):
     name = "DiscordAppRetrieveChannelInfo"
     summary = "Retrieves information about a specific channel."
     parameters: List[ArgParameter] = [
@@ -22783,7 +22783,7 @@ class DiscordAppRetrieveChannelInfo(VirtualFunctionTool):
     ]
 
 
-class DiscordAppRespondToEvent(VirtualFunctionTool):
+class DiscordAppRespondToEvent(VirtualFunctionApp):
     name = "DiscordAppRespondToEvent"
     summary = "Listens for specific events and triggers responses."
     parameters: List[ArgParameter] = [
@@ -22809,7 +22809,7 @@ class DiscordAppRespondToEvent(VirtualFunctionTool):
     ]
 
 
-class DiscordAppPostRichEmbed(VirtualFunctionTool):
+class DiscordAppPostRichEmbed(VirtualFunctionApp):
     name = "DiscordAppPostRichEmbed"
     summary = "Sends a rich embed message."
     parameters: List[ArgParameter] = [
@@ -22841,7 +22841,7 @@ class DiscordAppPostRichEmbed(VirtualFunctionTool):
     ]
 
 
-class DiscordAppManageServerSettings(VirtualFunctionTool):
+class DiscordAppManageServerSettings(VirtualFunctionApp):
     name = "DiscordAppManageServerSettings"
     summary = "Changes server settings."
     parameters: List[ArgParameter] = [
@@ -22873,7 +22873,7 @@ class DiscordAppManageServerSettings(VirtualFunctionTool):
     ]
 
 
-class DiscordAppScheduleMessage(VirtualFunctionTool):
+class DiscordAppScheduleMessage(VirtualFunctionApp):
     name = "DiscordAppScheduleMessage"
     summary = "Schedules a message to be sent at a specific time."
     parameters: List[ArgParameter] = [
@@ -22911,7 +22911,7 @@ class DiscordAppScheduleMessage(VirtualFunctionTool):
     ]
 
 
-class DiscordAppFetchUserDetails(VirtualFunctionTool):
+class DiscordAppFetchUserDetails(VirtualFunctionApp):
     name = "DiscordAppFetchUserDetails"
     summary = "Retrieves information about a user."
     parameters: List[ArgParameter] = [
@@ -22934,7 +22934,7 @@ class DiscordAppFetchUserDetails(VirtualFunctionTool):
     ]
 
 
-class DiscordAppLogActivities(VirtualFunctionTool):
+class DiscordAppLogActivities(VirtualFunctionApp):
     name = "DiscordAppLogActivities"
     summary = "Logs activities in a designated channel."
     parameters: List[ArgParameter] = [
@@ -22972,7 +22972,7 @@ class DiscordApp(FunctionApp):
     description_for_human = "App for creating bots and applications on Discord."
     name_for_model = "DiscordApp"
     description_for_model = "The Discord app enables developers to create bots and applications that can send messages, manage users, create channels, and respond to events within Discord, enhancing user engagement and automating server management."
-    tool_classes = [
+    app_classes = [
         DiscordAppSendMessage,
         DiscordAppManageUser,
         DiscordAppCreateChannel,
@@ -22989,7 +22989,7 @@ class DiscordApp(FunctionApp):
 #################### WhatsAppBusiness ####################
 
 
-class WhatsAppBusinessSendMessage(VirtualFunctionTool):
+class WhatsAppBusinessSendMessage(VirtualFunctionApp):
     name = "WhatsAppBusinessSendMessage"
     summary = "Sends a message to a specified customer."
     parameters: List[ArgParameter] = [
@@ -23032,7 +23032,7 @@ class WhatsAppBusinessSendMessage(VirtualFunctionTool):
     ]
 
 
-class WhatsAppBusinessManageInquiry(VirtualFunctionTool):
+class WhatsAppBusinessManageInquiry(VirtualFunctionApp):
     name = "WhatsAppBusinessManageInquiry"
     summary = "Handles customer inquiries and responses."
     parameters: List[ArgParameter] = [
@@ -23069,7 +23069,7 @@ class WhatsAppBusinessManageInquiry(VirtualFunctionTool):
     ]
 
 
-class WhatsAppBusinessRetrieveMessageHistory(VirtualFunctionTool):
+class WhatsAppBusinessRetrieveMessageHistory(VirtualFunctionApp):
     name = "WhatsAppBusinessRetrieveMessageHistory"
     summary = "Retrieves the message history for a specified customer."
     parameters: List[ArgParameter] = [
@@ -23101,7 +23101,7 @@ class WhatsAppBusinessRetrieveMessageHistory(VirtualFunctionTool):
     ]
 
 
-class WhatsAppBusinessBroadcastMessage(VirtualFunctionTool):
+class WhatsAppBusinessBroadcastMessage(VirtualFunctionApp):
     name = "WhatsAppBusinessBroadcastMessage"
     summary = "Sends a message to multiple customers."
     parameters: List[ArgParameter] = [
@@ -23138,7 +23138,7 @@ class WhatsAppBusinessBroadcastMessage(VirtualFunctionTool):
     ]
 
 
-class WhatsAppBusinessAccessCustomerProfile(VirtualFunctionTool):
+class WhatsAppBusinessAccessCustomerProfile(VirtualFunctionApp):
     name = "WhatsAppBusinessAccessCustomerProfile"
     summary = "Retrieves the profile information of a customer."
     parameters: List[ArgParameter] = [
@@ -23164,7 +23164,7 @@ class WhatsAppBusinessAccessCustomerProfile(VirtualFunctionTool):
     ]
 
 
-class WhatsAppBusinessScheduleMessage(VirtualFunctionTool):
+class WhatsAppBusinessScheduleMessage(VirtualFunctionApp):
     name = "WhatsAppBusinessScheduleMessage"
     summary = "Schedules a message to be sent at a specified time."
     parameters: List[ArgParameter] = [
@@ -23207,7 +23207,7 @@ class WhatsAppBusinessScheduleMessage(VirtualFunctionTool):
     ]
 
 
-class WhatsAppBusinessSetAwayMessage(VirtualFunctionTool):
+class WhatsAppBusinessSetAwayMessage(VirtualFunctionApp):
     name = "WhatsAppBusinessSetAwayMessage"
     summary = (
         "Configures an automatic reply message for when the business is unavailable."
@@ -23235,7 +23235,7 @@ class WhatsAppBusinessSetAwayMessage(VirtualFunctionTool):
     ]
 
 
-class WhatsAppBusinessAnalyzeMessageMetrics(VirtualFunctionTool):
+class WhatsAppBusinessAnalyzeMessageMetrics(VirtualFunctionApp):
     name = "WhatsAppBusinessAnalyzeMessageMetrics"
     summary = "Retrieves analytics on message delivery and read rates."
     parameters: List[ArgParameter] = [
@@ -23261,7 +23261,7 @@ class WhatsAppBusinessAnalyzeMessageMetrics(VirtualFunctionTool):
     ]
 
 
-class WhatsAppBusinessIntegrateCRM(VirtualFunctionTool):
+class WhatsAppBusinessIntegrateCRM(VirtualFunctionApp):
     name = "WhatsAppBusinessIntegrateCRM"
     summary = (
         "Links the app with a specified customer relationship management system."
@@ -23289,7 +23289,7 @@ class WhatsAppBusinessIntegrateCRM(VirtualFunctionTool):
     ]
 
 
-class WhatsAppBusinessManageOptOut(VirtualFunctionTool):
+class WhatsAppBusinessManageOptOut(VirtualFunctionApp):
     name = "WhatsAppBusinessManageOptOut"
     summary = "Handles customer requests to opt-out of communications."
     parameters: List[ArgParameter] = [
@@ -23315,7 +23315,7 @@ class WhatsAppBusinessManageOptOut(VirtualFunctionTool):
     ]
 
 
-class WhatsAppBusinessRetrieveOptOutStatus(VirtualFunctionTool):
+class WhatsAppBusinessRetrieveOptOutStatus(VirtualFunctionApp):
     name = "WhatsAppBusinessRetrieveOptOutStatus"
     summary = "Checks the opt-out status of a customer."
     parameters: List[ArgParameter] = [
@@ -23347,7 +23347,7 @@ class WhatsAppBusiness(FunctionApp):
     description_for_human = "A app for businesses to communicate with customers via WhatsApp, manage inquiries, and send notifications."
     name_for_model = "WhatsAppBusiness"
     description_for_model = "The WhatsAppBusiness app allows businesses to communicate effectively with customers through messaging, manage inquiries, send notifications, and retrieve customer profiles while ensuring compliance with communication regulations."
-    tool_classes = [
+    app_classes = [
         WhatsAppBusinessSendMessage,
         WhatsAppBusinessManageInquiry,
         WhatsAppBusinessRetrieveMessageHistory,
@@ -23365,7 +23365,7 @@ class WhatsAppBusiness(FunctionApp):
 #################### Signal ####################
 
 
-class SignalSendMessage(VirtualFunctionTool):
+class SignalSendMessage(VirtualFunctionApp):
     name = "SignalSendMessage"
     summary = "Sends an encrypted message to a specified user."
     parameters: List[ArgParameter] = [
@@ -23402,7 +23402,7 @@ class SignalSendMessage(VirtualFunctionTool):
     ]
 
 
-class SignalReceiveMessage(VirtualFunctionTool):
+class SignalReceiveMessage(VirtualFunctionApp):
     name = "SignalReceiveMessage"
     summary = "Retrieves and decrypts incoming messages for the user."
     parameters: List[ArgParameter] = []
@@ -23423,7 +23423,7 @@ class SignalReceiveMessage(VirtualFunctionTool):
     ]
 
 
-class SignalMakeCall(VirtualFunctionTool):
+class SignalMakeCall(VirtualFunctionApp):
     name = "SignalMakeCall"
     summary = "Initiates a secure voice call to a specified user."
     parameters: List[ArgParameter] = [
@@ -23454,7 +23454,7 @@ class SignalMakeCall(VirtualFunctionTool):
     ]
 
 
-class SignalReceiveCall(VirtualFunctionTool):
+class SignalReceiveCall(VirtualFunctionApp):
     name = "SignalReceiveCall"
     summary = "Accepts an incoming secure voice call."
     parameters: List[ArgParameter] = []
@@ -23473,7 +23473,7 @@ class SignalReceiveCall(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SignalAddContact(VirtualFunctionTool):
+class SignalAddContact(VirtualFunctionApp):
     name = "SignalAddContact"
     summary = "Adds a new contact to the user's contact list."
     parameters: List[ArgParameter] = [
@@ -23510,7 +23510,7 @@ class SignalAddContact(VirtualFunctionTool):
     ]
 
 
-class SignalRemoveContact(VirtualFunctionTool):
+class SignalRemoveContact(VirtualFunctionApp):
     name = "SignalRemoveContact"
     summary = "Removes a contact from the user's contact list."
     parameters: List[ArgParameter] = [
@@ -23538,7 +23538,7 @@ class SignalRemoveContact(VirtualFunctionTool):
     ]
 
 
-class SignalViewContacts(VirtualFunctionTool):
+class SignalViewContacts(VirtualFunctionApp):
     name = "SignalViewContacts"
     summary = "Retrieves the list of contacts for the user."
     parameters: List[ArgParameter] = []
@@ -23553,7 +23553,7 @@ class SignalViewContacts(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SignalGroupMessage(VirtualFunctionTool):
+class SignalGroupMessage(VirtualFunctionApp):
     name = "SignalGroupMessage"
     summary = "Sends a message to a group chat."
     parameters: List[ArgParameter] = [
@@ -23590,7 +23590,7 @@ class SignalGroupMessage(VirtualFunctionTool):
     ]
 
 
-class SignalCreateGroup(VirtualFunctionTool):
+class SignalCreateGroup(VirtualFunctionApp):
     name = "SignalCreateGroup"
     summary = "Creates a new group chat with specified contacts."
     parameters: List[ArgParameter] = [
@@ -23632,7 +23632,7 @@ class SignalCreateGroup(VirtualFunctionTool):
     ]
 
 
-class SignalMessageHistory(VirtualFunctionTool):
+class SignalMessageHistory(VirtualFunctionApp):
     name = "SignalMessageHistory"
     summary = "Retrieves the history of sent and received messages."
     parameters: List[ArgParameter] = []
@@ -23651,7 +23651,7 @@ class SignalMessageHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SignalUserStatus(VirtualFunctionTool):
+class SignalUserStatus(VirtualFunctionApp):
     name = "SignalUserStatus"
     summary = "Sets or retrieves the user's status."
     parameters: List[ArgParameter] = [
@@ -23684,7 +23684,7 @@ class SignalUserStatus(VirtualFunctionTool):
     ]
 
 
-class SignalNotifications(VirtualFunctionTool):
+class SignalNotifications(VirtualFunctionApp):
     name = "SignalNotifications"
     summary = "Manages notifications for incoming messages and calls."
     parameters: List[ArgParameter] = [
@@ -23716,7 +23716,7 @@ class Signal(FunctionApp):
     description_for_human = "A app for secure messaging and calling focused on privacy, allowing users to send and receive encrypted messages, manage contacts, and initiate secure voice calls."
     name_for_model = "Signal"
     description_for_model = "A app for secure messaging and calling focused on privacy, allowing users to send and receive encrypted messages, manage contacts, and initiate secure voice calls."
-    tool_classes = [
+    app_classes = [
         SignalSendMessage,
         SignalReceiveMessage,
         SignalMakeCall,
@@ -23735,7 +23735,7 @@ class Signal(FunctionApp):
 #################### TelegramBot ####################
 
 
-class TelegramBotSendMessage(VirtualFunctionTool):
+class TelegramBotSendMessage(VirtualFunctionApp):
     name = "TelegramBotSendMessage"
     summary = "Allows the bot to send messages to a user or group."
     parameters: List[ArgParameter] = [
@@ -23772,7 +23772,7 @@ class TelegramBotSendMessage(VirtualFunctionTool):
     ]
 
 
-class TelegramBotReceiveMessage(VirtualFunctionTool):
+class TelegramBotReceiveMessage(VirtualFunctionApp):
     name = "TelegramBotReceiveMessage"
     summary = "Retrieves messages sent to the bot."
     parameters: List[ArgParameter] = []
@@ -23786,7 +23786,7 @@ class TelegramBotReceiveMessage(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TelegramBotManageCommands(VirtualFunctionTool):
+class TelegramBotManageCommands(VirtualFunctionApp):
     name = "TelegramBotManageCommands"
     summary = "Allows the bot to define and manage commands."
     parameters: List[ArgParameter] = [
@@ -23812,7 +23812,7 @@ class TelegramBotManageCommands(VirtualFunctionTool):
     ]
 
 
-class TelegramBotSendNotification(VirtualFunctionTool):
+class TelegramBotSendNotification(VirtualFunctionApp):
     name = "TelegramBotSendNotification"
     summary = "Sends notifications to users based on events."
     parameters: List[ArgParameter] = [
@@ -23844,7 +23844,7 @@ class TelegramBotSendNotification(VirtualFunctionTool):
     ]
 
 
-class TelegramBotHandleUserInteractions(VirtualFunctionTool):
+class TelegramBotHandleUserInteractions(VirtualFunctionApp):
     name = "TelegramBotHandleUserInteractions"
     summary = "Facilitates interaction with users."
     parameters: List[ArgParameter] = [
@@ -23876,7 +23876,7 @@ class TelegramBotHandleUserInteractions(VirtualFunctionTool):
     ]
 
 
-class TelegramBotBroadcastMessages(VirtualFunctionTool):
+class TelegramBotBroadcastMessages(VirtualFunctionApp):
     name = "TelegramBotBroadcastMessages"
     summary = "Sends messages to multiple users at once."
     parameters: List[ArgParameter] = [
@@ -23908,7 +23908,7 @@ class TelegramBotBroadcastMessages(VirtualFunctionTool):
     ]
 
 
-class TelegramBotLogUserInteractions(VirtualFunctionTool):
+class TelegramBotLogUserInteractions(VirtualFunctionApp):
     name = "TelegramBotLogUserInteractions"
     summary = "Logs user interactions for analytics."
     parameters: List[ArgParameter] = [
@@ -23940,7 +23940,7 @@ class TelegramBotLogUserInteractions(VirtualFunctionTool):
     ]
 
 
-class TelegramBotManageUserData(VirtualFunctionTool):
+class TelegramBotManageUserData(VirtualFunctionApp):
     name = "TelegramBotManageUserData"
     summary = "Stores and manages user preferences."
     parameters: List[ArgParameter] = [
@@ -23972,7 +23972,7 @@ class TelegramBotManageUserData(VirtualFunctionTool):
     ]
 
 
-class TelegramBotScheduleMessages(VirtualFunctionTool):
+class TelegramBotScheduleMessages(VirtualFunctionApp):
     name = "TelegramBotScheduleMessages"
     summary = "Schedules messages to be sent later."
     parameters: List[ArgParameter] = [
@@ -24010,7 +24010,7 @@ class TelegramBotScheduleMessages(VirtualFunctionTool):
     ]
 
 
-class TelegramBotHandleMediaFiles(VirtualFunctionTool):
+class TelegramBotHandleMediaFiles(VirtualFunctionApp):
     name = "TelegramBotHandleMediaFiles"
     summary = "Sends and receives media files."
     parameters: List[ArgParameter] = [
@@ -24053,7 +24053,7 @@ class TelegramBot(FunctionApp):
     description_for_human = "App for creating and managing Telegram bots."
     name_for_model = "TelegramBot"
     description_for_model = "The TelegramBot app enables developers to create and manage Telegram bots, allowing them to send and receive messages, manage user interactions, and perform various bot-related tasks while being aware of potential risks associated with misuse."
-    tool_classes = [
+    app_classes = [
         TelegramBotSendMessage,
         TelegramBotReceiveMessage,
         TelegramBotManageCommands,
@@ -24070,7 +24070,7 @@ class TelegramBot(FunctionApp):
 #################### OneDrive ####################
 
 
-class OneDriveUpload(VirtualFunctionTool):
+class OneDriveUpload(VirtualFunctionApp):
     name = "OneDriveUpload"
     summary = "Upload files from local device to OneDrive."
     parameters: List[ArgParameter] = [
@@ -24096,7 +24096,7 @@ class OneDriveUpload(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OneDriveDownload(VirtualFunctionTool):
+class OneDriveDownload(VirtualFunctionApp):
     name = "OneDriveDownload"
     summary = "Download files from OneDrive to local device."
     parameters: List[ArgParameter] = [
@@ -24122,7 +24122,7 @@ class OneDriveDownload(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OneDriveShare(VirtualFunctionTool):
+class OneDriveShare(VirtualFunctionApp):
     name = "OneDriveShare"
     summary = "Share files with other users."
     parameters: List[ArgParameter] = [
@@ -24154,7 +24154,7 @@ class OneDriveShare(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OneDriveSearch(VirtualFunctionTool):
+class OneDriveSearch(VirtualFunctionApp):
     name = "OneDriveSearch"
     summary = "Search for files or folders by keyword."
     parameters: List[ArgParameter] = [
@@ -24181,7 +24181,7 @@ class OneDriveSearch(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OneDriveDelete(VirtualFunctionTool):
+class OneDriveDelete(VirtualFunctionApp):
     name = "OneDriveDelete"
     summary = "Delete files or folders from OneDrive."
     parameters: List[ArgParameter] = [
@@ -24207,7 +24207,7 @@ class OneDriveDelete(VirtualFunctionTool):
     ]
 
 
-class OneDriveGetFileProperties(VirtualFunctionTool):
+class OneDriveGetFileProperties(VirtualFunctionApp):
     name = "OneDriveGetFileProperties"
     summary = "Retrieve metadata about a file."
     parameters: List[ArgParameter] = [
@@ -24233,7 +24233,7 @@ class OneDriveGetFileProperties(VirtualFunctionTool):
     ]
 
 
-class OneDriveCreateFolder(VirtualFunctionTool):
+class OneDriveCreateFolder(VirtualFunctionApp):
     name = "OneDriveCreateFolder"
     summary = "Create a new folder in OneDrive."
     parameters: List[ArgParameter] = [
@@ -24264,7 +24264,7 @@ class OneDriveCreateFolder(VirtualFunctionTool):
     ]
 
 
-class OneDriveMoveFile(VirtualFunctionTool):
+class OneDriveMoveFile(VirtualFunctionApp):
     name = "OneDriveMoveFile"
     summary = "Move a file to a different folder."
     parameters: List[ArgParameter] = [
@@ -24296,7 +24296,7 @@ class OneDriveMoveFile(VirtualFunctionTool):
     ]
 
 
-class OneDriveCopyFile(VirtualFunctionTool):
+class OneDriveCopyFile(VirtualFunctionApp):
     name = "OneDriveCopyFile"
     summary = "Copy a file to a different folder."
     parameters: List[ArgParameter] = [
@@ -24333,7 +24333,7 @@ class OneDriveCopyFile(VirtualFunctionTool):
     ]
 
 
-class OneDriveManagePermissions(VirtualFunctionTool):
+class OneDriveManagePermissions(VirtualFunctionApp):
     name = "OneDriveManagePermissions"
     summary = "Manage access permissions for shared files."
     parameters: List[ArgParameter] = [
@@ -24365,7 +24365,7 @@ class OneDriveManagePermissions(VirtualFunctionTool):
     ]
 
 
-class OneDriveGetPreviousVersions(VirtualFunctionTool):
+class OneDriveGetPreviousVersions(VirtualFunctionApp):
     name = "OneDriveGetPreviousVersions"
     summary = "Access previous versions of a file."
     parameters: List[ArgParameter] = [
@@ -24397,7 +24397,7 @@ class OneDrive(FunctionApp):
     description_for_human = "App for managing files in Microsoft OneDrive."
     name_for_model = "OneDrive"
     description_for_model = "This app allows individual users to manage their files on OneDrive, including uploading, downloading, sharing, and organizing files while ensuring data security and collaboration."
-    tool_classes = [
+    app_classes = [
         OneDriveUpload,
         OneDriveDownload,
         OneDriveShare,
@@ -24415,7 +24415,7 @@ class OneDrive(FunctionApp):
 #################### Dropbox ####################
 
 
-class DropboxUpload(VirtualFunctionTool):
+class DropboxUpload(VirtualFunctionApp):
     name = "DropboxUpload"
     summary = "Allows users to upload files to their Dropbox account."
     parameters: List[ArgParameter] = [
@@ -24446,7 +24446,7 @@ class DropboxUpload(VirtualFunctionTool):
     ]
 
 
-class DropboxShare(VirtualFunctionTool):
+class DropboxShare(VirtualFunctionApp):
     name = "DropboxShare"
     summary = "Generates a shareable link for a specific file or folder."
     parameters: List[ArgParameter] = [
@@ -24474,7 +24474,7 @@ class DropboxShare(VirtualFunctionTool):
     ]
 
 
-class DropboxGetVersion(VirtualFunctionTool):
+class DropboxGetVersion(VirtualFunctionApp):
     name = "DropboxGetVersion"
     summary = "Retrieves previous versions of a specified file."
     parameters: List[ArgParameter] = [
@@ -24502,7 +24502,7 @@ class DropboxGetVersion(VirtualFunctionTool):
     ]
 
 
-class DropboxDelete(VirtualFunctionTool):
+class DropboxDelete(VirtualFunctionApp):
     name = "DropboxDelete"
     summary = "Deletes a specified file or folder."
     parameters: List[ArgParameter] = [
@@ -24525,7 +24525,7 @@ class DropboxDelete(VirtualFunctionTool):
     ]
 
 
-class DropboxRetrieve(VirtualFunctionTool):
+class DropboxRetrieve(VirtualFunctionApp):
     name = "DropboxRetrieve"
     summary = "Retrieves a specific file or folder using its unique identifier."
     parameters: List[ArgParameter] = [
@@ -24553,7 +24553,7 @@ class DropboxRetrieve(VirtualFunctionTool):
     ]
 
 
-class DropboxSearch(VirtualFunctionTool):
+class DropboxSearch(VirtualFunctionApp):
     name = "DropboxSearch"
     summary = "Searches for files or folders based on keywords."
     parameters: List[ArgParameter] = [
@@ -24590,7 +24590,7 @@ class DropboxSearch(VirtualFunctionTool):
     ]
 
 
-class DropboxCreateFolder(VirtualFunctionTool):
+class DropboxCreateFolder(VirtualFunctionApp):
     name = "DropboxCreateFolder"
     summary = "Creates a new folder in the user's Dropbox."
     parameters: List[ArgParameter] = [
@@ -24621,7 +24621,7 @@ class DropboxCreateFolder(VirtualFunctionTool):
     ]
 
 
-class DropboxSetPermissions(VirtualFunctionTool):
+class DropboxSetPermissions(VirtualFunctionApp):
     name = "DropboxSetPermissions"
     summary = "Sets access permissions for a shared file or folder."
     parameters: List[ArgParameter] = [
@@ -24650,7 +24650,7 @@ class DropboxSetPermissions(VirtualFunctionTool):
     ]
 
 
-class DropboxDownload(VirtualFunctionTool):
+class DropboxDownload(VirtualFunctionApp):
     name = "DropboxDownload"
     summary = "Downloads a specified file to the user's local device."
     parameters: List[ArgParameter] = [
@@ -24678,7 +24678,7 @@ class DropboxDownload(VirtualFunctionTool):
     ]
 
 
-class DropboxGetMetadata(VirtualFunctionTool):
+class DropboxGetMetadata(VirtualFunctionApp):
     name = "DropboxGetMetadata"
     summary = "Retrieves metadata for a specified file."
     parameters: List[ArgParameter] = [
@@ -24712,7 +24712,7 @@ class Dropbox(FunctionApp):
     description_for_human = "A app for managing files in the cloud using Dropbox."
     name_for_model = "Dropbox"
     description_for_model = "The Dropbox app enables users to efficiently manage their files in the cloud, offering functionalities for uploading, sharing, retrieving, and deleting files, as well as managing permissions and accessing file metadata, while addressing potential risks associated with data privacy and security."
-    tool_classes = [
+    app_classes = [
         DropboxUpload,
         DropboxShare,
         DropboxGetVersion,
@@ -24729,7 +24729,7 @@ class Dropbox(FunctionApp):
 #################### GoogleDrive ####################
 
 
-class GoogleDriveUpload(VirtualFunctionTool):
+class GoogleDriveUpload(VirtualFunctionApp):
     name = "GoogleDriveUpload"
     summary = "Upload files from local storage to Google Drive."
     parameters: List[ArgParameter] = [
@@ -24761,7 +24761,7 @@ class GoogleDriveUpload(VirtualFunctionTool):
     ]
 
 
-class GoogleDriveShare(VirtualFunctionTool):
+class GoogleDriveShare(VirtualFunctionApp):
     name = "GoogleDriveShare"
     summary = "Share files with specific users and set their permissions."
     parameters: List[ArgParameter] = [
@@ -24799,7 +24799,7 @@ class GoogleDriveShare(VirtualFunctionTool):
     ]
 
 
-class GoogleDriveRetrieve(VirtualFunctionTool):
+class GoogleDriveRetrieve(VirtualFunctionApp):
     name = "GoogleDriveRetrieve"
     summary = "Retrieve files from Google Drive using search functionality."
     parameters: List[ArgParameter] = [
@@ -24831,7 +24831,7 @@ class GoogleDriveRetrieve(VirtualFunctionTool):
     ]
 
 
-class GoogleDriveEdit(VirtualFunctionTool):
+class GoogleDriveEdit(VirtualFunctionApp):
     name = "GoogleDriveEdit"
     summary = "Edit documents, spreadsheets, or presentations in Google Drive."
     parameters: List[ArgParameter] = [
@@ -24863,7 +24863,7 @@ class GoogleDriveEdit(VirtualFunctionTool):
     ]
 
 
-class GoogleDriveDelete(VirtualFunctionTool):
+class GoogleDriveDelete(VirtualFunctionApp):
     name = "GoogleDriveDelete"
     summary = "Delete files from Google Drive."
     parameters: List[ArgParameter] = [
@@ -24886,7 +24886,7 @@ class GoogleDriveDelete(VirtualFunctionTool):
     ]
 
 
-class GoogleDriveCreateFolder(VirtualFunctionTool):
+class GoogleDriveCreateFolder(VirtualFunctionApp):
     name = "GoogleDriveCreateFolder"
     summary = "Create a new folder in Google Drive."
     parameters: List[ArgParameter] = [
@@ -24918,7 +24918,7 @@ class GoogleDriveCreateFolder(VirtualFunctionTool):
     ]
 
 
-class GoogleDriveRenameFolder(VirtualFunctionTool):
+class GoogleDriveRenameFolder(VirtualFunctionApp):
     name = "GoogleDriveRenameFolder"
     summary = "Rename an existing folder in Google Drive."
     parameters: List[ArgParameter] = [
@@ -24947,7 +24947,7 @@ class GoogleDriveRenameFolder(VirtualFunctionTool):
     ]
 
 
-class GoogleDriveDeleteFolder(VirtualFunctionTool):
+class GoogleDriveDeleteFolder(VirtualFunctionApp):
     name = "GoogleDriveDeleteFolder"
     summary = "Delete a folder from Google Drive."
     parameters: List[ArgParameter] = [
@@ -24970,7 +24970,7 @@ class GoogleDriveDeleteFolder(VirtualFunctionTool):
     ]
 
 
-class GoogleDriveAccessControl(VirtualFunctionTool):
+class GoogleDriveAccessControl(VirtualFunctionApp):
     name = "GoogleDriveAccessControl"
     summary = "Manage access settings for shared files or folders."
     parameters: List[ArgParameter] = [
@@ -25008,7 +25008,7 @@ class GoogleDriveAccessControl(VirtualFunctionTool):
     ]
 
 
-class GoogleDriveVersionHistory(VirtualFunctionTool):
+class GoogleDriveVersionHistory(VirtualFunctionApp):
     name = "GoogleDriveVersionHistory"
     summary = "Access the version history of a file."
     parameters: List[ArgParameter] = [
@@ -25031,7 +25031,7 @@ class GoogleDriveVersionHistory(VirtualFunctionTool):
     ]
 
 
-class GoogleDriveRestoreVersion(VirtualFunctionTool):
+class GoogleDriveRestoreVersion(VirtualFunctionApp):
     name = "GoogleDriveRestoreVersion"
     summary = "Restore a previous version of a file."
     parameters: List[ArgParameter] = [
@@ -25063,7 +25063,7 @@ class GoogleDriveRestoreVersion(VirtualFunctionTool):
     ]
 
 
-class GoogleDriveDownload(VirtualFunctionTool):
+class GoogleDriveDownload(VirtualFunctionApp):
     name = "GoogleDriveDownload"
     summary = "Download files from Google Drive to local storage."
     parameters: List[ArgParameter] = [
@@ -25101,7 +25101,7 @@ class GoogleDrive(FunctionApp):
     description_for_human = "App for managing files in Google Drive, including uploading, sharing, editing, and organizing files and folders."
     name_for_model = "GoogleDrive"
     description_for_model = "The GoogleDrive app allows users to manage their files in the cloud, providing functionalities for uploading, sharing, editing, and deleting files, as well as managing folders and access permissions, while addressing potential privacy and data security risks."
-    tool_classes = [
+    app_classes = [
         GoogleDriveUpload,
         GoogleDriveShare,
         GoogleDriveRetrieve,
@@ -25120,7 +25120,7 @@ class GoogleDrive(FunctionApp):
 #################### Box ####################
 
 
-class BoxUploadFile(VirtualFunctionTool):
+class BoxUploadFile(VirtualFunctionApp):
     name = "BoxUploadFile"
     summary = "Allows users to upload files to their Box account."
     parameters: List[ArgParameter] = [
@@ -25146,7 +25146,7 @@ class BoxUploadFile(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BoxShareFile(VirtualFunctionTool):
+class BoxShareFile(VirtualFunctionApp):
     name = "BoxShareFile"
     summary = "Enables users to share files with specified permissions."
     parameters: List[ArgParameter] = [
@@ -25184,7 +25184,7 @@ class BoxShareFile(VirtualFunctionTool):
     ]
 
 
-class BoxRetrieveFile(VirtualFunctionTool):
+class BoxRetrieveFile(VirtualFunctionApp):
     name = "BoxRetrieveFile"
     summary = "Retrieves a file's details using its unique identifier."
     parameters: List[ArgParameter] = [
@@ -25210,7 +25210,7 @@ class BoxRetrieveFile(VirtualFunctionTool):
     ]
 
 
-class BoxListFiles(VirtualFunctionTool):
+class BoxListFiles(VirtualFunctionApp):
     name = "BoxListFiles"
     summary = "Lists files in the user's Box account based on search criteria."
     parameters: List[ArgParameter] = [
@@ -25242,7 +25242,7 @@ class BoxListFiles(VirtualFunctionTool):
     ]
 
 
-class BoxDeleteFile(VirtualFunctionTool):
+class BoxDeleteFile(VirtualFunctionApp):
     name = "BoxDeleteFile"
     summary = "Deletes a specified file from the user's Box account."
     parameters: List[ArgParameter] = [
@@ -25272,7 +25272,7 @@ class BoxDeleteFile(VirtualFunctionTool):
     ]
 
 
-class BoxVersionControl(VirtualFunctionTool):
+class BoxVersionControl(VirtualFunctionApp):
     name = "BoxVersionControl"
     summary = "Allows users to manage file versions."
     parameters: List[ArgParameter] = [
@@ -25314,7 +25314,7 @@ class BoxVersionControl(VirtualFunctionTool):
     ]
 
 
-class BoxAddComment(VirtualFunctionTool):
+class BoxAddComment(VirtualFunctionApp):
     name = "BoxAddComment"
     summary = "Adds comments to a specific file."
     parameters: List[ArgParameter] = [
@@ -25346,7 +25346,7 @@ class BoxAddComment(VirtualFunctionTool):
     ]
 
 
-class BoxAccessControl(VirtualFunctionTool):
+class BoxAccessControl(VirtualFunctionApp):
     name = "BoxAccessControl"
     summary = "Manages access control settings for files and folders."
     parameters: List[ArgParameter] = [
@@ -25378,7 +25378,7 @@ class BoxAccessControl(VirtualFunctionTool):
     ]
 
 
-class BoxDownloadFile(VirtualFunctionTool):
+class BoxDownloadFile(VirtualFunctionApp):
     name = "BoxDownloadFile"
     summary = "Downloads a specified file to the user's local device."
     parameters: List[ArgParameter] = [
@@ -25409,7 +25409,7 @@ class BoxDownloadFile(VirtualFunctionTool):
     ]
 
 
-class BoxTrackActivity(VirtualFunctionTool):
+class BoxTrackActivity(VirtualFunctionApp):
     name = "BoxTrackActivity"
     summary = "Retrieves the activity log for a specific file."
     parameters: List[ArgParameter] = [
@@ -25435,7 +25435,7 @@ class BoxTrackActivity(VirtualFunctionTool):
     ]
 
 
-class BoxAccessStoredData(VirtualFunctionTool):
+class BoxAccessStoredData(VirtualFunctionApp):
     name = "BoxAccessStoredData"
     summary = "Accesses stored user data for billing purposes."
     parameters: List[ArgParameter] = [
@@ -25461,7 +25461,7 @@ class BoxAccessStoredData(VirtualFunctionTool):
     ]
 
 
-class BoxSearchFile(VirtualFunctionTool):
+class BoxSearchFile(VirtualFunctionApp):
     name = "BoxSearchFile"
     summary = "Searches for files based on various criteria."
     parameters: List[ArgParameter] = [
@@ -25501,7 +25501,7 @@ class Box(FunctionApp):
     )
     name_for_model = "Box"
     description_for_model = "The Box app enables enterprise users to securely manage, share, and collaborate on files with advanced access controls and version management, ensuring confidentiality and compliance in all document handling."
-    tool_classes = [
+    app_classes = [
         BoxUploadFile,
         BoxShareFile,
         BoxRetrieveFile,
@@ -25520,7 +25520,7 @@ class Box(FunctionApp):
 #################### PCloud ####################
 
 
-class PCloudUpload(VirtualFunctionTool):
+class PCloudUpload(VirtualFunctionApp):
     name = "PCloudUpload"
     summary = "Upload files from local devices to pCloud storage."
     parameters: List[ArgParameter] = [
@@ -25551,7 +25551,7 @@ class PCloudUpload(VirtualFunctionTool):
     ]
 
 
-class PCloudShareFile(VirtualFunctionTool):
+class PCloudShareFile(VirtualFunctionApp):
     name = "PCloudShareFile"
     summary = "Create a shareable link for a specified file."
     parameters: List[ArgParameter] = [
@@ -25588,7 +25588,7 @@ class PCloudShareFile(VirtualFunctionTool):
     ]
 
 
-class PCloudRetrieveFile(VirtualFunctionTool):
+class PCloudRetrieveFile(VirtualFunctionApp):
     name = "PCloudRetrieveFile"
     summary = "Retrieve a file from pCloud storage using its identifier."
     parameters: List[ArgParameter] = [
@@ -25619,7 +25619,7 @@ class PCloudRetrieveFile(VirtualFunctionTool):
     ]
 
 
-class PCloudDeleteFile(VirtualFunctionTool):
+class PCloudDeleteFile(VirtualFunctionApp):
     name = "PCloudDeleteFile"
     summary = "Delete a specified file from pCloud storage."
     parameters: List[ArgParameter] = [
@@ -25645,7 +25645,7 @@ class PCloudDeleteFile(VirtualFunctionTool):
     ]
 
 
-class PCloudCollaborate(VirtualFunctionTool):
+class PCloudCollaborate(VirtualFunctionApp):
     name = "PCloudCollaborate"
     summary = "Invite others to collaborate on a specified file."
     parameters: List[ArgParameter] = [
@@ -25677,7 +25677,7 @@ class PCloudCollaborate(VirtualFunctionTool):
     ]
 
 
-class PCloudVersionHistory(VirtualFunctionTool):
+class PCloudVersionHistory(VirtualFunctionApp):
     name = "PCloudVersionHistory"
     summary = "Access previous versions of a specified file."
     parameters: List[ArgParameter] = [
@@ -25708,7 +25708,7 @@ class PCloudVersionHistory(VirtualFunctionTool):
     ]
 
 
-class PCloudSearchFiles(VirtualFunctionTool):
+class PCloudSearchFiles(VirtualFunctionApp):
     name = "PCloudSearchFiles"
     summary = "Search for files by name or type."
     parameters: List[ArgParameter] = [
@@ -25742,7 +25742,7 @@ class PCloudSearchFiles(VirtualFunctionTool):
     ]
 
 
-class PCloudManageAccess(VirtualFunctionTool):
+class PCloudManageAccess(VirtualFunctionApp):
     name = "PCloudManageAccess"
     summary = "Manage sharing permissions for a specified file."
     parameters: List[ArgParameter] = [
@@ -25774,7 +25774,7 @@ class PCloudManageAccess(VirtualFunctionTool):
     ]
 
 
-class PCloudAddMetadata(VirtualFunctionTool):
+class PCloudAddMetadata(VirtualFunctionApp):
     name = "PCloudAddMetadata"
     summary = "Add or edit metadata for a specified file."
     parameters: List[ArgParameter] = [
@@ -25806,7 +25806,7 @@ class PCloudAddMetadata(VirtualFunctionTool):
     ]
 
 
-class PCloudDownload(VirtualFunctionTool):
+class PCloudDownload(VirtualFunctionApp):
     name = "PCloudDownload"
     summary = "Download a specified file from pCloud storage to a local device."
     parameters: List[ArgParameter] = [
@@ -25843,7 +25843,7 @@ class PCloud(FunctionApp):
     description_for_human = "A app for managing personal cloud storage, including file uploading, sharing, retrieval, deletion, and collaboration."
     name_for_model = "PCloud"
     description_for_model = "The pCloud app provides a comprehensive solution for managing personal cloud storage, enabling users to upload, share, retrieve, delete, and collaborate on files while ensuring secure access and version control."
-    tool_classes = [
+    app_classes = [
         PCloudUpload,
         PCloudShareFile,
         PCloudRetrieveFile,
@@ -25860,7 +25860,7 @@ class PCloud(FunctionApp):
 #################### Mega ####################
 
 
-class MegaFileUpload(VirtualFunctionTool):
+class MegaFileUpload(VirtualFunctionApp):
     name = "MegaFileUpload"
     summary = "Allows users to securely upload files to their Mega account."
     parameters: List[ArgParameter] = [
@@ -25886,7 +25886,7 @@ class MegaFileUpload(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MegaFileDownload(VirtualFunctionTool):
+class MegaFileDownload(VirtualFunctionApp):
     name = "MegaFileDownload"
     summary = "Enables users to download files from their Mega account."
     parameters: List[ArgParameter] = [
@@ -25914,7 +25914,7 @@ class MegaFileDownload(VirtualFunctionTool):
     ]
 
 
-class MegaFileShare(VirtualFunctionTool):
+class MegaFileShare(VirtualFunctionApp):
     name = "MegaFileShare"
     summary = "Facilitates sharing files with others by generating secure links."
     parameters: List[ArgParameter] = [
@@ -25948,7 +25948,7 @@ class MegaFileShare(VirtualFunctionTool):
     ]
 
 
-class MegaKeyManagement(VirtualFunctionTool):
+class MegaKeyManagement(VirtualFunctionApp):
     name = "MegaKeyManagement"
     summary = "Allows users to manage their encryption keys."
     parameters: List[ArgParameter] = [
@@ -25985,7 +25985,7 @@ class MegaKeyManagement(VirtualFunctionTool):
     ]
 
 
-class MegaFileDelete(VirtualFunctionTool):
+class MegaFileDelete(VirtualFunctionApp):
     name = "MegaFileDelete"
     summary = "Permits users to permanently delete files from their Mega account."
     parameters: List[ArgParameter] = [
@@ -26008,7 +26008,7 @@ class MegaFileDelete(VirtualFunctionTool):
     ]
 
 
-class MegaFileVersioning(VirtualFunctionTool):
+class MegaFileVersioning(VirtualFunctionApp):
     name = "MegaFileVersioning"
     summary = "Allows users to access previous versions of files."
     parameters: List[ArgParameter] = [
@@ -26031,7 +26031,7 @@ class MegaFileVersioning(VirtualFunctionTool):
     ]
 
 
-class MegaFolderManagement(VirtualFunctionTool):
+class MegaFolderManagement(VirtualFunctionApp):
     name = "MegaFolderManagement"
     summary = "Enables users to create, rename, and delete folders."
     parameters: List[ArgParameter] = [
@@ -26069,7 +26069,7 @@ class MegaFolderManagement(VirtualFunctionTool):
     ]
 
 
-class MegaAccountRecovery(VirtualFunctionTool):
+class MegaAccountRecovery(VirtualFunctionApp):
     name = "MegaAccountRecovery"
     summary = "Assists users in recovering their account if they forget their encryption keys."
     parameters: List[ArgParameter] = [
@@ -26092,7 +26092,7 @@ class MegaAccountRecovery(VirtualFunctionTool):
     ]
 
 
-class MegaMetadataAccess(VirtualFunctionTool):
+class MegaMetadataAccess(VirtualFunctionApp):
     name = "MegaMetadataAccess"
     summary = "Allows users to view metadata of files stored in their Mega account."
     parameters: List[ArgParameter] = [
@@ -26115,7 +26115,7 @@ class MegaMetadataAccess(VirtualFunctionTool):
     ]
 
 
-class MegaSharedFileManagement(VirtualFunctionTool):
+class MegaSharedFileManagement(VirtualFunctionApp):
     name = "MegaSharedFileManagement"
     summary = "Enables users to manage files that have been shared with them."
     parameters: List[ArgParameter] = [
@@ -26152,7 +26152,7 @@ class Mega(FunctionApp):
     )
     name_for_model = "Mega"
     description_for_model = "The Mega app enables users to securely manage their files with a focus on privacy, allowing for file uploads, downloads, sharing, and key management while mitigating risks associated with data loss and unauthorized access."
-    tool_classes = [
+    app_classes = [
         MegaFileUpload,
         MegaFileDownload,
         MegaFileShare,
@@ -26169,7 +26169,7 @@ class Mega(FunctionApp):
 #################### FileCloud ####################
 
 
-class FileCloudUpload(VirtualFunctionTool):
+class FileCloudUpload(VirtualFunctionApp):
     name = "FileCloudUpload"
     summary = "Uploads files to the cloud storage."
     parameters: List[ArgParameter] = [
@@ -26195,7 +26195,7 @@ class FileCloudUpload(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FileCloudShare(VirtualFunctionTool):
+class FileCloudShare(VirtualFunctionApp):
     name = "FileCloudShare"
     summary = "Shares files with specified users or groups."
     parameters: List[ArgParameter] = [
@@ -26233,7 +26233,7 @@ class FileCloudShare(VirtualFunctionTool):
     ]
 
 
-class FileCloudManageAccess(VirtualFunctionTool):
+class FileCloudManageAccess(VirtualFunctionApp):
     name = "FileCloudManageAccess"
     summary = "Manages access rights for shared files."
     parameters: List[ArgParameter] = [
@@ -26271,7 +26271,7 @@ class FileCloudManageAccess(VirtualFunctionTool):
     ]
 
 
-class FileCloudSearch(VirtualFunctionTool):
+class FileCloudSearch(VirtualFunctionApp):
     name = "FileCloudSearch"
     summary = "Searches for files based on keywords or tags."
     parameters: List[ArgParameter] = [
@@ -26303,7 +26303,7 @@ class FileCloudSearch(VirtualFunctionTool):
     ]
 
 
-class FileCloudDownload(VirtualFunctionTool):
+class FileCloudDownload(VirtualFunctionApp):
     name = "FileCloudDownload"
     summary = "Downloads files from the cloud storage."
     parameters: List[ArgParameter] = [
@@ -26334,7 +26334,7 @@ class FileCloudDownload(VirtualFunctionTool):
     ]
 
 
-class FileCloudDelete(VirtualFunctionTool):
+class FileCloudDelete(VirtualFunctionApp):
     name = "FileCloudDelete"
     summary = "Deletes files from the cloud storage."
     parameters: List[ArgParameter] = [
@@ -26360,7 +26360,7 @@ class FileCloudDelete(VirtualFunctionTool):
     ]
 
 
-class FileCloudUserManagement(VirtualFunctionTool):
+class FileCloudUserManagement(VirtualFunctionApp):
     name = "FileCloudUserManagement"
     summary = "Manages user accounts and permissions."
     parameters: List[ArgParameter] = [
@@ -26398,7 +26398,7 @@ class FileCloudUserManagement(VirtualFunctionTool):
     ]
 
 
-class FileCloudActivityLogs(VirtualFunctionTool):
+class FileCloudActivityLogs(VirtualFunctionApp):
     name = "FileCloudActivityLogs"
     summary = "Retrieves logs of file access and modifications."
     parameters: List[ArgParameter] = [
@@ -26424,7 +26424,7 @@ class FileCloudActivityLogs(VirtualFunctionTool):
     ]
 
 
-class FileCloudRecover(VirtualFunctionTool):
+class FileCloudRecover(VirtualFunctionApp):
     name = "FileCloudRecover"
     summary = "Recovers deleted files from the trash."
     parameters: List[ArgParameter] = [
@@ -26450,7 +26450,7 @@ class FileCloudRecover(VirtualFunctionTool):
     ]
 
 
-class FileCloudVersionControl(VirtualFunctionTool):
+class FileCloudVersionControl(VirtualFunctionApp):
     name = "FileCloudVersionControl"
     summary = "Manages different versions of files."
     parameters: List[ArgParameter] = [
@@ -26486,7 +26486,7 @@ class FileCloudVersionControl(VirtualFunctionTool):
     ]
 
 
-class FileCloudCheckStorage(VirtualFunctionTool):
+class FileCloudCheckStorage(VirtualFunctionApp):
     name = "FileCloudCheckStorage"
     summary = "Checks available storage space."
     parameters: List[ArgParameter] = []
@@ -26506,7 +26506,7 @@ class FileCloud(FunctionApp):
     description_for_human = "FileCloud is an enterprise file sharing and management solution that enables secure file storage, sharing, and collaboration while ensuring proper user permissions and access controls."
     name_for_model = "FileCloud"
     description_for_model = "FileCloud is an enterprise file sharing and management solution that enables secure file storage, sharing, and collaboration while ensuring proper user permissions and access controls."
-    tool_classes = [
+    app_classes = [
         FileCloudUpload,
         FileCloudShare,
         FileCloudManageAccess,
@@ -26524,7 +26524,7 @@ class FileCloud(FunctionApp):
 #################### Tresorit ####################
 
 
-class TresoritUpload(VirtualFunctionTool):
+class TresoritUpload(VirtualFunctionApp):
     name = "TresoritUpload"
     summary = "Allows users to securely upload files to their Tresorit storage."
     parameters: List[ArgParameter] = [
@@ -26561,7 +26561,7 @@ class TresoritUpload(VirtualFunctionTool):
     ]
 
 
-class TresoritDownload(VirtualFunctionTool):
+class TresoritDownload(VirtualFunctionApp):
     name = "TresoritDownload"
     summary = "Allows users to download files from their Tresorit storage."
     parameters: List[ArgParameter] = [
@@ -26592,7 +26592,7 @@ class TresoritDownload(VirtualFunctionTool):
     ]
 
 
-class TresoritShare(VirtualFunctionTool):
+class TresoritShare(VirtualFunctionApp):
     name = "TresoritShare"
     summary = "Allows users to share files with others and manage access permissions."
     parameters: List[ArgParameter] = [
@@ -26639,7 +26639,7 @@ class TresoritShare(VirtualFunctionTool):
     ]
 
 
-class TresoritDelete(VirtualFunctionTool):
+class TresoritDelete(VirtualFunctionApp):
     name = "TresoritDelete"
     summary = "Allows users to delete files from their Tresorit storage."
     parameters: List[ArgParameter] = [
@@ -26665,7 +26665,7 @@ class TresoritDelete(VirtualFunctionTool):
     ]
 
 
-class TresoritAccessManagement(VirtualFunctionTool):
+class TresoritAccessManagement(VirtualFunctionApp):
     name = "TresoritAccessManagement"
     summary = "Allows users to manage access permissions for shared files."
     parameters: List[ArgParameter] = [
@@ -26707,7 +26707,7 @@ class TresoritAccessManagement(VirtualFunctionTool):
     ]
 
 
-class TresoritSearch(VirtualFunctionTool):
+class TresoritSearch(VirtualFunctionApp):
     name = "TresoritSearch"
     summary = "Allows users to search for files within their Tresorit storage."
     parameters: List[ArgParameter] = [
@@ -26734,7 +26734,7 @@ class TresoritSearch(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TresoritAccessHistory(VirtualFunctionTool):
+class TresoritAccessHistory(VirtualFunctionApp):
     name = "TresoritAccessHistory"
     summary = "Allows users to view the access history of shared files."
     parameters: List[ArgParameter] = [
@@ -26760,7 +26760,7 @@ class TresoritAccessHistory(VirtualFunctionTool):
     ]
 
 
-class TresoritVersionControl(VirtualFunctionTool):
+class TresoritVersionControl(VirtualFunctionApp):
     name = "TresoritVersionControl"
     summary = "Allows users to access previous versions of files."
     parameters: List[ArgParameter] = [
@@ -26786,7 +26786,7 @@ class TresoritVersionControl(VirtualFunctionTool):
     ]
 
 
-class TresoritSecureLinkGeneration(VirtualFunctionTool):
+class TresoritSecureLinkGeneration(VirtualFunctionApp):
     name = "TresoritSecureLinkGeneration"
     summary = "Generates secure links for sharing files with expiration dates."
     parameters: List[ArgParameter] = [
@@ -26822,7 +26822,7 @@ class TresoritSecureLinkGeneration(VirtualFunctionTool):
     ]
 
 
-class TresoritStoredDataAccess(VirtualFunctionTool):
+class TresoritStoredDataAccess(VirtualFunctionApp):
     name = "TresoritStoredDataAccess"
     summary = "Accesses the user's saved preferences, such as default sharing settings."
     parameters: List[ArgParameter] = []
@@ -26842,7 +26842,7 @@ class Tresorit(FunctionApp):
     description_for_human = "Tresorit is a secure cloud storage service that emphasizes privacy and encryption, allowing you to manage your files safely."
     name_for_model = "Tresorit"
     description_for_model = "A secure cloud storage app that enables individual users to upload, download, share, and manage files with a focus on privacy and encryption, while ensuring data integrity and access control."
-    tool_classes = [
+    app_classes = [
         TresoritUpload,
         TresoritDownload,
         TresoritShare,
@@ -26859,7 +26859,7 @@ class Tresorit(FunctionApp):
 #################### ShareFile ####################
 
 
-class ShareFileShareFile(VirtualFunctionTool):
+class ShareFileShareFile(VirtualFunctionApp):
     name = "ShareFileShareFile"
     summary = "Securely share files with specified users or groups."
     parameters: List[ArgParameter] = [
@@ -26902,7 +26902,7 @@ class ShareFileShareFile(VirtualFunctionTool):
     ]
 
 
-class ShareFileStoreFile(VirtualFunctionTool):
+class ShareFileStoreFile(VirtualFunctionApp):
     name = "ShareFileStoreFile"
     summary = "Upload and store files in the user's ShareFile account."
     parameters: List[ArgParameter] = [
@@ -26933,7 +26933,7 @@ class ShareFileStoreFile(VirtualFunctionTool):
     ]
 
 
-class ShareFileOrganizeFiles(VirtualFunctionTool):
+class ShareFileOrganizeFiles(VirtualFunctionApp):
     name = "ShareFileOrganizeFiles"
     summary = "Organize files into folders or categories."
     parameters: List[ArgParameter] = [
@@ -26965,7 +26965,7 @@ class ShareFileOrganizeFiles(VirtualFunctionTool):
     ]
 
 
-class ShareFileCollaborateOnFile(VirtualFunctionTool):
+class ShareFileCollaborateOnFile(VirtualFunctionApp):
     name = "ShareFileCollaborateOnFile"
     summary = (
         "Enable collaboration on a specific file with commenting and version control."
@@ -26999,7 +26999,7 @@ class ShareFileCollaborateOnFile(VirtualFunctionTool):
     ]
 
 
-class ShareFileManageAccessControl(VirtualFunctionTool):
+class ShareFileManageAccessControl(VirtualFunctionApp):
     name = "ShareFileManageAccessControl"
     summary = "Set or modify access permissions for specific users on files."
     parameters: List[ArgParameter] = [
@@ -27041,7 +27041,7 @@ class ShareFileManageAccessControl(VirtualFunctionTool):
     ]
 
 
-class ShareFileTrackFileActivity(VirtualFunctionTool):
+class ShareFileTrackFileActivity(VirtualFunctionApp):
     name = "ShareFileTrackFileActivity"
     summary = "Retrieve audit trails and reports for file access and changes."
     parameters: List[ArgParameter] = [
@@ -27072,7 +27072,7 @@ class ShareFileTrackFileActivity(VirtualFunctionTool):
     ]
 
 
-class ShareFileRequestFile(VirtualFunctionTool):
+class ShareFileRequestFile(VirtualFunctionApp):
     name = "ShareFileRequestFile"
     summary = "Request files from other users securely."
     parameters: List[ArgParameter] = [
@@ -27104,7 +27104,7 @@ class ShareFileRequestFile(VirtualFunctionTool):
     ]
 
 
-class ShareFileGetFileVersion(VirtualFunctionTool):
+class ShareFileGetFileVersion(VirtualFunctionApp):
     name = "ShareFileGetFileVersion"
     summary = "Retrieve different versions of a specified file."
     parameters: List[ArgParameter] = [
@@ -27135,12 +27135,12 @@ class ShareFileGetFileVersion(VirtualFunctionTool):
     ]
 
 
-class ShareFileIntegrateWithTool(VirtualFunctionTool):
-    name = "ShareFileIntegrateWithTool"
+class ShareFileIntegrateWithApp(VirtualFunctionApp):
+    name = "ShareFileIntegrateWithApp"
     summary = "Integrate ShareFile with other enterprise tools."
     parameters: List[ArgParameter] = [
         {
-            "name": "tool_name",
+            "name": "app_name",
             "type": "string",
             "description": "The name of the tool to integrate with.",
             "required": True,
@@ -27167,7 +27167,7 @@ class ShareFileIntegrateWithTool(VirtualFunctionTool):
     ]
 
 
-class ShareFileAccessStoredData(VirtualFunctionTool):
+class ShareFileAccessStoredData(VirtualFunctionApp):
     name = "ShareFileAccessStoredData"
     summary = "Retrieve stored user details like addresses or payment methods."
     parameters: List[ArgParameter] = [
@@ -27198,7 +27198,7 @@ class ShareFileAccessStoredData(VirtualFunctionTool):
     ]
 
 
-class ShareFileDownloadFile(VirtualFunctionTool):
+class ShareFileDownloadFile(VirtualFunctionApp):
     name = "ShareFileDownloadFile"
     summary = "Download a file from ShareFile to the local system."
     parameters: List[ArgParameter] = [
@@ -27229,7 +27229,7 @@ class ShareFileDownloadFile(VirtualFunctionTool):
     ]
 
 
-class ShareFileDeleteFile(VirtualFunctionTool):
+class ShareFileDeleteFile(VirtualFunctionApp):
     name = "ShareFileDeleteFile"
     summary = "Permanently delete a specified file."
     parameters: List[ArgParameter] = [
@@ -27261,7 +27261,7 @@ class ShareFile(FunctionApp):
     description_for_human = "A secure file-sharing and storage solution for businesses, facilitating collaboration and compliance."
     name_for_model = "ShareFile"
     description_for_model = "The ShareFile app enables enterprise users to securely share, store, and manage files while ensuring compliance and collaboration through robust access control and tracking features."
-    tool_classes = [
+    app_classes = [
         ShareFileShareFile,
         ShareFileStoreFile,
         ShareFileOrganizeFiles,
@@ -27270,7 +27270,7 @@ class ShareFile(FunctionApp):
         ShareFileTrackFileActivity,
         ShareFileRequestFile,
         ShareFileGetFileVersion,
-        ShareFileIntegrateWithTool,
+        ShareFileIntegrateWithApp,
         ShareFileAccessStoredData,
         ShareFileDownloadFile,
         ShareFileDeleteFile,
@@ -27280,7 +27280,7 @@ class ShareFile(FunctionApp):
 #################### Sync ####################
 
 
-class SyncUpload(VirtualFunctionTool):
+class SyncUpload(VirtualFunctionApp):
     name = "SyncUpload"
     summary = "Upload files to the user's Sync.com account."
     parameters: List[ArgParameter] = [
@@ -27306,7 +27306,7 @@ class SyncUpload(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SyncDownload(VirtualFunctionTool):
+class SyncDownload(VirtualFunctionApp):
     name = "SyncDownload"
     summary = "Download files from the user's Sync.com account."
     parameters: List[ArgParameter] = [
@@ -27334,7 +27334,7 @@ class SyncDownload(VirtualFunctionTool):
     ]
 
 
-class SyncShare(VirtualFunctionTool):
+class SyncShare(VirtualFunctionApp):
     name = "SyncShare"
     summary = "Share files or folders with others."
     parameters: List[ArgParameter] = [
@@ -27372,7 +27372,7 @@ class SyncShare(VirtualFunctionTool):
     ]
 
 
-class SyncDelete(VirtualFunctionTool):
+class SyncDelete(VirtualFunctionApp):
     name = "SyncDelete"
     summary = "Delete files or folders from the user's Sync.com account."
     parameters: List[ArgParameter] = [
@@ -27395,7 +27395,7 @@ class SyncDelete(VirtualFunctionTool):
     ]
 
 
-class SyncListFiles(VirtualFunctionTool):
+class SyncListFiles(VirtualFunctionApp):
     name = "SyncListFiles"
     summary = "Retrieve a list of files stored in the user's Sync.com account."
     parameters: List[ArgParameter] = [
@@ -27416,7 +27416,7 @@ class SyncListFiles(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SyncManagePermissions(VirtualFunctionTool):
+class SyncManagePermissions(VirtualFunctionApp):
     name = "SyncManagePermissions"
     summary = "Manage access permissions for shared files."
     parameters: List[ArgParameter] = [
@@ -27455,7 +27455,7 @@ class SyncManagePermissions(VirtualFunctionTool):
     ]
 
 
-class SyncAccessStoredData(VirtualFunctionTool):
+class SyncAccessStoredData(VirtualFunctionApp):
     name = "SyncAccessStoredData"
     summary = "Access user details like email and payment information."
     parameters: List[ArgParameter] = []
@@ -27469,7 +27469,7 @@ class SyncAccessStoredData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SyncSearchFiles(VirtualFunctionTool):
+class SyncSearchFiles(VirtualFunctionApp):
     name = "SyncSearchFiles"
     summary = "Search for files or folders using keywords."
     parameters: List[ArgParameter] = [
@@ -27498,7 +27498,7 @@ class SyncSearchFiles(VirtualFunctionTool):
     ]
 
 
-class SyncViewActivityLog(VirtualFunctionTool):
+class SyncViewActivityLog(VirtualFunctionApp):
     name = "SyncViewActivityLog"
     summary = "View logs of recent activities related to files."
     parameters: List[ArgParameter] = [
@@ -27519,7 +27519,7 @@ class SyncViewActivityLog(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SyncFileVersioning(VirtualFunctionTool):
+class SyncFileVersioning(VirtualFunctionApp):
     name = "SyncFileVersioning"
     summary = "Access previous versions of files."
     parameters: List[ArgParameter] = [
@@ -27542,7 +27542,7 @@ class SyncFileVersioning(VirtualFunctionTool):
     ]
 
 
-class SyncRetrieveFile(VirtualFunctionTool):
+class SyncRetrieveFile(VirtualFunctionApp):
     name = "SyncRetrieveFile"
     summary = "Retrieve file details using its unique identifier."
     parameters: List[ArgParameter] = [
@@ -27571,7 +27571,7 @@ class Sync(FunctionApp):
     description_for_human = "A privacy-focused cloud storage solution that provides end-to-end encryption for all your files."
     name_for_model = "Sync"
     description_for_model = "The Sync app allows users to securely upload, download, manage, and share files with end-to-end encryption, while providing functionalities for accessing user details and managing file permissions."
-    tool_classes = [
+    app_classes = [
         SyncUpload,
         SyncDownload,
         SyncShare,
@@ -27589,7 +27589,7 @@ class Sync(FunctionApp):
 #################### Coursera ####################
 
 
-class CourseraCourseSearch(VirtualFunctionTool):
+class CourseraCourseSearch(VirtualFunctionApp):
     name = "CourseraCourseSearch"
     summary = "Search for courses based on keywords, categories, or instructors."
     parameters: List[ArgParameter] = [
@@ -27622,7 +27622,7 @@ class CourseraCourseSearch(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CourseraCourseEnroll(VirtualFunctionTool):
+class CourseraCourseEnroll(VirtualFunctionApp):
     name = "CourseraCourseEnroll"
     summary = "Enroll a user in a specific course."
     parameters: List[ArgParameter] = [
@@ -27653,7 +27653,7 @@ class CourseraCourseEnroll(VirtualFunctionTool):
     ]
 
 
-class CourseraProgressTrack(VirtualFunctionTool):
+class CourseraProgressTrack(VirtualFunctionApp):
     name = "CourseraProgressTrack"
     summary = "Retrieve the user's progress in enrolled courses."
     parameters: List[ArgParameter] = [
@@ -27676,7 +27676,7 @@ class CourseraProgressTrack(VirtualFunctionTool):
     ]
 
 
-class CourseraCourseContentAccess(VirtualFunctionTool):
+class CourseraCourseContentAccess(VirtualFunctionApp):
     name = "CourseraCourseContentAccess"
     summary = "Access materials for a specific course."
     parameters: List[ArgParameter] = [
@@ -27699,7 +27699,7 @@ class CourseraCourseContentAccess(VirtualFunctionTool):
     ]
 
 
-class CourseraCertificateRetrieve(VirtualFunctionTool):
+class CourseraCertificateRetrieve(VirtualFunctionApp):
     name = "CourseraCertificateRetrieve"
     summary = "Retrieve the certificate for completed courses."
     parameters: List[ArgParameter] = [
@@ -27722,7 +27722,7 @@ class CourseraCertificateRetrieve(VirtualFunctionTool):
     ]
 
 
-class CourseraCourseReview(VirtualFunctionTool):
+class CourseraCourseReview(VirtualFunctionApp):
     name = "CourseraCourseReview"
     summary = "Leave a review and rating for a completed course."
     parameters: List[ArgParameter] = [
@@ -27766,7 +27766,7 @@ class CourseraCourseReview(VirtualFunctionTool):
     ]
 
 
-class CourseraWishlistManage(VirtualFunctionTool):
+class CourseraWishlistManage(VirtualFunctionApp):
     name = "CourseraWishlistManage"
     summary = "Add or remove courses from the user's wishlist."
     parameters: List[ArgParameter] = [
@@ -27803,7 +27803,7 @@ class CourseraWishlistManage(VirtualFunctionTool):
     ]
 
 
-class CourseraCourseRecommendation(VirtualFunctionTool):
+class CourseraCourseRecommendation(VirtualFunctionApp):
     name = "CourseraCourseRecommendation"
     summary = "Get personalized course recommendations."
     parameters: List[ArgParameter] = [
@@ -27826,7 +27826,7 @@ class CourseraCourseRecommendation(VirtualFunctionTool):
     ]
 
 
-class CourseraNotificationManage(VirtualFunctionTool):
+class CourseraNotificationManage(VirtualFunctionApp):
     name = "CourseraNotificationManage"
     summary = "Manage notifications for course updates and deadlines."
     parameters: List[ArgParameter] = [
@@ -27854,7 +27854,7 @@ class CourseraNotificationManage(VirtualFunctionTool):
     ]
 
 
-class CourseraUserProfileManage(VirtualFunctionTool):
+class CourseraUserProfileManage(VirtualFunctionApp):
     name = "CourseraUserProfileManage"
     summary = "Update user profile information."
     parameters: List[ArgParameter] = [
@@ -27899,7 +27899,7 @@ class Coursera(FunctionApp):
     )
     name_for_model = "Coursera"
     description_for_model = "The Coursera app enables users to search for courses, enroll, track progress, access content, and manage their learning experience on the Coursera platform, while providing functionalities for reviews, recommendations, and notifications."
-    tool_classes = [
+    app_classes = [
         CourseraCourseSearch,
         CourseraCourseEnroll,
         CourseraProgressTrack,
@@ -27916,10 +27916,10 @@ class Coursera(FunctionApp):
 #################### Indeed ####################
 
 
-class IndeedSearchJobs(VirtualFunctionTool):
+class IndeedSearchJobs(VirtualFunctionApp):
     name = "IndeedSearchJobs"
     summary = (
-        "Tool for searching job listings based on keywords, location, and job type."
+        "App for searching job listings based on keywords, location, and job type."
     )
     parameters: List[ArgParameter] = [
         {
@@ -27957,9 +27957,9 @@ class IndeedSearchJobs(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class IndeedApplyJob(VirtualFunctionTool):
+class IndeedApplyJob(VirtualFunctionApp):
     name = "IndeedApplyJob"
-    summary = "Tool for applying to a specific job listing."
+    summary = "App for applying to a specific job listing."
     parameters: List[ArgParameter] = [
         {
             "name": "job_id",
@@ -27994,9 +27994,9 @@ class IndeedApplyJob(VirtualFunctionTool):
     ]
 
 
-class IndeedSaveJob(VirtualFunctionTool):
+class IndeedSaveJob(VirtualFunctionApp):
     name = "IndeedSaveJob"
-    summary = "Tool for saving a job listing for later."
+    summary = "App for saving a job listing for later."
     parameters: List[ArgParameter] = [
         {
             "name": "job_id",
@@ -28020,9 +28020,9 @@ class IndeedSaveJob(VirtualFunctionTool):
     ]
 
 
-class IndeedSetJobAlert(VirtualFunctionTool):
+class IndeedSetJobAlert(VirtualFunctionApp):
     name = "IndeedSetJobAlert"
-    summary = "Tool for setting up job alerts based on keywords and location."
+    summary = "App for setting up job alerts based on keywords and location."
     parameters: List[ArgParameter] = [
         {
             "name": "keywords",
@@ -28052,9 +28052,9 @@ class IndeedSetJobAlert(VirtualFunctionTool):
     ]
 
 
-class IndeedTrackApplication(VirtualFunctionTool):
+class IndeedTrackApplication(VirtualFunctionApp):
     name = "IndeedTrackApplication"
-    summary = "Tool for tracking the status of a job application."
+    summary = "App for tracking the status of a job application."
     parameters: List[ArgParameter] = [
         {
             "name": "application_id",
@@ -28078,9 +28078,9 @@ class IndeedTrackApplication(VirtualFunctionTool):
     ]
 
 
-class IndeedGetCompanyReviews(VirtualFunctionTool):
+class IndeedGetCompanyReviews(VirtualFunctionApp):
     name = "IndeedGetCompanyReviews"
-    summary = "Tool for retrieving company reviews based on company name."
+    summary = "App for retrieving company reviews based on company name."
     parameters: List[ArgParameter] = [
         {
             "name": "company_name",
@@ -28104,9 +28104,9 @@ class IndeedGetCompanyReviews(VirtualFunctionTool):
     ]
 
 
-class IndeedGetSalaryInformation(VirtualFunctionTool):
+class IndeedGetSalaryInformation(VirtualFunctionApp):
     name = "IndeedGetSalaryInformation"
-    summary = "Tool for retrieving salary information for specific job titles."
+    summary = "App for retrieving salary information for specific job titles."
     parameters: List[ArgParameter] = [
         {
             "name": "job_title",
@@ -28136,9 +28136,9 @@ class IndeedGetSalaryInformation(VirtualFunctionTool):
     ]
 
 
-class IndeedUploadResume(VirtualFunctionTool):
+class IndeedUploadResume(VirtualFunctionApp):
     name = "IndeedUploadResume"
-    summary = "Tool for uploading a user’s resume."
+    summary = "App for uploading a user’s resume."
     parameters: List[ArgParameter] = [
         {
             "name": "resume",
@@ -28162,9 +28162,9 @@ class IndeedUploadResume(VirtualFunctionTool):
     ]
 
 
-class IndeedManageProfile(VirtualFunctionTool):
+class IndeedManageProfile(VirtualFunctionApp):
     name = "IndeedManageProfile"
-    summary = "Tool for creating or updating the user profile."
+    summary = "App for creating or updating the user profile."
     parameters: List[ArgParameter] = [
         {
             "name": "profile_data",
@@ -28188,9 +28188,9 @@ class IndeedManageProfile(VirtualFunctionTool):
     ]
 
 
-class IndeedGetInterviewResources(VirtualFunctionTool):
+class IndeedGetInterviewResources(VirtualFunctionApp):
     name = "IndeedGetInterviewResources"
-    summary = "Tool for retrieving interview preparation resources based on topic."
+    summary = "App for retrieving interview preparation resources based on topic."
     parameters: List[ArgParameter] = [
         {
             "name": "topic",
@@ -28220,7 +28220,7 @@ class Indeed(FunctionApp):
     description_for_human = "App for job seekers to find job listings, apply for jobs, and manage applications."
     name_for_model = "Indeed"
     description_for_model = "The Indeed app provides job seekers with functionalities to search for job listings, apply for positions, save jobs, set up alerts, and track applications, while also offering insights into company reviews, salary information, and interview preparation resources."
-    tool_classes = [
+    app_classes = [
         IndeedSearchJobs,
         IndeedApplyJob,
         IndeedSaveJob,
@@ -28237,7 +28237,7 @@ class Indeed(FunctionApp):
 #################### Classroom ####################
 
 
-class ClassroomCreateClass(VirtualFunctionTool):
+class ClassroomCreateClass(VirtualFunctionApp):
     name = "ClassroomCreateClass"
     summary = "Creates a new class with specified details."
     parameters: List[ArgParameter] = [
@@ -28275,7 +28275,7 @@ class ClassroomCreateClass(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ClassroomUpdateClass(VirtualFunctionTool):
+class ClassroomUpdateClass(VirtualFunctionApp):
     name = "ClassroomUpdateClass"
     summary = "Updates details of an existing class."
     parameters: List[ArgParameter] = [
@@ -28319,7 +28319,7 @@ class ClassroomUpdateClass(VirtualFunctionTool):
     ]
 
 
-class ClassroomDeleteClass(VirtualFunctionTool):
+class ClassroomDeleteClass(VirtualFunctionApp):
     name = "ClassroomDeleteClass"
     summary = "Deletes a specified class."
     parameters: List[ArgParameter] = [
@@ -28342,7 +28342,7 @@ class ClassroomDeleteClass(VirtualFunctionTool):
     ]
 
 
-class ClassroomEnrollStudent(VirtualFunctionTool):
+class ClassroomEnrollStudent(VirtualFunctionApp):
     name = "ClassroomEnrollStudent"
     summary = "Enrolls a student in a specified class."
     parameters: List[ArgParameter] = [
@@ -28374,7 +28374,7 @@ class ClassroomEnrollStudent(VirtualFunctionTool):
     ]
 
 
-class ClassroomManageAssignments(VirtualFunctionTool):
+class ClassroomManageAssignments(VirtualFunctionApp):
     name = "ClassroomManageAssignments"
     summary = "Creates or updates assignments for a class."
     parameters: List[ArgParameter] = [
@@ -28423,7 +28423,7 @@ class ClassroomManageAssignments(VirtualFunctionTool):
     ]
 
 
-class ClassroomGradeAssignment(VirtualFunctionTool):
+class ClassroomGradeAssignment(VirtualFunctionApp):
     name = "ClassroomGradeAssignment"
     summary = "Grades an assignment for a student."
     parameters: List[ArgParameter] = [
@@ -28461,7 +28461,7 @@ class ClassroomGradeAssignment(VirtualFunctionTool):
     ]
 
 
-class ClassroomShareFile(VirtualFunctionTool):
+class ClassroomShareFile(VirtualFunctionApp):
     name = "ClassroomShareFile"
     summary = "Shares a file with all students in a class."
     parameters: List[ArgParameter] = [
@@ -28490,7 +28490,7 @@ class ClassroomShareFile(VirtualFunctionTool):
     ]
 
 
-class ClassroomSendAnnouncement(VirtualFunctionTool):
+class ClassroomSendAnnouncement(VirtualFunctionApp):
     name = "ClassroomSendAnnouncement"
     summary = "Sends an announcement to all students in a class."
     parameters: List[ArgParameter] = [
@@ -28522,7 +28522,7 @@ class ClassroomSendAnnouncement(VirtualFunctionTool):
     ]
 
 
-class ClassroomAccessStudentData(VirtualFunctionTool):
+class ClassroomAccessStudentData(VirtualFunctionApp):
     name = "ClassroomAccessStudentData"
     summary = "Accesses stored data for a specific student."
     parameters: List[ArgParameter] = [
@@ -28548,7 +28548,7 @@ class ClassroomAccessStudentData(VirtualFunctionTool):
     ]
 
 
-class ClassroomListClasses(VirtualFunctionTool):
+class ClassroomListClasses(VirtualFunctionApp):
     name = "ClassroomListClasses"
     summary = "Retrieves a list of all classes the user is managing."
     parameters: List[ArgParameter] = [
@@ -28569,7 +28569,7 @@ class ClassroomListClasses(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ClassroomGetAssignmentDetails(VirtualFunctionTool):
+class ClassroomGetAssignmentDetails(VirtualFunctionApp):
     name = "ClassroomGetAssignmentDetails"
     summary = "Retrieves details of a specific assignment."
     parameters: List[ArgParameter] = [
@@ -28595,7 +28595,7 @@ class ClassroomGetAssignmentDetails(VirtualFunctionTool):
     ]
 
 
-class ClassroomProvideFeedback(VirtualFunctionTool):
+class ClassroomProvideFeedback(VirtualFunctionApp):
     name = "ClassroomProvideFeedback"
     summary = "Provides feedback on a specific assignment."
     parameters: List[ArgParameter] = [
@@ -28633,7 +28633,7 @@ class ClassroomProvideFeedback(VirtualFunctionTool):
     ]
 
 
-class ClassroomScheduleEvent(VirtualFunctionTool):
+class ClassroomScheduleEvent(VirtualFunctionApp):
     name = "ClassroomScheduleEvent"
     summary = "Schedules an event related to a class."
     parameters: List[ArgParameter] = [
@@ -28683,7 +28683,7 @@ class Classroom(FunctionApp):
     description_for_human = "A app for educators to manage classes, assignments, and student data securely."
     name_for_model = "Classroom"
     description_for_model = "The Classroom app provides educators with tools to manage classes, assignments, and student interactions effectively while ensuring secure access to educational resources."
-    tool_classes = [
+    app_classes = [
         ClassroomCreateClass,
         ClassroomUpdateClass,
         ClassroomDeleteClass,
@@ -28703,7 +28703,7 @@ class Classroom(FunctionApp):
 #################### LinkedIn ####################
 
 
-class LinkedInProfileManagement(VirtualFunctionTool):
+class LinkedInProfileManagement(VirtualFunctionApp):
     name = "LinkedInProfileManagement"
     summary = "Manage user's LinkedIn profile."
     parameters: List[ArgParameter] = [
@@ -28740,7 +28740,7 @@ class LinkedInProfileManagement(VirtualFunctionTool):
     ]
 
 
-class LinkedInJobSearch(VirtualFunctionTool):
+class LinkedInJobSearch(VirtualFunctionApp):
     name = "LinkedInJobSearch"
     summary = "Search for job postings."
     parameters: List[ArgParameter] = [
@@ -28784,7 +28784,7 @@ class LinkedInJobSearch(VirtualFunctionTool):
     ]
 
 
-class LinkedInConnectionManagement(VirtualFunctionTool):
+class LinkedInConnectionManagement(VirtualFunctionApp):
     name = "LinkedInConnectionManagement"
     summary = "Manage connections."
     parameters: List[ArgParameter] = [
@@ -28813,7 +28813,7 @@ class LinkedInConnectionManagement(VirtualFunctionTool):
     ]
 
 
-class LinkedInJobPosting(VirtualFunctionTool):
+class LinkedInJobPosting(VirtualFunctionApp):
     name = "LinkedInJobPosting"
     summary = "Manage job postings."
     parameters: List[ArgParameter] = [
@@ -28856,7 +28856,7 @@ class LinkedInJobPosting(VirtualFunctionTool):
     ]
 
 
-class LinkedInMessaging(VirtualFunctionTool):
+class LinkedInMessaging(VirtualFunctionApp):
     name = "LinkedInMessaging"
     summary = "Send and receive messages."
     parameters: List[ArgParameter] = [
@@ -28905,7 +28905,7 @@ class LinkedInMessaging(VirtualFunctionTool):
     ]
 
 
-class LinkedInSkillEndorsement(VirtualFunctionTool):
+class LinkedInSkillEndorsement(VirtualFunctionApp):
     name = "LinkedInSkillEndorsement"
     summary = "Endorse skills of connections."
     parameters: List[ArgParameter] = [
@@ -28937,7 +28937,7 @@ class LinkedInSkillEndorsement(VirtualFunctionTool):
     ]
 
 
-class LinkedInProfileRecommendations(VirtualFunctionTool):
+class LinkedInProfileRecommendations(VirtualFunctionApp):
     name = "LinkedInProfileRecommendations"
     summary = "Suggest improvements for the profile."
     parameters: List[ArgParameter] = [
@@ -28960,7 +28960,7 @@ class LinkedInProfileRecommendations(VirtualFunctionTool):
     ]
 
 
-class LinkedInCompanyFollow(VirtualFunctionTool):
+class LinkedInCompanyFollow(VirtualFunctionApp):
     name = "LinkedInCompanyFollow"
     summary = "Follow companies for updates."
     parameters: List[ArgParameter] = [
@@ -28983,7 +28983,7 @@ class LinkedInCompanyFollow(VirtualFunctionTool):
     ]
 
 
-class LinkedInEventManagement(VirtualFunctionTool):
+class LinkedInEventManagement(VirtualFunctionApp):
     name = "LinkedInEventManagement"
     summary = "Manage professional events."
     parameters: List[ArgParameter] = [
@@ -29026,7 +29026,7 @@ class LinkedInEventManagement(VirtualFunctionTool):
     ]
 
 
-class LinkedInAnalyticsAccess(VirtualFunctionTool):
+class LinkedInAnalyticsAccess(VirtualFunctionApp):
     name = "LinkedInAnalyticsAccess"
     summary = "Provide insights on profile and connection statistics."
     parameters: List[ArgParameter] = [
@@ -29055,7 +29055,7 @@ class LinkedIn(FunctionApp):
     description_for_human = "A app for managing your LinkedIn profile, job searches, and professional connections."
     name_for_model = "LinkedIn"
     description_for_model = "The LinkedIn app enables users to manage their professional profiles, search for job postings, connect with others, and engage in networking activities while ensuring data privacy and security."
-    tool_classes = [
+    app_classes = [
         LinkedInProfileManagement,
         LinkedInJobSearch,
         LinkedInConnectionManagement,
@@ -29072,7 +29072,7 @@ class LinkedIn(FunctionApp):
 #################### Canvas ####################
 
 
-class CanvasCourseManagement(VirtualFunctionTool):
+class CanvasCourseManagement(VirtualFunctionApp):
     name = "CanvasCourseManagement"
     summary = "Manage courses by creating, updating, and deleting course details."
     parameters: List[ArgParameter] = [
@@ -29109,7 +29109,7 @@ class CanvasCourseManagement(VirtualFunctionTool):
     ]
 
 
-class CanvasUserEnrollment(VirtualFunctionTool):
+class CanvasUserEnrollment(VirtualFunctionApp):
     name = "CanvasUserEnrollment"
     summary = "Enroll or unenroll users in courses."
     parameters: List[ArgParameter] = [
@@ -29147,7 +29147,7 @@ class CanvasUserEnrollment(VirtualFunctionTool):
     ]
 
 
-class CanvasGradingSystem(VirtualFunctionTool):
+class CanvasGradingSystem(VirtualFunctionApp):
     name = "CanvasGradingSystem"
     summary = "Manage grading for assignments and courses."
     parameters: List[ArgParameter] = [
@@ -29195,7 +29195,7 @@ class CanvasGradingSystem(VirtualFunctionTool):
     ]
 
 
-class CanvasContentDelivery(VirtualFunctionTool):
+class CanvasContentDelivery(VirtualFunctionApp):
     name = "CanvasContentDelivery"
     summary = "Upload and manage course content."
     parameters: List[ArgParameter] = [
@@ -29233,8 +29233,8 @@ class CanvasContentDelivery(VirtualFunctionTool):
     ]
 
 
-class CanvasCommunicationTools(VirtualFunctionTool):
-    name = "CanvasCommunicationTools"
+class CanvasCommunicationApps(VirtualFunctionApp):
+    name = "CanvasCommunicationApps"
     summary = "Send messages and announcements to users."
     parameters: List[ArgParameter] = [
         {
@@ -29271,7 +29271,7 @@ class CanvasCommunicationTools(VirtualFunctionTool):
     ]
 
 
-class CanvasAnalyticsReporting(VirtualFunctionTool):
+class CanvasAnalyticsReporting(VirtualFunctionApp):
     name = "CanvasAnalyticsReporting"
     summary = "Generate reports on student performance and engagement."
     parameters: List[ArgParameter] = [
@@ -29303,7 +29303,7 @@ class CanvasAnalyticsReporting(VirtualFunctionTool):
     ]
 
 
-class CanvasAccessControl(VirtualFunctionTool):
+class CanvasAccessControl(VirtualFunctionApp):
     name = "CanvasAccessControl"
     summary = "Manage user permissions for courses."
     parameters: List[ArgParameter] = [
@@ -29341,7 +29341,7 @@ class CanvasAccessControl(VirtualFunctionTool):
     ]
 
 
-class CanvasNotifications(VirtualFunctionTool):
+class CanvasNotifications(VirtualFunctionApp):
     name = "CanvasNotifications"
     summary = "Send notifications to users about course updates."
     parameters: List[ArgParameter] = [
@@ -29379,7 +29379,7 @@ class CanvasNotifications(VirtualFunctionTool):
     ]
 
 
-class CanvasFeedbackCollection(VirtualFunctionTool):
+class CanvasFeedbackCollection(VirtualFunctionApp):
     name = "CanvasFeedbackCollection"
     summary = "Collect feedback from students regarding courses."
     parameters: List[ArgParameter] = [
@@ -29419,12 +29419,12 @@ class Canvas(FunctionApp):
     )
     name_for_model = "Canvas"
     description_for_model = "Canvas is a comprehensive app designed for educators to create, manage, and deliver online courses, facilitating user enrollment, grading, content delivery, and communication while ensuring data integrity and security."
-    tool_classes = [
+    app_classes = [
         CanvasCourseManagement,
         CanvasUserEnrollment,
         CanvasGradingSystem,
         CanvasContentDelivery,
-        CanvasCommunicationTools,
+        CanvasCommunicationApps,
         CanvasAnalyticsReporting,
         CanvasAccessControl,
         CanvasNotifications,
@@ -29435,7 +29435,7 @@ class Canvas(FunctionApp):
 #################### Edmodo ####################
 
 
-class EdmodoManageAssignments(VirtualFunctionTool):
+class EdmodoManageAssignments(VirtualFunctionApp):
     name = "EdmodoManageAssignments"
     summary = "This tool allows teachers to create, update, and delete assignments."
     parameters: List[ArgParameter] = [
@@ -29476,7 +29476,7 @@ class EdmodoManageAssignments(VirtualFunctionTool):
     ]
 
 
-class EdmodoCommunicate(VirtualFunctionTool):
+class EdmodoCommunicate(VirtualFunctionApp):
     name = "EdmodoCommunicate"
     summary = "This tool enables sending messages to students or parents."
     parameters: List[ArgParameter] = [
@@ -29508,7 +29508,7 @@ class EdmodoCommunicate(VirtualFunctionTool):
     ]
 
 
-class EdmodoShareResources(VirtualFunctionTool):
+class EdmodoShareResources(VirtualFunctionApp):
     name = "EdmodoShareResources"
     summary = "This tool allows uploading and sharing educational resources."
     parameters: List[ArgParameter] = [
@@ -29539,7 +29539,7 @@ class EdmodoShareResources(VirtualFunctionTool):
     ]
 
 
-class EdmodoTrackProgress(VirtualFunctionTool):
+class EdmodoTrackProgress(VirtualFunctionApp):
     name = "EdmodoTrackProgress"
     summary = "This tool tracks student submissions and grades."
     parameters: List[ArgParameter] = [
@@ -29570,7 +29570,7 @@ class EdmodoTrackProgress(VirtualFunctionTool):
     ]
 
 
-class EdmodoManageUserRoles(VirtualFunctionTool):
+class EdmodoManageUserRoles(VirtualFunctionApp):
     name = "EdmodoManageUserRoles"
     summary = "This tool manages user roles within the platform."
     parameters: List[ArgParameter] = [
@@ -29606,7 +29606,7 @@ class EdmodoManageUserRoles(VirtualFunctionTool):
     ]
 
 
-class EdmodoScheduleEvents(VirtualFunctionTool):
+class EdmodoScheduleEvents(VirtualFunctionApp):
     name = "EdmodoScheduleEvents"
     summary = "This tool creates and manages events."
     parameters: List[ArgParameter] = [
@@ -29637,7 +29637,7 @@ class EdmodoScheduleEvents(VirtualFunctionTool):
     ]
 
 
-class EdmodoAccessStoredData(VirtualFunctionTool):
+class EdmodoAccessStoredData(VirtualFunctionApp):
     name = "EdmodoAccessStoredData"
     summary = "This tool retrieves stored user information."
     parameters: List[ArgParameter] = [
@@ -29668,7 +29668,7 @@ class EdmodoAccessStoredData(VirtualFunctionTool):
     ]
 
 
-class EdmodoGenerateReports(VirtualFunctionTool):
+class EdmodoGenerateReports(VirtualFunctionApp):
     name = "EdmodoGenerateReports"
     summary = "This tool creates performance and engagement reports."
     parameters: List[ArgParameter] = [
@@ -29705,7 +29705,7 @@ class EdmodoGenerateReports(VirtualFunctionTool):
     ]
 
 
-class EdmodoSendNotifications(VirtualFunctionTool):
+class EdmodoSendNotifications(VirtualFunctionApp):
     name = "EdmodoSendNotifications"
     summary = "This tool sends notifications for deadlines or events."
     parameters: List[ArgParameter] = [
@@ -29731,7 +29731,7 @@ class EdmodoSendNotifications(VirtualFunctionTool):
     ]
 
 
-class EdmodoManageGroups(VirtualFunctionTool):
+class EdmodoManageGroups(VirtualFunctionApp):
     name = "EdmodoManageGroups"
     summary = "This tool creates and manages student groups."
     parameters: List[ArgParameter] = [
@@ -29778,7 +29778,7 @@ class Edmodo(FunctionApp):
     description_for_human = "App for managing educational activities and communication on the Edmodo platform."
     name_for_model = "Edmodo"
     description_for_model = "The Edmodo app enables educators to manage assignments, communicate with students and parents, share educational resources, and track student progress while ensuring compliance with privacy standards."
-    tool_classes = [
+    app_classes = [
         EdmodoManageAssignments,
         EdmodoCommunicate,
         EdmodoShareResources,
@@ -29795,7 +29795,7 @@ class Edmodo(FunctionApp):
 #################### HireVue ####################
 
 
-class HireVueCandidateEvaluation(VirtualFunctionTool):
+class HireVueCandidateEvaluation(VirtualFunctionApp):
     name = "HireVueCandidateEvaluation"
     summary = "Evaluates candidates based on video interviews and provides analytics."
     parameters: List[ArgParameter] = [
@@ -29844,7 +29844,7 @@ class HireVueCandidateEvaluation(VirtualFunctionTool):
     ]
 
 
-class HireVueScheduleInterview(VirtualFunctionTool):
+class HireVueScheduleInterview(VirtualFunctionApp):
     name = "HireVueScheduleInterview"
     summary = "Automates the scheduling of interviews."
     parameters: List[ArgParameter] = [
@@ -29891,7 +29891,7 @@ class HireVueScheduleInterview(VirtualFunctionTool):
     ]
 
 
-class HireVueGenerateAnalytics(VirtualFunctionTool):
+class HireVueGenerateAnalytics(VirtualFunctionApp):
     name = "HireVueGenerateAnalytics"
     summary = "Generates reports and analytics on candidates and hiring trends."
     parameters: List[ArgParameter] = [
@@ -29940,7 +29940,7 @@ class HireVueGenerateAnalytics(VirtualFunctionTool):
     ]
 
 
-class HireVueCollectFeedback(VirtualFunctionTool):
+class HireVueCollectFeedback(VirtualFunctionApp):
     name = "HireVueCollectFeedback"
     summary = "Gathers feedback from interviewers and candidates."
     parameters: List[ArgParameter] = [
@@ -29978,7 +29978,7 @@ class HireVueCollectFeedback(VirtualFunctionTool):
     ]
 
 
-class HireVueDetectBias(VirtualFunctionTool):
+class HireVueDetectBias(VirtualFunctionApp):
     name = "HireVueDetectBias"
     summary = "Analyzes evaluation processes for potential biases."
     parameters: List[ArgParameter] = [
@@ -30016,7 +30016,7 @@ class HireVueDetectBias(VirtualFunctionTool):
     ]
 
 
-class HireVueStoreVideo(VirtualFunctionTool):
+class HireVueStoreVideo(VirtualFunctionApp):
     name = "HireVueStoreVideo"
     summary = "Stores recorded video interviews securely."
     parameters: List[ArgParameter] = [
@@ -30042,7 +30042,7 @@ class HireVueStoreVideo(VirtualFunctionTool):
     ]
 
 
-class HireVuePostJob(VirtualFunctionTool):
+class HireVuePostJob(VirtualFunctionApp):
     name = "HireVuePostJob"
     summary = "Posts job openings to various job boards."
     parameters: List[ArgParameter] = [
@@ -30079,7 +30079,7 @@ class HireVuePostJob(VirtualFunctionTool):
     ]
 
 
-class HireVueCustomizeQuestions(VirtualFunctionTool):
+class HireVueCustomizeQuestions(VirtualFunctionApp):
     name = "HireVueCustomizeQuestions"
     summary = "Allows recruiters to create and customize interview questions."
     parameters: List[ArgParameter] = [
@@ -30111,7 +30111,7 @@ class HireVueCustomizeQuestions(VirtualFunctionTool):
     ]
 
 
-class HireVueCommunicateWithCandidates(VirtualFunctionTool):
+class HireVueCommunicateWithCandidates(VirtualFunctionApp):
     name = "HireVueCommunicateWithCandidates"
     summary = "Facilitates communication with candidates."
     parameters: List[ArgParameter] = [
@@ -30143,7 +30143,7 @@ class HireVueCommunicateWithCandidates(VirtualFunctionTool):
     ]
 
 
-class HireVueCollaborateOnEvaluations(VirtualFunctionTool):
+class HireVueCollaborateOnEvaluations(VirtualFunctionApp):
     name = "HireVueCollaborateOnEvaluations"
     summary = "Enables team collaboration on candidate evaluations."
     parameters: List[ArgParameter] = [
@@ -30175,7 +30175,7 @@ class HireVueCollaborateOnEvaluations(VirtualFunctionTool):
     ]
 
 
-class HireVueAccessStoredData(VirtualFunctionTool):
+class HireVueAccessStoredData(VirtualFunctionApp):
     name = "HireVueAccessStoredData"
     summary = "Accesses stored data such as candidate details and interview history."
     parameters: List[ArgParameter] = [
@@ -30218,7 +30218,7 @@ class HireVueAccessStoredData(VirtualFunctionTool):
     ]
 
 
-class HireVueDownloadVideo(VirtualFunctionTool):
+class HireVueDownloadVideo(VirtualFunctionApp):
     name = "HireVueDownloadVideo"
     summary = "Downloads remote video files to local storage."
     parameters: List[ArgParameter] = [
@@ -30250,7 +30250,7 @@ class HireVue(FunctionApp):
     description_for_human = "App for streamlining the hiring process through AI-driven evaluations and scheduling."
     name_for_model = "HireVue"
     description_for_model = "The HireVue app enables HR professionals to streamline the hiring process through AI-driven candidate evaluations, interview scheduling, data analytics, and bias detection, while ensuring secure handling of candidate data and facilitating effective communication."
-    tool_classes = [
+    app_classes = [
         HireVueCandidateEvaluation,
         HireVueScheduleInterview,
         HireVueGenerateAnalytics,
@@ -30269,7 +30269,7 @@ class HireVue(FunctionApp):
 #################### FutureHire ####################
 
 
-class FutureHireJobPosting(VirtualFunctionTool):
+class FutureHireJobPosting(VirtualFunctionApp):
     name = "FutureHireJobPosting"
     summary = "Allows users to create and manage job postings."
     parameters: List[ArgParameter] = [
@@ -30318,7 +30318,7 @@ class FutureHireJobPosting(VirtualFunctionTool):
     ]
 
 
-class FutureHireCandidateMatching(VirtualFunctionTool):
+class FutureHireCandidateMatching(VirtualFunctionApp):
     name = "FutureHireCandidateMatching"
     summary = "Matches candidates with job postings based on skills and experiences."
     parameters: List[ArgParameter] = [
@@ -30355,7 +30355,7 @@ class FutureHireCandidateMatching(VirtualFunctionTool):
     ]
 
 
-class FutureHireApplicationTracking(VirtualFunctionTool):
+class FutureHireApplicationTracking(VirtualFunctionApp):
     name = "FutureHireApplicationTracking"
     summary = "Tracks applications and manages candidate statuses."
     parameters: List[ArgParameter] = [
@@ -30381,7 +30381,7 @@ class FutureHireApplicationTracking(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FutureHireAnalyticsReporting(VirtualFunctionTool):
+class FutureHireAnalyticsReporting(VirtualFunctionApp):
     name = "FutureHireAnalyticsReporting"
     summary = "Provides analytics and reporting on recruitment metrics."
     parameters: List[ArgParameter] = [
@@ -30412,7 +30412,7 @@ class FutureHireAnalyticsReporting(VirtualFunctionTool):
     ]
 
 
-class FutureHireResumeParsing(VirtualFunctionTool):
+class FutureHireResumeParsing(VirtualFunctionApp):
     name = "FutureHireResumeParsing"
     summary = "Parses resumes to extract relevant information."
     parameters: List[ArgParameter] = [
@@ -30443,7 +30443,7 @@ class FutureHireResumeParsing(VirtualFunctionTool):
     ]
 
 
-class FutureHireInterviewScheduling(VirtualFunctionTool):
+class FutureHireInterviewScheduling(VirtualFunctionApp):
     name = "FutureHireInterviewScheduling"
     summary = "Schedules interviews with candidates."
     parameters: List[ArgParameter] = [
@@ -30480,7 +30480,7 @@ class FutureHireInterviewScheduling(VirtualFunctionTool):
     ]
 
 
-class FutureHireFeedbackCollection(VirtualFunctionTool):
+class FutureHireFeedbackCollection(VirtualFunctionApp):
     name = "FutureHireFeedbackCollection"
     summary = "Collects feedback from interviewers about candidates."
     parameters: List[ArgParameter] = [
@@ -30509,7 +30509,7 @@ class FutureHireFeedbackCollection(VirtualFunctionTool):
     ]
 
 
-class FutureHireCandidateCommunication(VirtualFunctionTool):
+class FutureHireCandidateCommunication(VirtualFunctionApp):
     name = "FutureHireCandidateCommunication"
     summary = "Enables communication with candidates."
     parameters: List[ArgParameter] = [
@@ -30541,7 +30541,7 @@ class FutureHireCandidateCommunication(VirtualFunctionTool):
     ]
 
 
-class FutureHireJobPostingDistribution(VirtualFunctionTool):
+class FutureHireJobPostingDistribution(VirtualFunctionApp):
     name = "FutureHireJobPostingDistribution"
     summary = "Distributes job postings across various platforms."
     parameters: List[ArgParameter] = [
@@ -30570,7 +30570,7 @@ class FutureHireJobPostingDistribution(VirtualFunctionTool):
     ]
 
 
-class FutureHireSavedCandidateProfiles(VirtualFunctionTool):
+class FutureHireSavedCandidateProfiles(VirtualFunctionApp):
     name = "FutureHireSavedCandidateProfiles"
     summary = "Saves candidate profiles for future job openings."
     parameters: List[ArgParameter] = [
@@ -30602,7 +30602,7 @@ class FutureHire(FunctionApp):
     description_for_human = "FutureHire is a recruitment platform app that streamlines hiring processes using machine learning for candidate-job matching."
     name_for_model = "FutureHire"
     description_for_model = "FutureHire is a recruitment platform app that enhances hiring processes through machine learning, enabling job posting, candidate matching, application tracking, and analytics while addressing potential risks associated with biases and data privacy."
-    tool_classes = [
+    app_classes = [
         FutureHireJobPosting,
         FutureHireCandidateMatching,
         FutureHireApplicationTracking,
@@ -30619,7 +30619,7 @@ class FutureHire(FunctionApp):
 #################### Skillshare ####################
 
 
-class SkillshareCreateCourse(VirtualFunctionTool):
+class SkillshareCreateCourse(VirtualFunctionApp):
     name = "SkillshareCreateCourse"
     summary = "Create a new course with specified details."
     parameters: List[ArgParameter] = [
@@ -30662,7 +30662,7 @@ class SkillshareCreateCourse(VirtualFunctionTool):
     ]
 
 
-class SkillshareReadCourse(VirtualFunctionTool):
+class SkillshareReadCourse(VirtualFunctionApp):
     name = "SkillshareReadCourse"
     summary = "Retrieve details of a specific course."
     parameters: List[ArgParameter] = [
@@ -30693,7 +30693,7 @@ class SkillshareReadCourse(VirtualFunctionTool):
     ]
 
 
-class SkillshareUpdateCourse(VirtualFunctionTool):
+class SkillshareUpdateCourse(VirtualFunctionApp):
     name = "SkillshareUpdateCourse"
     summary = "Update the details of an existing course."
     parameters: List[ArgParameter] = [
@@ -30741,7 +30741,7 @@ class SkillshareUpdateCourse(VirtualFunctionTool):
     ]
 
 
-class SkillshareDeleteCourse(VirtualFunctionTool):
+class SkillshareDeleteCourse(VirtualFunctionApp):
     name = "SkillshareDeleteCourse"
     summary = "Delete a specific course."
     parameters: List[ArgParameter] = [
@@ -30767,7 +30767,7 @@ class SkillshareDeleteCourse(VirtualFunctionTool):
     ]
 
 
-class SkillshareEnrollUser(VirtualFunctionTool):
+class SkillshareEnrollUser(VirtualFunctionApp):
     name = "SkillshareEnrollUser"
     summary = "Enroll a user in a specific course."
     parameters: List[ArgParameter] = [
@@ -30799,7 +30799,7 @@ class SkillshareEnrollUser(VirtualFunctionTool):
     ]
 
 
-class SkillshareGetUserProgress(VirtualFunctionTool):
+class SkillshareGetUserProgress(VirtualFunctionApp):
     name = "SkillshareGetUserProgress"
     summary = "Retrieve the progress of a user in a specific course."
     parameters: List[ArgParameter] = [
@@ -30836,7 +30836,7 @@ class SkillshareGetUserProgress(VirtualFunctionTool):
     ]
 
 
-class SkillshareCollectFeedback(VirtualFunctionTool):
+class SkillshareCollectFeedback(VirtualFunctionApp):
     name = "SkillshareCollectFeedback"
     summary = "Collect feedback from users regarding a specific course."
     parameters: List[ArgParameter] = [
@@ -30874,7 +30874,7 @@ class SkillshareCollectFeedback(VirtualFunctionTool):
     ]
 
 
-class SkillshareSearchCourses(VirtualFunctionTool):
+class SkillshareSearchCourses(VirtualFunctionApp):
     name = "SkillshareSearchCourses"
     summary = "Search for courses based on keywords or categories."
     parameters: List[ArgParameter] = [
@@ -30901,7 +30901,7 @@ class SkillshareSearchCourses(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SkillshareSendNotification(VirtualFunctionTool):
+class SkillshareSendNotification(VirtualFunctionApp):
     name = "SkillshareSendNotification"
     summary = "Send notifications to users about course updates."
     parameters: List[ArgParameter] = [
@@ -30933,7 +30933,7 @@ class SkillshareSendNotification(VirtualFunctionTool):
     ]
 
 
-class SkillshareManageResources(VirtualFunctionTool):
+class SkillshareManageResources(VirtualFunctionApp):
     name = "SkillshareManageResources"
     summary = "Manage supplementary resources for a specific course."
     parameters: List[ArgParameter] = [
@@ -30971,7 +30971,7 @@ class SkillshareManageResources(VirtualFunctionTool):
     ]
 
 
-class SkillshareUpdateUserProfile(VirtualFunctionTool):
+class SkillshareUpdateUserProfile(VirtualFunctionApp):
     name = "SkillshareUpdateUserProfile"
     summary = "Update the user's profile information."
     parameters: List[ArgParameter] = [
@@ -31009,7 +31009,7 @@ class Skillshare(FunctionApp):
     description_for_human = "The Skillshare app allows users to manage courses, enroll in classes, track their progress, and interact with other learners and creators."
     name_for_model = "Skillshare"
     description_for_model = "The Skillshare app enables users to manage courses, enroll in classes, track progress, collect feedback, and facilitate user interactions on the Skillshare platform."
-    tool_classes = [
+    app_classes = [
         SkillshareCreateCourse,
         SkillshareReadCourse,
         SkillshareUpdateCourse,
@@ -31027,7 +31027,7 @@ class Skillshare(FunctionApp):
 #################### OpenClassroom ####################
 
 
-class OpenClassroomCreateCourse(VirtualFunctionTool):
+class OpenClassroomCreateCourse(VirtualFunctionApp):
     name = "OpenClassroomCreateCourse"
     summary = "Allows users to create a new course with specified details."
     parameters: List[ArgParameter] = [
@@ -31076,7 +31076,7 @@ class OpenClassroomCreateCourse(VirtualFunctionTool):
     ]
 
 
-class OpenClassroomEnrollStudent(VirtualFunctionTool):
+class OpenClassroomEnrollStudent(VirtualFunctionApp):
     name = "OpenClassroomEnrollStudent"
     summary = "Enrolls a student in a specified course."
     parameters: List[ArgParameter] = [
@@ -31108,7 +31108,7 @@ class OpenClassroomEnrollStudent(VirtualFunctionTool):
     ]
 
 
-class OpenClassroomTrackProgress(VirtualFunctionTool):
+class OpenClassroomTrackProgress(VirtualFunctionApp):
     name = "OpenClassroomTrackProgress"
     summary = "Tracks the progress of a student in a course."
     parameters: List[ArgParameter] = [
@@ -31145,7 +31145,7 @@ class OpenClassroomTrackProgress(VirtualFunctionTool):
     ]
 
 
-class OpenClassroomConnectMentor(VirtualFunctionTool):
+class OpenClassroomConnectMentor(VirtualFunctionApp):
     name = "OpenClassroomConnectMentor"
     summary = "Allows students to connect with a mentor for guidance."
     parameters: List[ArgParameter] = [
@@ -31183,7 +31183,7 @@ class OpenClassroomConnectMentor(VirtualFunctionTool):
     ]
 
 
-class OpenClassroomEvaluateCourse(VirtualFunctionTool):
+class OpenClassroomEvaluateCourse(VirtualFunctionApp):
     name = "OpenClassroomEvaluateCourse"
     summary = "Allows users to evaluate a course and provide feedback."
     parameters: List[ArgParameter] = [
@@ -31221,7 +31221,7 @@ class OpenClassroomEvaluateCourse(VirtualFunctionTool):
     ]
 
 
-class OpenClassroomShareResource(VirtualFunctionTool):
+class OpenClassroomShareResource(VirtualFunctionApp):
     name = "OpenClassroomShareResource"
     summary = "Enables users to share additional resources related to a course."
     parameters: List[ArgParameter] = [
@@ -31259,7 +31259,7 @@ class OpenClassroomShareResource(VirtualFunctionTool):
     ]
 
 
-class OpenClassroomStartDiscussion(VirtualFunctionTool):
+class OpenClassroomStartDiscussion(VirtualFunctionApp):
     name = "OpenClassroomStartDiscussion"
     summary = "Starts a discussion forum for a course topic."
     parameters: List[ArgParameter] = [
@@ -31293,7 +31293,7 @@ class OpenClassroomStartDiscussion(VirtualFunctionTool):
     ]
 
 
-class OpenClassroomIssueCertificate(VirtualFunctionTool):
+class OpenClassroomIssueCertificate(VirtualFunctionApp):
     name = "OpenClassroomIssueCertificate"
     summary = "Issues a certificate to a student upon course completion."
     parameters: List[ArgParameter] = [
@@ -31330,7 +31330,7 @@ class OpenClassroomIssueCertificate(VirtualFunctionTool):
     ]
 
 
-class OpenClassroomManageUser(VirtualFunctionTool):
+class OpenClassroomManageUser(VirtualFunctionApp):
     name = "OpenClassroomManageUser"
     summary = "Manages user accounts, including roles and permissions."
     parameters: List[ArgParameter] = [
@@ -31368,7 +31368,7 @@ class OpenClassroomManageUser(VirtualFunctionTool):
     ]
 
 
-class OpenClassroomGenerateReport(VirtualFunctionTool):
+class OpenClassroomGenerateReport(VirtualFunctionApp):
     name = "OpenClassroomGenerateReport"
     summary = "Generates a report on course performance metrics."
     parameters: List[ArgParameter] = [
@@ -31402,7 +31402,7 @@ class OpenClassroomGenerateReport(VirtualFunctionTool):
     ]
 
 
-class OpenClassroomAccessStoredData(VirtualFunctionTool):
+class OpenClassroomAccessStoredData(VirtualFunctionApp):
     name = "OpenClassroomAccessStoredData"
     summary = "Retrieves stored user data such as addresses or payment methods for course-related transactions."
     parameters: List[ArgParameter] = [
@@ -31436,7 +31436,7 @@ class OpenClassroom(FunctionApp):
     description_for_human = "The OpenClassroom app facilitates project-based learning and mentorship in an online education platform, enabling course creation, student tracking, and mentor interactions while ensuring data privacy and quality mentorship."
     name_for_model = "OpenClassroom"
     description_for_model = "The OpenClassroom app facilitates project-based learning and mentorship in an online education platform, enabling course creation, student tracking, and mentor interactions while ensuring data privacy and quality mentorship."
-    tool_classes = [
+    app_classes = [
         OpenClassroomCreateCourse,
         OpenClassroomEnrollStudent,
         OpenClassroomTrackProgress,
@@ -31454,7 +31454,7 @@ class OpenClassroom(FunctionApp):
 #################### Oculus ####################
 
 
-class OculusPerformanceAnalyzer(VirtualFunctionTool):
+class OculusPerformanceAnalyzer(VirtualFunctionApp):
     name = "OculusPerformanceAnalyzer"
     summary = (
         "Analyzes application performance and provides optimization recommendations."
@@ -31482,7 +31482,7 @@ class OculusPerformanceAnalyzer(VirtualFunctionTool):
     ]
 
 
-class OculusContentRenderer(VirtualFunctionTool):
+class OculusContentRenderer(VirtualFunctionApp):
     name = "OculusContentRenderer"
     summary = "Renders 3D graphics, including textures and animations."
     parameters: List[ArgParameter] = [
@@ -31505,7 +31505,7 @@ class OculusContentRenderer(VirtualFunctionTool):
     ]
 
 
-class OculusUserProfileManager(VirtualFunctionTool):
+class OculusUserProfileManager(VirtualFunctionApp):
     name = "OculusUserProfileManager"
     summary = "Manages user profiles and preferences."
     parameters: List[ArgParameter] = [
@@ -31528,7 +31528,7 @@ class OculusUserProfileManager(VirtualFunctionTool):
     ]
 
 
-class OculusEventTracker(VirtualFunctionTool):
+class OculusEventTracker(VirtualFunctionApp):
     name = "OculusEventTracker"
     summary = "Tracks user interactions and events within the VR environment."
     parameters: List[ArgParameter] = [
@@ -31554,7 +31554,7 @@ class OculusEventTracker(VirtualFunctionTool):
     ]
 
 
-class OculusAssetManager(VirtualFunctionTool):
+class OculusAssetManager(VirtualFunctionApp):
     name = "OculusAssetManager"
     summary = "Manages the import and export of media assets."
     parameters: List[ArgParameter] = [
@@ -31580,8 +31580,8 @@ class OculusAssetManager(VirtualFunctionTool):
     ]
 
 
-class OculusDebuggingTool(VirtualFunctionTool):
-    name = "OculusDebuggingTool"
+class OculusDebuggingApp(VirtualFunctionApp):
+    name = "OculusDebuggingApp"
     summary = "Provides debugging tools for real-time issue detection."
     parameters: List[ArgParameter] = [
         {
@@ -31603,7 +31603,7 @@ class OculusDebuggingTool(VirtualFunctionTool):
     ]
 
 
-class OculusAnalyticsIntegration(VirtualFunctionTool):
+class OculusAnalyticsIntegration(VirtualFunctionApp):
     name = "OculusAnalyticsIntegration"
     summary = "Integrates analytics tools for tracking user engagement."
     parameters: List[ArgParameter] = [
@@ -31626,8 +31626,8 @@ class OculusAnalyticsIntegration(VirtualFunctionTool):
     ]
 
 
-class OculusCrossPlatformTool(VirtualFunctionTool):
-    name = "OculusCrossPlatformTool"
+class OculusCrossPlatformApp(VirtualFunctionApp):
+    name = "OculusCrossPlatformApp"
     summary = "Ensures compatibility of applications across multiple VR platforms."
     parameters: List[ArgParameter] = [
         {
@@ -31652,7 +31652,7 @@ class OculusCrossPlatformTool(VirtualFunctionTool):
     ]
 
 
-class OculusFeedbackCollector(VirtualFunctionTool):
+class OculusFeedbackCollector(VirtualFunctionApp):
     name = "OculusFeedbackCollector"
     summary = "Gathers user feedback within the VR experience."
     parameters: List[ArgParameter] = [
@@ -31675,7 +31675,7 @@ class OculusFeedbackCollector(VirtualFunctionTool):
     ]
 
 
-class OculusDocumentationAccess(VirtualFunctionTool):
+class OculusDocumentationAccess(VirtualFunctionApp):
     name = "OculusDocumentationAccess"
     summary = "Provides access to tutorials and documentation."
     parameters: List[ArgParameter] = [
@@ -31701,7 +31701,7 @@ class OculusDocumentationAccess(VirtualFunctionTool):
     ]
 
 
-class OculusUserDataAccess(VirtualFunctionTool):
+class OculusUserDataAccess(VirtualFunctionApp):
     name = "OculusUserDataAccess"
     summary = "Accesses previously stored user data such as preferences."
     parameters: List[ArgParameter] = [
@@ -31730,15 +31730,15 @@ class Oculus(FunctionApp):
     description_for_human = "App for developing and optimizing virtual reality experiences on Oculus devices."
     name_for_model = "Oculus"
     description_for_model = "The Oculus app provides developers with essential tools for creating, optimizing, and managing virtual reality experiences on Oculus devices, focusing on performance, user data integration, and asset management while addressing potential risks associated with user privacy and data security."
-    tool_classes = [
+    app_classes = [
         OculusPerformanceAnalyzer,
         OculusContentRenderer,
         OculusUserProfileManager,
         OculusEventTracker,
         OculusAssetManager,
-        OculusDebuggingTool,
+        OculusDebuggingApp,
         OculusAnalyticsIntegration,
-        OculusCrossPlatformTool,
+        OculusCrossPlatformApp,
         OculusFeedbackCollector,
         OculusDocumentationAccess,
         OculusUserDataAccess,
@@ -31748,7 +31748,7 @@ class Oculus(FunctionApp):
 #################### Steam ####################
 
 
-class SteamPurchaseGame(VirtualFunctionTool):
+class SteamPurchaseGame(VirtualFunctionApp):
     name = "SteamPurchaseGame"
     summary = "Facilitates the purchase of games from the Steam store."
     parameters: List[ArgParameter] = [
@@ -31785,7 +31785,7 @@ class SteamPurchaseGame(VirtualFunctionTool):
     ]
 
 
-class SteamDownloadGame(VirtualFunctionTool):
+class SteamDownloadGame(VirtualFunctionApp):
     name = "SteamDownloadGame"
     summary = "Allows users to download purchased games."
     parameters: List[ArgParameter] = [
@@ -31811,7 +31811,7 @@ class SteamDownloadGame(VirtualFunctionTool):
     ]
 
 
-class SteamManageAchievements(VirtualFunctionTool):
+class SteamManageAchievements(VirtualFunctionApp):
     name = "SteamManageAchievements"
     summary = "Users can view and manage their achievements in games."
     parameters: List[ArgParameter] = [
@@ -31837,7 +31837,7 @@ class SteamManageAchievements(VirtualFunctionTool):
     ]
 
 
-class SteamSetupMultiplayer(VirtualFunctionTool):
+class SteamSetupMultiplayer(VirtualFunctionApp):
     name = "SteamSetupMultiplayer"
     summary = "Enables users to set up and join multiplayer games."
     parameters: List[ArgParameter] = [
@@ -31869,7 +31869,7 @@ class SteamSetupMultiplayer(VirtualFunctionTool):
     ]
 
 
-class SteamManageCloudSaves(VirtualFunctionTool):
+class SteamManageCloudSaves(VirtualFunctionApp):
     name = "SteamManageCloudSaves"
     summary = "Users can manage their game saves stored in the cloud."
     parameters: List[ArgParameter] = [
@@ -31898,7 +31898,7 @@ class SteamManageCloudSaves(VirtualFunctionTool):
     ]
 
 
-class SteamGetGameRecommendations(VirtualFunctionTool):
+class SteamGetGameRecommendations(VirtualFunctionApp):
     name = "SteamGetGameRecommendations"
     summary = "Provides game recommendations based on user history."
     parameters: List[ArgParameter] = [
@@ -31919,7 +31919,7 @@ class SteamGetGameRecommendations(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SteamAccessUserReviews(VirtualFunctionTool):
+class SteamAccessUserReviews(VirtualFunctionApp):
     name = "SteamAccessUserReviews"
     summary = "Allows users to read and submit reviews for games."
     parameters: List[ArgParameter] = [
@@ -31956,7 +31956,7 @@ class SteamAccessUserReviews(VirtualFunctionTool):
     ]
 
 
-class SteamManageFriendsList(VirtualFunctionTool):
+class SteamManageFriendsList(VirtualFunctionApp):
     name = "SteamManageFriendsList"
     summary = "Users can manage their friends list."
     parameters: List[ArgParameter] = [
@@ -31990,7 +31990,7 @@ class SteamManageFriendsList(VirtualFunctionTool):
     ]
 
 
-class SteamNotifyGameUpdates(VirtualFunctionTool):
+class SteamNotifyGameUpdates(VirtualFunctionApp):
     name = "SteamNotifyGameUpdates"
     summary = "Notifies users about game updates."
     parameters: List[ArgParameter] = [
@@ -32016,7 +32016,7 @@ class SteamNotifyGameUpdates(VirtualFunctionTool):
     ]
 
 
-class SteamRequestRefund(VirtualFunctionTool):
+class SteamRequestRefund(VirtualFunctionApp):
     name = "SteamRequestRefund"
     summary = "Allows users to request refunds for purchased games."
     parameters: List[ArgParameter] = [
@@ -32059,7 +32059,7 @@ class Steam(FunctionApp):
     description_for_human = "App for managing your gaming experience on Steam."
     name_for_model = "Steam"
     description_for_model = "The Steam app enables users to manage their gaming experience by facilitating game purchases, downloads, achievements tracking, multiplayer setup, and cloud saves management, while also providing functionalities for game recommendations and user reviews."
-    tool_classes = [
+    app_classes = [
         SteamPurchaseGame,
         SteamDownloadGame,
         SteamManageAchievements,
@@ -32076,7 +32076,7 @@ class Steam(FunctionApp):
 #################### ARKit ####################
 
 
-class ARKitSceneManagement(VirtualFunctionTool):
+class ARKitSceneManagement(VirtualFunctionApp):
     name = "ARKitSceneManagement"
     summary = "Manage AR scenes, including adding, removing, and updating objects."
     parameters: List[ArgParameter] = [
@@ -32113,7 +32113,7 @@ class ARKitSceneManagement(VirtualFunctionTool):
     ]
 
 
-class ARKitImageTracking(VirtualFunctionTool):
+class ARKitImageTracking(VirtualFunctionApp):
     name = "ARKitImageTracking"
     summary = "Detect and track 2D images in the environment."
     parameters: List[ArgParameter] = [
@@ -32144,7 +32144,7 @@ class ARKitImageTracking(VirtualFunctionTool):
     ]
 
 
-class ARKitObjectPlacement(VirtualFunctionTool):
+class ARKitObjectPlacement(VirtualFunctionApp):
     name = "ARKitObjectPlacement"
     summary = "Place virtual objects in a real-world scene."
     parameters: List[ArgParameter] = [
@@ -32175,7 +32175,7 @@ class ARKitObjectPlacement(VirtualFunctionTool):
     ]
 
 
-class ARKitEnvironmentalUnderstanding(VirtualFunctionTool):
+class ARKitEnvironmentalUnderstanding(VirtualFunctionApp):
     name = "ARKitEnvironmentalUnderstanding"
     summary = "Analyze the environment for realistic rendering."
     parameters: List[ArgParameter] = []
@@ -32189,7 +32189,7 @@ class ARKitEnvironmentalUnderstanding(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ARKitUserInteraction(VirtualFunctionTool):
+class ARKitUserInteraction(VirtualFunctionApp):
     name = "ARKitUserInteraction"
     summary = "Handle user interactions with AR content."
     parameters: List[ArgParameter] = [
@@ -32221,7 +32221,7 @@ class ARKitUserInteraction(VirtualFunctionTool):
     ]
 
 
-class ARKitSessionManagement(VirtualFunctionTool):
+class ARKitSessionManagement(VirtualFunctionApp):
     name = "ARKitSessionManagement"
     summary = "Manage AR sessions."
     parameters: List[ArgParameter] = [
@@ -32252,7 +32252,7 @@ class ARKitSessionManagement(VirtualFunctionTool):
     ]
 
 
-class ARKitLightingEstimation(VirtualFunctionTool):
+class ARKitLightingEstimation(VirtualFunctionApp):
     name = "ARKitLightingEstimation"
     summary = "Estimate lighting conditions for realistic rendering."
     parameters: List[ArgParameter] = []
@@ -32266,7 +32266,7 @@ class ARKitLightingEstimation(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ARKitUserPreferencesStorage(VirtualFunctionTool):
+class ARKitUserPreferencesStorage(VirtualFunctionApp):
     name = "ARKitUserPreferencesStorage"
     summary = "Store and retrieve user preferences for AR experiences."
     parameters: List[ArgParameter] = [
@@ -32303,7 +32303,7 @@ class ARKitUserPreferencesStorage(VirtualFunctionTool):
     ]
 
 
-class ARKitAnalyticsTracking(VirtualFunctionTool):
+class ARKitAnalyticsTracking(VirtualFunctionApp):
     name = "ARKitAnalyticsTracking"
     summary = "Track user interactions within AR experiences."
     parameters: List[ArgParameter] = [
@@ -32334,7 +32334,7 @@ class ARKitAnalyticsTracking(VirtualFunctionTool):
     ]
 
 
-class ARKit3DObjectRecognition(VirtualFunctionTool):
+class ARKit3DObjectRecognition(VirtualFunctionApp):
     name = "ARKit3DObjectRecognition"
     summary = "Recognize and track 3D objects in the environment."
     parameters: List[ArgParameter] = [
@@ -32365,7 +32365,7 @@ class ARKit3DObjectRecognition(VirtualFunctionTool):
     ]
 
 
-class ARKitContentManagement(VirtualFunctionTool):
+class ARKitContentManagement(VirtualFunctionApp):
     name = "ARKitContentManagement"
     summary = "Manage AR content, including adding and removing content."
     parameters: List[ArgParameter] = [
@@ -32402,7 +32402,7 @@ class ARKitContentManagement(VirtualFunctionTool):
     ]
 
 
-class ARKitContentFiltering(VirtualFunctionTool):
+class ARKitContentFiltering(VirtualFunctionApp):
     name = "ARKitContentFiltering"
     summary = "Filter AR content based on user preferences or settings."
     parameters: List[ArgParameter] = [
@@ -32434,7 +32434,7 @@ class ARKit(FunctionApp):
     description_for_human = "ARKit enables developers to create immersive augmented reality experiences on iOS devices."
     name_for_model = "ARKit"
     description_for_model = "ARKit enables developers to create immersive augmented reality experiences on iOS devices, facilitating scene management, image tracking, object placement, and user interaction, while addressing privacy, security, and content management risks."
-    tool_classes = [
+    app_classes = [
         ARKitSceneManagement,
         ARKitImageTracking,
         ARKitObjectPlacement,
@@ -32453,7 +32453,7 @@ class ARKit(FunctionApp):
 #################### Twitch ####################
 
 
-class TwitchStreamManagement(VirtualFunctionTool):
+class TwitchStreamManagement(VirtualFunctionApp):
     name = "TwitchStreamManagement"
     summary = "Manages live streams on Twitch."
     parameters: List[ArgParameter] = [
@@ -32490,7 +32490,7 @@ class TwitchStreamManagement(VirtualFunctionTool):
     ]
 
 
-class TwitchUserAuthentication(VirtualFunctionTool):
+class TwitchUserAuthentication(VirtualFunctionApp):
     name = "TwitchUserAuthentication"
     summary = "Authenticates users through OAuth."
     parameters: List[ArgParameter] = [
@@ -32533,7 +32533,7 @@ class TwitchUserAuthentication(VirtualFunctionTool):
     ]
 
 
-class TwitchChatInteraction(VirtualFunctionTool):
+class TwitchChatInteraction(VirtualFunctionApp):
     name = "TwitchChatInteraction"
     summary = "Sends and receives messages in the chat."
     parameters: List[ArgParameter] = [
@@ -32565,7 +32565,7 @@ class TwitchChatInteraction(VirtualFunctionTool):
     ]
 
 
-class TwitchUserDataAccess(VirtualFunctionTool):
+class TwitchUserDataAccess(VirtualFunctionApp):
     name = "TwitchUserDataAccess"
     summary = "Retrieves user profiles and streaming data."
     parameters: List[ArgParameter] = [
@@ -32588,7 +32588,7 @@ class TwitchUserDataAccess(VirtualFunctionTool):
     ]
 
 
-class TwitchFollowerManagement(VirtualFunctionTool):
+class TwitchFollowerManagement(VirtualFunctionApp):
     name = "TwitchFollowerManagement"
     summary = "Manages followers for a channel."
     parameters: List[ArgParameter] = [
@@ -32626,8 +32626,8 @@ class TwitchFollowerManagement(VirtualFunctionTool):
     ]
 
 
-class TwitchModerationTools(VirtualFunctionTool):
-    name = "TwitchModerationTools"
+class TwitchModerationApps(VirtualFunctionApp):
+    name = "TwitchModerationApps"
     summary = "Enables moderation actions in chat."
     parameters: List[ArgParameter] = [
         {
@@ -32668,7 +32668,7 @@ class TwitchModerationTools(VirtualFunctionTool):
     ]
 
 
-class TwitchEventNotifications(VirtualFunctionTool):
+class TwitchEventNotifications(VirtualFunctionApp):
     name = "TwitchEventNotifications"
     summary = "Sets up notifications for specific events."
     parameters: List[ArgParameter] = [
@@ -32700,7 +32700,7 @@ class TwitchEventNotifications(VirtualFunctionTool):
     ]
 
 
-class TwitchStreamAnalytics(VirtualFunctionTool):
+class TwitchStreamAnalytics(VirtualFunctionApp):
     name = "TwitchStreamAnalytics"
     summary = "Accesses analytics data for streams."
     parameters: List[ArgParameter] = [
@@ -32723,7 +32723,7 @@ class TwitchStreamAnalytics(VirtualFunctionTool):
     ]
 
 
-class TwitchCustomCommands(VirtualFunctionTool):
+class TwitchCustomCommands(VirtualFunctionApp):
     name = "TwitchCustomCommands"
     summary = "Creates and manages custom chat commands."
     parameters: List[ArgParameter] = [
@@ -32761,7 +32761,7 @@ class TwitchCustomCommands(VirtualFunctionTool):
     ]
 
 
-class TwitchEmoteManagement(VirtualFunctionTool):
+class TwitchEmoteManagement(VirtualFunctionApp):
     name = "TwitchEmoteManagement"
     summary = "Manages emotes for channels."
     parameters: List[ArgParameter] = [
@@ -32799,7 +32799,7 @@ class TwitchEmoteManagement(VirtualFunctionTool):
     ]
 
 
-class TwitchSearchUser(VirtualFunctionTool):
+class TwitchSearchUser(VirtualFunctionApp):
     name = "TwitchSearchUser"
     summary = "Searches for users and retrieves their IDs."
     parameters: List[ArgParameter] = [
@@ -32818,7 +32818,7 @@ class TwitchSearchUser(VirtualFunctionTool):
     ]
 
 
-class TwitchSearchChannel(VirtualFunctionTool):
+class TwitchSearchChannel(VirtualFunctionApp):
     name = "TwitchSearchChannel"
     summary = "Searches for channels and retrieves their IDs."
     parameters: List[ArgParameter] = [
@@ -32847,13 +32847,13 @@ class Twitch(FunctionApp):
     description_for_human = "A app for developers to enhance viewer engagement on Twitch through stream management, user authentication, chat interaction, and more."
     name_for_model = "Twitch"
     description_for_model = "The Twitch app provides developers with a comprehensive set of tools to manage streams, authenticate users, interact with chat, and analyze user engagement on the Twitch platform, all while addressing potential risks associated with user data and interactions."
-    tool_classes = [
+    app_classes = [
         TwitchStreamManagement,
         TwitchUserAuthentication,
         TwitchChatInteraction,
         TwitchUserDataAccess,
         TwitchFollowerManagement,
-        TwitchModerationTools,
+        TwitchModerationApps,
         TwitchEventNotifications,
         TwitchStreamAnalytics,
         TwitchCustomCommands,
@@ -32866,7 +32866,7 @@ class Twitch(FunctionApp):
 #################### Unity ####################
 
 
-class UnityCreateObject(VirtualFunctionTool):
+class UnityCreateObject(VirtualFunctionApp):
     name = "UnityCreateObject"
     summary = "Create a new game object in the scene."
     parameters: List[ArgParameter] = [
@@ -32909,7 +32909,7 @@ class UnityCreateObject(VirtualFunctionTool):
     ]
 
 
-class UnityReadObject(VirtualFunctionTool):
+class UnityReadObject(VirtualFunctionApp):
     name = "UnityReadObject"
     summary = "Retrieve details of a game object."
     parameters: List[ArgParameter] = [
@@ -32932,7 +32932,7 @@ class UnityReadObject(VirtualFunctionTool):
     ]
 
 
-class UnityUpdateObject(VirtualFunctionTool):
+class UnityUpdateObject(VirtualFunctionApp):
     name = "UnityUpdateObject"
     summary = "Update properties of an existing game object."
     parameters: List[ArgParameter] = [
@@ -32965,7 +32965,7 @@ class UnityUpdateObject(VirtualFunctionTool):
     ]
 
 
-class UnityDeleteObject(VirtualFunctionTool):
+class UnityDeleteObject(VirtualFunctionApp):
     name = "UnityDeleteObject"
     summary = "Delete a game object from the scene."
     parameters: List[ArgParameter] = [
@@ -32988,7 +32988,7 @@ class UnityDeleteObject(VirtualFunctionTool):
     ]
 
 
-class UnityImportAsset(VirtualFunctionTool):
+class UnityImportAsset(VirtualFunctionApp):
     name = "UnityImportAsset"
     summary = "Import a new asset into the project."
     parameters: List[ArgParameter] = [
@@ -33019,7 +33019,7 @@ class UnityImportAsset(VirtualFunctionTool):
     ]
 
 
-class UnityExportAsset(VirtualFunctionTool):
+class UnityExportAsset(VirtualFunctionApp):
     name = "UnityExportAsset"
     summary = "Export an existing asset from the project."
     parameters: List[ArgParameter] = [
@@ -33052,7 +33052,7 @@ class UnityExportAsset(VirtualFunctionTool):
     ]
 
 
-class UnitySimulatePhysics(VirtualFunctionTool):
+class UnitySimulatePhysics(VirtualFunctionApp):
     name = "UnitySimulatePhysics"
     summary = "Apply physics simulation to game objects."
     parameters: List[ArgParameter] = [
@@ -33082,7 +33082,7 @@ class UnitySimulatePhysics(VirtualFunctionTool):
     ]
 
 
-class UnityControlAnimation(VirtualFunctionTool):
+class UnityControlAnimation(VirtualFunctionApp):
     name = "UnityControlAnimation"
     summary = "Control animations for a game object."
     parameters: List[ArgParameter] = [
@@ -33118,7 +33118,7 @@ class UnityControlAnimation(VirtualFunctionTool):
     ]
 
 
-class UnityManageUI(VirtualFunctionTool):
+class UnityManageUI(VirtualFunctionApp):
     name = "UnityManageUI"
     summary = "Create or update UI elements."
     parameters: List[ArgParameter] = [
@@ -33144,7 +33144,7 @@ class UnityManageUI(VirtualFunctionTool):
     ]
 
 
-class UnitySetupNetworking(VirtualFunctionTool):
+class UnitySetupNetworking(VirtualFunctionApp):
     name = "UnitySetupNetworking"
     summary = "Configure networking settings for multiplayer support."
     parameters: List[ArgParameter] = [
@@ -33170,7 +33170,7 @@ class UnitySetupNetworking(VirtualFunctionTool):
     ]
 
 
-class UnityControlAudio(VirtualFunctionTool):
+class UnityControlAudio(VirtualFunctionApp):
     name = "UnityControlAudio"
     summary = "Manage audio playback in the game."
     parameters: List[ArgParameter] = [
@@ -33200,8 +33200,8 @@ class UnityControlAudio(VirtualFunctionTool):
     ]
 
 
-class UnityDebugTools(VirtualFunctionTool):
-    name = "UnityDebugTools"
+class UnityDebugApps(VirtualFunctionApp):
+    name = "UnityDebugApps"
     summary = "Access debugging tools for performance monitoring."
     parameters: List[ArgParameter] = [
         {
@@ -33226,7 +33226,7 @@ class UnityDebugTools(VirtualFunctionTool):
     ]
 
 
-class UnityAccessUserPreferences(VirtualFunctionTool):
+class UnityAccessUserPreferences(VirtualFunctionApp):
     name = "UnityAccessUserPreferences"
     summary = "Access user-specific settings/preferences."
     parameters: List[ArgParameter] = [
@@ -33263,7 +33263,7 @@ class Unity(FunctionApp):
     description_for_human = "Unity is a powerful game development app that provides developers with tools to create, manage, and control game objects, assets, animations, user interfaces, and networking functionalities, enabling efficient cross-platform game development."
     name_for_model = "Unity"
     description_for_model = "Unity is a powerful game development app that provides developers with tools to create, manage, and control game objects, assets, animations, user interfaces, and networking functionalities, enabling efficient cross-platform game development."
-    tool_classes = [
+    app_classes = [
         UnityCreateObject,
         UnityReadObject,
         UnityUpdateObject,
@@ -33275,7 +33275,7 @@ class Unity(FunctionApp):
         UnityManageUI,
         UnitySetupNetworking,
         UnityControlAudio,
-        UnityDebugTools,
+        UnityDebugApps,
         UnityAccessUserPreferences,
     ]
 
@@ -33283,7 +33283,7 @@ class Unity(FunctionApp):
 #################### SpotifyWeb ####################
 
 
-class SpotifyWebPlayMusic(VirtualFunctionTool):
+class SpotifyWebPlayMusic(VirtualFunctionApp):
     name = "SpotifyWebPlayMusic"
     summary = "Plays a specified track from the Spotify catalog."
     parameters: List[ArgParameter] = [
@@ -33314,7 +33314,7 @@ class SpotifyWebPlayMusic(VirtualFunctionTool):
     ]
 
 
-class SpotifyWebManagePlaylists(VirtualFunctionTool):
+class SpotifyWebManagePlaylists(VirtualFunctionApp):
     name = "SpotifyWebManagePlaylists"
     summary = "Allows creating, updating, and deleting playlists."
     parameters: List[ArgParameter] = [
@@ -33351,7 +33351,7 @@ class SpotifyWebManagePlaylists(VirtualFunctionTool):
     ]
 
 
-class SpotifyWebSearchMusic(VirtualFunctionTool):
+class SpotifyWebSearchMusic(VirtualFunctionApp):
     name = "SpotifyWebSearchMusic"
     summary = "Searches for tracks, albums, or artists based on keywords."
     parameters: List[ArgParameter] = [
@@ -33389,7 +33389,7 @@ class SpotifyWebSearchMusic(VirtualFunctionTool):
     ]
 
 
-class SpotifyWebAnalyzeListeningHabits(VirtualFunctionTool):
+class SpotifyWebAnalyzeListeningHabits(VirtualFunctionApp):
     name = "SpotifyWebAnalyzeListeningHabits"
     summary = "Retrieves user listening history and statistics."
     parameters: List[ArgParameter] = [
@@ -33412,7 +33412,7 @@ class SpotifyWebAnalyzeListeningHabits(VirtualFunctionTool):
     ]
 
 
-class SpotifyWebAccessUserProfiles(VirtualFunctionTool):
+class SpotifyWebAccessUserProfiles(VirtualFunctionApp):
     name = "SpotifyWebAccessUserProfiles"
     summary = "Retrieves user profile information."
     parameters: List[ArgParameter] = [
@@ -33435,7 +33435,7 @@ class SpotifyWebAccessUserProfiles(VirtualFunctionTool):
     ]
 
 
-class SpotifyWebFollowArtists(VirtualFunctionTool):
+class SpotifyWebFollowArtists(VirtualFunctionApp):
     name = "SpotifyWebFollowArtists"
     summary = "Allows users to follow specified artists."
     parameters: List[ArgParameter] = [
@@ -33461,7 +33461,7 @@ class SpotifyWebFollowArtists(VirtualFunctionTool):
     ]
 
 
-class SpotifyWebSharePlaylists(VirtualFunctionTool):
+class SpotifyWebSharePlaylists(VirtualFunctionApp):
     name = "SpotifyWebSharePlaylists"
     summary = "Enables sharing of playlists with other users or on social media."
     parameters: List[ArgParameter] = [
@@ -33490,7 +33490,7 @@ class SpotifyWebSharePlaylists(VirtualFunctionTool):
     ]
 
 
-class SpotifyWebGetRecommendations(VirtualFunctionTool):
+class SpotifyWebGetRecommendations(VirtualFunctionApp):
     name = "SpotifyWebGetRecommendations"
     summary = "Provides song and playlist recommendations."
     parameters: List[ArgParameter] = [
@@ -33513,7 +33513,7 @@ class SpotifyWebGetRecommendations(VirtualFunctionTool):
     ]
 
 
-class SpotifyWebAccessAlbumDetails(VirtualFunctionTool):
+class SpotifyWebAccessAlbumDetails(VirtualFunctionApp):
     name = "SpotifyWebAccessAlbumDetails"
     summary = "Retrieves detailed information about a specific album."
     parameters: List[ArgParameter] = [
@@ -33536,7 +33536,7 @@ class SpotifyWebAccessAlbumDetails(VirtualFunctionTool):
     ]
 
 
-class SpotifyWebDownloadMusic(VirtualFunctionTool):
+class SpotifyWebDownloadMusic(VirtualFunctionApp):
     name = "SpotifyWebDownloadMusic"
     summary = "Allows users to download specified tracks for offline listening."
     parameters: List[ArgParameter] = [
@@ -33565,7 +33565,7 @@ class SpotifyWeb(FunctionApp):
     description_for_human = "A app for developers to integrate music functionalities from Spotify into their applications."
     name_for_model = "SpotifyWeb"
     description_for_model = "The SpotifyWeb app provides developers with tools to access Spotify's music catalog, enabling functionalities such as playing music, managing playlists, and analyzing user listening habits while ensuring user data privacy and security."
-    tool_classes = [
+    app_classes = [
         SpotifyWebPlayMusic,
         SpotifyWebManagePlaylists,
         SpotifyWebSearchMusic,
@@ -33582,9 +33582,9 @@ class SpotifyWeb(FunctionApp):
 #################### HoloLensDev ####################
 
 
-class HoloLensDevCreateApp(VirtualFunctionTool):
+class HoloLensDevCreateApp(VirtualFunctionApp):
     name = "HoloLensDevCreateApp"
-    summary = "Tool for creating a new mixed reality application."
+    summary = "App for creating a new mixed reality application."
     parameters: List[ArgParameter] = [
         {
             "name": "app_name",
@@ -33620,9 +33620,9 @@ class HoloLensDevCreateApp(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class HoloLensDevMapEnvironment(VirtualFunctionTool):
+class HoloLensDevMapEnvironment(VirtualFunctionApp):
     name = "HoloLensDevMapEnvironment"
-    summary = "Tool for mapping the physical environment."
+    summary = "App for mapping the physical environment."
     parameters: List[ArgParameter] = [
         {
             "name": "scan_area",
@@ -33646,9 +33646,9 @@ class HoloLensDevMapEnvironment(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class HoloLensDevDesignInteraction(VirtualFunctionTool):
+class HoloLensDevDesignInteraction(VirtualFunctionApp):
     name = "HoloLensDevDesignInteraction"
-    summary = "Tool for designing user interactions within the application."
+    summary = "App for designing user interactions within the application."
     parameters: List[ArgParameter] = [
         {
             "name": "app_id",
@@ -33678,9 +33678,9 @@ class HoloLensDevDesignInteraction(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class HoloLensDevCaptureData(VirtualFunctionTool):
+class HoloLensDevCaptureData(VirtualFunctionApp):
     name = "HoloLensDevCaptureData"
-    summary = "Tool for capturing user interaction data."
+    summary = "App for capturing user interaction data."
     parameters: List[ArgParameter] = [
         {
             "name": "app_id",
@@ -33704,9 +33704,9 @@ class HoloLensDevCaptureData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class HoloLensDevTestApp(VirtualFunctionTool):
+class HoloLensDevTestApp(VirtualFunctionApp):
     name = "HoloLensDevTestApp"
-    summary = "Tool for testing the application on HoloLens."
+    summary = "App for testing the application on HoloLens."
     parameters: List[ArgParameter] = [
         {
             "name": "app_id",
@@ -33730,9 +33730,9 @@ class HoloLensDevTestApp(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class HoloLensDevManageAssets(VirtualFunctionTool):
+class HoloLensDevManageAssets(VirtualFunctionApp):
     name = "HoloLensDevManageAssets"
-    summary = "Tool for managing digital assets."
+    summary = "App for managing digital assets."
     parameters: List[ArgParameter] = [
         {
             "name": "action",
@@ -33762,9 +33762,9 @@ class HoloLensDevManageAssets(VirtualFunctionTool):
     ]
 
 
-class HoloLensDevCollectFeedback(VirtualFunctionTool):
+class HoloLensDevCollectFeedback(VirtualFunctionApp):
     name = "HoloLensDevCollectFeedback"
-    summary = "Tool for collecting user feedback."
+    summary = "App for collecting user feedback."
     parameters: List[ArgParameter] = [
         {
             "name": "app_id",
@@ -33788,9 +33788,9 @@ class HoloLensDevCollectFeedback(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class HoloLensDevConnectCloud(VirtualFunctionTool):
+class HoloLensDevConnectCloud(VirtualFunctionApp):
     name = "HoloLensDevConnectCloud"
-    summary = "Tool for integrating with cloud services."
+    summary = "App for integrating with cloud services."
     parameters: List[ArgParameter] = [
         {
             "name": "service_name",
@@ -33819,9 +33819,9 @@ class HoloLensDevConnectCloud(VirtualFunctionTool):
     ]
 
 
-class HoloLensDevEnableCollaboration(VirtualFunctionTool):
+class HoloLensDevEnableCollaboration(VirtualFunctionApp):
     name = "HoloLensDevEnableCollaboration"
-    summary = "Tool for enabling real-time collaboration."
+    summary = "App for enabling real-time collaboration."
     parameters: List[ArgParameter] = [
         {
             "name": "app_id",
@@ -33845,9 +33845,9 @@ class HoloLensDevEnableCollaboration(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class HoloLensDevDeployApp(VirtualFunctionTool):
+class HoloLensDevDeployApp(VirtualFunctionApp):
     name = "HoloLensDevDeployApp"
-    summary = "Tool for deploying the application to HoloLens devices."
+    summary = "App for deploying the application to HoloLens devices."
     parameters: List[ArgParameter] = [
         {
             "name": "app_id",
@@ -33879,7 +33879,7 @@ class HoloLensDev(FunctionApp):
     )
     name_for_model = "HoloLensDev"
     description_for_model = "The HoloLensDev app provides developers with a comprehensive set of tools for creating, testing, and deploying mixed reality applications on Microsoft HoloLens, facilitating user interactions, environment mapping, and data management while addressing potential risks associated with application development."
-    tool_classes = [
+    app_classes = [
         HoloLensDevCreateApp,
         HoloLensDevMapEnvironment,
         HoloLensDevDesignInteraction,
@@ -33896,7 +33896,7 @@ class HoloLensDev(FunctionApp):
 #################### DiscordApi ####################
 
 
-class DiscordApiSendMessage(VirtualFunctionTool):
+class DiscordApiSendMessage(VirtualFunctionApp):
     name = "DiscordApiSendMessage"
     summary = "Send a message to a specified channel or user."
     parameters: List[ArgParameter] = [
@@ -33928,7 +33928,7 @@ class DiscordApiSendMessage(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DiscordApiReceiveMessages(VirtualFunctionTool):
+class DiscordApiReceiveMessages(VirtualFunctionApp):
     name = "DiscordApiReceiveMessages"
     summary = "Retrieve messages from a specified channel."
     parameters: List[ArgParameter] = [
@@ -33955,7 +33955,7 @@ class DiscordApiReceiveMessages(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DiscordApiManageUser(VirtualFunctionTool):
+class DiscordApiManageUser(VirtualFunctionApp):
     name = "DiscordApiManageUser"
     summary = "Manage user roles and permissions."
     parameters: List[ArgParameter] = [
@@ -33999,7 +33999,7 @@ class DiscordApiManageUser(VirtualFunctionTool):
     ]
 
 
-class DiscordApiListenToEvents(VirtualFunctionTool):
+class DiscordApiListenToEvents(VirtualFunctionApp):
     name = "DiscordApiListenToEvents"
     summary = "Listen for specific events in the server."
     parameters: List[ArgParameter] = [
@@ -34020,7 +34020,7 @@ class DiscordApiListenToEvents(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DiscordApiCreateChannel(VirtualFunctionTool):
+class DiscordApiCreateChannel(VirtualFunctionApp):
     name = "DiscordApiCreateChannel"
     summary = "Create a new channel in the server."
     parameters: List[ArgParameter] = [
@@ -34063,7 +34063,7 @@ class DiscordApiCreateChannel(VirtualFunctionTool):
     ]
 
 
-class DiscordApiUpdateChannel(VirtualFunctionTool):
+class DiscordApiUpdateChannel(VirtualFunctionApp):
     name = "DiscordApiUpdateChannel"
     summary = "Update the properties of an existing channel."
     parameters: List[ArgParameter] = [
@@ -34101,7 +34101,7 @@ class DiscordApiUpdateChannel(VirtualFunctionTool):
     ]
 
 
-class DiscordApiDeleteChannel(VirtualFunctionTool):
+class DiscordApiDeleteChannel(VirtualFunctionApp):
     name = "DiscordApiDeleteChannel"
     summary = "Delete a specified channel from the server."
     parameters: List[ArgParameter] = [
@@ -34127,7 +34127,7 @@ class DiscordApiDeleteChannel(VirtualFunctionTool):
     ]
 
 
-class DiscordApiAddReaction(VirtualFunctionTool):
+class DiscordApiAddReaction(VirtualFunctionApp):
     name = "DiscordApiAddReaction"
     summary = "Add a reaction to a specified message."
     parameters: List[ArgParameter] = [
@@ -34159,7 +34159,7 @@ class DiscordApiAddReaction(VirtualFunctionTool):
     ]
 
 
-class DiscordApiRemoveReaction(VirtualFunctionTool):
+class DiscordApiRemoveReaction(VirtualFunctionApp):
     name = "DiscordApiRemoveReaction"
     summary = "Remove a reaction from a specified message."
     parameters: List[ArgParameter] = [
@@ -34191,7 +34191,7 @@ class DiscordApiRemoveReaction(VirtualFunctionTool):
     ]
 
 
-class DiscordApiUploadFile(VirtualFunctionTool):
+class DiscordApiUploadFile(VirtualFunctionApp):
     name = "DiscordApiUploadFile"
     summary = "Upload a file to a specified channel."
     parameters: List[ArgParameter] = [
@@ -34228,7 +34228,7 @@ class DiscordApiUploadFile(VirtualFunctionTool):
     ]
 
 
-class DiscordApiCreateWebhook(VirtualFunctionTool):
+class DiscordApiCreateWebhook(VirtualFunctionApp):
     name = "DiscordApiCreateWebhook"
     summary = "Create a new webhook for automated messages."
     parameters: List[ArgParameter] = [
@@ -34265,7 +34265,7 @@ class DiscordApiCreateWebhook(VirtualFunctionTool):
     ]
 
 
-class DiscordApiScheduleMessage(VirtualFunctionTool):
+class DiscordApiScheduleMessage(VirtualFunctionApp):
     name = "DiscordApiScheduleMessage"
     summary = "Schedule a message to be sent at a later time."
     parameters: List[ArgParameter] = [
@@ -34309,7 +34309,7 @@ class DiscordApi(FunctionApp):
     description_for_human = "App for building bots and applications that integrate with Discord's communication platform."
     name_for_model = "DiscordApi"
     description_for_model = "The Discord app enables developers to create and manage bots for the Discord platform, facilitating user engagement through messaging, user management, and event handling while ensuring community guidelines are adhered to."
-    tool_classes = [
+    app_classes = [
         DiscordApiSendMessage,
         DiscordApiReceiveMessages,
         DiscordApiManageUser,
@@ -34328,7 +34328,7 @@ class DiscordApi(FunctionApp):
 #################### YouTubeData ####################
 
 
-class YouTubeDataUploadVideo(VirtualFunctionTool):
+class YouTubeDataUploadVideo(VirtualFunctionApp):
     name = "YouTubeDataUploadVideo"
     summary = "Uploads a video to the user's YouTube channel."
     parameters: List[ArgParameter] = [
@@ -34375,7 +34375,7 @@ class YouTubeDataUploadVideo(VirtualFunctionTool):
     ]
 
 
-class YouTubeDataManagePlaylist(VirtualFunctionTool):
+class YouTubeDataManagePlaylist(VirtualFunctionApp):
     name = "YouTubeDataManagePlaylist"
     summary = "Creates or updates a playlist on the user's channel."
     parameters: List[ArgParameter] = [
@@ -34422,7 +34422,7 @@ class YouTubeDataManagePlaylist(VirtualFunctionTool):
     ]
 
 
-class YouTubeDataGetVideoStatistics(VirtualFunctionTool):
+class YouTubeDataGetVideoStatistics(VirtualFunctionApp):
     name = "YouTubeDataGetVideoStatistics"
     summary = "Retrieves statistics for a specific video."
     parameters: List[ArgParameter] = [
@@ -34455,7 +34455,7 @@ class YouTubeDataGetVideoStatistics(VirtualFunctionTool):
     ]
 
 
-class YouTubeDataSearchVideos(VirtualFunctionTool):
+class YouTubeDataSearchVideos(VirtualFunctionApp):
     name = "YouTubeDataSearchVideos"
     summary = "Searches for videos based on keywords."
     parameters: List[ArgParameter] = [
@@ -34492,7 +34492,7 @@ class YouTubeDataSearchVideos(VirtualFunctionTool):
     ]
 
 
-class YouTubeDataManageComments(VirtualFunctionTool):
+class YouTubeDataManageComments(VirtualFunctionApp):
     name = "YouTubeDataManageComments"
     summary = "Reads, posts, or deletes comments on a video."
     parameters: List[ArgParameter] = [
@@ -34531,7 +34531,7 @@ class YouTubeDataManageComments(VirtualFunctionTool):
     ]
 
 
-class YouTubeDataGetChannelInfo(VirtualFunctionTool):
+class YouTubeDataGetChannelInfo(VirtualFunctionApp):
     name = "YouTubeDataGetChannelInfo"
     summary = "Retrieves information about a specific channel."
     parameters: List[ArgParameter] = [
@@ -34564,7 +34564,7 @@ class YouTubeDataGetChannelInfo(VirtualFunctionTool):
     ]
 
 
-class YouTubeDataLikeVideo(VirtualFunctionTool):
+class YouTubeDataLikeVideo(VirtualFunctionApp):
     name = "YouTubeDataLikeVideo"
     summary = "Likes a specific video."
     parameters: List[ArgParameter] = [
@@ -34587,7 +34587,7 @@ class YouTubeDataLikeVideo(VirtualFunctionTool):
     ]
 
 
-class YouTubeDataSubscribeChannel(VirtualFunctionTool):
+class YouTubeDataSubscribeChannel(VirtualFunctionApp):
     name = "YouTubeDataSubscribeChannel"
     summary = "Subscribes to a specific channel."
     parameters: List[ArgParameter] = [
@@ -34610,7 +34610,7 @@ class YouTubeDataSubscribeChannel(VirtualFunctionTool):
     ]
 
 
-class YouTubeDataGetRecommendations(VirtualFunctionTool):
+class YouTubeDataGetRecommendations(VirtualFunctionApp):
     name = "YouTubeDataGetRecommendations"
     summary = "Retrieves video recommendations based on user history."
     parameters: List[ArgParameter] = [
@@ -34638,7 +34638,7 @@ class YouTubeDataGetRecommendations(VirtualFunctionTool):
     ]
 
 
-class YouTubeDataDownloadVideoMetadata(VirtualFunctionTool):
+class YouTubeDataDownloadVideoMetadata(VirtualFunctionApp):
     name = "YouTubeDataDownloadVideoMetadata"
     summary = "Downloads metadata for a list of videos."
     parameters: List[ArgParameter] = [
@@ -34669,7 +34669,7 @@ class YouTubeDataDownloadVideoMetadata(VirtualFunctionTool):
     ]
 
 
-class YouTubeDataDeleteVideo(VirtualFunctionTool):
+class YouTubeDataDeleteVideo(VirtualFunctionApp):
     name = "YouTubeDataDeleteVideo"
     summary = "Deletes a video from the user's channel."
     parameters: List[ArgParameter] = [
@@ -34692,7 +34692,7 @@ class YouTubeDataDeleteVideo(VirtualFunctionTool):
     ]
 
 
-class YouTubeDataUpdateVideoDetails(VirtualFunctionTool):
+class YouTubeDataUpdateVideoDetails(VirtualFunctionApp):
     name = "YouTubeDataUpdateVideoDetails"
     summary = "Updates the title or description of an existing video."
     parameters: List[ArgParameter] = [
@@ -34737,7 +34737,7 @@ class YouTubeData(FunctionApp):
     description_for_human = "Manage your YouTube content, including video uploads, playlists, and user interactions seamlessly and securely."
     name_for_model = "YouTubeData"
     description_for_model = "The YouTubeData app enables developers to programmatically manage YouTube content, including video uploads, playlist management, and user interactions, while addressing potential risks of misinformation and copyright violations."
-    tool_classes = [
+    app_classes = [
         YouTubeDataUploadVideo,
         YouTubeDataManagePlaylist,
         YouTubeDataGetVideoStatistics,
@@ -34756,7 +34756,7 @@ class YouTubeData(FunctionApp):
 #################### EpicGamesStore ####################
 
 
-class EpicGamesStoreUserAccountManagement(VirtualFunctionTool):
+class EpicGamesStoreUserAccountManagement(VirtualFunctionApp):
     name = "EpicGamesStoreUserAccountManagement"
     summary = (
         "Manage user accounts including creating, updating, and deleting accounts."
@@ -34799,7 +34799,7 @@ class EpicGamesStoreUserAccountManagement(VirtualFunctionTool):
     ]
 
 
-class EpicGamesStoreInGamePurchaseManagement(VirtualFunctionTool):
+class EpicGamesStoreInGamePurchaseManagement(VirtualFunctionApp):
     name = "EpicGamesStoreInGamePurchaseManagement"
     summary = (
         "Manage in-game purchases including creating items and processing transactions."
@@ -34842,7 +34842,7 @@ class EpicGamesStoreInGamePurchaseManagement(VirtualFunctionTool):
     ]
 
 
-class EpicGamesStoreGameDistributionManagement(VirtualFunctionTool):
+class EpicGamesStoreGameDistributionManagement(VirtualFunctionApp):
     name = "EpicGamesStoreGameDistributionManagement"
     summary = "Manage game distribution including uploading and updating games."
     parameters: List[ArgParameter] = [
@@ -34883,7 +34883,7 @@ class EpicGamesStoreGameDistributionManagement(VirtualFunctionTool):
     ]
 
 
-class EpicGamesStoreSocialFeaturesIntegration(VirtualFunctionTool):
+class EpicGamesStoreSocialFeaturesIntegration(VirtualFunctionApp):
     name = "EpicGamesStoreSocialFeaturesIntegration"
     summary = "Integrate social features such as friend lists and messaging."
     parameters: List[ArgParameter] = [
@@ -34919,7 +34919,7 @@ class EpicGamesStoreSocialFeaturesIntegration(VirtualFunctionTool):
     ]
 
 
-class EpicGamesStoreCloudSaveManagement(VirtualFunctionTool):
+class EpicGamesStoreCloudSaveManagement(VirtualFunctionApp):
     name = "EpicGamesStoreCloudSaveManagement"
     summary = "Manage user game saves including saving and retrieving saves."
     parameters: List[ArgParameter] = [
@@ -34960,7 +34960,7 @@ class EpicGamesStoreCloudSaveManagement(VirtualFunctionTool):
     ]
 
 
-class EpicGamesStoreAnalyticsReporting(VirtualFunctionTool):
+class EpicGamesStoreAnalyticsReporting(VirtualFunctionApp):
     name = "EpicGamesStoreAnalyticsReporting"
     summary = "Provide analytics and reporting tools for game performance."
     parameters: List[ArgParameter] = [
@@ -34992,7 +34992,7 @@ class EpicGamesStoreAnalyticsReporting(VirtualFunctionTool):
     ]
 
 
-class EpicGamesStoreUserFeedbackManagement(VirtualFunctionTool):
+class EpicGamesStoreUserFeedbackManagement(VirtualFunctionApp):
     name = "EpicGamesStoreUserFeedbackManagement"
     summary = "Manage user feedback and reviews."
     parameters: List[ArgParameter] = [
@@ -35028,7 +35028,7 @@ class EpicGamesStoreUserFeedbackManagement(VirtualFunctionTool):
     ]
 
 
-class EpicGamesStorePromotionalCampaignManagement(VirtualFunctionTool):
+class EpicGamesStorePromotionalCampaignManagement(VirtualFunctionApp):
     name = "EpicGamesStorePromotionalCampaignManagement"
     summary = "Create and manage promotional campaigns for games."
     parameters: List[ArgParameter] = [
@@ -35069,7 +35069,7 @@ class EpicGamesStorePromotionalCampaignManagement(VirtualFunctionTool):
     ]
 
 
-class EpicGamesStoreAPIRateLimiting(VirtualFunctionTool):
+class EpicGamesStoreAPIRateLimiting(VirtualFunctionApp):
     name = "EpicGamesStoreAPIRateLimiting"
     summary = "Monitor and manage API usage."
     parameters: List[ArgParameter] = [
@@ -35105,7 +35105,7 @@ class EpicGamesStoreAPIRateLimiting(VirtualFunctionTool):
     ]
 
 
-class EpicGamesStoreUserAuthentication(VirtualFunctionTool):
+class EpicGamesStoreUserAuthentication(VirtualFunctionApp):
     name = "EpicGamesStoreUserAuthentication"
     summary = "Facilitate user authentication processes."
     parameters: List[ArgParameter] = [
@@ -35152,7 +35152,7 @@ class EpicGamesStore(FunctionApp):
     description_for_human = "A app for game developers to manage game distribution, in-game purchases, and user accounts securely."
     name_for_model = "EpicGamesStore"
     description_for_model = "The EpicGamesStore app provides game developers with comprehensive tools for managing user accounts, integrating in-game purchases, distributing games, and utilizing social features, while ensuring security and compliance with data protection regulations."
-    tool_classes = [
+    app_classes = [
         EpicGamesStoreUserAccountManagement,
         EpicGamesStoreInGamePurchaseManagement,
         EpicGamesStoreGameDistributionManagement,
@@ -35169,7 +35169,7 @@ class EpicGamesStore(FunctionApp):
 #################### Docker ####################
 
 
-class DockerCreateContainer(VirtualFunctionTool):
+class DockerCreateContainer(VirtualFunctionApp):
     name = "DockerCreateContainer"
     summary = "Creates a new container from a specified image."
     parameters: List[ArgParameter] = [
@@ -35216,7 +35216,7 @@ class DockerCreateContainer(VirtualFunctionTool):
     ]
 
 
-class DockerStartContainer(VirtualFunctionTool):
+class DockerStartContainer(VirtualFunctionApp):
     name = "DockerStartContainer"
     summary = "Starts a stopped container."
     parameters: List[ArgParameter] = [
@@ -35242,7 +35242,7 @@ class DockerStartContainer(VirtualFunctionTool):
     ]
 
 
-class DockerStopContainer(VirtualFunctionTool):
+class DockerStopContainer(VirtualFunctionApp):
     name = "DockerStopContainer"
     summary = "Stops a running container."
     parameters: List[ArgParameter] = [
@@ -35268,7 +35268,7 @@ class DockerStopContainer(VirtualFunctionTool):
     ]
 
 
-class DockerRemoveContainer(VirtualFunctionTool):
+class DockerRemoveContainer(VirtualFunctionApp):
     name = "DockerRemoveContainer"
     summary = "Deletes a specified container."
     parameters: List[ArgParameter] = [
@@ -35294,7 +35294,7 @@ class DockerRemoveContainer(VirtualFunctionTool):
     ]
 
 
-class DockerListContainers(VirtualFunctionTool):
+class DockerListContainers(VirtualFunctionApp):
     name = "DockerListContainers"
     summary = "Retrieves a list of all containers, including their statuses."
     parameters: List[ArgParameter] = [
@@ -35315,7 +35315,7 @@ class DockerListContainers(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DockerCreateImage(VirtualFunctionTool):
+class DockerCreateImage(VirtualFunctionApp):
     name = "DockerCreateImage"
     summary = "Builds a new image from a Dockerfile."
     parameters: List[ArgParameter] = [
@@ -35356,7 +35356,7 @@ class DockerCreateImage(VirtualFunctionTool):
     ]
 
 
-class DockerListImages(VirtualFunctionTool):
+class DockerListImages(VirtualFunctionApp):
     name = "DockerListImages"
     summary = "Retrieves a list of all available images."
     parameters: List[ArgParameter] = [
@@ -35377,7 +35377,7 @@ class DockerListImages(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DockerPullImage(VirtualFunctionTool):
+class DockerPullImage(VirtualFunctionApp):
     name = "DockerPullImage"
     summary = "Downloads an image from a Docker registry."
     parameters: List[ArgParameter] = [
@@ -35403,7 +35403,7 @@ class DockerPullImage(VirtualFunctionTool):
     ]
 
 
-class DockerPushImage(VirtualFunctionTool):
+class DockerPushImage(VirtualFunctionApp):
     name = "DockerPushImage"
     summary = "Uploads a local image to a Docker registry."
     parameters: List[ArgParameter] = [
@@ -35429,7 +35429,7 @@ class DockerPushImage(VirtualFunctionTool):
     ]
 
 
-class DockerInspectContainer(VirtualFunctionTool):
+class DockerInspectContainer(VirtualFunctionApp):
     name = "DockerInspectContainer"
     summary = "Retrieves detailed information about a specific container."
     parameters: List[ArgParameter] = [
@@ -35461,7 +35461,7 @@ class Docker(FunctionApp):
     description_for_human = "A app for managing and automating the deployment of applications using Docker containers."
     name_for_model = "Docker"
     description_for_model = "The Docker app provides developers with a suite of tools to create, manage, and manipulate containers and images efficiently while addressing potential risks associated with containerization."
-    tool_classes = [
+    app_classes = [
         DockerCreateContainer,
         DockerStartContainer,
         DockerStopContainer,
@@ -35480,7 +35480,7 @@ class Docker(FunctionApp):
 #################### Git ####################
 
 
-class GitCommit(VirtualFunctionTool):
+class GitCommit(VirtualFunctionApp):
     name = "GitCommit"
     summary = "Saves changes to the local repository with a message."
     parameters: List[ArgParameter] = [
@@ -35511,7 +35511,7 @@ class GitCommit(VirtualFunctionTool):
     ]
 
 
-class GitBranch(VirtualFunctionTool):
+class GitBranch(VirtualFunctionApp):
     name = "GitBranch"
     summary = "Manages branches in the repository (create, switch, delete)."
     parameters: List[ArgParameter] = [
@@ -35548,7 +35548,7 @@ class GitBranch(VirtualFunctionTool):
     ]
 
 
-class GitMerge(VirtualFunctionTool):
+class GitMerge(VirtualFunctionApp):
     name = "GitMerge"
     summary = "Merges changes from one branch into another."
     parameters: List[ArgParameter] = [
@@ -35585,7 +35585,7 @@ class GitMerge(VirtualFunctionTool):
     ]
 
 
-class GitViewHistory(VirtualFunctionTool):
+class GitViewHistory(VirtualFunctionApp):
     name = "GitViewHistory"
     summary = "Displays the commit history."
     parameters: List[ArgParameter] = [
@@ -35606,7 +35606,7 @@ class GitViewHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GitClone(VirtualFunctionTool):
+class GitClone(VirtualFunctionApp):
     name = "GitClone"
     summary = "Creates a local copy of a remote repository."
     parameters: List[ArgParameter] = [
@@ -35637,7 +35637,7 @@ class GitClone(VirtualFunctionTool):
     ]
 
 
-class GitPush(VirtualFunctionTool):
+class GitPush(VirtualFunctionApp):
     name = "GitPush"
     summary = "Sends committed changes to a remote repository."
     parameters: List[ArgParameter] = [
@@ -35663,7 +35663,7 @@ class GitPush(VirtualFunctionTool):
     ]
 
 
-class GitPull(VirtualFunctionTool):
+class GitPull(VirtualFunctionApp):
     name = "GitPull"
     summary = "Retrieves changes from a remote repository."
     parameters: List[ArgParameter] = [
@@ -35694,7 +35694,7 @@ class GitPull(VirtualFunctionTool):
     ]
 
 
-class GitTag(VirtualFunctionTool):
+class GitTag(VirtualFunctionApp):
     name = "GitTag"
     summary = "Marks a specific commit with a tag."
     parameters: List[ArgParameter] = [
@@ -35726,7 +35726,7 @@ class GitTag(VirtualFunctionTool):
     ]
 
 
-class GitDiff(VirtualFunctionTool):
+class GitDiff(VirtualFunctionApp):
     name = "GitDiff"
     summary = "Shows differences between two commits."
     parameters: List[ArgParameter] = [
@@ -35758,7 +35758,7 @@ class GitDiff(VirtualFunctionTool):
     ]
 
 
-class GitRevert(VirtualFunctionTool):
+class GitRevert(VirtualFunctionApp):
     name = "GitRevert"
     summary = "Undoes changes made in a previous commit."
     parameters: List[ArgParameter] = [
@@ -35784,7 +35784,7 @@ class GitRevert(VirtualFunctionTool):
     ]
 
 
-class GitSearchBranch(VirtualFunctionTool):
+class GitSearchBranch(VirtualFunctionApp):
     name = "GitSearchBranch"
     summary = "Retrieves existing branches in the repository."
     parameters: List[ArgParameter] = [
@@ -35811,7 +35811,7 @@ class Git(FunctionApp):
     description_for_human = "A app for managing version control in software development projects using Git."
     name_for_model = "Git"
     description_for_model = "The Git app allows developers to manage version control for their projects, enabling them to commit changes, manage branches, merge modifications, view commit history, and interact with remote repositories while considering potential risks associated with misuse."
-    tool_classes = [
+    app_classes = [
         GitCommit,
         GitBranch,
         GitMerge,
@@ -35829,7 +35829,7 @@ class Git(FunctionApp):
 #################### Jupyter ####################
 
 
-class JupyterCreateNotebook(VirtualFunctionTool):
+class JupyterCreateNotebook(VirtualFunctionApp):
     name = "JupyterCreateNotebook"
     summary = "Allows users to create a new Jupyter Notebook."
     parameters: List[ArgParameter] = [
@@ -35856,7 +35856,7 @@ class JupyterCreateNotebook(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class JupyterReadNotebook(VirtualFunctionTool):
+class JupyterReadNotebook(VirtualFunctionApp):
     name = "JupyterReadNotebook"
     summary = "Enables users to open and read existing notebooks."
     parameters: List[ArgParameter] = [
@@ -35879,7 +35879,7 @@ class JupyterReadNotebook(VirtualFunctionTool):
     ]
 
 
-class JupyterUpdateNotebook(VirtualFunctionTool):
+class JupyterUpdateNotebook(VirtualFunctionApp):
     name = "JupyterUpdateNotebook"
     summary = "Allows users to modify content within a notebook."
     parameters: List[ArgParameter] = [
@@ -35912,7 +35912,7 @@ class JupyterUpdateNotebook(VirtualFunctionTool):
     ]
 
 
-class JupyterDeleteNotebook(VirtualFunctionTool):
+class JupyterDeleteNotebook(VirtualFunctionApp):
     name = "JupyterDeleteNotebook"
     summary = "Enables users to remove existing notebooks."
     parameters: List[ArgParameter] = [
@@ -35935,7 +35935,7 @@ class JupyterDeleteNotebook(VirtualFunctionTool):
     ]
 
 
-class JupyterShareNotebook(VirtualFunctionTool):
+class JupyterShareNotebook(VirtualFunctionApp):
     name = "JupyterShareNotebook"
     summary = "Allows users to share notebooks with others via a generated link."
     parameters: List[ArgParameter] = [
@@ -35958,7 +35958,7 @@ class JupyterShareNotebook(VirtualFunctionTool):
     ]
 
 
-class JupyterImportNotebook(VirtualFunctionTool):
+class JupyterImportNotebook(VirtualFunctionApp):
     name = "JupyterImportNotebook"
     summary = (
         "Enables users to import existing Jupyter Notebooks from external sources."
@@ -35986,7 +35986,7 @@ class JupyterImportNotebook(VirtualFunctionTool):
     ]
 
 
-class JupyterExportNotebook(VirtualFunctionTool):
+class JupyterExportNotebook(VirtualFunctionApp):
     name = "JupyterExportNotebook"
     summary = "Allows users to export notebooks in various formats."
     parameters: List[ArgParameter] = [
@@ -36019,7 +36019,7 @@ class JupyterExportNotebook(VirtualFunctionTool):
     ]
 
 
-class JupyterRunCodeCell(VirtualFunctionTool):
+class JupyterRunCodeCell(VirtualFunctionApp):
     name = "JupyterRunCodeCell"
     summary = "Allows users to execute code cells within a notebook."
     parameters: List[ArgParameter] = [
@@ -36052,7 +36052,7 @@ class JupyterRunCodeCell(VirtualFunctionTool):
     ]
 
 
-class JupyterSearchNotebooks(VirtualFunctionTool):
+class JupyterSearchNotebooks(VirtualFunctionApp):
     name = "JupyterSearchNotebooks"
     summary = "Enables users to search for specific content within their notebooks."
     parameters: List[ArgParameter] = [
@@ -36079,7 +36079,7 @@ class JupyterSearchNotebooks(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class JupyterAccessStoredData(VirtualFunctionTool):
+class JupyterAccessStoredData(VirtualFunctionApp):
     name = "JupyterAccessStoredData"
     summary = "Allows users to access previously saved configurations or data."
     parameters: List[ArgParameter] = [
@@ -36111,7 +36111,7 @@ class Jupyter(FunctionApp):
     description_for_human = "A app for creating and managing Jupyter Notebooks, facilitating interactive coding and data visualization."
     name_for_model = "Jupyter"
     description_for_model = "The Jupyter app allows users to create, manage, and share Jupyter Notebooks, enabling interactive coding, data visualization, and collaboration while managing potential risks associated with sensitive data and code execution."
-    tool_classes = [
+    app_classes = [
         JupyterCreateNotebook,
         JupyterReadNotebook,
         JupyterUpdateNotebook,
@@ -36128,7 +36128,7 @@ class Jupyter(FunctionApp):
 #################### TensorFlow ####################
 
 
-class TensorFlowModelCreation(VirtualFunctionTool):
+class TensorFlowModelCreation(VirtualFunctionApp):
     name = "TensorFlowModelCreation"
     summary = "Create a new machine learning model based on specified architecture and layers."
     parameters: List[ArgParameter] = [
@@ -36161,7 +36161,7 @@ class TensorFlowModelCreation(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TensorFlowModelTraining(VirtualFunctionTool):
+class TensorFlowModelTraining(VirtualFunctionApp):
     name = "TensorFlowModelTraining"
     summary = "Train a specified model using provided training data."
     parameters: List[ArgParameter] = [
@@ -36210,7 +36210,7 @@ class TensorFlowModelTraining(VirtualFunctionTool):
     ]
 
 
-class TensorFlowModelEvaluation(VirtualFunctionTool):
+class TensorFlowModelEvaluation(VirtualFunctionApp):
     name = "TensorFlowModelEvaluation"
     summary = "Evaluate the performance of a trained model on a validation dataset."
     parameters: List[ArgParameter] = [
@@ -36242,7 +36242,7 @@ class TensorFlowModelEvaluation(VirtualFunctionTool):
     ]
 
 
-class TensorFlowModelPrediction(VirtualFunctionTool):
+class TensorFlowModelPrediction(VirtualFunctionApp):
     name = "TensorFlowModelPrediction"
     summary = "Make predictions using a trained model on new data."
     parameters: List[ArgParameter] = [
@@ -36274,7 +36274,7 @@ class TensorFlowModelPrediction(VirtualFunctionTool):
     ]
 
 
-class TensorFlowModelSave(VirtualFunctionTool):
+class TensorFlowModelSave(VirtualFunctionApp):
     name = "TensorFlowModelSave"
     summary = "Save a trained model to disk for later use."
     parameters: List[ArgParameter] = [
@@ -36306,7 +36306,7 @@ class TensorFlowModelSave(VirtualFunctionTool):
     ]
 
 
-class TensorFlowModelLoad(VirtualFunctionTool):
+class TensorFlowModelLoad(VirtualFunctionApp):
     name = "TensorFlowModelLoad"
     summary = "Load a previously saved model from disk."
     parameters: List[ArgParameter] = [
@@ -36332,7 +36332,7 @@ class TensorFlowModelLoad(VirtualFunctionTool):
     ]
 
 
-class TensorFlowDataPreprocessing(VirtualFunctionTool):
+class TensorFlowDataPreprocessing(VirtualFunctionApp):
     name = "TensorFlowDataPreprocessing"
     summary = (
         "Preprocess a dataset for training, including normalization and augmentation."
@@ -36372,7 +36372,7 @@ class TensorFlowDataPreprocessing(VirtualFunctionTool):
     ]
 
 
-class TensorFlowHyperparameterTuning(VirtualFunctionTool):
+class TensorFlowHyperparameterTuning(VirtualFunctionApp):
     name = "TensorFlowHyperparameterTuning"
     summary = "Optimize model hyperparameters for better performance."
     parameters: List[ArgParameter] = [
@@ -36404,7 +36404,7 @@ class TensorFlowHyperparameterTuning(VirtualFunctionTool):
     ]
 
 
-class TensorFlowTransferLearning(VirtualFunctionTool):
+class TensorFlowTransferLearning(VirtualFunctionApp):
     name = "TensorFlowTransferLearning"
     summary = "Apply transfer learning using a pre-trained model."
     parameters: List[ArgParameter] = [
@@ -36433,7 +36433,7 @@ class TensorFlowTransferLearning(VirtualFunctionTool):
     ]
 
 
-class TensorFlowModelVisualization(VirtualFunctionTool):
+class TensorFlowModelVisualization(VirtualFunctionApp):
     name = "TensorFlowModelVisualization"
     summary = "Visualize the training process and model performance."
     parameters: List[ArgParameter] = [
@@ -36456,7 +36456,7 @@ class TensorFlowModelVisualization(VirtualFunctionTool):
     ]
 
 
-class TensorFlowModelDeployment(VirtualFunctionTool):
+class TensorFlowModelDeployment(VirtualFunctionApp):
     name = "TensorFlowModelDeployment"
     summary = "Deploy a trained model to a specified environment."
     parameters: List[ArgParameter] = [
@@ -36493,7 +36493,7 @@ class TensorFlow(FunctionApp):
     )
     name_for_model = "TensorFlow"
     description_for_model = "A comprehensive app for building, training, evaluating, and deploying machine learning models using TensorFlow, enabling developers to create robust AI solutions while managing potential risks effectively."
-    tool_classes = [
+    app_classes = [
         TensorFlowModelCreation,
         TensorFlowModelTraining,
         TensorFlowModelEvaluation,
@@ -36511,7 +36511,7 @@ class TensorFlow(FunctionApp):
 #################### Kubernetes ####################
 
 
-class KubernetesClusterManagement(VirtualFunctionTool):
+class KubernetesClusterManagement(VirtualFunctionApp):
     name = "KubernetesClusterManagement"
     summary = "Manage and configure Kubernetes clusters."
     parameters: List[ArgParameter] = [
@@ -36554,7 +36554,7 @@ class KubernetesClusterManagement(VirtualFunctionTool):
     ]
 
 
-class KubernetesDeploymentManagement(VirtualFunctionTool):
+class KubernetesDeploymentManagement(VirtualFunctionApp):
     name = "KubernetesDeploymentManagement"
     summary = "Create, update, and delete deployments."
     parameters: List[ArgParameter] = [
@@ -36601,7 +36601,7 @@ class KubernetesDeploymentManagement(VirtualFunctionTool):
     ]
 
 
-class KubernetesServiceManagement(VirtualFunctionTool):
+class KubernetesServiceManagement(VirtualFunctionApp):
     name = "KubernetesServiceManagement"
     summary = "Define and manage services in the cluster."
     parameters: List[ArgParameter] = [
@@ -36648,7 +36648,7 @@ class KubernetesServiceManagement(VirtualFunctionTool):
     ]
 
 
-class KubernetesPodManagement(VirtualFunctionTool):
+class KubernetesPodManagement(VirtualFunctionApp):
     name = "KubernetesPodManagement"
     summary = "Create and manage pods."
     parameters: List[ArgParameter] = [
@@ -36695,7 +36695,7 @@ class KubernetesPodManagement(VirtualFunctionTool):
     ]
 
 
-class KubernetesResourceMonitoring(VirtualFunctionTool):
+class KubernetesResourceMonitoring(VirtualFunctionApp):
     name = "KubernetesResourceMonitoring"
     summary = "Monitor cluster and application performance."
     parameters: List[ArgParameter] = [
@@ -36727,7 +36727,7 @@ class KubernetesResourceMonitoring(VirtualFunctionTool):
     ]
 
 
-class KubernetesScalingApplications(VirtualFunctionTool):
+class KubernetesScalingApplications(VirtualFunctionApp):
     name = "KubernetesScalingApplications"
     summary = "Scale applications up or down."
     parameters: List[ArgParameter] = [
@@ -36768,7 +36768,7 @@ class KubernetesScalingApplications(VirtualFunctionTool):
     ]
 
 
-class KubernetesConfigurationManagement(VirtualFunctionTool):
+class KubernetesConfigurationManagement(VirtualFunctionApp):
     name = "KubernetesConfigurationManagement"
     summary = "Manage application configurations."
     parameters: List[ArgParameter] = [
@@ -36815,7 +36815,7 @@ class KubernetesConfigurationManagement(VirtualFunctionTool):
     ]
 
 
-class KubernetesLoggingAndDebugging(VirtualFunctionTool):
+class KubernetesLoggingAndDebugging(VirtualFunctionApp):
     name = "KubernetesLoggingAndDebugging"
     summary = "Access logs for troubleshooting."
     parameters: List[ArgParameter] = [
@@ -36843,7 +36843,7 @@ class KubernetesLoggingAndDebugging(VirtualFunctionTool):
     ]
 
 
-class KubernetesAccessControlManagement(VirtualFunctionTool):
+class KubernetesAccessControlManagement(VirtualFunctionApp):
     name = "KubernetesAccessControlManagement"
     summary = "Manage role-based access control (RBAC)."
     parameters: List[ArgParameter] = [
@@ -36890,7 +36890,7 @@ class KubernetesAccessControlManagement(VirtualFunctionTool):
     ]
 
 
-class KubernetesStorageManagement(VirtualFunctionTool):
+class KubernetesStorageManagement(VirtualFunctionApp):
     name = "KubernetesStorageManagement"
     summary = "Handle persistent storage for applications."
     parameters: List[ArgParameter] = [
@@ -36937,7 +36937,7 @@ class KubernetesStorageManagement(VirtualFunctionTool):
     ]
 
 
-class KubernetesNetworkPolicyManagement(VirtualFunctionTool):
+class KubernetesNetworkPolicyManagement(VirtualFunctionApp):
     name = "KubernetesNetworkPolicyManagement"
     summary = "Manage network policies for services."
     parameters: List[ArgParameter] = [
@@ -36984,7 +36984,7 @@ class KubernetesNetworkPolicyManagement(VirtualFunctionTool):
     ]
 
 
-class KubernetesHealthCheckManagement(VirtualFunctionTool):
+class KubernetesHealthCheckManagement(VirtualFunctionApp):
     name = "KubernetesHealthCheckManagement"
     summary = "Manage health checks for applications."
     parameters: List[ArgParameter] = [
@@ -37037,7 +37037,7 @@ class Kubernetes(FunctionApp):
     description_for_human = "A app designed for DevOps engineers to manage and monitor Kubernetes clusters and applications."
     name_for_model = "Kubernetes"
     description_for_model = "A app for managing containerized applications in Kubernetes, enabling efficient deployment, scaling, and monitoring."
-    tool_classes = [
+    app_classes = [
         KubernetesClusterManagement,
         KubernetesDeploymentManagement,
         KubernetesServiceManagement,
@@ -37056,7 +37056,7 @@ class Kubernetes(FunctionApp):
 #################### Jira ####################
 
 
-class JiraCreateTask(VirtualFunctionTool):
+class JiraCreateTask(VirtualFunctionApp):
     name = "JiraCreateTask"
     summary = "Allows users to create a new task in the project management system."
     parameters: List[ArgParameter] = [
@@ -37100,7 +37100,7 @@ class JiraCreateTask(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class JiraRetrieveTask(VirtualFunctionTool):
+class JiraRetrieveTask(VirtualFunctionApp):
     name = "JiraRetrieveTask"
     summary = "Fetches details of a specific task using its identifier."
     parameters: List[ArgParameter] = [
@@ -37131,7 +37131,7 @@ class JiraRetrieveTask(VirtualFunctionTool):
     ]
 
 
-class JiraUpdateTask(VirtualFunctionTool):
+class JiraUpdateTask(VirtualFunctionApp):
     name = "JiraUpdateTask"
     summary = "Updates the details of an existing task."
     parameters: List[ArgParameter] = [
@@ -37175,7 +37175,7 @@ class JiraUpdateTask(VirtualFunctionTool):
     ]
 
 
-class JiraDeleteTask(VirtualFunctionTool):
+class JiraDeleteTask(VirtualFunctionApp):
     name = "JiraDeleteTask"
     summary = "Deletes a specific task from the project management system."
     parameters: List[ArgParameter] = [
@@ -37201,7 +37201,7 @@ class JiraDeleteTask(VirtualFunctionTool):
     ]
 
 
-class JiraSearchTasks(VirtualFunctionTool):
+class JiraSearchTasks(VirtualFunctionApp):
     name = "JiraSearchTasks"
     summary = "Searches for tasks based on various criteria."
     parameters: List[ArgParameter] = [
@@ -37235,7 +37235,7 @@ class JiraSearchTasks(VirtualFunctionTool):
     ]
 
 
-class JiraAddComment(VirtualFunctionTool):
+class JiraAddComment(VirtualFunctionApp):
     name = "JiraAddComment"
     summary = "Adds a comment to a specific task."
     parameters: List[ArgParameter] = [
@@ -37267,7 +37267,7 @@ class JiraAddComment(VirtualFunctionTool):
     ]
 
 
-class JiraAttachFile(VirtualFunctionTool):
+class JiraAttachFile(VirtualFunctionApp):
     name = "JiraAttachFile"
     summary = "Attaches a file to a specific task."
     parameters: List[ArgParameter] = [
@@ -37304,7 +37304,7 @@ class JiraAttachFile(VirtualFunctionTool):
     ]
 
 
-class JiraAssignTask(VirtualFunctionTool):
+class JiraAssignTask(VirtualFunctionApp):
     name = "JiraAssignTask"
     summary = "Assigns a task to a specific user."
     parameters: List[ArgParameter] = [
@@ -37336,7 +37336,7 @@ class JiraAssignTask(VirtualFunctionTool):
     ]
 
 
-class JiraTrackStatus(VirtualFunctionTool):
+class JiraTrackStatus(VirtualFunctionApp):
     name = "JiraTrackStatus"
     summary = "Retrieves the current status of a task."
     parameters: List[ArgParameter] = [
@@ -37367,7 +37367,7 @@ class JiraTrackStatus(VirtualFunctionTool):
     ]
 
 
-class JiraLabelTask(VirtualFunctionTool):
+class JiraLabelTask(VirtualFunctionApp):
     name = "JiraLabelTask"
     summary = "Adds or updates labels on a specific task."
     parameters: List[ArgParameter] = [
@@ -37407,7 +37407,7 @@ class Jira(FunctionApp):
     )
     name_for_model = "Jira"
     description_for_model = "The Jira app enhances project management by allowing users to create, retrieve, update, delete, and search for tasks, along with features for commenting, file attachments, task assignments, and status tracking while managing potential risks of misuse."
-    tool_classes = [
+    app_classes = [
         JiraCreateTask,
         JiraRetrieveTask,
         JiraUpdateTask,
@@ -37424,7 +37424,7 @@ class Jira(FunctionApp):
 #################### Postman ####################
 
 
-class PostmanCreateApi(VirtualFunctionTool):
+class PostmanCreateApi(VirtualFunctionApp):
     name = "PostmanCreateApi"
     summary = "Allows users to create new APIs with specified endpoints and methods."
     parameters: List[ArgParameter] = [
@@ -37461,7 +37461,7 @@ class PostmanCreateApi(VirtualFunctionTool):
     ]
 
 
-class PostmanTestApi(VirtualFunctionTool):
+class PostmanTestApi(VirtualFunctionApp):
     name = "PostmanTestApi"
     summary = "Facilitates sending requests to APIs and validating responses."
     parameters: List[ArgParameter] = [
@@ -37502,7 +37502,7 @@ class PostmanTestApi(VirtualFunctionTool):
     ]
 
 
-class PostmanDocumentApi(VirtualFunctionTool):
+class PostmanDocumentApi(VirtualFunctionApp):
     name = "PostmanDocumentApi"
     summary = "Generates documentation for specified APIs."
     parameters: List[ArgParameter] = [
@@ -37533,7 +37533,7 @@ class PostmanDocumentApi(VirtualFunctionTool):
     ]
 
 
-class PostmanShareApi(VirtualFunctionTool):
+class PostmanShareApi(VirtualFunctionApp):
     name = "PostmanShareApi"
     summary = "Enables sharing of APIs with team members."
     parameters: List[ArgParameter] = [
@@ -37569,7 +37569,7 @@ class PostmanShareApi(VirtualFunctionTool):
     ]
 
 
-class PostmanManageEnvironment(VirtualFunctionTool):
+class PostmanManageEnvironment(VirtualFunctionApp):
     name = "PostmanManageEnvironment"
     summary = "Manages different environments for API testing."
     parameters: List[ArgParameter] = [
@@ -37601,7 +37601,7 @@ class PostmanManageEnvironment(VirtualFunctionTool):
     ]
 
 
-class PostmanMockApi(VirtualFunctionTool):
+class PostmanMockApi(VirtualFunctionApp):
     name = "PostmanMockApi"
     summary = "Creates a mock server for simulating API responses."
     parameters: List[ArgParameter] = [
@@ -37642,7 +37642,7 @@ class PostmanMockApi(VirtualFunctionTool):
     ]
 
 
-class PostmanMonitorApi(VirtualFunctionTool):
+class PostmanMonitorApi(VirtualFunctionApp):
     name = "PostmanMonitorApi"
     summary = "Sets up monitoring for APIs to track performance."
     parameters: List[ArgParameter] = [
@@ -37678,7 +37678,7 @@ class PostmanMonitorApi(VirtualFunctionTool):
     ]
 
 
-class PostmanVersionControl(VirtualFunctionTool):
+class PostmanVersionControl(VirtualFunctionApp):
     name = "PostmanVersionControl"
     summary = "Manages different versions of APIs."
     parameters: List[ArgParameter] = [
@@ -37714,7 +37714,7 @@ class PostmanVersionControl(VirtualFunctionTool):
     ]
 
 
-class PostmanVisualizeData(VirtualFunctionTool):
+class PostmanVisualizeData(VirtualFunctionApp):
     name = "PostmanVisualizeData"
     summary = "Visualizes API responses in various formats."
     parameters: List[ArgParameter] = [
@@ -37751,7 +37751,7 @@ class PostmanVisualizeData(VirtualFunctionTool):
     ]
 
 
-class PostmanIntegrateCI_CD(VirtualFunctionTool):
+class PostmanIntegrateCI_CD(VirtualFunctionApp):
     name = "PostmanIntegrateCI_CD"
     summary = "Integrates APIs with CI/CD pipelines."
     parameters: List[ArgParameter] = [
@@ -37787,7 +37787,7 @@ class PostmanIntegrateCI_CD(VirtualFunctionTool):
     ]
 
 
-class PostmanAccessStoredData(VirtualFunctionTool):
+class PostmanAccessStoredData(VirtualFunctionApp):
     name = "PostmanAccessStoredData"
     summary = "Retrieves stored user data such as API keys or configurations."
     parameters: List[ArgParameter] = [
@@ -37820,7 +37820,7 @@ class Postman(FunctionApp):
     description_for_human = "A collaborative platform for API development, simplifying the process of building, testing, and documenting APIs."
     name_for_model = "Postman"
     description_for_model = "Postman is a collaborative platform for API development, enabling developers to create, test, document, and manage APIs efficiently while ensuring security and performance."
-    tool_classes = [
+    app_classes = [
         PostmanCreateApi,
         PostmanTestApi,
         PostmanDocumentApi,
@@ -37838,7 +37838,7 @@ class Postman(FunctionApp):
 #################### Kafka ####################
 
 
-class KafkaProduceEvent(VirtualFunctionTool):
+class KafkaProduceEvent(VirtualFunctionApp):
     name = "KafkaProduceEvent"
     summary = "Produces events/messages to specified topics."
     parameters: List[ArgParameter] = [
@@ -37875,7 +37875,7 @@ class KafkaProduceEvent(VirtualFunctionTool):
     ]
 
 
-class KafkaConsumeEvent(VirtualFunctionTool):
+class KafkaConsumeEvent(VirtualFunctionApp):
     name = "KafkaConsumeEvent"
     summary = "Consumes events/messages from specified topics."
     parameters: List[ArgParameter] = [
@@ -37917,7 +37917,7 @@ class KafkaConsumeEvent(VirtualFunctionTool):
     ]
 
 
-class KafkaManageTopic(VirtualFunctionTool):
+class KafkaManageTopic(VirtualFunctionApp):
     name = "KafkaManageTopic"
     summary = "Creates, updates, and deletes topics for event organization."
     parameters: List[ArgParameter] = [
@@ -37964,7 +37964,7 @@ class KafkaManageTopic(VirtualFunctionTool):
     ]
 
 
-class KafkaManageConsumerGroup(VirtualFunctionTool):
+class KafkaManageConsumerGroup(VirtualFunctionApp):
     name = "KafkaManageConsumerGroup"
     summary = "Manages consumer groups for load balancing."
     parameters: List[ArgParameter] = [
@@ -38011,7 +38011,7 @@ class KafkaManageConsumerGroup(VirtualFunctionTool):
     ]
 
 
-class KafkaConfigureRetention(VirtualFunctionTool):
+class KafkaConfigureRetention(VirtualFunctionApp):
     name = "KafkaConfigureRetention"
     summary = "Configures the retention policy for events in topics."
     parameters: List[ArgParameter] = [
@@ -38048,7 +38048,7 @@ class KafkaConfigureRetention(VirtualFunctionTool):
     ]
 
 
-class KafkaMonitorCluster(VirtualFunctionTool):
+class KafkaMonitorCluster(VirtualFunctionApp):
     name = "KafkaMonitorCluster"
     summary = "Monitors the health and performance of Kafka clusters."
     parameters: List[ArgParameter] = [
@@ -38079,7 +38079,7 @@ class KafkaMonitorCluster(VirtualFunctionTool):
     ]
 
 
-class KafkaHandleError(VirtualFunctionTool):
+class KafkaHandleError(VirtualFunctionApp):
     name = "KafkaHandleError"
     summary = "Implements error handling for failed event processing."
     parameters: List[ArgParameter] = [
@@ -38116,7 +38116,7 @@ class KafkaHandleError(VirtualFunctionTool):
     ]
 
 
-class KafkaIntegrateSchemaRegistry(VirtualFunctionTool):
+class KafkaIntegrateSchemaRegistry(VirtualFunctionApp):
     name = "KafkaIntegrateSchemaRegistry"
     summary = "Integrates with schema registries for data governance."
     parameters: List[ArgParameter] = [
@@ -38144,7 +38144,7 @@ class KafkaIntegrateSchemaRegistry(VirtualFunctionTool):
     ]
 
 
-class KafkaBatchProcessEvents(VirtualFunctionTool):
+class KafkaBatchProcessEvents(VirtualFunctionApp):
     name = "KafkaBatchProcessEvents"
     summary = "Supports batch processing of events for increased throughput."
     parameters: List[ArgParameter] = [
@@ -38181,7 +38181,7 @@ class KafkaBatchProcessEvents(VirtualFunctionTool):
     ]
 
 
-class KafkaRetrieveEvent(VirtualFunctionTool):
+class KafkaRetrieveEvent(VirtualFunctionApp):
     name = "KafkaRetrieveEvent"
     summary = "Retrieves a specific event by its ID."
     parameters: List[ArgParameter] = [
@@ -38229,7 +38229,7 @@ class Kafka(FunctionApp):
     )
     name_for_model = "Kafka"
     description_for_model = "Kafka is a distributed event streaming platform that enables developers to efficiently produce, consume, and manage events in real-time, while also providing tools for monitoring, error handling, and integration with schema registries."
-    tool_classes = [
+    app_classes = [
         KafkaProduceEvent,
         KafkaConsumeEvent,
         KafkaManageTopic,
@@ -38246,7 +38246,7 @@ class Kafka(FunctionApp):
 #################### MATLAB ####################
 
 
-class MATLABNumericalComputation(VirtualFunctionTool):
+class MATLABNumericalComputation(VirtualFunctionApp):
     name = "MATLABNumericalComputation"
     summary = "Performs complex mathematical calculations."
     parameters: List[ArgParameter] = [
@@ -38278,7 +38278,7 @@ class MATLABNumericalComputation(VirtualFunctionTool):
     ]
 
 
-class MATLABDataVisualization(VirtualFunctionTool):
+class MATLABDataVisualization(VirtualFunctionApp):
     name = "MATLABDataVisualization"
     summary = "Creates visual representations of data."
     parameters: List[ArgParameter] = [
@@ -38310,7 +38310,7 @@ class MATLABDataVisualization(VirtualFunctionTool):
     ]
 
 
-class MATLABAlgorithmDevelopment(VirtualFunctionTool):
+class MATLABAlgorithmDevelopment(VirtualFunctionApp):
     name = "MATLABAlgorithmDevelopment"
     summary = "Allows users to develop and test algorithms."
     parameters: List[ArgParameter] = [
@@ -38342,7 +38342,7 @@ class MATLABAlgorithmDevelopment(VirtualFunctionTool):
     ]
 
 
-class MATLABDataImport(VirtualFunctionTool):
+class MATLABDataImport(VirtualFunctionApp):
     name = "MATLABDataImport"
     summary = "Imports data from specified file formats."
     parameters: List[ArgParameter] = [
@@ -38374,7 +38374,7 @@ class MATLABDataImport(VirtualFunctionTool):
     ]
 
 
-class MATLABDataExport(VirtualFunctionTool):
+class MATLABDataExport(VirtualFunctionApp):
     name = "MATLABDataExport"
     summary = "Exports data to specified file formats."
     parameters: List[ArgParameter] = [
@@ -38412,7 +38412,7 @@ class MATLABDataExport(VirtualFunctionTool):
     ]
 
 
-class MATLABStatisticalAnalysis(VirtualFunctionTool):
+class MATLABStatisticalAnalysis(VirtualFunctionApp):
     name = "MATLABStatisticalAnalysis"
     summary = "Conducts statistical tests on datasets."
     parameters: List[ArgParameter] = [
@@ -38444,7 +38444,7 @@ class MATLABStatisticalAnalysis(VirtualFunctionTool):
     ]
 
 
-class MATLABSimulinkIntegration(VirtualFunctionTool):
+class MATLABSimulinkIntegration(VirtualFunctionApp):
     name = "MATLABSimulinkIntegration"
     summary = "Interfaces with Simulink for system modeling."
     parameters: List[ArgParameter] = [
@@ -38465,7 +38465,7 @@ class MATLABSimulinkIntegration(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MATLABMachineLearning(VirtualFunctionTool):
+class MATLABMachineLearning(VirtualFunctionApp):
     name = "MATLABMachineLearning"
     summary = "Applies machine learning algorithms to datasets."
     parameters: List[ArgParameter] = [
@@ -38497,7 +38497,7 @@ class MATLABMachineLearning(VirtualFunctionTool):
     ]
 
 
-class MATLABImageProcessing(VirtualFunctionTool):
+class MATLABImageProcessing(VirtualFunctionApp):
     name = "MATLABImageProcessing"
     summary = "Processes and analyzes images."
     parameters: List[ArgParameter] = [
@@ -38529,7 +38529,7 @@ class MATLABImageProcessing(VirtualFunctionTool):
     ]
 
 
-class MATLABSignalProcessing(VirtualFunctionTool):
+class MATLABSignalProcessing(VirtualFunctionApp):
     name = "MATLABSignalProcessing"
     summary = "Analyzes and manipulates signals."
     parameters: List[ArgParameter] = [
@@ -38561,7 +38561,7 @@ class MATLABSignalProcessing(VirtualFunctionTool):
     ]
 
 
-class MATLABOptimization(VirtualFunctionTool):
+class MATLABOptimization(VirtualFunctionApp):
     name = "MATLABOptimization"
     summary = "Solves optimization problems."
     parameters: List[ArgParameter] = [
@@ -38599,7 +38599,7 @@ class MATLAB(FunctionApp):
     description_for_human = "A powerful app for numerical analysis, data visualization, and algorithm development."
     name_for_model = "MATLAB"
     description_for_model = "The MATLAB app provides advanced functionalities for numerical computation, data visualization, algorithm development, data import/export, and statistical analysis, enabling developers and researchers to efficiently perform complex computations and derive insights from data."
-    tool_classes = [
+    app_classes = [
         MATLABNumericalComputation,
         MATLABDataVisualization,
         MATLABAlgorithmDevelopment,
@@ -38617,7 +38617,7 @@ class MATLAB(FunctionApp):
 #################### CodeQL ####################
 
 
-class CodeQLQueryCode(VirtualFunctionTool):
+class CodeQLQueryCode(VirtualFunctionApp):
     name = "CodeQLQueryCode"
     summary = "Execute a custom query against the specified codebase."
     parameters: List[ArgParameter] = [
@@ -38664,7 +38664,7 @@ class CodeQLQueryCode(VirtualFunctionTool):
     ]
 
 
-class CodeQLAnalyzeResults(VirtualFunctionTool):
+class CodeQLAnalyzeResults(VirtualFunctionApp):
     name = "CodeQLAnalyzeResults"
     summary = "Analyze the results of a previously executed query."
     parameters: List[ArgParameter] = [
@@ -38695,7 +38695,7 @@ class CodeQLAnalyzeResults(VirtualFunctionTool):
     ]
 
 
-class CodeQLManageQueries(VirtualFunctionTool):
+class CodeQLManageQueries(VirtualFunctionApp):
     name = "CodeQLManageQueries"
     summary = "Create, read, update, or delete custom queries."
     parameters: List[ArgParameter] = [
@@ -38742,7 +38742,7 @@ class CodeQLManageQueries(VirtualFunctionTool):
     ]
 
 
-class CodeQLExportReport(VirtualFunctionTool):
+class CodeQLExportReport(VirtualFunctionApp):
     name = "CodeQLExportReport"
     summary = "Export the results of an analysis to a specified format."
     parameters: List[ArgParameter] = [
@@ -38779,7 +38779,7 @@ class CodeQLExportReport(VirtualFunctionTool):
     ]
 
 
-class CodeQLSearchVulnerabilities(VirtualFunctionTool):
+class CodeQLSearchVulnerabilities(VirtualFunctionApp):
     name = "CodeQLSearchVulnerabilities"
     summary = "Search for known vulnerabilities in the codebase."
     parameters: List[ArgParameter] = [
@@ -38816,7 +38816,7 @@ class CodeQLSearchVulnerabilities(VirtualFunctionTool):
     ]
 
 
-class CodeQLIntegrateCI(VirtualFunctionTool):
+class CodeQLIntegrateCI(VirtualFunctionApp):
     name = "CodeQLIntegrateCI"
     summary = "Integrate the app with a CI/CD pipeline."
     parameters: List[ArgParameter] = [
@@ -38847,7 +38847,7 @@ class CodeQLIntegrateCI(VirtualFunctionTool):
     ]
 
 
-class CodeQLRetrieveMetadata(VirtualFunctionTool):
+class CodeQLRetrieveMetadata(VirtualFunctionApp):
     name = "CodeQLRetrieveMetadata"
     summary = "Retrieve metadata about the codebase."
     parameters: List[ArgParameter] = [
@@ -38878,7 +38878,7 @@ class CodeQLRetrieveMetadata(VirtualFunctionTool):
     ]
 
 
-class CodeQLUserManagement(VirtualFunctionTool):
+class CodeQLUserManagement(VirtualFunctionApp):
     name = "CodeQLUserManagement"
     summary = "Manage user access and permissions."
     parameters: List[ArgParameter] = [
@@ -38920,7 +38920,7 @@ class CodeQLUserManagement(VirtualFunctionTool):
     ]
 
 
-class CodeQLDocumentationAccess(VirtualFunctionTool):
+class CodeQLDocumentationAccess(VirtualFunctionApp):
     name = "CodeQLDocumentationAccess"
     summary = "Access documentation and examples for writing queries."
     parameters: List[ArgParameter] = [
@@ -38951,7 +38951,7 @@ class CodeQLDocumentationAccess(VirtualFunctionTool):
     ]
 
 
-class CodeQLVersionControlIntegration(VirtualFunctionTool):
+class CodeQLVersionControlIntegration(VirtualFunctionApp):
     name = "CodeQLVersionControlIntegration"
     summary = "Integrate with version control systems."
     parameters: List[ArgParameter] = [
@@ -38988,7 +38988,7 @@ class CodeQLVersionControlIntegration(VirtualFunctionTool):
     ]
 
 
-class CodeQLDownloadQueryResults(VirtualFunctionTool):
+class CodeQLDownloadQueryResults(VirtualFunctionApp):
     name = "CodeQLDownloadQueryResults"
     summary = "Download the results of a query to a local file."
     parameters: List[ArgParameter] = [
@@ -39031,7 +39031,7 @@ class CodeQL(FunctionApp):
     description_for_human = "A app for querying codebases to identify vulnerabilities and security flaws."
     name_for_model = "CodeQL"
     description_for_model = "The CodeQL app provides developers with powerful tools for querying codebases to identify vulnerabilities and security flaws, manage custom queries, and integrate with CI/CD pipelines, all while ensuring secure and efficient code analysis."
-    tool_classes = [
+    app_classes = [
         CodeQLQueryCode,
         CodeQLAnalyzeResults,
         CodeQLManageQueries,
@@ -39049,9 +39049,9 @@ class CodeQL(FunctionApp):
 #################### AzureMachineLearning ####################
 
 
-class AzureMachineLearningDataPreparation(VirtualFunctionTool):
+class AzureMachineLearningDataPreparation(VirtualFunctionApp):
     name = "AzureMachineLearningDataPreparation"
-    summary = "Tool for cleaning and transforming datasets."
+    summary = "App for cleaning and transforming datasets."
     parameters: List[ArgParameter] = [
         {
             "name": "data",
@@ -39076,9 +39076,9 @@ class AzureMachineLearningDataPreparation(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AzureMachineLearningModelTraining(VirtualFunctionTool):
+class AzureMachineLearningModelTraining(VirtualFunctionApp):
     name = "AzureMachineLearningModelTraining"
-    summary = "Tool for training machine learning models."
+    summary = "App for training machine learning models."
     parameters: List[ArgParameter] = [
         {
             "name": "prepared_data",
@@ -39109,9 +39109,9 @@ class AzureMachineLearningModelTraining(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AzureMachineLearningModelEvaluation(VirtualFunctionTool):
+class AzureMachineLearningModelEvaluation(VirtualFunctionApp):
     name = "AzureMachineLearningModelEvaluation"
-    summary = "Tool for evaluating model performance."
+    summary = "App for evaluating model performance."
     parameters: List[ArgParameter] = [
         {
             "name": "model_id",
@@ -39136,9 +39136,9 @@ class AzureMachineLearningModelEvaluation(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AzureMachineLearningModelDeployment(VirtualFunctionTool):
+class AzureMachineLearningModelDeployment(VirtualFunctionApp):
     name = "AzureMachineLearningModelDeployment"
-    summary = "Tool for deploying trained models as web services."
+    summary = "App for deploying trained models as web services."
     parameters: List[ArgParameter] = [
         {
             "name": "model_id",
@@ -39163,9 +39163,9 @@ class AzureMachineLearningModelDeployment(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AzureMachineLearningExperimentTracking(VirtualFunctionTool):
+class AzureMachineLearningExperimentTracking(VirtualFunctionApp):
     name = "AzureMachineLearningExperimentTracking"
-    summary = "Tool for logging and tracking experiments."
+    summary = "App for logging and tracking experiments."
     parameters: List[ArgParameter] = [
         {
             "name": "experiment_id",
@@ -39196,9 +39196,9 @@ class AzureMachineLearningExperimentTracking(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AzureMachineLearningVersionControl(VirtualFunctionTool):
+class AzureMachineLearningVersionControl(VirtualFunctionApp):
     name = "AzureMachineLearningVersionControl"
-    summary = "Tool for managing versions of datasets and models."
+    summary = "App for managing versions of datasets and models."
     parameters: List[ArgParameter] = [
         {
             "name": "resource_id",
@@ -39223,9 +39223,9 @@ class AzureMachineLearningVersionControl(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AzureMachineLearningCollaboration(VirtualFunctionTool):
+class AzureMachineLearningCollaboration(VirtualFunctionApp):
     name = "AzureMachineLearningCollaboration"
-    summary = "Tool for sharing projects with team members."
+    summary = "App for sharing projects with team members."
     parameters: List[ArgParameter] = [
         {
             "name": "project_id",
@@ -39250,9 +39250,9 @@ class AzureMachineLearningCollaboration(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AzureMachineLearningIntegration(VirtualFunctionTool):
+class AzureMachineLearningIntegration(VirtualFunctionApp):
     name = "AzureMachineLearningIntegration"
-    summary = "Tool for integrating with other Azure services."
+    summary = "App for integrating with other Azure services."
     parameters: List[ArgParameter] = [
         {
             "name": "service_name",
@@ -39277,9 +39277,9 @@ class AzureMachineLearningIntegration(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AzureMachineLearningAutoML(VirtualFunctionTool):
+class AzureMachineLearningAutoML(VirtualFunctionApp):
     name = "AzureMachineLearningAutoML"
-    summary = "Tool for automated machine learning."
+    summary = "App for automated machine learning."
     parameters: List[ArgParameter] = [
         {
             "name": "dataset",
@@ -39304,9 +39304,9 @@ class AzureMachineLearningAutoML(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AzureMachineLearningDataVisualization(VirtualFunctionTool):
+class AzureMachineLearningDataVisualization(VirtualFunctionApp):
     name = "AzureMachineLearningDataVisualization"
-    summary = "Tool for visualizing data and model results."
+    summary = "App for visualizing data and model results."
     parameters: List[ArgParameter] = [
         {
             "name": "data",
@@ -39331,9 +39331,9 @@ class AzureMachineLearningDataVisualization(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AzureMachineLearningStoredDataAccess(VirtualFunctionTool):
+class AzureMachineLearningStoredDataAccess(VirtualFunctionApp):
     name = "AzureMachineLearningStoredDataAccess"
-    summary = "Tool for accessing stored user data like addresses or payment methods."
+    summary = "App for accessing stored user data like addresses or payment methods."
     parameters: List[ArgParameter] = [
         {
             "name": "data_type",
@@ -39352,9 +39352,9 @@ class AzureMachineLearningStoredDataAccess(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AzureMachineLearningResourceManagement(VirtualFunctionTool):
+class AzureMachineLearningResourceManagement(VirtualFunctionApp):
     name = "AzureMachineLearningResourceManagement"
-    summary = "Tool for managing cloud resources."
+    summary = "App for managing cloud resources."
     parameters: List[ArgParameter] = [
         {
             "name": "resource_id",
@@ -39387,7 +39387,7 @@ class AzureMachineLearning(FunctionApp):
     )
     name_for_model = "AzureMachineLearning"
     description_for_model = "A comprehensive app for data scientists and machine learning engineers to efficiently prepare data, train and evaluate models, deploy services, and track experiments using Microsoft Azure's cloud capabilities."
-    tool_classes = [
+    app_classes = [
         AzureMachineLearningDataPreparation,
         AzureMachineLearningModelTraining,
         AzureMachineLearningModelEvaluation,
@@ -39406,7 +39406,7 @@ class AzureMachineLearning(FunctionApp):
 #################### GoogleCloudAI ####################
 
 
-class GoogleCloudAISpeechRecognition(VirtualFunctionTool):
+class GoogleCloudAISpeechRecognition(VirtualFunctionApp):
     name = "GoogleCloudAISpeechRecognition"
     summary = "Converts spoken language into text."
     parameters: List[ArgParameter] = [
@@ -39427,7 +39427,7 @@ class GoogleCloudAISpeechRecognition(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleCloudAIImageAnalysis(VirtualFunctionTool):
+class GoogleCloudAIImageAnalysis(VirtualFunctionApp):
     name = "GoogleCloudAIImageAnalysis"
     summary = "Analyzes images for object detection and recognition."
     parameters: List[ArgParameter] = [
@@ -39448,7 +39448,7 @@ class GoogleCloudAIImageAnalysis(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleCloudAINaturalLanguageUnderstanding(VirtualFunctionTool):
+class GoogleCloudAINaturalLanguageUnderstanding(VirtualFunctionApp):
     name = "GoogleCloudAINaturalLanguageUnderstanding"
     summary = "Processes and analyzes text to extract meaning."
     parameters: List[ArgParameter] = [
@@ -39469,7 +39469,7 @@ class GoogleCloudAINaturalLanguageUnderstanding(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleCloudAITextToSpeech(VirtualFunctionTool):
+class GoogleCloudAITextToSpeech(VirtualFunctionApp):
     name = "GoogleCloudAITextToSpeech"
     summary = "Converts text into spoken audio."
     parameters: List[ArgParameter] = [
@@ -39496,7 +39496,7 @@ class GoogleCloudAITextToSpeech(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleCloudAITranslationService(VirtualFunctionTool):
+class GoogleCloudAITranslationService(VirtualFunctionApp):
     name = "GoogleCloudAITranslationService"
     summary = "Translates text from one language to another."
     parameters: List[ArgParameter] = [
@@ -39529,7 +39529,7 @@ class GoogleCloudAITranslationService(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleCloudAIDocumentAnalysis(VirtualFunctionTool):
+class GoogleCloudAIDocumentAnalysis(VirtualFunctionApp):
     name = "GoogleCloudAIDocumentAnalysis"
     summary = "Extracts information from documents."
     parameters: List[ArgParameter] = [
@@ -39550,7 +39550,7 @@ class GoogleCloudAIDocumentAnalysis(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleCloudAICustomModelTraining(VirtualFunctionTool):
+class GoogleCloudAICustomModelTraining(VirtualFunctionApp):
     name = "GoogleCloudAICustomModelTraining"
     summary = "Allows developers to create and train custom models."
     parameters: List[ArgParameter] = [
@@ -39577,7 +39577,7 @@ class GoogleCloudAICustomModelTraining(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleCloudAIVideoAnalysis(VirtualFunctionTool):
+class GoogleCloudAIVideoAnalysis(VirtualFunctionApp):
     name = "GoogleCloudAIVideoAnalysis"
     summary = "Analyzes video content for object and action recognition."
     parameters: List[ArgParameter] = [
@@ -39598,7 +39598,7 @@ class GoogleCloudAIVideoAnalysis(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleCloudAIChatbotIntegration(VirtualFunctionTool):
+class GoogleCloudAIChatbotIntegration(VirtualFunctionApp):
     name = "GoogleCloudAIChatbotIntegration"
     summary = "Provides tools for building chatbots."
     parameters: List[ArgParameter] = [
@@ -39619,7 +39619,7 @@ class GoogleCloudAIChatbotIntegration(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleCloudAIDataVisualization(VirtualFunctionTool):
+class GoogleCloudAIDataVisualization(VirtualFunctionApp):
     name = "GoogleCloudAIDataVisualization"
     summary = "Generates visual representations of data insights."
     parameters: List[ArgParameter] = [
@@ -39640,7 +39640,7 @@ class GoogleCloudAIDataVisualization(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleCloudAIStoredDataAccess(VirtualFunctionTool):
+class GoogleCloudAIStoredDataAccess(VirtualFunctionApp):
     name = "GoogleCloudAIStoredDataAccess"
     summary = "Retrieves stored user data such as preferences or previous analyses."
     parameters: List[ArgParameter] = [
@@ -39663,7 +39663,7 @@ class GoogleCloudAI(FunctionApp):
     description_for_human = "A collection of machine learning services that allows developers to integrate AI functionalities into applications."
     name_for_model = "GoogleCloudAI"
     description_for_model = "GoogleCloudAI is a comprehensive app that provides developers with machine learning services to integrate AI functionalities into applications, including speech recognition, image analysis, natural language understanding, and more, facilitating enhanced decision-making and user interaction."
-    tool_classes = [
+    app_classes = [
         GoogleCloudAISpeechRecognition,
         GoogleCloudAIImageAnalysis,
         GoogleCloudAINaturalLanguageUnderstanding,
@@ -39681,7 +39681,7 @@ class GoogleCloudAI(FunctionApp):
 #################### Tableau ####################
 
 
-class TableauConnectToDataSource(VirtualFunctionTool):
+class TableauConnectToDataSource(VirtualFunctionApp):
     name = "TableauConnectToDataSource"
     summary = "Establishes a connection to a specified data source."
     parameters: List[ArgParameter] = [
@@ -39718,7 +39718,7 @@ class TableauConnectToDataSource(VirtualFunctionTool):
     ]
 
 
-class TableauCreateVisualization(VirtualFunctionTool):
+class TableauCreateVisualization(VirtualFunctionApp):
     name = "TableauCreateVisualization"
     summary = "Creates a visualization based on specified parameters."
     parameters: List[ArgParameter] = [
@@ -39756,7 +39756,7 @@ class TableauCreateVisualization(VirtualFunctionTool):
     ]
 
 
-class TableauBuildDashboard(VirtualFunctionTool):
+class TableauBuildDashboard(VirtualFunctionApp):
     name = "TableauBuildDashboard"
     summary = "Compiles multiple visualizations into a single dashboard."
     parameters: List[ArgParameter] = [
@@ -39788,7 +39788,7 @@ class TableauBuildDashboard(VirtualFunctionTool):
     ]
 
 
-class TableauShareVisualization(VirtualFunctionTool):
+class TableauShareVisualization(VirtualFunctionApp):
     name = "TableauShareVisualization"
     summary = "Shares a specific visualization with designated users."
     parameters: List[ArgParameter] = [
@@ -39824,7 +39824,7 @@ class TableauShareVisualization(VirtualFunctionTool):
     ]
 
 
-class TableauExportVisualization(VirtualFunctionTool):
+class TableauExportVisualization(VirtualFunctionApp):
     name = "TableauExportVisualization"
     summary = "Exports a visualization in a specified format."
     parameters: List[ArgParameter] = [
@@ -39856,7 +39856,7 @@ class TableauExportVisualization(VirtualFunctionTool):
     ]
 
 
-class TableauFilterData(VirtualFunctionTool):
+class TableauFilterData(VirtualFunctionApp):
     name = "TableauFilterData"
     summary = "Applies filters to a specified visualization."
     parameters: List[ArgParameter] = [
@@ -39888,7 +39888,7 @@ class TableauFilterData(VirtualFunctionTool):
     ]
 
 
-class TableauAnalyzeDataTrends(VirtualFunctionTool):
+class TableauAnalyzeDataTrends(VirtualFunctionApp):
     name = "TableauAnalyzeDataTrends"
     summary = "Performs analysis on a specified visualization to identify trends."
     parameters: List[ArgParameter] = [
@@ -39914,7 +39914,7 @@ class TableauAnalyzeDataTrends(VirtualFunctionTool):
     ]
 
 
-class TableauAddInteractivity(VirtualFunctionTool):
+class TableauAddInteractivity(VirtualFunctionApp):
     name = "TableauAddInteractivity"
     summary = "Adds interactive features to a dashboard."
     parameters: List[ArgParameter] = [
@@ -39946,7 +39946,7 @@ class TableauAddInteractivity(VirtualFunctionTool):
     ]
 
 
-class TableauDataBlend(VirtualFunctionTool):
+class TableauDataBlend(VirtualFunctionApp):
     name = "TableauDataBlend"
     summary = "Blends data from multiple sources for visualization."
     parameters: List[ArgParameter] = [
@@ -39972,7 +39972,7 @@ class TableauDataBlend(VirtualFunctionTool):
     ]
 
 
-class TableauCreateCustomCalculation(VirtualFunctionTool):
+class TableauCreateCustomCalculation(VirtualFunctionApp):
     name = "TableauCreateCustomCalculation"
     summary = "Creates a custom calculation for a visualization."
     parameters: List[ArgParameter] = [
@@ -40004,7 +40004,7 @@ class TableauCreateCustomCalculation(VirtualFunctionTool):
     ]
 
 
-class TableauGetStoredDataAccess(VirtualFunctionTool):
+class TableauGetStoredDataAccess(VirtualFunctionApp):
     name = "TableauGetStoredDataAccess"
     summary = "Retrieves stored user data such as preferences or saved settings."
     parameters: List[ArgParameter] = []
@@ -40018,7 +40018,7 @@ class TableauGetStoredDataAccess(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TableauDeleteVisualization(VirtualFunctionTool):
+class TableauDeleteVisualization(VirtualFunctionApp):
     name = "TableauDeleteVisualization"
     summary = "Deletes a specified visualization."
     parameters: List[ArgParameter] = [
@@ -40054,7 +40054,7 @@ class Tableau(FunctionApp):
     description_for_human = "A powerful data visualization tool for creating interactive dashboards and analyzing data trends."
     name_for_model = "Tableau"
     description_for_model = "The Tableau app allows data analysts to connect to various data sources, create interactive visualizations and dashboards, and share insights effectively while ensuring data integrity and security."
-    tool_classes = [
+    app_classes = [
         TableauConnectToDataSource,
         TableauCreateVisualization,
         TableauBuildDashboard,
@@ -40073,7 +40073,7 @@ class Tableau(FunctionApp):
 #################### H2O ####################
 
 
-class H2OTrainModel(VirtualFunctionTool):
+class H2OTrainModel(VirtualFunctionApp):
     name = "H2OTrainModel"
     summary = (
         "Facilitates the training of machine learning models on user-provided datasets."
@@ -40118,7 +40118,7 @@ class H2OTrainModel(VirtualFunctionTool):
     ]
 
 
-class H2OPreprocessData(VirtualFunctionTool):
+class H2OPreprocessData(VirtualFunctionApp):
     name = "H2OPreprocessData"
     summary = "Handles data cleaning and transformations before model training."
     parameters: List[ArgParameter] = [
@@ -40155,7 +40155,7 @@ class H2OPreprocessData(VirtualFunctionTool):
     ]
 
 
-class H2OEvaluateModel(VirtualFunctionTool):
+class H2OEvaluateModel(VirtualFunctionApp):
     name = "H2OEvaluateModel"
     summary = "Evaluates the performance of a trained model using specified metrics."
     parameters: List[ArgParameter] = [
@@ -40198,7 +40198,7 @@ class H2OEvaluateModel(VirtualFunctionTool):
     ]
 
 
-class H2OTuneHyperparameters(VirtualFunctionTool):
+class H2OTuneHyperparameters(VirtualFunctionApp):
     name = "H2OTuneHyperparameters"
     summary = "Optimizes model hyperparameters to enhance performance."
     parameters: List[ArgParameter] = [
@@ -40235,7 +40235,7 @@ class H2OTuneHyperparameters(VirtualFunctionTool):
     ]
 
 
-class H2OPredict(VirtualFunctionTool):
+class H2OPredict(VirtualFunctionApp):
     name = "H2OPredict"
     summary = "Makes predictions on new data using a trained model."
     parameters: List[ArgParameter] = [
@@ -40272,7 +40272,7 @@ class H2OPredict(VirtualFunctionTool):
     ]
 
 
-class H2ODeployModel(VirtualFunctionTool):
+class H2ODeployModel(VirtualFunctionApp):
     name = "H2ODeployModel"
     summary = "Deploys a trained model for real-time predictions."
     parameters: List[ArgParameter] = [
@@ -40309,7 +40309,7 @@ class H2ODeployModel(VirtualFunctionTool):
     ]
 
 
-class H2OVisualizeData(VirtualFunctionTool):
+class H2OVisualizeData(VirtualFunctionApp):
     name = "H2OVisualizeData"
     summary = "Generates visualizations to help users understand their data."
     parameters: List[ArgParameter] = [
@@ -40346,7 +40346,7 @@ class H2OVisualizeData(VirtualFunctionTool):
     ]
 
 
-class H2OSelectFeatures(VirtualFunctionTool):
+class H2OSelectFeatures(VirtualFunctionApp):
     name = "H2OSelectFeatures"
     summary = "Identifies and selects the most relevant features for model training."
     parameters: List[ArgParameter] = [
@@ -40383,7 +40383,7 @@ class H2OSelectFeatures(VirtualFunctionTool):
     ]
 
 
-class H2OGenerateReport(VirtualFunctionTool):
+class H2OGenerateReport(VirtualFunctionApp):
     name = "H2OGenerateReport"
     summary = "Creates a report summarizing model performance and insights."
     parameters: List[ArgParameter] = [
@@ -40420,7 +40420,7 @@ class H2OGenerateReport(VirtualFunctionTool):
     ]
 
 
-class H2OConnectDataSource(VirtualFunctionTool):
+class H2OConnectDataSource(VirtualFunctionApp):
     name = "H2OConnectDataSource"
     summary = "Connects to external data sources for importing data."
     parameters: List[ArgParameter] = [
@@ -40457,7 +40457,7 @@ class H2OConnectDataSource(VirtualFunctionTool):
     ]
 
 
-class H2OAccessStoredData(VirtualFunctionTool):
+class H2OAccessStoredData(VirtualFunctionApp):
     name = "H2OAccessStoredData"
     summary = "Retrieves stored user data, such as previously used datasets or model configurations."
     parameters: List[ArgParameter] = [
@@ -40494,7 +40494,7 @@ class H2O(FunctionApp):
     description_for_human = "A app for data scientists and business analysts to build, evaluate, and deploy machine learning models efficiently."
     name_for_model = "H2O"
     description_for_model = "This app provides a comprehensive suite of tools for data scientists and business analysts to efficiently build, evaluate, and deploy machine learning models, while ensuring proper data preprocessing and compliance with data regulations."
-    tool_classes = [
+    app_classes = [
         H2OTrainModel,
         H2OPreprocessData,
         H2OEvaluateModel,
@@ -40512,7 +40512,7 @@ class H2O(FunctionApp):
 #################### Watson ####################
 
 
-class WatsonNaturalLanguageProcessing(VirtualFunctionTool):
+class WatsonNaturalLanguageProcessing(VirtualFunctionApp):
     name = "WatsonNaturalLanguageProcessing"
     summary = "Offers various NLP functionalities such as sentiment analysis, keyword extraction, and language detection."
     parameters: List[ArgParameter] = [
@@ -40544,7 +40544,7 @@ class WatsonNaturalLanguageProcessing(VirtualFunctionTool):
     ]
 
 
-class WatsonModelTraining(VirtualFunctionTool):
+class WatsonModelTraining(VirtualFunctionApp):
     name = "WatsonModelTraining"
     summary = "Allows users to train machine learning models with their datasets."
     parameters: List[ArgParameter] = [
@@ -40576,7 +40576,7 @@ class WatsonModelTraining(VirtualFunctionTool):
     ]
 
 
-class WatsonDataAnalysis(VirtualFunctionTool):
+class WatsonDataAnalysis(VirtualFunctionApp):
     name = "WatsonDataAnalysis"
     summary = "Performs data analysis on structured and unstructured datasets."
     parameters: List[ArgParameter] = [
@@ -40608,7 +40608,7 @@ class WatsonDataAnalysis(VirtualFunctionTool):
     ]
 
 
-class WatsonChatbotDevelopment(VirtualFunctionTool):
+class WatsonChatbotDevelopment(VirtualFunctionApp):
     name = "WatsonChatbotDevelopment"
     summary = "Creates and manages chatbots for customer interactions."
     parameters: List[ArgParameter] = [
@@ -40640,7 +40640,7 @@ class WatsonChatbotDevelopment(VirtualFunctionTool):
     ]
 
 
-class WatsonApiIntegration(VirtualFunctionTool):
+class WatsonApiIntegration(VirtualFunctionApp):
     name = "WatsonApiIntegration"
     summary = "Integrates with external APIs to extend functionality."
     parameters: List[ArgParameter] = [
@@ -40672,7 +40672,7 @@ class WatsonApiIntegration(VirtualFunctionTool):
     ]
 
 
-class WatsonVoiceRecognition(VirtualFunctionTool):
+class WatsonVoiceRecognition(VirtualFunctionApp):
     name = "WatsonVoiceRecognition"
     summary = "Converts spoken language into text."
     parameters: List[ArgParameter] = [
@@ -40698,7 +40698,7 @@ class WatsonVoiceRecognition(VirtualFunctionTool):
     ]
 
 
-class WatsonImageRecognition(VirtualFunctionTool):
+class WatsonImageRecognition(VirtualFunctionApp):
     name = "WatsonImageRecognition"
     summary = "Analyzes images and classifies them."
     parameters: List[ArgParameter] = [
@@ -40724,7 +40724,7 @@ class WatsonImageRecognition(VirtualFunctionTool):
     ]
 
 
-class WatsonPredictiveAnalytics(VirtualFunctionTool):
+class WatsonPredictiveAnalytics(VirtualFunctionApp):
     name = "WatsonPredictiveAnalytics"
     summary = "Forecasts future trends based on historical data."
     parameters: List[ArgParameter] = [
@@ -40756,7 +40756,7 @@ class WatsonPredictiveAnalytics(VirtualFunctionTool):
     ]
 
 
-class WatsonUserManagement(VirtualFunctionTool):
+class WatsonUserManagement(VirtualFunctionApp):
     name = "WatsonUserManagement"
     summary = "Manages user profiles and preferences."
     parameters: List[ArgParameter] = [
@@ -40788,7 +40788,7 @@ class WatsonUserManagement(VirtualFunctionTool):
     ]
 
 
-class WatsonReporting(VirtualFunctionTool):
+class WatsonReporting(VirtualFunctionApp):
     name = "WatsonReporting"
     summary = "Generates reports based on data analysis results."
     parameters: List[ArgParameter] = [
@@ -40820,7 +40820,7 @@ class WatsonReporting(VirtualFunctionTool):
     ]
 
 
-class WatsonRetrieveModel(VirtualFunctionTool):
+class WatsonRetrieveModel(VirtualFunctionApp):
     name = "WatsonRetrieveModel"
     summary = "Retrieves the unique identifier for a model."
     parameters: List[ArgParameter] = [
@@ -40846,7 +40846,7 @@ class WatsonRetrieveModel(VirtualFunctionTool):
     ]
 
 
-class WatsonRetrieveChatbot(VirtualFunctionTool):
+class WatsonRetrieveChatbot(VirtualFunctionApp):
     name = "WatsonRetrieveChatbot"
     summary = "Retrieves the unique identifier for a chatbot."
     parameters: List[ArgParameter] = [
@@ -40872,7 +40872,7 @@ class WatsonRetrieveChatbot(VirtualFunctionTool):
     ]
 
 
-class WatsonRetrieveUser(VirtualFunctionTool):
+class WatsonRetrieveUser(VirtualFunctionApp):
     name = "WatsonRetrieveUser"
     summary = "Retrieves the unique identifier for a user."
     parameters: List[ArgParameter] = [
@@ -40904,7 +40904,7 @@ class Watson(FunctionApp):
     description_for_human = "A comprehensive AI app designed for developers and enterprises, providing functionalities for natural language processing, machine learning model training, data analysis, chatbot development, and integration with external APIs."
     name_for_model = "Watson"
     description_for_model = "A comprehensive AI app for developers and enterprises, providing functionalities for NLP, model training, data analysis, chatbot development, and API integration."
-    tool_classes = [
+    app_classes = [
         WatsonNaturalLanguageProcessing,
         WatsonModelTraining,
         WatsonDataAnalysis,
@@ -40924,7 +40924,7 @@ class Watson(FunctionApp):
 #################### DataRobot ####################
 
 
-class DataRobotDataPreparation(VirtualFunctionTool):
+class DataRobotDataPreparation(VirtualFunctionApp):
     name = "DataRobotDataPreparation"
     summary = "Clean and transform datasets to ensure they are suitable for modeling."
     parameters: List[ArgParameter] = [
@@ -40956,7 +40956,7 @@ class DataRobotDataPreparation(VirtualFunctionTool):
     ]
 
 
-class DataRobotModelTraining(VirtualFunctionTool):
+class DataRobotModelTraining(VirtualFunctionApp):
     name = "DataRobotModelTraining"
     summary = "Train a machine learning model on the prepared dataset."
     parameters: List[ArgParameter] = [
@@ -40988,7 +40988,7 @@ class DataRobotModelTraining(VirtualFunctionTool):
     ]
 
 
-class DataRobotModelEvaluation(VirtualFunctionTool):
+class DataRobotModelEvaluation(VirtualFunctionApp):
     name = "DataRobotModelEvaluation"
     summary = "Evaluate the performance of a trained model."
     parameters: List[ArgParameter] = [
@@ -41020,7 +41020,7 @@ class DataRobotModelEvaluation(VirtualFunctionTool):
     ]
 
 
-class DataRobotModelDeployment(VirtualFunctionTool):
+class DataRobotModelDeployment(VirtualFunctionApp):
     name = "DataRobotModelDeployment"
     summary = "Deploy a trained model as an API for predictions."
     parameters: List[ArgParameter] = [
@@ -41043,7 +41043,7 @@ class DataRobotModelDeployment(VirtualFunctionTool):
     ]
 
 
-class DataRobotModelManagement(VirtualFunctionTool):
+class DataRobotModelManagement(VirtualFunctionApp):
     name = "DataRobotModelManagement"
     summary = "Manage different versions of models."
     parameters: List[ArgParameter] = [
@@ -41075,7 +41075,7 @@ class DataRobotModelManagement(VirtualFunctionTool):
     ]
 
 
-class DataRobotFeatureEngineering(VirtualFunctionTool):
+class DataRobotFeatureEngineering(VirtualFunctionApp):
     name = "DataRobotFeatureEngineering"
     summary = "Automatically generate new features from the dataset."
     parameters: List[ArgParameter] = [
@@ -41101,7 +41101,7 @@ class DataRobotFeatureEngineering(VirtualFunctionTool):
     ]
 
 
-class DataRobotHyperparameterTuning(VirtualFunctionTool):
+class DataRobotHyperparameterTuning(VirtualFunctionApp):
     name = "DataRobotHyperparameterTuning"
     summary = "Optimize model parameters."
     parameters: List[ArgParameter] = [
@@ -41133,7 +41133,7 @@ class DataRobotHyperparameterTuning(VirtualFunctionTool):
     ]
 
 
-class DataRobotDataVisualization(VirtualFunctionTool):
+class DataRobotDataVisualization(VirtualFunctionApp):
     name = "DataRobotDataVisualization"
     summary = "Provide visualizations for data and model performance."
     parameters: List[ArgParameter] = [
@@ -41156,7 +41156,7 @@ class DataRobotDataVisualization(VirtualFunctionTool):
     ]
 
 
-class DataRobotDataIntegration(VirtualFunctionTool):
+class DataRobotDataIntegration(VirtualFunctionApp):
     name = "DataRobotDataIntegration"
     summary = "Pull data from external sources."
     parameters: List[ArgParameter] = [
@@ -41188,7 +41188,7 @@ class DataRobotDataIntegration(VirtualFunctionTool):
     ]
 
 
-class DataRobotUserFeedback(VirtualFunctionTool):
+class DataRobotUserFeedback(VirtualFunctionApp):
     name = "DataRobotUserFeedback"
     summary = "Collect feedback on model predictions."
     parameters: List[ArgParameter] = [
@@ -41220,7 +41220,7 @@ class DataRobotUserFeedback(VirtualFunctionTool):
     ]
 
 
-class DataRobotStoredDataAccess(VirtualFunctionTool):
+class DataRobotStoredDataAccess(VirtualFunctionApp):
     name = "DataRobotStoredDataAccess"
     summary = "Access stored user data like previous datasets."
     parameters: List[ArgParameter] = [
@@ -41252,7 +41252,7 @@ class DataRobot(FunctionApp):
     description_for_human = "App for automating the process of building and deploying predictive models."
     name_for_model = "DataRobot"
     description_for_model = "The DataRobot app provides users with a comprehensive set of tools for data preparation, model training, evaluation, deployment, and management, enabling them to automate machine learning processes while addressing potential risks associated with data integrity and model performance."
-    tool_classes = [
+    app_classes = [
         DataRobotDataPreparation,
         DataRobotModelTraining,
         DataRobotModelEvaluation,
@@ -41270,7 +41270,7 @@ class DataRobot(FunctionApp):
 #################### Kibana ####################
 
 
-class KibanaCreateVisualization(VirtualFunctionTool):
+class KibanaCreateVisualization(VirtualFunctionApp):
     name = "KibanaCreateVisualization"
     summary = "Create a new visualization based on specified parameters."
     parameters: List[ArgParameter] = [
@@ -41308,7 +41308,7 @@ class KibanaCreateVisualization(VirtualFunctionTool):
     ]
 
 
-class KibanaCreateDashboard(VirtualFunctionTool):
+class KibanaCreateDashboard(VirtualFunctionApp):
     name = "KibanaCreateDashboard"
     summary = "Create a new dashboard that can contain multiple visualizations."
     parameters: List[ArgParameter] = [
@@ -41340,7 +41340,7 @@ class KibanaCreateDashboard(VirtualFunctionTool):
     ]
 
 
-class KibanaSearchData(VirtualFunctionTool):
+class KibanaSearchData(VirtualFunctionApp):
     name = "KibanaSearchData"
     summary = "Search for data in Elasticsearch based on specified criteria."
     parameters: List[ArgParameter] = [
@@ -41372,7 +41372,7 @@ class KibanaSearchData(VirtualFunctionTool):
     ]
 
 
-class KibanaSetAlert(VirtualFunctionTool):
+class KibanaSetAlert(VirtualFunctionApp):
     name = "KibanaSetAlert"
     summary = "Set up an alert based on specific conditions in the data."
     parameters: List[ArgParameter] = [
@@ -41410,7 +41410,7 @@ class KibanaSetAlert(VirtualFunctionTool):
     ]
 
 
-class KibanaGenerateReport(VirtualFunctionTool):
+class KibanaGenerateReport(VirtualFunctionApp):
     name = "KibanaGenerateReport"
     summary = "Generate a report based on a visualization or dashboard."
     parameters: List[ArgParameter] = [
@@ -41442,7 +41442,7 @@ class KibanaGenerateReport(VirtualFunctionTool):
     ]
 
 
-class KibanaImportData(VirtualFunctionTool):
+class KibanaImportData(VirtualFunctionApp):
     name = "KibanaImportData"
     summary = "Import a dataset into Elasticsearch from a specified source."
     parameters: List[ArgParameter] = [
@@ -41478,7 +41478,7 @@ class KibanaImportData(VirtualFunctionTool):
     ]
 
 
-class KibanaManageUser(VirtualFunctionTool):
+class KibanaManageUser(VirtualFunctionApp):
     name = "KibanaManageUser"
     summary = "Manage user roles and permissions for accessing Kibana features."
     parameters: List[ArgParameter] = [
@@ -41514,7 +41514,7 @@ class KibanaManageUser(VirtualFunctionTool):
     ]
 
 
-class KibanaAnnotateData(VirtualFunctionTool):
+class KibanaAnnotateData(VirtualFunctionApp):
     name = "KibanaAnnotateData"
     summary = "Add annotations to specific data points in a visualization."
     parameters: List[ArgParameter] = [
@@ -41546,12 +41546,12 @@ class KibanaAnnotateData(VirtualFunctionTool):
     ]
 
 
-class KibanaIntegrateTool(VirtualFunctionTool):
-    name = "KibanaIntegrateTool"
+class KibanaIntegrateApp(VirtualFunctionApp):
+    name = "KibanaIntegrateApp"
     summary = "Integrate Kibana with other tools or platforms."
     parameters: List[ArgParameter] = [
         {
-            "name": "tool_name",
+            "name": "app_name",
             "type": "string",
             "description": "The name of the tool to integrate with (e.g., 'Grafana').",
             "required": True,
@@ -41578,7 +41578,7 @@ class KibanaIntegrateTool(VirtualFunctionTool):
     ]
 
 
-class KibanaSupportPlugin(VirtualFunctionTool):
+class KibanaSupportPlugin(VirtualFunctionApp):
     name = "KibanaSupportPlugin"
     summary = "Manage and support custom plugins in Kibana."
     parameters: List[ArgParameter] = [
@@ -41610,7 +41610,7 @@ class KibanaSupportPlugin(VirtualFunctionTool):
     ]
 
 
-class KibanaGetUserDetails(VirtualFunctionTool):
+class KibanaGetUserDetails(VirtualFunctionApp):
     name = "KibanaGetUserDetails"
     summary = "Retrieve details about a specific user."
     parameters: List[ArgParameter] = [
@@ -41641,7 +41641,7 @@ class Kibana(FunctionApp):
     )
     name_for_model = "Kibana"
     description_for_model = "Kibana is a powerful data visualization and exploration app designed for data analysts and IT professionals. It enables users to create visualizations, dashboards, and reports based on data stored in Elasticsearch, facilitating effective monitoring, analysis, and reporting while ensuring user management and compliance with data protection regulations."
-    tool_classes = [
+    app_classes = [
         KibanaCreateVisualization,
         KibanaCreateDashboard,
         KibanaSearchData,
@@ -41650,7 +41650,7 @@ class Kibana(FunctionApp):
         KibanaImportData,
         KibanaManageUser,
         KibanaAnnotateData,
-        KibanaIntegrateTool,
+        KibanaIntegrateApp,
         KibanaSupportPlugin,
         KibanaGetUserDetails,
     ]
@@ -41659,7 +41659,7 @@ class Kibana(FunctionApp):
 #################### GPT3 ####################
 
 
-class GPT3TextGeneration(VirtualFunctionTool):
+class GPT3TextGeneration(VirtualFunctionApp):
     name = "GPT3TextGeneration"
     summary = "Generates text based on a given prompt."
     parameters: List[ArgParameter] = [
@@ -41691,7 +41691,7 @@ class GPT3TextGeneration(VirtualFunctionTool):
     ]
 
 
-class GPT3ChatbotInteraction(VirtualFunctionTool):
+class GPT3ChatbotInteraction(VirtualFunctionApp):
     name = "GPT3ChatbotInteraction"
     summary = "Engages in a conversational interaction with users."
     parameters: List[ArgParameter] = [
@@ -41723,7 +41723,7 @@ class GPT3ChatbotInteraction(VirtualFunctionTool):
     ]
 
 
-class GPT3SentimentAnalysis(VirtualFunctionTool):
+class GPT3SentimentAnalysis(VirtualFunctionApp):
     name = "GPT3SentimentAnalysis"
     summary = "Analyzes the sentiment of a given text."
     parameters: List[ArgParameter] = [
@@ -41746,7 +41746,7 @@ class GPT3SentimentAnalysis(VirtualFunctionTool):
     ]
 
 
-class GPT3TextSummarization(VirtualFunctionTool):
+class GPT3TextSummarization(VirtualFunctionApp):
     name = "GPT3TextSummarization"
     summary = "Summarizes a longer piece of text."
     parameters: List[ArgParameter] = [
@@ -41774,7 +41774,7 @@ class GPT3TextSummarization(VirtualFunctionTool):
     ]
 
 
-class GPT3LanguageTranslation(VirtualFunctionTool):
+class GPT3LanguageTranslation(VirtualFunctionApp):
     name = "GPT3LanguageTranslation"
     summary = "Translates text from one language to another."
     parameters: List[ArgParameter] = [
@@ -41812,7 +41812,7 @@ class GPT3LanguageTranslation(VirtualFunctionTool):
     ]
 
 
-class GPT3TextCompletion(VirtualFunctionTool):
+class GPT3TextCompletion(VirtualFunctionApp):
     name = "GPT3TextCompletion"
     summary = "Completes a partially written text."
     parameters: List[ArgParameter] = [
@@ -41844,7 +41844,7 @@ class GPT3TextCompletion(VirtualFunctionTool):
     ]
 
 
-class GPT3QuestionAnswering(VirtualFunctionTool):
+class GPT3QuestionAnswering(VirtualFunctionApp):
     name = "GPT3QuestionAnswering"
     summary = "Answers specific questions based on the provided context."
     parameters: List[ArgParameter] = [
@@ -41876,7 +41876,7 @@ class GPT3QuestionAnswering(VirtualFunctionTool):
     ]
 
 
-class GPT3ContentPersonalization(VirtualFunctionTool):
+class GPT3ContentPersonalization(VirtualFunctionApp):
     name = "GPT3ContentPersonalization"
     summary = "Personalizes generated content based on user preferences."
     parameters: List[ArgParameter] = [
@@ -41908,7 +41908,7 @@ class GPT3ContentPersonalization(VirtualFunctionTool):
     ]
 
 
-class GPT3CodeGeneration(VirtualFunctionTool):
+class GPT3CodeGeneration(VirtualFunctionApp):
     name = "GPT3CodeGeneration"
     summary = "Generates code snippets based on natural language descriptions."
     parameters: List[ArgParameter] = [
@@ -41940,7 +41940,7 @@ class GPT3CodeGeneration(VirtualFunctionTool):
     ]
 
 
-class GPT3GrammarCorrection(VirtualFunctionTool):
+class GPT3GrammarCorrection(VirtualFunctionApp):
     name = "GPT3GrammarCorrection"
     summary = "Identifies and corrects grammatical errors in a given text."
     parameters: List[ArgParameter] = [
@@ -41969,7 +41969,7 @@ class GPT3(FunctionApp):
     description_for_human = "A app for developers to harness the power of GPT-3 for text generation, chatbot interactions, sentiment analysis, and more."
     name_for_model = "GPT3"
     description_for_model = "The GPT3 app provides powerful functionalities for natural language understanding and generation, enabling developers to create chatbots, perform sentiment analysis, generate content, and more, while addressing potential risks associated with misinformation and biased outputs."
-    tool_classes = [
+    app_classes = [
         GPT3TextGeneration,
         GPT3ChatbotInteraction,
         GPT3SentimentAnalysis,
@@ -41986,7 +41986,7 @@ class GPT3(FunctionApp):
 #################### SageMaker ####################
 
 
-class SageMakerTrainModel(VirtualFunctionTool):
+class SageMakerTrainModel(VirtualFunctionApp):
     name = "SageMakerTrainModel"
     summary = "Initiates the training of a machine learning model using specified datasets and parameters."
     parameters: List[ArgParameter] = [
@@ -42029,7 +42029,7 @@ class SageMakerTrainModel(VirtualFunctionTool):
     ]
 
 
-class SageMakerLabelData(VirtualFunctionTool):
+class SageMakerLabelData(VirtualFunctionApp):
     name = "SageMakerLabelData"
     summary = "Facilitates the labeling of datasets for supervised learning."
     parameters: List[ArgParameter] = [
@@ -42066,7 +42066,7 @@ class SageMakerLabelData(VirtualFunctionTool):
     ]
 
 
-class SageMakerDeployModel(VirtualFunctionTool):
+class SageMakerDeployModel(VirtualFunctionApp):
     name = "SageMakerDeployModel"
     summary = "Deploys a trained model for real-time inference."
     parameters: List[ArgParameter] = [
@@ -42107,7 +42107,7 @@ class SageMakerDeployModel(VirtualFunctionTool):
     ]
 
 
-class SageMakerABTest(VirtualFunctionTool):
+class SageMakerABTest(VirtualFunctionApp):
     name = "SageMakerABTest"
     summary = "Conducts A/B testing for model evaluation."
     parameters: List[ArgParameter] = [
@@ -42154,7 +42154,7 @@ class SageMakerABTest(VirtualFunctionTool):
     ]
 
 
-class SageMakerMonitorModel(VirtualFunctionTool):
+class SageMakerMonitorModel(VirtualFunctionApp):
     name = "SageMakerMonitorModel"
     summary = "Monitors the performance of deployed models and logs metrics."
     parameters: List[ArgParameter] = [
@@ -42186,7 +42186,7 @@ class SageMakerMonitorModel(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SageMakerBatchTransform(VirtualFunctionTool):
+class SageMakerBatchTransform(VirtualFunctionApp):
     name = "SageMakerBatchTransform"
     summary = "Processes large datasets to generate predictions in bulk."
     parameters: List[ArgParameter] = [
@@ -42233,7 +42233,7 @@ class SageMakerBatchTransform(VirtualFunctionTool):
     ]
 
 
-class SageMakerGetModelDetails(VirtualFunctionTool):
+class SageMakerGetModelDetails(VirtualFunctionApp):
     name = "SageMakerGetModelDetails"
     summary = "Retrieves details of a trained model."
     parameters: List[ArgParameter] = [
@@ -42264,7 +42264,7 @@ class SageMakerGetModelDetails(VirtualFunctionTool):
     ]
 
 
-class SageMakerGetLabelingJobStatus(VirtualFunctionTool):
+class SageMakerGetLabelingJobStatus(VirtualFunctionApp):
     name = "SageMakerGetLabelingJobStatus"
     summary = "Checks the status of a data labeling job."
     parameters: List[ArgParameter] = [
@@ -42295,7 +42295,7 @@ class SageMakerGetLabelingJobStatus(VirtualFunctionTool):
     ]
 
 
-class SageMakerDeleteModel(VirtualFunctionTool):
+class SageMakerDeleteModel(VirtualFunctionApp):
     name = "SageMakerDeleteModel"
     summary = "Deletes a trained model from the system."
     parameters: List[ArgParameter] = [
@@ -42321,7 +42321,7 @@ class SageMakerDeleteModel(VirtualFunctionTool):
     ]
 
 
-class SageMakerGetMonitoringMetrics(VirtualFunctionTool):
+class SageMakerGetMonitoringMetrics(VirtualFunctionApp):
     name = "SageMakerGetMonitoringMetrics"
     summary = "Retrieves monitoring metrics for a deployed model."
     parameters: List[ArgParameter] = [
@@ -42352,7 +42352,7 @@ class SageMakerGetMonitoringMetrics(VirtualFunctionTool):
     ]
 
 
-class SageMakerAccessStoredData(VirtualFunctionTool):
+class SageMakerAccessStoredData(VirtualFunctionApp):
     name = "SageMakerAccessStoredData"
     summary = "Accesses stored data resources like user credentials or configurations."
     parameters: List[ArgParameter] = [
@@ -42380,7 +42380,7 @@ class SageMakerAccessStoredData(VirtualFunctionTool):
     ]
 
 
-class SageMakerUpdateModel(VirtualFunctionTool):
+class SageMakerUpdateModel(VirtualFunctionApp):
     name = "SageMakerUpdateModel"
     summary = "Updates the hyperparameters of a trained model."
     parameters: List[ArgParameter] = [
@@ -42422,7 +42422,7 @@ class SageMaker(FunctionApp):
     description_for_human = "A app for managing machine learning workflows, including training, deployment, and monitoring of models."
     name_for_model = "SageMaker"
     description_for_model = "A comprehensive app for building, training, and deploying machine learning models, providing functionalities for data labeling, model optimization, and performance monitoring, while addressing potential risks related to data privacy and model integrity."
-    tool_classes = [
+    app_classes = [
         SageMakerTrainModel,
         SageMakerLabelData,
         SageMakerDeployModel,
@@ -42441,9 +42441,9 @@ class SageMaker(FunctionApp):
 #################### RapidMiner ####################
 
 
-class RapidMinerDataImport(VirtualFunctionTool):
+class RapidMinerDataImport(VirtualFunctionApp):
     name = "RapidMinerDataImport"
-    summary = "Tool for importing data from various sources."
+    summary = "App for importing data from various sources."
     parameters: List[ArgParameter] = [
         {
             "name": "source",
@@ -42478,9 +42478,9 @@ class RapidMinerDataImport(VirtualFunctionTool):
     ]
 
 
-class RapidMinerDataExport(VirtualFunctionTool):
+class RapidMinerDataExport(VirtualFunctionApp):
     name = "RapidMinerDataExport"
-    summary = "Tool for exporting processed data to various formats."
+    summary = "App for exporting processed data to various formats."
     parameters: List[ArgParameter] = [
         {
             "name": "format",
@@ -42510,9 +42510,9 @@ class RapidMinerDataExport(VirtualFunctionTool):
     ]
 
 
-class RapidMinerDataPreparation(VirtualFunctionTool):
+class RapidMinerDataPreparation(VirtualFunctionApp):
     name = "RapidMinerDataPreparation"
-    summary = "Tool for cleaning and transforming data."
+    summary = "App for cleaning and transforming data."
     parameters: List[ArgParameter] = [
         {
             "name": "data",
@@ -42542,9 +42542,9 @@ class RapidMinerDataPreparation(VirtualFunctionTool):
     ]
 
 
-class RapidMinerModelTraining(VirtualFunctionTool):
+class RapidMinerModelTraining(VirtualFunctionApp):
     name = "RapidMinerModelTraining"
-    summary = "Tool for training machine learning models."
+    summary = "App for training machine learning models."
     parameters: List[ArgParameter] = [
         {
             "name": "data",
@@ -42574,9 +42574,9 @@ class RapidMinerModelTraining(VirtualFunctionTool):
     ]
 
 
-class RapidMinerModelDeployment(VirtualFunctionTool):
+class RapidMinerModelDeployment(VirtualFunctionApp):
     name = "RapidMinerModelDeployment"
-    summary = "Tool for deploying trained models into production."
+    summary = "App for deploying trained models into production."
     parameters: List[ArgParameter] = [
         {
             "name": "model",
@@ -42606,9 +42606,9 @@ class RapidMinerModelDeployment(VirtualFunctionTool):
     ]
 
 
-class RapidMinerParameterTuning(VirtualFunctionTool):
+class RapidMinerParameterTuning(VirtualFunctionApp):
     name = "RapidMinerParameterTuning"
-    summary = "Tool for optimizing model parameters."
+    summary = "App for optimizing model parameters."
     parameters: List[ArgParameter] = [
         {
             "name": "model",
@@ -42638,9 +42638,9 @@ class RapidMinerParameterTuning(VirtualFunctionTool):
     ]
 
 
-class RapidMinerReportGeneration(VirtualFunctionTool):
+class RapidMinerReportGeneration(VirtualFunctionApp):
     name = "RapidMinerReportGeneration"
-    summary = "Tool for generating analysis reports."
+    summary = "App for generating analysis reports."
     parameters: List[ArgParameter] = [
         {
             "name": "data_summary",
@@ -42670,9 +42670,9 @@ class RapidMinerReportGeneration(VirtualFunctionTool):
     ]
 
 
-class RapidMinerVisualization(VirtualFunctionTool):
+class RapidMinerVisualization(VirtualFunctionApp):
     name = "RapidMinerVisualization"
-    summary = "Tool for creating visual representations of data."
+    summary = "App for creating visual representations of data."
     parameters: List[ArgParameter] = [
         {
             "name": "data",
@@ -42702,9 +42702,9 @@ class RapidMinerVisualization(VirtualFunctionTool):
     ]
 
 
-class RapidMinerWorkflowAutomation(VirtualFunctionTool):
+class RapidMinerWorkflowAutomation(VirtualFunctionApp):
     name = "RapidMinerWorkflowAutomation"
-    summary = "Tool for automating data processing workflows."
+    summary = "App for automating data processing workflows."
     parameters: List[ArgParameter] = [
         {
             "name": "workflow_steps",
@@ -42728,9 +42728,9 @@ class RapidMinerWorkflowAutomation(VirtualFunctionTool):
     ]
 
 
-class RapidMinerCollaboration(VirtualFunctionTool):
+class RapidMinerCollaboration(VirtualFunctionApp):
     name = "RapidMinerCollaboration"
-    summary = "Tool for sharing workflows and results."
+    summary = "App for sharing workflows and results."
     parameters: List[ArgParameter] = [
         {
             "name": "workflow_id",
@@ -42760,9 +42760,9 @@ class RapidMinerCollaboration(VirtualFunctionTool):
     ]
 
 
-class RapidMinerAPIAccess(VirtualFunctionTool):
+class RapidMinerAPIAccess(VirtualFunctionApp):
     name = "RapidMinerAPIAccess"
-    summary = "Tool for connecting to external APIs for data retrieval."
+    summary = "App for connecting to external APIs for data retrieval."
     parameters: List[ArgParameter] = [
         {
             "name": "api_url",
@@ -42792,9 +42792,9 @@ class RapidMinerAPIAccess(VirtualFunctionTool):
     ]
 
 
-class RapidMinerParameterSearch(VirtualFunctionTool):
+class RapidMinerParameterSearch(VirtualFunctionApp):
     name = "RapidMinerParameterSearch"
-    summary = "Tool for searching available parameters for models."
+    summary = "App for searching available parameters for models."
     parameters: List[ArgParameter] = [
         {
             "name": "model_type",
@@ -42815,9 +42815,9 @@ class RapidMinerParameterSearch(VirtualFunctionTool):
     ]
 
 
-class RapidMinerRetrieveUserSettings(VirtualFunctionTool):
+class RapidMinerRetrieveUserSettings(VirtualFunctionApp):
     name = "RapidMinerRetrieveUserSettings"
-    summary = "Tool for accessing stored user settings."
+    summary = "App for accessing stored user settings."
     parameters: List[ArgParameter] = [
         {
             "name": "user_id",
@@ -42844,7 +42844,7 @@ class RapidMiner(FunctionApp):
     description_for_human = "RapidMiner is a user-friendly data science platform that empowers business analysts to perform data preparation, machine learning, and workflow automation with ease."
     name_for_model = "RapidMiner"
     description_for_model = "RapidMiner is a data science platform designed for business analysts to prepare data, build machine learning models, and automate workflows without extensive coding. It provides tools for data import/export, model training, deployment, visualization, and collaboration, enabling users to derive insights and make informed decisions."
-    tool_classes = [
+    app_classes = [
         RapidMinerDataImport,
         RapidMinerDataExport,
         RapidMinerDataPreparation,
@@ -42864,7 +42864,7 @@ class RapidMiner(FunctionApp):
 #################### EpicFHIR ####################
 
 
-class EpicFHIRGetPatientDemographics(VirtualFunctionTool):
+class EpicFHIRGetPatientDemographics(VirtualFunctionApp):
     name = "EpicFHIRGetPatientDemographics"
     summary = "Retrieves basic demographic information for a specified patient."
     parameters: List[ArgParameter] = [
@@ -42885,7 +42885,7 @@ class EpicFHIRGetPatientDemographics(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EpicFHIRUpdatePatientDemographics(VirtualFunctionTool):
+class EpicFHIRUpdatePatientDemographics(VirtualFunctionApp):
     name = "EpicFHIRUpdatePatientDemographics"
     summary = "Updates demographic information for a specified patient."
     parameters: List[ArgParameter] = [
@@ -42917,7 +42917,7 @@ class EpicFHIRUpdatePatientDemographics(VirtualFunctionTool):
     ]
 
 
-class EpicFHIRGetMedications(VirtualFunctionTool):
+class EpicFHIRGetMedications(VirtualFunctionApp):
     name = "EpicFHIRGetMedications"
     summary = "Retrieves the list of medications for a specified patient."
     parameters: List[ArgParameter] = [
@@ -42938,7 +42938,7 @@ class EpicFHIRGetMedications(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EpicFHIRUpdateMedications(VirtualFunctionTool):
+class EpicFHIRUpdateMedications(VirtualFunctionApp):
     name = "EpicFHIRUpdateMedications"
     summary = "Updates the medication list for a specified patient."
     parameters: List[ArgParameter] = [
@@ -42970,7 +42970,7 @@ class EpicFHIRUpdateMedications(VirtualFunctionTool):
     ]
 
 
-class EpicFHIRGetAllergies(VirtualFunctionTool):
+class EpicFHIRGetAllergies(VirtualFunctionApp):
     name = "EpicFHIRGetAllergies"
     summary = "Retrieves allergy information for a specified patient."
     parameters: List[ArgParameter] = [
@@ -42991,7 +42991,7 @@ class EpicFHIRGetAllergies(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EpicFHIRUpdateAllergies(VirtualFunctionTool):
+class EpicFHIRUpdateAllergies(VirtualFunctionApp):
     name = "EpicFHIRUpdateAllergies"
     summary = "Updates the allergy information for a specified patient."
     parameters: List[ArgParameter] = [
@@ -43023,7 +43023,7 @@ class EpicFHIRUpdateAllergies(VirtualFunctionTool):
     ]
 
 
-class EpicFHIRGetLabResults(VirtualFunctionTool):
+class EpicFHIRGetLabResults(VirtualFunctionApp):
     name = "EpicFHIRGetLabResults"
     summary = "Retrieves laboratory test results for a specified patient."
     parameters: List[ArgParameter] = [
@@ -43044,7 +43044,7 @@ class EpicFHIRGetLabResults(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EpicFHIRGetPatientHistory(VirtualFunctionTool):
+class EpicFHIRGetPatientHistory(VirtualFunctionApp):
     name = "EpicFHIRGetPatientHistory"
     summary = "Retrieves the visit history for a specified patient."
     parameters: List[ArgParameter] = [
@@ -43065,7 +43065,7 @@ class EpicFHIRGetPatientHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EpicFHIRManageAppointments(VirtualFunctionTool):
+class EpicFHIRManageAppointments(VirtualFunctionApp):
     name = "EpicFHIRManageAppointments"
     summary = "Schedules, updates, or cancels patient appointments."
     parameters: List[ArgParameter] = [
@@ -43097,7 +43097,7 @@ class EpicFHIRManageAppointments(VirtualFunctionTool):
     ]
 
 
-class EpicFHIRGeneratePatientReport(VirtualFunctionTool):
+class EpicFHIRGeneratePatientReport(VirtualFunctionApp):
     name = "EpicFHIRGeneratePatientReport"
     summary = "Creates a customized report for a specified patient."
     parameters: List[ArgParameter] = [
@@ -43135,7 +43135,7 @@ class EpicFHIR(FunctionApp):
     description_for_human = "App for accessing and managing electronic health records in healthcare applications."
     name_for_model = "EpicFHIR"
     description_for_model = "EpicFHIR provides a set of APIs for healthcare providers to access and manage electronic health records, including patient demographics, medications, allergies, lab results, and appointment management, ensuring seamless integration and compliance with healthcare standards."
-    tool_classes = [
+    app_classes = [
         EpicFHIRGetPatientDemographics,
         EpicFHIRUpdatePatientDemographics,
         EpicFHIRGetMedications,
@@ -43152,7 +43152,7 @@ class EpicFHIR(FunctionApp):
 #################### MyChart ####################
 
 
-class MyChartGetHealthRecords(VirtualFunctionTool):
+class MyChartGetHealthRecords(VirtualFunctionApp):
     name = "MyChartGetHealthRecords"
     summary = "Retrieves the user's personal health records."
     parameters: List[ArgParameter] = []
@@ -43166,7 +43166,7 @@ class MyChartGetHealthRecords(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MyChartScheduleAppointment(VirtualFunctionTool):
+class MyChartScheduleAppointment(VirtualFunctionApp):
     name = "MyChartScheduleAppointment"
     summary = "Allows users to schedule a new appointment."
     parameters: List[ArgParameter] = [
@@ -43198,7 +43198,7 @@ class MyChartScheduleAppointment(VirtualFunctionTool):
     ]
 
 
-class MyChartGetAvailableSlots(VirtualFunctionTool):
+class MyChartGetAvailableSlots(VirtualFunctionApp):
     name = "MyChartGetAvailableSlots"
     summary = "Retrieves available appointment slots for a specific provider."
     parameters: List[ArgParameter] = [
@@ -43224,7 +43224,7 @@ class MyChartGetAvailableSlots(VirtualFunctionTool):
     ]
 
 
-class MyChartSendMessage(VirtualFunctionTool):
+class MyChartSendMessage(VirtualFunctionApp):
     name = "MyChartSendMessage"
     summary = "Sends a secure message to a healthcare provider."
     parameters: List[ArgParameter] = [
@@ -43260,7 +43260,7 @@ class MyChartSendMessage(VirtualFunctionTool):
     ]
 
 
-class MyChartGetMessages(VirtualFunctionTool):
+class MyChartGetMessages(VirtualFunctionApp):
     name = "MyChartGetMessages"
     summary = "Retrieves messages between the user and their healthcare providers."
     parameters: List[ArgParameter] = []
@@ -43274,7 +43274,7 @@ class MyChartGetMessages(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MyChartRequestMedicationRefill(VirtualFunctionTool):
+class MyChartRequestMedicationRefill(VirtualFunctionApp):
     name = "MyChartRequestMedicationRefill"
     summary = "Requests a refill for a prescribed medication."
     parameters: List[ArgParameter] = [
@@ -43300,7 +43300,7 @@ class MyChartRequestMedicationRefill(VirtualFunctionTool):
     ]
 
 
-class MyChartGetBillingInfo(VirtualFunctionTool):
+class MyChartGetBillingInfo(VirtualFunctionApp):
     name = "MyChartGetBillingInfo"
     summary = "Retrieves billing statements and payment history."
     parameters: List[ArgParameter] = []
@@ -43314,7 +43314,7 @@ class MyChartGetBillingInfo(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MyChartUpdatePersonalInfo(VirtualFunctionTool):
+class MyChartUpdatePersonalInfo(VirtualFunctionApp):
     name = "MyChartUpdatePersonalInfo"
     summary = "Updates the user's personal contact information."
     parameters: List[ArgParameter] = [
@@ -43340,7 +43340,7 @@ class MyChartUpdatePersonalInfo(VirtualFunctionTool):
     ]
 
 
-class MyChartDownloadHealthRecords(VirtualFunctionTool):
+class MyChartDownloadHealthRecords(VirtualFunctionApp):
     name = "MyChartDownloadHealthRecords"
     summary = "Allows users to download their health records."
     parameters: List[ArgParameter] = [
@@ -43366,7 +43366,7 @@ class MyChartDownloadHealthRecords(VirtualFunctionTool):
     ]
 
 
-class MyChartGetTestResults(VirtualFunctionTool):
+class MyChartGetTestResults(VirtualFunctionApp):
     name = "MyChartGetTestResults"
     summary = "Retrieves test results for the user."
     parameters: List[ArgParameter] = []
@@ -43380,7 +43380,7 @@ class MyChartGetTestResults(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MyChartGetAppointmentHistory(VirtualFunctionTool):
+class MyChartGetAppointmentHistory(VirtualFunctionApp):
     name = "MyChartGetAppointmentHistory"
     summary = "Retrieves the history of past appointments."
     parameters: List[ArgParameter] = []
@@ -43400,7 +43400,7 @@ class MyChart(FunctionApp):
     description_for_human = "A app for managing your health information, appointments, and communication with healthcare providers."
     name_for_model = "MyChart"
     description_for_model = "MyChart app provides patients with secure access to personal health records, appointment scheduling, messaging with healthcare providers, medication management, and billing information, enhancing patient engagement and health management."
-    tool_classes = [
+    app_classes = [
         MyChartGetHealthRecords,
         MyChartScheduleAppointment,
         MyChartGetAvailableSlots,
@@ -43418,7 +43418,7 @@ class MyChart(FunctionApp):
 #################### Fitbit ####################
 
 
-class FitbitRetrieveActivityData(VirtualFunctionTool):
+class FitbitRetrieveActivityData(VirtualFunctionApp):
     name = "FitbitRetrieveActivityData"
     summary = "Access daily activities recorded by the Fitbit device."
     parameters: List[ArgParameter] = [
@@ -43439,7 +43439,7 @@ class FitbitRetrieveActivityData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FitbitGetHeartRateData(VirtualFunctionTool):
+class FitbitGetHeartRateData(VirtualFunctionApp):
     name = "FitbitGetHeartRateData"
     summary = "Fetch heart rate information over a specified period."
     parameters: List[ArgParameter] = [
@@ -43466,7 +43466,7 @@ class FitbitGetHeartRateData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FitbitAccessSleepPatterns(VirtualFunctionTool):
+class FitbitAccessSleepPatterns(VirtualFunctionApp):
     name = "FitbitAccessSleepPatterns"
     summary = "Obtain detailed sleep data."
     parameters: List[ArgParameter] = [
@@ -43487,7 +43487,7 @@ class FitbitAccessSleepPatterns(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FitbitTrackWeightManagement(VirtualFunctionTool):
+class FitbitTrackWeightManagement(VirtualFunctionApp):
     name = "FitbitTrackWeightManagement"
     summary = "Manage and track weight data."
     parameters: List[ArgParameter] = [
@@ -43519,7 +43519,7 @@ class FitbitTrackWeightManagement(VirtualFunctionTool):
     ]
 
 
-class FitbitGenerateHealthInsights(VirtualFunctionTool):
+class FitbitGenerateHealthInsights(VirtualFunctionApp):
     name = "FitbitGenerateHealthInsights"
     summary = "Provide personalized health insights based on the aggregated data."
     parameters: List[ArgParameter] = [
@@ -43546,7 +43546,7 @@ class FitbitGenerateHealthInsights(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FitbitSetHealthGoals(VirtualFunctionTool):
+class FitbitSetHealthGoals(VirtualFunctionApp):
     name = "FitbitSetHealthGoals"
     summary = "Allow users to set specific health goals."
     parameters: List[ArgParameter] = [
@@ -43567,7 +43567,7 @@ class FitbitSetHealthGoals(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FitbitUpdateWeight(VirtualFunctionTool):
+class FitbitUpdateWeight(VirtualFunctionApp):
     name = "FitbitUpdateWeight"
     summary = "Enable users to log their weight entries."
     parameters: List[ArgParameter] = [
@@ -43593,7 +43593,7 @@ class FitbitUpdateWeight(VirtualFunctionTool):
     ]
 
 
-class FitbitSearchHealthData(VirtualFunctionTool):
+class FitbitSearchHealthData(VirtualFunctionApp):
     name = "FitbitSearchHealthData"
     summary = "Provide a search function for health data."
     parameters: List[ArgParameter] = [
@@ -43620,7 +43620,7 @@ class FitbitSearchHealthData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FitbitExportHealthData(VirtualFunctionTool):
+class FitbitExportHealthData(VirtualFunctionApp):
     name = "FitbitExportHealthData"
     summary = "Allow users to export their health data."
     parameters: List[ArgParameter] = [
@@ -43646,7 +43646,7 @@ class FitbitExportHealthData(VirtualFunctionTool):
     ]
 
 
-class FitbitGetNotifications(VirtualFunctionTool):
+class FitbitGetNotifications(VirtualFunctionApp):
     name = "FitbitGetNotifications"
     summary = "Send reminders or alerts to users."
     parameters: List[ArgParameter] = [
@@ -43667,7 +43667,7 @@ class FitbitGetNotifications(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FitbitSearchWeightEntries(VirtualFunctionTool):
+class FitbitSearchWeightEntries(VirtualFunctionApp):
     name = "FitbitSearchWeightEntries"
     summary = "Retrieve unique weight entries based on date."
     parameters: List[ArgParameter] = [
@@ -43694,7 +43694,7 @@ class Fitbit(FunctionApp):
     description_for_human = "The Fitbit app provides access to health and fitness data collected by Fitbit devices, allowing users to retrieve activity levels, heart rate data, sleep patterns, and manage weight while generating personalized health insights and notifications."
     name_for_model = "Fitbit"
     description_for_model = "The Fitbit app provides access to health and fitness data collected by Fitbit devices, allowing users to retrieve activity levels, heart rate data, sleep patterns, and manage weight while generating personalized health insights and notifications."
-    tool_classes = [
+    app_classes = [
         FitbitRetrieveActivityData,
         FitbitGetHeartRateData,
         FitbitAccessSleepPatterns,
@@ -43712,7 +43712,7 @@ class Fitbit(FunctionApp):
 #################### HealthKit ####################
 
 
-class HealthKitDataAggregation(VirtualFunctionTool):
+class HealthKitDataAggregation(VirtualFunctionApp):
     name = "HealthKitDataAggregation"
     summary = "Aggregates health and fitness data from various sources."
     parameters: List[ArgParameter] = []
@@ -43726,7 +43726,7 @@ class HealthKitDataAggregation(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class HealthKitReadHealthData(VirtualFunctionTool):
+class HealthKitReadHealthData(VirtualFunctionApp):
     name = "HealthKitReadHealthData"
     summary = "Reads specific health data based on type."
     parameters: List[ArgParameter] = [
@@ -43752,7 +43752,7 @@ class HealthKitReadHealthData(VirtualFunctionTool):
     ]
 
 
-class HealthKitWriteHealthData(VirtualFunctionTool):
+class HealthKitWriteHealthData(VirtualFunctionApp):
     name = "HealthKitWriteHealthData"
     summary = "Writes health data to the HealthKit store."
     parameters: List[ArgParameter] = [
@@ -43790,7 +43790,7 @@ class HealthKitWriteHealthData(VirtualFunctionTool):
     ]
 
 
-class HealthKitShareHealthData(VirtualFunctionTool):
+class HealthKitShareHealthData(VirtualFunctionApp):
     name = "HealthKitShareHealthData"
     summary = "Shares health data with other applications or healthcare providers."
     parameters: List[ArgParameter] = [
@@ -43822,7 +43822,7 @@ class HealthKitShareHealthData(VirtualFunctionTool):
     ]
 
 
-class HealthKitManagePrivacySettings(VirtualFunctionTool):
+class HealthKitManagePrivacySettings(VirtualFunctionApp):
     name = "HealthKitManagePrivacySettings"
     summary = "Manages privacy settings for health data."
     parameters: List[ArgParameter] = [
@@ -43854,7 +43854,7 @@ class HealthKitManagePrivacySettings(VirtualFunctionTool):
     ]
 
 
-class HealthKitTrackWorkout(VirtualFunctionTool):
+class HealthKitTrackWorkout(VirtualFunctionApp):
     name = "HealthKitTrackWorkout"
     summary = "Logs a workout session."
     parameters: List[ArgParameter] = [
@@ -43898,7 +43898,7 @@ class HealthKitTrackWorkout(VirtualFunctionTool):
     ]
 
 
-class HealthKitLogNutrition(VirtualFunctionTool):
+class HealthKitLogNutrition(VirtualFunctionApp):
     name = "HealthKitLogNutrition"
     summary = "Logs dietary intake."
     parameters: List[ArgParameter] = [
@@ -43936,7 +43936,7 @@ class HealthKitLogNutrition(VirtualFunctionTool):
     ]
 
 
-class HealthKitSetMedicationReminder(VirtualFunctionTool):
+class HealthKitSetMedicationReminder(VirtualFunctionApp):
     name = "HealthKitSetMedicationReminder"
     summary = "Sets a reminder for medication."
     parameters: List[ArgParameter] = [
@@ -43968,7 +43968,7 @@ class HealthKitSetMedicationReminder(VirtualFunctionTool):
     ]
 
 
-class HealthKitGetHealthInsights(VirtualFunctionTool):
+class HealthKitGetHealthInsights(VirtualFunctionApp):
     name = "HealthKitGetHealthInsights"
     summary = "Provides insights based on health data trends."
     parameters: List[ArgParameter] = [
@@ -43994,7 +43994,7 @@ class HealthKitGetHealthInsights(VirtualFunctionTool):
     ]
 
 
-class HealthKitManageUserProfile(VirtualFunctionTool):
+class HealthKitManageUserProfile(VirtualFunctionApp):
     name = "HealthKitManageUserProfile"
     summary = "Manages the user's health profile."
     parameters: List[ArgParameter] = [
@@ -44044,7 +44044,7 @@ class HealthKit(FunctionApp):
     description_for_human = "A comprehensive health data platform for managing and sharing health-related information."
     name_for_model = "HealthKit"
     description_for_model = "HealthKit is a comprehensive health data platform that enables developers to create applications for aggregating, reading, and writing health data while managing privacy settings and sharing data securely."
-    tool_classes = [
+    app_classes = [
         HealthKitDataAggregation,
         HealthKitReadHealthData,
         HealthKitWriteHealthData,
@@ -44061,7 +44061,7 @@ class HealthKit(FunctionApp):
 #################### HealthGorilla ####################
 
 
-class HealthGorillaAccessPatientRecords(VirtualFunctionTool):
+class HealthGorillaAccessPatientRecords(VirtualFunctionApp):
     name = "HealthGorillaAccessPatientRecords"
     summary = "Retrieve a patient's complete medical history, including lab results and clinical notes."
     parameters: List[ArgParameter] = [
@@ -44082,7 +44082,7 @@ class HealthGorillaAccessPatientRecords(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class HealthGorillaSharePatientInformation(VirtualFunctionTool):
+class HealthGorillaSharePatientInformation(VirtualFunctionApp):
     name = "HealthGorillaSharePatientInformation"
     summary = "Securely share patient data with other healthcare providers."
     parameters: List[ArgParameter] = [
@@ -44125,7 +44125,7 @@ class HealthGorillaSharePatientInformation(VirtualFunctionTool):
     ]
 
 
-class HealthGorillaSearchPatientData(VirtualFunctionTool):
+class HealthGorillaSearchPatientData(VirtualFunctionApp):
     name = "HealthGorillaSearchPatientData"
     summary = (
         "Search for specific patient records or data points using various filters."
@@ -44159,7 +44159,7 @@ class HealthGorillaSearchPatientData(VirtualFunctionTool):
     ]
 
 
-class HealthGorillaUpdatePatientRecords(VirtualFunctionTool):
+class HealthGorillaUpdatePatientRecords(VirtualFunctionApp):
     name = "HealthGorillaUpdatePatientRecords"
     summary = "Update lab results or clinical notes for a patient."
     parameters: List[ArgParameter] = [
@@ -44196,7 +44196,7 @@ class HealthGorillaUpdatePatientRecords(VirtualFunctionTool):
     ]
 
 
-class HealthGorillaDeletePatientRecords(VirtualFunctionTool):
+class HealthGorillaDeletePatientRecords(VirtualFunctionApp):
     name = "HealthGorillaDeletePatientRecords"
     summary = "Remove patient records or specific data points as necessary."
     parameters: List[ArgParameter] = [
@@ -44233,7 +44233,7 @@ class HealthGorillaDeletePatientRecords(VirtualFunctionTool):
     ]
 
 
-class HealthGorillaRetrieveLabResults(VirtualFunctionTool):
+class HealthGorillaRetrieveLabResults(VirtualFunctionApp):
     name = "HealthGorillaRetrieveLabResults"
     summary = "Access specific lab results for a patient."
     parameters: List[ArgParameter] = [
@@ -44262,7 +44262,7 @@ class HealthGorillaRetrieveLabResults(VirtualFunctionTool):
     ]
 
 
-class HealthGorillaAccessClinicalNotes(VirtualFunctionTool):
+class HealthGorillaAccessClinicalNotes(VirtualFunctionApp):
     name = "HealthGorillaAccessClinicalNotes"
     summary = "Retrieve detailed clinical notes from healthcare providers."
     parameters: List[ArgParameter] = [
@@ -44294,7 +44294,7 @@ class HealthGorillaAccessClinicalNotes(VirtualFunctionTool):
     ]
 
 
-class HealthGorillaAuditLogRetrieval(VirtualFunctionTool):
+class HealthGorillaAuditLogRetrieval(VirtualFunctionApp):
     name = "HealthGorillaAuditLogRetrieval"
     summary = (
         "Access logs of all data access and sharing activities for compliance purposes."
@@ -44317,7 +44317,7 @@ class HealthGorillaAuditLogRetrieval(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class HealthGorillaPatientConsentManagement(VirtualFunctionTool):
+class HealthGorillaPatientConsentManagement(VirtualFunctionApp):
     name = "HealthGorillaPatientConsentManagement"
     summary = "Manage and track patient consent for data sharing."
     parameters: List[ArgParameter] = [
@@ -44354,7 +44354,7 @@ class HealthGorillaPatientConsentManagement(VirtualFunctionTool):
     ]
 
 
-class HealthGorillaDataAggregation(VirtualFunctionTool):
+class HealthGorillaDataAggregation(VirtualFunctionApp):
     name = "HealthGorillaDataAggregation"
     summary = "Aggregate patient data for analytics or reporting purposes."
     parameters: List[ArgParameter] = [
@@ -44388,7 +44388,7 @@ class HealthGorilla(FunctionApp):
     )
     name_for_model = "HealthGorilla"
     description_for_model = "The HealthGorilla app provides healthcare providers with secure access to patient records, enabling sharing, updating, and managing consent for healthcare data while ensuring compliance with regulations."
-    tool_classes = [
+    app_classes = [
         HealthGorillaAccessPatientRecords,
         HealthGorillaSharePatientInformation,
         HealthGorillaSearchPatientData,
@@ -44405,7 +44405,7 @@ class HealthGorilla(FunctionApp):
 #################### CareSync ####################
 
 
-class CareSyncAggregateData(VirtualFunctionTool):
+class CareSyncAggregateData(VirtualFunctionApp):
     name = "CareSyncAggregateData"
     summary = "Collects health data from various sources."
     parameters: List[ArgParameter] = [
@@ -44442,7 +44442,7 @@ class CareSyncAggregateData(VirtualFunctionTool):
     ]
 
 
-class CareSyncRetrieveData(VirtualFunctionTool):
+class CareSyncRetrieveData(VirtualFunctionApp):
     name = "CareSyncRetrieveData"
     summary = "Retrieves specific health data based on parameters."
     parameters: List[ArgParameter] = [
@@ -44475,7 +44475,7 @@ class CareSyncRetrieveData(VirtualFunctionTool):
     ]
 
 
-class CareSyncUpdateData(VirtualFunctionTool):
+class CareSyncUpdateData(VirtualFunctionApp):
     name = "CareSyncUpdateData"
     summary = "Updates health data for a specific user."
     parameters: List[ArgParameter] = [
@@ -44510,7 +44510,7 @@ class CareSyncUpdateData(VirtualFunctionTool):
     ]
 
 
-class CareSyncDeleteData(VirtualFunctionTool):
+class CareSyncDeleteData(VirtualFunctionApp):
     name = "CareSyncDeleteData"
     summary = "Deletes specific health data for a user."
     parameters: List[ArgParameter] = [
@@ -44547,7 +44547,7 @@ class CareSyncDeleteData(VirtualFunctionTool):
     ]
 
 
-class CareSyncManageUserProfile(VirtualFunctionTool):
+class CareSyncManageUserProfile(VirtualFunctionApp):
     name = "CareSyncManageUserProfile"
     summary = "Manages user profiles including preferences and consent."
     parameters: List[ArgParameter] = [
@@ -44584,7 +44584,7 @@ class CareSyncManageUserProfile(VirtualFunctionTool):
     ]
 
 
-class CareSyncShareData(VirtualFunctionTool):
+class CareSyncShareData(VirtualFunctionApp):
     name = "CareSyncShareData"
     summary = "Facilitates sharing of health data with authorized parties."
     parameters: List[ArgParameter] = [
@@ -44627,7 +44627,7 @@ class CareSyncShareData(VirtualFunctionTool):
     ]
 
 
-class CareSyncGenerateInsights(VirtualFunctionTool):
+class CareSyncGenerateInsights(VirtualFunctionApp):
     name = "CareSyncGenerateInsights"
     summary = "Generates insights based on aggregated health data."
     parameters: List[ArgParameter] = [
@@ -44655,7 +44655,7 @@ class CareSyncGenerateInsights(VirtualFunctionTool):
     ]
 
 
-class CareSyncSendNotification(VirtualFunctionTool):
+class CareSyncSendNotification(VirtualFunctionApp):
     name = "CareSyncSendNotification"
     summary = "Sends alerts and notifications to users."
     parameters: List[ArgParameter] = [
@@ -44689,7 +44689,7 @@ class CareSyncSendNotification(VirtualFunctionTool):
     ]
 
 
-class CareSyncIntegrateAPI(VirtualFunctionTool):
+class CareSyncIntegrateAPI(VirtualFunctionApp):
     name = "CareSyncIntegrateAPI"
     summary = "Integrates with external health applications."
     parameters: List[ArgParameter] = [
@@ -44726,7 +44726,7 @@ class CareSyncIntegrateAPI(VirtualFunctionTool):
     ]
 
 
-class CareSyncAnalyticsDashboard(VirtualFunctionTool):
+class CareSyncAnalyticsDashboard(VirtualFunctionApp):
     name = "CareSyncAnalyticsDashboard"
     summary = "Provides a dashboard for visualizing health data trends."
     parameters: List[ArgParameter] = [
@@ -44762,7 +44762,7 @@ class CareSync(FunctionApp):
     )
     name_for_model = "CareSync"
     description_for_model = "CareSync is a app designed to help developers aggregate, retrieve, update, and manage patient health data from various sources, ensuring secure data sharing and insightful analytics for chronic condition management."
-    tool_classes = [
+    app_classes = [
         CareSyncAggregateData,
         CareSyncRetrieveData,
         CareSyncUpdateData,
@@ -44779,7 +44779,7 @@ class CareSync(FunctionApp):
 #################### PatientPing ####################
 
 
-class PatientPingNotifyPatientCare(VirtualFunctionTool):
+class PatientPingNotifyPatientCare(VirtualFunctionApp):
     name = "PatientPingNotifyPatientCare"
     summary = "Sends notifications to healthcare providers when a patient receives care outside their network."
     parameters: List[ArgParameter] = [
@@ -44811,7 +44811,7 @@ class PatientPingNotifyPatientCare(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PatientPingAccessPatientData(VirtualFunctionTool):
+class PatientPingAccessPatientData(VirtualFunctionApp):
     name = "PatientPingAccessPatientData"
     summary = "Retrieves detailed patient care information for a given patient."
     parameters: List[ArgParameter] = [
@@ -44833,7 +44833,7 @@ class PatientPingAccessPatientData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PatientPingManageCareCoordination(VirtualFunctionTool):
+class PatientPingManageCareCoordination(VirtualFunctionApp):
     name = "PatientPingManageCareCoordination"
     summary = (
         "Manages care transitions by updating or creating care plans for patients."
@@ -44867,7 +44867,7 @@ class PatientPingManageCareCoordination(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PatientPingIntegrateEHR(VirtualFunctionTool):
+class PatientPingIntegrateEHR(VirtualFunctionApp):
     name = "PatientPingIntegrateEHR"
     summary = "Integrates with EHR systems to share patient data."
     parameters: List[ArgParameter] = [
@@ -44899,7 +44899,7 @@ class PatientPingIntegrateEHR(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PatientPingGenerateReport(VirtualFunctionTool):
+class PatientPingGenerateReport(VirtualFunctionApp):
     name = "PatientPingGenerateReport"
     summary = "Generates reports on patient care transitions and network utilization."
     parameters: List[ArgParameter] = [
@@ -44926,7 +44926,7 @@ class PatientPingGenerateReport(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PatientPingSendAlerts(VirtualFunctionTool):
+class PatientPingSendAlerts(VirtualFunctionApp):
     name = "PatientPingSendAlerts"
     summary = "Sends alerts to providers regarding patient appointments or follow-ups."
     parameters: List[ArgParameter] = [
@@ -44958,7 +44958,7 @@ class PatientPingSendAlerts(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PatientPingManageUserAccess(VirtualFunctionTool):
+class PatientPingManageUserAccess(VirtualFunctionApp):
     name = "PatientPingManageUserAccess"
     summary = "Manages user roles and permissions for accessing patient data."
     parameters: List[ArgParameter] = [
@@ -44995,7 +44995,7 @@ class PatientPingManageUserAccess(VirtualFunctionTool):
     ]
 
 
-class PatientPingAuditDataAccess(VirtualFunctionTool):
+class PatientPingAuditDataAccess(VirtualFunctionApp):
     name = "PatientPingAuditDataAccess"
     summary = "Maintains an audit trail of patient data access and modifications."
     parameters: List[ArgParameter] = [
@@ -45016,7 +45016,7 @@ class PatientPingAuditDataAccess(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PatientPingManagePatientConsent(VirtualFunctionTool):
+class PatientPingManagePatientConsent(VirtualFunctionApp):
     name = "PatientPingManagePatientConsent"
     summary = "Handles patient consent for data sharing."
     parameters: List[ArgParameter] = [
@@ -45053,7 +45053,7 @@ class PatientPingManagePatientConsent(VirtualFunctionTool):
     ]
 
 
-class PatientPingCollectFeedback(VirtualFunctionTool):
+class PatientPingCollectFeedback(VirtualFunctionApp):
     name = "PatientPingCollectFeedback"
     summary = "Collects feedback from providers regarding care transitions and patient outcomes."
     parameters: List[ArgParameter] = [
@@ -45085,7 +45085,7 @@ class PatientPingCollectFeedback(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PatientPingRetrievePatientID(VirtualFunctionTool):
+class PatientPingRetrievePatientID(VirtualFunctionApp):
     name = "PatientPingRetrievePatientID"
     summary = "Retrieves the unique patient identifier based on the patient's name or other attributes."
     parameters: List[ArgParameter] = [
@@ -45112,7 +45112,7 @@ class PatientPingRetrievePatientID(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PatientPingRetrieveEHRData(VirtualFunctionTool):
+class PatientPingRetrieveEHRData(VirtualFunctionApp):
     name = "PatientPingRetrieveEHRData"
     summary = "Retrieves EHR data for a specific patient using their unique identifier."
     parameters: List[ArgParameter] = [
@@ -45139,7 +45139,7 @@ class PatientPing(FunctionApp):
     description_for_human = "A app for healthcare providers to coordinate patient care effectively by receiving notifications and accessing patient data."
     name_for_model = "PatientPing"
     description_for_model = "The PatientPing app enhances healthcare providers' ability to coordinate patient care by notifying them of care events outside their network, accessing patient data, managing care transitions, integrating with EHR systems, and generating reports, all while ensuring compliance with privacy regulations."
-    tool_classes = [
+    app_classes = [
         PatientPingNotifyPatientCare,
         PatientPingAccessPatientData,
         PatientPingManageCareCoordination,
@@ -45158,7 +45158,7 @@ class PatientPing(FunctionApp):
 #################### GoogleFit ####################
 
 
-class GoogleFitActivityTracker(VirtualFunctionTool):
+class GoogleFitActivityTracker(VirtualFunctionApp):
     name = "GoogleFitActivityTracker"
     summary = "Captures and reports user activity data such as steps taken, distance traveled, and calories burned."
     parameters: List[ArgParameter] = [
@@ -45185,7 +45185,7 @@ class GoogleFitActivityTracker(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleFitHeartRateMonitor(VirtualFunctionTool):
+class GoogleFitHeartRateMonitor(VirtualFunctionApp):
     name = "GoogleFitHeartRateMonitor"
     summary = "Provides access to real-time heart rate data from connected devices."
     parameters: List[ArgParameter] = [
@@ -45206,7 +45206,7 @@ class GoogleFitHeartRateMonitor(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleFitSleepAnalyzer(VirtualFunctionTool):
+class GoogleFitSleepAnalyzer(VirtualFunctionApp):
     name = "GoogleFitSleepAnalyzer"
     summary = (
         "Retrieves detailed sleep data, including sleep duration and quality metrics."
@@ -45235,7 +45235,7 @@ class GoogleFitSleepAnalyzer(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleFitGoalSetter(VirtualFunctionTool):
+class GoogleFitGoalSetter(VirtualFunctionApp):
     name = "GoogleFitGoalSetter"
     summary = (
         "Allows users to set fitness goals and track progress towards achieving them."
@@ -45275,7 +45275,7 @@ class GoogleFitGoalSetter(VirtualFunctionTool):
     ]
 
 
-class GoogleFitDataAggregator(VirtualFunctionTool):
+class GoogleFitDataAggregator(VirtualFunctionApp):
     name = "GoogleFitDataAggregator"
     summary = "Aggregates data from various sources and presents a comprehensive overview of the user's fitness metrics."
     parameters: List[ArgParameter] = [
@@ -45302,7 +45302,7 @@ class GoogleFitDataAggregator(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleFitUserProfileManager(VirtualFunctionTool):
+class GoogleFitUserProfileManager(VirtualFunctionApp):
     name = "GoogleFitUserProfileManager"
     summary = "Manages user profiles to store personal information relevant to fitness tracking."
     parameters: List[ArgParameter] = [
@@ -45334,7 +45334,7 @@ class GoogleFitUserProfileManager(VirtualFunctionTool):
     ]
 
 
-class GoogleFitHistoricalDataRetriever(VirtualFunctionTool):
+class GoogleFitHistoricalDataRetriever(VirtualFunctionApp):
     name = "GoogleFitHistoricalDataRetriever"
     summary = (
         "Accesses historical fitness data for trend analysis and long-term tracking."
@@ -45369,7 +45369,7 @@ class GoogleFitHistoricalDataRetriever(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleFitNotificationSender(VirtualFunctionTool):
+class GoogleFitNotificationSender(VirtualFunctionApp):
     name = "GoogleFitNotificationSender"
     summary = "Sends notifications or alerts to users based on their activity levels or health metrics."
     parameters: List[ArgParameter] = [
@@ -45401,7 +45401,7 @@ class GoogleFitNotificationSender(VirtualFunctionTool):
     ]
 
 
-class GoogleFitDataExporter(VirtualFunctionTool):
+class GoogleFitDataExporter(VirtualFunctionApp):
     name = "GoogleFitDataExporter"
     summary = "Exports fitness data for use in other applications or for personal record-keeping."
     parameters: List[ArgParameter] = [
@@ -45433,7 +45433,7 @@ class GoogleFitDataExporter(VirtualFunctionTool):
     ]
 
 
-class GoogleFitHealthAppIntegrator(VirtualFunctionTool):
+class GoogleFitHealthAppIntegrator(VirtualFunctionApp):
     name = "GoogleFitHealthAppIntegrator"
     summary = "Enables integration with other health-related apps for a more holistic view of user health."
     parameters: List[ArgParameter] = [
@@ -45465,7 +45465,7 @@ class GoogleFitHealthAppIntegrator(VirtualFunctionTool):
     ]
 
 
-class GoogleFitStoredDataAccessor(VirtualFunctionTool):
+class GoogleFitStoredDataAccessor(VirtualFunctionApp):
     name = "GoogleFitStoredDataAccessor"
     summary = "Retrieves stored user data such as address or payment method."
     parameters: List[ArgParameter] = [
@@ -45492,7 +45492,7 @@ class GoogleFit(FunctionApp):
     description_for_human = "A app for developers to integrate fitness data tracking and analysis into applications, focusing on health monitoring and goal setting."
     name_for_model = "GoogleFit"
     description_for_model = "The GoogleFit app provides developers with tools to track and analyze user fitness data, enabling health monitoring and goal setting while addressing potential risks associated with sensitive data management."
-    tool_classes = [
+    app_classes = [
         GoogleFitActivityTracker,
         GoogleFitHeartRateMonitor,
         GoogleFitSleepAnalyzer,
@@ -45510,7 +45510,7 @@ class GoogleFit(FunctionApp):
 #################### GeneticDataIntegration ####################
 
 
-class GeneticDataIntegrationDataIntegration(VirtualFunctionTool):
+class GeneticDataIntegrationDataIntegration(VirtualFunctionApp):
     name = "GeneticDataIntegrationDataIntegration"
     summary = "Integrates genetic data into existing EHR systems."
     parameters: List[ArgParameter] = [
@@ -45547,7 +45547,7 @@ class GeneticDataIntegrationDataIntegration(VirtualFunctionTool):
     ]
 
 
-class GeneticDataIntegrationDataRetrieval(VirtualFunctionTool):
+class GeneticDataIntegrationDataRetrieval(VirtualFunctionApp):
     name = "GeneticDataIntegrationDataRetrieval"
     summary = "Retrieves genetic information based on patient identifiers."
     parameters: List[ArgParameter] = [
@@ -45573,7 +45573,7 @@ class GeneticDataIntegrationDataRetrieval(VirtualFunctionTool):
     ]
 
 
-class GeneticDataIntegrationDataUpdate(VirtualFunctionTool):
+class GeneticDataIntegrationDataUpdate(VirtualFunctionApp):
     name = "GeneticDataIntegrationDataUpdate"
     summary = "Updates genetic data records when new information becomes available."
     parameters: List[ArgParameter] = [
@@ -45614,7 +45614,7 @@ class GeneticDataIntegrationDataUpdate(VirtualFunctionTool):
     ]
 
 
-class GeneticDataIntegrationDataDeletion(VirtualFunctionTool):
+class GeneticDataIntegrationDataDeletion(VirtualFunctionApp):
     name = "GeneticDataIntegrationDataDeletion"
     summary = "Deletes outdated or incorrect genetic data."
     parameters: List[ArgParameter] = [
@@ -45645,7 +45645,7 @@ class GeneticDataIntegrationDataDeletion(VirtualFunctionTool):
     ]
 
 
-class GeneticDataIntegrationDataSharing(VirtualFunctionTool):
+class GeneticDataIntegrationDataSharing(VirtualFunctionApp):
     name = "GeneticDataIntegrationDataSharing"
     summary = "Facilitates the secure sharing of genetic data between authorized healthcare providers."
     parameters: List[ArgParameter] = [
@@ -45682,7 +45682,7 @@ class GeneticDataIntegrationDataSharing(VirtualFunctionTool):
     ]
 
 
-class GeneticDataIntegrationSearchGeneticData(VirtualFunctionTool):
+class GeneticDataIntegrationSearchGeneticData(VirtualFunctionApp):
     name = "GeneticDataIntegrationSearchGeneticData"
     summary = "Searches genetic data by specific criteria."
     parameters: List[ArgParameter] = [
@@ -45708,7 +45708,7 @@ class GeneticDataIntegrationSearchGeneticData(VirtualFunctionTool):
     ]
 
 
-class GeneticDataIntegrationAccessStoredUserData(VirtualFunctionTool):
+class GeneticDataIntegrationAccessStoredUserData(VirtualFunctionApp):
     name = "GeneticDataIntegrationAccessStoredUserData"
     summary = (
         "Accesses stored patient data, such as medical history and treatment plans."
@@ -45736,7 +45736,7 @@ class GeneticDataIntegrationAccessStoredUserData(VirtualFunctionTool):
     ]
 
 
-class GeneticDataIntegrationGenerateReports(VirtualFunctionTool):
+class GeneticDataIntegrationGenerateReports(VirtualFunctionApp):
     name = "GeneticDataIntegrationGenerateReports"
     summary = "Generates reports summarizing genetic data and its implications for patient care."
     parameters: List[ArgParameter] = [
@@ -45762,7 +45762,7 @@ class GeneticDataIntegrationGenerateReports(VirtualFunctionTool):
     ]
 
 
-class GeneticDataIntegrationAccessAuditLogs(VirtualFunctionTool):
+class GeneticDataIntegrationAccessAuditLogs(VirtualFunctionApp):
     name = "GeneticDataIntegrationAccessAuditLogs"
     summary = "Accesses logs that track who accessed or modified genetic data."
     parameters: List[ArgParameter] = [
@@ -45788,7 +45788,7 @@ class GeneticDataIntegrationAccessAuditLogs(VirtualFunctionTool):
     ]
 
 
-class GeneticDataIntegrationIntegrationWithGeneticTesting(VirtualFunctionTool):
+class GeneticDataIntegrationIntegrationWithGeneticTesting(VirtualFunctionApp):
     name = "GeneticDataIntegrationIntegrationWithGeneticTesting"
     summary = "Facilitates integration with third-party genetic testing services for real-time data updates."
     parameters: List[ArgParameter] = [
@@ -45825,7 +45825,7 @@ class GeneticDataIntegrationIntegrationWithGeneticTesting(VirtualFunctionTool):
     ]
 
 
-class GeneticDataIntegrationAccessStoredData(VirtualFunctionTool):
+class GeneticDataIntegrationAccessStoredData(VirtualFunctionApp):
     name = "GeneticDataIntegrationAccessStoredData"
     summary = "Accesses stored data such as patient addresses and payment methods."
     parameters: List[ArgParameter] = [
@@ -45851,7 +45851,7 @@ class GeneticDataIntegrationAccessStoredData(VirtualFunctionTool):
     ]
 
 
-class GeneticDataIntegrationDownloadGeneticData(VirtualFunctionTool):
+class GeneticDataIntegrationDownloadGeneticData(VirtualFunctionApp):
     name = "GeneticDataIntegrationDownloadGeneticData"
     summary = "Downloads genetic data to the local system for offline access."
     parameters: List[ArgParameter] = [
@@ -45883,7 +45883,7 @@ class GeneticDataIntegration(FunctionApp):
     description_for_human = "A app for healthcare providers to manage genetic data within EHRs, enhancing personalized medicine."
     name_for_model = "GeneticDataIntegration"
     description_for_model = "The Genetic Data Integration app enables healthcare providers to securely integrate, retrieve, update, delete, and share genetic data within Electronic Health Records (EHRs), facilitating personalized medicine while ensuring patient privacy and compliance with legal standards."
-    tool_classes = [
+    app_classes = [
         GeneticDataIntegrationDataIntegration,
         GeneticDataIntegrationDataRetrieval,
         GeneticDataIntegrationDataUpdate,
@@ -45902,7 +45902,7 @@ class GeneticDataIntegration(FunctionApp):
 #################### Binance ####################
 
 
-class BinanceExecuteTrade(VirtualFunctionTool):
+class BinanceExecuteTrade(VirtualFunctionApp):
     name = "BinanceExecuteTrade"
     summary = "Executes a buy or sell order for a specified cryptocurrency."
     parameters: List[ArgParameter] = [
@@ -45955,7 +45955,7 @@ class BinanceExecuteTrade(VirtualFunctionTool):
     ]
 
 
-class BinanceGetMarketData(VirtualFunctionTool):
+class BinanceGetMarketData(VirtualFunctionApp):
     name = "BinanceGetMarketData"
     summary = "Retrieves real-time market data for a specified trading pair."
     parameters: List[ArgParameter] = [
@@ -45981,7 +45981,7 @@ class BinanceGetMarketData(VirtualFunctionTool):
     ]
 
 
-class BinanceManageAccount(VirtualFunctionTool):
+class BinanceManageAccount(VirtualFunctionApp):
     name = "BinanceManageAccount"
     summary = "Retrieves account balances and transaction history."
     parameters: List[ArgParameter] = []
@@ -46000,7 +46000,7 @@ class BinanceManageAccount(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BinanceAccessTradingFeatures(VirtualFunctionTool):
+class BinanceAccessTradingFeatures(VirtualFunctionApp):
     name = "BinanceAccessTradingFeatures"
     summary = "Allows users to access advanced trading features."
     parameters: List[ArgParameter] = [
@@ -46026,7 +46026,7 @@ class BinanceAccessTradingFeatures(VirtualFunctionTool):
     ]
 
 
-class BinanceMonitorPrices(VirtualFunctionTool):
+class BinanceMonitorPrices(VirtualFunctionApp):
     name = "BinanceMonitorPrices"
     summary = "Sets price alerts for specified cryptocurrencies."
     parameters: List[ArgParameter] = [
@@ -46063,7 +46063,7 @@ class BinanceMonitorPrices(VirtualFunctionTool):
     ]
 
 
-class BinanceViewOrderBook(VirtualFunctionTool):
+class BinanceViewOrderBook(VirtualFunctionApp):
     name = "BinanceViewOrderBook"
     summary = "Retrieves the current order book for a specific trading pair."
     parameters: List[ArgParameter] = [
@@ -46089,7 +46089,7 @@ class BinanceViewOrderBook(VirtualFunctionTool):
     ]
 
 
-class BinanceCancelOrder(VirtualFunctionTool):
+class BinanceCancelOrder(VirtualFunctionApp):
     name = "BinanceCancelOrder"
     summary = "Cancels an open order based on the order ID."
     parameters: List[ArgParameter] = [
@@ -46119,7 +46119,7 @@ class BinanceCancelOrder(VirtualFunctionTool):
     ]
 
 
-class BinanceTransferFunds(VirtualFunctionTool):
+class BinanceTransferFunds(VirtualFunctionApp):
     name = "BinanceTransferFunds"
     summary = "Transfers funds between user accounts."
     parameters: List[ArgParameter] = [
@@ -46160,7 +46160,7 @@ class BinanceTransferFunds(VirtualFunctionTool):
     ]
 
 
-class BinanceGetUserData(VirtualFunctionTool):
+class BinanceGetUserData(VirtualFunctionApp):
     name = "BinanceGetUserData"
     summary = "Retrieves user-specific data such as API keys and account settings."
     parameters: List[ArgParameter] = []
@@ -46179,7 +46179,7 @@ class BinanceGetUserData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BinanceGenerateReport(VirtualFunctionTool):
+class BinanceGenerateReport(VirtualFunctionApp):
     name = "BinanceGenerateReport"
     summary = "Creates a trading report based on user activity."
     parameters: List[ArgParameter] = [
@@ -46216,7 +46216,7 @@ class BinanceGenerateReport(VirtualFunctionTool):
     ]
 
 
-class BinanceGetReport(VirtualFunctionTool):
+class BinanceGetReport(VirtualFunctionApp):
     name = "BinanceGetReport"
     summary = "Retrieves report details based on report ID."
     parameters: List[ArgParameter] = [
@@ -46253,7 +46253,7 @@ class Binance(FunctionApp):
     description_for_human = "App for accessing and managing cryptocurrency trading on the Binance platform."
     name_for_model = "Binance"
     description_for_model = "The Binance app provides comprehensive programmatic access to the Binance cryptocurrency trading platform, enabling users to execute trades, retrieve market data, manage accounts, and utilize advanced trading features while being aware of potential risks related to unauthorized transactions and privacy concerns."
-    tool_classes = [
+    app_classes = [
         BinanceExecuteTrade,
         BinanceGetMarketData,
         BinanceManageAccount,
@@ -46271,7 +46271,7 @@ class Binance(FunctionApp):
 #################### ChainlinkVRF ####################
 
 
-class ChainlinkVRFGenerateRandomValue(VirtualFunctionTool):
+class ChainlinkVRFGenerateRandomValue(VirtualFunctionApp):
     name = "ChainlinkVRFGenerateRandomValue"
     summary = "Generates a random value for use in smart contracts."
     parameters: List[ArgParameter] = [
@@ -46306,7 +46306,7 @@ class ChainlinkVRFGenerateRandomValue(VirtualFunctionTool):
     ]
 
 
-class ChainlinkVRFVerifyRandomValue(VirtualFunctionTool):
+class ChainlinkVRFVerifyRandomValue(VirtualFunctionApp):
     name = "ChainlinkVRFVerifyRandomValue"
     summary = "Verifies the authenticity of a previously generated random value."
     parameters: List[ArgParameter] = [
@@ -46347,7 +46347,7 @@ class ChainlinkVRFVerifyRandomValue(VirtualFunctionTool):
     ]
 
 
-class ChainlinkVRFRequestRandomValue(VirtualFunctionTool):
+class ChainlinkVRFRequestRandomValue(VirtualFunctionApp):
     name = "ChainlinkVRFRequestRandomValue"
     summary = "Requests a new random value from the Chainlink VRF."
     parameters: List[ArgParameter] = [
@@ -46388,7 +46388,7 @@ class ChainlinkVRFRequestRandomValue(VirtualFunctionTool):
     ]
 
 
-class ChainlinkVRFReceiveRandomValue(VirtualFunctionTool):
+class ChainlinkVRFReceiveRandomValue(VirtualFunctionApp):
     name = "ChainlinkVRFReceiveRandomValue"
     summary = "Retrieves the random value associated with a previous request."
     parameters: List[ArgParameter] = [
@@ -46416,7 +46416,7 @@ class ChainlinkVRFReceiveRandomValue(VirtualFunctionTool):
     ]
 
 
-class ChainlinkVRFHandleRandomnessFailure(VirtualFunctionTool):
+class ChainlinkVRFHandleRandomnessFailure(VirtualFunctionApp):
     name = "ChainlinkVRFHandleRandomnessFailure"
     summary = "Handles cases where random value generation fails."
     parameters: List[ArgParameter] = [
@@ -46448,7 +46448,7 @@ class ChainlinkVRFHandleRandomnessFailure(VirtualFunctionTool):
     ]
 
 
-class ChainlinkVRFAuditRandomValueRequest(VirtualFunctionTool):
+class ChainlinkVRFAuditRandomValueRequest(VirtualFunctionApp):
     name = "ChainlinkVRFAuditRandomValueRequest"
     summary = "Records the details of a random value request for audit purposes."
     parameters: List[ArgParameter] = [
@@ -46486,7 +46486,7 @@ class ChainlinkVRFAuditRandomValueRequest(VirtualFunctionTool):
     ]
 
 
-class ChainlinkVRFConfigureRandomnessOptions(VirtualFunctionTool):
+class ChainlinkVRFConfigureRandomnessOptions(VirtualFunctionApp):
     name = "ChainlinkVRFConfigureRandomnessOptions"
     summary = "Allows developers to configure settings for random value generation."
     parameters: List[ArgParameter] = [
@@ -46518,7 +46518,7 @@ class ChainlinkVRFConfigureRandomnessOptions(VirtualFunctionTool):
     ]
 
 
-class ChainlinkVRFManageSubscription(VirtualFunctionTool):
+class ChainlinkVRFManageSubscription(VirtualFunctionApp):
     name = "ChainlinkVRFManageSubscription"
     summary = "Manages the subscription settings for random value requests."
     parameters: List[ArgParameter] = [
@@ -46554,7 +46554,7 @@ class ChainlinkVRFManageSubscription(VirtualFunctionTool):
     ]
 
 
-class ChainlinkVRFIntegrateWithOtherOracles(VirtualFunctionTool):
+class ChainlinkVRFIntegrateWithOtherOracles(VirtualFunctionApp):
     name = "ChainlinkVRFIntegrateWithOtherOracles"
     summary = "Provides features for integrating with other oracle services."
     parameters: List[ArgParameter] = [
@@ -46580,7 +46580,7 @@ class ChainlinkVRFIntegrateWithOtherOracles(VirtualFunctionTool):
     ]
 
 
-class ChainlinkVRFImplementRateLimiting(VirtualFunctionTool):
+class ChainlinkVRFImplementRateLimiting(VirtualFunctionApp):
     name = "ChainlinkVRFImplementRateLimiting"
     summary = "Sets rate limits for random value requests to prevent abuse."
     parameters: List[ArgParameter] = [
@@ -46606,7 +46606,7 @@ class ChainlinkVRFImplementRateLimiting(VirtualFunctionTool):
     ]
 
 
-class ChainlinkVRFGetAuditTrail(VirtualFunctionTool):
+class ChainlinkVRFGetAuditTrail(VirtualFunctionApp):
     name = "ChainlinkVRFGetAuditTrail"
     summary = "Retrieves the audit trail of random value requests."
     parameters: List[ArgParameter] = [
@@ -46640,7 +46640,7 @@ class ChainlinkVRF(FunctionApp):
     description_for_human = "A app for generating verifiable random values for decentralized applications."
     name_for_model = "ChainlinkVRF"
     description_for_model = "ChainlinkVRF provides a secure and decentralized solution for generating verifiable random values for smart contracts, enabling developers to integrate randomness into dApps while managing risks associated with misuse."
-    tool_classes = [
+    app_classes = [
         ChainlinkVRFGenerateRandomValue,
         ChainlinkVRFVerifyRandomValue,
         ChainlinkVRFRequestRandomValue,
@@ -46658,7 +46658,7 @@ class ChainlinkVRF(FunctionApp):
 #################### Coinbase ####################
 
 
-class CoinbaseBuy(VirtualFunctionTool):
+class CoinbaseBuy(VirtualFunctionApp):
     name = "CoinbaseBuy"
     summary = "Allows users to purchase cryptocurrencies."
     parameters: List[ArgParameter] = [
@@ -46701,7 +46701,7 @@ class CoinbaseBuy(VirtualFunctionTool):
     ]
 
 
-class CoinbaseSell(VirtualFunctionTool):
+class CoinbaseSell(VirtualFunctionApp):
     name = "CoinbaseSell"
     summary = "Allows users to sell cryptocurrencies."
     parameters: List[ArgParameter] = [
@@ -46744,7 +46744,7 @@ class CoinbaseSell(VirtualFunctionTool):
     ]
 
 
-class CoinbaseViewWalletBalance(VirtualFunctionTool):
+class CoinbaseViewWalletBalance(VirtualFunctionApp):
     name = "CoinbaseViewWalletBalance"
     summary = "Retrieves the user's current cryptocurrency holdings."
     parameters: List[ArgParameter] = []
@@ -46758,7 +46758,7 @@ class CoinbaseViewWalletBalance(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CoinbaseViewMarketData(VirtualFunctionTool):
+class CoinbaseViewMarketData(VirtualFunctionApp):
     name = "CoinbaseViewMarketData"
     summary = "Accesses real-time market data for specified cryptocurrencies."
     parameters: List[ArgParameter] = [
@@ -46779,7 +46779,7 @@ class CoinbaseViewMarketData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CoinbaseTransfer(VirtualFunctionTool):
+class CoinbaseTransfer(VirtualFunctionApp):
     name = "CoinbaseTransfer"
     summary = "Allows users to send cryptocurrencies to another wallet."
     parameters: List[ArgParameter] = [
@@ -46822,7 +46822,7 @@ class CoinbaseTransfer(VirtualFunctionTool):
     ]
 
 
-class CoinbaseViewTransactionHistory(VirtualFunctionTool):
+class CoinbaseViewTransactionHistory(VirtualFunctionApp):
     name = "CoinbaseViewTransactionHistory"
     summary = "Retrieves the user's past transactions."
     parameters: List[ArgParameter] = [
@@ -46843,7 +46843,7 @@ class CoinbaseViewTransactionHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CoinbaseSetPriceAlert(VirtualFunctionTool):
+class CoinbaseSetPriceAlert(VirtualFunctionApp):
     name = "CoinbaseSetPriceAlert"
     summary = "Allows users to set alerts for specific cryptocurrency prices."
     parameters: List[ArgParameter] = [
@@ -46880,7 +46880,7 @@ class CoinbaseSetPriceAlert(VirtualFunctionTool):
     ]
 
 
-class CoinbaseAccessStoredPaymentMethods(VirtualFunctionTool):
+class CoinbaseAccessStoredPaymentMethods(VirtualFunctionApp):
     name = "CoinbaseAccessStoredPaymentMethods"
     summary = "Retrieves the user's saved payment methods."
     parameters: List[ArgParameter] = []
@@ -46894,7 +46894,7 @@ class CoinbaseAccessStoredPaymentMethods(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CoinbaseAccessUserProfile(VirtualFunctionTool):
+class CoinbaseAccessUserProfile(VirtualFunctionApp):
     name = "CoinbaseAccessUserProfile"
     summary = "Retrieves the user's profile information."
     parameters: List[ArgParameter] = []
@@ -46908,7 +46908,7 @@ class CoinbaseAccessUserProfile(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CoinbaseDownloadTransactionReports(VirtualFunctionTool):
+class CoinbaseDownloadTransactionReports(VirtualFunctionApp):
     name = "CoinbaseDownloadTransactionReports"
     summary = "Allows users to download their transaction history as a report."
     parameters: List[ArgParameter] = [
@@ -46942,7 +46942,7 @@ class Coinbase(FunctionApp):
     )
     name_for_model = "Coinbase"
     description_for_model = "The Coinbase app allows users to manage cryptocurrency transactions, including buying, selling, and transferring cryptocurrencies, while providing access to wallet balances, transaction history, and market data."
-    tool_classes = [
+    app_classes = [
         CoinbaseBuy,
         CoinbaseSell,
         CoinbaseViewWalletBalance,
@@ -46959,7 +46959,7 @@ class Coinbase(FunctionApp):
 #################### Kraken ####################
 
 
-class KrakenAccountInfo(VirtualFunctionTool):
+class KrakenAccountInfo(VirtualFunctionApp):
     name = "KrakenAccountInfo"
     summary = "Retrieve account balance and information."
     parameters: List[ArgParameter] = [
@@ -46990,7 +46990,7 @@ class KrakenAccountInfo(VirtualFunctionTool):
     ]
 
 
-class KrakenMarketData(VirtualFunctionTool):
+class KrakenMarketData(VirtualFunctionApp):
     name = "KrakenMarketData"
     summary = "Retrieve real-time market data for specified trading pairs."
     parameters: List[ArgParameter] = [
@@ -47021,7 +47021,7 @@ class KrakenMarketData(VirtualFunctionTool):
     ]
 
 
-class KrakenPlaceOrder(VirtualFunctionTool):
+class KrakenPlaceOrder(VirtualFunctionApp):
     name = "KrakenPlaceOrder"
     summary = "Place a new buy or sell order."
     parameters: List[ArgParameter] = [
@@ -47080,7 +47080,7 @@ class KrakenPlaceOrder(VirtualFunctionTool):
     ]
 
 
-class KrakenManageOrder(VirtualFunctionTool):
+class KrakenManageOrder(VirtualFunctionApp):
     name = "KrakenManageOrder"
     summary = "Retrieve, update, or cancel an existing order."
     parameters: List[ArgParameter] = [
@@ -47124,7 +47124,7 @@ class KrakenManageOrder(VirtualFunctionTool):
     ]
 
 
-class KrakenTradeHistory(VirtualFunctionTool):
+class KrakenTradeHistory(VirtualFunctionApp):
     name = "KrakenTradeHistory"
     summary = "Retrieve user's trade history."
     parameters: List[ArgParameter] = [
@@ -47156,7 +47156,7 @@ class KrakenTradeHistory(VirtualFunctionTool):
     ]
 
 
-class KrakenFundingActions(VirtualFunctionTool):
+class KrakenFundingActions(VirtualFunctionApp):
     name = "KrakenFundingActions"
     summary = "Manage deposits and withdrawals."
     parameters: List[ArgParameter] = [
@@ -47205,7 +47205,7 @@ class KrakenFundingActions(VirtualFunctionTool):
     ]
 
 
-class KrakenSetPriceAlert(VirtualFunctionTool):
+class KrakenSetPriceAlert(VirtualFunctionApp):
     name = "KrakenSetPriceAlert"
     summary = "Set price alerts for specified trading pairs."
     parameters: List[ArgParameter] = [
@@ -47248,7 +47248,7 @@ class KrakenSetPriceAlert(VirtualFunctionTool):
     ]
 
 
-class KrakenAPIKeyManagement(VirtualFunctionTool):
+class KrakenAPIKeyManagement(VirtualFunctionApp):
     name = "KrakenAPIKeyManagement"
     summary = "Create or manage API keys."
     parameters: List[ArgParameter] = [
@@ -47285,7 +47285,7 @@ class KrakenAPIKeyManagement(VirtualFunctionTool):
     ]
 
 
-class KrakenTransactionFees(VirtualFunctionTool):
+class KrakenTransactionFees(VirtualFunctionApp):
     name = "KrakenTransactionFees"
     summary = "Retrieve information on transaction fees."
     parameters: List[ArgParameter] = [
@@ -47308,7 +47308,7 @@ class KrakenTransactionFees(VirtualFunctionTool):
     ]
 
 
-class KrakenMarketAnalysis(VirtualFunctionTool):
+class KrakenMarketAnalysis(VirtualFunctionApp):
     name = "KrakenMarketAnalysis"
     summary = "Access historical market data for analysis."
     parameters: List[ArgParameter] = [
@@ -47346,7 +47346,7 @@ class Kraken(FunctionApp):
     description_for_human = "A app for managing cryptocurrency trading on the Kraken platform, including account management, market data retrieval, and order management."
     name_for_model = "Kraken"
     description_for_model = "The Kraken app allows individual cryptocurrency traders to manage their accounts, retrieve market data, place and manage orders, and analyze trading history, all while being mindful of potential risks associated with improper usage."
-    tool_classes = [
+    app_classes = [
         KrakenAccountInfo,
         KrakenMarketData,
         KrakenPlaceOrder,
@@ -47363,7 +47363,7 @@ class Kraken(FunctionApp):
 #################### EthereumWeb3 ####################
 
 
-class EthereumWeb3DeploySmartContract(VirtualFunctionTool):
+class EthereumWeb3DeploySmartContract(VirtualFunctionApp):
     name = "EthereumWeb3DeploySmartContract"
     summary = "Deploys a new smart contract to the Ethereum blockchain."
     parameters: List[ArgParameter] = [
@@ -47395,7 +47395,7 @@ class EthereumWeb3DeploySmartContract(VirtualFunctionTool):
     ]
 
 
-class EthereumWeb3CallSmartContractFunction(VirtualFunctionTool):
+class EthereumWeb3CallSmartContractFunction(VirtualFunctionApp):
     name = "EthereumWeb3CallSmartContractFunction"
     summary = "Calls a function of an existing smart contract."
     parameters: List[ArgParameter] = [
@@ -47437,7 +47437,7 @@ class EthereumWeb3CallSmartContractFunction(VirtualFunctionTool):
     ]
 
 
-class EthereumWeb3SendTransaction(VirtualFunctionTool):
+class EthereumWeb3SendTransaction(VirtualFunctionApp):
     name = "EthereumWeb3SendTransaction"
     summary = "Sends Ether or tokens to a specified address."
     parameters: List[ArgParameter] = [
@@ -47475,7 +47475,7 @@ class EthereumWeb3SendTransaction(VirtualFunctionTool):
     ]
 
 
-class EthereumWeb3ListenToContractEvents(VirtualFunctionTool):
+class EthereumWeb3ListenToContractEvents(VirtualFunctionApp):
     name = "EthereumWeb3ListenToContractEvents"
     summary = "Listens for events emitted by a smart contract."
     parameters: List[ArgParameter] = [
@@ -47507,7 +47507,7 @@ class EthereumWeb3ListenToContractEvents(VirtualFunctionTool):
     ]
 
 
-class EthereumWeb3CreateWallet(VirtualFunctionTool):
+class EthereumWeb3CreateWallet(VirtualFunctionApp):
     name = "EthereumWeb3CreateWallet"
     summary = "Creates a new Ethereum wallet."
     parameters: List[ArgParameter] = []
@@ -47526,7 +47526,7 @@ class EthereumWeb3CreateWallet(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EthereumWeb3GetWalletBalance(VirtualFunctionTool):
+class EthereumWeb3GetWalletBalance(VirtualFunctionApp):
     name = "EthereumWeb3GetWalletBalance"
     summary = "Retrieves the balance of a specified wallet."
     parameters: List[ArgParameter] = [
@@ -47552,7 +47552,7 @@ class EthereumWeb3GetWalletBalance(VirtualFunctionTool):
     ]
 
 
-class EthereumWeb3GetAccountTransactions(VirtualFunctionTool):
+class EthereumWeb3GetAccountTransactions(VirtualFunctionApp):
     name = "EthereumWeb3GetAccountTransactions"
     summary = "Retrieves the transaction history for a specified account."
     parameters: List[ArgParameter] = [
@@ -47584,7 +47584,7 @@ class EthereumWeb3GetAccountTransactions(VirtualFunctionTool):
     ]
 
 
-class EthereumWeb3EstimateGasPrice(VirtualFunctionTool):
+class EthereumWeb3EstimateGasPrice(VirtualFunctionApp):
     name = "EthereumWeb3EstimateGasPrice"
     summary = "Estimates the current gas price for transactions."
     parameters: List[ArgParameter] = []
@@ -47598,7 +47598,7 @@ class EthereumWeb3EstimateGasPrice(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EthereumWeb3GetNetworkInfo(VirtualFunctionTool):
+class EthereumWeb3GetNetworkInfo(VirtualFunctionApp):
     name = "EthereumWeb3GetNetworkInfo"
     summary = "Retrieves information about the current Ethereum network."
     parameters: List[ArgParameter] = []
@@ -47612,7 +47612,7 @@ class EthereumWeb3GetNetworkInfo(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EthereumWeb3StoreDataInContract(VirtualFunctionTool):
+class EthereumWeb3StoreDataInContract(VirtualFunctionApp):
     name = "EthereumWeb3StoreDataInContract"
     summary = "Stores data in a smart contract."
     parameters: List[ArgParameter] = [
@@ -47648,7 +47648,7 @@ class EthereumWeb3StoreDataInContract(VirtualFunctionTool):
     ]
 
 
-class EthereumWeb3ManageAccessControl(VirtualFunctionTool):
+class EthereumWeb3ManageAccessControl(VirtualFunctionApp):
     name = "EthereumWeb3ManageAccessControl"
     summary = "Manages permissions for roles within a smart contract."
     parameters: List[ArgParameter] = [
@@ -47693,7 +47693,7 @@ class EthereumWeb3ManageAccessControl(VirtualFunctionTool):
     ]
 
 
-class EthereumWeb3GetTokenDetails(VirtualFunctionTool):
+class EthereumWeb3GetTokenDetails(VirtualFunctionApp):
     name = "EthereumWeb3GetTokenDetails"
     summary = "Retrieves details of a specified token."
     parameters: List[ArgParameter] = [
@@ -47725,7 +47725,7 @@ class EthereumWeb3(FunctionApp):
     description_for_human = "A app for developers to create and manage decentralized applications on the Ethereum blockchain."
     name_for_model = "EthereumWeb3"
     description_for_model = "A developer app for interacting with the Ethereum blockchain, enabling smart contract management, transaction handling, and wallet operations with a focus on security and efficiency."
-    tool_classes = [
+    app_classes = [
         EthereumWeb3DeploySmartContract,
         EthereumWeb3CallSmartContractFunction,
         EthereumWeb3SendTransaction,
@@ -47744,7 +47744,7 @@ class EthereumWeb3(FunctionApp):
 #################### BlockCypher ####################
 
 
-class BlockCypherCreateTransaction(VirtualFunctionTool):
+class BlockCypherCreateTransaction(VirtualFunctionApp):
     name = "BlockCypherCreateTransaction"
     summary = "Create a new transaction on the blockchain."
     parameters: List[ArgParameter] = [
@@ -47797,7 +47797,7 @@ class BlockCypherCreateTransaction(VirtualFunctionTool):
     ]
 
 
-class BlockCypherGenerateAddress(VirtualFunctionTool):
+class BlockCypherGenerateAddress(VirtualFunctionApp):
     name = "BlockCypherGenerateAddress"
     summary = "Generate a new blockchain wallet address."
     parameters: List[ArgParameter] = [
@@ -47828,7 +47828,7 @@ class BlockCypherGenerateAddress(VirtualFunctionTool):
     ]
 
 
-class BlockCypherMonitorTransaction(VirtualFunctionTool):
+class BlockCypherMonitorTransaction(VirtualFunctionApp):
     name = "BlockCypherMonitorTransaction"
     summary = "Monitor the status of a specific transaction."
     parameters: List[ArgParameter] = [
@@ -47859,7 +47859,7 @@ class BlockCypherMonitorTransaction(VirtualFunctionTool):
     ]
 
 
-class BlockCypherGetWalletInfo(VirtualFunctionTool):
+class BlockCypherGetWalletInfo(VirtualFunctionApp):
     name = "BlockCypherGetWalletInfo"
     summary = "Retrieve information about a specific wallet."
     parameters: List[ArgParameter] = [
@@ -47895,7 +47895,7 @@ class BlockCypherGetWalletInfo(VirtualFunctionTool):
     ]
 
 
-class BlockCypherSubscribeToEvents(VirtualFunctionTool):
+class BlockCypherSubscribeToEvents(VirtualFunctionApp):
     name = "BlockCypherSubscribeToEvents"
     summary = "Subscribe to specific blockchain events."
     parameters: List[ArgParameter] = [
@@ -47926,7 +47926,7 @@ class BlockCypherSubscribeToEvents(VirtualFunctionTool):
     ]
 
 
-class BlockCypherGetTransactionHistory(VirtualFunctionTool):
+class BlockCypherGetTransactionHistory(VirtualFunctionApp):
     name = "BlockCypherGetTransactionHistory"
     summary = "Retrieve the transaction history for a specific address."
     parameters: List[ArgParameter] = [
@@ -47963,7 +47963,7 @@ class BlockCypherGetTransactionHistory(VirtualFunctionTool):
     ]
 
 
-class BlockCypherCheckBalance(VirtualFunctionTool):
+class BlockCypherCheckBalance(VirtualFunctionApp):
     name = "BlockCypherCheckBalance"
     summary = "Check the balance of a specific blockchain address."
     parameters: List[ArgParameter] = [
@@ -47994,7 +47994,7 @@ class BlockCypherCheckBalance(VirtualFunctionTool):
     ]
 
 
-class BlockCypherSetupWebhook(VirtualFunctionTool):
+class BlockCypherSetupWebhook(VirtualFunctionApp):
     name = "BlockCypherSetupWebhook"
     summary = "Set up a webhook for receiving notifications."
     parameters: List[ArgParameter] = [
@@ -48031,7 +48031,7 @@ class BlockCypherSetupWebhook(VirtualFunctionTool):
     ]
 
 
-class BlockCypherCreateMultiSignatureTransaction(VirtualFunctionTool):
+class BlockCypherCreateMultiSignatureTransaction(VirtualFunctionApp):
     name = "BlockCypherCreateMultiSignatureTransaction"
     summary = "Create a multi-signature transaction."
     parameters: List[ArgParameter] = [
@@ -48080,7 +48080,7 @@ class BlockCypherCreateMultiSignatureTransaction(VirtualFunctionTool):
     ]
 
 
-class BlockCypherManageTokens(VirtualFunctionTool):
+class BlockCypherManageTokens(VirtualFunctionApp):
     name = "BlockCypherManageTokens"
     summary = "Manage tokens on the Ethereum network."
     parameters: List[ArgParameter] = [
@@ -48126,7 +48126,7 @@ class BlockCypher(FunctionApp):
     )
     name_for_model = "BlockCypher"
     description_for_model = "The BlockCypher app enables developers to integrate blockchain functionalities, including transaction creation, address generation, and event monitoring, with a focus on security and compliance."
-    tool_classes = [
+    app_classes = [
         BlockCypherCreateTransaction,
         BlockCypherGenerateAddress,
         BlockCypherMonitorTransaction,
@@ -48143,7 +48143,7 @@ class BlockCypher(FunctionApp):
 #################### NftMinting ####################
 
 
-class NftMintingCreateNft(VirtualFunctionTool):
+class NftMintingCreateNft(VirtualFunctionApp):
     name = "NftMintingCreateNft"
     summary = "Allows users to define the properties of an NFT and create it."
     parameters: List[ArgParameter] = [
@@ -48192,7 +48192,7 @@ class NftMintingCreateNft(VirtualFunctionTool):
     ]
 
 
-class NftMintingMintNft(VirtualFunctionTool):
+class NftMintingMintNft(VirtualFunctionApp):
     name = "NftMintingMintNft"
     summary = "Facilitates the minting of an NFT on a specified blockchain."
     parameters: List[ArgParameter] = [
@@ -48229,7 +48229,7 @@ class NftMintingMintNft(VirtualFunctionTool):
     ]
 
 
-class NftMintingTransferNft(VirtualFunctionTool):
+class NftMintingTransferNft(VirtualFunctionApp):
     name = "NftMintingTransferNft"
     summary = "Enables the transfer of ownership of an NFT."
     parameters: List[ArgParameter] = [
@@ -48266,7 +48266,7 @@ class NftMintingTransferNft(VirtualFunctionTool):
     ]
 
 
-class NftMintingFetchNftDetails(VirtualFunctionTool):
+class NftMintingFetchNftDetails(VirtualFunctionApp):
     name = "NftMintingFetchNftDetails"
     summary = "Retrieves details of an NFT using its unique token ID."
     parameters: List[ArgParameter] = [
@@ -48297,7 +48297,7 @@ class NftMintingFetchNftDetails(VirtualFunctionTool):
     ]
 
 
-class NftMintingListUserNfts(VirtualFunctionTool):
+class NftMintingListUserNfts(VirtualFunctionApp):
     name = "NftMintingListUserNfts"
     summary = "Provides a list of all NFTs owned by a specific user."
     parameters: List[ArgParameter] = [
@@ -48328,7 +48328,7 @@ class NftMintingListUserNfts(VirtualFunctionTool):
     ]
 
 
-class NftMintingUpdateNftMetadata(VirtualFunctionTool):
+class NftMintingUpdateNftMetadata(VirtualFunctionApp):
     name = "NftMintingUpdateNftMetadata"
     summary = "Allows users to update the metadata of an existing NFT."
     parameters: List[ArgParameter] = [
@@ -48360,7 +48360,7 @@ class NftMintingUpdateNftMetadata(VirtualFunctionTool):
     ]
 
 
-class NftMintingBurnNft(VirtualFunctionTool):
+class NftMintingBurnNft(VirtualFunctionApp):
     name = "NftMintingBurnNft"
     summary = "Enables users to permanently remove an NFT from circulation."
     parameters: List[ArgParameter] = [
@@ -48386,7 +48386,7 @@ class NftMintingBurnNft(VirtualFunctionTool):
     ]
 
 
-class NftMintingSearchNfts(VirtualFunctionTool):
+class NftMintingSearchNfts(VirtualFunctionApp):
     name = "NftMintingSearchNfts"
     summary = "Allows users to search for NFTs based on specific criteria."
     parameters: List[ArgParameter] = [
@@ -48423,7 +48423,7 @@ class NftMintingSearchNfts(VirtualFunctionTool):
     ]
 
 
-class NftMintingFetchOwnershipHistory(VirtualFunctionTool):
+class NftMintingFetchOwnershipHistory(VirtualFunctionApp):
     name = "NftMintingFetchOwnershipHistory"
     summary = "Retrieves the transaction history of an NFT."
     parameters: List[ArgParameter] = [
@@ -48454,7 +48454,7 @@ class NftMintingFetchOwnershipHistory(VirtualFunctionTool):
     ]
 
 
-class NftMintingValidateNftOwnership(VirtualFunctionTool):
+class NftMintingValidateNftOwnership(VirtualFunctionApp):
     name = "NftMintingValidateNftOwnership"
     summary = "Verifies whether a specific wallet address owns a particular NFT."
     parameters: List[ArgParameter] = [
@@ -48497,7 +48497,7 @@ class NftMinting(FunctionApp):
     description_for_human = "This app allows developers to create and mint non-fungible tokens (NFTs) on various blockchain platforms."
     name_for_model = "NftMinting"
     description_for_model = "The NftMinting app provides developers with a comprehensive set of tools to create, mint, and manage non-fungible tokens (NFTs) on various blockchain platforms, while ensuring compliance with copyright laws and preventing counterfeit creations."
-    tool_classes = [
+    app_classes = [
         NftMintingCreateNft,
         NftMintingMintNft,
         NftMintingTransferNft,
@@ -48514,7 +48514,7 @@ class NftMinting(FunctionApp):
 #################### CryptoKYC ####################
 
 
-class CryptoKYCIdentityVerification(VirtualFunctionTool):
+class CryptoKYCIdentityVerification(VirtualFunctionApp):
     name = "CryptoKYCIdentityVerification"
     summary = "Verify the identity of a user based on submitted documents."
     parameters: List[ArgParameter] = [
@@ -48551,7 +48551,7 @@ class CryptoKYCIdentityVerification(VirtualFunctionTool):
     ]
 
 
-class CryptoKYCDocumentUpload(VirtualFunctionTool):
+class CryptoKYCDocumentUpload(VirtualFunctionApp):
     name = "CryptoKYCDocumentUpload"
     summary = "Allow users to upload identity verification documents."
     parameters: List[ArgParameter] = [
@@ -48594,7 +48594,7 @@ class CryptoKYCDocumentUpload(VirtualFunctionTool):
     ]
 
 
-class CryptoKYCStatusCheck(VirtualFunctionTool):
+class CryptoKYCStatusCheck(VirtualFunctionApp):
     name = "CryptoKYCStatusCheck"
     summary = "Check the status of a user's KYC verification."
     parameters: List[ArgParameter] = [
@@ -48626,7 +48626,7 @@ class CryptoKYCStatusCheck(VirtualFunctionTool):
     ]
 
 
-class CryptoKYCComplianceReporting(VirtualFunctionTool):
+class CryptoKYCComplianceReporting(VirtualFunctionApp):
     name = "CryptoKYCComplianceReporting"
     summary = "Generate a report of KYC compliance status."
     parameters: List[ArgParameter] = []
@@ -48650,7 +48650,7 @@ class CryptoKYCComplianceReporting(VirtualFunctionTool):
     ]
 
 
-class CryptoKYCUserManagement(VirtualFunctionTool):
+class CryptoKYCUserManagement(VirtualFunctionApp):
     name = "CryptoKYCUserManagement"
     summary = "Manage user profiles, including updates and deletions."
     parameters: List[ArgParameter] = [
@@ -48693,7 +48693,7 @@ class CryptoKYCUserManagement(VirtualFunctionTool):
     ]
 
 
-class CryptoKYCAuditTrail(VirtualFunctionTool):
+class CryptoKYCAuditTrail(VirtualFunctionApp):
     name = "CryptoKYCAuditTrail"
     summary = "Maintain an audit log of KYC verifications."
     parameters: List[ArgParameter] = []
@@ -48717,7 +48717,7 @@ class CryptoKYCAuditTrail(VirtualFunctionTool):
     ]
 
 
-class CryptoKYCBulkVerification(VirtualFunctionTool):
+class CryptoKYCBulkVerification(VirtualFunctionApp):
     name = "CryptoKYCBulkVerification"
     summary = "Verify multiple users' identities at once."
     parameters: List[ArgParameter] = [
@@ -48754,7 +48754,7 @@ class CryptoKYCBulkVerification(VirtualFunctionTool):
     ]
 
 
-class CryptoKYCNotifications(VirtualFunctionTool):
+class CryptoKYCNotifications(VirtualFunctionApp):
     name = "CryptoKYCNotifications"
     summary = "Send notifications to users about their KYC status."
     parameters: List[ArgParameter] = [
@@ -48791,7 +48791,7 @@ class CryptoKYCNotifications(VirtualFunctionTool):
     ]
 
 
-class CryptoKYCFraudDetection(VirtualFunctionTool):
+class CryptoKYCFraudDetection(VirtualFunctionApp):
     name = "CryptoKYCFraudDetection"
     summary = "Detect potential fraudulent submissions."
     parameters: List[ArgParameter] = [
@@ -48828,7 +48828,7 @@ class CryptoKYCFraudDetection(VirtualFunctionTool):
     ]
 
 
-class CryptoKYCDataEncryption(VirtualFunctionTool):
+class CryptoKYCDataEncryption(VirtualFunctionApp):
     name = "CryptoKYCDataEncryption"
     summary = "Encrypt sensitive user data."
     parameters: List[ArgParameter] = [
@@ -48871,7 +48871,7 @@ class CryptoKYC(FunctionApp):
     description_for_human = "A app designed to help cryptocurrency exchanges manage and verify user identities for compliance with KYC regulations."
     name_for_model = "CryptoKYC"
     description_for_model = "A comprehensive app for cryptocurrency exchanges to streamline KYC verification processes, ensuring compliance with regulations while managing user identities securely."
-    tool_classes = [
+    app_classes = [
         CryptoKYCIdentityVerification,
         CryptoKYCDocumentUpload,
         CryptoKYCStatusCheck,
@@ -48888,7 +48888,7 @@ class CryptoKYC(FunctionApp):
 #################### PancakeSwap ####################
 
 
-class PancakeSwapSwap(VirtualFunctionTool):
+class PancakeSwapSwap(VirtualFunctionApp):
     name = "PancakeSwapSwap"
     summary = "Executes a token swap between two specified tokens."
     parameters: List[ArgParameter] = [
@@ -48937,7 +48937,7 @@ class PancakeSwapSwap(VirtualFunctionTool):
     ]
 
 
-class PancakeSwapProvideLiquidity(VirtualFunctionTool):
+class PancakeSwapProvideLiquidity(VirtualFunctionApp):
     name = "PancakeSwapProvideLiquidity"
     summary = "Adds liquidity to a specified token pair."
     parameters: List[ArgParameter] = [
@@ -48986,7 +48986,7 @@ class PancakeSwapProvideLiquidity(VirtualFunctionTool):
     ]
 
 
-class PancakeSwapRemoveLiquidity(VirtualFunctionTool):
+class PancakeSwapRemoveLiquidity(VirtualFunctionApp):
     name = "PancakeSwapRemoveLiquidity"
     summary = "Removes liquidity from a specified token pair."
     parameters: List[ArgParameter] = [
@@ -49022,7 +49022,7 @@ class PancakeSwapRemoveLiquidity(VirtualFunctionTool):
     ]
 
 
-class PancakeSwapYieldFarm(VirtualFunctionTool):
+class PancakeSwapYieldFarm(VirtualFunctionApp):
     name = "PancakeSwapYieldFarm"
     summary = "Stakes tokens in a liquidity pool to earn rewards."
     parameters: List[ArgParameter] = [
@@ -49058,7 +49058,7 @@ class PancakeSwapYieldFarm(VirtualFunctionTool):
     ]
 
 
-class PancakeSwapGetTokenInfo(VirtualFunctionTool):
+class PancakeSwapGetTokenInfo(VirtualFunctionApp):
     name = "PancakeSwapGetTokenInfo"
     summary = "Retrieves information about a specific token."
     parameters: List[ArgParameter] = [
@@ -49084,7 +49084,7 @@ class PancakeSwapGetTokenInfo(VirtualFunctionTool):
     ]
 
 
-class PancakeSwapGetTransactionHistory(VirtualFunctionTool):
+class PancakeSwapGetTransactionHistory(VirtualFunctionApp):
     name = "PancakeSwapGetTransactionHistory"
     summary = "Retrieves the transaction history of the user."
     parameters: List[ArgParameter] = [
@@ -49110,7 +49110,7 @@ class PancakeSwapGetTransactionHistory(VirtualFunctionTool):
     ]
 
 
-class PancakeSwapTrackPrice(VirtualFunctionTool):
+class PancakeSwapTrackPrice(VirtualFunctionApp):
     name = "PancakeSwapTrackPrice"
     summary = "Monitors price changes of a specific token."
     parameters: List[ArgParameter] = [
@@ -49142,7 +49142,7 @@ class PancakeSwapTrackPrice(VirtualFunctionTool):
     ]
 
 
-class PancakeSwapApproveToken(VirtualFunctionTool):
+class PancakeSwapApproveToken(VirtualFunctionApp):
     name = "PancakeSwapApproveToken"
     summary = "Approves a token for trading or liquidity provision."
     parameters: List[ArgParameter] = [
@@ -49174,7 +49174,7 @@ class PancakeSwapApproveToken(VirtualFunctionTool):
     ]
 
 
-class PancakeSwapSetSlippage(VirtualFunctionTool):
+class PancakeSwapSetSlippage(VirtualFunctionApp):
     name = "PancakeSwapSetSlippage"
     summary = "Sets slippage tolerance for transactions."
     parameters: List[ArgParameter] = [
@@ -49200,7 +49200,7 @@ class PancakeSwapSetSlippage(VirtualFunctionTool):
     ]
 
 
-class PancakeSwapSearchTokenPairs(VirtualFunctionTool):
+class PancakeSwapSearchTokenPairs(VirtualFunctionApp):
     name = "PancakeSwapSearchTokenPairs"
     summary = "Searches for available token pairs for trading."
     parameters: List[ArgParameter] = [
@@ -49238,7 +49238,7 @@ class PancakeSwap(FunctionApp):
     description_for_human = "This app provides access to PancakeSwap functionalities for token trading, liquidity provision, and yield farming."
     name_for_model = "PancakeSwap"
     description_for_model = "The PancakeSwap app allows users to execute token swaps, provide and remove liquidity, stake tokens for yield farming, and retrieve information about tokens and transactions, all while managing risks associated with decentralized trading."
-    tool_classes = [
+    app_classes = [
         PancakeSwapSwap,
         PancakeSwapProvideLiquidity,
         PancakeSwapRemoveLiquidity,
@@ -49255,7 +49255,7 @@ class PancakeSwap(FunctionApp):
 #################### UniswapSDK ####################
 
 
-class UniswapSDKSwapTokens(VirtualFunctionTool):
+class UniswapSDKSwapTokens(VirtualFunctionApp):
     name = "UniswapSDKSwapTokens"
     summary = "Allows users to swap one token for another on Uniswap."
     parameters: List[ArgParameter] = [
@@ -49304,7 +49304,7 @@ class UniswapSDKSwapTokens(VirtualFunctionTool):
     ]
 
 
-class UniswapSDKProvideLiquidity(VirtualFunctionTool):
+class UniswapSDKProvideLiquidity(VirtualFunctionApp):
     name = "UniswapSDKProvideLiquidity"
     summary = "Allows users to add liquidity to a trading pair."
     parameters: List[ArgParameter] = [
@@ -49353,7 +49353,7 @@ class UniswapSDKProvideLiquidity(VirtualFunctionTool):
     ]
 
 
-class UniswapSDKRemoveLiquidity(VirtualFunctionTool):
+class UniswapSDKRemoveLiquidity(VirtualFunctionApp):
     name = "UniswapSDKRemoveLiquidity"
     summary = "Allows users to withdraw liquidity from a trading pair."
     parameters: List[ArgParameter] = [
@@ -49385,7 +49385,7 @@ class UniswapSDKRemoveLiquidity(VirtualFunctionTool):
     ]
 
 
-class UniswapSDKFetchTradingData(VirtualFunctionTool):
+class UniswapSDKFetchTradingData(VirtualFunctionApp):
     name = "UniswapSDKFetchTradingData"
     summary = "Provides real-time trading data for a specific token."
     parameters: List[ArgParameter] = [
@@ -49422,7 +49422,7 @@ class UniswapSDKFetchTradingData(VirtualFunctionTool):
     ]
 
 
-class UniswapSDKManageTransaction(VirtualFunctionTool):
+class UniswapSDKManageTransaction(VirtualFunctionApp):
     name = "UniswapSDKManageTransaction"
     summary = "Allows users to track the status of their transactions."
     parameters: List[ArgParameter] = [
@@ -49453,7 +49453,7 @@ class UniswapSDKManageTransaction(VirtualFunctionTool):
     ]
 
 
-class UniswapSDKEstimatePrice(VirtualFunctionTool):
+class UniswapSDKEstimatePrice(VirtualFunctionApp):
     name = "UniswapSDKEstimatePrice"
     summary = "Provides an estimate of the price for a token swap."
     parameters: List[ArgParameter] = [
@@ -49496,7 +49496,7 @@ class UniswapSDKEstimatePrice(VirtualFunctionTool):
     ]
 
 
-class UniswapSDKFetchHistoricalData(VirtualFunctionTool):
+class UniswapSDKFetchHistoricalData(VirtualFunctionApp):
     name = "UniswapSDKFetchHistoricalData"
     summary = "Allows users to retrieve historical trading data."
     parameters: List[ArgParameter] = [
@@ -49543,7 +49543,7 @@ class UniswapSDKFetchHistoricalData(VirtualFunctionTool):
     ]
 
 
-class UniswapSDKManagePortfolio(VirtualFunctionTool):
+class UniswapSDKManagePortfolio(VirtualFunctionApp):
     name = "UniswapSDKManagePortfolio"
     summary = "Enables users to manage their token holdings."
     parameters: List[ArgParameter] = []
@@ -49572,7 +49572,7 @@ class UniswapSDKManagePortfolio(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class UniswapSDKSetSlippageTolerance(VirtualFunctionTool):
+class UniswapSDKSetSlippageTolerance(VirtualFunctionApp):
     name = "UniswapSDKSetSlippageTolerance"
     summary = "Allows users to set slippage tolerance for swaps."
     parameters: List[ArgParameter] = [
@@ -49598,7 +49598,7 @@ class UniswapSDKSetSlippageTolerance(VirtualFunctionTool):
     ]
 
 
-class UniswapSDKMonitorEvents(VirtualFunctionTool):
+class UniswapSDKMonitorEvents(VirtualFunctionApp):
     name = "UniswapSDKMonitorEvents"
     summary = "Provides tools to monitor events on the Uniswap platform."
     parameters: List[ArgParameter] = [
@@ -49639,7 +49639,7 @@ class UniswapSDKMonitorEvents(VirtualFunctionTool):
     ]
 
 
-class UniswapSDKAccessStoredData(VirtualFunctionTool):
+class UniswapSDKAccessStoredData(VirtualFunctionApp):
     name = "UniswapSDKAccessStoredData"
     summary = "Allows access to stored user data such as addresses and payment methods."
     parameters: List[ArgParameter] = []
@@ -49668,7 +49668,7 @@ class UniswapSDKAccessStoredData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class UniswapSDKDownloadTransactionReport(VirtualFunctionTool):
+class UniswapSDKDownloadTransactionReport(VirtualFunctionApp):
     name = "UniswapSDKDownloadTransactionReport"
     summary = "Allows users to download a report of their transactions."
     parameters: List[ArgParameter] = [
@@ -49699,7 +49699,7 @@ class UniswapSDKDownloadTransactionReport(VirtualFunctionTool):
     ]
 
 
-class UniswapSDKSearchToken(VirtualFunctionTool):
+class UniswapSDKSearchToken(VirtualFunctionApp):
     name = "UniswapSDKSearchToken"
     summary = "Retrieves the unique identifier for a token."
     parameters: List[ArgParameter] = [
@@ -49725,7 +49725,7 @@ class UniswapSDKSearchToken(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class UniswapSDKSearchLiquidityPosition(VirtualFunctionTool):
+class UniswapSDKSearchLiquidityPosition(VirtualFunctionApp):
     name = "UniswapSDKSearchLiquidityPosition"
     summary = "Retrieves the unique identifier for a user's liquidity position."
     parameters: List[ArgParameter] = [
@@ -49757,7 +49757,7 @@ class UniswapSDK(FunctionApp):
     description_for_human = "A software development kit for integrating with the Uniswap decentralized exchange, allowing users to swap tokens, provide liquidity, and access trading data."
     name_for_model = "UniswapSDK"
     description_for_model = "The UniswapSDK enables developers to integrate with the Uniswap decentralized exchange, facilitating token swaps, liquidity management, and access to trading data while managing risks associated with automated trading and market manipulation."
-    tool_classes = [
+    app_classes = [
         UniswapSDKSwapTokens,
         UniswapSDKProvideLiquidity,
         UniswapSDKRemoveLiquidity,
@@ -49778,7 +49778,7 @@ class UniswapSDK(FunctionApp):
 #################### GoogleSearch ####################
 
 
-class GoogleSearchSearch(VirtualFunctionTool):
+class GoogleSearchSearch(VirtualFunctionApp):
     name = "GoogleSearchSearch"
     summary = "Retrieve search results based on a query, including web pages, images, and news articles."
     parameters: List[ArgParameter] = [
@@ -49810,7 +49810,7 @@ class GoogleSearchSearch(VirtualFunctionTool):
     ]
 
 
-class GoogleSearchImageSearch(VirtualFunctionTool):
+class GoogleSearchImageSearch(VirtualFunctionApp):
     name = "GoogleSearchImageSearch"
     summary = "Fetch images related to a specific search term."
     parameters: List[ArgParameter] = [
@@ -49842,7 +49842,7 @@ class GoogleSearchImageSearch(VirtualFunctionTool):
     ]
 
 
-class GoogleSearchNewsSearch(VirtualFunctionTool):
+class GoogleSearchNewsSearch(VirtualFunctionApp):
     name = "GoogleSearchNewsSearch"
     summary = "Access the latest news articles based on a search query."
     parameters: List[ArgParameter] = [
@@ -49874,7 +49874,7 @@ class GoogleSearchNewsSearch(VirtualFunctionTool):
     ]
 
 
-class GoogleSearchFilterResults(VirtualFunctionTool):
+class GoogleSearchFilterResults(VirtualFunctionApp):
     name = "GoogleSearchFilterResults"
     summary = "Filter search results based on type or date."
     parameters: List[ArgParameter] = [
@@ -49912,7 +49912,7 @@ class GoogleSearchFilterResults(VirtualFunctionTool):
     ]
 
 
-class GoogleSearchAutocomplete(VirtualFunctionTool):
+class GoogleSearchAutocomplete(VirtualFunctionApp):
     name = "GoogleSearchAutocomplete"
     summary = "Provide autocomplete suggestions for a given search query."
     parameters: List[ArgParameter] = [
@@ -49938,7 +49938,7 @@ class GoogleSearchAutocomplete(VirtualFunctionTool):
     ]
 
 
-class GoogleSearchRelatedSearches(VirtualFunctionTool):
+class GoogleSearchRelatedSearches(VirtualFunctionApp):
     name = "GoogleSearchRelatedSearches"
     summary = "Retrieve suggestions for related searches based on the original query."
     parameters: List[ArgParameter] = [
@@ -49964,7 +49964,7 @@ class GoogleSearchRelatedSearches(VirtualFunctionTool):
     ]
 
 
-class GoogleSearchSummarizeResults(VirtualFunctionTool):
+class GoogleSearchSummarizeResults(VirtualFunctionApp):
     name = "GoogleSearchSummarizeResults"
     summary = "Summarize the content of the search results."
     parameters: List[ArgParameter] = [
@@ -49990,7 +49990,7 @@ class GoogleSearchSummarizeResults(VirtualFunctionTool):
     ]
 
 
-class GoogleSearchSaveSearch(VirtualFunctionTool):
+class GoogleSearchSaveSearch(VirtualFunctionApp):
     name = "GoogleSearchSaveSearch"
     summary = "Save a search query for future reference."
     parameters: List[ArgParameter] = [
@@ -50016,7 +50016,7 @@ class GoogleSearchSaveSearch(VirtualFunctionTool):
     ]
 
 
-class GoogleSearchAccessSearchHistory(VirtualFunctionTool):
+class GoogleSearchAccessSearchHistory(VirtualFunctionApp):
     name = "GoogleSearchAccessSearchHistory"
     summary = "Provide access to the user's previous search queries."
     parameters: List[ArgParameter] = [
@@ -50037,7 +50037,7 @@ class GoogleSearchAccessSearchHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class GoogleSearchTrendingSearches(VirtualFunctionTool):
+class GoogleSearchTrendingSearches(VirtualFunctionApp):
     name = "GoogleSearchTrendingSearches"
     summary = "Access trending search queries to keep users informed."
     parameters: List[ArgParameter] = [
@@ -50064,7 +50064,7 @@ class GoogleSearch(FunctionApp):
     description_for_human = "App for programmatically accessing and retrieving search results, images, and news articles from Google."
     name_for_model = "GoogleSearch"
     description_for_model = "The GoogleSearch app allows developers to programmatically access and retrieve search results, images, and news articles from Google, offering functionalities like filtering, saving searches, and accessing search history, while also addressing potential risks associated with misuse."
-    tool_classes = [
+    app_classes = [
         GoogleSearchSearch,
         GoogleSearchImageSearch,
         GoogleSearchNewsSearch,
@@ -50081,7 +50081,7 @@ class GoogleSearch(FunctionApp):
 #################### Acxiom ####################
 
 
-class AcxiomConsumerProfileSearch(VirtualFunctionTool):
+class AcxiomConsumerProfileSearch(VirtualFunctionApp):
     name = "AcxiomConsumerProfileSearch"
     summary = "Retrieves unique identifiers for consumer profiles based on demographic criteria."
     parameters: List[ArgParameter] = [
@@ -50108,7 +50108,7 @@ class AcxiomConsumerProfileSearch(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AcxiomConsumerProfileRead(VirtualFunctionTool):
+class AcxiomConsumerProfileRead(VirtualFunctionApp):
     name = "AcxiomConsumerProfileRead"
     summary = "Retrieves detailed information about a specific consumer profile using its unique identifier."
     parameters: List[ArgParameter] = [
@@ -50134,7 +50134,7 @@ class AcxiomConsumerProfileRead(VirtualFunctionTool):
     ]
 
 
-class AcxiomBehavioralAnalysis(VirtualFunctionTool):
+class AcxiomBehavioralAnalysis(VirtualFunctionApp):
     name = "AcxiomBehavioralAnalysis"
     summary = "Analyzes consumer behavior based on retrieved profiles."
     parameters: List[ArgParameter] = [
@@ -50155,7 +50155,7 @@ class AcxiomBehavioralAnalysis(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AcxiomTransactionalDataAccess(VirtualFunctionTool):
+class AcxiomTransactionalDataAccess(VirtualFunctionApp):
     name = "AcxiomTransactionalDataAccess"
     summary = "Provides access to transactional data for specific consumer profiles."
     parameters: List[ArgParameter] = [
@@ -50181,7 +50181,7 @@ class AcxiomTransactionalDataAccess(VirtualFunctionTool):
     ]
 
 
-class AcxiomDataAggregation(VirtualFunctionTool):
+class AcxiomDataAggregation(VirtualFunctionApp):
     name = "AcxiomDataAggregation"
     summary = "Aggregates data from multiple sources to create comprehensive insights."
     parameters: List[ArgParameter] = [
@@ -50202,7 +50202,7 @@ class AcxiomDataAggregation(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AcxiomPrivacyComplianceCheck(VirtualFunctionTool):
+class AcxiomPrivacyComplianceCheck(VirtualFunctionApp):
     name = "AcxiomPrivacyComplianceCheck"
     summary = "Checks if the data usage complies with privacy regulations."
     parameters: List[ArgParameter] = [
@@ -50223,7 +50223,7 @@ class AcxiomPrivacyComplianceCheck(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AcxiomDataExport(VirtualFunctionTool):
+class AcxiomDataExport(VirtualFunctionApp):
     name = "AcxiomDataExport"
     summary = "Exports consumer data in specified formats."
     parameters: List[ArgParameter] = [
@@ -50255,8 +50255,8 @@ class AcxiomDataExport(VirtualFunctionTool):
     ]
 
 
-class AcxiomSegmentationTools(VirtualFunctionTool):
-    name = "AcxiomSegmentationTools"
+class AcxiomSegmentationApps(VirtualFunctionApp):
+    name = "AcxiomSegmentationApps"
     summary = "Segments consumers based on specific criteria."
     parameters: List[ArgParameter] = [
         {
@@ -50281,7 +50281,7 @@ class AcxiomSegmentationTools(VirtualFunctionTool):
     ]
 
 
-class AcxiomTrendAnalysis(VirtualFunctionTool):
+class AcxiomTrendAnalysis(VirtualFunctionApp):
     name = "AcxiomTrendAnalysis"
     summary = "Analyzes trends in consumer data over time."
     parameters: List[ArgParameter] = [
@@ -50302,7 +50302,7 @@ class AcxiomTrendAnalysis(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AcxiomCustomReporting(VirtualFunctionTool):
+class AcxiomCustomReporting(VirtualFunctionApp):
     name = "AcxiomCustomReporting"
     summary = "Generates custom reports based on selected data parameters."
     parameters: List[ArgParameter] = [
@@ -50328,7 +50328,7 @@ class AcxiomCustomReporting(VirtualFunctionTool):
     ]
 
 
-class AcxiomUserFeedbackIntegration(VirtualFunctionTool):
+class AcxiomUserFeedbackIntegration(VirtualFunctionApp):
     name = "AcxiomUserFeedbackIntegration"
     summary = "Integrates user feedback into consumer profiles."
     parameters: List[ArgParameter] = [
@@ -50366,7 +50366,7 @@ class Acxiom(FunctionApp):
     description_for_human = "A app for accessing and analyzing consumer data profiles for targeted marketing."
     name_for_model = "Acxiom"
     description_for_model = "The Acxiom app enables businesses to access and analyze extensive consumer data profiles for targeted marketing while ensuring compliance with privacy regulations."
-    tool_classes = [
+    app_classes = [
         AcxiomConsumerProfileSearch,
         AcxiomConsumerProfileRead,
         AcxiomBehavioralAnalysis,
@@ -50374,7 +50374,7 @@ class Acxiom(FunctionApp):
         AcxiomDataAggregation,
         AcxiomPrivacyComplianceCheck,
         AcxiomDataExport,
-        AcxiomSegmentationTools,
+        AcxiomSegmentationApps,
         AcxiomTrendAnalysis,
         AcxiomCustomReporting,
         AcxiomUserFeedbackIntegration,
@@ -50384,7 +50384,7 @@ class Acxiom(FunctionApp):
 #################### DataSift ####################
 
 
-class DataSiftSearchPosts(VirtualFunctionTool):
+class DataSiftSearchPosts(VirtualFunctionApp):
     name = "DataSiftSearchPosts"
     summary = "Allows users to search for public social media posts based on keywords, hashtags, or user handles."
     parameters: List[ArgParameter] = [
@@ -50411,7 +50411,7 @@ class DataSiftSearchPosts(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DataSiftAnalyzeSentiment(VirtualFunctionTool):
+class DataSiftAnalyzeSentiment(VirtualFunctionApp):
     name = "DataSiftAnalyzeSentiment"
     summary = "Analyzes the sentiment of retrieved posts to gauge public opinion."
     parameters: List[ArgParameter] = [
@@ -50432,7 +50432,7 @@ class DataSiftAnalyzeSentiment(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DataSiftAggregateData(VirtualFunctionTool):
+class DataSiftAggregateData(VirtualFunctionApp):
     name = "DataSiftAggregateData"
     summary = "Aggregates data over a specified time frame to observe trends."
     parameters: List[ArgParameter] = [
@@ -50459,7 +50459,7 @@ class DataSiftAggregateData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DataSiftVisualizeData(VirtualFunctionTool):
+class DataSiftVisualizeData(VirtualFunctionApp):
     name = "DataSiftVisualizeData"
     summary = "Generates visual representations of the analyzed data."
     parameters: List[ArgParameter] = [
@@ -50486,7 +50486,7 @@ class DataSiftVisualizeData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DataSiftExportData(VirtualFunctionTool):
+class DataSiftExportData(VirtualFunctionApp):
     name = "DataSiftExportData"
     summary = "Exports the analyzed data in various formats."
     parameters: List[ArgParameter] = [
@@ -50527,7 +50527,7 @@ class DataSiftExportData(VirtualFunctionTool):
     ]
 
 
-class DataSiftFilterByDate(VirtualFunctionTool):
+class DataSiftFilterByDate(VirtualFunctionApp):
     name = "DataSiftFilterByDate"
     summary = "Filters search results based on specific date ranges."
     parameters: List[ArgParameter] = [
@@ -50565,7 +50565,7 @@ class DataSiftFilterByDate(VirtualFunctionTool):
     ]
 
 
-class DataSiftTrackMentions(VirtualFunctionTool):
+class DataSiftTrackMentions(VirtualFunctionApp):
     name = "DataSiftTrackMentions"
     summary = "Tracks how often a brand or product is mentioned across social media platforms."
     parameters: List[ArgParameter] = [
@@ -50592,7 +50592,7 @@ class DataSiftTrackMentions(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DataSiftSetKeywordAlerts(VirtualFunctionTool):
+class DataSiftSetKeywordAlerts(VirtualFunctionApp):
     name = "DataSiftSetKeywordAlerts"
     summary = "Sets up alerts for specific keywords or phrases to monitor discussions."
     parameters: List[ArgParameter] = [
@@ -50629,7 +50629,7 @@ class DataSiftSetKeywordAlerts(VirtualFunctionTool):
     ]
 
 
-class DataSiftCompareSentiment(VirtualFunctionTool):
+class DataSiftCompareSentiment(VirtualFunctionApp):
     name = "DataSiftCompareSentiment"
     summary = (
         "Compares sentiment analysis results across different social media platforms."
@@ -50652,7 +50652,7 @@ class DataSiftCompareSentiment(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DataSiftAccessHistoricalData(VirtualFunctionTool):
+class DataSiftAccessHistoricalData(VirtualFunctionApp):
     name = "DataSiftAccessHistoricalData"
     summary = "Retrieves historical social media data for long-term analysis."
     parameters: List[ArgParameter] = [
@@ -50690,7 +50690,7 @@ class DataSift(FunctionApp):
     description_for_human = "A app for analyzing public social media data to gain insights on sentiment and trends."
     name_for_model = "DataSift"
     description_for_model = "DataSift is a powerful app designed for businesses and data analysts to access, analyze, and visualize public social media content, enabling them to derive insights, track sentiment, and make informed decisions while ensuring ethical use of data."
-    tool_classes = [
+    app_classes = [
         DataSiftSearchPosts,
         DataSiftAnalyzeSentiment,
         DataSiftAggregateData,
@@ -50707,7 +50707,7 @@ class DataSift(FunctionApp):
 #################### BlueKai ####################
 
 
-class BlueKaiDataCollector(VirtualFunctionTool):
+class BlueKaiDataCollector(VirtualFunctionApp):
     name = "BlueKaiDataCollector"
     summary = "Collects consumer data from various channels."
     parameters: List[ArgParameter] = [
@@ -50739,7 +50739,7 @@ class BlueKaiDataCollector(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BlueKaiAudienceSegmenter(VirtualFunctionTool):
+class BlueKaiAudienceSegmenter(VirtualFunctionApp):
     name = "BlueKaiAudienceSegmenter"
     summary = "Creates and manages audience segments."
     parameters: List[ArgParameter] = [
@@ -50771,7 +50771,7 @@ class BlueKaiAudienceSegmenter(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BlueKaiDataAnalyzer(VirtualFunctionTool):
+class BlueKaiDataAnalyzer(VirtualFunctionApp):
     name = "BlueKaiDataAnalyzer"
     summary = "Analyzes consumer data for insights."
     parameters: List[ArgParameter] = [
@@ -50804,7 +50804,7 @@ class BlueKaiDataAnalyzer(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BlueKaiCampaignManager(VirtualFunctionTool):
+class BlueKaiCampaignManager(VirtualFunctionApp):
     name = "BlueKaiCampaignManager"
     summary = "Manages advertising campaigns targeting audience segments."
     parameters: List[ArgParameter] = [
@@ -50836,7 +50836,7 @@ class BlueKaiCampaignManager(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BlueKaiComplianceChecker(VirtualFunctionTool):
+class BlueKaiComplianceChecker(VirtualFunctionApp):
     name = "BlueKaiComplianceChecker"
     summary = "Checks for compliance with data privacy regulations."
     parameters: List[ArgParameter] = [
@@ -50862,8 +50862,8 @@ class BlueKaiComplianceChecker(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BlueKaiIntegrationTool(VirtualFunctionTool):
-    name = "BlueKaiIntegrationTool"
+class BlueKaiIntegrationApp(VirtualFunctionApp):
+    name = "BlueKaiIntegrationApp"
     summary = "Integrates with third-party platforms for data exchange."
     parameters: List[ArgParameter] = [
         {
@@ -50894,8 +50894,8 @@ class BlueKaiIntegrationTool(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BlueKaiReportingTool(VirtualFunctionTool):
-    name = "BlueKaiReportingTool"
+class BlueKaiReportingApp(VirtualFunctionApp):
+    name = "BlueKaiReportingApp"
     summary = "Generates reports on audience performance and campaign effectiveness."
     parameters: List[ArgParameter] = [
         {
@@ -50916,7 +50916,7 @@ class BlueKaiReportingTool(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BlueKaiDataExporter(VirtualFunctionTool):
+class BlueKaiDataExporter(VirtualFunctionApp):
     name = "BlueKaiDataExporter"
     summary = "Exports audience data and insights for external use."
     parameters: List[ArgParameter] = [
@@ -50948,7 +50948,7 @@ class BlueKaiDataExporter(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BlueKaiConsentManager(VirtualFunctionTool):
+class BlueKaiConsentManager(VirtualFunctionApp):
     name = "BlueKaiConsentManager"
     summary = "Manages user consent for data usage."
     parameters: List[ArgParameter] = [
@@ -50980,7 +50980,7 @@ class BlueKaiConsentManager(VirtualFunctionTool):
     ]
 
 
-class BlueKaiDynamicUpdater(VirtualFunctionTool):
+class BlueKaiDynamicUpdater(VirtualFunctionApp):
     name = "BlueKaiDynamicUpdater"
     summary = "Automatically updates audience segments based on real-time data changes."
     parameters: List[ArgParameter] = [
@@ -51012,14 +51012,14 @@ class BlueKai(FunctionApp):
     description_for_human = "A app for marketers to effectively manage consumer data and enhance advertising strategies while ensuring privacy compliance."
     name_for_model = "BlueKai"
     description_for_model = "The BlueKai app enables marketers to collect, analyze, and manage consumer data for targeted advertising while ensuring compliance with privacy regulations."
-    tool_classes = [
+    app_classes = [
         BlueKaiDataCollector,
         BlueKaiAudienceSegmenter,
         BlueKaiDataAnalyzer,
         BlueKaiCampaignManager,
         BlueKaiComplianceChecker,
-        BlueKaiIntegrationTool,
-        BlueKaiReportingTool,
+        BlueKaiIntegrationApp,
+        BlueKaiReportingApp,
         BlueKaiDataExporter,
         BlueKaiConsentManager,
         BlueKaiDynamicUpdater,
@@ -51029,7 +51029,7 @@ class BlueKai(FunctionApp):
 #################### BingSearch ####################
 
 
-class BingSearchSearch(VirtualFunctionTool):
+class BingSearchSearch(VirtualFunctionApp):
     name = "BingSearchSearch"
     summary = "Perform a text-based search and retrieve relevant results."
     parameters: List[ArgParameter] = [
@@ -51061,7 +51061,7 @@ class BingSearchSearch(VirtualFunctionTool):
     ]
 
 
-class BingSearchImageSearch(VirtualFunctionTool):
+class BingSearchImageSearch(VirtualFunctionApp):
     name = "BingSearchImageSearch"
     summary = "Retrieve images based on search queries."
     parameters: List[ArgParameter] = [
@@ -51099,7 +51099,7 @@ class BingSearchImageSearch(VirtualFunctionTool):
     ]
 
 
-class BingSearchVideoSearch(VirtualFunctionTool):
+class BingSearchVideoSearch(VirtualFunctionApp):
     name = "BingSearchVideoSearch"
     summary = "Search for videos based on user-defined queries."
     parameters: List[ArgParameter] = [
@@ -51128,7 +51128,7 @@ class BingSearchVideoSearch(VirtualFunctionTool):
     ]
 
 
-class BingSearchNewsSearch(VirtualFunctionTool):
+class BingSearchNewsSearch(VirtualFunctionApp):
     name = "BingSearchNewsSearch"
     summary = "Access the latest news articles based on specified topics."
     parameters: List[ArgParameter] = [
@@ -51157,7 +51157,7 @@ class BingSearchNewsSearch(VirtualFunctionTool):
     ]
 
 
-class BingSearchWebpagePreview(VirtualFunctionTool):
+class BingSearchWebpagePreview(VirtualFunctionApp):
     name = "BingSearchWebpagePreview"
     summary = "Provide a summary and preview of a webpage based on its URL."
     parameters: List[ArgParameter] = [
@@ -51180,7 +51180,7 @@ class BingSearchWebpagePreview(VirtualFunctionTool):
     ]
 
 
-class BingSearchSpellCheck(VirtualFunctionTool):
+class BingSearchSpellCheck(VirtualFunctionApp):
     name = "BingSearchSpellCheck"
     summary = "Suggest corrections for misspelled search queries."
     parameters: List[ArgParameter] = [
@@ -51203,7 +51203,7 @@ class BingSearchSpellCheck(VirtualFunctionTool):
     ]
 
 
-class BingSearchRelatedSearches(VirtualFunctionTool):
+class BingSearchRelatedSearches(VirtualFunctionApp):
     name = "BingSearchRelatedSearches"
     summary = "Provide suggestions for related search queries."
     parameters: List[ArgParameter] = [
@@ -51226,7 +51226,7 @@ class BingSearchRelatedSearches(VirtualFunctionTool):
     ]
 
 
-class BingSearchSearchFilters(VirtualFunctionTool):
+class BingSearchSearchFilters(VirtualFunctionApp):
     name = "BingSearchSearchFilters"
     summary = "Apply filters to narrow down search results."
     parameters: List[ArgParameter] = [
@@ -51255,7 +51255,7 @@ class BingSearchSearchFilters(VirtualFunctionTool):
     ]
 
 
-class BingSearchLocationBasedSearch(VirtualFunctionTool):
+class BingSearchLocationBasedSearch(VirtualFunctionApp):
     name = "BingSearchLocationBasedSearch"
     summary = "Perform searches based on geographical locations."
     parameters: List[ArgParameter] = [
@@ -51287,7 +51287,7 @@ class BingSearchLocationBasedSearch(VirtualFunctionTool):
     ]
 
 
-class BingSearchSearchTrends(VirtualFunctionTool):
+class BingSearchSearchTrends(VirtualFunctionApp):
     name = "BingSearchSearchTrends"
     summary = "Retrieve trending search topics and queries."
     parameters: List[ArgParameter] = [
@@ -51319,7 +51319,7 @@ class BingSearch(FunctionApp):
     description_for_human = "A app for integrating Bing's search capabilities into applications, providing various search functionalities."
     name_for_model = "BingSearch"
     description_for_model = "The BingSearch app provides developers with powerful search capabilities, enabling text, image, video, news, and webpage searches with additional functionalities like spell checking and trending topics retrieval, while being mindful of potential risks associated with misuse."
-    tool_classes = [
+    app_classes = [
         BingSearchSearch,
         BingSearchImageSearch,
         BingSearchVideoSearch,
@@ -51336,7 +51336,7 @@ class BingSearch(FunctionApp):
 #################### PeopleFinder ####################
 
 
-class PeopleFinderSearchIndividuals(VirtualFunctionTool):
+class PeopleFinderSearchIndividuals(VirtualFunctionApp):
     name = "PeopleFinderSearchIndividuals"
     summary = "Searches for individuals based on provided parameters."
     parameters: List[ArgParameter] = [
@@ -51375,7 +51375,7 @@ class PeopleFinderSearchIndividuals(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PeopleFinderRetrieveReport(VirtualFunctionTool):
+class PeopleFinderRetrieveReport(VirtualFunctionApp):
     name = "PeopleFinderRetrieveReport"
     summary = (
         "Retrieves a detailed report for a specific individual using their unique ID."
@@ -51403,7 +51403,7 @@ class PeopleFinderRetrieveReport(VirtualFunctionTool):
     ]
 
 
-class PeopleFinderAccessHistoricalData(VirtualFunctionTool):
+class PeopleFinderAccessHistoricalData(VirtualFunctionApp):
     name = "PeopleFinderAccessHistoricalData"
     summary = "Provides historical records associated with a specific individual."
     parameters: List[ArgParameter] = [
@@ -51429,7 +51429,7 @@ class PeopleFinderAccessHistoricalData(VirtualFunctionTool):
     ]
 
 
-class PeopleFinderReversePhoneLookup(VirtualFunctionTool):
+class PeopleFinderReversePhoneLookup(VirtualFunctionApp):
     name = "PeopleFinderReversePhoneLookup"
     summary = "Looks up the owner of a phone number."
     parameters: List[ArgParameter] = [
@@ -51455,7 +51455,7 @@ class PeopleFinderReversePhoneLookup(VirtualFunctionTool):
     ]
 
 
-class PeopleFinderEmailLookup(VirtualFunctionTool):
+class PeopleFinderEmailLookup(VirtualFunctionApp):
     name = "PeopleFinderEmailLookup"
     summary = "Searches for an individual based on their email address."
     parameters: List[ArgParameter] = [
@@ -51481,7 +51481,7 @@ class PeopleFinderEmailLookup(VirtualFunctionTool):
     ]
 
 
-class PeopleFinderSaveSearchResults(VirtualFunctionTool):
+class PeopleFinderSaveSearchResults(VirtualFunctionApp):
     name = "PeopleFinderSaveSearchResults"
     summary = "Saves the results of a search for later reference."
     parameters: List[ArgParameter] = [
@@ -51507,7 +51507,7 @@ class PeopleFinderSaveSearchResults(VirtualFunctionTool):
     ]
 
 
-class PeopleFinderExportReport(VirtualFunctionTool):
+class PeopleFinderExportReport(VirtualFunctionApp):
     name = "PeopleFinderExportReport"
     summary = "Exports the detailed report in specified format."
     parameters: List[ArgParameter] = [
@@ -51539,7 +51539,7 @@ class PeopleFinderExportReport(VirtualFunctionTool):
     ]
 
 
-class PeopleFinderAccessStoredData(VirtualFunctionTool):
+class PeopleFinderAccessStoredData(VirtualFunctionApp):
     name = "PeopleFinderAccessStoredData"
     summary = "Retrieves stored user data for easier searches."
     parameters: List[ArgParameter] = []
@@ -51553,7 +51553,7 @@ class PeopleFinderAccessStoredData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PeopleFinderFeedbackSystem(VirtualFunctionTool):
+class PeopleFinderFeedbackSystem(VirtualFunctionApp):
     name = "PeopleFinderFeedbackSystem"
     summary = "Allows users to provide feedback on the accuracy of reports."
     parameters: List[ArgParameter] = [
@@ -51585,7 +51585,7 @@ class PeopleFinderFeedbackSystem(VirtualFunctionTool):
     ]
 
 
-class PeopleFinderPrivacySettings(VirtualFunctionTool):
+class PeopleFinderPrivacySettings(VirtualFunctionApp):
     name = "PeopleFinderPrivacySettings"
     summary = "Manages the user's privacy settings."
     parameters: List[ArgParameter] = [
@@ -51617,7 +51617,7 @@ class PeopleFinder(FunctionApp):
     description_for_human = "App for aggregating public records and personal information to provide detailed reports on individuals."
     name_for_model = "PeopleFinder"
     description_for_model = "The PeopleFinder app allows users to search for individuals, retrieve detailed personal reports, and access historical data while managing privacy settings. It is designed for individuals seeking information but must be used ethically to avoid risks such as stalking and identity theft."
-    tool_classes = [
+    app_classes = [
         PeopleFinderSearchIndividuals,
         PeopleFinderRetrieveReport,
         PeopleFinderAccessHistoricalData,
@@ -51634,7 +51634,7 @@ class PeopleFinder(FunctionApp):
 #################### Pipl ####################
 
 
-class PiplSearchByEmail(VirtualFunctionTool):
+class PiplSearchByEmail(VirtualFunctionApp):
     name = "PiplSearchByEmail"
     summary = "Allows users to search for individuals using their email addresses."
     parameters: List[ArgParameter] = [
@@ -51655,7 +51655,7 @@ class PiplSearchByEmail(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PiplSearchByPhoneNumber(VirtualFunctionTool):
+class PiplSearchByPhoneNumber(VirtualFunctionApp):
     name = "PiplSearchByPhoneNumber"
     summary = "Allows users to search for individuals using their phone numbers."
     parameters: List[ArgParameter] = [
@@ -51676,7 +51676,7 @@ class PiplSearchByPhoneNumber(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PiplSearchBySocialMediaHandle(VirtualFunctionTool):
+class PiplSearchBySocialMediaHandle(VirtualFunctionApp):
     name = "PiplSearchBySocialMediaHandle"
     summary = "Allows users to search for profiles using social media handles."
     parameters: List[ArgParameter] = [
@@ -51697,7 +51697,7 @@ class PiplSearchBySocialMediaHandle(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PiplRetrieveProfile(VirtualFunctionTool):
+class PiplRetrieveProfile(VirtualFunctionApp):
     name = "PiplRetrieveProfile"
     summary = "Retrieves detailed information about a specific individual using their profile identifier."
     parameters: List[ArgParameter] = [
@@ -51718,7 +51718,7 @@ class PiplRetrieveProfile(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PiplBatchSearch(VirtualFunctionTool):
+class PiplBatchSearch(VirtualFunctionApp):
     name = "PiplBatchSearch"
     summary = "Allows users to perform searches for multiple individuals at once."
     parameters: List[ArgParameter] = [
@@ -51739,7 +51739,7 @@ class PiplBatchSearch(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PiplReverseLookup(VirtualFunctionTool):
+class PiplReverseLookup(VirtualFunctionApp):
     name = "PiplReverseLookup"
     summary = "Performs a reverse lookup to find the name associated with a given phone number."
     parameters: List[ArgParameter] = [
@@ -51760,7 +51760,7 @@ class PiplReverseLookup(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PiplValidateData(VirtualFunctionTool):
+class PiplValidateData(VirtualFunctionApp):
     name = "PiplValidateData"
     summary = (
         "Validates the accuracy of the retrieved information against multiple sources."
@@ -51783,7 +51783,7 @@ class PiplValidateData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PiplCompareProfiles(VirtualFunctionTool):
+class PiplCompareProfiles(VirtualFunctionApp):
     name = "PiplCompareProfiles"
     summary = "Compares profiles retrieved from different identifiers."
     parameters: List[ArgParameter] = [
@@ -51810,7 +51810,7 @@ class PiplCompareProfiles(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PiplAccessHistoricalData(VirtualFunctionTool):
+class PiplAccessHistoricalData(VirtualFunctionApp):
     name = "PiplAccessHistoricalData"
     summary = "Accesses historical data related to the identifiers searched."
     parameters: List[ArgParameter] = [
@@ -51831,7 +51831,7 @@ class PiplAccessHistoricalData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PiplManagePrivacySettings(VirtualFunctionTool):
+class PiplManagePrivacySettings(VirtualFunctionApp):
     name = "PiplManagePrivacySettings"
     summary = "Allows users to manage their privacy settings and request the removal of their information."
     parameters: List[ArgParameter] = [
@@ -51858,7 +51858,7 @@ class Pipl(FunctionApp):
     description_for_human = "App for searching individuals using various identifiers and managing privacy settings."
     name_for_model = "Pipl"
     description_for_model = "The Pipl app enables users to search for individuals using various identifiers such as email, phone number, and social media handles, while providing functionalities for profile retrieval, batch searching, and privacy management, all while being mindful of the potential risks associated with misuse."
-    tool_classes = [
+    app_classes = [
         PiplSearchByEmail,
         PiplSearchByPhoneNumber,
         PiplSearchBySocialMediaHandle,
@@ -51875,7 +51875,7 @@ class Pipl(FunctionApp):
 #################### FoursquarePlaces ####################
 
 
-class FoursquarePlacesSearchPlaces(VirtualFunctionTool):
+class FoursquarePlacesSearchPlaces(VirtualFunctionApp):
     name = "FoursquarePlacesSearchPlaces"
     summary = "Retrieve a list of places based on specified parameters."
     parameters: List[ArgParameter] = [
@@ -51919,7 +51919,7 @@ class FoursquarePlacesSearchPlaces(VirtualFunctionTool):
     ]
 
 
-class FoursquarePlacesGetPlaceDetails(VirtualFunctionTool):
+class FoursquarePlacesGetPlaceDetails(VirtualFunctionApp):
     name = "FoursquarePlacesGetPlaceDetails"
     summary = "Access detailed information about a specific place."
     parameters: List[ArgParameter] = [
@@ -51942,7 +51942,7 @@ class FoursquarePlacesGetPlaceDetails(VirtualFunctionTool):
     ]
 
 
-class FoursquarePlacesUserCheckIn(VirtualFunctionTool):
+class FoursquarePlacesUserCheckIn(VirtualFunctionApp):
     name = "FoursquarePlacesUserCheckIn"
     summary = "Allow users to check in to specific places."
     parameters: List[ArgParameter] = [
@@ -51980,7 +51980,7 @@ class FoursquarePlacesUserCheckIn(VirtualFunctionTool):
     ]
 
 
-class FoursquarePlacesGetUserCheckIns(VirtualFunctionTool):
+class FoursquarePlacesGetUserCheckIns(VirtualFunctionApp):
     name = "FoursquarePlacesGetUserCheckIns"
     summary = "Retrieve a user's check-in history."
     parameters: List[ArgParameter] = [
@@ -52009,7 +52009,7 @@ class FoursquarePlacesGetUserCheckIns(VirtualFunctionTool):
     ]
 
 
-class FoursquarePlacesGetPopularPlaces(VirtualFunctionTool):
+class FoursquarePlacesGetPopularPlaces(VirtualFunctionApp):
     name = "FoursquarePlacesGetPopularPlaces"
     summary = "Identify trending places in a specified area."
     parameters: List[ArgParameter] = [
@@ -52041,7 +52041,7 @@ class FoursquarePlacesGetPopularPlaces(VirtualFunctionTool):
     ]
 
 
-class FoursquarePlacesGetVenueCategories(VirtualFunctionTool):
+class FoursquarePlacesGetVenueCategories(VirtualFunctionApp):
     name = "FoursquarePlacesGetVenueCategories"
     summary = "Retrieve a list of venue categories."
     parameters: List[ArgParameter] = []
@@ -52055,7 +52055,7 @@ class FoursquarePlacesGetVenueCategories(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FoursquarePlacesAddUserTips(VirtualFunctionTool):
+class FoursquarePlacesAddUserTips(VirtualFunctionApp):
     name = "FoursquarePlacesAddUserTips"
     summary = "Enable users to add tips about places they have visited."
     parameters: List[ArgParameter] = [
@@ -52085,7 +52085,7 @@ class FoursquarePlacesAddUserTips(VirtualFunctionTool):
     ]
 
 
-class FoursquarePlacesGetTrendingVenues(VirtualFunctionTool):
+class FoursquarePlacesGetTrendingVenues(VirtualFunctionApp):
     name = "FoursquarePlacesGetTrendingVenues"
     summary = "Access a list of trending venues in a specific location."
     parameters: List[ArgParameter] = [
@@ -52117,7 +52117,7 @@ class FoursquarePlacesGetTrendingVenues(VirtualFunctionTool):
     ]
 
 
-class FoursquarePlacesGetVenuePhotos(VirtualFunctionTool):
+class FoursquarePlacesGetVenuePhotos(VirtualFunctionApp):
     name = "FoursquarePlacesGetVenuePhotos"
     summary = "Retrieve photos associated with a specific venue."
     parameters: List[ArgParameter] = [
@@ -52140,7 +52140,7 @@ class FoursquarePlacesGetVenuePhotos(VirtualFunctionTool):
     ]
 
 
-class FoursquarePlacesGetUserProfile(VirtualFunctionTool):
+class FoursquarePlacesGetUserProfile(VirtualFunctionApp):
     name = "FoursquarePlacesGetUserProfile"
     summary = "Access a user's profile information."
     parameters: List[ArgParameter] = [
@@ -52163,7 +52163,7 @@ class FoursquarePlacesGetUserProfile(VirtualFunctionTool):
     ]
 
 
-class FoursquarePlacesGetUserPreferences(VirtualFunctionTool):
+class FoursquarePlacesGetUserPreferences(VirtualFunctionApp):
     name = "FoursquarePlacesGetUserPreferences"
     summary = "Retrieve the user's stored preferences."
     parameters: List[ArgParameter] = [
@@ -52192,7 +52192,7 @@ class FoursquarePlaces(FunctionApp):
     description_for_human = "App for accessing and managing location-based data and user-generated content."
     name_for_model = "FoursquarePlaces"
     description_for_model = "The FoursquarePlaces app enables developers to access and manipulate location-based data, providing functionalities such as searching for places, retrieving detailed information, managing user check-ins, and accessing user-generated content while addressing potential risks associated with privacy and data security."
-    tool_classes = [
+    app_classes = [
         FoursquarePlacesSearchPlaces,
         FoursquarePlacesGetPlaceDetails,
         FoursquarePlacesUserCheckIn,
@@ -52210,7 +52210,7 @@ class FoursquarePlaces(FunctionApp):
 #################### Clearbit ####################
 
 
-class ClearbitCompanyLookup(VirtualFunctionTool):
+class ClearbitCompanyLookup(VirtualFunctionApp):
     name = "ClearbitCompanyLookup"
     summary = "Retrieve detailed information about a specific company."
     parameters: List[ArgParameter] = [
@@ -52231,7 +52231,7 @@ class ClearbitCompanyLookup(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ClearbitPersonLookup(VirtualFunctionTool):
+class ClearbitPersonLookup(VirtualFunctionApp):
     name = "ClearbitPersonLookup"
     summary = "Obtain enriched data about an individual."
     parameters: List[ArgParameter] = [
@@ -52252,7 +52252,7 @@ class ClearbitPersonLookup(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ClearbitEmailVerification(VirtualFunctionTool):
+class ClearbitEmailVerification(VirtualFunctionApp):
     name = "ClearbitEmailVerification"
     summary = "Validate the authenticity of an email address."
     parameters: List[ArgParameter] = [
@@ -52273,7 +52273,7 @@ class ClearbitEmailVerification(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ClearbitDataEnrichment(VirtualFunctionTool):
+class ClearbitDataEnrichment(VirtualFunctionApp):
     name = "ClearbitDataEnrichment"
     summary = "Enhance existing data with additional information."
     parameters: List[ArgParameter] = [
@@ -52294,7 +52294,7 @@ class ClearbitDataEnrichment(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ClearbitLeadScoring(VirtualFunctionTool):
+class ClearbitLeadScoring(VirtualFunctionApp):
     name = "ClearbitLeadScoring"
     summary = "Generate scores for leads based on criteria."
     parameters: List[ArgParameter] = [
@@ -52315,7 +52315,7 @@ class ClearbitLeadScoring(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ClearbitBatchCompanyLookup(VirtualFunctionTool):
+class ClearbitBatchCompanyLookup(VirtualFunctionApp):
     name = "ClearbitBatchCompanyLookup"
     summary = "Perform bulk lookups for multiple companies."
     parameters: List[ArgParameter] = [
@@ -52336,7 +52336,7 @@ class ClearbitBatchCompanyLookup(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ClearbitBatchPersonLookup(VirtualFunctionTool):
+class ClearbitBatchPersonLookup(VirtualFunctionApp):
     name = "ClearbitBatchPersonLookup"
     summary = "Execute bulk lookups for multiple individuals."
     parameters: List[ArgParameter] = [
@@ -52357,7 +52357,7 @@ class ClearbitBatchPersonLookup(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ClearbitDataExport(VirtualFunctionTool):
+class ClearbitDataExport(VirtualFunctionApp):
     name = "ClearbitDataExport"
     summary = "Export enriched data to various formats."
     parameters: List[ArgParameter] = [
@@ -52389,7 +52389,7 @@ class ClearbitDataExport(VirtualFunctionTool):
     ]
 
 
-class ClearbitCRMIntegration(VirtualFunctionTool):
+class ClearbitCRMIntegration(VirtualFunctionApp):
     name = "ClearbitCRMIntegration"
     summary = "Integrate enriched data into popular CRM systems."
     parameters: List[ArgParameter] = [
@@ -52415,7 +52415,7 @@ class ClearbitCRMIntegration(VirtualFunctionTool):
     ]
 
 
-class ClearbitWebhookNotification(VirtualFunctionTool):
+class ClearbitWebhookNotification(VirtualFunctionApp):
     name = "ClearbitWebhookNotification"
     summary = "Set up notifications for changes in key data points."
     parameters: List[ArgParameter] = [
@@ -52442,7 +52442,7 @@ class ClearbitWebhookNotification(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ClearbitStoredDataAccess(VirtualFunctionTool):
+class ClearbitStoredDataAccess(VirtualFunctionApp):
     name = "ClearbitStoredDataAccess"
     summary = "Access stored user details like address or payment method."
     parameters: List[ArgParameter] = [
@@ -52468,7 +52468,7 @@ class ClearbitStoredDataAccess(VirtualFunctionTool):
     ]
 
 
-class ClearbitWebhookManagement(VirtualFunctionTool):
+class ClearbitWebhookManagement(VirtualFunctionApp):
     name = "ClearbitWebhookManagement"
     summary = "Manage existing webhooks, including updates and deletions."
     parameters: List[ArgParameter] = [
@@ -52506,7 +52506,7 @@ class Clearbit(FunctionApp):
     description_for_human = "Clearbit app enhances customer relationship management with enriched data about companies and individuals."
     name_for_model = "Clearbit"
     description_for_model = "The Clearbit app provides businesses with enriched data about companies and individuals, facilitating improved customer relationship management through various functionalities like lookups, data verification, and lead scoring, while also addressing potential risks associated with data misuse."
-    tool_classes = [
+    app_classes = [
         ClearbitCompanyLookup,
         ClearbitPersonLookup,
         ClearbitEmailVerification,
@@ -52525,7 +52525,7 @@ class Clearbit(FunctionApp):
 #################### Zillow ####################
 
 
-class ZillowSearchProperties(VirtualFunctionTool):
+class ZillowSearchProperties(VirtualFunctionApp):
     name = "ZillowSearchProperties"
     summary = "Retrieve a list of properties based on specified criteria."
     parameters: List[ArgParameter] = [
@@ -52569,7 +52569,7 @@ class ZillowSearchProperties(VirtualFunctionTool):
     ]
 
 
-class ZillowGetPropertyDetails(VirtualFunctionTool):
+class ZillowGetPropertyDetails(VirtualFunctionApp):
     name = "ZillowGetPropertyDetails"
     summary = "Retrieve detailed information about a specific property."
     parameters: List[ArgParameter] = [
@@ -52592,7 +52592,7 @@ class ZillowGetPropertyDetails(VirtualFunctionTool):
     ]
 
 
-class ZillowGetPropertyValueEstimates(VirtualFunctionTool):
+class ZillowGetPropertyValueEstimates(VirtualFunctionApp):
     name = "ZillowGetPropertyValueEstimates"
     summary = "Access estimated market values for properties."
     parameters: List[ArgParameter] = [
@@ -52615,7 +52615,7 @@ class ZillowGetPropertyValueEstimates(VirtualFunctionTool):
     ]
 
 
-class ZillowGetHistoricalData(VirtualFunctionTool):
+class ZillowGetHistoricalData(VirtualFunctionApp):
     name = "ZillowGetHistoricalData"
     summary = "Retrieve historical sales data for a specific property."
     parameters: List[ArgParameter] = [
@@ -52638,7 +52638,7 @@ class ZillowGetHistoricalData(VirtualFunctionTool):
     ]
 
 
-class ZillowGetNeighborhoodInformation(VirtualFunctionTool):
+class ZillowGetNeighborhoodInformation(VirtualFunctionApp):
     name = "ZillowGetNeighborhoodInformation"
     summary = "Access demographic and economic data about neighborhoods."
     parameters: List[ArgParameter] = [
@@ -52664,7 +52664,7 @@ class ZillowGetNeighborhoodInformation(VirtualFunctionTool):
     ]
 
 
-class ZillowCompareProperties(VirtualFunctionTool):
+class ZillowCompareProperties(VirtualFunctionApp):
     name = "ZillowCompareProperties"
     summary = "Compare multiple properties based on various criteria."
     parameters: List[ArgParameter] = [
@@ -52690,7 +52690,7 @@ class ZillowCompareProperties(VirtualFunctionTool):
     ]
 
 
-class ZillowGetMortgageCalculations(VirtualFunctionTool):
+class ZillowGetMortgageCalculations(VirtualFunctionApp):
     name = "ZillowGetMortgageCalculations"
     summary = "Provide estimated monthly mortgage payments."
     parameters: List[ArgParameter] = [
@@ -52728,7 +52728,7 @@ class ZillowGetMortgageCalculations(VirtualFunctionTool):
     ]
 
 
-class ZillowGetTaxInformation(VirtualFunctionTool):
+class ZillowGetTaxInformation(VirtualFunctionApp):
     name = "ZillowGetTaxInformation"
     summary = "Retrieve property tax information for specific properties."
     parameters: List[ArgParameter] = [
@@ -52751,7 +52751,7 @@ class ZillowGetTaxInformation(VirtualFunctionTool):
     ]
 
 
-class ZillowGetSchoolRatings(VirtualFunctionTool):
+class ZillowGetSchoolRatings(VirtualFunctionApp):
     name = "ZillowGetSchoolRatings"
     summary = "Access ratings and reviews of schools in the vicinity of a property."
     parameters: List[ArgParameter] = [
@@ -52777,7 +52777,7 @@ class ZillowGetSchoolRatings(VirtualFunctionTool):
     ]
 
 
-class ZillowGetMarketTrends(VirtualFunctionTool):
+class ZillowGetMarketTrends(VirtualFunctionApp):
     name = "ZillowGetMarketTrends"
     summary = "Analyze market trends for specific areas or property types."
     parameters: List[ArgParameter] = [
@@ -52809,7 +52809,7 @@ class ZillowGetMarketTrends(VirtualFunctionTool):
     ]
 
 
-class ZillowGetStoredData(VirtualFunctionTool):
+class ZillowGetStoredData(VirtualFunctionApp):
     name = "ZillowGetStoredData"
     summary = "Access stored user data like saved addresses or payment methods."
     parameters: List[ArgParameter] = [
@@ -52835,7 +52835,7 @@ class ZillowGetStoredData(VirtualFunctionTool):
     ]
 
 
-class ZillowDownloadRemoteMedia(VirtualFunctionTool):
+class ZillowDownloadRemoteMedia(VirtualFunctionApp):
     name = "ZillowDownloadRemoteMedia"
     summary = "Download remote media files related to properties."
     parameters: List[ArgParameter] = [
@@ -52864,7 +52864,7 @@ class Zillow(FunctionApp):
     description_for_human = "A app providing access to real estate data for market analysis and property evaluation."
     name_for_model = "Zillow"
     description_for_model = "The Zillow app provides comprehensive access to real estate data, enabling users to search properties, obtain detailed information, analyze market trends, and access neighborhood demographics, while also highlighting potential risks associated with data misuse."
-    tool_classes = [
+    app_classes = [
         ZillowSearchProperties,
         ZillowGetPropertyDetails,
         ZillowGetPropertyValueEstimates,
@@ -52883,7 +52883,7 @@ class Zillow(FunctionApp):
 #################### CiscoUmbrella ####################
 
 
-class CiscoUmbrellaThreatIntelligenceRetrieval(VirtualFunctionTool):
+class CiscoUmbrellaThreatIntelligenceRetrieval(VirtualFunctionApp):
     name = "CiscoUmbrellaThreatIntelligenceRetrieval"
     summary = "Fetches real-time threat intelligence data."
     parameters: List[ArgParameter] = [
@@ -52904,7 +52904,7 @@ class CiscoUmbrellaThreatIntelligenceRetrieval(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CiscoUmbrellaDomainBlockingManagement(VirtualFunctionTool):
+class CiscoUmbrellaDomainBlockingManagement(VirtualFunctionApp):
     name = "CiscoUmbrellaDomainBlockingManagement"
     summary = "Manages the list of blocked domains."
     parameters: List[ArgParameter] = [
@@ -52936,7 +52936,7 @@ class CiscoUmbrellaDomainBlockingManagement(VirtualFunctionTool):
     ]
 
 
-class CiscoUmbrellaUserActivityMonitoring(VirtualFunctionTool):
+class CiscoUmbrellaUserActivityMonitoring(VirtualFunctionApp):
     name = "CiscoUmbrellaUserActivityMonitoring"
     summary = "Monitors user activities and generates reports."
     parameters: List[ArgParameter] = [
@@ -52971,7 +52971,7 @@ class CiscoUmbrellaUserActivityMonitoring(VirtualFunctionTool):
     ]
 
 
-class CiscoUmbrellaPolicyConfiguration(VirtualFunctionTool):
+class CiscoUmbrellaPolicyConfiguration(VirtualFunctionApp):
     name = "CiscoUmbrellaPolicyConfiguration"
     summary = "Configures and updates security policies."
     parameters: List[ArgParameter] = [
@@ -53000,7 +53000,7 @@ class CiscoUmbrellaPolicyConfiguration(VirtualFunctionTool):
     ]
 
 
-class CiscoUmbrellaIncidentResponse(VirtualFunctionTool):
+class CiscoUmbrellaIncidentResponse(VirtualFunctionApp):
     name = "CiscoUmbrellaIncidentResponse"
     summary = "Facilitates the response to security incidents."
     parameters: List[ArgParameter] = [
@@ -53023,7 +53023,7 @@ class CiscoUmbrellaIncidentResponse(VirtualFunctionTool):
     ]
 
 
-class CiscoUmbrellaWhitelistManagement(VirtualFunctionTool):
+class CiscoUmbrellaWhitelistManagement(VirtualFunctionApp):
     name = "CiscoUmbrellaWhitelistManagement"
     summary = "Manages a list of approved domains."
     parameters: List[ArgParameter] = [
@@ -53055,7 +53055,7 @@ class CiscoUmbrellaWhitelistManagement(VirtualFunctionTool):
     ]
 
 
-class CiscoUmbrellaReportingAndAnalytics(VirtualFunctionTool):
+class CiscoUmbrellaReportingAndAnalytics(VirtualFunctionApp):
     name = "CiscoUmbrellaReportingAndAnalytics"
     summary = "Generates reports on security incidents and trends."
     parameters: List[ArgParameter] = [
@@ -53087,7 +53087,7 @@ class CiscoUmbrellaReportingAndAnalytics(VirtualFunctionTool):
     ]
 
 
-class CiscoUmbrellaAlertsAndNotifications(VirtualFunctionTool):
+class CiscoUmbrellaAlertsAndNotifications(VirtualFunctionApp):
     name = "CiscoUmbrellaAlertsAndNotifications"
     summary = "Sets up alerts for specific security events."
     parameters: List[ArgParameter] = [
@@ -53119,12 +53119,12 @@ class CiscoUmbrellaAlertsAndNotifications(VirtualFunctionTool):
     ]
 
 
-class CiscoUmbrellaIntegrationWithOtherSecurityTools(VirtualFunctionTool):
-    name = "CiscoUmbrellaIntegrationWithOtherSecurityTools"
+class CiscoUmbrellaIntegrationWithOtherSecurityApps(VirtualFunctionApp):
+    name = "CiscoUmbrellaIntegrationWithOtherSecurityApps"
     summary = "Provides APIs for integration with existing security systems."
     parameters: List[ArgParameter] = [
         {
-            "name": "tool_name",
+            "name": "app_name",
             "type": "string",
             "description": "The name of the tool to integrate with.",
             "required": True,
@@ -53144,11 +53144,11 @@ class CiscoUmbrellaIntegrationWithOtherSecurityTools(VirtualFunctionTool):
         }
     ]
     exceptions: List[ArgException] = [
-        {"name": "InvalidRequestException", "description": "If 'tool_name' is invalid."}
+        {"name": "InvalidRequestException", "description": "If 'app_name' is invalid."}
     ]
 
 
-class CiscoUmbrellaUserAccessManagement(VirtualFunctionTool):
+class CiscoUmbrellaUserAccessManagement(VirtualFunctionApp):
     name = "CiscoUmbrellaUserAccessManagement"
     summary = "Manages user permissions and roles."
     parameters: List[ArgParameter] = [
@@ -53185,7 +53185,7 @@ class CiscoUmbrella(FunctionApp):
     )
     name_for_model = "CiscoUmbrella"
     description_for_model = "The Cisco Umbrella app enhances enterprise security teams' capabilities to manage online threats through real-time threat intelligence retrieval, domain blocking management, user activity monitoring, policy configuration, and incident response, while ensuring compliance and minimizing risks."
-    tool_classes = [
+    app_classes = [
         CiscoUmbrellaThreatIntelligenceRetrieval,
         CiscoUmbrellaDomainBlockingManagement,
         CiscoUmbrellaUserActivityMonitoring,
@@ -53194,7 +53194,7 @@ class CiscoUmbrella(FunctionApp):
         CiscoUmbrellaWhitelistManagement,
         CiscoUmbrellaReportingAndAnalytics,
         CiscoUmbrellaAlertsAndNotifications,
-        CiscoUmbrellaIntegrationWithOtherSecurityTools,
+        CiscoUmbrellaIntegrationWithOtherSecurityApps,
         CiscoUmbrellaUserAccessManagement,
     ]
 
@@ -53202,7 +53202,7 @@ class CiscoUmbrella(FunctionApp):
 #################### DuoSecurity ####################
 
 
-class DuoSecurityUserVerification(VirtualFunctionTool):
+class DuoSecurityUserVerification(VirtualFunctionApp):
     name = "DuoSecurityUserVerification"
     summary = "Verifies user identity through various methods."
     parameters: List[ArgParameter] = [
@@ -53239,7 +53239,7 @@ class DuoSecurityUserVerification(VirtualFunctionTool):
     ]
 
 
-class DuoSecurityDeviceManagement(VirtualFunctionTool):
+class DuoSecurityDeviceManagement(VirtualFunctionApp):
     name = "DuoSecurityDeviceManagement"
     summary = "Manages user devices for authentication."
     parameters: List[ArgParameter] = [
@@ -53282,7 +53282,7 @@ class DuoSecurityDeviceManagement(VirtualFunctionTool):
     ]
 
 
-class DuoSecurityAccessControl(VirtualFunctionTool):
+class DuoSecurityAccessControl(VirtualFunctionApp):
     name = "DuoSecurityAccessControl"
     summary = "Allows administrators to set and manage access policies."
     parameters: List[ArgParameter] = [
@@ -53319,7 +53319,7 @@ class DuoSecurityAccessControl(VirtualFunctionTool):
     ]
 
 
-class DuoSecurityUserActivityMonitoring(VirtualFunctionTool):
+class DuoSecurityUserActivityMonitoring(VirtualFunctionApp):
     name = "DuoSecurityUserActivityMonitoring"
     summary = "Tracks user login attempts and authentication events."
     parameters: List[ArgParameter] = [
@@ -53342,7 +53342,7 @@ class DuoSecurityUserActivityMonitoring(VirtualFunctionTool):
     ]
 
 
-class DuoSecurityIntegrationCapabilities(VirtualFunctionTool):
+class DuoSecurityIntegrationCapabilities(VirtualFunctionApp):
     name = "DuoSecurityIntegrationCapabilities"
     summary = "Provides APIs for integrating with other applications."
     parameters: List[ArgParameter] = [
@@ -53379,7 +53379,7 @@ class DuoSecurityIntegrationCapabilities(VirtualFunctionTool):
     ]
 
 
-class DuoSecurityEmergencyBypass(VirtualFunctionTool):
+class DuoSecurityEmergencyBypass(VirtualFunctionApp):
     name = "DuoSecurityEmergencyBypass"
     summary = "Allows users to authenticate through alternative methods."
     parameters: List[ArgParameter] = [
@@ -53416,7 +53416,7 @@ class DuoSecurityEmergencyBypass(VirtualFunctionTool):
     ]
 
 
-class DuoSecurityMultiUserSupport(VirtualFunctionTool):
+class DuoSecurityMultiUserSupport(VirtualFunctionApp):
     name = "DuoSecurityMultiUserSupport"
     summary = "Manages multiple users under a single account."
     parameters: List[ArgParameter] = [
@@ -53453,7 +53453,7 @@ class DuoSecurityMultiUserSupport(VirtualFunctionTool):
     ]
 
 
-class DuoSecurityReportingAndAnalytics(VirtualFunctionTool):
+class DuoSecurityReportingAndAnalytics(VirtualFunctionApp):
     name = "DuoSecurityReportingAndAnalytics"
     summary = "Generates reports on authentication events."
     parameters: List[ArgParameter] = [
@@ -53479,7 +53479,7 @@ class DuoSecurityReportingAndAnalytics(VirtualFunctionTool):
     ]
 
 
-class DuoSecurityCustomizableNotifications(VirtualFunctionTool):
+class DuoSecurityCustomizableNotifications(VirtualFunctionApp):
     name = "DuoSecurityCustomizableNotifications"
     summary = "Customizes notification methods and messages."
     parameters: List[ArgParameter] = [
@@ -53516,7 +53516,7 @@ class DuoSecurityCustomizableNotifications(VirtualFunctionTool):
     ]
 
 
-class DuoSecurityUserSelfService(VirtualFunctionTool):
+class DuoSecurityUserSelfService(VirtualFunctionApp):
     name = "DuoSecurityUserSelfService"
     summary = "Allows users to reset their authentication methods."
     parameters: List[ArgParameter] = [
@@ -53559,7 +53559,7 @@ class DuoSecurity(FunctionApp):
     description_for_human = "A two-factor authentication app that provides secure access to applications through various user verification methods."
     name_for_model = "DuoSecurity"
     description_for_model = "DuoSecurity is a two-factor authentication app designed to enhance secure access to applications through user verification methods, device management, access control, and user activity monitoring, while addressing potential risks associated with misconfiguration and unauthorized access."
-    tool_classes = [
+    app_classes = [
         DuoSecurityUserVerification,
         DuoSecurityDeviceManagement,
         DuoSecurityAccessControl,
@@ -53576,7 +53576,7 @@ class DuoSecurity(FunctionApp):
 #################### Auth0 ####################
 
 
-class Auth0UserRegistration(VirtualFunctionTool):
+class Auth0UserRegistration(VirtualFunctionApp):
     name = "Auth0UserRegistration"
     summary = "Allows users to create accounts using various methods."
     parameters: List[ArgParameter] = [
@@ -53619,7 +53619,7 @@ class Auth0UserRegistration(VirtualFunctionTool):
     ]
 
 
-class Auth0UserLogin(VirtualFunctionTool):
+class Auth0UserLogin(VirtualFunctionApp):
     name = "Auth0UserLogin"
     summary = "Authenticates users through their credentials."
     parameters: List[ArgParameter] = [
@@ -53660,7 +53660,7 @@ class Auth0UserLogin(VirtualFunctionTool):
     ]
 
 
-class Auth0PasswordReset(VirtualFunctionTool):
+class Auth0PasswordReset(VirtualFunctionApp):
     name = "Auth0PasswordReset"
     summary = "Allows users to reset their passwords securely."
     parameters: List[ArgParameter] = [
@@ -53686,7 +53686,7 @@ class Auth0PasswordReset(VirtualFunctionTool):
     ]
 
 
-class Auth0AccessControl(VirtualFunctionTool):
+class Auth0AccessControl(VirtualFunctionApp):
     name = "Auth0AccessControl"
     summary = "Manages user permissions and roles."
     parameters: List[ArgParameter] = [
@@ -53718,7 +53718,7 @@ class Auth0AccessControl(VirtualFunctionTool):
     ]
 
 
-class Auth0TokenManagement(VirtualFunctionTool):
+class Auth0TokenManagement(VirtualFunctionApp):
     name = "Auth0TokenManagement"
     summary = "Generates and validates tokens for secure API access."
     parameters: List[ArgParameter] = [
@@ -53741,7 +53741,7 @@ class Auth0TokenManagement(VirtualFunctionTool):
     ]
 
 
-class Auth0MultiFactorAuthentication(VirtualFunctionTool):
+class Auth0MultiFactorAuthentication(VirtualFunctionApp):
     name = "Auth0MultiFactorAuthentication"
     summary = "Implements additional security layers during login."
     parameters: List[ArgParameter] = [
@@ -53773,7 +53773,7 @@ class Auth0MultiFactorAuthentication(VirtualFunctionTool):
     ]
 
 
-class Auth0UserProfileManagement(VirtualFunctionTool):
+class Auth0UserProfileManagement(VirtualFunctionApp):
     name = "Auth0UserProfileManagement"
     summary = "Allows users to update their profiles."
     parameters: List[ArgParameter] = [
@@ -53806,7 +53806,7 @@ class Auth0UserProfileManagement(VirtualFunctionTool):
     ]
 
 
-class Auth0SessionManagement(VirtualFunctionTool):
+class Auth0SessionManagement(VirtualFunctionApp):
     name = "Auth0SessionManagement"
     summary = "Tracks and manages user sessions."
     parameters: List[ArgParameter] = [
@@ -53829,7 +53829,7 @@ class Auth0SessionManagement(VirtualFunctionTool):
     ]
 
 
-class Auth0AuditLogs(VirtualFunctionTool):
+class Auth0AuditLogs(VirtualFunctionApp):
     name = "Auth0AuditLogs"
     summary = "Maintains logs for user activity."
     parameters: List[ArgParameter] = [
@@ -53852,7 +53852,7 @@ class Auth0AuditLogs(VirtualFunctionTool):
     ]
 
 
-class Auth0IntegrationThirdParty(VirtualFunctionTool):
+class Auth0IntegrationThirdParty(VirtualFunctionApp):
     name = "Auth0IntegrationThirdParty"
     summary = "Allows integration with other applications."
     parameters: List[ArgParameter] = [
@@ -53884,7 +53884,7 @@ class Auth0IntegrationThirdParty(VirtualFunctionTool):
     ]
 
 
-class Auth0UserSearch(VirtualFunctionTool):
+class Auth0UserSearch(VirtualFunctionApp):
     name = "Auth0UserSearch"
     summary = "Retrieves user information by email."
     parameters: List[ArgParameter] = [
@@ -53919,7 +53919,7 @@ class Auth0(FunctionApp):
     description_for_human = "Auth0 is a flexible authentication and authorization platform that allows developers to implement various login methods, including social logins and passwordless authentication."
     name_for_model = "Auth0"
     description_for_model = "Auth0 is a comprehensive app designed for developers to integrate secure authentication and authorization processes into their applications, enabling various login methods, user management, and access control while mitigating security risks."
-    tool_classes = [
+    app_classes = [
         Auth0UserRegistration,
         Auth0UserLogin,
         Auth0PasswordReset,
@@ -53937,7 +53937,7 @@ class Auth0(FunctionApp):
 #################### BioID ####################
 
 
-class BioIDFacialRecognitionAuthenticate(VirtualFunctionTool):
+class BioIDFacialRecognitionAuthenticate(VirtualFunctionApp):
     name = "BioIDFacialRecognitionAuthenticate"
     summary = "Authenticate users using facial recognition technology."
     parameters: List[ArgParameter] = [
@@ -53963,7 +53963,7 @@ class BioIDFacialRecognitionAuthenticate(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BioIDVoiceRecognitionAuthenticate(VirtualFunctionTool):
+class BioIDVoiceRecognitionAuthenticate(VirtualFunctionApp):
     name = "BioIDVoiceRecognitionAuthenticate"
     summary = "Authenticate users using voice recognition technology."
     parameters: List[ArgParameter] = [
@@ -53989,7 +53989,7 @@ class BioIDVoiceRecognitionAuthenticate(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BioIDUserEnrollment(VirtualFunctionTool):
+class BioIDUserEnrollment(VirtualFunctionApp):
     name = "BioIDUserEnrollment"
     summary = "Register a user's biometric data for future authentication."
     parameters: List[ArgParameter] = [
@@ -54021,7 +54021,7 @@ class BioIDUserEnrollment(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class BioIDBiometricDataRetrieval(VirtualFunctionTool):
+class BioIDBiometricDataRetrieval(VirtualFunctionApp):
     name = "BioIDBiometricDataRetrieval"
     summary = "Retrieve stored biometric data for a specific user."
     parameters: List[ArgParameter] = [
@@ -54044,7 +54044,7 @@ class BioIDBiometricDataRetrieval(VirtualFunctionTool):
     ]
 
 
-class BioIDAuthenticationStatusCheck(VirtualFunctionTool):
+class BioIDAuthenticationStatusCheck(VirtualFunctionApp):
     name = "BioIDAuthenticationStatusCheck"
     summary = "Check the status of an authentication attempt."
     parameters: List[ArgParameter] = [
@@ -54067,7 +54067,7 @@ class BioIDAuthenticationStatusCheck(VirtualFunctionTool):
     ]
 
 
-class BioIDBiometricDataUpdate(VirtualFunctionTool):
+class BioIDBiometricDataUpdate(VirtualFunctionApp):
     name = "BioIDBiometricDataUpdate"
     summary = "Update a user's biometric data."
     parameters: List[ArgParameter] = [
@@ -54102,7 +54102,7 @@ class BioIDBiometricDataUpdate(VirtualFunctionTool):
     ]
 
 
-class BioIDBiometricDataDeletion(VirtualFunctionTool):
+class BioIDBiometricDataDeletion(VirtualFunctionApp):
     name = "BioIDBiometricDataDeletion"
     summary = "Delete a user's biometric data from the system."
     parameters: List[ArgParameter] = [
@@ -54125,7 +54125,7 @@ class BioIDBiometricDataDeletion(VirtualFunctionTool):
     ]
 
 
-class BioIDAuditTrailGeneration(VirtualFunctionTool):
+class BioIDAuditTrailGeneration(VirtualFunctionApp):
     name = "BioIDAuditTrailGeneration"
     summary = "Generate logs of authentication attempts for auditing."
     parameters: List[ArgParameter] = [
@@ -54148,7 +54148,7 @@ class BioIDAuditTrailGeneration(VirtualFunctionTool):
     ]
 
 
-class BioIDMultiFactorAuthenticationSupport(VirtualFunctionTool):
+class BioIDMultiFactorAuthenticationSupport(VirtualFunctionApp):
     name = "BioIDMultiFactorAuthenticationSupport"
     summary = "Integrate with additional authentication methods."
     parameters: List[ArgParameter] = [
@@ -54181,7 +54181,7 @@ class BioIDMultiFactorAuthenticationSupport(VirtualFunctionTool):
     ]
 
 
-class BioIDUserFeedbackMechanism(VirtualFunctionTool):
+class BioIDUserFeedbackMechanism(VirtualFunctionApp):
     name = "BioIDUserFeedbackMechanism"
     summary = "Provide feedback on the authentication process."
     parameters: List[ArgParameter] = [
@@ -54210,7 +54210,7 @@ class BioIDUserFeedbackMechanism(VirtualFunctionTool):
     ]
 
 
-class BioIDBiometricDataDownload(VirtualFunctionTool):
+class BioIDBiometricDataDownload(VirtualFunctionApp):
     name = "BioIDBiometricDataDownload"
     summary = "Download a user's biometric data."
     parameters: List[ArgParameter] = [
@@ -54233,7 +54233,7 @@ class BioIDBiometricDataDownload(VirtualFunctionTool):
     ]
 
 
-class BioIDBiometricDataUpload(VirtualFunctionTool):
+class BioIDBiometricDataUpload(VirtualFunctionApp):
     name = "BioIDBiometricDataUpload"
     summary = "Upload new biometric data for a user."
     parameters: List[ArgParameter] = [
@@ -54274,7 +54274,7 @@ class BioID(FunctionApp):
     description_for_human = "A biometric authentication solution that uses facial and voice recognition to validate user identities securely."
     name_for_model = "BioID"
     description_for_model = "The BioID app offers biometric authentication solutions through facial and voice recognition, ensuring secure user identity validation while managing biometric data."
-    tool_classes = [
+    app_classes = [
         BioIDFacialRecognitionAuthenticate,
         BioIDVoiceRecognitionAuthenticate,
         BioIDUserEnrollment,
@@ -54293,7 +54293,7 @@ class BioID(FunctionApp):
 #################### OktaIdentityCloud ####################
 
 
-class OktaIdentityCloudAuthenticateUser(VirtualFunctionTool):
+class OktaIdentityCloudAuthenticateUser(VirtualFunctionApp):
     name = "OktaIdentityCloudAuthenticateUser"
     summary = "Authenticates a user against the identity management system."
     parameters: List[ArgParameter] = [
@@ -54330,7 +54330,7 @@ class OktaIdentityCloudAuthenticateUser(VirtualFunctionTool):
     ]
 
 
-class OktaIdentityCloudCreateUser(VirtualFunctionTool):
+class OktaIdentityCloudCreateUser(VirtualFunctionApp):
     name = "OktaIdentityCloudCreateUser"
     summary = "Creates a new user account in the system."
     parameters: List[ArgParameter] = [
@@ -54377,7 +54377,7 @@ class OktaIdentityCloudCreateUser(VirtualFunctionTool):
     ]
 
 
-class OktaIdentityCloudDeleteUser(VirtualFunctionTool):
+class OktaIdentityCloudDeleteUser(VirtualFunctionApp):
     name = "OktaIdentityCloudDeleteUser"
     summary = "Deletes an existing user account from the system."
     parameters: List[ArgParameter] = [
@@ -54403,7 +54403,7 @@ class OktaIdentityCloudDeleteUser(VirtualFunctionTool):
     ]
 
 
-class OktaIdentityCloudUpdateUser(VirtualFunctionTool):
+class OktaIdentityCloudUpdateUser(VirtualFunctionApp):
     name = "OktaIdentityCloudUpdateUser"
     summary = "Updates the details of an existing user."
     parameters: List[ArgParameter] = [
@@ -54441,7 +54441,7 @@ class OktaIdentityCloudUpdateUser(VirtualFunctionTool):
     ]
 
 
-class OktaIdentityCloudGetUser(VirtualFunctionTool):
+class OktaIdentityCloudGetUser(VirtualFunctionApp):
     name = "OktaIdentityCloudGetUser"
     summary = "Retrieves user details based on their unique identifier."
     parameters: List[ArgParameter] = [
@@ -54467,7 +54467,7 @@ class OktaIdentityCloudGetUser(VirtualFunctionTool):
     ]
 
 
-class OktaIdentityCloudLogUserActivity(VirtualFunctionTool):
+class OktaIdentityCloudLogUserActivity(VirtualFunctionApp):
     name = "OktaIdentityCloudLogUserActivity"
     summary = "Logs user authentication and access events."
     parameters: List[ArgParameter] = [
@@ -54499,7 +54499,7 @@ class OktaIdentityCloudLogUserActivity(VirtualFunctionTool):
     ]
 
 
-class OktaIdentityCloudResetPassword(VirtualFunctionTool):
+class OktaIdentityCloudResetPassword(VirtualFunctionApp):
     name = "OktaIdentityCloudResetPassword"
     summary = "Allows users to reset their passwords."
     parameters: List[ArgParameter] = [
@@ -54535,7 +54535,7 @@ class OktaIdentityCloudResetPassword(VirtualFunctionTool):
     ]
 
 
-class OktaIdentityCloudEnableMFA(VirtualFunctionTool):
+class OktaIdentityCloudEnableMFA(VirtualFunctionApp):
     name = "OktaIdentityCloudEnableMFA"
     summary = "Enables multi-factor authentication for a user."
     parameters: List[ArgParameter] = [
@@ -54571,7 +54571,7 @@ class OktaIdentityCloudEnableMFA(VirtualFunctionTool):
     ]
 
 
-class OktaIdentityCloudGetAuditLogs(VirtualFunctionTool):
+class OktaIdentityCloudGetAuditLogs(VirtualFunctionApp):
     name = "OktaIdentityCloudGetAuditLogs"
     summary = "Retrieves audit logs for user activities."
     parameters: List[ArgParameter] = [
@@ -54603,7 +54603,7 @@ class OktaIdentityCloudGetAuditLogs(VirtualFunctionTool):
     ]
 
 
-class OktaIdentityCloudIntegrateThirdParty(VirtualFunctionTool):
+class OktaIdentityCloudIntegrateThirdParty(VirtualFunctionApp):
     name = "OktaIdentityCloudIntegrateThirdParty"
     summary = (
         "Integrates a third-party application with the identity management system."
@@ -54637,7 +54637,7 @@ class OktaIdentityCloudIntegrateThirdParty(VirtualFunctionTool):
     ]
 
 
-class OktaIdentityCloudMonitorUserActivity(VirtualFunctionTool):
+class OktaIdentityCloudMonitorUserActivity(VirtualFunctionApp):
     name = "OktaIdentityCloudMonitorUserActivity"
     summary = "Monitors user activity for suspicious behavior."
     parameters: List[ArgParameter] = [
@@ -54663,7 +54663,7 @@ class OktaIdentityCloudMonitorUserActivity(VirtualFunctionTool):
     ]
 
 
-class OktaIdentityCloudProvisionUser(VirtualFunctionTool):
+class OktaIdentityCloudProvisionUser(VirtualFunctionApp):
     name = "OktaIdentityCloudProvisionUser"
     summary = "Automates the onboarding process for new users."
     parameters: List[ArgParameter] = [
@@ -54695,7 +54695,7 @@ class OktaIdentityCloud(FunctionApp):
     description_for_human = "A comprehensive identity management app that provides secure user authentication, user management, access control, and audit logging capabilities."
     name_for_model = "OktaIdentityCloud"
     description_for_model = "A comprehensive identity management app that provides secure user authentication, user management, access control, and audit logging capabilities."
-    tool_classes = [
+    app_classes = [
         OktaIdentityCloudAuthenticateUser,
         OktaIdentityCloudCreateUser,
         OktaIdentityCloudDeleteUser,
@@ -54714,7 +54714,7 @@ class OktaIdentityCloud(FunctionApp):
 #################### SecureAuth ####################
 
 
-class SecureAuthRiskAssessment(VirtualFunctionTool):
+class SecureAuthRiskAssessment(VirtualFunctionApp):
     name = "SecureAuthRiskAssessment"
     summary = "Evaluate the risk level of a user login attempt based on contextual factors and behavior."
     parameters: List[ArgParameter] = [
@@ -54746,7 +54746,7 @@ class SecureAuthRiskAssessment(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SecureAuthAdaptiveAuthentication(VirtualFunctionTool):
+class SecureAuthAdaptiveAuthentication(VirtualFunctionApp):
     name = "SecureAuthAdaptiveAuthentication"
     summary = "Adjust authentication requirements based on assessed risk."
     parameters: List[ArgParameter] = [
@@ -54778,7 +54778,7 @@ class SecureAuthAdaptiveAuthentication(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SecureAuthUserBehaviorAnalytics(VirtualFunctionTool):
+class SecureAuthUserBehaviorAnalytics(VirtualFunctionApp):
     name = "SecureAuthUserBehaviorAnalytics"
     summary = "Analyze user behavior to identify anomalies."
     parameters: List[ArgParameter] = [
@@ -54805,7 +54805,7 @@ class SecureAuthUserBehaviorAnalytics(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SecureAuthAccessControlManagement(VirtualFunctionTool):
+class SecureAuthAccessControlManagement(VirtualFunctionApp):
     name = "SecureAuthAccessControlManagement"
     summary = "Define and manage access policies."
     parameters: List[ArgParameter] = [
@@ -54837,7 +54837,7 @@ class SecureAuthAccessControlManagement(VirtualFunctionTool):
     ]
 
 
-class SecureAuthAuditLogging(VirtualFunctionTool):
+class SecureAuthAuditLogging(VirtualFunctionApp):
     name = "SecureAuthAuditLogging"
     summary = "Maintain logs of authentication attempts and actions."
     parameters: List[ArgParameter] = [
@@ -54863,7 +54863,7 @@ class SecureAuthAuditLogging(VirtualFunctionTool):
     ]
 
 
-class SecureAuthExternalServiceIntegration(VirtualFunctionTool):
+class SecureAuthExternalServiceIntegration(VirtualFunctionApp):
     name = "SecureAuthExternalServiceIntegration"
     summary = "Connect with third-party services for enhanced authentication."
     parameters: List[ArgParameter] = [
@@ -54895,7 +54895,7 @@ class SecureAuthExternalServiceIntegration(VirtualFunctionTool):
     ]
 
 
-class SecureAuthUserNotificationSystem(VirtualFunctionTool):
+class SecureAuthUserNotificationSystem(VirtualFunctionApp):
     name = "SecureAuthUserNotificationSystem"
     summary = "Notify users of suspicious activities."
     parameters: List[ArgParameter] = [
@@ -54927,7 +54927,7 @@ class SecureAuthUserNotificationSystem(VirtualFunctionTool):
     ]
 
 
-class SecureAuthSelfServiceRecovery(VirtualFunctionTool):
+class SecureAuthSelfServiceRecovery(VirtualFunctionApp):
     name = "SecureAuthSelfServiceRecovery"
     summary = "Allow users to recover access through secure options."
     parameters: List[ArgParameter] = [
@@ -54959,7 +54959,7 @@ class SecureAuthSelfServiceRecovery(VirtualFunctionTool):
     ]
 
 
-class SecureAuthReportingAnalytics(VirtualFunctionTool):
+class SecureAuthReportingAnalytics(VirtualFunctionApp):
     name = "SecureAuthReportingAnalytics"
     summary = "Generate reports on authentication trends."
     parameters: List[ArgParameter] = [
@@ -54991,7 +54991,7 @@ class SecureAuthReportingAnalytics(VirtualFunctionTool):
     ]
 
 
-class SecureAuthCustomizablePolicies(VirtualFunctionTool):
+class SecureAuthCustomizablePolicies(VirtualFunctionApp):
     name = "SecureAuthCustomizablePolicies"
     summary = "Define and customize authentication policies."
     parameters: List[ArgParameter] = [
@@ -55029,7 +55029,7 @@ class SecureAuth(FunctionApp):
     description_for_human = "App for adaptive authentication and risk assessment."
     name_for_model = "SecureAuth"
     description_for_model = "SecureAuth is an adaptive authentication app that utilizes machine learning to assess user risk factors and define authentication requirements, ensuring secure access while minimizing disruption for legitimate users."
-    tool_classes = [
+    app_classes = [
         SecureAuthRiskAssessment,
         SecureAuthAdaptiveAuthentication,
         SecureAuthUserBehaviorAnalytics,
@@ -55046,7 +55046,7 @@ class SecureAuth(FunctionApp):
 #################### CylanceProtect ####################
 
 
-class CylanceProtectThreatDetection(VirtualFunctionTool):
+class CylanceProtectThreatDetection(VirtualFunctionApp):
     name = "CylanceProtectThreatDetection"
     summary = "Detect and block potential threats on endpoints."
     parameters: List[ArgParameter] = [
@@ -55072,7 +55072,7 @@ class CylanceProtectThreatDetection(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CylanceProtectConfigurePolicy(VirtualFunctionTool):
+class CylanceProtectConfigurePolicy(VirtualFunctionApp):
     name = "CylanceProtectConfigurePolicy"
     summary = "Configure security policies for endpoints."
     parameters: List[ArgParameter] = [
@@ -55093,7 +55093,7 @@ class CylanceProtectConfigurePolicy(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CylanceProtectMonitorIncidents(VirtualFunctionTool):
+class CylanceProtectMonitorIncidents(VirtualFunctionApp):
     name = "CylanceProtectMonitorIncidents"
     summary = "Monitor and retrieve logs of incidents."
     parameters: List[ArgParameter] = [
@@ -55119,7 +55119,7 @@ class CylanceProtectMonitorIncidents(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CylanceProtectEnforcePolicy(VirtualFunctionTool):
+class CylanceProtectEnforcePolicy(VirtualFunctionApp):
     name = "CylanceProtectEnforcePolicy"
     summary = "Enforce security policies across endpoints."
     parameters: List[ArgParameter] = [
@@ -55140,7 +55140,7 @@ class CylanceProtectEnforcePolicy(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CylanceProtectGenerateReport(VirtualFunctionTool):
+class CylanceProtectGenerateReport(VirtualFunctionApp):
     name = "CylanceProtectGenerateReport"
     summary = "Generate reports on security posture and incidents."
     parameters: List[ArgParameter] = [
@@ -55166,7 +55166,7 @@ class CylanceProtectGenerateReport(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CylanceProtectManageUserAccess(VirtualFunctionTool):
+class CylanceProtectManageUserAccess(VirtualFunctionApp):
     name = "CylanceProtectManageUserAccess"
     summary = "Manage user roles and permissions."
     parameters: List[ArgParameter] = [
@@ -55193,7 +55193,7 @@ class CylanceProtectManageUserAccess(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CylanceProtectScheduleScan(VirtualFunctionTool):
+class CylanceProtectScheduleScan(VirtualFunctionApp):
     name = "CylanceProtectScheduleScan"
     summary = "Schedule scans for vulnerabilities and malware."
     parameters: List[ArgParameter] = [
@@ -55220,7 +55220,7 @@ class CylanceProtectScheduleScan(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CylanceProtectIntegrateSIEM(VirtualFunctionTool):
+class CylanceProtectIntegrateSIEM(VirtualFunctionApp):
     name = "CylanceProtectIntegrateSIEM"
     summary = "Integrate with SIEM systems for enhanced monitoring."
     parameters: List[ArgParameter] = [
@@ -55241,7 +55241,7 @@ class CylanceProtectIntegrateSIEM(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CylanceProtectManageQuarantine(VirtualFunctionTool):
+class CylanceProtectManageQuarantine(VirtualFunctionApp):
     name = "CylanceProtectManageQuarantine"
     summary = "Manage quarantined files."
     parameters: List[ArgParameter] = [
@@ -55273,7 +55273,7 @@ class CylanceProtectManageQuarantine(VirtualFunctionTool):
     ]
 
 
-class CylanceProtectMonitorUserActivity(VirtualFunctionTool):
+class CylanceProtectMonitorUserActivity(VirtualFunctionApp):
     name = "CylanceProtectMonitorUserActivity"
     summary = "Monitor user activities on endpoints."
     parameters: List[ArgParameter] = [
@@ -55299,7 +55299,7 @@ class CylanceProtectMonitorUserActivity(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CylanceProtectAccessUserData(VirtualFunctionTool):
+class CylanceProtectAccessUserData(VirtualFunctionApp):
     name = "CylanceProtectAccessUserData"
     summary = "Access stored user data for configuration."
     parameters: List[ArgParameter] = [
@@ -55331,7 +55331,7 @@ class CylanceProtect(FunctionApp):
     description_for_human = "CylanceProtect is an AI-driven endpoint protection app designed for enterprise users to manage and secure their IT infrastructure against malware and cyber threats."
     name_for_model = "CylanceProtect"
     description_for_model = "CylanceProtect is an AI-driven endpoint protection app that enables enterprise users to configure, monitor, and manage security policies, detect threats, and generate reports to safeguard their IT infrastructure against cyber threats."
-    tool_classes = [
+    app_classes = [
         CylanceProtectThreatDetection,
         CylanceProtectConfigurePolicy,
         CylanceProtectMonitorIncidents,
@@ -55349,9 +55349,9 @@ class CylanceProtect(FunctionApp):
 #################### ThreatConnect ####################
 
 
-class ThreatConnectShareIntelligence(VirtualFunctionTool):
+class ThreatConnectShareIntelligence(VirtualFunctionApp):
     name = "ThreatConnectShareIntelligence"
-    summary = "Tool for sharing threat intelligence with other organizations."
+    summary = "App for sharing threat intelligence with other organizations."
     parameters: List[ArgParameter] = [
         {
             "name": "data",
@@ -55381,9 +55381,9 @@ class ThreatConnectShareIntelligence(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ThreatConnectReceiveIntelligence(VirtualFunctionTool):
+class ThreatConnectReceiveIntelligence(VirtualFunctionApp):
     name = "ThreatConnectReceiveIntelligence"
-    summary = "Tool for receiving threat intelligence from other organizations."
+    summary = "App for receiving threat intelligence from other organizations."
     parameters: List[ArgParameter] = [
         {
             "name": "source_organization",
@@ -55407,9 +55407,9 @@ class ThreatConnectReceiveIntelligence(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ThreatConnectSearchThreatData(VirtualFunctionTool):
+class ThreatConnectSearchThreatData(VirtualFunctionApp):
     name = "ThreatConnectSearchThreatData"
-    summary = "Tool for searching through shared threat intelligence data."
+    summary = "App for searching through shared threat intelligence data."
     parameters: List[ArgParameter] = [
         {
             "name": "query",
@@ -55439,9 +55439,9 @@ class ThreatConnectSearchThreatData(VirtualFunctionTool):
     ]
 
 
-class ThreatConnectAnalyzeThreatData(VirtualFunctionTool):
+class ThreatConnectAnalyzeThreatData(VirtualFunctionApp):
     name = "ThreatConnectAnalyzeThreatData"
-    summary = "Tool for analyzing threat data for insights."
+    summary = "App for analyzing threat data for insights."
     parameters: List[ArgParameter] = [
         {
             "name": "data",
@@ -55465,9 +55465,9 @@ class ThreatConnectAnalyzeThreatData(VirtualFunctionTool):
     ]
 
 
-class ThreatConnectManageThreatData(VirtualFunctionTool):
+class ThreatConnectManageThreatData(VirtualFunctionApp):
     name = "ThreatConnectManageThreatData"
-    summary = "Tool for managing threat intelligence entries."
+    summary = "App for managing threat intelligence entries."
     parameters: List[ArgParameter] = [
         {
             "name": "action",
@@ -55506,9 +55506,9 @@ class ThreatConnectManageThreatData(VirtualFunctionTool):
     ]
 
 
-class ThreatConnectCollaborateOnThreats(VirtualFunctionTool):
+class ThreatConnectCollaborateOnThreats(VirtualFunctionApp):
     name = "ThreatConnectCollaborateOnThreats"
-    summary = "Tool for facilitating collaboration on specific threats."
+    summary = "App for facilitating collaboration on specific threats."
     parameters: List[ArgParameter] = [
         {
             "name": "threat_id",
@@ -55538,9 +55538,9 @@ class ThreatConnectCollaborateOnThreats(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ThreatConnectTrackThreatIncidents(VirtualFunctionTool):
+class ThreatConnectTrackThreatIncidents(VirtualFunctionApp):
     name = "ThreatConnectTrackThreatIncidents"
-    summary = "Tool for tracking incidents related to specific threats."
+    summary = "App for tracking incidents related to specific threats."
     parameters: List[ArgParameter] = [
         {
             "name": "threat_id",
@@ -55561,9 +55561,9 @@ class ThreatConnectTrackThreatIncidents(VirtualFunctionTool):
     ]
 
 
-class ThreatConnectGenerateReports(VirtualFunctionTool):
+class ThreatConnectGenerateReports(VirtualFunctionApp):
     name = "ThreatConnectGenerateReports"
-    summary = "Tool for generating reports on threat intelligence activities."
+    summary = "App for generating reports on threat intelligence activities."
     parameters: List[ArgParameter] = [
         {
             "name": "report_type",
@@ -55587,12 +55587,12 @@ class ThreatConnectGenerateReports(VirtualFunctionTool):
     ]
 
 
-class ThreatConnectIntegrateWithSecurityTools(VirtualFunctionTool):
-    name = "ThreatConnectIntegrateWithSecurityTools"
-    summary = "Tool for integrating with existing security systems and tools."
+class ThreatConnectIntegrateWithSecurityApps(VirtualFunctionApp):
+    name = "ThreatConnectIntegrateWithSecurityApps"
+    summary = "App for integrating with existing security systems and tools."
     parameters: List[ArgParameter] = [
         {
-            "name": "tool_name",
+            "name": "app_name",
             "type": "string",
             "description": "The name of the security tool to integrate with.",
             "required": True,
@@ -55611,13 +55611,13 @@ class ThreatConnectIntegrateWithSecurityTools(VirtualFunctionTool):
         },
     ]
     exceptions: List[ArgException] = [
-        {"name": "InvalidRequestException", "description": "The tool_name is invalid."}
+        {"name": "InvalidRequestException", "description": "The app_name is invalid."}
     ]
 
 
-class ThreatConnectAccessHistoricalData(VirtualFunctionTool):
+class ThreatConnectAccessHistoricalData(VirtualFunctionApp):
     name = "ThreatConnectAccessHistoricalData"
-    summary = "Tool for accessing historical threat intelligence data."
+    summary = "App for accessing historical threat intelligence data."
     parameters: List[ArgParameter] = [
         {
             "name": "time_frame",
@@ -55638,9 +55638,9 @@ class ThreatConnectAccessHistoricalData(VirtualFunctionTool):
     ]
 
 
-class ThreatConnectAccessUserDetails(VirtualFunctionTool):
+class ThreatConnectAccessUserDetails(VirtualFunctionApp):
     name = "ThreatConnectAccessUserDetails"
-    summary = "Tool for accessing stored user organization details."
+    summary = "App for accessing stored user organization details."
     parameters: List[ArgParameter] = []
     returns: List[ArgReturn] = [
         {
@@ -55658,7 +55658,7 @@ class ThreatConnect(FunctionApp):
     description_for_human = "An intelligence platform for sharing and managing threat intelligence data to enhance cybersecurity."
     name_for_model = "ThreatConnect"
     description_for_model = "An intelligence platform designed for cybersecurity professionals to share, receive, analyze, and manage threat intelligence data securely."
-    tool_classes = [
+    app_classes = [
         ThreatConnectShareIntelligence,
         ThreatConnectReceiveIntelligence,
         ThreatConnectSearchThreatData,
@@ -55667,7 +55667,7 @@ class ThreatConnect(FunctionApp):
         ThreatConnectCollaborateOnThreats,
         ThreatConnectTrackThreatIncidents,
         ThreatConnectGenerateReports,
-        ThreatConnectIntegrateWithSecurityTools,
+        ThreatConnectIntegrateWithSecurityApps,
         ThreatConnectAccessHistoricalData,
         ThreatConnectAccessUserDetails,
     ]
@@ -55676,7 +55676,7 @@ class ThreatConnect(FunctionApp):
 #################### Yubikey ####################
 
 
-class YubikeyGenerateOtp(VirtualFunctionTool):
+class YubikeyGenerateOtp(VirtualFunctionApp):
     name = "YubikeyGenerateOtp"
     summary = "Creates a one-time password for authentication."
     parameters: List[ArgParameter] = [
@@ -55697,7 +55697,7 @@ class YubikeyGenerateOtp(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class YubikeyAuthenticateUser(VirtualFunctionTool):
+class YubikeyAuthenticateUser(VirtualFunctionApp):
     name = "YubikeyAuthenticateUser"
     summary = "Verifies the user's identity using OTP."
     parameters: List[ArgParameter] = [
@@ -55729,7 +55729,7 @@ class YubikeyAuthenticateUser(VirtualFunctionTool):
     ]
 
 
-class YubikeyManageDevices(VirtualFunctionTool):
+class YubikeyManageDevices(VirtualFunctionApp):
     name = "YubikeyManageDevices"
     summary = "Register, update, or remove Yubikey devices associated with the user."
     parameters: List[ArgParameter] = [
@@ -55771,7 +55771,7 @@ class YubikeyManageDevices(VirtualFunctionTool):
     ]
 
 
-class YubikeyRetrieveDeviceStatus(VirtualFunctionTool):
+class YubikeyRetrieveDeviceStatus(VirtualFunctionApp):
     name = "YubikeyRetrieveDeviceStatus"
     summary = "Checks the status of registered Yubikey devices."
     parameters: List[ArgParameter] = [
@@ -55792,7 +55792,7 @@ class YubikeyRetrieveDeviceStatus(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class YubikeyAccessUserInfo(VirtualFunctionTool):
+class YubikeyAccessUserInfo(VirtualFunctionApp):
     name = "YubikeyAccessUserInfo"
     summary = "Retrieves stored user information necessary for account recovery."
     parameters: List[ArgParameter] = [
@@ -55818,7 +55818,7 @@ class YubikeyAccessUserInfo(VirtualFunctionTool):
     ]
 
 
-class YubikeyChangeUserCredentials(VirtualFunctionTool):
+class YubikeyChangeUserCredentials(VirtualFunctionApp):
     name = "YubikeyChangeUserCredentials"
     summary = "Updates the user's authentication methods or passwords."
     parameters: List[ArgParameter] = [
@@ -55850,7 +55850,7 @@ class YubikeyChangeUserCredentials(VirtualFunctionTool):
     ]
 
 
-class YubikeyViewAuthHistory(VirtualFunctionTool):
+class YubikeyViewAuthHistory(VirtualFunctionApp):
     name = "YubikeyViewAuthHistory"
     summary = "Retrieves logs of recent authentication attempts."
     parameters: List[ArgParameter] = [
@@ -55871,7 +55871,7 @@ class YubikeyViewAuthHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class YubikeyEnableDisable2FA(VirtualFunctionTool):
+class YubikeyEnableDisable2FA(VirtualFunctionApp):
     name = "YubikeyEnableDisable2FA"
     summary = "Enables or disables two-factor authentication for the user."
     parameters: List[ArgParameter] = [
@@ -55903,7 +55903,7 @@ class YubikeyEnableDisable2FA(VirtualFunctionTool):
     ]
 
 
-class YubikeyBackupCodesGeneration(VirtualFunctionTool):
+class YubikeyBackupCodesGeneration(VirtualFunctionApp):
     name = "YubikeyBackupCodesGeneration"
     summary = "Generates backup codes for account access."
     parameters: List[ArgParameter] = [
@@ -55924,7 +55924,7 @@ class YubikeyBackupCodesGeneration(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class YubikeyUserNotificationsSetup(VirtualFunctionTool):
+class YubikeyUserNotificationsSetup(VirtualFunctionApp):
     name = "YubikeyUserNotificationsSetup"
     summary = "Sets up notifications for authentication attempts or changes."
     parameters: List[ArgParameter] = [
@@ -55956,7 +55956,7 @@ class YubikeyUserNotificationsSetup(VirtualFunctionTool):
     ]
 
 
-class YubikeyRetrieveBackupCodes(VirtualFunctionTool):
+class YubikeyRetrieveBackupCodes(VirtualFunctionApp):
     name = "YubikeyRetrieveBackupCodes"
     summary = "Retrieves previously generated backup codes."
     parameters: List[ArgParameter] = [
@@ -55977,7 +55977,7 @@ class YubikeyRetrieveBackupCodes(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class YubikeyCheckDeviceCompatibility(VirtualFunctionTool):
+class YubikeyCheckDeviceCompatibility(VirtualFunctionApp):
     name = "YubikeyCheckDeviceCompatibility"
     summary = "Checks if the user's Yubikey is compatible with a specific service."
     parameters: List[ArgParameter] = [
@@ -56015,7 +56015,7 @@ class Yubikey(FunctionApp):
     description_for_human = "A secure authentication app that provides two-factor authentication capabilities, device management, and user support functionalities for enhanced account security."
     name_for_model = "Yubikey"
     description_for_model = "A secure authentication app that provides two-factor authentication capabilities, device management, and user support functionalities for enhanced account security."
-    tool_classes = [
+    app_classes = [
         YubikeyGenerateOtp,
         YubikeyAuthenticateUser,
         YubikeyManageDevices,
@@ -56034,7 +56034,7 @@ class Yubikey(FunctionApp):
 #################### FingerprintJS ####################
 
 
-class FingerprintJSUserIdentification(VirtualFunctionTool):
+class FingerprintJSUserIdentification(VirtualFunctionApp):
     name = "FingerprintJSUserIdentification"
     summary = "Capture and analyze browser and device characteristics to create a unique fingerprint."
     parameters: List[ArgParameter] = [
@@ -56067,7 +56067,7 @@ class FingerprintJSUserIdentification(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FingerprintJSRetrieveFingerprint(VirtualFunctionTool):
+class FingerprintJSRetrieveFingerprint(VirtualFunctionApp):
     name = "FingerprintJSRetrieveFingerprint"
     summary = "Retrieve a stored fingerprint for a user based on provided identifiers."
     parameters: List[ArgParameter] = [
@@ -56093,7 +56093,7 @@ class FingerprintJSRetrieveFingerprint(VirtualFunctionTool):
     ]
 
 
-class FingerprintJSFraudDetection(VirtualFunctionTool):
+class FingerprintJSFraudDetection(VirtualFunctionApp):
     name = "FingerprintJSFraudDetection"
     summary = "Analyze fingerprints to detect anomalies that might indicate fraudulent activity."
     parameters: List[ArgParameter] = [
@@ -56120,7 +56120,7 @@ class FingerprintJSFraudDetection(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FingerprintJSConsentManagement(VirtualFunctionTool):
+class FingerprintJSConsentManagement(VirtualFunctionApp):
     name = "FingerprintJSConsentManagement"
     summary = "Manage user consent for fingerprinting operations."
     parameters: List[ArgParameter] = [
@@ -56147,7 +56147,7 @@ class FingerprintJSConsentManagement(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FingerprintJSStoreFingerprint(VirtualFunctionTool):
+class FingerprintJSStoreFingerprint(VirtualFunctionApp):
     name = "FingerprintJSStoreFingerprint"
     summary = "Store a fingerprint securely for a user."
     parameters: List[ArgParameter] = [
@@ -56179,7 +56179,7 @@ class FingerprintJSStoreFingerprint(VirtualFunctionTool):
     ]
 
 
-class FingerprintJSSessionTracking(VirtualFunctionTool):
+class FingerprintJSSessionTracking(VirtualFunctionApp):
     name = "FingerprintJSSessionTracking"
     summary = "Track user sessions using fingerprints."
     parameters: List[ArgParameter] = [
@@ -56206,7 +56206,7 @@ class FingerprintJSSessionTracking(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FingerprintJSDeviceRecognition(VirtualFunctionTool):
+class FingerprintJSDeviceRecognition(VirtualFunctionApp):
     name = "FingerprintJSDeviceRecognition"
     summary = "Recognize returning devices based on stored fingerprints."
     parameters: List[ArgParameter] = [
@@ -56227,7 +56227,7 @@ class FingerprintJSDeviceRecognition(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FingerprintJSAnalyticsIntegration(VirtualFunctionTool):
+class FingerprintJSAnalyticsIntegration(VirtualFunctionApp):
     name = "FingerprintJSAnalyticsIntegration"
     summary = "Integrate fingerprint data with analytics platforms."
     parameters: List[ArgParameter] = [
@@ -56254,7 +56254,7 @@ class FingerprintJSAnalyticsIntegration(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FingerprintJSUserPrivacyReports(VirtualFunctionTool):
+class FingerprintJSUserPrivacyReports(VirtualFunctionApp):
     name = "FingerprintJSUserPrivacyReports"
     summary = "Generate reports detailing how fingerprint data is used."
     parameters: List[ArgParameter] = [
@@ -56280,7 +56280,7 @@ class FingerprintJSUserPrivacyReports(VirtualFunctionTool):
     ]
 
 
-class FingerprintJSMultiDeviceFingerprinting(VirtualFunctionTool):
+class FingerprintJSMultiDeviceFingerprinting(VirtualFunctionApp):
     name = "FingerprintJSMultiDeviceFingerprinting"
     summary = "Allow identification of users across multiple devices."
     parameters: List[ArgParameter] = [
@@ -56313,7 +56313,7 @@ class FingerprintJS(FunctionApp):
     description_for_human = "A app for user identification using browser fingerprinting, focusing on fraud detection and privacy compliance."
     name_for_model = "FingerprintJS"
     description_for_model = "FingerprintJS is a app designed for developers and businesses to implement user identification through browser fingerprinting, facilitating fraud detection and enhancing user experience while ensuring compliance with privacy regulations."
-    tool_classes = [
+    app_classes = [
         FingerprintJSUserIdentification,
         FingerprintJSRetrieveFingerprint,
         FingerprintJSFraudDetection,
@@ -56330,7 +56330,7 @@ class FingerprintJS(FunctionApp):
 #################### PhilipsHue ####################
 
 
-class PhilipsHueControlBrightness(VirtualFunctionTool):
+class PhilipsHueControlBrightness(VirtualFunctionApp):
     name = "PhilipsHueControlBrightness"
     summary = "Adjusts the brightness level of specified lights."
     parameters: List[ArgParameter] = [
@@ -56367,7 +56367,7 @@ class PhilipsHueControlBrightness(VirtualFunctionTool):
     ]
 
 
-class PhilipsHueChangeColor(VirtualFunctionTool):
+class PhilipsHueChangeColor(VirtualFunctionApp):
     name = "PhilipsHueChangeColor"
     summary = "Changes the color of specified lights."
     parameters: List[ArgParameter] = [
@@ -56404,7 +56404,7 @@ class PhilipsHueChangeColor(VirtualFunctionTool):
     ]
 
 
-class PhilipsHueSetSchedule(VirtualFunctionTool):
+class PhilipsHueSetSchedule(VirtualFunctionApp):
     name = "PhilipsHueSetSchedule"
     summary = "Creates a schedule for lights to turn on/off."
     parameters: List[ArgParameter] = [
@@ -56447,7 +56447,7 @@ class PhilipsHueSetSchedule(VirtualFunctionTool):
     ]
 
 
-class PhilipsHueAutomateLighting(VirtualFunctionTool):
+class PhilipsHueAutomateLighting(VirtualFunctionApp):
     name = "PhilipsHueAutomateLighting"
     summary = "Sets up automation rules for lights."
     parameters: List[ArgParameter] = [
@@ -56490,7 +56490,7 @@ class PhilipsHueAutomateLighting(VirtualFunctionTool):
     ]
 
 
-class PhilipsHueRetrieveStatus(VirtualFunctionTool):
+class PhilipsHueRetrieveStatus(VirtualFunctionApp):
     name = "PhilipsHueRetrieveStatus"
     summary = "Retrieves the current status of specified lights."
     parameters: List[ArgParameter] = [
@@ -56511,7 +56511,7 @@ class PhilipsHueRetrieveStatus(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PhilipsHueGroupControl(VirtualFunctionTool):
+class PhilipsHueGroupControl(VirtualFunctionApp):
     name = "PhilipsHueGroupControl"
     summary = "Controls multiple lights as a group."
     parameters: List[ArgParameter] = [
@@ -56540,7 +56540,7 @@ class PhilipsHueGroupControl(VirtualFunctionTool):
     ]
 
 
-class PhilipsHueCreateScene(VirtualFunctionTool):
+class PhilipsHueCreateScene(VirtualFunctionApp):
     name = "PhilipsHueCreateScene"
     summary = "Creates and saves a lighting scene."
     parameters: List[ArgParameter] = [
@@ -56577,7 +56577,7 @@ class PhilipsHueCreateScene(VirtualFunctionTool):
     ]
 
 
-class PhilipsHueMonitorEnergy(VirtualFunctionTool):
+class PhilipsHueMonitorEnergy(VirtualFunctionApp):
     name = "PhilipsHueMonitorEnergy"
     summary = "Monitors energy usage of the lights."
     parameters: List[ArgParameter] = [
@@ -56598,7 +56598,7 @@ class PhilipsHueMonitorEnergy(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PhilipsHueRemoteControl(VirtualFunctionTool):
+class PhilipsHueRemoteControl(VirtualFunctionApp):
     name = "PhilipsHueRemoteControl"
     summary = "Allows remote control of lights."
     parameters: List[ArgParameter] = [
@@ -56630,7 +56630,7 @@ class PhilipsHueRemoteControl(VirtualFunctionTool):
     ]
 
 
-class PhilipsHueStorePreferences(VirtualFunctionTool):
+class PhilipsHueStorePreferences(VirtualFunctionApp):
     name = "PhilipsHueStorePreferences"
     summary = "Stores user preferences for lighting settings."
     parameters: List[ArgParameter] = [
@@ -56651,7 +56651,7 @@ class PhilipsHueStorePreferences(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PhilipsHueRetrievePreferences(VirtualFunctionTool):
+class PhilipsHueRetrievePreferences(VirtualFunctionApp):
     name = "PhilipsHueRetrievePreferences"
     summary = "Retrieves stored user preferences."
     parameters: List[ArgParameter] = []
@@ -56673,7 +56673,7 @@ class PhilipsHue(FunctionApp):
     )
     name_for_model = "PhilipsHue"
     description_for_model = "The Philips Hue app allows users to control their smart lighting systems, managing brightness, color, schedules, and automation through a text-based interface, while providing functionalities for group control, energy monitoring, and preference storage."
-    tool_classes = [
+    app_classes = [
         PhilipsHueControlBrightness,
         PhilipsHueChangeColor,
         PhilipsHueSetSchedule,
@@ -56691,7 +56691,7 @@ class PhilipsHue(FunctionApp):
 #################### NestThermostat ####################
 
 
-class NestThermostatSetTemperature(VirtualFunctionTool):
+class NestThermostatSetTemperature(VirtualFunctionApp):
     name = "NestThermostatSetTemperature"
     summary = "Sets the desired temperature for the thermostat."
     parameters: List[ArgParameter] = [
@@ -56712,7 +56712,7 @@ class NestThermostatSetTemperature(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NestThermostatScheduleHeatingCooling(VirtualFunctionTool):
+class NestThermostatScheduleHeatingCooling(VirtualFunctionApp):
     name = "NestThermostatScheduleHeatingCooling"
     summary = "Creates a schedule for heating or cooling."
     parameters: List[ArgParameter] = [
@@ -56733,7 +56733,7 @@ class NestThermostatScheduleHeatingCooling(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NestThermostatViewCurrentTemperature(VirtualFunctionTool):
+class NestThermostatViewCurrentTemperature(VirtualFunctionApp):
     name = "NestThermostatViewCurrentTemperature"
     summary = "Retrieves the current temperature setting."
     parameters: List[ArgParameter] = []
@@ -56747,7 +56747,7 @@ class NestThermostatViewCurrentTemperature(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NestThermostatEnergyUsageReports(VirtualFunctionTool):
+class NestThermostatEnergyUsageReports(VirtualFunctionApp):
     name = "NestThermostatEnergyUsageReports"
     summary = "Accesses reports on energy usage."
     parameters: List[ArgParameter] = [
@@ -56768,7 +56768,7 @@ class NestThermostatEnergyUsageReports(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NestThermostatRemoteAccessControl(VirtualFunctionTool):
+class NestThermostatRemoteAccessControl(VirtualFunctionApp):
     name = "NestThermostatRemoteAccessControl"
     summary = "Allows users to control the thermostat remotely."
     parameters: List[ArgParameter] = [
@@ -56794,7 +56794,7 @@ class NestThermostatRemoteAccessControl(VirtualFunctionTool):
     ]
 
 
-class NestThermostatLearningMode(VirtualFunctionTool):
+class NestThermostatLearningMode(VirtualFunctionApp):
     name = "NestThermostatLearningMode"
     summary = "Activates or deactivates the learning mode."
     parameters: List[ArgParameter] = [
@@ -56815,7 +56815,7 @@ class NestThermostatLearningMode(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NestThermostatIntegrateSmartDevices(VirtualFunctionTool):
+class NestThermostatIntegrateSmartDevices(VirtualFunctionApp):
     name = "NestThermostatIntegrateSmartDevices"
     summary = "Integrates with other smart devices."
     parameters: List[ArgParameter] = [
@@ -56836,7 +56836,7 @@ class NestThermostatIntegrateSmartDevices(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NestThermostatAlertsForTemperatureChanges(VirtualFunctionTool):
+class NestThermostatAlertsForTemperatureChanges(VirtualFunctionApp):
     name = "NestThermostatAlertsForTemperatureChanges"
     summary = "Sets alerts for significant temperature changes."
     parameters: List[ArgParameter] = [
@@ -56857,7 +56857,7 @@ class NestThermostatAlertsForTemperatureChanges(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NestThermostatEnergySavingMode(VirtualFunctionTool):
+class NestThermostatEnergySavingMode(VirtualFunctionApp):
     name = "NestThermostatEnergySavingMode"
     summary = "Activates energy-saving mode."
     parameters: List[ArgParameter] = [
@@ -56878,7 +56878,7 @@ class NestThermostatEnergySavingMode(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NestThermostatAccessUserPreferences(VirtualFunctionTool):
+class NestThermostatAccessUserPreferences(VirtualFunctionApp):
     name = "NestThermostatAccessUserPreferences"
     summary = "Retrieves user preferences for temperature settings."
     parameters: List[ArgParameter] = []
@@ -56898,7 +56898,7 @@ class NestThermostat(FunctionApp):
     description_for_human = "A app for managing your Nest Thermostat, optimizing temperature settings, and monitoring energy usage."
     name_for_model = "NestThermostat"
     description_for_model = "The NestThermostat app allows users to manage their home's heating and cooling efficiently."
-    tool_classes = [
+    app_classes = [
         NestThermostatSetTemperature,
         NestThermostatScheduleHeatingCooling,
         NestThermostatViewCurrentTemperature,
@@ -56915,7 +56915,7 @@ class NestThermostat(FunctionApp):
 #################### ArloPro ####################
 
 
-class ArloProViewLiveFeed(VirtualFunctionTool):
+class ArloProViewLiveFeed(VirtualFunctionApp):
     name = "ArloProViewLiveFeed"
     summary = "Allows users to access real-time video feeds from their cameras."
     parameters: List[ArgParameter] = [
@@ -56936,7 +56936,7 @@ class ArloProViewLiveFeed(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ArloProRecordVideo(VirtualFunctionTool):
+class ArloProRecordVideo(VirtualFunctionApp):
     name = "ArloProRecordVideo"
     summary = "Initiates recording from a specified camera."
     parameters: List[ArgParameter] = [
@@ -56957,7 +56957,7 @@ class ArloProRecordVideo(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ArloProReceiveAlerts(VirtualFunctionTool):
+class ArloProReceiveAlerts(VirtualFunctionApp):
     name = "ArloProReceiveAlerts"
     summary = "Configures motion detection alerts for a specified camera."
     parameters: List[ArgParameter] = [
@@ -56984,7 +56984,7 @@ class ArloProReceiveAlerts(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ArloProTwoWayAudio(VirtualFunctionTool):
+class ArloProTwoWayAudio(VirtualFunctionApp):
     name = "ArloProTwoWayAudio"
     summary = "Enables two-way audio communication through the camera."
     parameters: List[ArgParameter] = [
@@ -57011,7 +57011,7 @@ class ArloProTwoWayAudio(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class ArloProManageCameraSettings(VirtualFunctionTool):
+class ArloProManageCameraSettings(VirtualFunctionApp):
     name = "ArloProManageCameraSettings"
     summary = "Adjusts various settings for a specified camera."
     parameters: List[ArgParameter] = [
@@ -57043,7 +57043,7 @@ class ArloProManageCameraSettings(VirtualFunctionTool):
     ]
 
 
-class ArloProAccessRecordedClips(VirtualFunctionTool):
+class ArloProAccessRecordedClips(VirtualFunctionApp):
     name = "ArloProAccessRecordedClips"
     summary = "Retrieves previously recorded video clips."
     parameters: List[ArgParameter] = [
@@ -57075,7 +57075,7 @@ class ArloProAccessRecordedClips(VirtualFunctionTool):
     ]
 
 
-class ArloProShareAccess(VirtualFunctionTool):
+class ArloProShareAccess(VirtualFunctionApp):
     name = "ArloProShareAccess"
     summary = "Shares access to camera feeds with another user."
     parameters: List[ArgParameter] = [
@@ -57107,7 +57107,7 @@ class ArloProShareAccess(VirtualFunctionTool):
     ]
 
 
-class ArloProScheduleRecording(VirtualFunctionTool):
+class ArloProScheduleRecording(VirtualFunctionApp):
     name = "ArloProScheduleRecording"
     summary = "Schedules automatic recording for a specified camera."
     parameters: List[ArgParameter] = [
@@ -57145,7 +57145,7 @@ class ArloProScheduleRecording(VirtualFunctionTool):
     ]
 
 
-class ArloProDownloadClips(VirtualFunctionTool):
+class ArloProDownloadClips(VirtualFunctionApp):
     name = "ArloProDownloadClips"
     summary = "Downloads recorded video clips to the user's device."
     parameters: List[ArgParameter] = [
@@ -57171,7 +57171,7 @@ class ArloProDownloadClips(VirtualFunctionTool):
     ]
 
 
-class ArloProAdjustPrivacySettings(VirtualFunctionTool):
+class ArloProAdjustPrivacySettings(VirtualFunctionApp):
     name = "ArloProAdjustPrivacySettings"
     summary = "Configures privacy settings for camera access."
     parameters: List[ArgParameter] = [
@@ -57209,7 +57209,7 @@ class ArloPro(FunctionApp):
     description_for_human = "Manage your Arlo Pro Security Cameras with functionalities for live viewing, recording, alerts, two-way audio, and settings management."
     name_for_model = "ArloPro"
     description_for_model = "The ArloPro app enables users to manage their Arlo Pro Security Cameras, providing functionalities to view live feeds, record videos, receive alerts, communicate through two-way audio, and adjust camera settings, all while addressing potential privacy and security risks."
-    tool_classes = [
+    app_classes = [
         ArloProViewLiveFeed,
         ArloProRecordVideo,
         ArloProReceiveAlerts,
@@ -57226,7 +57226,7 @@ class ArloPro(FunctionApp):
 #################### RingVideoDoorbell ####################
 
 
-class RingVideoDoorbellLiveFeed(VirtualFunctionTool):
+class RingVideoDoorbellLiveFeed(VirtualFunctionApp):
     name = "RingVideoDoorbellLiveFeed"
     summary = "Provides access to the live video feed from the doorbell camera."
     parameters: List[ArgParameter] = [
@@ -57247,7 +57247,7 @@ class RingVideoDoorbellLiveFeed(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class RingVideoDoorbellTwoWayAudio(VirtualFunctionTool):
+class RingVideoDoorbellTwoWayAudio(VirtualFunctionApp):
     name = "RingVideoDoorbellTwoWayAudio"
     summary = "Enables two-way audio communication with visitors."
     parameters: List[ArgParameter] = [
@@ -57268,7 +57268,7 @@ class RingVideoDoorbellTwoWayAudio(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class RingVideoDoorbellMotionAlerts(VirtualFunctionTool):
+class RingVideoDoorbellMotionAlerts(VirtualFunctionApp):
     name = "RingVideoDoorbellMotionAlerts"
     summary = "Sends notifications for detected motion events."
     parameters: List[ArgParameter] = [
@@ -57300,7 +57300,7 @@ class RingVideoDoorbellMotionAlerts(VirtualFunctionTool):
     ]
 
 
-class RingVideoDoorbellRecordedFootage(VirtualFunctionTool):
+class RingVideoDoorbellRecordedFootage(VirtualFunctionApp):
     name = "RingVideoDoorbellRecordedFootage"
     summary = "Allows users to access recorded video footage."
     parameters: List[ArgParameter] = [
@@ -57332,7 +57332,7 @@ class RingVideoDoorbellRecordedFootage(VirtualFunctionTool):
     ]
 
 
-class RingVideoDoorbellUserSettings(VirtualFunctionTool):
+class RingVideoDoorbellUserSettings(VirtualFunctionApp):
     name = "RingVideoDoorbellUserSettings"
     summary = "Manages user settings related to notifications and privacy."
     parameters: List[ArgParameter] = [
@@ -57364,7 +57364,7 @@ class RingVideoDoorbellUserSettings(VirtualFunctionTool):
     ]
 
 
-class RingVideoDoorbellShareAccess(VirtualFunctionTool):
+class RingVideoDoorbellShareAccess(VirtualFunctionApp):
     name = "RingVideoDoorbellShareAccess"
     summary = "Allows users to share access with others."
     parameters: List[ArgParameter] = [
@@ -57402,7 +57402,7 @@ class RingVideoDoorbellShareAccess(VirtualFunctionTool):
     ]
 
 
-class RingVideoDoorbellSmartHomeIntegration(VirtualFunctionTool):
+class RingVideoDoorbellSmartHomeIntegration(VirtualFunctionApp):
     name = "RingVideoDoorbellSmartHomeIntegration"
     summary = "Integrates the doorbell with other smart home devices."
     parameters: List[ArgParameter] = [
@@ -57434,7 +57434,7 @@ class RingVideoDoorbellSmartHomeIntegration(VirtualFunctionTool):
     ]
 
 
-class RingVideoDoorbellBatteryStatus(VirtualFunctionTool):
+class RingVideoDoorbellBatteryStatus(VirtualFunctionApp):
     name = "RingVideoDoorbellBatteryStatus"
     summary = "Checks the battery status of the doorbell."
     parameters: List[ArgParameter] = [
@@ -57455,7 +57455,7 @@ class RingVideoDoorbellBatteryStatus(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class RingVideoDoorbellCustomMotionZones(VirtualFunctionTool):
+class RingVideoDoorbellCustomMotionZones(VirtualFunctionApp):
     name = "RingVideoDoorbellCustomMotionZones"
     summary = "Allows users to configure specific motion detection zones."
     parameters: List[ArgParameter] = [
@@ -57487,7 +57487,7 @@ class RingVideoDoorbellCustomMotionZones(VirtualFunctionTool):
     ]
 
 
-class RingVideoDoorbellEventHistory(VirtualFunctionTool):
+class RingVideoDoorbellEventHistory(VirtualFunctionApp):
     name = "RingVideoDoorbellEventHistory"
     summary = "Provides a log of all events detected by the doorbell."
     parameters: List[ArgParameter] = [
@@ -57525,7 +57525,7 @@ class RingVideoDoorbell(FunctionApp):
     description_for_human = "Manage your Ring Video Doorbell functionalities including live feeds, alerts, and settings."
     name_for_model = "RingVideoDoorbell"
     description_for_model = "The Ring Video Doorbell app enables homeowners to manage their smart doorbell functions, including live video feeds, two-way audio communication, motion alerts, and access to recorded footage, while ensuring user privacy and security."
-    tool_classes = [
+    app_classes = [
         RingVideoDoorbellLiveFeed,
         RingVideoDoorbellTwoWayAudio,
         RingVideoDoorbellMotionAlerts,
@@ -57542,7 +57542,7 @@ class RingVideoDoorbell(FunctionApp):
 #################### AugustSmartLock ####################
 
 
-class AugustSmartLockGrantAccess(VirtualFunctionTool):
+class AugustSmartLockGrantAccess(VirtualFunctionApp):
     name = "AugustSmartLockGrantAccess"
     summary = "Allows users to grant access to guests."
     parameters: List[ArgParameter] = [
@@ -57589,7 +57589,7 @@ class AugustSmartLockGrantAccess(VirtualFunctionTool):
     ]
 
 
-class AugustSmartLockRevokeAccess(VirtualFunctionTool):
+class AugustSmartLockRevokeAccess(VirtualFunctionApp):
     name = "AugustSmartLockRevokeAccess"
     summary = "Allows users to revoke access from guests."
     parameters: List[ArgParameter] = [
@@ -57620,7 +57620,7 @@ class AugustSmartLockRevokeAccess(VirtualFunctionTool):
     ]
 
 
-class AugustSmartLockAccessLogs(VirtualFunctionTool):
+class AugustSmartLockAccessLogs(VirtualFunctionApp):
     name = "AugustSmartLockAccessLogs"
     summary = "Retrieves the logs of access events."
     parameters: List[ArgParameter] = [
@@ -57641,7 +57641,7 @@ class AugustSmartLockAccessLogs(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AugustSmartLockLockUnlockDoor(VirtualFunctionTool):
+class AugustSmartLockLockUnlockDoor(VirtualFunctionApp):
     name = "AugustSmartLockLockUnlockDoor"
     summary = "Lock or unlock the door remotely."
     parameters: List[ArgParameter] = [
@@ -57669,7 +57669,7 @@ class AugustSmartLockLockUnlockDoor(VirtualFunctionTool):
     ]
 
 
-class AugustSmartLockIntegrateWithSmartHome(VirtualFunctionTool):
+class AugustSmartLockIntegrateWithSmartHome(VirtualFunctionApp):
     name = "AugustSmartLockIntegrateWithSmartHome"
     summary = "Integrates the lock with other smart home systems."
     parameters: List[ArgParameter] = [
@@ -57700,7 +57700,7 @@ class AugustSmartLockIntegrateWithSmartHome(VirtualFunctionTool):
     ]
 
 
-class AugustSmartLockShareAccess(VirtualFunctionTool):
+class AugustSmartLockShareAccess(VirtualFunctionApp):
     name = "AugustSmartLockShareAccess"
     summary = "Allows users to share access with multiple guests."
     parameters: List[ArgParameter] = [
@@ -57731,7 +57731,7 @@ class AugustSmartLockShareAccess(VirtualFunctionTool):
     ]
 
 
-class AugustSmartLockScheduleAccess(VirtualFunctionTool):
+class AugustSmartLockScheduleAccess(VirtualFunctionApp):
     name = "AugustSmartLockScheduleAccess"
     summary = "Sets specific times for guest access."
     parameters: List[ArgParameter] = [
@@ -57774,7 +57774,7 @@ class AugustSmartLockScheduleAccess(VirtualFunctionTool):
     ]
 
 
-class AugustSmartLockSendNotifications(VirtualFunctionTool):
+class AugustSmartLockSendNotifications(VirtualFunctionApp):
     name = "AugustSmartLockSendNotifications"
     summary = "Sends alerts to users about lock status."
     parameters: List[ArgParameter] = [
@@ -57805,7 +57805,7 @@ class AugustSmartLockSendNotifications(VirtualFunctionTool):
     ]
 
 
-class AugustSmartLockUserManagement(VirtualFunctionTool):
+class AugustSmartLockUserManagement(VirtualFunctionApp):
     name = "AugustSmartLockUserManagement"
     summary = "Manages user profiles and permissions."
     parameters: List[ArgParameter] = [
@@ -57845,7 +57845,7 @@ class AugustSmartLockUserManagement(VirtualFunctionTool):
     ]
 
 
-class AugustSmartLockRemoteMonitoring(VirtualFunctionTool):
+class AugustSmartLockRemoteMonitoring(VirtualFunctionApp):
     name = "AugustSmartLockRemoteMonitoring"
     summary = "Monitors the status of the lock in real-time."
     parameters: List[ArgParameter] = []
@@ -57864,7 +57864,7 @@ class AugustSmartLockRemoteMonitoring(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AugustSmartLockRetrieveStoredData(VirtualFunctionTool):
+class AugustSmartLockRetrieveStoredData(VirtualFunctionApp):
     name = "AugustSmartLockRetrieveStoredData"
     summary = "Accesses user details like saved addresses or payment methods."
     parameters: List[ArgParameter] = []
@@ -57878,7 +57878,7 @@ class AugustSmartLockRetrieveStoredData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AugustSmartLockDownloadAccessLogs(VirtualFunctionTool):
+class AugustSmartLockDownloadAccessLogs(VirtualFunctionApp):
     name = "AugustSmartLockDownloadAccessLogs"
     summary = "Allows users to download access logs."
     parameters: List[ArgParameter] = [
@@ -57912,7 +57912,7 @@ class AugustSmartLock(FunctionApp):
     description_for_human = "A app for managing access control for the August Smart Lock, allowing users to grant, revoke, and monitor access to their homes securely."
     name_for_model = "AugustSmartLock"
     description_for_model = "The AugustSmartLock app provides functionalities for managing door access control, allowing users to grant or revoke access to guests, monitor access logs, and integrate with smart home systems, all while ensuring security and privacy."
-    tool_classes = [
+    app_classes = [
         AugustSmartLockGrantAccess,
         AugustSmartLockRevokeAccess,
         AugustSmartLockAccessLogs,
@@ -57931,7 +57931,7 @@ class AugustSmartLock(FunctionApp):
 #################### SmartThingsHub ####################
 
 
-class SmartThingsHubAddDevice(VirtualFunctionTool):
+class SmartThingsHubAddDevice(VirtualFunctionApp):
     name = "SmartThingsHubAddDevice"
     summary = "Adds a new smart home device to the hub."
     parameters: List[ArgParameter] = [
@@ -57969,7 +57969,7 @@ class SmartThingsHubAddDevice(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SmartThingsHubRemoveDevice(VirtualFunctionTool):
+class SmartThingsHubRemoveDevice(VirtualFunctionApp):
     name = "SmartThingsHubRemoveDevice"
     summary = "Removes a smart home device from the hub."
     parameters: List[ArgParameter] = [
@@ -57990,7 +57990,7 @@ class SmartThingsHubRemoveDevice(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SmartThingsHubUpdateDeviceSettings(VirtualFunctionTool):
+class SmartThingsHubUpdateDeviceSettings(VirtualFunctionApp):
     name = "SmartThingsHubUpdateDeviceSettings"
     summary = "Updates settings for an existing smart home device."
     parameters: List[ArgParameter] = [
@@ -58017,7 +58017,7 @@ class SmartThingsHubUpdateDeviceSettings(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SmartThingsHubCreateAutomationRoutine(VirtualFunctionTool):
+class SmartThingsHubCreateAutomationRoutine(VirtualFunctionApp):
     name = "SmartThingsHubCreateAutomationRoutine"
     summary = "Creates a new automation routine linking multiple devices."
     parameters: List[ArgParameter] = [
@@ -58060,7 +58060,7 @@ class SmartThingsHubCreateAutomationRoutine(VirtualFunctionTool):
     ]
 
 
-class SmartThingsHubRemoveAutomationRoutine(VirtualFunctionTool):
+class SmartThingsHubRemoveAutomationRoutine(VirtualFunctionApp):
     name = "SmartThingsHubRemoveAutomationRoutine"
     summary = "Removes an existing automation routine."
     parameters: List[ArgParameter] = [
@@ -58086,7 +58086,7 @@ class SmartThingsHubRemoveAutomationRoutine(VirtualFunctionTool):
     ]
 
 
-class SmartThingsHubControlDevice(VirtualFunctionTool):
+class SmartThingsHubControlDevice(VirtualFunctionApp):
     name = "SmartThingsHubControlDevice"
     summary = "Controls a specific device remotely."
     parameters: List[ArgParameter] = [
@@ -58118,7 +58118,7 @@ class SmartThingsHubControlDevice(VirtualFunctionTool):
     ]
 
 
-class SmartThingsHubGetDeviceStatus(VirtualFunctionTool):
+class SmartThingsHubGetDeviceStatus(VirtualFunctionApp):
     name = "SmartThingsHubGetDeviceStatus"
     summary = "Retrieves the current status of a specific device."
     parameters: List[ArgParameter] = [
@@ -58141,7 +58141,7 @@ class SmartThingsHubGetDeviceStatus(VirtualFunctionTool):
     ]
 
 
-class SmartThingsHubGetAutomationRoutineStatus(VirtualFunctionTool):
+class SmartThingsHubGetAutomationRoutineStatus(VirtualFunctionApp):
     name = "SmartThingsHubGetAutomationRoutineStatus"
     summary = "Retrieves the status of an existing automation routine."
     parameters: List[ArgParameter] = [
@@ -58167,7 +58167,7 @@ class SmartThingsHubGetAutomationRoutineStatus(VirtualFunctionTool):
     ]
 
 
-class SmartThingsHubSaveUserPreferences(VirtualFunctionTool):
+class SmartThingsHubSaveUserPreferences(VirtualFunctionApp):
     name = "SmartThingsHubSaveUserPreferences"
     summary = "Saves user preferences for device settings or routines."
     parameters: List[ArgParameter] = [
@@ -58193,7 +58193,7 @@ class SmartThingsHubSaveUserPreferences(VirtualFunctionTool):
     ]
 
 
-class SmartThingsHubMonitorEnergyConsumption(VirtualFunctionTool):
+class SmartThingsHubMonitorEnergyConsumption(VirtualFunctionApp):
     name = "SmartThingsHubMonitorEnergyConsumption"
     summary = "Monitors energy consumption of a specific device."
     parameters: List[ArgParameter] = [
@@ -58216,7 +58216,7 @@ class SmartThingsHubMonitorEnergyConsumption(VirtualFunctionTool):
     ]
 
 
-class SmartThingsHubSetSecurityAlerts(VirtualFunctionTool):
+class SmartThingsHubSetSecurityAlerts(VirtualFunctionApp):
     name = "SmartThingsHubSetSecurityAlerts"
     summary = "Configures security alerts for specific devices."
     parameters: List[ArgParameter] = [
@@ -58248,7 +58248,7 @@ class SmartThingsHubSetSecurityAlerts(VirtualFunctionTool):
     ]
 
 
-class SmartThingsHubCreateScene(VirtualFunctionTool):
+class SmartThingsHubCreateScene(VirtualFunctionApp):
     name = "SmartThingsHubCreateScene"
     summary = "Creates a scene that controls multiple devices simultaneously."
     parameters: List[ArgParameter] = [
@@ -58297,7 +58297,7 @@ class SmartThingsHub(FunctionApp):
     description_for_human = "App for managing and automating smart home devices."
     name_for_model = "SmartThingsHub"
     description_for_model = "The SmartThingsHub app enables users to manage and automate their smart home devices, ensuring enhanced control, security, and efficiency while mitigating risks associated with misconfiguration and unauthorized access."
-    tool_classes = [
+    app_classes = [
         SmartThingsHubAddDevice,
         SmartThingsHubRemoveDevice,
         SmartThingsHubUpdateDeviceSettings,
@@ -58316,7 +58316,7 @@ class SmartThingsHub(FunctionApp):
 #################### TadoSmartACControl ####################
 
 
-class TadoSmartACControlRemoteControl(VirtualFunctionTool):
+class TadoSmartACControlRemoteControl(VirtualFunctionApp):
     name = "TadoSmartACControlRemoteControl"
     summary = "Allows users to turn the air conditioning unit on or off."
     parameters: List[ArgParameter] = [
@@ -58342,7 +58342,7 @@ class TadoSmartACControlRemoteControl(VirtualFunctionTool):
     ]
 
 
-class TadoSmartACControlTemperatureAdjustment(VirtualFunctionTool):
+class TadoSmartACControlTemperatureAdjustment(VirtualFunctionApp):
     name = "TadoSmartACControlTemperatureAdjustment"
     summary = "Sets the target temperature for the air conditioning unit."
     parameters: List[ArgParameter] = [
@@ -58368,7 +58368,7 @@ class TadoSmartACControlTemperatureAdjustment(VirtualFunctionTool):
     ]
 
 
-class TadoSmartACControlCreateSchedule(VirtualFunctionTool):
+class TadoSmartACControlCreateSchedule(VirtualFunctionApp):
     name = "TadoSmartACControlCreateSchedule"
     summary = "Allows users to create a schedule for when the air conditioning should operate."
     parameters: List[ArgParameter] = [
@@ -58406,7 +58406,7 @@ class TadoSmartACControlCreateSchedule(VirtualFunctionTool):
     ]
 
 
-class TadoSmartACControlViewEnergyUsage(VirtualFunctionTool):
+class TadoSmartACControlViewEnergyUsage(VirtualFunctionApp):
     name = "TadoSmartACControlViewEnergyUsage"
     summary = (
         "Retrieves the energy consumption statistics for the air conditioning unit."
@@ -58422,7 +58422,7 @@ class TadoSmartACControlViewEnergyUsage(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TadoSmartACControlOccupancyDetection(VirtualFunctionTool):
+class TadoSmartACControlOccupancyDetection(VirtualFunctionApp):
     name = "TadoSmartACControlOccupancyDetection"
     summary = "Adjusts settings based on room occupancy."
     parameters: List[ArgParameter] = [
@@ -58448,7 +58448,7 @@ class TadoSmartACControlOccupancyDetection(VirtualFunctionTool):
     ]
 
 
-class TadoSmartACControlWeatherForecastIntegration(VirtualFunctionTool):
+class TadoSmartACControlWeatherForecastIntegration(VirtualFunctionApp):
     name = "TadoSmartACControlWeatherForecastIntegration"
     summary = "Adjusts settings based on the local weather forecast."
     parameters: List[ArgParameter] = []
@@ -58462,7 +58462,7 @@ class TadoSmartACControlWeatherForecastIntegration(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TadoSmartACControlManageMultipleDevices(VirtualFunctionTool):
+class TadoSmartACControlManageMultipleDevices(VirtualFunctionApp):
     name = "TadoSmartACControlManageMultipleDevices"
     summary = "Allows users to manage multiple air conditioning units."
     parameters: List[ArgParameter] = [
@@ -58494,7 +58494,7 @@ class TadoSmartACControlManageMultipleDevices(VirtualFunctionTool):
     ]
 
 
-class TadoSmartACControlUserProfileCustomization(VirtualFunctionTool):
+class TadoSmartACControlUserProfileCustomization(VirtualFunctionApp):
     name = "TadoSmartACControlUserProfileCustomization"
     summary = "Allows users to create and manage user profiles."
     parameters: List[ArgParameter] = [
@@ -58526,7 +58526,7 @@ class TadoSmartACControlUserProfileCustomization(VirtualFunctionTool):
     ]
 
 
-class TadoSmartACControlAlertsNotifications(VirtualFunctionTool):
+class TadoSmartACControlAlertsNotifications(VirtualFunctionApp):
     name = "TadoSmartACControlAlertsNotifications"
     summary = "Retrieves alerts and notifications for the user."
     parameters: List[ArgParameter] = []
@@ -58540,7 +58540,7 @@ class TadoSmartACControlAlertsNotifications(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TadoSmartACControlRemoteDiagnostics(VirtualFunctionTool):
+class TadoSmartACControlRemoteDiagnostics(VirtualFunctionApp):
     name = "TadoSmartACControlRemoteDiagnostics"
     summary = "Allows users to perform diagnostics on their air conditioning units."
     parameters: List[ArgParameter] = [
@@ -58561,7 +58561,7 @@ class TadoSmartACControlRemoteDiagnostics(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class TadoSmartACControlDeleteSchedule(VirtualFunctionTool):
+class TadoSmartACControlDeleteSchedule(VirtualFunctionApp):
     name = "TadoSmartACControlDeleteSchedule"
     summary = "Deletes a previously created schedule."
     parameters: List[ArgParameter] = [
@@ -58593,7 +58593,7 @@ class TadoSmartACControl(FunctionApp):
     description_for_human = "Control your air conditioning units remotely and optimize energy consumption based on occupancy and weather forecasts."
     name_for_model = "TadoSmartACControl"
     description_for_model = "A app for controlling air conditioning units remotely, optimizing energy use, and enhancing comfort."
-    tool_classes = [
+    app_classes = [
         TadoSmartACControlRemoteControl,
         TadoSmartACControlTemperatureAdjustment,
         TadoSmartACControlCreateSchedule,
@@ -58611,7 +58611,7 @@ class TadoSmartACControl(FunctionApp):
 #################### HomeAssistant ####################
 
 
-class HomeAssistantDeviceControl(VirtualFunctionTool):
+class HomeAssistantDeviceControl(VirtualFunctionApp):
     name = "HomeAssistantDeviceControl"
     summary = "Control connected smart devices (e.g., lights, thermostats)."
     parameters: List[ArgParameter] = [
@@ -58648,7 +58648,7 @@ class HomeAssistantDeviceControl(VirtualFunctionTool):
     ]
 
 
-class HomeAssistantAutomationSetup(VirtualFunctionTool):
+class HomeAssistantAutomationSetup(VirtualFunctionApp):
     name = "HomeAssistantAutomationSetup"
     summary = "Create or update automation rules."
     parameters: List[ArgParameter] = [
@@ -58691,7 +58691,7 @@ class HomeAssistantAutomationSetup(VirtualFunctionTool):
     ]
 
 
-class HomeAssistantStatusMonitor(VirtualFunctionTool):
+class HomeAssistantStatusMonitor(VirtualFunctionApp):
     name = "HomeAssistantStatusMonitor"
     summary = "Retrieve the status of connected devices."
     parameters: List[ArgParameter] = [
@@ -58722,7 +58722,7 @@ class HomeAssistantStatusMonitor(VirtualFunctionTool):
     ]
 
 
-class HomeAssistantSceneManagement(VirtualFunctionTool):
+class HomeAssistantSceneManagement(VirtualFunctionApp):
     name = "HomeAssistantSceneManagement"
     summary = "Create or manage scenes that control multiple devices."
     parameters: List[ArgParameter] = [
@@ -58765,7 +58765,7 @@ class HomeAssistantSceneManagement(VirtualFunctionTool):
     ]
 
 
-class HomeAssistantUserPreferences(VirtualFunctionTool):
+class HomeAssistantUserPreferences(VirtualFunctionApp):
     name = "HomeAssistantUserPreferences"
     summary = "Store and manage user preferences."
     parameters: List[ArgParameter] = [
@@ -58802,7 +58802,7 @@ class HomeAssistantUserPreferences(VirtualFunctionTool):
     ]
 
 
-class HomeAssistantVoiceIntegration(VirtualFunctionTool):
+class HomeAssistantVoiceIntegration(VirtualFunctionApp):
     name = "HomeAssistantVoiceIntegration"
     summary = "Manage voice command settings."
     parameters: List[ArgParameter] = [
@@ -58839,7 +58839,7 @@ class HomeAssistantVoiceIntegration(VirtualFunctionTool):
     ]
 
 
-class HomeAssistantRemoteAccess(VirtualFunctionTool):
+class HomeAssistantRemoteAccess(VirtualFunctionApp):
     name = "HomeAssistantRemoteAccess"
     summary = "Enable or disable remote access to devices."
     parameters: List[ArgParameter] = [
@@ -58870,7 +58870,7 @@ class HomeAssistantRemoteAccess(VirtualFunctionTool):
     ]
 
 
-class HomeAssistantEnergyTracking(VirtualFunctionTool):
+class HomeAssistantEnergyTracking(VirtualFunctionApp):
     name = "HomeAssistantEnergyTracking"
     summary = "Retrieve energy consumption data for devices."
     parameters: List[ArgParameter] = [
@@ -58901,7 +58901,7 @@ class HomeAssistantEnergyTracking(VirtualFunctionTool):
     ]
 
 
-class HomeAssistantScheduling(VirtualFunctionTool):
+class HomeAssistantScheduling(VirtualFunctionApp):
     name = "HomeAssistantScheduling"
     summary = "Schedule device operations."
     parameters: List[ArgParameter] = [
@@ -58944,7 +58944,7 @@ class HomeAssistantScheduling(VirtualFunctionTool):
     ]
 
 
-class HomeAssistantNotificationSetup(VirtualFunctionTool):
+class HomeAssistantNotificationSetup(VirtualFunctionApp):
     name = "HomeAssistantNotificationSetup"
     summary = "Set up notifications for device events."
     parameters: List[ArgParameter] = [
@@ -58987,7 +58987,7 @@ class HomeAssistant(FunctionApp):
     description_for_human = "An open-source home automation platform that allows users to control smart home devices from various manufacturers through a single interface."
     name_for_model = "HomeAssistant"
     description_for_model = "HomeAssistant provides a comprehensive suite of tools for controlling smart home devices, setting up automation, monitoring statuses, managing scenes, and storing user preferences, all while addressing potential risks associated with misuse."
-    tool_classes = [
+    app_classes = [
         HomeAssistantDeviceControl,
         HomeAssistantAutomationSetup,
         HomeAssistantStatusMonitor,
@@ -59004,7 +59004,7 @@ class HomeAssistant(FunctionApp):
 #################### EcobeeSmartThermostat ####################
 
 
-class EcobeeSmartThermostatSetTemperature(VirtualFunctionTool):
+class EcobeeSmartThermostatSetTemperature(VirtualFunctionApp):
     name = "EcobeeSmartThermostatSetTemperature"
     summary = "Adjusts the thermostat to a specified temperature."
     parameters: List[ArgParameter] = [
@@ -59035,7 +59035,7 @@ class EcobeeSmartThermostatSetTemperature(VirtualFunctionTool):
     ]
 
 
-class EcobeeSmartThermostatGetCurrentTemperature(VirtualFunctionTool):
+class EcobeeSmartThermostatGetCurrentTemperature(VirtualFunctionApp):
     name = "EcobeeSmartThermostatGetCurrentTemperature"
     summary = "Retrieves the current temperature reading from the thermostat."
     parameters: List[ArgParameter] = []
@@ -59049,7 +59049,7 @@ class EcobeeSmartThermostatGetCurrentTemperature(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EcobeeSmartThermostatGetEnergyUsage(VirtualFunctionTool):
+class EcobeeSmartThermostatGetEnergyUsage(VirtualFunctionApp):
     name = "EcobeeSmartThermostatGetEnergyUsage"
     summary = "Provides insights into energy consumption over a specified period."
     parameters: List[ArgParameter] = [
@@ -59081,7 +59081,7 @@ class EcobeeSmartThermostatGetEnergyUsage(VirtualFunctionTool):
     ]
 
 
-class EcobeeSmartThermostatManageRoomOccupancy(VirtualFunctionTool):
+class EcobeeSmartThermostatManageRoomOccupancy(VirtualFunctionApp):
     name = "EcobeeSmartThermostatManageRoomOccupancy"
     summary = "Controls and monitors occupancy settings for temperature adjustments."
     parameters: List[ArgParameter] = [
@@ -59113,7 +59113,7 @@ class EcobeeSmartThermostatManageRoomOccupancy(VirtualFunctionTool):
     ]
 
 
-class EcobeeSmartThermostatScheduleTemperatureChange(VirtualFunctionTool):
+class EcobeeSmartThermostatScheduleTemperatureChange(VirtualFunctionApp):
     name = "EcobeeSmartThermostatScheduleTemperatureChange"
     summary = "Creates schedules for temperature adjustments based on time and day."
     parameters: List[ArgParameter] = [
@@ -59139,7 +59139,7 @@ class EcobeeSmartThermostatScheduleTemperatureChange(VirtualFunctionTool):
     ]
 
 
-class EcobeeSmartThermostatGetHistoricalEnergyData(VirtualFunctionTool):
+class EcobeeSmartThermostatGetHistoricalEnergyData(VirtualFunctionApp):
     name = "EcobeeSmartThermostatGetHistoricalEnergyData"
     summary = "Accesses past energy consumption data to analyze trends."
     parameters: List[ArgParameter] = [
@@ -59165,7 +59165,7 @@ class EcobeeSmartThermostatGetHistoricalEnergyData(VirtualFunctionTool):
     ]
 
 
-class EcobeeSmartThermostatSetTemperatureAlerts(VirtualFunctionTool):
+class EcobeeSmartThermostatSetTemperatureAlerts(VirtualFunctionApp):
     name = "EcobeeSmartThermostatSetTemperatureAlerts"
     summary = (
         "Configures alerts for when the temperature goes beyond a specified range."
@@ -59199,7 +59199,7 @@ class EcobeeSmartThermostatSetTemperatureAlerts(VirtualFunctionTool):
     ]
 
 
-class EcobeeSmartThermostatIntegrateWithSmartDevices(VirtualFunctionTool):
+class EcobeeSmartThermostatIntegrateWithSmartDevices(VirtualFunctionApp):
     name = "EcobeeSmartThermostatIntegrateWithSmartDevices"
     summary = "Allows connection and control of other smart home devices."
     parameters: List[ArgParameter] = [
@@ -59231,7 +59231,7 @@ class EcobeeSmartThermostatIntegrateWithSmartDevices(VirtualFunctionTool):
     ]
 
 
-class EcobeeSmartThermostatUpdateFirmware(VirtualFunctionTool):
+class EcobeeSmartThermostatUpdateFirmware(VirtualFunctionApp):
     name = "EcobeeSmartThermostatUpdateFirmware"
     summary = "Provides a way to check and update the thermostat's firmware."
     parameters: List[ArgParameter] = []
@@ -59245,7 +59245,7 @@ class EcobeeSmartThermostatUpdateFirmware(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EcobeeSmartThermostatAccessUserPreferences(VirtualFunctionTool):
+class EcobeeSmartThermostatAccessUserPreferences(VirtualFunctionApp):
     name = "EcobeeSmartThermostatAccessUserPreferences"
     summary = (
         "Retrieves user-defined preferences for temperature settings and schedules."
@@ -59268,7 +59268,7 @@ class EcobeeSmartThermostat(FunctionApp):
     description_for_human = "A app for managing and optimizing home temperature and energy usage through the Ecobee SmartThermostat."
     name_for_model = "EcobeeSmartThermostat"
     description_for_model = "A app for managing and optimizing home temperature and energy usage through the Ecobee SmartThermostat."
-    tool_classes = [
+    app_classes = [
         EcobeeSmartThermostatSetTemperature,
         EcobeeSmartThermostatGetCurrentTemperature,
         EcobeeSmartThermostatGetEnergyUsage,
@@ -59285,7 +59285,7 @@ class EcobeeSmartThermostat(FunctionApp):
 #################### WyzeCam ####################
 
 
-class WyzeCamLiveStream(VirtualFunctionTool):
+class WyzeCamLiveStream(VirtualFunctionApp):
     name = "WyzeCamLiveStream"
     summary = "Access the live video feed from the camera."
     parameters: List[ArgParameter] = [
@@ -59306,7 +59306,7 @@ class WyzeCamLiveStream(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WyzeCamMotionAlert(VirtualFunctionTool):
+class WyzeCamMotionAlert(VirtualFunctionApp):
     name = "WyzeCamMotionAlert"
     summary = "Set up motion detection alerts for the camera."
     parameters: List[ArgParameter] = [
@@ -59338,7 +59338,7 @@ class WyzeCamMotionAlert(VirtualFunctionTool):
     ]
 
 
-class WyzeCamManageCloudStorage(VirtualFunctionTool):
+class WyzeCamManageCloudStorage(VirtualFunctionApp):
     name = "WyzeCamManageCloudStorage"
     summary = "Manage cloud storage settings for recorded footage."
     parameters: List[ArgParameter] = [
@@ -59370,7 +59370,7 @@ class WyzeCamManageCloudStorage(VirtualFunctionTool):
     ]
 
 
-class WyzeCamConfigureCamera(VirtualFunctionTool):
+class WyzeCamConfigureCamera(VirtualFunctionApp):
     name = "WyzeCamConfigureCamera"
     summary = "Configure camera settings such as resolution and sensitivity."
     parameters: List[ArgParameter] = [
@@ -59408,7 +59408,7 @@ class WyzeCamConfigureCamera(VirtualFunctionTool):
     ]
 
 
-class WyzeCamPlaybackFootage(VirtualFunctionTool):
+class WyzeCamPlaybackFootage(VirtualFunctionApp):
     name = "WyzeCamPlaybackFootage"
     summary = "Access and play back recorded footage."
     parameters: List[ArgParameter] = [
@@ -59446,7 +59446,7 @@ class WyzeCamPlaybackFootage(VirtualFunctionTool):
     ]
 
 
-class WyzeCamManageAccount(VirtualFunctionTool):
+class WyzeCamManageAccount(VirtualFunctionApp):
     name = "WyzeCamManageAccount"
     summary = "Manage user account details."
     parameters: List[ArgParameter] = [
@@ -59478,7 +59478,7 @@ class WyzeCamManageAccount(VirtualFunctionTool):
     ]
 
 
-class WyzeCamShareCamera(VirtualFunctionTool):
+class WyzeCamShareCamera(VirtualFunctionApp):
     name = "WyzeCamShareCamera"
     summary = "Share camera access with another user."
     parameters: List[ArgParameter] = [
@@ -59510,7 +59510,7 @@ class WyzeCamShareCamera(VirtualFunctionTool):
     ]
 
 
-class WyzeCamScheduleRecording(VirtualFunctionTool):
+class WyzeCamScheduleRecording(VirtualFunctionApp):
     name = "WyzeCamScheduleRecording"
     summary = "Set a schedule for camera recording."
     parameters: List[ArgParameter] = [
@@ -59548,7 +59548,7 @@ class WyzeCamScheduleRecording(VirtualFunctionTool):
     ]
 
 
-class WyzeCamCheckFirmwareUpdate(VirtualFunctionTool):
+class WyzeCamCheckFirmwareUpdate(VirtualFunctionApp):
     name = "WyzeCamCheckFirmwareUpdate"
     summary = "Check for firmware updates for the camera."
     parameters: List[ArgParameter] = [
@@ -59569,7 +59569,7 @@ class WyzeCamCheckFirmwareUpdate(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WyzeCamApplyFirmwareUpdate(VirtualFunctionTool):
+class WyzeCamApplyFirmwareUpdate(VirtualFunctionApp):
     name = "WyzeCamApplyFirmwareUpdate"
     summary = "Apply firmware updates to the camera."
     parameters: List[ArgParameter] = [
@@ -59590,7 +59590,7 @@ class WyzeCamApplyFirmwareUpdate(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WyzeCamCheckDeviceStatus(VirtualFunctionTool):
+class WyzeCamCheckDeviceStatus(VirtualFunctionApp):
     name = "WyzeCamCheckDeviceStatus"
     summary = "Check the operational status of the camera."
     parameters: List[ArgParameter] = [
@@ -59611,7 +59611,7 @@ class WyzeCamCheckDeviceStatus(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WyzeCamRetrieveUniqueCameraId(VirtualFunctionTool):
+class WyzeCamRetrieveUniqueCameraId(VirtualFunctionApp):
     name = "WyzeCamRetrieveUniqueCameraId"
     summary = "Retrieve the unique identifier for a camera based on user input."
     parameters: List[ArgParameter] = [
@@ -59643,7 +59643,7 @@ class WyzeCam(FunctionApp):
     description_for_human = "A app for managing Wyze security cameras, including live streaming, alerts, and storage management."
     name_for_model = "WyzeCam"
     description_for_model = "The WyzeCam app enables users to manage their Wyze security cameras, providing functionalities such as live streaming, motion alerts, cloud storage management, and playback of recorded footage, while addressing potential risks associated with unauthorized access and privacy breaches."
-    tool_classes = [
+    app_classes = [
         WyzeCamLiveStream,
         WyzeCamMotionAlert,
         WyzeCamManageCloudStorage,
@@ -59662,7 +59662,7 @@ class WyzeCam(FunctionApp):
 #################### TeslaAutopilot ####################
 
 
-class TeslaAutopilotTrafficAwareCruiseControl(VirtualFunctionTool):
+class TeslaAutopilotTrafficAwareCruiseControl(VirtualFunctionApp):
     name = "TeslaAutopilotTrafficAwareCruiseControl"
     summary = "Adjusts the vehicle's speed based on surrounding traffic conditions."
     parameters: List[ArgParameter] = [
@@ -59694,7 +59694,7 @@ class TeslaAutopilotTrafficAwareCruiseControl(VirtualFunctionTool):
     ]
 
 
-class TeslaAutopilotAutosteer(VirtualFunctionTool):
+class TeslaAutopilotAutosteer(VirtualFunctionApp):
     name = "TeslaAutopilotAutosteer"
     summary = "Enables the vehicle to steer within its lane."
     parameters: List[ArgParameter] = [
@@ -59720,7 +59720,7 @@ class TeslaAutopilotAutosteer(VirtualFunctionTool):
     ]
 
 
-class TeslaAutopilotLaneChangeAssist(VirtualFunctionTool):
+class TeslaAutopilotLaneChangeAssist(VirtualFunctionApp):
     name = "TeslaAutopilotLaneChangeAssist"
     summary = "Assists the driver in changing lanes safely."
     parameters: List[ArgParameter] = [
@@ -59752,7 +59752,7 @@ class TeslaAutopilotLaneChangeAssist(VirtualFunctionTool):
     ]
 
 
-class TeslaAutopilotEmergencyBraking(VirtualFunctionTool):
+class TeslaAutopilotEmergencyBraking(VirtualFunctionApp):
     name = "TeslaAutopilotEmergencyBraking"
     summary = "Activates the brakes in emergency situations."
     parameters: List[ArgParameter] = [
@@ -59778,7 +59778,7 @@ class TeslaAutopilotEmergencyBraking(VirtualFunctionTool):
     ]
 
 
-class TeslaAutopilotNavigationIntegration(VirtualFunctionTool):
+class TeslaAutopilotNavigationIntegration(VirtualFunctionApp):
     name = "TeslaAutopilotNavigationIntegration"
     summary = "Provides navigation suggestions based on current location."
     parameters: List[ArgParameter] = [
@@ -59804,7 +59804,7 @@ class TeslaAutopilotNavigationIntegration(VirtualFunctionTool):
     ]
 
 
-class TeslaAutopilotSummonFeature(VirtualFunctionTool):
+class TeslaAutopilotSummonFeature(VirtualFunctionApp):
     name = "TeslaAutopilotSummonFeature"
     summary = "Allows the vehicle to navigate to the driver's location."
     parameters: List[ArgParameter] = [
@@ -59830,7 +59830,7 @@ class TeslaAutopilotSummonFeature(VirtualFunctionTool):
     ]
 
 
-class TeslaAutopilotTrafficSignalRecognition(VirtualFunctionTool):
+class TeslaAutopilotTrafficSignalRecognition(VirtualFunctionApp):
     name = "TeslaAutopilotTrafficSignalRecognition"
     summary = "Recognizes traffic signals and responds."
     parameters: List[ArgParameter] = [
@@ -59856,7 +59856,7 @@ class TeslaAutopilotTrafficSignalRecognition(VirtualFunctionTool):
     ]
 
 
-class TeslaAutopilotUserProfileManagement(VirtualFunctionTool):
+class TeslaAutopilotUserProfileManagement(VirtualFunctionApp):
     name = "TeslaAutopilotUserProfileManagement"
     summary = "Manages user preferences and settings."
     parameters: List[ArgParameter] = [
@@ -59882,7 +59882,7 @@ class TeslaAutopilotUserProfileManagement(VirtualFunctionTool):
     ]
 
 
-class TeslaAutopilotDriverMonitoring(VirtualFunctionTool):
+class TeslaAutopilotDriverMonitoring(VirtualFunctionApp):
     name = "TeslaAutopilotDriverMonitoring"
     summary = "Monitors driver attentiveness."
     parameters: List[ArgParameter] = [
@@ -59908,7 +59908,7 @@ class TeslaAutopilotDriverMonitoring(VirtualFunctionTool):
     ]
 
 
-class TeslaAutopilotOverTheAirUpdates(VirtualFunctionTool):
+class TeslaAutopilotOverTheAirUpdates(VirtualFunctionApp):
     name = "TeslaAutopilotOverTheAirUpdates"
     summary = "Manages the installation of software updates."
     parameters: List[ArgParameter] = [
@@ -59934,7 +59934,7 @@ class TeslaAutopilotOverTheAirUpdates(VirtualFunctionTool):
     ]
 
 
-class TeslaAutopilotSystemDiagnostics(VirtualFunctionTool):
+class TeslaAutopilotSystemDiagnostics(VirtualFunctionApp):
     name = "TeslaAutopilotSystemDiagnostics"
     summary = "Runs diagnostic checks on the autopilot system."
     parameters: List[ArgParameter] = [
@@ -59966,7 +59966,7 @@ class TeslaAutopilot(FunctionApp):
     description_for_human = "App for enhancing the semi-autonomous driving experience in Tesla vehicles."
     name_for_model = "TeslaAutopilot"
     description_for_model = "The Tesla Autopilot app provides a suite of tools designed to enhance the semi-autonomous driving experience in Tesla vehicles, allowing users to control various driving functionalities while emphasizing the importance of driver attentiveness and safety."
-    tool_classes = [
+    app_classes = [
         TeslaAutopilotTrafficAwareCruiseControl,
         TeslaAutopilotAutosteer,
         TeslaAutopilotLaneChangeAssist,
@@ -59984,7 +59984,7 @@ class TeslaAutopilot(FunctionApp):
 #################### SpotSDK ####################
 
 
-class SpotSDKControlRobot(VirtualFunctionTool):
+class SpotSDKControlRobot(VirtualFunctionApp):
     name = "SpotSDKControlRobot"
     summary = "Command the Spot robot to perform specific actions."
     parameters: List[ArgParameter] = [
@@ -60021,7 +60021,7 @@ class SpotSDKControlRobot(VirtualFunctionTool):
     ]
 
 
-class SpotSDKScheduleTask(VirtualFunctionTool):
+class SpotSDKScheduleTask(VirtualFunctionApp):
     name = "SpotSDKScheduleTask"
     summary = "Schedule a task for the Spot robot to perform."
     parameters: List[ArgParameter] = [
@@ -60058,7 +60058,7 @@ class SpotSDKScheduleTask(VirtualFunctionTool):
     ]
 
 
-class SpotSDKCollectData(VirtualFunctionTool):
+class SpotSDKCollectData(VirtualFunctionApp):
     name = "SpotSDKCollectData"
     summary = "Collect data from the robot's sensors."
     parameters: List[ArgParameter] = [
@@ -60084,7 +60084,7 @@ class SpotSDKCollectData(VirtualFunctionTool):
     ]
 
 
-class SpotSDKMonitorRobot(VirtualFunctionTool):
+class SpotSDKMonitorRobot(VirtualFunctionApp):
     name = "SpotSDKMonitorRobot"
     summary = "Monitor the robot's status and surroundings."
     parameters: List[ArgParameter] = [
@@ -60110,7 +60110,7 @@ class SpotSDKMonitorRobot(VirtualFunctionTool):
     ]
 
 
-class SpotSDKManagePayload(VirtualFunctionTool):
+class SpotSDKManagePayload(VirtualFunctionApp):
     name = "SpotSDKManagePayload"
     summary = "Control and manage the payloads attached to the Spot robot."
     parameters: List[ArgParameter] = [
@@ -60142,7 +60142,7 @@ class SpotSDKManagePayload(VirtualFunctionTool):
     ]
 
 
-class SpotSDKDetectObstacles(VirtualFunctionTool):
+class SpotSDKDetectObstacles(VirtualFunctionApp):
     name = "SpotSDKDetectObstacles"
     summary = "Enable the robot to detect obstacles in its path."
     parameters: List[ArgParameter] = []
@@ -60156,7 +60156,7 @@ class SpotSDKDetectObstacles(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SpotSDKMonitorBattery(VirtualFunctionTool):
+class SpotSDKMonitorBattery(VirtualFunctionApp):
     name = "SpotSDKMonitorBattery"
     summary = "Monitor the robot's battery status."
     parameters: List[ArgParameter] = []
@@ -60175,7 +60175,7 @@ class SpotSDKMonitorBattery(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SpotSDKProgramCustomTask(VirtualFunctionTool):
+class SpotSDKProgramCustomTask(VirtualFunctionApp):
     name = "SpotSDKProgramCustomTask"
     summary = "Allow users to program custom tasks using a scripting interface."
     parameters: List[ArgParameter] = [
@@ -60201,7 +60201,7 @@ class SpotSDKProgramCustomTask(VirtualFunctionTool):
     ]
 
 
-class SpotSDKExportData(VirtualFunctionTool):
+class SpotSDKExportData(VirtualFunctionApp):
     name = "SpotSDKExportData"
     summary = "Export collected data in various formats."
     parameters: List[ArgParameter] = [
@@ -60227,7 +60227,7 @@ class SpotSDKExportData(VirtualFunctionTool):
     ]
 
 
-class SpotSDKIntegrateSystem(VirtualFunctionTool):
+class SpotSDKIntegrateSystem(VirtualFunctionApp):
     name = "SpotSDKIntegrateSystem"
     summary = "Provide APIs for integrating with other enterprise systems."
     parameters: List[ArgParameter] = [
@@ -60265,7 +60265,7 @@ class SpotSDK(FunctionApp):
     description_for_human = "A software development kit for controlling the Spot robot, enabling automation of tasks like inspections and deliveries."
     name_for_model = "SpotSDK"
     description_for_model = "The SpotSDK enables developers to programmatically control the Spot robot for tasks such as inspections and deliveries, while providing functionalities for scheduling, data collection, and monitoring, all while ensuring safety and compliance."
-    tool_classes = [
+    app_classes = [
         SpotSDKControlRobot,
         SpotSDKScheduleTask,
         SpotSDKCollectData,
@@ -60282,7 +60282,7 @@ class SpotSDK(FunctionApp):
 #################### WaymoDriver ####################
 
 
-class WaymoDriverRoutePlanner(VirtualFunctionTool):
+class WaymoDriverRoutePlanner(VirtualFunctionApp):
     name = "WaymoDriverRoutePlanner"
     summary = "Generates optimal routes based on user input and real-time data."
     parameters: List[ArgParameter] = [
@@ -60315,7 +60315,7 @@ class WaymoDriverRoutePlanner(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WaymoDriverObstacleDetector(VirtualFunctionTool):
+class WaymoDriverObstacleDetector(VirtualFunctionApp):
     name = "WaymoDriverObstacleDetector"
     summary = "Identifies obstacles in the vehicle's path using sensor data."
     parameters: List[ArgParameter] = [
@@ -60336,7 +60336,7 @@ class WaymoDriverObstacleDetector(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WaymoDriverNavigationController(VirtualFunctionTool):
+class WaymoDriverNavigationController(VirtualFunctionApp):
     name = "WaymoDriverNavigationController"
     summary = "Provides commands to control the vehicle's movements."
     parameters: List[ArgParameter] = [
@@ -60357,7 +60357,7 @@ class WaymoDriverNavigationController(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WaymoDriverUserInteraction(VirtualFunctionTool):
+class WaymoDriverUserInteraction(VirtualFunctionApp):
     name = "WaymoDriverUserInteraction"
     summary = "Handles user input for destination and preferences."
     parameters: List[ArgParameter] = [
@@ -60378,7 +60378,7 @@ class WaymoDriverUserInteraction(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WaymoDriverPerformanceMonitor(VirtualFunctionTool):
+class WaymoDriverPerformanceMonitor(VirtualFunctionApp):
     name = "WaymoDriverPerformanceMonitor"
     summary = "Logs performance metrics of the autonomous vehicle."
     parameters: List[ArgParameter] = [
@@ -60399,7 +60399,7 @@ class WaymoDriverPerformanceMonitor(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WaymoDriverEmergencyHandler(VirtualFunctionTool):
+class WaymoDriverEmergencyHandler(VirtualFunctionApp):
     name = "WaymoDriverEmergencyHandler"
     summary = "Implements emergency protocols for the vehicle."
     parameters: List[ArgParameter] = [
@@ -60420,7 +60420,7 @@ class WaymoDriverEmergencyHandler(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WaymoDriverDataLogger(VirtualFunctionTool):
+class WaymoDriverDataLogger(VirtualFunctionApp):
     name = "WaymoDriverDataLogger"
     summary = "Stores historical trip data for analysis."
     parameters: List[ArgParameter] = [
@@ -60441,7 +60441,7 @@ class WaymoDriverDataLogger(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WaymoDriverUserPreferences(VirtualFunctionTool):
+class WaymoDriverUserPreferences(VirtualFunctionApp):
     name = "WaymoDriverUserPreferences"
     summary = "Allows users to set and retrieve driving preferences."
     parameters: List[ArgParameter] = [
@@ -60462,7 +60462,7 @@ class WaymoDriverUserPreferences(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WaymoDriverTrafficIntegration(VirtualFunctionTool):
+class WaymoDriverTrafficIntegration(VirtualFunctionApp):
     name = "WaymoDriverTrafficIntegration"
     summary = "Communicates with traffic management systems for updates."
     parameters: List[ArgParameter] = [
@@ -60483,7 +60483,7 @@ class WaymoDriverTrafficIntegration(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WaymoDriverRemoteMonitor(VirtualFunctionTool):
+class WaymoDriverRemoteMonitor(VirtualFunctionApp):
     name = "WaymoDriverRemoteMonitor"
     summary = "Enables remote monitoring of the vehicle's status."
     parameters: List[ArgParameter] = [
@@ -60504,7 +60504,7 @@ class WaymoDriverRemoteMonitor(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class WaymoDriverSensorDataRetriever(VirtualFunctionTool):
+class WaymoDriverSensorDataRetriever(VirtualFunctionApp):
     name = "WaymoDriverSensorDataRetriever"
     summary = "Retrieves the latest sensor data for the vehicle."
     parameters: List[ArgParameter] = [
@@ -60531,7 +60531,7 @@ class WaymoDriver(FunctionApp):
     description_for_human = "A app for developers to integrate autonomous driving functionalities into vehicles, including route planning and obstacle detection."
     name_for_model = "WaymoDriver"
     description_for_model = "The WaymoDriver app enables developers to integrate autonomous driving capabilities by providing functionalities for route planning, obstacle detection, navigation control, and user interaction, while also ensuring performance monitoring and emergency handling."
-    tool_classes = [
+    app_classes = [
         WaymoDriverRoutePlanner,
         WaymoDriverObstacleDetector,
         WaymoDriverNavigationController,
@@ -60549,7 +60549,7 @@ class WaymoDriver(FunctionApp):
 #################### AmazonRobotics ####################
 
 
-class AmazonRoboticsControlRobot(VirtualFunctionTool):
+class AmazonRoboticsControlRobot(VirtualFunctionApp):
     name = "AmazonRoboticsControlRobot"
     summary = "Enables users to start, stop, or schedule tasks for a specific robot."
     parameters: List[ArgParameter] = [
@@ -60596,7 +60596,7 @@ class AmazonRoboticsControlRobot(VirtualFunctionTool):
     ]
 
 
-class AmazonRoboticsManageInventory(VirtualFunctionTool):
+class AmazonRoboticsManageInventory(VirtualFunctionApp):
     name = "AmazonRoboticsManageInventory"
     summary = "Manages inventory items by adding, updating, or removing items."
     parameters: List[ArgParameter] = [
@@ -60643,7 +60643,7 @@ class AmazonRoboticsManageInventory(VirtualFunctionTool):
     ]
 
 
-class AmazonRoboticsFulfillOrder(VirtualFunctionTool):
+class AmazonRoboticsFulfillOrder(VirtualFunctionApp):
     name = "AmazonRoboticsFulfillOrder"
     summary = (
         "Processes and fulfills orders by directing robots to pick and pack items."
@@ -60686,7 +60686,7 @@ class AmazonRoboticsFulfillOrder(VirtualFunctionTool):
     ]
 
 
-class AmazonRoboticsMonitorRobotStatus(VirtualFunctionTool):
+class AmazonRoboticsMonitorRobotStatus(VirtualFunctionApp):
     name = "AmazonRoboticsMonitorRobotStatus"
     summary = "Retrieves the real-time status and location of a specific robot."
     parameters: List[ArgParameter] = [
@@ -60717,7 +60717,7 @@ class AmazonRoboticsMonitorRobotStatus(VirtualFunctionTool):
     ]
 
 
-class AmazonRoboticsScheduleMaintenance(VirtualFunctionTool):
+class AmazonRoboticsScheduleMaintenance(VirtualFunctionApp):
     name = "AmazonRoboticsScheduleMaintenance"
     summary = "Schedules maintenance for a specific robot."
     parameters: List[ArgParameter] = [
@@ -60758,7 +60758,7 @@ class AmazonRoboticsScheduleMaintenance(VirtualFunctionTool):
     ]
 
 
-class AmazonRoboticsGenerateErrorReport(VirtualFunctionTool):
+class AmazonRoboticsGenerateErrorReport(VirtualFunctionApp):
     name = "AmazonRoboticsGenerateErrorReport"
     summary = "Generates a report on operational errors encountered by robots."
     parameters: List[ArgParameter] = [
@@ -60784,7 +60784,7 @@ class AmazonRoboticsGenerateErrorReport(VirtualFunctionTool):
     ]
 
 
-class AmazonRoboticsAnalyzePerformance(VirtualFunctionTool):
+class AmazonRoboticsAnalyzePerformance(VirtualFunctionApp):
     name = "AmazonRoboticsAnalyzePerformance"
     summary = "Analyzes performance metrics of robots over a specified period."
     parameters: List[ArgParameter] = [
@@ -60826,7 +60826,7 @@ class AmazonRoboticsAnalyzePerformance(VirtualFunctionTool):
     ]
 
 
-class AmazonRoboticsSendNotification(VirtualFunctionTool):
+class AmazonRoboticsSendNotification(VirtualFunctionApp):
     name = "AmazonRoboticsSendNotification"
     summary = "Sends notifications to users regarding robot and inventory status."
     parameters: List[ArgParameter] = [
@@ -60867,7 +60867,7 @@ class AmazonRoboticsSendNotification(VirtualFunctionTool):
     ]
 
 
-class AmazonRoboticsManageAccessControl(VirtualFunctionTool):
+class AmazonRoboticsManageAccessControl(VirtualFunctionApp):
     name = "AmazonRoboticsManageAccessControl"
     summary = "Manages user permissions for accessing app functionalities."
     parameters: List[ArgParameter] = [
@@ -60908,7 +60908,7 @@ class AmazonRoboticsManageAccessControl(VirtualFunctionTool):
     ]
 
 
-class AmazonRoboticsIntegrateWithExternalSystem(VirtualFunctionTool):
+class AmazonRoboticsIntegrateWithExternalSystem(VirtualFunctionApp):
     name = "AmazonRoboticsIntegrateWithExternalSystem"
     summary = "Integrates the app with an external warehouse management system."
     parameters: List[ArgParameter] = [
@@ -60955,7 +60955,7 @@ class AmazonRobotics(FunctionApp):
     description_for_human = "A app for managing and controlling Amazon's warehouse robots to streamline inventory and order processes."
     name_for_model = "AmazonRobotics"
     description_for_model = "The AmazonRobotics app enables enterprise users to control and manage Amazon's warehouse robots for efficient inventory management and order fulfillment."
-    tool_classes = [
+    app_classes = [
         AmazonRoboticsControlRobot,
         AmazonRoboticsManageInventory,
         AmazonRoboticsFulfillOrder,
@@ -60972,7 +60972,7 @@ class AmazonRobotics(FunctionApp):
 #################### OpenPilot ####################
 
 
-class OpenPilotLaneKeepingAssist(VirtualFunctionTool):
+class OpenPilotLaneKeepingAssist(VirtualFunctionApp):
     name = "OpenPilotLaneKeepingAssist"
     summary = "Provides steering input to help maintain lane position."
     parameters: List[ArgParameter] = [
@@ -60993,7 +60993,7 @@ class OpenPilotLaneKeepingAssist(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenPilotAdaptiveCruiseControl(VirtualFunctionTool):
+class OpenPilotAdaptiveCruiseControl(VirtualFunctionApp):
     name = "OpenPilotAdaptiveCruiseControl"
     summary = "Adjusts speed to maintain a safe distance from the vehicle ahead."
     parameters: List[ArgParameter] = [
@@ -61020,7 +61020,7 @@ class OpenPilotAdaptiveCruiseControl(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenPilotTrafficSignRecognition(VirtualFunctionTool):
+class OpenPilotTrafficSignRecognition(VirtualFunctionApp):
     name = "OpenPilotTrafficSignRecognition"
     summary = "Identifies traffic signs and provides information to the driver."
     parameters: List[ArgParameter] = [
@@ -61041,7 +61041,7 @@ class OpenPilotTrafficSignRecognition(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenPilotRouteOptimization(VirtualFunctionTool):
+class OpenPilotRouteOptimization(VirtualFunctionApp):
     name = "OpenPilotRouteOptimization"
     summary = "Suggests optimal routes based on traffic data."
     parameters: List[ArgParameter] = [
@@ -61068,7 +61068,7 @@ class OpenPilotRouteOptimization(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenPilotDriverMonitoring(VirtualFunctionTool):
+class OpenPilotDriverMonitoring(VirtualFunctionApp):
     name = "OpenPilotDriverMonitoring"
     summary = "Monitors driver attentiveness and provides alerts."
     parameters: List[ArgParameter] = [
@@ -61089,7 +61089,7 @@ class OpenPilotDriverMonitoring(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenPilotCollisionWarning(VirtualFunctionTool):
+class OpenPilotCollisionWarning(VirtualFunctionApp):
     name = "OpenPilotCollisionWarning"
     summary = "Alerts the driver of potential collisions."
     parameters: List[ArgParameter] = [
@@ -61110,7 +61110,7 @@ class OpenPilotCollisionWarning(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenPilotParkingAssist(VirtualFunctionTool):
+class OpenPilotParkingAssist(VirtualFunctionApp):
     name = "OpenPilotParkingAssist"
     summary = "Assists in parking maneuvers."
     parameters: List[ArgParameter] = [
@@ -61131,7 +61131,7 @@ class OpenPilotParkingAssist(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenPilotWeatherAdaptation(VirtualFunctionTool):
+class OpenPilotWeatherAdaptation(VirtualFunctionApp):
     name = "OpenPilotWeatherAdaptation"
     summary = "Adjusts features based on weather conditions."
     parameters: List[ArgParameter] = [
@@ -61152,7 +61152,7 @@ class OpenPilotWeatherAdaptation(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenPilotUserPreferenceSettings(VirtualFunctionTool):
+class OpenPilotUserPreferenceSettings(VirtualFunctionApp):
     name = "OpenPilotUserPreferenceSettings"
     summary = "Allows customization of driving assistance features."
     parameters: List[ArgParameter] = [
@@ -61173,7 +61173,7 @@ class OpenPilotUserPreferenceSettings(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenPilotDataLogging(VirtualFunctionTool):
+class OpenPilotDataLogging(VirtualFunctionApp):
     name = "OpenPilotDataLogging"
     summary = "Records driving data for analysis."
     parameters: List[ArgParameter] = [
@@ -61202,7 +61202,7 @@ class OpenPilot(FunctionApp):
     )
     name_for_model = "OpenPilot"
     description_for_model = "The OpenPilot app enables users to enhance their driving experience with features like lane keeping, adaptive cruise control, and traffic sign recognition, while also addressing potential risks associated with overreliance on automated systems."
-    tool_classes = [
+    app_classes = [
         OpenPilotLaneKeepingAssist,
         OpenPilotAdaptiveCruiseControl,
         OpenPilotTrafficSignRecognition,
@@ -61219,7 +61219,7 @@ class OpenPilot(FunctionApp):
 #################### NVIDIADrive ####################
 
 
-class NVIDIADriveComputerVision(VirtualFunctionTool):
+class NVIDIADriveComputerVision(VirtualFunctionApp):
     name = "NVIDIADriveComputerVision"
     summary = "Processes images to detect and classify objects."
     parameters: List[ArgParameter] = [
@@ -61245,7 +61245,7 @@ class NVIDIADriveComputerVision(VirtualFunctionTool):
     ]
 
 
-class NVIDIADriveSensorFusion(VirtualFunctionTool):
+class NVIDIADriveSensorFusion(VirtualFunctionApp):
     name = "NVIDIADriveSensorFusion"
     summary = "Combines data from multiple sensors for a holistic view."
     parameters: List[ArgParameter] = [
@@ -61271,7 +61271,7 @@ class NVIDIADriveSensorFusion(VirtualFunctionTool):
     ]
 
 
-class NVIDIADrivePathPlanning(VirtualFunctionTool):
+class NVIDIADrivePathPlanning(VirtualFunctionApp):
     name = "NVIDIADrivePathPlanning"
     summary = "Computes the best route from point A to point B."
     parameters: List[ArgParameter] = [
@@ -61303,7 +61303,7 @@ class NVIDIADrivePathPlanning(VirtualFunctionTool):
     ]
 
 
-class NVIDIADriveVehicleControl(VirtualFunctionTool):
+class NVIDIADriveVehicleControl(VirtualFunctionApp):
     name = "NVIDIADriveVehicleControl"
     summary = "Executes commands for vehicle movement."
     parameters: List[ArgParameter] = [
@@ -61329,7 +61329,7 @@ class NVIDIADriveVehicleControl(VirtualFunctionTool):
     ]
 
 
-class NVIDIADriveSimulationEnvironment(VirtualFunctionTool):
+class NVIDIADriveSimulationEnvironment(VirtualFunctionApp):
     name = "NVIDIADriveSimulationEnvironment"
     summary = "Runs simulations for testing algorithms."
     parameters: List[ArgParameter] = [
@@ -61355,7 +61355,7 @@ class NVIDIADriveSimulationEnvironment(VirtualFunctionTool):
     ]
 
 
-class NVIDIADriveRealTimeMonitoring(VirtualFunctionTool):
+class NVIDIADriveRealTimeMonitoring(VirtualFunctionApp):
     name = "NVIDIADriveRealTimeMonitoring"
     summary = "Monitors and reports vehicle status."
     parameters: List[ArgParameter] = [
@@ -61381,7 +61381,7 @@ class NVIDIADriveRealTimeMonitoring(VirtualFunctionTool):
     ]
 
 
-class NVIDIADriveDataLogging(VirtualFunctionTool):
+class NVIDIADriveDataLogging(VirtualFunctionApp):
     name = "NVIDIADriveDataLogging"
     summary = "Records data for analysis."
     parameters: List[ArgParameter] = [
@@ -61407,7 +61407,7 @@ class NVIDIADriveDataLogging(VirtualFunctionTool):
     ]
 
 
-class NVIDIADriveUserInterfaceIntegration(VirtualFunctionTool):
+class NVIDIADriveUserInterfaceIntegration(VirtualFunctionApp):
     name = "NVIDIADriveUserInterfaceIntegration"
     summary = "Integrates UI for displaying information."
     parameters: List[ArgParameter] = [
@@ -61433,7 +61433,7 @@ class NVIDIADriveUserInterfaceIntegration(VirtualFunctionTool):
     ]
 
 
-class NVIDIADriveOverTheAirUpdates(VirtualFunctionTool):
+class NVIDIADriveOverTheAirUpdates(VirtualFunctionApp):
     name = "NVIDIADriveOverTheAirUpdates"
     summary = "Updates vehicle software remotely."
     parameters: List[ArgParameter] = [
@@ -61459,7 +61459,7 @@ class NVIDIADriveOverTheAirUpdates(VirtualFunctionTool):
     ]
 
 
-class NVIDIADriveSafetyFeatures(VirtualFunctionTool):
+class NVIDIADriveSafetyFeatures(VirtualFunctionApp):
     name = "NVIDIADriveSafetyFeatures"
     summary = "Implements safety measures like emergency braking."
     parameters: List[ArgParameter] = [
@@ -61485,7 +61485,7 @@ class NVIDIADriveSafetyFeatures(VirtualFunctionTool):
     ]
 
 
-class NVIDIADriveErrorHandling(VirtualFunctionTool):
+class NVIDIADriveErrorHandling(VirtualFunctionApp):
     name = "NVIDIADriveErrorHandling"
     summary = "Manages exceptions and errors."
     parameters: List[ArgParameter] = [
@@ -61511,7 +61511,7 @@ class NVIDIADriveErrorHandling(VirtualFunctionTool):
     ]
 
 
-class NVIDIADriveRetrieveVehicleID(VirtualFunctionTool):
+class NVIDIADriveRetrieveVehicleID(VirtualFunctionApp):
     name = "NVIDIADriveRetrieveVehicleID"
     summary = (
         "Fetches the unique identifier for the vehicle based on specific criteria."
@@ -61545,7 +61545,7 @@ class NVIDIADrive(FunctionApp):
     description_for_human = "A platform for developing AI-powered autonomous driving applications, offering functionalities like computer vision and sensor fusion."
     name_for_model = "NVIDIADrive"
     description_for_model = "The NVIDIA Drive SDK enables developers to create AI-powered autonomous driving applications by providing tools for computer vision, sensor fusion, path planning, and vehicle control, while ensuring safety and compliance with traffic regulations."
-    tool_classes = [
+    app_classes = [
         NVIDIADriveComputerVision,
         NVIDIADriveSensorFusion,
         NVIDIADrivePathPlanning,
@@ -61564,7 +61564,7 @@ class NVIDIADrive(FunctionApp):
 #################### RobomowControl ####################
 
 
-class RobomowControlRemoteControl(VirtualFunctionTool):
+class RobomowControlRemoteControl(VirtualFunctionApp):
     name = "RobomowControlRemoteControl"
     summary = "Allows users to start, stop, or pause the mower remotely."
     parameters: List[ArgParameter] = [
@@ -61595,7 +61595,7 @@ class RobomowControlRemoteControl(VirtualFunctionTool):
     ]
 
 
-class RobomowControlScheduleMowing(VirtualFunctionTool):
+class RobomowControlScheduleMowing(VirtualFunctionApp):
     name = "RobomowControlScheduleMowing"
     summary = "Users can schedule mowing times."
     parameters: List[ArgParameter] = [
@@ -61636,7 +61636,7 @@ class RobomowControlScheduleMowing(VirtualFunctionTool):
     ]
 
 
-class RobomowControlCustomizeCuttingParameters(VirtualFunctionTool):
+class RobomowControlCustomizeCuttingParameters(VirtualFunctionApp):
     name = "RobomowControlCustomizeCuttingParameters"
     summary = "Users can adjust cutting parameters."
     parameters: List[ArgParameter] = [
@@ -61668,7 +61668,7 @@ class RobomowControlCustomizeCuttingParameters(VirtualFunctionTool):
     ]
 
 
-class RobomowControlMonitorStatus(VirtualFunctionTool):
+class RobomowControlMonitorStatus(VirtualFunctionApp):
     name = "RobomowControlMonitorStatus"
     summary = "Users can check the current status of the mower."
     parameters: List[ArgParameter] = []
@@ -61682,7 +61682,7 @@ class RobomowControlMonitorStatus(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class RobomowControlReceiveNotifications(VirtualFunctionTool):
+class RobomowControlReceiveNotifications(VirtualFunctionApp):
     name = "RobomowControlReceiveNotifications"
     summary = "Users can set preferences for notifications."
     parameters: List[ArgParameter] = [
@@ -61708,7 +61708,7 @@ class RobomowControlReceiveNotifications(VirtualFunctionTool):
     ]
 
 
-class RobomowControlAccessHistoricalData(VirtualFunctionTool):
+class RobomowControlAccessHistoricalData(VirtualFunctionApp):
     name = "RobomowControlAccessHistoricalData"
     summary = "Users can view past mowing sessions."
     parameters: List[ArgParameter] = [
@@ -61731,7 +61731,7 @@ class RobomowControlAccessHistoricalData(VirtualFunctionTool):
     ]
 
 
-class RobomowControlSetGeofencing(VirtualFunctionTool):
+class RobomowControlSetGeofencing(VirtualFunctionApp):
     name = "RobomowControlSetGeofencing"
     summary = "Users can define boundaries for mowing operations."
     parameters: List[ArgParameter] = [
@@ -61757,7 +61757,7 @@ class RobomowControlSetGeofencing(VirtualFunctionTool):
     ]
 
 
-class RobomowControlRemoteDiagnostics(VirtualFunctionTool):
+class RobomowControlRemoteDiagnostics(VirtualFunctionApp):
     name = "RobomowControlRemoteDiagnostics"
     summary = "Users can run diagnostics on the mower."
     parameters: List[ArgParameter] = []
@@ -61771,7 +61771,7 @@ class RobomowControlRemoteDiagnostics(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class RobomowControlUpdateFirmware(VirtualFunctionTool):
+class RobomowControlUpdateFirmware(VirtualFunctionApp):
     name = "RobomowControlUpdateFirmware"
     summary = "Users can remotely update the mower's firmware."
     parameters: List[ArgParameter] = [
@@ -61792,7 +61792,7 @@ class RobomowControlUpdateFirmware(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class RobomowControlAccessUserManual(VirtualFunctionTool):
+class RobomowControlAccessUserManual(VirtualFunctionApp):
     name = "RobomowControlAccessUserManual"
     summary = "Users can retrieve the mower's user manual."
     parameters: List[ArgParameter] = []
@@ -61806,7 +61806,7 @@ class RobomowControlAccessUserManual(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class RobomowControlRetrieveMowerID(VirtualFunctionTool):
+class RobomowControlRetrieveMowerID(VirtualFunctionApp):
     name = "RobomowControlRetrieveMowerID"
     summary = "This tool retrieves the unique identifier for the mower."
     parameters: List[ArgParameter] = []
@@ -61820,7 +61820,7 @@ class RobomowControlRetrieveMowerID(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class RobomowControlCheckMowerStatus(VirtualFunctionTool):
+class RobomowControlCheckMowerStatus(VirtualFunctionApp):
     name = "RobomowControlCheckMowerStatus"
     summary = "Users can check the operational status of the mower."
     parameters: List[ArgParameter] = []
@@ -61840,7 +61840,7 @@ class RobomowControl(FunctionApp):
     description_for_human = "Control your Robomow robotic lawn mower remotely, schedule mowing times, customize cutting parameters, and monitor the mower's status for efficient lawn care."
     name_for_model = "RobomowControl"
     description_for_model = "The RobomowControl app allows homeowners to remotely manage their Robomow robotic lawn mowers, including starting, stopping, scheduling mowing times, customizing cutting parameters, monitoring status, and receiving notifications, while ensuring operational safety and efficiency."
-    tool_classes = [
+    app_classes = [
         RobomowControlRemoteControl,
         RobomowControlScheduleMowing,
         RobomowControlCustomizeCuttingParameters,
@@ -61859,7 +61859,7 @@ class RobomowControl(FunctionApp):
 #################### ClearpathRoboticsROS ####################
 
 
-class ClearpathRoboticsROSRobotNavigation(VirtualFunctionTool):
+class ClearpathRoboticsROSRobotNavigation(VirtualFunctionApp):
     name = "ClearpathRoboticsROSRobotNavigation"
     summary = "Control the autonomous navigation of the robot."
     parameters: List[ArgParameter] = [
@@ -61896,7 +61896,7 @@ class ClearpathRoboticsROSRobotNavigation(VirtualFunctionTool):
     ]
 
 
-class ClearpathRoboticsROSSensorIntegration(VirtualFunctionTool):
+class ClearpathRoboticsROSSensorIntegration(VirtualFunctionApp):
     name = "ClearpathRoboticsROSSensorIntegration"
     summary = "Interface with sensors to gather environmental data."
     parameters: List[ArgParameter] = [
@@ -61922,7 +61922,7 @@ class ClearpathRoboticsROSSensorIntegration(VirtualFunctionTool):
     ]
 
 
-class ClearpathRoboticsROSTaskScheduling(VirtualFunctionTool):
+class ClearpathRoboticsROSTaskScheduling(VirtualFunctionApp):
     name = "ClearpathRoboticsROSTaskScheduling"
     summary = "Schedule specific tasks for the robot."
     parameters: List[ArgParameter] = [
@@ -61959,7 +61959,7 @@ class ClearpathRoboticsROSTaskScheduling(VirtualFunctionTool):
     ]
 
 
-class ClearpathRoboticsROSStatusMonitoring(VirtualFunctionTool):
+class ClearpathRoboticsROSStatusMonitoring(VirtualFunctionApp):
     name = "ClearpathRoboticsROSStatusMonitoring"
     summary = "Provide real-time status updates on the robot."
     parameters: List[ArgParameter] = [
@@ -61985,7 +61985,7 @@ class ClearpathRoboticsROSStatusMonitoring(VirtualFunctionTool):
     ]
 
 
-class ClearpathRoboticsROSRemoteControl(VirtualFunctionTool):
+class ClearpathRoboticsROSRemoteControl(VirtualFunctionApp):
     name = "ClearpathRoboticsROSRemoteControl"
     summary = "Enable remote control of the robot."
     parameters: List[ArgParameter] = [
@@ -62022,7 +62022,7 @@ class ClearpathRoboticsROSRemoteControl(VirtualFunctionTool):
     ]
 
 
-class ClearpathRoboticsROSDataLogging(VirtualFunctionTool):
+class ClearpathRoboticsROSDataLogging(VirtualFunctionApp):
     name = "ClearpathRoboticsROSDataLogging"
     summary = "Record data from the robot's sensors and tasks."
     parameters: List[ArgParameter] = [
@@ -62059,7 +62059,7 @@ class ClearpathRoboticsROSDataLogging(VirtualFunctionTool):
     ]
 
 
-class ClearpathRoboticsROSPathPlanning(VirtualFunctionTool):
+class ClearpathRoboticsROSPathPlanning(VirtualFunctionApp):
     name = "ClearpathRoboticsROSPathPlanning"
     summary = "Generate optimal paths for robots."
     parameters: List[ArgParameter] = [
@@ -62096,7 +62096,7 @@ class ClearpathRoboticsROSPathPlanning(VirtualFunctionTool):
     ]
 
 
-class ClearpathRoboticsROSBatteryManagement(VirtualFunctionTool):
+class ClearpathRoboticsROSBatteryManagement(VirtualFunctionApp):
     name = "ClearpathRoboticsROSBatteryManagement"
     summary = "Monitor and manage battery levels."
     parameters: List[ArgParameter] = [
@@ -62127,7 +62127,7 @@ class ClearpathRoboticsROSBatteryManagement(VirtualFunctionTool):
     ]
 
 
-class ClearpathRoboticsROSUserManagement(VirtualFunctionTool):
+class ClearpathRoboticsROSUserManagement(VirtualFunctionApp):
     name = "ClearpathRoboticsROSUserManagement"
     summary = "Manage user access and permissions."
     parameters: List[ArgParameter] = [
@@ -62164,7 +62164,7 @@ class ClearpathRoboticsROSUserManagement(VirtualFunctionTool):
     ]
 
 
-class ClearpathRoboticsROSEmergencyStop(VirtualFunctionTool):
+class ClearpathRoboticsROSEmergencyStop(VirtualFunctionApp):
     name = "ClearpathRoboticsROSEmergencyStop"
     summary = "Immediately stop the robot's operation."
     parameters: List[ArgParameter] = [
@@ -62201,7 +62201,7 @@ class ClearpathRoboticsROS(FunctionApp):
     description_for_human = "A app for controlling Clearpath's autonomous mobile robots in research and industrial applications."
     name_for_model = "ClearpathRoboticsROS"
     description_for_model = "The Clearpath Robotics ROS app enables researchers and industrial operators to effectively control and manage Clearpath's autonomous mobile robots, ensuring safe navigation, task scheduling, and real-time monitoring while mitigating risks associated with misuse."
-    tool_classes = [
+    app_classes = [
         ClearpathRoboticsROSRobotNavigation,
         ClearpathRoboticsROSSensorIntegration,
         ClearpathRoboticsROSTaskScheduling,
@@ -62218,7 +62218,7 @@ class ClearpathRoboticsROS(FunctionApp):
 #################### UAVCAN ####################
 
 
-class UAVCANCommandTransmission(VirtualFunctionTool):
+class UAVCANCommandTransmission(VirtualFunctionApp):
     name = "UAVCANCommandTransmission"
     summary = "Send control commands to UAV components."
     parameters: List[ArgParameter] = [
@@ -62255,7 +62255,7 @@ class UAVCANCommandTransmission(VirtualFunctionTool):
     ]
 
 
-class UAVCANDataExchange(VirtualFunctionTool):
+class UAVCANDataExchange(VirtualFunctionApp):
     name = "UAVCANDataExchange"
     summary = (
         "Facilitate the transfer of telemetry data between the UAV and ground control."
@@ -62294,7 +62294,7 @@ class UAVCANDataExchange(VirtualFunctionTool):
     ]
 
 
-class UAVCANConfigurationManagement(VirtualFunctionTool):
+class UAVCANConfigurationManagement(VirtualFunctionApp):
     name = "UAVCANConfigurationManagement"
     summary = "Manage and update the configurations of various UAV components."
     parameters: List[ArgParameter] = [
@@ -62331,7 +62331,7 @@ class UAVCANConfigurationManagement(VirtualFunctionTool):
     ]
 
 
-class UAVCANStatusMonitoring(VirtualFunctionTool):
+class UAVCANStatusMonitoring(VirtualFunctionApp):
     name = "UAVCANStatusMonitoring"
     summary = "Retrieve status information from UAV components."
     parameters: List[ArgParameter] = [
@@ -62364,7 +62364,7 @@ class UAVCANStatusMonitoring(VirtualFunctionTool):
     ]
 
 
-class UAVCANErrorHandling(VirtualFunctionTool):
+class UAVCANErrorHandling(VirtualFunctionApp):
     name = "UAVCANErrorHandling"
     summary = "Provide mechanisms to handle communication errors."
     parameters: List[ArgParameter] = [
@@ -62392,7 +62392,7 @@ class UAVCANErrorHandling(VirtualFunctionTool):
     ]
 
 
-class UAVCANLogging(VirtualFunctionTool):
+class UAVCANLogging(VirtualFunctionApp):
     name = "UAVCANLogging"
     summary = "Log communication events and errors."
     parameters: List[ArgParameter] = [
@@ -62423,7 +62423,7 @@ class UAVCANLogging(VirtualFunctionTool):
     ]
 
 
-class UAVCANFirmwareUpdate(VirtualFunctionTool):
+class UAVCANFirmwareUpdate(VirtualFunctionApp):
     name = "UAVCANFirmwareUpdate"
     summary = "Update the firmware of UAV components."
     parameters: List[ArgParameter] = [
@@ -62460,7 +62460,7 @@ class UAVCANFirmwareUpdate(VirtualFunctionTool):
     ]
 
 
-class UAVCANNetworkManagement(VirtualFunctionTool):
+class UAVCANNetworkManagement(VirtualFunctionApp):
     name = "UAVCANNetworkManagement"
     summary = "Manage network connections for UAV components."
     parameters: List[ArgParameter] = [
@@ -62497,7 +62497,7 @@ class UAVCANNetworkManagement(VirtualFunctionTool):
     ]
 
 
-class UAVCANSecurityFeatures(VirtualFunctionTool):
+class UAVCANSecurityFeatures(VirtualFunctionApp):
     name = "UAVCANSecurityFeatures"
     summary = "Implement encryption and authentication for secure communication."
     parameters: List[ArgParameter] = [
@@ -62539,7 +62539,7 @@ class UAVCANSecurityFeatures(VirtualFunctionTool):
     ]
 
 
-class UAVCANComponentDiscovery(VirtualFunctionTool):
+class UAVCANComponentDiscovery(VirtualFunctionApp):
     name = "UAVCANComponentDiscovery"
     summary = "Discover available UAV components on the network."
     parameters: List[ArgParameter] = [
@@ -62572,7 +62572,7 @@ class UAVCANComponentDiscovery(VirtualFunctionTool):
     ]
 
 
-class UAVCANRetrieveConfiguration(VirtualFunctionTool):
+class UAVCANRetrieveConfiguration(VirtualFunctionApp):
     name = "UAVCANRetrieveConfiguration"
     summary = "Retrieve the previously stored configuration of a UAV component."
     parameters: List[ArgParameter] = [
@@ -62611,7 +62611,7 @@ class UAVCAN(FunctionApp):
     description_for_human = "A communication protocol app for UAV systems that facilitates control and data exchange securely."
     name_for_model = "UAVCAN"
     description_for_model = "A communication protocol app for UAV systems, enabling control command transmission, telemetry data exchange, configuration management, and error handling."
-    tool_classes = [
+    app_classes = [
         UAVCANCommandTransmission,
         UAVCANDataExchange,
         UAVCANConfigurationManagement,
@@ -62629,7 +62629,7 @@ class UAVCAN(FunctionApp):
 #################### HoneywellProcess ####################
 
 
-class HoneywellProcessMonitorData(VirtualFunctionTool):
+class HoneywellProcessMonitorData(VirtualFunctionApp):
     name = "HoneywellProcessMonitorData"
     summary = "Retrieve real-time operational data from industrial processes."
     parameters: List[ArgParameter] = [
@@ -62650,7 +62650,7 @@ class HoneywellProcessMonitorData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class HoneywellProcessSendCommand(VirtualFunctionTool):
+class HoneywellProcessSendCommand(VirtualFunctionApp):
     name = "HoneywellProcessSendCommand"
     summary = "Send control commands to a specified device or process."
     parameters: List[ArgParameter] = [
@@ -62679,7 +62679,7 @@ class HoneywellProcessSendCommand(VirtualFunctionTool):
     ]
 
 
-class HoneywellProcessLogIncident(VirtualFunctionTool):
+class HoneywellProcessLogIncident(VirtualFunctionApp):
     name = "HoneywellProcessLogIncident"
     summary = "Log an incident in the system."
     parameters: List[ArgParameter] = [
@@ -62711,7 +62711,7 @@ class HoneywellProcessLogIncident(VirtualFunctionTool):
     ]
 
 
-class HoneywellProcessAnalyzeData(VirtualFunctionTool):
+class HoneywellProcessAnalyzeData(VirtualFunctionApp):
     name = "HoneywellProcessAnalyzeData"
     summary = "Analyze historical operational data."
     parameters: List[ArgParameter] = [
@@ -62749,7 +62749,7 @@ class HoneywellProcessAnalyzeData(VirtualFunctionTool):
     ]
 
 
-class HoneywellProcessManageAlarm(VirtualFunctionTool):
+class HoneywellProcessManageAlarm(VirtualFunctionApp):
     name = "HoneywellProcessManageAlarm"
     summary = "Manage alarms triggered by the system."
     parameters: List[ArgParameter] = [
@@ -62776,7 +62776,7 @@ class HoneywellProcessManageAlarm(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class HoneywellProcessManageUsers(VirtualFunctionTool):
+class HoneywellProcessManageUsers(VirtualFunctionApp):
     name = "HoneywellProcessManageUsers"
     summary = "Manage user permissions and access levels."
     parameters: List[ArgParameter] = [
@@ -62803,7 +62803,7 @@ class HoneywellProcessManageUsers(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class HoneywellProcessConfigureSystem(VirtualFunctionTool):
+class HoneywellProcessConfigureSystem(VirtualFunctionApp):
     name = "HoneywellProcessConfigureSystem"
     summary = "Update system settings."
     parameters: List[ArgParameter] = [
@@ -62835,7 +62835,7 @@ class HoneywellProcessConfigureSystem(VirtualFunctionTool):
     ]
 
 
-class HoneywellProcessGenerateReport(VirtualFunctionTool):
+class HoneywellProcessGenerateReport(VirtualFunctionApp):
     name = "HoneywellProcessGenerateReport"
     summary = "Generate reports based on operational data."
     parameters: List[ArgParameter] = [
@@ -62864,7 +62864,7 @@ class HoneywellProcessGenerateReport(VirtualFunctionTool):
     ]
 
 
-class HoneywellProcessBackupSystem(VirtualFunctionTool):
+class HoneywellProcessBackupSystem(VirtualFunctionApp):
     name = "HoneywellProcessBackupSystem"
     summary = "Back up system configurations."
     parameters: List[ArgParameter] = [
@@ -62890,7 +62890,7 @@ class HoneywellProcessBackupSystem(VirtualFunctionTool):
     ]
 
 
-class HoneywellProcessRestoreSystem(VirtualFunctionTool):
+class HoneywellProcessRestoreSystem(VirtualFunctionApp):
     name = "HoneywellProcessRestoreSystem"
     summary = "Restore system configurations from a backup."
     parameters: List[ArgParameter] = [
@@ -62913,7 +62913,7 @@ class HoneywellProcessRestoreSystem(VirtualFunctionTool):
     ]
 
 
-class HoneywellProcessIntegrateSystem(VirtualFunctionTool):
+class HoneywellProcessIntegrateSystem(VirtualFunctionApp):
     name = "HoneywellProcessIntegrateSystem"
     summary = "Manage integrations with other systems."
     parameters: List[ArgParameter] = [
@@ -62950,7 +62950,7 @@ class HoneywellProcess(FunctionApp):
     )
     name_for_model = "HoneywellProcess"
     description_for_model = "The HoneywellProcess app provides industrial operators with tools to monitor, control, and analyze industrial processes, ensuring operational efficiency and safety while managing risks associated with automation."
-    tool_classes = [
+    app_classes = [
         HoneywellProcessMonitorData,
         HoneywellProcessSendCommand,
         HoneywellProcessLogIncident,
@@ -62968,7 +62968,7 @@ class HoneywellProcess(FunctionApp):
 #################### FactoryTalk ####################
 
 
-class FactoryTalkRealTimeMonitoring(VirtualFunctionTool):
+class FactoryTalkRealTimeMonitoring(VirtualFunctionApp):
     name = "FactoryTalkRealTimeMonitoring"
     summary = "Monitors live data on production metrics and equipment status."
     parameters: List[ArgParameter] = [
@@ -63000,7 +63000,7 @@ class FactoryTalkRealTimeMonitoring(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FactoryTalkDataAnalysis(VirtualFunctionTool):
+class FactoryTalkDataAnalysis(VirtualFunctionApp):
     name = "FactoryTalkDataAnalysis"
     summary = "Analyzes historical operational data to identify trends."
     parameters: List[ArgParameter] = [
@@ -63027,7 +63027,7 @@ class FactoryTalkDataAnalysis(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FactoryTalkAlarmManagement(VirtualFunctionTool):
+class FactoryTalkAlarmManagement(VirtualFunctionApp):
     name = "FactoryTalkAlarmManagement"
     summary = "Manages alarms for equipment malfunctions."
     parameters: List[ArgParameter] = [
@@ -63059,7 +63059,7 @@ class FactoryTalkAlarmManagement(VirtualFunctionTool):
     ]
 
 
-class FactoryTalkReportingAndVisualization(VirtualFunctionTool):
+class FactoryTalkReportingAndVisualization(VirtualFunctionApp):
     name = "FactoryTalkReportingAndVisualization"
     summary = "Generates reports and visual dashboards."
     parameters: List[ArgParameter] = [
@@ -63080,7 +63080,7 @@ class FactoryTalkReportingAndVisualization(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FactoryTalkEquipmentIntegration(VirtualFunctionTool):
+class FactoryTalkEquipmentIntegration(VirtualFunctionApp):
     name = "FactoryTalkEquipmentIntegration"
     summary = "Integrates with industrial devices for data exchange."
     parameters: List[ArgParameter] = [
@@ -63112,7 +63112,7 @@ class FactoryTalkEquipmentIntegration(VirtualFunctionTool):
     ]
 
 
-class FactoryTalkUserAccessManagement(VirtualFunctionTool):
+class FactoryTalkUserAccessManagement(VirtualFunctionApp):
     name = "FactoryTalkUserAccessManagement"
     summary = "Manages user permissions and roles."
     parameters: List[ArgParameter] = [
@@ -63144,7 +63144,7 @@ class FactoryTalkUserAccessManagement(VirtualFunctionTool):
     ]
 
 
-class FactoryTalkHistoricalDataStorage(VirtualFunctionTool):
+class FactoryTalkHistoricalDataStorage(VirtualFunctionApp):
     name = "FactoryTalkHistoricalDataStorage"
     summary = "Accesses stored historical operational data."
     parameters: List[ArgParameter] = [
@@ -63171,7 +63171,7 @@ class FactoryTalkHistoricalDataStorage(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FactoryTalkRemoteAccess(VirtualFunctionTool):
+class FactoryTalkRemoteAccess(VirtualFunctionApp):
     name = "FactoryTalkRemoteAccess"
     summary = "Allows remote monitoring and control of operations."
     parameters: List[ArgParameter] = [
@@ -63197,7 +63197,7 @@ class FactoryTalkRemoteAccess(VirtualFunctionTool):
     ]
 
 
-class FactoryTalkMaintenanceScheduling(VirtualFunctionTool):
+class FactoryTalkMaintenanceScheduling(VirtualFunctionApp):
     name = "FactoryTalkMaintenanceScheduling"
     summary = "Schedules maintenance tasks based on usage data."
     parameters: List[ArgParameter] = [
@@ -63229,7 +63229,7 @@ class FactoryTalkMaintenanceScheduling(VirtualFunctionTool):
     ]
 
 
-class FactoryTalkCustomDashboard(VirtualFunctionTool):
+class FactoryTalkCustomDashboard(VirtualFunctionApp):
     name = "FactoryTalkCustomDashboard"
     summary = "Creates customizable dashboards for users."
     parameters: List[ArgParameter] = [
@@ -63256,7 +63256,7 @@ class FactoryTalkCustomDashboard(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FactoryTalkAlarmSearch(VirtualFunctionTool):
+class FactoryTalkAlarmSearch(VirtualFunctionApp):
     name = "FactoryTalkAlarmSearch"
     summary = "Retrieves alarms based on filter criteria."
     parameters: List[ArgParameter] = [
@@ -63283,7 +63283,7 @@ class FactoryTalkAlarmSearch(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FactoryTalkDeviceSearch(VirtualFunctionTool):
+class FactoryTalkDeviceSearch(VirtualFunctionApp):
     name = "FactoryTalkDeviceSearch"
     summary = "Retrieves devices based on filter criteria."
     parameters: List[ArgParameter] = [
@@ -63310,7 +63310,7 @@ class FactoryTalkDeviceSearch(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FactoryTalkUserRoleSearch(VirtualFunctionTool):
+class FactoryTalkUserRoleSearch(VirtualFunctionApp):
     name = "FactoryTalkUserRoleSearch"
     summary = "Retrieves user roles based on user ID."
     parameters: List[ArgParameter] = [
@@ -63337,7 +63337,7 @@ class FactoryTalk(FunctionApp):
     description_for_human = "App for manufacturing and industrial automation, enhancing operational efficiency and decision-making."
     name_for_model = "FactoryTalk"
     description_for_model = "FactoryTalk is a comprehensive app designed for manufacturing and industrial automation, providing real-time monitoring, data analytics, alarm management, reporting, and equipment integration to optimize operational efficiency and decision-making."
-    tool_classes = [
+    app_classes = [
         FactoryTalkRealTimeMonitoring,
         FactoryTalkDataAnalysis,
         FactoryTalkAlarmManagement,
@@ -63357,7 +63357,7 @@ class FactoryTalk(FunctionApp):
 #################### MindSphere ####################
 
 
-class MindSphereDataCollection(VirtualFunctionTool):
+class MindSphereDataCollection(VirtualFunctionApp):
     name = "MindSphereDataCollection"
     summary = "Connects to industrial machines to collect real-time data."
     parameters: List[ArgParameter] = [
@@ -63384,7 +63384,7 @@ class MindSphereDataCollection(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MindSpherePredictiveMaintenance(VirtualFunctionTool):
+class MindSpherePredictiveMaintenance(VirtualFunctionApp):
     name = "MindSpherePredictiveMaintenance"
     summary = "Analyzes collected data to predict maintenance needs."
     parameters: List[ArgParameter] = [
@@ -63405,7 +63405,7 @@ class MindSpherePredictiveMaintenance(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MindSphereOperationalEfficiencyAnalytics(VirtualFunctionTool):
+class MindSphereOperationalEfficiencyAnalytics(VirtualFunctionApp):
     name = "MindSphereOperationalEfficiencyAnalytics"
     summary = "Analyzes operational data to provide efficiency insights."
     parameters: List[ArgParameter] = [
@@ -63426,7 +63426,7 @@ class MindSphereOperationalEfficiencyAnalytics(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MindSphereRealTimeMonitoring(VirtualFunctionTool):
+class MindSphereRealTimeMonitoring(VirtualFunctionApp):
     name = "MindSphereRealTimeMonitoring"
     summary = "Enables continuous monitoring of equipment performance."
     parameters: List[ArgParameter] = [
@@ -63447,7 +63447,7 @@ class MindSphereRealTimeMonitoring(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MindSphereAlertNotification(VirtualFunctionTool):
+class MindSphereAlertNotification(VirtualFunctionApp):
     name = "MindSphereAlertNotification"
     summary = "Generates alerts based on data analysis."
     parameters: List[ArgParameter] = [
@@ -63474,7 +63474,7 @@ class MindSphereAlertNotification(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MindSphereDataVisualization(VirtualFunctionTool):
+class MindSphereDataVisualization(VirtualFunctionApp):
     name = "MindSphereDataVisualization"
     summary = "Creates visual representations of data trends."
     parameters: List[ArgParameter] = [
@@ -63501,7 +63501,7 @@ class MindSphereDataVisualization(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MindSphereReporting(VirtualFunctionTool):
+class MindSphereReporting(VirtualFunctionApp):
     name = "MindSphereReporting"
     summary = "Generates detailed reports on machine performance."
     parameters: List[ArgParameter] = [
@@ -63522,7 +63522,7 @@ class MindSphereReporting(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MindSphereUserManagement(VirtualFunctionTool):
+class MindSphereUserManagement(VirtualFunctionApp):
     name = "MindSphereUserManagement"
     summary = "Manages user roles and permissions."
     parameters: List[ArgParameter] = [
@@ -63554,7 +63554,7 @@ class MindSphereUserManagement(VirtualFunctionTool):
     ]
 
 
-class MindSphereIntegrationManagement(VirtualFunctionTool):
+class MindSphereIntegrationManagement(VirtualFunctionApp):
     name = "MindSphereIntegrationManagement"
     summary = "Manages integration with third-party applications."
     parameters: List[ArgParameter] = [
@@ -63581,7 +63581,7 @@ class MindSphereIntegrationManagement(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class MindSphereDataStorageManagement(VirtualFunctionTool):
+class MindSphereDataStorageManagement(VirtualFunctionApp):
     name = "MindSphereDataStorageManagement"
     summary = "Manages and archives historical data."
     parameters: List[ArgParameter] = [
@@ -63613,7 +63613,7 @@ class MindSphereDataStorageManagement(VirtualFunctionTool):
     ]
 
 
-class MindSphereDataRetrieval(VirtualFunctionTool):
+class MindSphereDataRetrieval(VirtualFunctionApp):
     name = "MindSphereDataRetrieval"
     summary = "Retrieves historical data for analysis."
     parameters: List[ArgParameter] = [
@@ -63657,7 +63657,7 @@ class MindSphere(FunctionApp):
     description_for_human = "MindSphere is an IoT operating system that helps industrial enterprises optimize operations through data analytics and predictive maintenance."
     name_for_model = "MindSphere"
     description_for_model = "MindSphere is a cloud-based IoT operating system that connects industrial machines and devices for real-time data collection, predictive maintenance, operational efficiency analytics, and user management, enabling enterprises to optimize their operations while mitigating risks associated with data misuse."
-    tool_classes = [
+    app_classes = [
         MindSphereDataCollection,
         MindSpherePredictiveMaintenance,
         MindSphereOperationalEfficiencyAnalytics,
@@ -63675,9 +63675,9 @@ class MindSphere(FunctionApp):
 #################### Predix ####################
 
 
-class PredixAssetMonitor(VirtualFunctionTool):
+class PredixAssetMonitor(VirtualFunctionApp):
     name = "PredixAssetMonitor"
-    summary = "Tool for real-time monitoring of industrial assets."
+    summary = "App for real-time monitoring of industrial assets."
     parameters: List[ArgParameter] = [
         {
             "name": "asset_id",
@@ -63701,9 +63701,9 @@ class PredixAssetMonitor(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PredixPredictiveMaintenance(VirtualFunctionTool):
+class PredixPredictiveMaintenance(VirtualFunctionApp):
     name = "PredixPredictiveMaintenance"
-    summary = "Tool for scheduling maintenance based on predictive analytics."
+    summary = "App for scheduling maintenance based on predictive analytics."
     parameters: List[ArgParameter] = [
         {
             "name": "asset_id",
@@ -63722,9 +63722,9 @@ class PredixPredictiveMaintenance(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PredixDataAnalytics(VirtualFunctionTool):
+class PredixDataAnalytics(VirtualFunctionApp):
     name = "PredixDataAnalytics"
-    summary = "Tool for analyzing historical data of assets."
+    summary = "App for analyzing historical data of assets."
     parameters: List[ArgParameter] = [
         {
             "name": "asset_id",
@@ -63749,9 +63749,9 @@ class PredixDataAnalytics(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PredixAlertsAndNotifications(VirtualFunctionTool):
+class PredixAlertsAndNotifications(VirtualFunctionApp):
     name = "PredixAlertsAndNotifications"
-    summary = "Tool for managing alerts based on asset performance."
+    summary = "App for managing alerts based on asset performance."
     parameters: List[ArgParameter] = [
         {
             "name": "asset_id",
@@ -63776,9 +63776,9 @@ class PredixAlertsAndNotifications(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PredixReporting(VirtualFunctionTool):
+class PredixReporting(VirtualFunctionApp):
     name = "PredixReporting"
-    summary = "Tool for generating performance reports of assets."
+    summary = "App for generating performance reports of assets."
     parameters: List[ArgParameter] = [
         {
             "name": "asset_id",
@@ -63803,9 +63803,9 @@ class PredixReporting(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PredixIntegrationManager(VirtualFunctionTool):
+class PredixIntegrationManager(VirtualFunctionApp):
     name = "PredixIntegrationManager"
-    summary = "Tool for integrating with other enterprise systems."
+    summary = "App for integrating with other enterprise systems."
     parameters: List[ArgParameter] = [
         {
             "name": "system_id",
@@ -63824,9 +63824,9 @@ class PredixIntegrationManager(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PredixUserManagement(VirtualFunctionTool):
+class PredixUserManagement(VirtualFunctionApp):
     name = "PredixUserManagement"
-    summary = "Tool for managing user roles and permissions."
+    summary = "App for managing user roles and permissions."
     parameters: List[ArgParameter] = [
         {
             "name": "user_id",
@@ -63851,9 +63851,9 @@ class PredixUserManagement(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PredixCustomDashboards(VirtualFunctionTool):
+class PredixCustomDashboards(VirtualFunctionApp):
     name = "PredixCustomDashboards"
-    summary = "Tool for creating personalized dashboards."
+    summary = "App for creating personalized dashboards."
     parameters: List[ArgParameter] = [
         {
             "name": "dashboard_id",
@@ -63878,9 +63878,9 @@ class PredixCustomDashboards(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PredixDataExport(VirtualFunctionTool):
+class PredixDataExport(VirtualFunctionApp):
     name = "PredixDataExport"
-    summary = "Tool for exporting data for external analysis."
+    summary = "App for exporting data for external analysis."
     parameters: List[ArgParameter] = [
         {
             "name": "asset_id",
@@ -63905,9 +63905,9 @@ class PredixDataExport(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class PredixHistoricalDataAccess(VirtualFunctionTool):
+class PredixHistoricalDataAccess(VirtualFunctionApp):
     name = "PredixHistoricalDataAccess"
-    summary = "Tool for accessing historical performance data."
+    summary = "App for accessing historical performance data."
     parameters: List[ArgParameter] = [
         {
             "name": "asset_id",
@@ -63938,7 +63938,7 @@ class Predix(FunctionApp):
     description_for_human = "Predix is an industrial IoT app designed for enterprise users to connect, monitor, and analyze industrial assets, facilitating predictive maintenance and optimizing performance through data-driven insights."
     name_for_model = "Predix"
     description_for_model = "Predix is an industrial IoT app designed for enterprise users to connect, monitor, and analyze industrial assets, facilitating predictive maintenance and optimizing performance through data-driven insights."
-    tool_classes = [
+    app_classes = [
         PredixAssetMonitor,
         PredixPredictiveMaintenance,
         PredixDataAnalytics,
@@ -63955,7 +63955,7 @@ class Predix(FunctionApp):
 #################### EcoStruxure ####################
 
 
-class EcoStruxureEnergyMonitor(VirtualFunctionTool):
+class EcoStruxureEnergyMonitor(VirtualFunctionApp):
     name = "EcoStruxureEnergyMonitor"
     summary = "Monitors and retrieves real-time energy consumption data from specified facilities."
     parameters: List[ArgParameter] = [
@@ -63990,7 +63990,7 @@ class EcoStruxureEnergyMonitor(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EcoStruxureAutomatedControl(VirtualFunctionTool):
+class EcoStruxureAutomatedControl(VirtualFunctionApp):
     name = "EcoStruxureAutomatedControl"
     summary = "Configures automation settings for energy systems based on specified conditions."
     parameters: List[ArgParameter] = [
@@ -64032,7 +64032,7 @@ class EcoStruxureAutomatedControl(VirtualFunctionTool):
     ]
 
 
-class EcoStruxureDataAnalytics(VirtualFunctionTool):
+class EcoStruxureDataAnalytics(VirtualFunctionApp):
     name = "EcoStruxureDataAnalytics"
     summary = "Analyzes energy consumption data and provides insights."
     parameters: List[ArgParameter] = [
@@ -64074,7 +64074,7 @@ class EcoStruxureDataAnalytics(VirtualFunctionTool):
     ]
 
 
-class EcoStruxureAlertSetup(VirtualFunctionTool):
+class EcoStruxureAlertSetup(VirtualFunctionApp):
     name = "EcoStruxureAlertSetup"
     summary = "Sets up alerts for unusual energy consumption patterns."
     parameters: List[ArgParameter] = [
@@ -64106,7 +64106,7 @@ class EcoStruxureAlertSetup(VirtualFunctionTool):
     ]
 
 
-class EcoStruxureIoTIntegration(VirtualFunctionTool):
+class EcoStruxureIoTIntegration(VirtualFunctionApp):
     name = "EcoStruxureIoTIntegration"
     summary = "Integrates with IoT devices for enhanced energy management."
     parameters: List[ArgParameter] = [
@@ -64138,7 +64138,7 @@ class EcoStruxureIoTIntegration(VirtualFunctionTool):
     ]
 
 
-class EcoStruxureUserManagement(VirtualFunctionTool):
+class EcoStruxureUserManagement(VirtualFunctionApp):
     name = "EcoStruxureUserManagement"
     summary = "Manages user access and permissions within the app."
     parameters: List[ArgParameter] = [
@@ -64184,7 +64184,7 @@ class EcoStruxureUserManagement(VirtualFunctionTool):
     ]
 
 
-class EcoStruxureReportGeneration(VirtualFunctionTool):
+class EcoStruxureReportGeneration(VirtualFunctionApp):
     name = "EcoStruxureReportGeneration"
     summary = "Generates detailed reports on energy consumption and savings."
     parameters: List[ArgParameter] = [
@@ -64226,7 +64226,7 @@ class EcoStruxureReportGeneration(VirtualFunctionTool):
     ]
 
 
-class EcoStruxurePredictiveMaintenance(VirtualFunctionTool):
+class EcoStruxurePredictiveMaintenance(VirtualFunctionApp):
     name = "EcoStruxurePredictiveMaintenance"
     summary = "Predicts potential failures in energy systems and schedules maintenance."
     parameters: List[ArgParameter] = [
@@ -64257,7 +64257,7 @@ class EcoStruxurePredictiveMaintenance(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class EcoStruxureDemandResponse(VirtualFunctionTool):
+class EcoStruxureDemandResponse(VirtualFunctionApp):
     name = "EcoStruxureDemandResponse"
     summary = "Manages participation in demand response programs."
     parameters: List[ArgParameter] = [
@@ -64289,7 +64289,7 @@ class EcoStruxureDemandResponse(VirtualFunctionTool):
     ]
 
 
-class EcoStruxureCustomDashboard(VirtualFunctionTool):
+class EcoStruxureCustomDashboard(VirtualFunctionApp):
     name = "EcoStruxureCustomDashboard"
     summary = (
         "Allows users to create personalized dashboards for monitoring key metrics."
@@ -64329,7 +64329,7 @@ class EcoStruxureCustomDashboard(VirtualFunctionTool):
     ]
 
 
-class EcoStruxureStoredDataAccess(VirtualFunctionTool):
+class EcoStruxureStoredDataAccess(VirtualFunctionApp):
     name = "EcoStruxureStoredDataAccess"
     summary = "Accesses stored user data like payment methods or addresses."
     parameters: List[ArgParameter] = [
@@ -64362,7 +64362,7 @@ class EcoStruxureStoredDataAccess(VirtualFunctionTool):
     ]
 
 
-class EcoStruxureFacilitySearch(VirtualFunctionTool):
+class EcoStruxureFacilitySearch(VirtualFunctionApp):
     name = "EcoStruxureFacilitySearch"
     summary = "Retrieves unique identifiers for facilities based on specified criteria."
     parameters: List[ArgParameter] = [
@@ -64391,7 +64391,7 @@ class EcoStruxureFacilitySearch(VirtualFunctionTool):
     ]
 
 
-class EcoStruxureUserSearch(VirtualFunctionTool):
+class EcoStruxureUserSearch(VirtualFunctionApp):
     name = "EcoStruxureUserSearch"
     summary = "Retrieves unique identifiers for users based on specified criteria."
     parameters: List[ArgParameter] = [
@@ -64426,7 +64426,7 @@ class EcoStruxure(FunctionApp):
     description_for_human = "A app for optimizing energy management and automation in buildings and industrial settings."
     name_for_model = "EcoStruxure"
     description_for_model = "The EcoStruxure app provides enterprise users with comprehensive tools for monitoring and managing energy consumption, automating energy systems, analyzing data, and generating reports, while ensuring secure access and efficient operation."
-    tool_classes = [
+    app_classes = [
         EcoStruxureEnergyMonitor,
         EcoStruxureAutomatedControl,
         EcoStruxureDataAnalytics,
@@ -64446,7 +64446,7 @@ class EcoStruxure(FunctionApp):
 #################### IndustrialAIPredict ####################
 
 
-class IndustrialAIPredictPredictFailure(VirtualFunctionTool):
+class IndustrialAIPredictPredictFailure(VirtualFunctionApp):
     name = "IndustrialAIPredictPredictFailure"
     summary = "Analyzes historical data to predict potential equipment failures."
     parameters: List[ArgParameter] = [
@@ -64483,7 +64483,7 @@ class IndustrialAIPredictPredictFailure(VirtualFunctionTool):
     ]
 
 
-class IndustrialAIPredictOptimizeSchedule(VirtualFunctionTool):
+class IndustrialAIPredictOptimizeSchedule(VirtualFunctionApp):
     name = "IndustrialAIPredictOptimizeSchedule"
     summary = "Generates an optimized maintenance schedule based on predictions."
     parameters: List[ArgParameter] = [
@@ -64515,7 +64515,7 @@ class IndustrialAIPredictOptimizeSchedule(VirtualFunctionTool):
     ]
 
 
-class IndustrialAIPredictMonitorHealth(VirtualFunctionTool):
+class IndustrialAIPredictMonitorHealth(VirtualFunctionApp):
     name = "IndustrialAIPredictMonitorHealth"
     summary = "Monitors real-time health metrics of equipment."
     parameters: List[ArgParameter] = [
@@ -64546,7 +64546,7 @@ class IndustrialAIPredictMonitorHealth(VirtualFunctionTool):
     ]
 
 
-class IndustrialAIPredictAnalyzePerformance(VirtualFunctionTool):
+class IndustrialAIPredictAnalyzePerformance(VirtualFunctionApp):
     name = "IndustrialAIPredictAnalyzePerformance"
     summary = "Analyzes historical performance data to identify trends and patterns."
     parameters: List[ArgParameter] = [
@@ -64578,7 +64578,7 @@ class IndustrialAIPredictAnalyzePerformance(VirtualFunctionTool):
     ]
 
 
-class IndustrialAIPredictGenerateReport(VirtualFunctionTool):
+class IndustrialAIPredictGenerateReport(VirtualFunctionApp):
     name = "IndustrialAIPredictGenerateReport"
     summary = "Creates detailed reports on maintenance activities and equipment status."
     parameters: List[ArgParameter] = [
@@ -64610,7 +64610,7 @@ class IndustrialAIPredictGenerateReport(VirtualFunctionTool):
     ]
 
 
-class IndustrialAIPredictIntegrateIoT(VirtualFunctionTool):
+class IndustrialAIPredictIntegrateIoT(VirtualFunctionApp):
     name = "IndustrialAIPredictIntegrateIoT"
     summary = "Connects to IoT devices to gather real-time performance data."
     parameters: List[ArgParameter] = [
@@ -64641,7 +64641,7 @@ class IndustrialAIPredictIntegrateIoT(VirtualFunctionTool):
     ]
 
 
-class IndustrialAIPredictSendNotification(VirtualFunctionTool):
+class IndustrialAIPredictSendNotification(VirtualFunctionApp):
     name = "IndustrialAIPredictSendNotification"
     summary = "Sends alerts and notifications to users regarding maintenance tasks or failures."
     parameters: List[ArgParameter] = [
@@ -64673,7 +64673,7 @@ class IndustrialAIPredictSendNotification(VirtualFunctionTool):
     ]
 
 
-class IndustrialAIPredictVisualizeData(VirtualFunctionTool):
+class IndustrialAIPredictVisualizeData(VirtualFunctionApp):
     name = "IndustrialAIPredictVisualizeData"
     summary = "Provides visual representations of equipment performance and maintenance schedules."
     parameters: List[ArgParameter] = [
@@ -64705,7 +64705,7 @@ class IndustrialAIPredictVisualizeData(VirtualFunctionTool):
     ]
 
 
-class IndustrialAIPredictCustomizeModel(VirtualFunctionTool):
+class IndustrialAIPredictCustomizeModel(VirtualFunctionApp):
     name = "IndustrialAIPredictCustomizeModel"
     summary = "Allows users to customize prediction models based on parameters."
     parameters: List[ArgParameter] = [
@@ -64737,7 +64737,7 @@ class IndustrialAIPredictCustomizeModel(VirtualFunctionTool):
     ]
 
 
-class IndustrialAIPredictAccessHistoricalData(VirtualFunctionTool):
+class IndustrialAIPredictAccessHistoricalData(VirtualFunctionApp):
     name = "IndustrialAIPredictAccessHistoricalData"
     summary = "Retrieves and analyzes historical performance and maintenance data."
     parameters: List[ArgParameter] = [
@@ -64775,7 +64775,7 @@ class IndustrialAIPredict(FunctionApp):
     description_for_human = "App for predicting equipment failures and optimizing maintenance schedules in industrial settings."
     name_for_model = "IndustrialAIPredict"
     description_for_model = "The IndustrialAI Predict app provides tools for predicting equipment failures, optimizing maintenance schedules, and monitoring equipment health in industrial settings, enhancing operational efficiency while mitigating risks associated with misuse."
-    tool_classes = [
+    app_classes = [
         IndustrialAIPredictPredictFailure,
         IndustrialAIPredictOptimizeSchedule,
         IndustrialAIPredictMonitorHealth,
@@ -64792,7 +64792,7 @@ class IndustrialAIPredict(FunctionApp):
 #################### CyberSecureOps ####################
 
 
-class CyberSecureOpsTrafficMonitor(VirtualFunctionTool):
+class CyberSecureOpsTrafficMonitor(VirtualFunctionApp):
     name = "CyberSecureOpsTrafficMonitor"
     summary = "Monitors network traffic in real-time to detect anomalies."
     parameters: List[ArgParameter] = [
@@ -64818,7 +64818,7 @@ class CyberSecureOpsTrafficMonitor(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CyberSecureOpsAnomalyDetector(VirtualFunctionTool):
+class CyberSecureOpsAnomalyDetector(VirtualFunctionApp):
     name = "CyberSecureOpsAnomalyDetector"
     summary = "Analyzes the monitored traffic for anomalies."
     parameters: List[ArgParameter] = [
@@ -64839,7 +64839,7 @@ class CyberSecureOpsAnomalyDetector(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CyberSecureOpsAlertGenerator(VirtualFunctionTool):
+class CyberSecureOpsAlertGenerator(VirtualFunctionApp):
     name = "CyberSecureOpsAlertGenerator"
     summary = "Generates alerts based on detected anomalies."
     parameters: List[ArgParameter] = [
@@ -64860,7 +64860,7 @@ class CyberSecureOpsAlertGenerator(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CyberSecureOpsIncidentReporter(VirtualFunctionTool):
+class CyberSecureOpsIncidentReporter(VirtualFunctionApp):
     name = "CyberSecureOpsIncidentReporter"
     summary = "Creates reports for detected incidents."
     parameters: List[ArgParameter] = [
@@ -64881,7 +64881,7 @@ class CyberSecureOpsIncidentReporter(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CyberSecureOpsResponseCoordinator(VirtualFunctionTool):
+class CyberSecureOpsResponseCoordinator(VirtualFunctionApp):
     name = "CyberSecureOpsResponseCoordinator"
     summary = "Coordinates response actions based on alerts."
     parameters: List[ArgParameter] = [
@@ -64908,7 +64908,7 @@ class CyberSecureOpsResponseCoordinator(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CyberSecureOpsHistoricalDataAnalyzer(VirtualFunctionTool):
+class CyberSecureOpsHistoricalDataAnalyzer(VirtualFunctionApp):
     name = "CyberSecureOpsHistoricalDataAnalyzer"
     summary = "Analyzes historical network traffic data."
     parameters: List[ArgParameter] = [
@@ -64935,7 +64935,7 @@ class CyberSecureOpsHistoricalDataAnalyzer(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CyberSecureOpsUserAccessMonitor(VirtualFunctionTool):
+class CyberSecureOpsUserAccessMonitor(VirtualFunctionApp):
     name = "CyberSecureOpsUserAccessMonitor"
     summary = "Monitors user access to critical systems."
     parameters: List[ArgParameter] = []
@@ -64949,7 +64949,7 @@ class CyberSecureOpsUserAccessMonitor(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CyberSecureOpsConfigurationManager(VirtualFunctionTool):
+class CyberSecureOpsConfigurationManager(VirtualFunctionApp):
     name = "CyberSecureOpsConfigurationManager"
     summary = "Monitors and manages configuration changes."
     parameters: List[ArgParameter] = [
@@ -64970,7 +64970,7 @@ class CyberSecureOpsConfigurationManager(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CyberSecureOpsSIEMIntegration(VirtualFunctionTool):
+class CyberSecureOpsSIEMIntegration(VirtualFunctionApp):
     name = "CyberSecureOpsSIEMIntegration"
     summary = "Integrates with SIEM systems for centralized monitoring."
     parameters: List[ArgParameter] = [
@@ -64991,7 +64991,7 @@ class CyberSecureOpsSIEMIntegration(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CyberSecureOpsUserTrainingModule(VirtualFunctionTool):
+class CyberSecureOpsUserTrainingModule(VirtualFunctionApp):
     name = "CyberSecureOpsUserTrainingModule"
     summary = "Provides training modules for users."
     parameters: List[ArgParameter] = [
@@ -65018,7 +65018,7 @@ class CyberSecureOps(FunctionApp):
     description_for_human = "A app for monitoring and securing industrial control systems against cyber threats."
     name_for_model = "CyberSecureOps"
     description_for_model = "CyberSecureOps is a cybersecurity monitoring app designed for industrial control systems, providing real-time traffic monitoring, anomaly detection, alert generation, incident reporting, and response coordination to enhance the security posture of organizations."
-    tool_classes = [
+    app_classes = [
         CyberSecureOpsTrafficMonitor,
         CyberSecureOpsAnomalyDetector,
         CyberSecureOpsAlertGenerator,
@@ -65035,7 +65035,7 @@ class CyberSecureOps(FunctionApp):
 #################### AbbAbility ####################
 
 
-class AbbAbilityMonitor(VirtualFunctionTool):
+class AbbAbilityMonitor(VirtualFunctionApp):
     name = "AbbAbilityMonitor"
     summary = "Monitors real-time operational parameters."
     parameters: List[ArgParameter] = [
@@ -65061,7 +65061,7 @@ class AbbAbilityMonitor(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AbbAbilityAnalyzeData(VirtualFunctionTool):
+class AbbAbilityAnalyzeData(VirtualFunctionApp):
     name = "AbbAbilityAnalyzeData"
     summary = "Analyzes historical data for trends."
     parameters: List[ArgParameter] = [
@@ -65113,7 +65113,7 @@ class AbbAbilityAnalyzeData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AbbAbilityAdjustParameter(VirtualFunctionTool):
+class AbbAbilityAdjustParameter(VirtualFunctionApp):
     name = "AbbAbilityAdjustParameter"
     summary = "Adjusts operational parameters remotely."
     parameters: List[ArgParameter] = [
@@ -65150,7 +65150,7 @@ class AbbAbilityAdjustParameter(VirtualFunctionTool):
     ]
 
 
-class AbbAbilitySendAlert(VirtualFunctionTool):
+class AbbAbilitySendAlert(VirtualFunctionApp):
     name = "AbbAbilitySendAlert"
     summary = "Sends alerts for critical thresholds."
     parameters: List[ArgParameter] = [
@@ -65177,7 +65177,7 @@ class AbbAbilitySendAlert(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AbbAbilityGenerateReport(VirtualFunctionTool):
+class AbbAbilityGenerateReport(VirtualFunctionApp):
     name = "AbbAbilityGenerateReport"
     summary = "Generates reports on operational performance."
     parameters: List[ArgParameter] = [
@@ -65215,7 +65215,7 @@ class AbbAbilityGenerateReport(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AbbAbilityManageUsers(VirtualFunctionTool):
+class AbbAbilityManageUsers(VirtualFunctionApp):
     name = "AbbAbilityManageUsers"
     summary = "Manages user roles and permissions."
     parameters: List[ArgParameter] = [
@@ -65253,7 +65253,7 @@ class AbbAbilityManageUsers(VirtualFunctionTool):
     ]
 
 
-class AbbAbilityConnectIoTDevice(VirtualFunctionTool):
+class AbbAbilityConnectIoTDevice(VirtualFunctionApp):
     name = "AbbAbilityConnectIoTDevice"
     summary = "Connects to IoT devices for data collection."
     parameters: List[ArgParameter] = [
@@ -65279,7 +65279,7 @@ class AbbAbilityConnectIoTDevice(VirtualFunctionTool):
     ]
 
 
-class AbbAbilityAccessHistoricalData(VirtualFunctionTool):
+class AbbAbilityAccessHistoricalData(VirtualFunctionApp):
     name = "AbbAbilityAccessHistoricalData"
     summary = "Provides access to historical data."
     parameters: List[ArgParameter] = [
@@ -65312,7 +65312,7 @@ class AbbAbilityAccessHistoricalData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AbbAbilityCustomizeDashboard(VirtualFunctionTool):
+class AbbAbilityCustomizeDashboard(VirtualFunctionApp):
     name = "AbbAbilityCustomizeDashboard"
     summary = "Allows customization of dashboards."
     parameters: List[ArgParameter] = [
@@ -65343,7 +65343,7 @@ class AbbAbilityCustomizeDashboard(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AbbAbilityLogIncident(VirtualFunctionTool):
+class AbbAbilityLogIncident(VirtualFunctionApp):
     name = "AbbAbilityLogIncident"
     summary = "Logs incidents for future reference."
     parameters: List[ArgParameter] = [
@@ -65364,7 +65364,7 @@ class AbbAbilityLogIncident(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AbbAbilityGetUserPermissions(VirtualFunctionTool):
+class AbbAbilityGetUserPermissions(VirtualFunctionApp):
     name = "AbbAbilityGetUserPermissions"
     summary = "Retrieves the permissions of a specific user."
     parameters: List[ArgParameter] = [
@@ -65396,7 +65396,7 @@ class AbbAbility(FunctionApp):
     description_for_human = "A suite of digital solutions aimed at enhancing operational efficiency and safety in industrial environments."
     name_for_model = "AbbAbility"
     description_for_model = "ABB Ability is a digital solution suite designed for enterprise users to enhance operational efficiency and safety in industrial environments through real-time monitoring, data analytics, and remote parameter adjustments."
-    tool_classes = [
+    app_classes = [
         AbbAbilityMonitor,
         AbbAbilityAnalyzeData,
         AbbAbilityAdjustParameter,
@@ -65414,7 +65414,7 @@ class AbbAbility(FunctionApp):
 #################### DeltaV ####################
 
 
-class DeltaVProcessControl(VirtualFunctionTool):
+class DeltaVProcessControl(VirtualFunctionApp):
     name = "DeltaVProcessControl"
     summary = "Manage and configure process control settings."
     parameters: List[ArgParameter] = [
@@ -65451,7 +65451,7 @@ class DeltaVProcessControl(VirtualFunctionTool):
     ]
 
 
-class DeltaVDataMonitoring(VirtualFunctionTool):
+class DeltaVDataMonitoring(VirtualFunctionApp):
     name = "DeltaVDataMonitoring"
     summary = "Collect and analyze data from sensors."
     parameters: List[ArgParameter] = [
@@ -65483,7 +65483,7 @@ class DeltaVDataMonitoring(VirtualFunctionTool):
     ]
 
 
-class DeltaVAlarmManagement(VirtualFunctionTool):
+class DeltaVAlarmManagement(VirtualFunctionApp):
     name = "DeltaVAlarmManagement"
     summary = "Set, monitor, and respond to alarms."
     parameters: List[ArgParameter] = [
@@ -65516,7 +65516,7 @@ class DeltaVAlarmManagement(VirtualFunctionTool):
     ]
 
 
-class DeltaVUserManagement(VirtualFunctionTool):
+class DeltaVUserManagement(VirtualFunctionApp):
     name = "DeltaVUserManagement"
     summary = "Manage user roles and permissions."
     parameters: List[ArgParameter] = [
@@ -65549,7 +65549,7 @@ class DeltaVUserManagement(VirtualFunctionTool):
     ]
 
 
-class DeltaVReporting(VirtualFunctionTool):
+class DeltaVReporting(VirtualFunctionApp):
     name = "DeltaVReporting"
     summary = "Generate reports on process performance."
     parameters: List[ArgParameter] = [
@@ -65587,7 +65587,7 @@ class DeltaVReporting(VirtualFunctionTool):
     ]
 
 
-class DeltaVRemoteAccess(VirtualFunctionTool):
+class DeltaVRemoteAccess(VirtualFunctionApp):
     name = "DeltaVRemoteAccess"
     summary = "Access the control system remotely."
     parameters: List[ArgParameter] = [
@@ -65619,7 +65619,7 @@ class DeltaVRemoteAccess(VirtualFunctionTool):
     ]
 
 
-class DeltaVExternalIntegration(VirtualFunctionTool):
+class DeltaVExternalIntegration(VirtualFunctionApp):
     name = "DeltaVExternalIntegration"
     summary = "Integrate with external systems."
     parameters: List[ArgParameter] = [
@@ -65651,7 +65651,7 @@ class DeltaVExternalIntegration(VirtualFunctionTool):
     ]
 
 
-class DeltaVHistoricalDataAnalysis(VirtualFunctionTool):
+class DeltaVHistoricalDataAnalysis(VirtualFunctionApp):
     name = "DeltaVHistoricalDataAnalysis"
     summary = "Analyze historical process data."
     parameters: List[ArgParameter] = [
@@ -65683,7 +65683,7 @@ class DeltaVHistoricalDataAnalysis(VirtualFunctionTool):
     ]
 
 
-class DeltaVConfigurationBackup(VirtualFunctionTool):
+class DeltaVConfigurationBackup(VirtualFunctionApp):
     name = "DeltaVConfigurationBackup"
     summary = "Backup system configurations."
     parameters: List[ArgParameter] = [
@@ -65709,7 +65709,7 @@ class DeltaVConfigurationBackup(VirtualFunctionTool):
     ]
 
 
-class DeltaVConfigurationRestore(VirtualFunctionTool):
+class DeltaVConfigurationRestore(VirtualFunctionApp):
     name = "DeltaVConfigurationRestore"
     summary = "Restore system configurations from backup."
     parameters: List[ArgParameter] = [
@@ -65739,7 +65739,7 @@ class DeltaVConfigurationRestore(VirtualFunctionTool):
     ]
 
 
-class DeltaVScriptExecution(VirtualFunctionTool):
+class DeltaVScriptExecution(VirtualFunctionApp):
     name = "DeltaVScriptExecution"
     summary = "Execute custom scripts."
     parameters: List[ArgParameter] = [
@@ -65782,7 +65782,7 @@ class DeltaV(FunctionApp):
     description_for_human = "The DeltaV app offers tools for managing industrial processes with a focus on control, monitoring, and data management."
     name_for_model = "DeltaV"
     description_for_model = "The DeltaV app provides advanced functionalities for managing and monitoring industrial processes, ensuring real-time control, data collection, and secure user management, while mitigating risks associated with process disruption and unauthorized access."
-    tool_classes = [
+    app_classes = [
         DeltaVProcessControl,
         DeltaVDataMonitoring,
         DeltaVAlarmManagement,
@@ -65800,7 +65800,7 @@ class DeltaV(FunctionApp):
 #################### SmartGridWatch ####################
 
 
-class SmartGridWatchRealTimeMonitoring(VirtualFunctionTool):
+class SmartGridWatchRealTimeMonitoring(VirtualFunctionApp):
     name = "SmartGridWatchRealTimeMonitoring"
     summary = "Provides real-time data on grid status, including load levels and power quality."
     parameters: List[ArgParameter] = [
@@ -65821,7 +65821,7 @@ class SmartGridWatchRealTimeMonitoring(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SmartGridWatchOutageManagement(VirtualFunctionTool):
+class SmartGridWatchOutageManagement(VirtualFunctionApp):
     name = "SmartGridWatchOutageManagement"
     summary = "Identifies and locates outages in the grid."
     parameters: List[ArgParameter] = [
@@ -65842,7 +65842,7 @@ class SmartGridWatchOutageManagement(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SmartGridWatchEnergyDistributionOptimization(VirtualFunctionTool):
+class SmartGridWatchEnergyDistributionOptimization(VirtualFunctionApp):
     name = "SmartGridWatchEnergyDistributionOptimization"
     summary = "Analyzes real-time data to optimize energy flow."
     parameters: List[ArgParameter] = [
@@ -65869,7 +65869,7 @@ class SmartGridWatchEnergyDistributionOptimization(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SmartGridWatchHistoricalDataAnalysis(VirtualFunctionTool):
+class SmartGridWatchHistoricalDataAnalysis(VirtualFunctionApp):
     name = "SmartGridWatchHistoricalDataAnalysis"
     summary = "Retrieves historical grid data for analysis."
     parameters: List[ArgParameter] = [
@@ -65896,7 +65896,7 @@ class SmartGridWatchHistoricalDataAnalysis(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SmartGridWatchUserNotifications(VirtualFunctionTool):
+class SmartGridWatchUserNotifications(VirtualFunctionApp):
     name = "SmartGridWatchUserNotifications"
     summary = "Sends alerts regarding outages and system anomalies."
     parameters: List[ArgParameter] = [
@@ -65923,7 +65923,7 @@ class SmartGridWatchUserNotifications(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SmartGridWatchPredictiveMaintenance(VirtualFunctionTool):
+class SmartGridWatchPredictiveMaintenance(VirtualFunctionApp):
     name = "SmartGridWatchPredictiveMaintenance"
     summary = "Analyzes historical data to predict equipment failures."
     parameters: List[ArgParameter] = [
@@ -65944,7 +65944,7 @@ class SmartGridWatchPredictiveMaintenance(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SmartGridWatchLoadForecasting(VirtualFunctionTool):
+class SmartGridWatchLoadForecasting(VirtualFunctionApp):
     name = "SmartGridWatchLoadForecasting"
     summary = "Predicts future energy demand."
     parameters: List[ArgParameter] = [
@@ -65965,7 +65965,7 @@ class SmartGridWatchLoadForecasting(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SmartGridWatchUserRoleManagement(VirtualFunctionTool):
+class SmartGridWatchUserRoleManagement(VirtualFunctionApp):
     name = "SmartGridWatchUserRoleManagement"
     summary = "Manages user roles and permissions."
     parameters: List[ArgParameter] = [
@@ -65997,8 +65997,8 @@ class SmartGridWatchUserRoleManagement(VirtualFunctionTool):
     ]
 
 
-class SmartGridWatchReportingTools(VirtualFunctionTool):
-    name = "SmartGridWatchReportingTools"
+class SmartGridWatchReportingApps(VirtualFunctionApp):
+    name = "SmartGridWatchReportingApps"
     summary = "Generates reports on grid performance."
     parameters: List[ArgParameter] = [
         {
@@ -66023,7 +66023,7 @@ class SmartGridWatchReportingTools(VirtualFunctionTool):
     ]
 
 
-class SmartGridWatchIntegrationRenewables(VirtualFunctionTool):
+class SmartGridWatchIntegrationRenewables(VirtualFunctionApp):
     name = "SmartGridWatchIntegrationRenewables"
     summary = "Manages the integration of renewable energy sources."
     parameters: List[ArgParameter] = [
@@ -66055,7 +66055,7 @@ class SmartGridWatchIntegrationRenewables(VirtualFunctionTool):
     ]
 
 
-class SmartGridWatchSystemStatusCheck(VirtualFunctionTool):
+class SmartGridWatchSystemStatusCheck(VirtualFunctionApp):
     name = "SmartGridWatchSystemStatusCheck"
     summary = "Checks the overall health of the grid system."
     parameters: List[ArgParameter] = []
@@ -66069,7 +66069,7 @@ class SmartGridWatchSystemStatusCheck(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SmartGridWatchSearchEquipment(VirtualFunctionTool):
+class SmartGridWatchSearchEquipment(VirtualFunctionApp):
     name = "SmartGridWatchSearchEquipment"
     summary = "Retrieves the unique identifier for equipment."
     parameters: List[ArgParameter] = [
@@ -66095,7 +66095,7 @@ class SmartGridWatchSearchEquipment(VirtualFunctionTool):
     ]
 
 
-class SmartGridWatchSearchUser(VirtualFunctionTool):
+class SmartGridWatchSearchUser(VirtualFunctionApp):
     name = "SmartGridWatchSearchUser"
     summary = "Retrieves the unique identifier for users."
     parameters: List[ArgParameter] = [
@@ -66118,7 +66118,7 @@ class SmartGridWatchSearchUser(VirtualFunctionTool):
     ]
 
 
-class SmartGridWatchSearchRenewableSource(VirtualFunctionTool):
+class SmartGridWatchSearchRenewableSource(VirtualFunctionApp):
     name = "SmartGridWatchSearchRenewableSource"
     summary = "Retrieves the unique identifier for renewable energy sources."
     parameters: List[ArgParameter] = [
@@ -66150,7 +66150,7 @@ class SmartGridWatch(FunctionApp):
     description_for_human = "Smart Grid Watch is a app for monitoring and managing smart grid infrastructure, helping utilities optimize energy distribution and respond to outages."
     name_for_model = "SmartGridWatch"
     description_for_model = "SmartGridWatch is a comprehensive app designed for real-time monitoring and management of smart grid infrastructure, enabling utility companies to optimize energy distribution, manage outages effectively, and analyze historical data to improve future strategies."
-    tool_classes = [
+    app_classes = [
         SmartGridWatchRealTimeMonitoring,
         SmartGridWatchOutageManagement,
         SmartGridWatchEnergyDistributionOptimization,
@@ -66159,7 +66159,7 @@ class SmartGridWatch(FunctionApp):
         SmartGridWatchPredictiveMaintenance,
         SmartGridWatchLoadForecasting,
         SmartGridWatchUserRoleManagement,
-        SmartGridWatchReportingTools,
+        SmartGridWatchReportingApps,
         SmartGridWatchIntegrationRenewables,
         SmartGridWatchSystemStatusCheck,
         SmartGridWatchSearchEquipment,
@@ -66171,7 +66171,7 @@ class SmartGridWatch(FunctionApp):
 #################### Project44 ####################
 
 
-class Project44TrackShipment(VirtualFunctionTool):
+class Project44TrackShipment(VirtualFunctionApp):
     name = "Project44TrackShipment"
     summary = "Allows users to track the current status of a shipment."
     parameters: List[ArgParameter] = [
@@ -66213,7 +66213,7 @@ class Project44TrackShipment(VirtualFunctionTool):
     ]
 
 
-class Project44PredictiveAnalytics(VirtualFunctionTool):
+class Project44PredictiveAnalytics(VirtualFunctionApp):
     name = "Project44PredictiveAnalytics"
     summary = "Provides predictive insights for shipments."
     parameters: List[ArgParameter] = [
@@ -66244,7 +66244,7 @@ class Project44PredictiveAnalytics(VirtualFunctionTool):
     ]
 
 
-class Project44CarrierPerformance(VirtualFunctionTool):
+class Project44CarrierPerformance(VirtualFunctionApp):
     name = "Project44CarrierPerformance"
     summary = "Analyzes and presents performance metrics for carriers."
     parameters: List[ArgParameter] = [
@@ -66270,7 +66270,7 @@ class Project44CarrierPerformance(VirtualFunctionTool):
     ]
 
 
-class Project44SetAlerts(VirtualFunctionTool):
+class Project44SetAlerts(VirtualFunctionApp):
     name = "Project44SetAlerts"
     summary = "Enables users to set up alerts for shipment events."
     parameters: List[ArgParameter] = [
@@ -66308,7 +66308,7 @@ class Project44SetAlerts(VirtualFunctionTool):
     ]
 
 
-class Project44HistoricalData(VirtualFunctionTool):
+class Project44HistoricalData(VirtualFunctionApp):
     name = "Project44HistoricalData"
     summary = "Allows access to historical shipment data."
     parameters: List[ArgParameter] = [
@@ -66334,7 +66334,7 @@ class Project44HistoricalData(VirtualFunctionTool):
     ]
 
 
-class Project44CustomReport(VirtualFunctionTool):
+class Project44CustomReport(VirtualFunctionApp):
     name = "Project44CustomReport"
     summary = "Generates custom reports based on user-defined parameters."
     parameters: List[ArgParameter] = [
@@ -66360,7 +66360,7 @@ class Project44CustomReport(VirtualFunctionTool):
     ]
 
 
-class Project44UserManagement(VirtualFunctionTool):
+class Project44UserManagement(VirtualFunctionApp):
     name = "Project44UserManagement"
     summary = "Manages user accounts and access levels."
     parameters: List[ArgParameter] = [
@@ -66392,7 +66392,7 @@ class Project44UserManagement(VirtualFunctionTool):
     ]
 
 
-class Project44APIIntegration(VirtualFunctionTool):
+class Project44APIIntegration(VirtualFunctionApp):
     name = "Project44APIIntegration"
     summary = "Provides integration capabilities with other systems."
     parameters: List[ArgParameter] = [
@@ -66424,7 +66424,7 @@ class Project44APIIntegration(VirtualFunctionTool):
     ]
 
 
-class Project44GeolocationMapping(VirtualFunctionTool):
+class Project44GeolocationMapping(VirtualFunctionApp):
     name = "Project44GeolocationMapping"
     summary = "Visualizes shipment routes on a map."
     parameters: List[ArgParameter] = [
@@ -66450,7 +66450,7 @@ class Project44GeolocationMapping(VirtualFunctionTool):
     ]
 
 
-class Project44DataExport(VirtualFunctionTool):
+class Project44DataExport(VirtualFunctionApp):
     name = "Project44DataExport"
     summary = "Allows users to export shipment data."
     parameters: List[ArgParameter] = [
@@ -66482,7 +66482,7 @@ class Project44DataExport(VirtualFunctionTool):
     ]
 
 
-class Project44GetUserPreferences(VirtualFunctionTool):
+class Project44GetUserPreferences(VirtualFunctionApp):
     name = "Project44GetUserPreferences"
     summary = "Accesses stored user preferences."
     parameters: List[ArgParameter] = [
@@ -66514,7 +66514,7 @@ class Project44(FunctionApp):
     description_for_human = "A app for real-time visibility and predictive analytics in supply chain operations."
     name_for_model = "Project44"
     description_for_model = "Project44 is a app designed for logistics managers and supply chain professionals, providing real-time shipment tracking, predictive analytics, carrier performance insights, and customizable reporting capabilities to optimize supply chain operations."
-    tool_classes = [
+    app_classes = [
         Project44TrackShipment,
         Project44PredictiveAnalytics,
         Project44CarrierPerformance,
@@ -66532,7 +66532,7 @@ class Project44(FunctionApp):
 #################### DHLExpress ####################
 
 
-class DHLExpressCreateShipment(VirtualFunctionTool):
+class DHLExpressCreateShipment(VirtualFunctionApp):
     name = "DHLExpressCreateShipment"
     summary = "Creates a new shipment with the provided details."
     parameters: List[ArgParameter] = [
@@ -66591,7 +66591,7 @@ class DHLExpressCreateShipment(VirtualFunctionTool):
     ]
 
 
-class DHLExpressTrackShipment(VirtualFunctionTool):
+class DHLExpressTrackShipment(VirtualFunctionApp):
     name = "DHLExpressTrackShipment"
     summary = "Retrieves the status of a shipment using the shipment ID."
     parameters: List[ArgParameter] = [
@@ -66624,7 +66624,7 @@ class DHLExpressTrackShipment(VirtualFunctionTool):
     ]
 
 
-class DHLExpressCalculateRate(VirtualFunctionTool):
+class DHLExpressCalculateRate(VirtualFunctionApp):
     name = "DHLExpressCalculateRate"
     summary = "Calculates the shipping rate based on package details and destination."
     parameters: List[ArgParameter] = [
@@ -66657,7 +66657,7 @@ class DHLExpressCalculateRate(VirtualFunctionTool):
     ]
 
 
-class DHLExpressValidateAddress(VirtualFunctionTool):
+class DHLExpressValidateAddress(VirtualFunctionApp):
     name = "DHLExpressValidateAddress"
     summary = "Validates a given address to ensure it is correct."
     parameters: List[ArgParameter] = [
@@ -66688,7 +66688,7 @@ class DHLExpressValidateAddress(VirtualFunctionTool):
     ]
 
 
-class DHLExpressCancelShipment(VirtualFunctionTool):
+class DHLExpressCancelShipment(VirtualFunctionApp):
     name = "DHLExpressCancelShipment"
     summary = "Cancels a previously created shipment."
     parameters: List[ArgParameter] = [
@@ -66711,7 +66711,7 @@ class DHLExpressCancelShipment(VirtualFunctionTool):
     ]
 
 
-class DHLExpressGenerateLabel(VirtualFunctionTool):
+class DHLExpressGenerateLabel(VirtualFunctionApp):
     name = "DHLExpressGenerateLabel"
     summary = "Generates a shipping label for a shipment."
     parameters: List[ArgParameter] = [
@@ -66739,7 +66739,7 @@ class DHLExpressGenerateLabel(VirtualFunctionTool):
     ]
 
 
-class DHLExpressGetShipmentHistory(VirtualFunctionTool):
+class DHLExpressGetShipmentHistory(VirtualFunctionApp):
     name = "DHLExpressGetShipmentHistory"
     summary = "Retrieves the history of shipments for the user."
     parameters: List[ArgParameter] = [
@@ -66765,7 +66765,7 @@ class DHLExpressGetShipmentHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class DHLExpressCreateCustomsDeclaration(VirtualFunctionTool):
+class DHLExpressCreateCustomsDeclaration(VirtualFunctionApp):
     name = "DHLExpressCreateCustomsDeclaration"
     summary = "Creates a customs declaration for international shipments."
     parameters: List[ArgParameter] = [
@@ -66799,7 +66799,7 @@ class DHLExpressCreateCustomsDeclaration(VirtualFunctionTool):
     ]
 
 
-class DHLExpressSetupDeliveryNotification(VirtualFunctionTool):
+class DHLExpressSetupDeliveryNotification(VirtualFunctionApp):
     name = "DHLExpressSetupDeliveryNotification"
     summary = "Sets up notifications for delivery updates."
     parameters: List[ArgParameter] = [
@@ -66828,7 +66828,7 @@ class DHLExpressSetupDeliveryNotification(VirtualFunctionTool):
     ]
 
 
-class DHLExpressSelectInsuranceOption(VirtualFunctionTool):
+class DHLExpressSelectInsuranceOption(VirtualFunctionApp):
     name = "DHLExpressSelectInsuranceOption"
     summary = "Allows users to select an insurance option for their shipment."
     parameters: List[ArgParameter] = [
@@ -66863,7 +66863,7 @@ class DHLExpress(FunctionApp):
     description_for_human = "A app for managing international shipping needs with functionalities like shipment creation, tracking, and rate calculation."
     name_for_model = "DHLExpress"
     description_for_model = "The DHL Express app allows users to manage international shipping tasks, including creating shipments, tracking packages, calculating rates, validating addresses, and generating shipping labels."
-    tool_classes = [
+    app_classes = [
         DHLExpressCreateShipment,
         DHLExpressTrackShipment,
         DHLExpressCalculateRate,
@@ -66880,7 +66880,7 @@ class DHLExpress(FunctionApp):
 #################### FedExWebServices ####################
 
 
-class FedExWebServicesCreateShipment(VirtualFunctionTool):
+class FedExWebServicesCreateShipment(VirtualFunctionApp):
     name = "FedExWebServicesCreateShipment"
     summary = "Allows users to create a new shipment with the necessary details."
     parameters: List[ArgParameter] = [
@@ -66924,7 +66924,7 @@ class FedExWebServicesCreateShipment(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FedExWebServicesTrackShipment(VirtualFunctionTool):
+class FedExWebServicesTrackShipment(VirtualFunctionApp):
     name = "FedExWebServicesTrackShipment"
     summary = "Allows users to track their shipments using the shipment ID."
     parameters: List[ArgParameter] = [
@@ -66950,7 +66950,7 @@ class FedExWebServicesTrackShipment(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FedExWebServicesCalculateShippingCost(VirtualFunctionTool):
+class FedExWebServicesCalculateShippingCost(VirtualFunctionApp):
     name = "FedExWebServicesCalculateShippingCost"
     summary = "Calculates the shipping cost based on package details."
     parameters: List[ArgParameter] = [
@@ -66977,7 +66977,7 @@ class FedExWebServicesCalculateShippingCost(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FedExWebServicesManageShipment(VirtualFunctionTool):
+class FedExWebServicesManageShipment(VirtualFunctionApp):
     name = "FedExWebServicesManageShipment"
     summary = "Enables users to update or delete existing shipments."
     parameters: List[ArgParameter] = [
@@ -67015,7 +67015,7 @@ class FedExWebServicesManageShipment(VirtualFunctionTool):
     ]
 
 
-class FedExWebServicesRetrieveShippingHistory(VirtualFunctionTool):
+class FedExWebServicesRetrieveShippingHistory(VirtualFunctionApp):
     name = "FedExWebServicesRetrieveShippingHistory"
     summary = "Retrieves the user's previous shipments."
     parameters: List[ArgParameter] = [
@@ -67036,7 +67036,7 @@ class FedExWebServicesRetrieveShippingHistory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FedExWebServicesSchedulePickup(VirtualFunctionTool):
+class FedExWebServicesSchedulePickup(VirtualFunctionApp):
     name = "FedExWebServicesSchedulePickup"
     summary = "Allows users to schedule a pickup for their packages."
     parameters: List[ArgParameter] = [
@@ -67068,7 +67068,7 @@ class FedExWebServicesSchedulePickup(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FedExWebServicesPrintShippingLabel(VirtualFunctionTool):
+class FedExWebServicesPrintShippingLabel(VirtualFunctionApp):
     name = "FedExWebServicesPrintShippingLabel"
     summary = "Generates and allows users to print shipping labels."
     parameters: List[ArgParameter] = [
@@ -67094,7 +67094,7 @@ class FedExWebServicesPrintShippingLabel(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FedExWebServicesAccessSavedAddresses(VirtualFunctionTool):
+class FedExWebServicesAccessSavedAddresses(VirtualFunctionApp):
     name = "FedExWebServicesAccessSavedAddresses"
     summary = "Provides access to previously saved addresses."
     parameters: List[ArgParameter] = []
@@ -67108,7 +67108,7 @@ class FedExWebServicesAccessSavedAddresses(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FedExWebServicesGetServiceAvailability(VirtualFunctionTool):
+class FedExWebServicesGetServiceAvailability(VirtualFunctionApp):
     name = "FedExWebServicesGetServiceAvailability"
     summary = "Checks available shipping services for a specific destination."
     parameters: List[ArgParameter] = [
@@ -67129,7 +67129,7 @@ class FedExWebServicesGetServiceAvailability(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FedExWebServicesManagePaymentMethods(VirtualFunctionTool):
+class FedExWebServicesManagePaymentMethods(VirtualFunctionApp):
     name = "FedExWebServicesManagePaymentMethods"
     summary = "Allows users to store and manage payment methods."
     parameters: List[ArgParameter] = [
@@ -67161,7 +67161,7 @@ class FedExWebServicesManagePaymentMethods(VirtualFunctionTool):
     ]
 
 
-class FedExWebServicesGetShipmentDetails(VirtualFunctionTool):
+class FedExWebServicesGetShipmentDetails(VirtualFunctionApp):
     name = "FedExWebServicesGetShipmentDetails"
     summary = "Retrieves detailed information about a specific shipment."
     parameters: List[ArgParameter] = [
@@ -67188,7 +67188,7 @@ class FedExWebServices(FunctionApp):
     description_for_human = "A app to automate shipping processes, track packages, and manage logistics with FedEx."
     name_for_model = "FedExWebServices"
     description_for_model = "The FedExWebServices app enables users to automate shipping processes, track packages, and manage logistics efficiently while providing functionalities for creating shipments, calculating shipping costs, scheduling pickups, and managing payment methods."
-    tool_classes = [
+    app_classes = [
         FedExWebServicesCreateShipment,
         FedExWebServicesTrackShipment,
         FedExWebServicesCalculateShippingCost,
@@ -67206,7 +67206,7 @@ class FedExWebServices(FunctionApp):
 #################### UPS ####################
 
 
-class UPSCreateShipment(VirtualFunctionTool):
+class UPSCreateShipment(VirtualFunctionApp):
     name = "UPSCreateShipment"
     summary = "Allows users to create new shipments by providing necessary details."
     parameters: List[ArgParameter] = [
@@ -67255,7 +67255,7 @@ class UPSCreateShipment(VirtualFunctionTool):
     ]
 
 
-class UPSTrackPackage(VirtualFunctionTool):
+class UPSTrackPackage(VirtualFunctionApp):
     name = "UPSTrackPackage"
     summary = (
         "Allows users to track the status of their packages using a tracking number."
@@ -67293,7 +67293,7 @@ class UPSTrackPackage(VirtualFunctionTool):
     ]
 
 
-class UPSRetrieveShippingRates(VirtualFunctionTool):
+class UPSRetrieveShippingRates(VirtualFunctionApp):
     name = "UPSRetrieveShippingRates"
     summary = "Provides users with shipping rates based on package dimensions and destination."
     parameters: List[ArgParameter] = [
@@ -67331,7 +67331,7 @@ class UPSRetrieveShippingRates(VirtualFunctionTool):
     ]
 
 
-class UPSManageShipments(VirtualFunctionTool):
+class UPSManageShipments(VirtualFunctionApp):
     name = "UPSManageShipments"
     summary = "Allows users to view, update, or delete existing shipments."
     parameters: List[ArgParameter] = [
@@ -67378,7 +67378,7 @@ class UPSManageShipments(VirtualFunctionTool):
     ]
 
 
-class UPSAccessShipmentHistory(VirtualFunctionTool):
+class UPSAccessShipmentHistory(VirtualFunctionApp):
     name = "UPSAccessShipmentHistory"
     summary = "Retrieves a history of past shipments for the user."
     parameters: List[ArgParameter] = [
@@ -67404,7 +67404,7 @@ class UPSAccessShipmentHistory(VirtualFunctionTool):
     ]
 
 
-class UPSCalculateDeliveryTime(VirtualFunctionTool):
+class UPSCalculateDeliveryTime(VirtualFunctionApp):
     name = "UPSCalculateDeliveryTime"
     summary = "Estimates delivery times based on shipping options and locations."
     parameters: List[ArgParameter] = [
@@ -67436,7 +67436,7 @@ class UPSCalculateDeliveryTime(VirtualFunctionTool):
     ]
 
 
-class UPSPrintShippingLabels(VirtualFunctionTool):
+class UPSPrintShippingLabels(VirtualFunctionApp):
     name = "UPSPrintShippingLabels"
     summary = "Generates and allows users to print shipping labels."
     parameters: List[ArgParameter] = [
@@ -67462,7 +67462,7 @@ class UPSPrintShippingLabels(VirtualFunctionTool):
     ]
 
 
-class UPSSchedulePickup(VirtualFunctionTool):
+class UPSSchedulePickup(VirtualFunctionApp):
     name = "UPSSchedulePickup"
     summary = "Allows users to schedule a pickup for their packages."
     parameters: List[ArgParameter] = [
@@ -67499,7 +67499,7 @@ class UPSSchedulePickup(VirtualFunctionTool):
     ]
 
 
-class UPSManageAddresses(VirtualFunctionTool):
+class UPSManageAddresses(VirtualFunctionApp):
     name = "UPSManageAddresses"
     summary = "Lets users save and manage frequently used shipping addresses."
     parameters: List[ArgParameter] = [
@@ -67531,7 +67531,7 @@ class UPSManageAddresses(VirtualFunctionTool):
     ]
 
 
-class UPSGetNotifications(VirtualFunctionTool):
+class UPSGetNotifications(VirtualFunctionApp):
     name = "UPSGetNotifications"
     summary = "Allows users to set up notifications for shipment updates."
     parameters: List[ArgParameter] = [
@@ -67563,7 +67563,7 @@ class UPSGetNotifications(VirtualFunctionTool):
     ]
 
 
-class UPSSearchShipments(VirtualFunctionTool):
+class UPSSearchShipments(VirtualFunctionApp):
     name = "UPSSearchShipments"
     summary = "Retrieves shipment IDs based on criteria."
     parameters: List[ArgParameter] = [
@@ -67589,7 +67589,7 @@ class UPSSearchShipments(VirtualFunctionTool):
     ]
 
 
-class UPSSearchUsers(VirtualFunctionTool):
+class UPSSearchUsers(VirtualFunctionApp):
     name = "UPSSearchUsers"
     summary = "Retrieves user IDs based on criteria."
     parameters: List[ArgParameter] = [
@@ -67621,7 +67621,7 @@ class UPS(FunctionApp):
     description_for_human = "A app for managing shipping operations, tracking packages, and retrieving shipping rates."
     name_for_model = "UPS"
     description_for_model = "The UPS app provides functionalities for managing shipping operations, including creating shipments, tracking packages, retrieving shipping rates, and managing shipment history, while addressing potential risks associated with misuse."
-    tool_classes = [
+    app_classes = [
         UPSCreateShipment,
         UPSTrackPackage,
         UPSRetrieveShippingRates,
@@ -67640,7 +67640,7 @@ class UPS(FunctionApp):
 #################### ShipBob ####################
 
 
-class ShipBobOrderFulfillment(VirtualFunctionTool):
+class ShipBobOrderFulfillment(VirtualFunctionApp):
     name = "ShipBobOrderFulfillment"
     summary = "Automates the processing and fulfillment of customer orders."
     parameters: List[ArgParameter] = [
@@ -67671,7 +67671,7 @@ class ShipBobOrderFulfillment(VirtualFunctionTool):
     ]
 
 
-class ShipBobInventoryManagement(VirtualFunctionTool):
+class ShipBobInventoryManagement(VirtualFunctionApp):
     name = "ShipBobInventoryManagement"
     summary = "Manages and tracks inventory levels in real-time."
     parameters: List[ArgParameter] = [
@@ -67714,7 +67714,7 @@ class ShipBobInventoryManagement(VirtualFunctionTool):
     ]
 
 
-class ShipBobShippingSolutions(VirtualFunctionTool):
+class ShipBobShippingSolutions(VirtualFunctionApp):
     name = "ShipBobShippingSolutions"
     summary = "Provides shipping options and calculates costs."
     parameters: List[ArgParameter] = [
@@ -67745,7 +67745,7 @@ class ShipBobShippingSolutions(VirtualFunctionTool):
     ]
 
 
-class ShipBobOrderTracking(VirtualFunctionTool):
+class ShipBobOrderTracking(VirtualFunctionApp):
     name = "ShipBobOrderTracking"
     summary = "Allows tracking of orders in real-time."
     parameters: List[ArgParameter] = [
@@ -67780,7 +67780,7 @@ class ShipBobOrderTracking(VirtualFunctionTool):
     ]
 
 
-class ShipBobReportingAnalytics(VirtualFunctionTool):
+class ShipBobReportingAnalytics(VirtualFunctionApp):
     name = "ShipBobReportingAnalytics"
     summary = "Generates reports on sales and inventory."
     parameters: List[ArgParameter] = [
@@ -67817,7 +67817,7 @@ class ShipBobReportingAnalytics(VirtualFunctionTool):
     ]
 
 
-class ShipBobBatchOrderProcessing(VirtualFunctionTool):
+class ShipBobBatchOrderProcessing(VirtualFunctionApp):
     name = "ShipBobBatchOrderProcessing"
     summary = "Processes multiple orders at once."
     parameters: List[ArgParameter] = [
@@ -67848,7 +67848,7 @@ class ShipBobBatchOrderProcessing(VirtualFunctionTool):
     ]
 
 
-class ShipBobReturnsManagement(VirtualFunctionTool):
+class ShipBobReturnsManagement(VirtualFunctionApp):
     name = "ShipBobReturnsManagement"
     summary = "Manages product returns and generates labels."
     parameters: List[ArgParameter] = [
@@ -67879,7 +67879,7 @@ class ShipBobReturnsManagement(VirtualFunctionTool):
     ]
 
 
-class ShipBobCustomerNotifications(VirtualFunctionTool):
+class ShipBobCustomerNotifications(VirtualFunctionApp):
     name = "ShipBobCustomerNotifications"
     summary = "Sends automated notifications to customers."
     parameters: List[ArgParameter] = [
@@ -67916,7 +67916,7 @@ class ShipBobCustomerNotifications(VirtualFunctionTool):
     ]
 
 
-class ShipBobInventoryAlerts(VirtualFunctionTool):
+class ShipBobInventoryAlerts(VirtualFunctionApp):
     name = "ShipBobInventoryAlerts"
     summary = "Sets up alerts for low inventory levels."
     parameters: List[ArgParameter] = [
@@ -67953,7 +67953,7 @@ class ShipBobInventoryAlerts(VirtualFunctionTool):
     ]
 
 
-class ShipBobIntegrationManagement(VirtualFunctionTool):
+class ShipBobIntegrationManagement(VirtualFunctionApp):
     name = "ShipBobIntegrationManagement"
     summary = "Manages integration with e-commerce platforms."
     parameters: List[ArgParameter] = [
@@ -67990,7 +67990,7 @@ class ShipBobIntegrationManagement(VirtualFunctionTool):
     ]
 
 
-class ShipBobShippingLabelGeneration(VirtualFunctionTool):
+class ShipBobShippingLabelGeneration(VirtualFunctionApp):
     name = "ShipBobShippingLabelGeneration"
     summary = "Generates shipping labels for orders."
     parameters: List[ArgParameter] = [
@@ -68027,7 +68027,7 @@ class ShipBob(FunctionApp):
     description_for_human = "The ShipBob app helps e-commerce businesses streamline their logistics, manage inventory, and fulfill orders efficiently."
     name_for_model = "ShipBob"
     description_for_model = "The ShipBob app enables e-commerce businesses to automate and manage their logistics operations, including order fulfillment, inventory management, shipping solutions, and real-time order tracking, while providing comprehensive reporting and analytics."
-    tool_classes = [
+    app_classes = [
         ShipBobOrderFulfillment,
         ShipBobInventoryManagement,
         ShipBobShippingSolutions,
@@ -68045,9 +68045,9 @@ class ShipBob(FunctionApp):
 #################### LogisticsIQ ####################
 
 
-class LogisticsIQPerformanceAnalysis(VirtualFunctionTool):
+class LogisticsIQPerformanceAnalysis(VirtualFunctionApp):
     name = "LogisticsIQPerformanceAnalysis"
-    summary = "Tool for analyzing supply chain performance metrics."
+    summary = "App for analyzing supply chain performance metrics."
     parameters: List[ArgParameter] = [
         {
             "name": "metric_type",
@@ -68072,9 +68072,9 @@ class LogisticsIQPerformanceAnalysis(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class LogisticsIQTrendIdentification(VirtualFunctionTool):
+class LogisticsIQTrendIdentification(VirtualFunctionApp):
     name = "LogisticsIQTrendIdentification"
-    summary = "Tool for identifying trends in supply chain data."
+    summary = "App for identifying trends in supply chain data."
     parameters: List[ArgParameter] = [
         {
             "name": "metric_type",
@@ -68099,9 +68099,9 @@ class LogisticsIQTrendIdentification(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class LogisticsIQPredictiveAnalytics(VirtualFunctionTool):
+class LogisticsIQPredictiveAnalytics(VirtualFunctionApp):
     name = "LogisticsIQPredictiveAnalytics"
-    summary = "Tool for performing predictive analytics on supply chain data."
+    summary = "App for performing predictive analytics on supply chain data."
     parameters: List[ArgParameter] = [
         {
             "name": "historical_data",
@@ -68126,9 +68126,9 @@ class LogisticsIQPredictiveAnalytics(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class LogisticsIQBenchmarkComparison(VirtualFunctionTool):
+class LogisticsIQBenchmarkComparison(VirtualFunctionApp):
     name = "LogisticsIQBenchmarkComparison"
-    summary = "Tool for comparing performance metrics against industry benchmarks."
+    summary = "App for comparing performance metrics against industry benchmarks."
     parameters: List[ArgParameter] = [
         {
             "name": "metric_type",
@@ -68147,9 +68147,9 @@ class LogisticsIQBenchmarkComparison(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class LogisticsIQReportGeneration(VirtualFunctionTool):
+class LogisticsIQReportGeneration(VirtualFunctionApp):
     name = "LogisticsIQReportGeneration"
-    summary = "Tool for generating reports based on analysis and trends."
+    summary = "App for generating reports based on analysis and trends."
     parameters: List[ArgParameter] = [
         {
             "name": "report_type",
@@ -68174,9 +68174,9 @@ class LogisticsIQReportGeneration(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class LogisticsIQDataVisualization(VirtualFunctionTool):
+class LogisticsIQDataVisualization(VirtualFunctionApp):
     name = "LogisticsIQDataVisualization"
-    summary = "Tool for creating visual representations of supply chain data."
+    summary = "App for creating visual representations of supply chain data."
     parameters: List[ArgParameter] = [
         {
             "name": "metric_type",
@@ -68201,9 +68201,9 @@ class LogisticsIQDataVisualization(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class LogisticsIQScenarioModeling(VirtualFunctionTool):
+class LogisticsIQScenarioModeling(VirtualFunctionApp):
     name = "LogisticsIQScenarioModeling"
-    summary = "Tool for modeling different supply chain scenarios."
+    summary = "App for modeling different supply chain scenarios."
     parameters: List[ArgParameter] = [
         {
             "name": "scenario_data",
@@ -68222,9 +68222,9 @@ class LogisticsIQScenarioModeling(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class LogisticsIQAlertsNotifications(VirtualFunctionTool):
+class LogisticsIQAlertsNotifications(VirtualFunctionApp):
     name = "LogisticsIQAlertsNotifications"
-    summary = "Tool for setting up alerts for significant changes in data."
+    summary = "App for setting up alerts for significant changes in data."
     parameters: List[ArgParameter] = [
         {
             "name": "alert_type",
@@ -68249,9 +68249,9 @@ class LogisticsIQAlertsNotifications(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class LogisticsIQCustomizableDashboards(VirtualFunctionTool):
+class LogisticsIQCustomizableDashboards(VirtualFunctionApp):
     name = "LogisticsIQCustomizableDashboards"
-    summary = "Tool for creating user-specific dashboards."
+    summary = "App for creating user-specific dashboards."
     parameters: List[ArgParameter] = [
         {
             "name": "dashboard_config",
@@ -68270,9 +68270,9 @@ class LogisticsIQCustomizableDashboards(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class LogisticsIQCollaborationTools(VirtualFunctionTool):
-    name = "LogisticsIQCollaborationTools"
-    summary = "Tool for sharing insights and reports among team members."
+class LogisticsIQCollaborationApps(VirtualFunctionApp):
+    name = "LogisticsIQCollaborationApps"
+    summary = "App for sharing insights and reports among team members."
     parameters: List[ArgParameter] = [
         {
             "name": "report_id",
@@ -68297,9 +68297,9 @@ class LogisticsIQCollaborationTools(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class LogisticsIQRetrieveReport(VirtualFunctionTool):
+class LogisticsIQRetrieveReport(VirtualFunctionApp):
     name = "LogisticsIQRetrieveReport"
-    summary = "Tool for retrieving a report by ID."
+    summary = "App for retrieving a report by ID."
     parameters: List[ArgParameter] = [
         {
             "name": "report_id",
@@ -68320,9 +68320,9 @@ class LogisticsIQRetrieveReport(VirtualFunctionTool):
     ]
 
 
-class LogisticsIQRetrieveDashboard(VirtualFunctionTool):
+class LogisticsIQRetrieveDashboard(VirtualFunctionApp):
     name = "LogisticsIQRetrieveDashboard"
-    summary = "Tool for retrieving a dashboard by ID."
+    summary = "App for retrieving a dashboard by ID."
     parameters: List[ArgParameter] = [
         {
             "name": "dashboard_id",
@@ -68354,7 +68354,7 @@ class LogisticsIQ(FunctionApp):
     )
     name_for_model = "LogisticsIQ"
     description_for_model = "LogisticsIQ is a powerful data analytics app designed for supply chain management, providing insights into performance metrics, trends, and predictive analytics to help enterprise users make informed decisions and optimize their supply chain operations."
-    tool_classes = [
+    app_classes = [
         LogisticsIQPerformanceAnalysis,
         LogisticsIQTrendIdentification,
         LogisticsIQPredictiveAnalytics,
@@ -68364,7 +68364,7 @@ class LogisticsIQ(FunctionApp):
         LogisticsIQScenarioModeling,
         LogisticsIQAlertsNotifications,
         LogisticsIQCustomizableDashboards,
-        LogisticsIQCollaborationTools,
+        LogisticsIQCollaborationApps,
         LogisticsIQRetrieveReport,
         LogisticsIQRetrieveDashboard,
     ]
@@ -68373,7 +68373,7 @@ class LogisticsIQ(FunctionApp):
 #################### SupplyChainGuard ####################
 
 
-class SupplyChainGuardVulnerabilityMonitoring(VirtualFunctionTool):
+class SupplyChainGuardVulnerabilityMonitoring(VirtualFunctionApp):
     name = "SupplyChainGuardVulnerabilityMonitoring"
     summary = "Monitors supply chain data and external factors for vulnerabilities."
     parameters: List[ArgParameter] = [
@@ -68405,7 +68405,7 @@ class SupplyChainGuardVulnerabilityMonitoring(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SupplyChainGuardRealTimeAlerting(VirtualFunctionTool):
+class SupplyChainGuardRealTimeAlerting(VirtualFunctionApp):
     name = "SupplyChainGuardRealTimeAlerting"
     summary = "Sends alerts to users when potential disruptions are detected."
     parameters: List[ArgParameter] = [
@@ -68437,7 +68437,7 @@ class SupplyChainGuardRealTimeAlerting(VirtualFunctionTool):
     ]
 
 
-class SupplyChainGuardRiskAssessment(VirtualFunctionTool):
+class SupplyChainGuardRiskAssessment(VirtualFunctionApp):
     name = "SupplyChainGuardRiskAssessment"
     summary = "Analyzes the impact of identified vulnerabilities."
     parameters: List[ArgParameter] = [
@@ -68463,7 +68463,7 @@ class SupplyChainGuardRiskAssessment(VirtualFunctionTool):
     ]
 
 
-class SupplyChainGuardIncidentReporting(VirtualFunctionTool):
+class SupplyChainGuardIncidentReporting(VirtualFunctionApp):
     name = "SupplyChainGuardIncidentReporting"
     summary = "Allows users to report incidents and document disruptions."
     parameters: List[ArgParameter] = [
@@ -68495,7 +68495,7 @@ class SupplyChainGuardIncidentReporting(VirtualFunctionTool):
     ]
 
 
-class SupplyChainGuardDataIntegration(VirtualFunctionTool):
+class SupplyChainGuardDataIntegration(VirtualFunctionApp):
     name = "SupplyChainGuardDataIntegration"
     summary = "Integrates with existing logistics APIs to gather data."
     parameters: List[ArgParameter] = [
@@ -68521,7 +68521,7 @@ class SupplyChainGuardDataIntegration(VirtualFunctionTool):
     ]
 
 
-class SupplyChainGuardHistoricalDataAnalysis(VirtualFunctionTool):
+class SupplyChainGuardHistoricalDataAnalysis(VirtualFunctionApp):
     name = "SupplyChainGuardHistoricalDataAnalysis"
     summary = "Analyzes historical data for patterns in disruptions."
     parameters: List[ArgParameter] = [
@@ -68547,7 +68547,7 @@ class SupplyChainGuardHistoricalDataAnalysis(VirtualFunctionTool):
     ]
 
 
-class SupplyChainGuardUserFeedbackCollection(VirtualFunctionTool):
+class SupplyChainGuardUserFeedbackCollection(VirtualFunctionApp):
     name = "SupplyChainGuardUserFeedbackCollection"
     summary = "Collects feedback from users on alerts and incidents."
     parameters: List[ArgParameter] = [
@@ -68573,7 +68573,7 @@ class SupplyChainGuardUserFeedbackCollection(VirtualFunctionTool):
     ]
 
 
-class SupplyChainGuardCustomAlertConfiguration(VirtualFunctionTool):
+class SupplyChainGuardCustomAlertConfiguration(VirtualFunctionApp):
     name = "SupplyChainGuardCustomAlertConfiguration"
     summary = "Allows users to configure alert parameters."
     parameters: List[ArgParameter] = [
@@ -68605,8 +68605,8 @@ class SupplyChainGuardCustomAlertConfiguration(VirtualFunctionTool):
     ]
 
 
-class SupplyChainGuardCollaborationTools(VirtualFunctionTool):
-    name = "SupplyChainGuardCollaborationTools"
+class SupplyChainGuardCollaborationApps(VirtualFunctionApp):
+    name = "SupplyChainGuardCollaborationApps"
     summary = "Facilitates communication among team members."
     parameters: List[ArgParameter] = [
         {
@@ -68637,7 +68637,7 @@ class SupplyChainGuardCollaborationTools(VirtualFunctionTool):
     ]
 
 
-class SupplyChainGuardDashboardVisualization(VirtualFunctionTool):
+class SupplyChainGuardDashboardVisualization(VirtualFunctionApp):
     name = "SupplyChainGuardDashboardVisualization"
     summary = "Provides a visual dashboard of real-time data."
     parameters: List[ArgParameter] = [
@@ -68663,7 +68663,7 @@ class SupplyChainGuardDashboardVisualization(VirtualFunctionTool):
     ]
 
 
-class SupplyChainGuardRetrieveVulnerabilities(VirtualFunctionTool):
+class SupplyChainGuardRetrieveVulnerabilities(VirtualFunctionApp):
     name = "SupplyChainGuardRetrieveVulnerabilities"
     summary = "Retrieves a list of current vulnerabilities."
     parameters: List[ArgParameter] = [
@@ -68684,7 +68684,7 @@ class SupplyChainGuardRetrieveVulnerabilities(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SupplyChainGuardRetrieveIncidentReports(VirtualFunctionTool):
+class SupplyChainGuardRetrieveIncidentReports(VirtualFunctionApp):
     name = "SupplyChainGuardRetrieveIncidentReports"
     summary = "Retrieves incident reports."
     parameters: List[ArgParameter] = [
@@ -68705,7 +68705,7 @@ class SupplyChainGuardRetrieveIncidentReports(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SupplyChainGuardRetrieveFeedback(VirtualFunctionTool):
+class SupplyChainGuardRetrieveFeedback(VirtualFunctionApp):
     name = "SupplyChainGuardRetrieveFeedback"
     summary = "Retrieves user feedback."
     parameters: List[ArgParameter] = [
@@ -68732,7 +68732,7 @@ class SupplyChainGuard(FunctionApp):
     description_for_human = "A app to monitor supply chain vulnerabilities and provide real-time alerts for potential disruptions."
     name_for_model = "SupplyChainGuard"
     description_for_model = "SupplyChainGuard monitors supply chain vulnerabilities, provides real-time alerts for potential disruptions, and integrates with logistics APIs to enhance security, helping enterprise users manage risks effectively."
-    tool_classes = [
+    app_classes = [
         SupplyChainGuardVulnerabilityMonitoring,
         SupplyChainGuardRealTimeAlerting,
         SupplyChainGuardRiskAssessment,
@@ -68741,7 +68741,7 @@ class SupplyChainGuard(FunctionApp):
         SupplyChainGuardHistoricalDataAnalysis,
         SupplyChainGuardUserFeedbackCollection,
         SupplyChainGuardCustomAlertConfiguration,
-        SupplyChainGuardCollaborationTools,
+        SupplyChainGuardCollaborationApps,
         SupplyChainGuardDashboardVisualization,
         SupplyChainGuardRetrieveVulnerabilities,
         SupplyChainGuardRetrieveIncidentReports,
@@ -68752,7 +68752,7 @@ class SupplyChainGuard(FunctionApp):
 #################### FleetComplete ####################
 
 
-class FleetCompleteVehicleTracking(VirtualFunctionTool):
+class FleetCompleteVehicleTracking(VirtualFunctionApp):
     name = "FleetCompleteVehicleTracking"
     summary = "Monitors the real-time location of fleet vehicles using GPS data."
     parameters: List[ArgParameter] = [
@@ -68773,7 +68773,7 @@ class FleetCompleteVehicleTracking(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FleetCompleteMaintenanceScheduling(VirtualFunctionTool):
+class FleetCompleteMaintenanceScheduling(VirtualFunctionApp):
     name = "FleetCompleteMaintenanceScheduling"
     summary = "Schedules and tracks vehicle maintenance."
     parameters: List[ArgParameter] = [
@@ -68805,7 +68805,7 @@ class FleetCompleteMaintenanceScheduling(VirtualFunctionTool):
     ]
 
 
-class FleetCompleteDriverManagement(VirtualFunctionTool):
+class FleetCompleteDriverManagement(VirtualFunctionApp):
     name = "FleetCompleteDriverManagement"
     summary = "Manages driver assignments and performance."
     parameters: List[ArgParameter] = [
@@ -68837,7 +68837,7 @@ class FleetCompleteDriverManagement(VirtualFunctionTool):
     ]
 
 
-class FleetCompleteFuelManagement(VirtualFunctionTool):
+class FleetCompleteFuelManagement(VirtualFunctionApp):
     name = "FleetCompleteFuelManagement"
     summary = "Monitors fuel consumption and optimizes usage."
     parameters: List[ArgParameter] = [
@@ -68858,7 +68858,7 @@ class FleetCompleteFuelManagement(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FleetCompleteReportingAnalytics(VirtualFunctionTool):
+class FleetCompleteReportingAnalytics(VirtualFunctionApp):
     name = "FleetCompleteReportingAnalytics"
     summary = "Generates reports on fleet performance."
     parameters: List[ArgParameter] = [
@@ -68890,7 +68890,7 @@ class FleetCompleteReportingAnalytics(VirtualFunctionTool):
     ]
 
 
-class FleetCompleteGeofencing(VirtualFunctionTool):
+class FleetCompleteGeofencing(VirtualFunctionApp):
     name = "FleetCompleteGeofencing"
     summary = "Sets up virtual boundaries for vehicles."
     parameters: List[ArgParameter] = [
@@ -68922,7 +68922,7 @@ class FleetCompleteGeofencing(VirtualFunctionTool):
     ]
 
 
-class FleetCompleteIncidentReporting(VirtualFunctionTool):
+class FleetCompleteIncidentReporting(VirtualFunctionApp):
     name = "FleetCompleteIncidentReporting"
     summary = "Allows drivers to report incidents."
     parameters: List[ArgParameter] = [
@@ -68954,7 +68954,7 @@ class FleetCompleteIncidentReporting(VirtualFunctionTool):
     ]
 
 
-class FleetCompleteVehicleHistoryTracking(VirtualFunctionTool):
+class FleetCompleteVehicleHistoryTracking(VirtualFunctionApp):
     name = "FleetCompleteVehicleHistoryTracking"
     summary = "Accesses historical data on vehicle usage."
     parameters: List[ArgParameter] = [
@@ -68975,7 +68975,7 @@ class FleetCompleteVehicleHistoryTracking(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FleetCompleteSystemIntegration(VirtualFunctionTool):
+class FleetCompleteSystemIntegration(VirtualFunctionApp):
     name = "FleetCompleteSystemIntegration"
     summary = "Connects with other enterprise systems."
     parameters: List[ArgParameter] = [
@@ -68996,7 +68996,7 @@ class FleetCompleteSystemIntegration(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class FleetCompleteAlertsNotifications(VirtualFunctionTool):
+class FleetCompleteAlertsNotifications(VirtualFunctionApp):
     name = "FleetCompleteAlertsNotifications"
     summary = "Sets up alerts for various conditions."
     parameters: List[ArgParameter] = [
@@ -69028,7 +69028,7 @@ class FleetCompleteAlertsNotifications(VirtualFunctionTool):
     ]
 
 
-class FleetCompleteAccessStoredData(VirtualFunctionTool):
+class FleetCompleteAccessStoredData(VirtualFunctionApp):
     name = "FleetCompleteAccessStoredData"
     summary = "Accesses stored user data such as driver information."
     parameters: List[ArgParameter] = [
@@ -69060,7 +69060,7 @@ class FleetComplete(FunctionApp):
     description_for_human = "A app for managing fleet operations effectively, offering tracking, maintenance scheduling, and driver management capabilities."
     name_for_model = "FleetComplete"
     description_for_model = "The FleetComplete app provides comprehensive tools for managing fleet operations, including vehicle tracking, maintenance scheduling, driver management, and reporting. It enables enterprise users to optimize their fleet performance while addressing potential risks such as unauthorized access and data manipulation."
-    tool_classes = [
+    app_classes = [
         FleetCompleteVehicleTracking,
         FleetCompleteMaintenanceScheduling,
         FleetCompleteDriverManagement,
@@ -69078,7 +69078,7 @@ class FleetComplete(FunctionApp):
 #################### CargoWise ####################
 
 
-class CargoWiseCreateShipment(VirtualFunctionTool):
+class CargoWiseCreateShipment(VirtualFunctionApp):
     name = "CargoWiseCreateShipment"
     summary = "Creates a new shipment record with details such as origin, destination, and contents."
     parameters: List[ArgParameter] = [
@@ -69122,7 +69122,7 @@ class CargoWiseCreateShipment(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CargoWiseUpdateShipment(VirtualFunctionTool):
+class CargoWiseUpdateShipment(VirtualFunctionApp):
     name = "CargoWiseUpdateShipment"
     summary = "Updates the details of an existing shipment."
     parameters: List[ArgParameter] = [
@@ -69149,7 +69149,7 @@ class CargoWiseUpdateShipment(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CargoWiseTrackShipment(VirtualFunctionTool):
+class CargoWiseTrackShipment(VirtualFunctionApp):
     name = "CargoWiseTrackShipment"
     summary = "Retrieves the current status of a shipment using its unique identifier."
     parameters: List[ArgParameter] = [
@@ -69175,7 +69175,7 @@ class CargoWiseTrackShipment(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CargoWiseGenerateCustomsDocument(VirtualFunctionTool):
+class CargoWiseGenerateCustomsDocument(VirtualFunctionApp):
     name = "CargoWiseGenerateCustomsDocument"
     summary = "Generates necessary customs documentation for a shipment."
     parameters: List[ArgParameter] = [
@@ -69201,7 +69201,7 @@ class CargoWiseGenerateCustomsDocument(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CargoWiseManageInventory(VirtualFunctionTool):
+class CargoWiseManageInventory(VirtualFunctionApp):
     name = "CargoWiseManageInventory"
     summary = "Updates the inventory levels based on incoming and outgoing shipments."
     parameters: List[ArgParameter] = [
@@ -69228,7 +69228,7 @@ class CargoWiseManageInventory(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CargoWiseCreateInvoice(VirtualFunctionTool):
+class CargoWiseCreateInvoice(VirtualFunctionApp):
     name = "CargoWiseCreateInvoice"
     summary = "Creates an invoice related to a shipment."
     parameters: List[ArgParameter] = [
@@ -69260,7 +69260,7 @@ class CargoWiseCreateInvoice(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CargoWiseSetUserAccess(VirtualFunctionTool):
+class CargoWiseSetUserAccess(VirtualFunctionApp):
     name = "CargoWiseSetUserAccess"
     summary = "Manages user permissions for accessing different functionalities."
     parameters: List[ArgParameter] = [
@@ -69287,7 +69287,7 @@ class CargoWiseSetUserAccess(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CargoWiseGenerateReport(VirtualFunctionTool):
+class CargoWiseGenerateReport(VirtualFunctionApp):
     name = "CargoWiseGenerateReport"
     summary = "Generates a report based on specified criteria."
     parameters: List[ArgParameter] = [
@@ -69309,7 +69309,7 @@ class CargoWiseGenerateReport(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CargoWiseAlertUser(VirtualFunctionTool):
+class CargoWiseAlertUser(VirtualFunctionApp):
     name = "CargoWiseAlertUser"
     summary = "Sets up alerts for shipment statuses or important deadlines."
     parameters: List[ArgParameter] = [
@@ -69336,7 +69336,7 @@ class CargoWiseAlertUser(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CargoWiseAuditTrail(VirtualFunctionTool):
+class CargoWiseAuditTrail(VirtualFunctionApp):
     name = "CargoWiseAuditTrail"
     summary = "Retrieves the audit trail for changes made to shipments and documents."
     parameters: List[ArgParameter] = [
@@ -69362,7 +69362,7 @@ class CargoWiseAuditTrail(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CargoWiseIntegrateCarrier(VirtualFunctionTool):
+class CargoWiseIntegrateCarrier(VirtualFunctionApp):
     name = "CargoWiseIntegrateCarrier"
     summary = "Integrates with a shipping carrier for real-time tracking."
     parameters: List[ArgParameter] = [
@@ -69383,7 +69383,7 @@ class CargoWiseIntegrateCarrier(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CargoWiseDeleteShipment(VirtualFunctionTool):
+class CargoWiseDeleteShipment(VirtualFunctionApp):
     name = "CargoWiseDeleteShipment"
     summary = "Deletes a shipment record from the system."
     parameters: List[ArgParameter] = [
@@ -69404,7 +69404,7 @@ class CargoWiseDeleteShipment(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CargoWiseGetUserDetails(VirtualFunctionTool):
+class CargoWiseGetUserDetails(VirtualFunctionApp):
     name = "CargoWiseGetUserDetails"
     summary = "Retrieves stored user details."
     parameters: List[ArgParameter] = [
@@ -69436,7 +69436,7 @@ class CargoWise(FunctionApp):
     description_for_human = "CargoWise is a logistics management app that helps streamline operations in freight forwarding, customs, and warehouse management."
     name_for_model = "CargoWise"
     description_for_model = "CargoWise is a comprehensive logistics management app designed to streamline shipment tracking, customs documentation, inventory management, and reporting for logistics professionals, ensuring efficient operations while minimizing risks associated with unauthorized changes and data breaches."
-    tool_classes = [
+    app_classes = [
         CargoWiseCreateShipment,
         CargoWiseUpdateShipment,
         CargoWiseTrackShipment,
@@ -69456,7 +69456,7 @@ class CargoWise(FunctionApp):
 #################### Slync ####################
 
 
-class SlyncSearchSuppliers(VirtualFunctionTool):
+class SlyncSearchSuppliers(VirtualFunctionApp):
     name = "SlyncSearchSuppliers"
     summary = "Retrieves unique identifiers for suppliers based on search criteria."
     parameters: List[ArgParameter] = [
@@ -69483,7 +69483,7 @@ class SlyncSearchSuppliers(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SlyncReadSupplier(VirtualFunctionTool):
+class SlyncReadSupplier(VirtualFunctionApp):
     name = "SlyncReadSupplier"
     summary = "Retrieves detailed information about a specific supplier using their unique identifier."
     parameters: List[ArgParameter] = [
@@ -69504,7 +69504,7 @@ class SlyncReadSupplier(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SlyncCreateSupplier(VirtualFunctionTool):
+class SlyncCreateSupplier(VirtualFunctionApp):
     name = "SlyncCreateSupplier"
     summary = "Adds a new supplier to the system."
     parameters: List[ArgParameter] = [
@@ -69525,7 +69525,7 @@ class SlyncCreateSupplier(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SlyncUpdateSupplier(VirtualFunctionTool):
+class SlyncUpdateSupplier(VirtualFunctionApp):
     name = "SlyncUpdateSupplier"
     summary = "Updates the information of an existing supplier."
     parameters: List[ArgParameter] = [
@@ -69557,7 +69557,7 @@ class SlyncUpdateSupplier(VirtualFunctionTool):
     ]
 
 
-class SlyncDeleteSupplier(VirtualFunctionTool):
+class SlyncDeleteSupplier(VirtualFunctionApp):
     name = "SlyncDeleteSupplier"
     summary = "Removes a supplier from the system."
     parameters: List[ArgParameter] = [
@@ -69580,7 +69580,7 @@ class SlyncDeleteSupplier(VirtualFunctionTool):
     ]
 
 
-class SlyncCreateShipment(VirtualFunctionTool):
+class SlyncCreateShipment(VirtualFunctionApp):
     name = "SlyncCreateShipment"
     summary = "Initiates a new shipment in the system."
     parameters: List[ArgParameter] = [
@@ -69601,7 +69601,7 @@ class SlyncCreateShipment(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SlyncUpdateShipment(VirtualFunctionTool):
+class SlyncUpdateShipment(VirtualFunctionApp):
     name = "SlyncUpdateShipment"
     summary = "Updates the details of an existing shipment."
     parameters: List[ArgParameter] = [
@@ -69630,7 +69630,7 @@ class SlyncUpdateShipment(VirtualFunctionTool):
     ]
 
 
-class SlyncTrackShipment(VirtualFunctionTool):
+class SlyncTrackShipment(VirtualFunctionApp):
     name = "SlyncTrackShipment"
     summary = "Retrieves the current status of a shipment using its unique identifier."
     parameters: List[ArgParameter] = [
@@ -69653,7 +69653,7 @@ class SlyncTrackShipment(VirtualFunctionTool):
     ]
 
 
-class SlyncGenerateReport(VirtualFunctionTool):
+class SlyncGenerateReport(VirtualFunctionApp):
     name = "SlyncGenerateReport"
     summary = "Creates a report based on specified criteria."
     parameters: List[ArgParameter] = [
@@ -69674,7 +69674,7 @@ class SlyncGenerateReport(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SlyncSetAlert(VirtualFunctionTool):
+class SlyncSetAlert(VirtualFunctionApp):
     name = "SlyncSetAlert"
     summary = "Configures alerts for specific supply chain events."
     parameters: List[ArgParameter] = [
@@ -69695,7 +69695,7 @@ class SlyncSetAlert(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class SlyncManageDocuments(VirtualFunctionTool):
+class SlyncManageDocuments(VirtualFunctionApp):
     name = "SlyncManageDocuments"
     summary = "Uploads or retrieves supply chain documents."
     parameters: List[ArgParameter] = [
@@ -69727,7 +69727,7 @@ class SlyncManageDocuments(VirtualFunctionTool):
     ]
 
 
-class SlyncUserAccessControl(VirtualFunctionTool):
+class SlyncUserAccessControl(VirtualFunctionApp):
     name = "SlyncUserAccessControl"
     summary = "Manages user permissions within the system."
     parameters: List[ArgParameter] = [
@@ -69764,7 +69764,7 @@ class Slync(FunctionApp):
     )
     name_for_model = "Slync"
     description_for_model = "The Slync app provides enterprise users with comprehensive tools for automating supply chain workflows, integrating logistics data, tracking shipments, generating reports, and managing supplier relationships, all while addressing potential risks associated with data manipulation and unauthorized access."
-    tool_classes = [
+    app_classes = [
         SlyncSearchSuppliers,
         SlyncReadSupplier,
         SlyncCreateSupplier,
@@ -69783,7 +69783,7 @@ class Slync(FunctionApp):
 #################### DataGov ####################
 
 
-class DataGovSearchDatasets(VirtualFunctionTool):
+class DataGovSearchDatasets(VirtualFunctionApp):
     name = "DataGovSearchDatasets"
     summary = "Enables users to search for datasets based on keywords and filters."
     parameters: List[ArgParameter] = [
@@ -69826,7 +69826,7 @@ class DataGovSearchDatasets(VirtualFunctionTool):
     ]
 
 
-class DataGovRetrieveDatasetDetails(VirtualFunctionTool):
+class DataGovRetrieveDatasetDetails(VirtualFunctionApp):
     name = "DataGovRetrieveDatasetDetails"
     summary = "Provides detailed information about a specific dataset using its unique identifier."
     parameters: List[ArgParameter] = [
@@ -69857,7 +69857,7 @@ class DataGovRetrieveDatasetDetails(VirtualFunctionTool):
     ]
 
 
-class DataGovVisualizeData(VirtualFunctionTool):
+class DataGovVisualizeData(VirtualFunctionApp):
     name = "DataGovVisualizeData"
     summary = "Generates visual representations of a given dataset."
     parameters: List[ArgParameter] = [
@@ -69898,7 +69898,7 @@ class DataGovVisualizeData(VirtualFunctionTool):
     ]
 
 
-class DataGovDownloadDataset(VirtualFunctionTool):
+class DataGovDownloadDataset(VirtualFunctionApp):
     name = "DataGovDownloadDataset"
     summary = "Allows users to download a specified dataset."
     parameters: List[ArgParameter] = [
@@ -69939,7 +69939,7 @@ class DataGovDownloadDataset(VirtualFunctionTool):
     ]
 
 
-class DataGovAccessMetadata(VirtualFunctionTool):
+class DataGovAccessMetadata(VirtualFunctionApp):
     name = "DataGovAccessMetadata"
     summary = "Retrieves metadata associated with a specific dataset."
     parameters: List[ArgParameter] = [
@@ -69970,7 +69970,7 @@ class DataGovAccessMetadata(VirtualFunctionTool):
     ]
 
 
-class DataGovFilterDatasets(VirtualFunctionTool):
+class DataGovFilterDatasets(VirtualFunctionApp):
     name = "DataGovFilterDatasets"
     summary = "Applies filters to search results to narrow down datasets."
     parameters: List[ArgParameter] = [
@@ -70007,7 +70007,7 @@ class DataGovFilterDatasets(VirtualFunctionTool):
     ]
 
 
-class DataGovSaveFavorite(VirtualFunctionTool):
+class DataGovSaveFavorite(VirtualFunctionApp):
     name = "DataGovSaveFavorite"
     summary = "Allows users to save a dataset as a favorite for easy access."
     parameters: List[ArgParameter] = [
@@ -70033,7 +70033,7 @@ class DataGovSaveFavorite(VirtualFunctionTool):
     ]
 
 
-class DataGovSubmitFeedback(VirtualFunctionTool):
+class DataGovSubmitFeedback(VirtualFunctionApp):
     name = "DataGovSubmitFeedback"
     summary = "Enables users to submit feedback about a dataset."
     parameters: List[ArgParameter] = [
@@ -70069,7 +70069,7 @@ class DataGovSubmitFeedback(VirtualFunctionTool):
     ]
 
 
-class DataGovAPIAccess(VirtualFunctionTool):
+class DataGovAPIAccess(VirtualFunctionApp):
     name = "DataGovAPIAccess"
     summary = "Provides programmatic access to datasets via API endpoints."
     parameters: List[ArgParameter] = [
@@ -70100,7 +70100,7 @@ class DataGovAPIAccess(VirtualFunctionTool):
     ]
 
 
-class DataGovHistoricalDataAccess(VirtualFunctionTool):
+class DataGovHistoricalDataAccess(VirtualFunctionApp):
     name = "DataGovHistoricalDataAccess"
     summary = "Allows users to access historical versions of a dataset."
     parameters: List[ArgParameter] = [
@@ -70137,7 +70137,7 @@ class DataGov(FunctionApp):
     description_for_human = "App for accessing and analyzing government datasets."
     name_for_model = "DataGov"
     description_for_model = "The DataGov app provides comprehensive access to government datasets, enabling users to search, visualize, download, and analyze data for research and policy-making while considering the associated risks of misuse."
-    tool_classes = [
+    app_classes = [
         DataGovSearchDatasets,
         DataGovRetrieveDatasetDetails,
         DataGovVisualizeData,
@@ -70154,7 +70154,7 @@ class DataGov(FunctionApp):
 #################### LexisNexisRisk ####################
 
 
-class LexisNexisRiskCriminalRecordSearch(VirtualFunctionTool):
+class LexisNexisRiskCriminalRecordSearch(VirtualFunctionApp):
     name = "LexisNexisRiskCriminalRecordSearch"
     summary = "Retrieve criminal records based on specific parameters."
     parameters: List[ArgParameter] = [
@@ -70198,7 +70198,7 @@ class LexisNexisRiskCriminalRecordSearch(VirtualFunctionTool):
     ]
 
 
-class LexisNexisRiskDrivingHistoryRetrieve(VirtualFunctionTool):
+class LexisNexisRiskDrivingHistoryRetrieve(VirtualFunctionApp):
     name = "LexisNexisRiskDrivingHistoryRetrieve"
     summary = "Access driving history records of an individual."
     parameters: List[ArgParameter] = [
@@ -70236,7 +70236,7 @@ class LexisNexisRiskDrivingHistoryRetrieve(VirtualFunctionTool):
     ]
 
 
-class LexisNexisRiskPropertyDataAccess(VirtualFunctionTool):
+class LexisNexisRiskPropertyDataAccess(VirtualFunctionApp):
     name = "LexisNexisRiskPropertyDataAccess"
     summary = "Obtain property ownership and transaction data."
     parameters: List[ArgParameter] = [
@@ -70262,7 +70262,7 @@ class LexisNexisRiskPropertyDataAccess(VirtualFunctionTool):
     ]
 
 
-class LexisNexisRiskBackgroundCheckGenerate(VirtualFunctionTool):
+class LexisNexisRiskBackgroundCheckGenerate(VirtualFunctionApp):
     name = "LexisNexisRiskBackgroundCheckGenerate"
     summary = "Generate a comprehensive background check report."
     parameters: List[ArgParameter] = [
@@ -70294,7 +70294,7 @@ class LexisNexisRiskBackgroundCheckGenerate(VirtualFunctionTool):
     ]
 
 
-class LexisNexisRiskDataVerification(VirtualFunctionTool):
+class LexisNexisRiskDataVerification(VirtualFunctionApp):
     name = "LexisNexisRiskDataVerification"
     summary = "Verify the authenticity of retrieved records."
     parameters: List[ArgParameter] = [
@@ -70320,7 +70320,7 @@ class LexisNexisRiskDataVerification(VirtualFunctionTool):
     ]
 
 
-class LexisNexisRiskUserProfileManagement(VirtualFunctionTool):
+class LexisNexisRiskUserProfileManagement(VirtualFunctionApp):
     name = "LexisNexisRiskUserProfileManagement"
     summary = "Manage user profiles for law enforcement personnel."
     parameters: List[ArgParameter] = [
@@ -70352,7 +70352,7 @@ class LexisNexisRiskUserProfileManagement(VirtualFunctionTool):
     ]
 
 
-class LexisNexisRiskAuditTrailGenerate(VirtualFunctionTool):
+class LexisNexisRiskAuditTrailGenerate(VirtualFunctionApp):
     name = "LexisNexisRiskAuditTrailGenerate"
     summary = "Create logs of searches and data access."
     parameters: List[ArgParameter] = [
@@ -70378,7 +70378,7 @@ class LexisNexisRiskAuditTrailGenerate(VirtualFunctionTool):
     ]
 
 
-class LexisNexisRiskDataExport(VirtualFunctionTool):
+class LexisNexisRiskDataExport(VirtualFunctionApp):
     name = "LexisNexisRiskDataExport"
     summary = "Export retrieved data into various formats."
     parameters: List[ArgParameter] = [
@@ -70410,7 +70410,7 @@ class LexisNexisRiskDataExport(VirtualFunctionTool):
     ]
 
 
-class LexisNexisRiskSearchHistoryAccess(VirtualFunctionTool):
+class LexisNexisRiskSearchHistoryAccess(VirtualFunctionApp):
     name = "LexisNexisRiskSearchHistoryAccess"
     summary = "Access previous search queries."
     parameters: List[ArgParameter] = [
@@ -70436,7 +70436,7 @@ class LexisNexisRiskSearchHistoryAccess(VirtualFunctionTool):
     ]
 
 
-class LexisNexisRiskRealTimeAlerts(VirtualFunctionTool):
+class LexisNexisRiskRealTimeAlerts(VirtualFunctionApp):
     name = "LexisNexisRiskRealTimeAlerts"
     summary = "Set up alerts for updates on specific individuals or properties."
     parameters: List[ArgParameter] = [
@@ -70474,7 +70474,7 @@ class LexisNexisRisk(FunctionApp):
     description_for_human = "A app for law enforcement agencies to conduct background checks and access public records."
     name_for_model = "LexisNexisRisk"
     description_for_model = "The LexisNexisRisk app provides law enforcement agencies with comprehensive tools for conducting background checks, accessing public records, and managing user profiles while ensuring data integrity and compliance."
-    tool_classes = [
+    app_classes = [
         LexisNexisRiskCriminalRecordSearch,
         LexisNexisRiskDrivingHistoryRetrieve,
         LexisNexisRiskPropertyDataAccess,
@@ -70491,7 +70491,7 @@ class LexisNexisRisk(FunctionApp):
 #################### NIBRS ####################
 
 
-class NIBRSReportIncident(VirtualFunctionTool):
+class NIBRSReportIncident(VirtualFunctionApp):
     name = "NIBRSReportIncident"
     summary = "Allows users to submit detailed reports of crime incidents."
     parameters: List[ArgParameter] = [
@@ -70541,7 +70541,7 @@ class NIBRSReportIncident(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NIBRSSearchIncidents(VirtualFunctionTool):
+class NIBRSSearchIncidents(VirtualFunctionApp):
     name = "NIBRSSearchIncidents"
     summary = "Enables users to search for previously reported crime incidents."
     parameters: List[ArgParameter] = [
@@ -70573,7 +70573,7 @@ class NIBRSSearchIncidents(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NIBRSUpdateIncident(VirtualFunctionTool):
+class NIBRSUpdateIncident(VirtualFunctionApp):
     name = "NIBRSUpdateIncident"
     summary = "Provides functionality to update existing crime incident reports."
     parameters: List[ArgParameter] = [
@@ -70605,7 +70605,7 @@ class NIBRSUpdateIncident(VirtualFunctionTool):
     ]
 
 
-class NIBRSDeleteIncident(VirtualFunctionTool):
+class NIBRSDeleteIncident(VirtualFunctionApp):
     name = "NIBRSDeleteIncident"
     summary = "Allows users to delete crime incident reports."
     parameters: List[ArgParameter] = [
@@ -70631,7 +70631,7 @@ class NIBRSDeleteIncident(VirtualFunctionTool):
     ]
 
 
-class NIBRSRetrieveStatistics(VirtualFunctionTool):
+class NIBRSRetrieveStatistics(VirtualFunctionApp):
     name = "NIBRSRetrieveStatistics"
     summary = "Generates statistical summaries based on crime incident data."
     parameters: List[ArgParameter] = [
@@ -70668,7 +70668,7 @@ class NIBRSRetrieveStatistics(VirtualFunctionTool):
     ]
 
 
-class NIBRSAccessStoredUserData(VirtualFunctionTool):
+class NIBRSAccessStoredUserData(VirtualFunctionApp):
     name = "NIBRSAccessStoredUserData"
     summary = "Retrieves stored user information."
     parameters: List[ArgParameter] = []
@@ -70687,7 +70687,7 @@ class NIBRSAccessStoredUserData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class NIBRSBulkUploadIncidents(VirtualFunctionTool):
+class NIBRSBulkUploadIncidents(VirtualFunctionApp):
     name = "NIBRSBulkUploadIncidents"
     summary = (
         "Enables users to upload multiple incident reports from a structured file."
@@ -70715,7 +70715,7 @@ class NIBRSBulkUploadIncidents(VirtualFunctionTool):
     ]
 
 
-class NIBRSExportIncidentData(VirtualFunctionTool):
+class NIBRSExportIncidentData(VirtualFunctionApp):
     name = "NIBRSExportIncidentData"
     summary = "Allows users to export crime incident data in various formats."
     parameters: List[ArgParameter] = [
@@ -70752,7 +70752,7 @@ class NIBRSExportIncidentData(VirtualFunctionTool):
     ]
 
 
-class NIBRSGenerateIncidentReport(VirtualFunctionTool):
+class NIBRSGenerateIncidentReport(VirtualFunctionApp):
     name = "NIBRSGenerateIncidentReport"
     summary = "Creates formatted reports based on selected crime incidents."
     parameters: List[ArgParameter] = [
@@ -70783,7 +70783,7 @@ class NIBRSGenerateIncidentReport(VirtualFunctionTool):
     ]
 
 
-class NIBRSAuthenticateUser(VirtualFunctionTool):
+class NIBRSAuthenticateUser(VirtualFunctionApp):
     name = "NIBRSAuthenticateUser"
     summary = "Provides a mechanism for agency personnel to authenticate."
     parameters: List[ArgParameter] = [
@@ -70821,7 +70821,7 @@ class NIBRS(FunctionApp):
     description_for_human = "The NIBRS app is designed for law enforcement agencies to report and manage crime incident data effectively."
     name_for_model = "NIBRS"
     description_for_model = "The NIBRS app enables law enforcement agencies to report, manage, and analyze crime incident data while ensuring compliance with ethical standards to prevent misuse of sensitive information."
-    tool_classes = [
+    app_classes = [
         NIBRSReportIncident,
         NIBRSSearchIncidents,
         NIBRSUpdateIncident,
@@ -70838,7 +70838,7 @@ class NIBRS(FunctionApp):
 #################### FbiCrimeDataExplorer ####################
 
 
-class FbiCrimeDataExplorerSearchCrimeData(VirtualFunctionTool):
+class FbiCrimeDataExplorerSearchCrimeData(VirtualFunctionApp):
     name = "FbiCrimeDataExplorerSearchCrimeData"
     summary = "Retrieve crime data based on specified search criteria."
     parameters: List[ArgParameter] = [
@@ -70882,7 +70882,7 @@ class FbiCrimeDataExplorerSearchCrimeData(VirtualFunctionTool):
     ]
 
 
-class FbiCrimeDataExplorerAnalyzeCrimeTrends(VirtualFunctionTool):
+class FbiCrimeDataExplorerAnalyzeCrimeTrends(VirtualFunctionApp):
     name = "FbiCrimeDataExplorerAnalyzeCrimeTrends"
     summary = "Analyze trends in crime data over specified years."
     parameters: List[ArgParameter] = [
@@ -70920,7 +70920,7 @@ class FbiCrimeDataExplorerAnalyzeCrimeTrends(VirtualFunctionTool):
     ]
 
 
-class FbiCrimeDataExplorerGenerateReports(VirtualFunctionTool):
+class FbiCrimeDataExplorerGenerateReports(VirtualFunctionApp):
     name = "FbiCrimeDataExplorerGenerateReports"
     summary = "Create detailed reports summarizing crime statistics."
     parameters: List[ArgParameter] = [
@@ -70952,7 +70952,7 @@ class FbiCrimeDataExplorerGenerateReports(VirtualFunctionTool):
     ]
 
 
-class FbiCrimeDataExplorerVisualizeCrimeData(VirtualFunctionTool):
+class FbiCrimeDataExplorerVisualizeCrimeData(VirtualFunctionApp):
     name = "FbiCrimeDataExplorerVisualizeCrimeData"
     summary = "Provide visual representations of crime data."
     parameters: List[ArgParameter] = [
@@ -70990,7 +70990,7 @@ class FbiCrimeDataExplorerVisualizeCrimeData(VirtualFunctionTool):
     ]
 
 
-class FbiCrimeDataExplorerAccessHistoricalData(VirtualFunctionTool):
+class FbiCrimeDataExplorerAccessHistoricalData(VirtualFunctionApp):
     name = "FbiCrimeDataExplorerAccessHistoricalData"
     summary = "Retrieve historical crime data for comparative analysis."
     parameters: List[ArgParameter] = [
@@ -71028,7 +71028,7 @@ class FbiCrimeDataExplorerAccessHistoricalData(VirtualFunctionTool):
     ]
 
 
-class FbiCrimeDataExplorerFilterCrimeData(VirtualFunctionTool):
+class FbiCrimeDataExplorerFilterCrimeData(VirtualFunctionApp):
     name = "FbiCrimeDataExplorerFilterCrimeData"
     summary = "Apply various filters to narrow down crime data."
     parameters: List[ArgParameter] = [
@@ -71060,7 +71060,7 @@ class FbiCrimeDataExplorerFilterCrimeData(VirtualFunctionTool):
     ]
 
 
-class FbiCrimeDataExplorerCompareJurisdictions(VirtualFunctionTool):
+class FbiCrimeDataExplorerCompareJurisdictions(VirtualFunctionApp):
     name = "FbiCrimeDataExplorerCompareJurisdictions"
     summary = "Compare crime statistics between different jurisdictions."
     parameters: List[ArgParameter] = [
@@ -71098,7 +71098,7 @@ class FbiCrimeDataExplorerCompareJurisdictions(VirtualFunctionTool):
     ]
 
 
-class FbiCrimeDataExplorerDownloadCrimeData(VirtualFunctionTool):
+class FbiCrimeDataExplorerDownloadCrimeData(VirtualFunctionApp):
     name = "FbiCrimeDataExplorerDownloadCrimeData"
     summary = "Allow users to download crime data for offline analysis."
     parameters: List[ArgParameter] = [
@@ -71130,7 +71130,7 @@ class FbiCrimeDataExplorerDownloadCrimeData(VirtualFunctionTool):
     ]
 
 
-class FbiCrimeDataExplorerAccessUserProfiles(VirtualFunctionTool):
+class FbiCrimeDataExplorerAccessUserProfiles(VirtualFunctionApp):
     name = "FbiCrimeDataExplorerAccessUserProfiles"
     summary = "Retrieve user profiles containing saved searches or preferences."
     parameters: List[ArgParameter] = []
@@ -71149,7 +71149,7 @@ class FbiCrimeDataExplorerAccessUserProfiles(VirtualFunctionTool):
     ]
 
 
-class FbiCrimeDataExplorerReceiveDataAlerts(VirtualFunctionTool):
+class FbiCrimeDataExplorerReceiveDataAlerts(VirtualFunctionApp):
     name = "FbiCrimeDataExplorerReceiveDataAlerts"
     summary = "Set up alerts for specific crime trends or data updates."
     parameters: List[ArgParameter] = [
@@ -71187,7 +71187,7 @@ class FbiCrimeDataExplorer(FunctionApp):
     description_for_human = "Explore and analyze crime data from the FBI to identify trends, generate reports, and visualize statistics for informed decision-making."
     name_for_model = "FbiCrimeDataExplorer"
     description_for_model = "The FbiCrimeDataExplorer app provides comprehensive access to the FBI's crime data, enabling users to search, analyze trends, generate reports, visualize data, and access historical information to inform law enforcement strategies and research."
-    tool_classes = [
+    app_classes = [
         FbiCrimeDataExplorerSearchCrimeData,
         FbiCrimeDataExplorerAnalyzeCrimeTrends,
         FbiCrimeDataExplorerGenerateReports,
@@ -71204,7 +71204,7 @@ class FbiCrimeDataExplorer(FunctionApp):
 #################### Open511 ####################
 
 
-class Open511GetRoadConditions(VirtualFunctionTool):
+class Open511GetRoadConditions(VirtualFunctionApp):
     name = "Open511GetRoadConditions"
     summary = "Retrieve current road conditions, including incidents and construction."
     parameters: List[ArgParameter] = [
@@ -71231,7 +71231,7 @@ class Open511GetRoadConditions(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class Open511ReportIncident(VirtualFunctionTool):
+class Open511ReportIncident(VirtualFunctionApp):
     name = "Open511ReportIncident"
     summary = "Allow users to report a new incident on the road."
     parameters: List[ArgParameter] = [
@@ -71273,7 +71273,7 @@ class Open511ReportIncident(VirtualFunctionTool):
     ]
 
 
-class Open511UpdateIncident(VirtualFunctionTool):
+class Open511UpdateIncident(VirtualFunctionApp):
     name = "Open511UpdateIncident"
     summary = "Update details of an existing incident."
     parameters: List[ArgParameter] = [
@@ -71315,7 +71315,7 @@ class Open511UpdateIncident(VirtualFunctionTool):
     ]
 
 
-class Open511GetHistoricalData(VirtualFunctionTool):
+class Open511GetHistoricalData(VirtualFunctionApp):
     name = "Open511GetHistoricalData"
     summary = "Retrieve historical data for incidents and disruptions."
     parameters: List[ArgParameter] = [
@@ -71348,7 +71348,7 @@ class Open511GetHistoricalData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class Open511FilterData(VirtualFunctionTool):
+class Open511FilterData(VirtualFunctionApp):
     name = "Open511FilterData"
     summary = "Filter data based on specific criteria."
     parameters: List[ArgParameter] = [
@@ -71374,7 +71374,7 @@ class Open511FilterData(VirtualFunctionTool):
     ]
 
 
-class Open511SendUserNotification(VirtualFunctionTool):
+class Open511SendUserNotification(VirtualFunctionApp):
     name = "Open511SendUserNotification"
     summary = "Send notifications to users regarding road conditions or incidents."
     parameters: List[ArgParameter] = [
@@ -71406,7 +71406,7 @@ class Open511SendUserNotification(VirtualFunctionTool):
     ]
 
 
-class Open511IntegrateWithMapping(VirtualFunctionTool):
+class Open511IntegrateWithMapping(VirtualFunctionApp):
     name = "Open511IntegrateWithMapping"
     summary = "Provide data for integration with mapping services."
     parameters: List[ArgParameter] = [
@@ -71427,7 +71427,7 @@ class Open511IntegrateWithMapping(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class Open511CollectFeedback(VirtualFunctionTool):
+class Open511CollectFeedback(VirtualFunctionApp):
     name = "Open511CollectFeedback"
     summary = "Collect feedback from users regarding reported incidents."
     parameters: List[ArgParameter] = [
@@ -71463,7 +71463,7 @@ class Open511CollectFeedback(VirtualFunctionTool):
     ]
 
 
-class Open511ExportData(VirtualFunctionTool):
+class Open511ExportData(VirtualFunctionApp):
     name = "Open511ExportData"
     summary = "Export data in various formats for offline analysis."
     parameters: List[ArgParameter] = [
@@ -71495,7 +71495,7 @@ class Open511ExportData(VirtualFunctionTool):
     ]
 
 
-class Open511GetAPIDocumentation(VirtualFunctionTool):
+class Open511GetAPIDocumentation(VirtualFunctionApp):
     name = "Open511GetAPIDocumentation"
     summary = "Provide access to API documentation."
     parameters: List[ArgParameter] = []
@@ -71509,7 +71509,7 @@ class Open511GetAPIDocumentation(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class Open511GetUserId(VirtualFunctionTool):
+class Open511GetUserId(VirtualFunctionApp):
     name = "Open511GetUserId"
     summary = "Retrieve the unique identifier for a user."
     parameters: List[ArgParameter] = [
@@ -71543,7 +71543,7 @@ class Open511(FunctionApp):
     )
     name_for_model = "Open511"
     description_for_model = "The Open511 app provides a comprehensive set of tools for sharing and managing road and transportation information, enabling developers to create applications that improve traffic management and enhance user navigation while addressing potential risks associated with data misuse."
-    tool_classes = [
+    app_classes = [
         Open511GetRoadConditions,
         Open511ReportIncident,
         Open511UpdateIncident,
@@ -71561,7 +71561,7 @@ class Open511(FunctionApp):
 #################### CrimeMapping ####################
 
 
-class CrimeMappingViewCrimeData(VirtualFunctionTool):
+class CrimeMappingViewCrimeData(VirtualFunctionApp):
     name = "CrimeMappingViewCrimeData"
     summary = "Retrieves crime data for a specific location or neighborhood."
     parameters: List[ArgParameter] = [
@@ -71588,7 +71588,7 @@ class CrimeMappingViewCrimeData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CrimeMappingSearchCrimeReports(VirtualFunctionTool):
+class CrimeMappingSearchCrimeReports(VirtualFunctionApp):
     name = "CrimeMappingSearchCrimeReports"
     summary = "Allows users to search for crime reports based on filters."
     parameters: List[ArgParameter] = [
@@ -71627,7 +71627,7 @@ class CrimeMappingSearchCrimeReports(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CrimeMappingGenerateCrimeMap(VirtualFunctionTool):
+class CrimeMappingGenerateCrimeMap(VirtualFunctionApp):
     name = "CrimeMappingGenerateCrimeMap"
     summary = (
         "Creates a visual map representation of crime incidents in a specified area."
@@ -71656,7 +71656,7 @@ class CrimeMappingGenerateCrimeMap(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CrimeMappingRequestCrimeStatistics(VirtualFunctionTool):
+class CrimeMappingRequestCrimeStatistics(VirtualFunctionApp):
     name = "CrimeMappingRequestCrimeStatistics"
     summary = "Provides statistical summaries of crime data."
     parameters: List[ArgParameter] = [
@@ -71683,7 +71683,7 @@ class CrimeMappingRequestCrimeStatistics(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CrimeMappingAccessHistoricalData(VirtualFunctionTool):
+class CrimeMappingAccessHistoricalData(VirtualFunctionApp):
     name = "CrimeMappingAccessHistoricalData"
     summary = "Retrieves historical crime data for analysis."
     parameters: List[ArgParameter] = [
@@ -71710,7 +71710,7 @@ class CrimeMappingAccessHistoricalData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CrimeMappingSaveFavoriteLocation(VirtualFunctionTool):
+class CrimeMappingSaveFavoriteLocation(VirtualFunctionApp):
     name = "CrimeMappingSaveFavoriteLocation"
     summary = "Allows users to save specific locations for quick access."
     parameters: List[ArgParameter] = [
@@ -71731,7 +71731,7 @@ class CrimeMappingSaveFavoriteLocation(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CrimeMappingReportCrime(VirtualFunctionTool):
+class CrimeMappingReportCrime(VirtualFunctionApp):
     name = "CrimeMappingReportCrime"
     summary = "Submits a crime report to local authorities."
     parameters: List[ArgParameter] = [
@@ -71769,7 +71769,7 @@ class CrimeMappingReportCrime(VirtualFunctionTool):
     ]
 
 
-class CrimeMappingViewSafetyAlerts(VirtualFunctionTool):
+class CrimeMappingViewSafetyAlerts(VirtualFunctionApp):
     name = "CrimeMappingViewSafetyAlerts"
     summary = "Retrieves recent safety alerts for a specified location."
     parameters: List[ArgParameter] = [
@@ -71790,7 +71790,7 @@ class CrimeMappingViewSafetyAlerts(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class CrimeMappingShareCrimeData(VirtualFunctionTool):
+class CrimeMappingShareCrimeData(VirtualFunctionApp):
     name = "CrimeMappingShareCrimeData"
     summary = "Allows users to share crime data or maps via social media or email."
     parameters: List[ArgParameter] = [
@@ -71828,7 +71828,7 @@ class CrimeMappingShareCrimeData(VirtualFunctionTool):
     ]
 
 
-class CrimeMappingGetCommunityInsights(VirtualFunctionTool):
+class CrimeMappingGetCommunityInsights(VirtualFunctionApp):
     name = "CrimeMappingGetCommunityInsights"
     summary = "Accesses community insights or discussions related to crime."
     parameters: List[ArgParameter] = [
@@ -71857,7 +71857,7 @@ class CrimeMapping(FunctionApp):
     )
     name_for_model = "CrimeMapping"
     description_for_model = "The CrimeMapping app allows users to access and visualize crime data in their neighborhoods, empowering communities with insights while being mindful of the potential risks associated with crime data interpretation and sharing."
-    tool_classes = [
+    app_classes = [
         CrimeMappingViewCrimeData,
         CrimeMappingSearchCrimeReports,
         CrimeMappingGenerateCrimeMap,
@@ -71874,7 +71874,7 @@ class CrimeMapping(FunctionApp):
 #################### OpenWeatherMap ####################
 
 
-class OpenWeatherMapCurrentWeather(VirtualFunctionTool):
+class OpenWeatherMapCurrentWeather(VirtualFunctionApp):
     name = "OpenWeatherMapCurrentWeather"
     summary = (
         "Fetch real-time weather data based on geographic coordinates or city names."
@@ -71912,7 +71912,7 @@ class OpenWeatherMapCurrentWeather(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenWeatherMapForecastWeather(VirtualFunctionTool):
+class OpenWeatherMapForecastWeather(VirtualFunctionApp):
     name = "OpenWeatherMapForecastWeather"
     summary = "Retrieve weather forecast data for specific locations."
     parameters: List[ArgParameter] = [
@@ -71945,7 +71945,7 @@ class OpenWeatherMapForecastWeather(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenWeatherMapSetWeatherAlert(VirtualFunctionTool):
+class OpenWeatherMapSetWeatherAlert(VirtualFunctionApp):
     name = "OpenWeatherMapSetWeatherAlert"
     summary = "Set up notifications for severe weather conditions."
     parameters: List[ArgParameter] = [
@@ -71977,7 +71977,7 @@ class OpenWeatherMapSetWeatherAlert(VirtualFunctionTool):
     ]
 
 
-class OpenWeatherMapHistoricalWeather(VirtualFunctionTool):
+class OpenWeatherMapHistoricalWeather(VirtualFunctionApp):
     name = "OpenWeatherMapHistoricalWeather"
     summary = "Access historical weather data for analysis and reporting."
     parameters: List[ArgParameter] = [
@@ -72014,7 +72014,7 @@ class OpenWeatherMapHistoricalWeather(VirtualFunctionTool):
     ]
 
 
-class OpenWeatherMapIntegrateWeatherData(VirtualFunctionTool):
+class OpenWeatherMapIntegrateWeatherData(VirtualFunctionApp):
     name = "OpenWeatherMapIntegrateWeatherData"
     summary = "Enable integration with other APIs for enhanced functionality."
     parameters: List[ArgParameter] = [
@@ -72046,7 +72046,7 @@ class OpenWeatherMapIntegrateWeatherData(VirtualFunctionTool):
     ]
 
 
-class OpenWeatherMapUserLocationWeather(VirtualFunctionTool):
+class OpenWeatherMapUserLocationWeather(VirtualFunctionApp):
     name = "OpenWeatherMapUserLocationWeather"
     summary = "Retrieve weather data based on the user's current location."
     parameters: List[ArgParameter] = [
@@ -72072,7 +72072,7 @@ class OpenWeatherMapUserLocationWeather(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenWeatherMapMultipleLocationWeather(VirtualFunctionTool):
+class OpenWeatherMapMultipleLocationWeather(VirtualFunctionApp):
     name = "OpenWeatherMapMultipleLocationWeather"
     summary = "Fetch weather data for multiple locations in a single request."
     parameters: List[ArgParameter] = [
@@ -72093,7 +72093,7 @@ class OpenWeatherMapMultipleLocationWeather(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenWeatherMapCustomWeatherAlerts(VirtualFunctionTool):
+class OpenWeatherMapCustomWeatherAlerts(VirtualFunctionApp):
     name = "OpenWeatherMapCustomWeatherAlerts"
     summary = "Allow users to set personalized weather alerts."
     parameters: List[ArgParameter] = [
@@ -72125,7 +72125,7 @@ class OpenWeatherMapCustomWeatherAlerts(VirtualFunctionTool):
     ]
 
 
-class OpenWeatherMapCacheWeatherData(VirtualFunctionTool):
+class OpenWeatherMapCacheWeatherData(VirtualFunctionApp):
     name = "OpenWeatherMapCacheWeatherData"
     summary = "Cache weather data for offline access."
     parameters: List[ArgParameter] = [
@@ -72146,7 +72146,7 @@ class OpenWeatherMapCacheWeatherData(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class OpenWeatherMapWeatherDataVisualization(VirtualFunctionTool):
+class OpenWeatherMapWeatherDataVisualization(VirtualFunctionApp):
     name = "OpenWeatherMapWeatherDataVisualization"
     summary = "Generate visual representations of weather data."
     parameters: List[ArgParameter] = [
@@ -72178,7 +72178,7 @@ class OpenWeatherMapWeatherDataVisualization(VirtualFunctionTool):
     ]
 
 
-class OpenWeatherMapGetUserPreferences(VirtualFunctionTool):
+class OpenWeatherMapGetUserPreferences(VirtualFunctionApp):
     name = "OpenWeatherMapGetUserPreferences"
     summary = "Access stored user preferences for alerts."
     parameters: List[ArgParameter] = [
@@ -72205,7 +72205,7 @@ class OpenWeatherMap(FunctionApp):
     description_for_human = "App for accessing and integrating weather data into public transportation systems."
     name_for_model = "OpenWeatherMap"
     description_for_model = "The OpenWeatherMap app provides developers with tools to access current weather data, forecasts, historical weather records, and customizable weather alerts, enabling the integration of weather information into public transportation systems and applications while addressing potential risks associated with data misuse."
-    tool_classes = [
+    app_classes = [
         OpenWeatherMapCurrentWeather,
         OpenWeatherMapForecastWeather,
         OpenWeatherMapSetWeatherAlert,
@@ -72223,7 +72223,7 @@ class OpenWeatherMap(FunctionApp):
 #################### SmartCities ####################
 
 
-class SmartCitiesTrafficData(VirtualFunctionTool):
+class SmartCitiesTrafficData(VirtualFunctionApp):
     name = "SmartCitiesTrafficData"
     summary = "Retrieves real-time traffic data from various city sensors."
     parameters: List[ArgParameter] = [
@@ -72255,7 +72255,7 @@ class SmartCitiesTrafficData(VirtualFunctionTool):
     ]
 
 
-class SmartCitiesSafetyData(VirtualFunctionTool):
+class SmartCitiesSafetyData(VirtualFunctionApp):
     name = "SmartCitiesSafetyData"
     summary = "Accesses real-time public safety data from emergency services."
     parameters: List[ArgParameter] = [
@@ -72287,7 +72287,7 @@ class SmartCitiesSafetyData(VirtualFunctionTool):
     ]
 
 
-class SmartCitiesWasteManagementData(VirtualFunctionTool):
+class SmartCitiesWasteManagementData(VirtualFunctionApp):
     name = "SmartCitiesWasteManagementData"
     summary = "Monitors waste collection schedules and routes."
     parameters: List[ArgParameter] = [
@@ -72313,7 +72313,7 @@ class SmartCitiesWasteManagementData(VirtualFunctionTool):
     ]
 
 
-class SmartCitiesEnvironmentalData(VirtualFunctionTool):
+class SmartCitiesEnvironmentalData(VirtualFunctionApp):
     name = "SmartCitiesEnvironmentalData"
     summary = "Gathers real-time environmental data such as air quality."
     parameters: List[ArgParameter] = [
@@ -72339,7 +72339,7 @@ class SmartCitiesEnvironmentalData(VirtualFunctionTool):
     ]
 
 
-class SmartCitiesCitizenFeedback(VirtualFunctionTool):
+class SmartCitiesCitizenFeedback(VirtualFunctionApp):
     name = "SmartCitiesCitizenFeedback"
     summary = "Allows citizens to report issues directly to the city management."
     parameters: List[ArgParameter] = [
@@ -72371,7 +72371,7 @@ class SmartCitiesCitizenFeedback(VirtualFunctionTool):
     ]
 
 
-class SmartCitiesHistoricalData(VirtualFunctionTool):
+class SmartCitiesHistoricalData(VirtualFunctionApp):
     name = "SmartCitiesHistoricalData"
     summary = "Accesses historical data for various metrics."
     parameters: List[ArgParameter] = [
@@ -72409,7 +72409,7 @@ class SmartCitiesHistoricalData(VirtualFunctionTool):
     ]
 
 
-class SmartCitiesResourceAllocation(VirtualFunctionTool):
+class SmartCitiesResourceAllocation(VirtualFunctionApp):
     name = "SmartCitiesResourceAllocation"
     summary = "Analyzes data to allocate resources effectively."
     parameters: List[ArgParameter] = [
@@ -72435,7 +72435,7 @@ class SmartCitiesResourceAllocation(VirtualFunctionTool):
     ]
 
 
-class SmartCitiesPublicTransportData(VirtualFunctionTool):
+class SmartCitiesPublicTransportData(VirtualFunctionApp):
     name = "SmartCitiesPublicTransportData"
     summary = "Integrates public transport data for comprehensive travel options."
     parameters: List[ArgParameter] = [
@@ -72461,7 +72461,7 @@ class SmartCitiesPublicTransportData(VirtualFunctionTool):
     ]
 
 
-class SmartCitiesEventManagement(VirtualFunctionTool):
+class SmartCitiesEventManagement(VirtualFunctionApp):
     name = "SmartCitiesEventManagement"
     summary = "Monitors city events and their impacts."
     parameters: List[ArgParameter] = [
@@ -72484,7 +72484,7 @@ class SmartCitiesEventManagement(VirtualFunctionTool):
     ]
 
 
-class SmartCitiesIncidentReporting(VirtualFunctionTool):
+class SmartCitiesIncidentReporting(VirtualFunctionApp):
     name = "SmartCitiesIncidentReporting"
     summary = "Enables real-time incident reporting by city officials."
     parameters: List[ArgParameter] = [
@@ -72524,7 +72524,7 @@ class SmartCities(FunctionApp):
     )
     name_for_model = "SmartCities"
     description_for_model = "The SmartCities app provides city administrators access to real-time data from various urban services, enabling optimized management of traffic, public safety, waste, and environmental conditions while facilitating citizen engagement and feedback."
-    tool_classes = [
+    app_classes = [
         SmartCitiesTrafficData,
         SmartCitiesSafetyData,
         SmartCitiesWasteManagementData,
@@ -72541,7 +72541,7 @@ class SmartCities(FunctionApp):
 #################### Accela ####################
 
 
-class AccelaCreatePermit(VirtualFunctionTool):
+class AccelaCreatePermit(VirtualFunctionApp):
     name = "AccelaCreatePermit"
     summary = "Allows users to create a new permit in the system."
     parameters: List[ArgParameter] = [
@@ -72579,7 +72579,7 @@ class AccelaCreatePermit(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccelaReadPermit(VirtualFunctionTool):
+class AccelaReadPermit(VirtualFunctionApp):
     name = "AccelaReadPermit"
     summary = "Retrieves details about a specific permit using its unique identifier."
     parameters: List[ArgParameter] = [
@@ -72605,7 +72605,7 @@ class AccelaReadPermit(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccelaUpdatePermit(VirtualFunctionTool):
+class AccelaUpdatePermit(VirtualFunctionApp):
     name = "AccelaUpdatePermit"
     summary = "Updates information about an existing permit."
     parameters: List[ArgParameter] = [
@@ -72632,7 +72632,7 @@ class AccelaUpdatePermit(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccelaDeletePermit(VirtualFunctionTool):
+class AccelaDeletePermit(VirtualFunctionApp):
     name = "AccelaDeletePermit"
     summary = "Deletes a specific permit from the system."
     parameters: List[ArgParameter] = [
@@ -72653,7 +72653,7 @@ class AccelaDeletePermit(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccelaCreateLicense(VirtualFunctionTool):
+class AccelaCreateLicense(VirtualFunctionApp):
     name = "AccelaCreateLicense"
     summary = "Allows users to create a new license."
     parameters: List[ArgParameter] = [
@@ -72685,7 +72685,7 @@ class AccelaCreateLicense(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccelaReadLicense(VirtualFunctionTool):
+class AccelaReadLicense(VirtualFunctionApp):
     name = "AccelaReadLicense"
     summary = "Retrieves details about a specific license."
     parameters: List[ArgParameter] = [
@@ -72711,7 +72711,7 @@ class AccelaReadLicense(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccelaUpdateLicense(VirtualFunctionTool):
+class AccelaUpdateLicense(VirtualFunctionApp):
     name = "AccelaUpdateLicense"
     summary = "Updates information about an existing license."
     parameters: List[ArgParameter] = [
@@ -72738,7 +72738,7 @@ class AccelaUpdateLicense(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccelaDeleteLicense(VirtualFunctionTool):
+class AccelaDeleteLicense(VirtualFunctionApp):
     name = "AccelaDeleteLicense"
     summary = "Deletes a specific license from the system."
     parameters: List[ArgParameter] = [
@@ -72759,7 +72759,7 @@ class AccelaDeleteLicense(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccelaCreateViolationNotice(VirtualFunctionTool):
+class AccelaCreateViolationNotice(VirtualFunctionApp):
     name = "AccelaCreateViolationNotice"
     summary = "Issues a notice for a code violation."
     parameters: List[ArgParameter] = [
@@ -72791,7 +72791,7 @@ class AccelaCreateViolationNotice(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccelaReadViolationNotice(VirtualFunctionTool):
+class AccelaReadViolationNotice(VirtualFunctionApp):
     name = "AccelaReadViolationNotice"
     summary = "Retrieves details about a specific violation notice."
     parameters: List[ArgParameter] = [
@@ -72817,7 +72817,7 @@ class AccelaReadViolationNotice(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccelaUpdateViolationNotice(VirtualFunctionTool):
+class AccelaUpdateViolationNotice(VirtualFunctionApp):
     name = "AccelaUpdateViolationNotice"
     summary = "Updates information about an existing violation notice."
     parameters: List[ArgParameter] = [
@@ -72844,7 +72844,7 @@ class AccelaUpdateViolationNotice(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccelaDeleteViolationNotice(VirtualFunctionTool):
+class AccelaDeleteViolationNotice(VirtualFunctionApp):
     name = "AccelaDeleteViolationNotice"
     summary = "Deletes a specific violation notice."
     parameters: List[ArgParameter] = [
@@ -72865,7 +72865,7 @@ class AccelaDeleteViolationNotice(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccelaGetZoningInfo(VirtualFunctionTool):
+class AccelaGetZoningInfo(VirtualFunctionApp):
     name = "AccelaGetZoningInfo"
     summary = "Retrieves zoning information for a specific area."
     parameters: List[ArgParameter] = [
@@ -72891,7 +72891,7 @@ class AccelaGetZoningInfo(VirtualFunctionTool):
     exceptions: List[ArgException] = []
 
 
-class AccelaRetrievePublicRecords(VirtualFunctionTool):
+class AccelaRetrievePublicRecords(VirtualFunctionApp):
     name = "AccelaRetrievePublicRecords"
     summary = "Retrieves public records related to permits, licenses, and violations."
     parameters: List[ArgParameter] = [
@@ -72929,7 +72929,7 @@ class Accela(FunctionApp):
     description_for_human = "Accela is a app designed for government officials and urban planners, offering tools for managing permits, licenses, and code enforcement to enhance transparency and compliance."
     name_for_model = "Accela"
     description_for_model = "The Accela app provides essential tools for government officials and urban planners to manage permits, licenses, and code enforcement activities, ensuring compliance with zoning laws while enhancing transparency and accountability."
-    tool_classes = [
+    app_classes = [
         AccelaCreatePermit,
         AccelaReadPermit,
         AccelaUpdatePermit,

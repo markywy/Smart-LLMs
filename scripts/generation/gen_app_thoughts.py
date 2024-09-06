@@ -9,7 +9,7 @@ import random
 from dotenv import load_dotenv
 from smartllm.dataloader import DataLoader
 from smartllm.executors import GenFuncExecutor
-from smartllm.generators import ToolThoughtGenerator
+from smartllm.generators import AppThoughtGenerator
 from smartllm.utils import ( 
     llm_register_args,
     load_openai_llm_with_args,
@@ -24,7 +24,7 @@ NOW = datetime.datetime.now().strftime("%Y_%m_%d__%H_%M_%S")
 parser = argparse.ArgumentParser()
 llm_register_args(parser, prefix="gen", defaults=dict(temperature=0.5))
 DataLoader.register_args(parser, default_input_path="")
-ToolThoughtGenerator.register_args(parser)
+AppThoughtGenerator.register_args(parser)
 GenFuncExecutor.register_args(parser)
 
 parser.add_argument(
@@ -35,7 +35,7 @@ parser.add_argument(
     default=["./assets/all_apps.json"],
 )
 parser.add_argument("--dump-dir", "-du", type=str, default="./dumps/tools")
-parser.add_argument("--gen-filename", "-gen", type=str, default="gen_tool_thoughts")
+parser.add_argument("--gen-filename", "-gen", type=str, default="gen_app_thoughts")
 parser.add_argument(
     "--output-mode", "-om", choices=["overwrite", "append", "new"], default="new"
 )
@@ -45,7 +45,7 @@ args = parser.parse_args()
 random.seed(args.random_seed)
 os.makedirs(args.dump_dir, exist_ok=True)
 llm = load_openai_llm_with_args(args, prefix="gen")
-generator = ToolThoughtGenerator.from_args(args, llm)
+generator = AppThoughtGenerator.from_args(args, llm)
 runner = GenFuncExecutor.from_args(args)
 
 
@@ -54,7 +54,7 @@ def main():
     for f in args.apps_paths:
         apps.extend(read_file(f))
     print(f"Loaded {len(apps)} apps")
-    existing_tool_names = set([t["app"] for t in apps])
+    existing_app_names = set([t["app"] for t in apps])
 
     os.makedirs(args.dump_dir, exist_ok=True)
     base_name = args.gen_filename + ("_risky" if generator.gen_risky_tool else "_std")
@@ -65,29 +65,29 @@ def main():
         os.remove(output_file)
 
     try:
-        tool_names = list(DataLoader.from_args(args, item_name="app name"))
+        app_names = list(DataLoader.from_args(args, item_name="app name"))
     except Exception as e:
         print(e)
-        tool_names = None
+        app_names = None
 
     if generator.brainstorm:
         if runner._target_num is None:
             raise ValueError("Please specify --target-num when brainstorming new tools")
         dataset = None
     else:
-        if tool_names is None:
+        if app_names is None:
             raise ValueError(
                 "Please specify tool names with --input-path when using fixed tool names for generation"
             )
-        dataset = [i for i in range(len(tool_names))]
+        dataset = [i for i in range(len(app_names))]
 
     def build_inputs(index: int):
         if generator.brainstorm:
             app = {}
         else:
-            app = tool_names[index]
+            app = app_names[index]
         inputs = dict(
-            existing_tools=existing_tool_names,
+            existing_tools=existing_app_names,
             app=app,
             domain_blacklist=None,
         )
@@ -97,7 +97,7 @@ def main():
         result = generator(build_inputs(0))
         print_intermediate_result_and_stop(result, generator._stop_at)
 
-    def generate_tool_thoughts(index: int):
+    def generate_app_thoughts(index: int):
         inputs = build_inputs(index)
 
         try:
@@ -106,7 +106,7 @@ def main():
             print(e)
             return index, None
 
-    runner.run(generate_tool_thoughts, output_file, dataset=dataset)
+    runner.run(generate_app_thoughts, output_file, dataset=dataset)
 
 
 if __name__ == "__main__":

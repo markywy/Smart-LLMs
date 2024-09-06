@@ -24,7 +24,7 @@ GEN_APP_SPEC_TASK_START_ZH = NamedBlock(
     content=Sequential(
         "现在开始你的任务!你会得到以下的开发思路:",
         "```\n{development_thought}\n```",
-        "将上述思想转换为JSON工具包规范. 将详细的工具包规范输出为:\n```json\n<the output app specification follows the {tool_format}>\n```",
+        "将上述思想转换为JSON工具包规范. 将详细的工具包规范输出为:\n```json\n<the output app specification follows the {app_format}>\n```",
         "你必须包含backsticks并遵循规范结构{format_example}。你应该为每个工具指定详细的描述，并精确地包括工具描述的所有必要信息(例如，可选参数的默认值，格式约束，值约束，对象参数或返回中每个字段的详细描述，等等)。",
         "你必须严格坚持上述思想。特别是，在开发思想中，你不应该对描述进行任何简化或更改，也不应该添加任何额外的信息。",
     ),

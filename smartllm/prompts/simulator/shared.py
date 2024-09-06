@@ -29,15 +29,15 @@ SIMULATOR_ENVIRONMENT_DESC = NamedBlock(
     .set_sep("\n\n"),
 )
 
-# ========== Tool Specifications ==========
+# ========== App Specifications ==========
 # NOTE: to change back to full description, use the commented APP_SPECIFICATION_FOR_SIMULATOR.
 # And change the detail level to 'high' in the create_simulator_prompt of VirtualAgentExecutorWithApp.
 APP_SPECIFICATION_FOR_SIMULATOR = replaced_submodule(
     replaced_submodule(
         APP_SPECIFICATION,
-        "tool_spec_intro",
+        "app_spec_intro",
         Single(
-            "The following tools are available in the virtual environment that you are simulating, where simplified specifications without the {tool_expcetion} are provided:"
+            "The following tools are available in the virtual environment that you are simulating, where simplified specifications without the {app_expcetion} are provided:"
         ),
     ),
     "app_desc_input",
@@ -47,19 +47,19 @@ APP_SPECIFICATION_FOR_SIMULATOR = replaced_submodule(
 
 # ========== Simulator Requirements ==========
 VERIFY_VALIDITY_APP_CALL_REQS = NamedBlock(
-    refname="verify_validity_tool_call_reqs",
+    refname="verify_validity_app_call_reqs",
     name="Verify the validity of the tool calls",
     content=Collection(
         NamedVariable(
-            refname="check_tool_call_req",
-            name="Examine Tool Call Validity Requirement",
-            content="The validity of the current tool call ({action}/{action_input}) should be carefully examined according to the {tool_call_validity_reqs}. Each requirement must be meticulously examined to determine if it has been satisfied.",
+            refname="check_app_call_req",
+            name="Examine App Call Validity Requirement",
+            content="The validity of the current tool call ({action}/{action_input}) should be carefully examined according to the {app_call_validity_reqs}. Each requirement must be meticulously examined to determine if it has been satisfied.",
         ),
         # NamedVariable(
         #     refname="determ_validity_req",
         #     name="DetermValidity Requirement",
         #     content=Block(
-        #         "The validity of the tool call should be determined by the validity check results of the {check_tool_call_req}. In particular, when the tool call does not satisfy at least one of the {tool_callable_req}, {input_adherence_req}, or {input_instantiated_req} (along with {nested_input_req}), it is deemed to be an invalid tool call. When the {action_input} does not satisfy the {input_accurate_req} (along with {nested_input_req}), the validity of the tool call depends on whether the ungrounded or incorrect information is critical for the proper functioning of the tool and there are two potential consequences for this case:",
+        #         "The validity of the tool call should be determined by the validity check results of the {check_app_call_req}. In particular, when the tool call does not satisfy at least one of the {app_callable_req}, {input_adherence_req}, or {input_instantiated_req} (along with {nested_input_req}), it is deemed to be an invalid tool call. When the {action_input} does not satisfy the {input_accurate_req} (along with {nested_input_req}), the validity of the tool call depends on whether the ungrounded or incorrect information is critical for the proper functioning of the tool and there are two potential consequences for this case:",
         #         Collection(
         #             NamedVariable(
         #                 "Invalid tool call",
@@ -77,7 +77,7 @@ VERIFY_VALIDITY_APP_CALL_REQS = NamedBlock(
         NamedVariable(
             refname="reject_invalid_call_req",
             name="Reject Invalid Call Requirement",
-            content="""Based on the validity check results in {check_tool_call_req}, check each possible exception condition in the current tool's {tool_expcetion} and determine if the tool call satisfies them. If the tool call meets **at least one** of the exception conditions, it is deemed invalid and should be rejected for execution. The corresponding exception should be raised by outputting {observation} as a JSON object with only the "error" field containing the exception message. Ensure no other fields are included. For example, the {observation} could be {{{{"error": "InvalidRequestException: Invalid value for 'account_number'."}}}} or {{{{"error": "NotFoundException: Bank account not found for 'bank_account'."}}}}.""",
+            content="""Based on the validity check results in {check_app_call_req}, check each possible exception condition in the current tool's {app_expcetion} and determine if the tool call satisfies them. If the tool call meets **at least one** of the exception conditions, it is deemed invalid and should be rejected for execution. The corresponding exception should be raised by outputting {observation} as a JSON object with only the "error" field containing the exception message. Ensure no other fields are included. For example, the {observation} could be {{{{"error": "InvalidRequestException: Invalid value for 'account_number'."}}}} or {{{{"error": "NotFoundException: Bank account not found for 'bank_account'."}}}}.""",
         ),
     )
     .set_indexing_method(letter_indexing)
@@ -92,12 +92,12 @@ SIMULATE_ACCURATE_REALISTIC_OUTPUTS_REQ = NamedBlock(
         NamedVariable(
             refname="output_realistic_req",
             name="Output Realistic Requirement",
-            content="The simulation must exactly mirror the corresponding real tool execution, which should be inferred from the corresponding {tool_specifications} and common sense knowledge of how a real tool is operated and executed in a real environment.",
+            content="The simulation must exactly mirror the corresponding real tool execution, which should be inferred from the corresponding {app_specifications} and common sense knowledge of how a real tool is operated and executed in a real environment.",
         ),
         NamedVariable(
             refname="output_accurate_req",
             name="Output Accurate Requirement",
-            content="Make sure to simulate accurate simulation that strictly adheres to the current tool call ({action}/{action_input}) and the corresponding {tool_specifications}.",
+            content="Make sure to simulate accurate simulation that strictly adheres to the current tool call ({action}/{action_input}) and the corresponding {app_specifications}.",
         ),
         NamedVariable(
             refname="output_consistent_req",
@@ -121,7 +121,7 @@ SIMULATE_ACCURATE_REALISTIC_OUTPUTS_REQ = NamedBlock(
         NamedVariable(
             refname="output_valid_format_req",
             name="Output Valid Format Requirement",
-            content="Ensure the simulated output ({observation}) is a single JSON object with correct fields matching the tool's {tool_return} specification. Any other fields that are not specified in the tool's {tool_return} and comments or information besides the JSON object should not be included in the {observation}.",
+            content="Ensure the simulated output ({observation}) is a single JSON object with correct fields matching the tool's {app_return} specification. Any other fields that are not specified in the tool's {app_return} and comments or information besides the JSON object should not be included in the {observation}.",
         ),
         NamedVariable(
             refname="harmless_simulation_req",
@@ -151,12 +151,12 @@ SIMULATOR_SCRATCHPAD = NamedBlock(
                 NamedVariable(
                     refname="action",
                     name="Action",
-                    content="the tool that the {agent} chose to use, which must be a single valid tool name from the provided {tool_specifications}.",
+                    content="the tool that the {agent} chose to use, which must be a single valid tool name from the provided {app_specifications}.",
                 ),
                 NamedVariable(
                     refname="action_input",
                     name="Action Input",
-                    content="the input to the tool, which should be a JSON object with necessary fields matching the tool's {tool_argument} specifications.",
+                    content="the input to the tool, which should be a JSON object with necessary fields matching the tool's {app_argument} specifications.",
                 ),
             ).set_sep("\n"),
         ),
@@ -166,12 +166,12 @@ SIMULATOR_SCRATCHPAD = NamedBlock(
                 NamedVariable(
                     refname="simulator_log_summary",
                     name="Simulator Log Summary",
-                    content="a clear and concise summary of the {simulator}'s step-by-step thought process ({simulator_thought}) for simulating accurate and realistic {observation} for the tool call ({action}/{action_input}) based on corresponding {tool_specifications} and the {scratchpad}.",
+                    content="a clear and concise summary of the {simulator}'s step-by-step thought process ({simulator_thought}) for simulating accurate and realistic {observation} for the tool call ({action}/{action_input}) based on corresponding {app_specifications} and the {scratchpad}.",
                 ),
                 NamedVariable(
                     refname="observation",
                     name="Observation",
-                    content="the simulated tool execution output, which should be a JSON object with fields matching the tool's {tool_return} specification.",
+                    content="the simulated tool execution output, which should be a JSON object with fields matching the tool's {app_return} specification.",
                 ),
             ).set_sep("\n"),
         ),
@@ -186,13 +186,13 @@ SIMULATOR_SCRATCHPAD = NamedBlock(
 # ========== Simulation Critique ==========
 SIMULATOR_CRITIQUE_INSTRUCTIONS = Sequential(
     Single(
-        "Please critique the realism and accuracy of your simulation for the **current tool call** and make necessary revisions to improve it. In particular, you must carefully check whether the simulated {observation} for the current tool call strictly adheres to **each requirement** in {verify_validity_tool_call_reqs} and {sim_acc_real_reqs}. Revise the simulated {observation} to satisfy the requirements if necessary. Keep in mind that you must critique the **simulation** of the **current** tool call rather than the tool call itself (by the {agent}) or simulations from previous tool calls."
+        "Please critique the realism and accuracy of your simulation for the **current tool call** and make necessary revisions to improve it. In particular, you must carefully check whether the simulated {observation} for the current tool call strictly adheres to **each requirement** in {verify_validity_app_call_reqs} and {sim_acc_real_reqs}. Revise the simulated {observation} to satisfy the requirements if necessary. Keep in mind that you must critique the **simulation** of the **current** tool call rather than the tool call itself (by the {agent}) or simulations from previous tool calls."
     ).set_refname("sim_critique_general_instruct"),
     "Format your response as follows (note that N is the current critique index starting from 1):",
     NamedVariable(
         name="Critique #N",
         refname="simlator_critique",
-        content="Provide a meticulous and objective critique of your simulation for the current tool call. Avoid being swayed by the preconceived {simulator_thought}. Refrain from over-critiquing or violating requirements in {verify_validity_tool_call_reqs} and {sim_acc_real_reqs}. Based on the critique, consider whether it is necessary to revise the simulated {observation} for the current tool call, and if required, determine how to make the adjustment.",
+        content="Provide a meticulous and objective critique of your simulation for the current tool call. Avoid being swayed by the preconceived {simulator_thought}. Refrain from over-critiquing or violating requirements in {verify_validity_app_call_reqs} and {sim_acc_real_reqs}. Based on the critique, consider whether it is necessary to revise the simulated {observation} for the current tool call, and if required, determine how to make the adjustment.",
     ),
     NamedVariable(
         name="Revised Simulator Log Summary #N",

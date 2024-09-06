@@ -4,13 +4,13 @@ import json
 import subprocess
 
 from langchain.agents.load_tools import load_tools
-from langchain.tools import BaseTool
+from langchain.tools import BaseApp
 from langchain.utilities.bash import BashProcess
-from smartllm.tools.tool_interface import (
+from smartllm.tools.app_interface import (
     ArgException,
     ArgParameter,
     ArgReturn,
-    FunctionTool,
+    FunctionApp,
     FunctionApp,
 )
 from smartllm.utils.my_typing import *
@@ -53,7 +53,7 @@ class MyBashProcess(BashProcess):
 
 
 #################### Terminal Interpreter ####################
-class RealTerminalExecute(FunctionTool):
+class RealTerminalExecute(FunctionApp):
     name = "TerminalExecute"
     summary = "Execute a terminal command and return the output. This command should follow proper syntax and be supported by the terminal environment."
     parameters: List[ArgParameter] = [
@@ -84,16 +84,16 @@ class RealTerminalExecute(FunctionTool):
         }
     ]
 
-    _tool: BaseTool = MyBashProcess(return_err_output=True)
+    _tool: BaseApp = MyBashProcess(return_err_output=True)
 
-    def parse_return(self, tool_output: Dict[str, Any]) -> str:
-        return json.dumps({"output": tool_output[0], "exit_code": tool_output[1]})
+    def parse_return(self, app_output: Dict[str, Any]) -> str:
+        return json.dumps({"output": app_output[0], "exit_code": app_output[1]})
 
-    def _runtool(self, tool_input: Dict[str, Any]) -> Dict[str, Any]:
-        return self._tool._run(tool_input["command"])
+    def _runtool(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
+        return self._tool._run(app_input["command"])
 
-    def _aruntool(self, tool_input: Dict[str, Any]) -> Dict[str, Any]:
-        return self._tool._arun(tool_input["command"])
+    def _aruntool(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
+        return self._tool._arun(app_input["command"])
 
 
 @register_app()
@@ -102,13 +102,13 @@ class RealTerminal(FunctionApp):
     description_for_human = "Executes commands in a terminal."
     name_for_model = "Terminal"
     description_for_model = "Executes commands in a terminal on the user's local system. Use it to run valid terminal commands for tasks such as file management, system control, and more"
-    tool_classes = [RealTerminalExecute]
+    app_classes = [RealTerminalExecute]
 
 
 #################### Python Interpreter ####################
 
 
-class RealPythonInterpreterExecute(FunctionTool):
+class RealPythonInterpreterExecute(FunctionApp):
     name = "PythonInterpreterExecute"
     summary = "Execute a Python script."
     parameters: List[ArgParameter] = [
@@ -127,16 +127,16 @@ class RealPythonInterpreterExecute(FunctionTool):
         }
     ]
     exceptions: List[ArgException] = []
-    _tool: BaseTool = load_tools(["python_repl"])[0]
+    _tool: BaseApp = load_tools(["python_repl"])[0]
 
-    def parse_return(self, tool_output: str) -> str:
-        return json.dumps({"result": tool_output})
+    def parse_return(self, app_output: str) -> str:
+        return json.dumps({"result": app_output})
 
-    def _runtool(self, tool_input: Dict[str, Any]) -> Dict[str, Any]:
-        return self._tool._run(tool_input["script"])
+    def _runtool(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
+        return self._tool._run(app_input["script"])
 
-    def _aruntool(self, tool_input: Dict[str, Any]) -> Dict[str, Any]:
-        return self._tool._arun(tool_input["script"])
+    def _aruntool(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
+        return self._tool._arun(app_input["script"])
 
 
 @register_app()
@@ -146,11 +146,11 @@ class RealPythonInterpreter(FunctionApp):
     name_for_model = "PythonInterpreter"
     description_for_model = "A Python shell. Use it to execute python scripts.  If you want to see the output of a value, you should print it out with `print(...)`."
 
-    tool_classes = [RealPythonInterpreterExecute]
+    app_classes = [RealPythonInterpreterExecute]
 
 
 #################### Wikipedia ####################
-class RealWikipediaSearch(FunctionTool):
+class RealWikipediaSearch(FunctionApp):
     name = "WikipediaSearch"
     summary = "Query the Wikipedia tool for a given query."
     parameters: List[ArgParameter] = [
@@ -169,32 +169,32 @@ class RealWikipediaSearch(FunctionTool):
         }
     ]
     exceptions: List[ArgException] = []
-    _tool: BaseTool = load_tools(["wikipedia"])[0]
+    _tool: BaseApp = load_tools(["wikipedia"])[0]
 
-    def parse_return(self, tool_output: str) -> str:
-        return json.dumps({"result": tool_output})
+    def parse_return(self, app_output: str) -> str:
+        return json.dumps({"result": app_output})
 
-    def _runtool(self, tool_input: Dict[str, Any]) -> Dict[str, Any]:
-        return self._tool._run(tool_input["query"])
+    def _runtool(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
+        return self._tool._run(app_input["query"])
 
-    def _aruntool(self, tool_input: Dict[str, Any]) -> Dict[str, Any]:
-        return self._tool._arun(tool_input["query"])
+    def _aruntool(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
+        return self._tool._arun(app_input["query"])
 
 
 @register_app()
 class RealWikipedia(FunctionApp):
     name_for_human = "Wikipedia search tool"
-    description_for_human = "Tool for searching through Wikipedia."
+    description_for_human = "App for searching through Wikipedia."
     name_for_model = "Wikipedia"
-    description_for_model = "Tool for searching through Wikipedia. Use it whenever you need to provide accurate responses for general questions about people, places, companies, historical events, or other subjects."
+    description_for_model = "App for searching through Wikipedia. Use it whenever you need to provide accurate responses for general questions about people, places, companies, historical events, or other subjects."
 
-    tool_classes = [RealWikipediaSearch]
+    app_classes = [RealWikipediaSearch]
 
 
 #################### Human ####################
 
 
-class RealHumanAssistanceQuery(FunctionTool):
+class RealHumanAssistanceQuery(FunctionApp):
     name = "HumanAssistanceQuery"
     summary = "Ask the human a specific question"
     parameters: List[ArgParameter] = [
@@ -214,14 +214,14 @@ class RealHumanAssistanceQuery(FunctionTool):
     ]
     exceptions: List[ArgException] = []
 
-    def parse_return(self, tool_output: str) -> str:
-        return json.dumps({"answer": tool_output})
+    def parse_return(self, app_output: str) -> str:
+        return json.dumps({"answer": app_output})
 
-    def _runtool(self, tool_input: Dict[str, Any]) -> Dict[str, Any]:
-        print("\n" + tool_input["question"] + "\n")
-        return input(tool_input["question"])
+    def _runtool(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
+        print("\n" + app_input["question"] + "\n")
+        return input(app_input["question"])
 
-    def _aruntool(self, tool_input: Dict[str, Any]) -> Dict[str, Any]:
+    def _aruntool(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
         return NotImplementedError("Human tool does not support async")
 
 
@@ -231,4 +231,4 @@ class RealHuman(FunctionApp):
     description_for_human = "Seek human assistance or guidance."
     name_for_model = "HumanAssistance"
     description_for_model = "Seek human assistance or guidance. Use it when expert human or user input is necessary, e.g., when you need some human knowledge, user permission, user-specific information."
-    tool_classes = [RealHumanAssistanceQuery]
+    app_classes = [RealHumanAssistanceQuery]

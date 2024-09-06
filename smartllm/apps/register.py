@@ -1,4 +1,4 @@
-from .tool_interface import BaseApp
+from .app_interface import BaseApp
 
 __APPS_DICT__ = {}
 

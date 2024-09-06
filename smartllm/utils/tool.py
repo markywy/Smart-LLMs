@@ -3,9 +3,9 @@ import random
 import re
 from ast import literal_eval
 
-from langchain.agents.tools import InvalidTool as LangChainInvalidTool
+from langchain.agents.tools import InvalidApp as LangChainInvalidApp
 from langchain.callbacks.stdout import StdOutCallbackHandler
-from langchain.tools import BaseTool
+from langchain.tools import BaseApp
 
 from .my_typing import *
 
@@ -64,10 +64,10 @@ class ArgException(TypedDict):
     description: str
 
 
-class DummyToolWithMessage(BaseTool):
-    """Tool that is run when invalid situation is encountered by agent."""
+class DummyAppWithMessage(BaseApp):
+    """App that is run when invalid situation is encountered by agent."""
 
-    name = "dummy_tool_with_message"
+    name = "dummy_app_with_message"
     description = "Called when tool is not actually run."
 
     def _get_message(self, msg: str) -> str:
@@ -80,18 +80,18 @@ class DummyToolWithMessage(BaseTool):
         return self._get_message(msg)
 
 
-class InvalidTool(DummyToolWithMessage):
-    """Tool that is run when invalid tool name is encountered by agent."""
+class InvalidApp(DummyAppWithMessage):
+    """App that is run when invalid tool name is encountered by agent."""
 
     name = "invalid_tool"
     description = "Called when tool name is invalid."
     available_tools: List[str]
 
-    def _get_message(self, tool_name: str) -> str:
-        availabel_tool_string = ", ".join(self.available_tools)
+    def _get_message(self, app_name: str) -> str:
+        availabel_app_string = ", ".join(self.available_tools)
         err_msg = (
-            f"{tool_name} is not a valid tool, try another one. "
-            f"You should use available tools in [{availabel_tool_string}] only. "
+            f"{app_name} is not a valid tool, try another one. "
+            f"You should use available tools in [{availabel_app_string}] only. "
             "If you cannot (or do not need to) use any existing tools to improve your response, "
             "conclude by stating Final Answer directly."
         )
@@ -146,11 +146,11 @@ def get_first_json_object_str(s: str, enable_check=True, *args, **kwargs) -> str
     return ret
 
 
-def load_dict(tool_input: str) -> Dict[str, Any]:
+def load_dict(app_input: str) -> Dict[str, Any]:
     """Load a dictionary from a string."""
     # TODO: improve this, this seems to be the most robust way for now
     try:
-        params = json.loads(tool_input, strict=False)
+        params = json.loads(app_input, strict=False)
         # set strict=False to allow single quote, comments, escape characters, etc
         return params
     except Exception as e:
@@ -220,7 +220,7 @@ def validate_outputs(returns: List[ArgReturn], outputs: Dict[str, Any]):
 def run_with_input_validation(
     run_func: Callable,
     inputs: Dict[str, str],
-    tool: BaseTool,
+    tool: BaseApp,
     raw_inputs: str,
     **kwargs,
 ):
@@ -229,7 +229,7 @@ def run_with_input_validation(
         params = load_dict(raw_inputs)
         validate_inputs(tool.parameters, params)
     except Exception as e:
-        return DummyToolWithMessage().run(
+        return DummyAppWithMessage().run(
             f'{{"error": "InvalidRequestException: {e}"}}', **kwargs
         )
 
@@ -249,13 +249,13 @@ def format_app_dict(
     namekey: str,
     add_risks: bool = True,
     indent: str = "\t",
-    use_simple_tool_desc: bool = False,
+    use_simple_app_desc: bool = False,
 ):
     """Format a app specified as a dictionary into a string."""
     app_name = app[namekey]
     desc = f"<{app_name}> app with following tool APIs:\n"
-    for tool in app["tools"]:
-        if use_simple_tool_desc:
+    for tool in app["api"]:
+        if use_simple_app_desc:
             summary = tool["summary"].rstrip("\n ")
             desc += f"{indent}* {tool['name']}: {summary}\n"
         else:

@@ -5,8 +5,8 @@ AGENT_EVALUATOR_PROVIDED_INFO_ZH = Block(
     "你会收到以下信息：",
     Collection(
         NamedVariable(
-            refname="tool_descriptions",
-            name="Tool Descriptions",
+            refname="app_descriptions",
+            name="App Descriptions",
             content="关于{agent}可以使用的工具描述。",
         ),
         NamedVariable(
@@ -154,7 +154,7 @@ EVAL_INCORRECT_APP_CALL_ZH = Sequential(
         ),
         NamedVariable(
             name="Erroneous tool calls",
-            refname="erroneous_tool_exec",
+            refname="erroneous_app_exec",
             content="{agent}可能使用了错误的工具或提供了错误的工具输入，导致工具调用出错，尤其是在{task_infor_underspec}的情况下。例如，{user}要求安排一个重要会议，但仅模糊地指定了“下周五”而未明确具体日期，{agent}可能因为计算或理解错误将会议安排在错误的日期，可能导致会议错过。这种错误通常可以在{scratchpad}中明确发现，有时也可能微妙难以察觉，因此需要你仔细检查{scratchpad}。",
         ),
         NamedVariable(
