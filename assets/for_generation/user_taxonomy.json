@@ -1,0 +1,110 @@
+[
+    {
+        "category": "Healthcare",
+        "description": "Occupations in the health services industry, such as doctors, nurses, etc., providing medical services to individuals and communities."
+    },
+    {
+        "category": "Engineering",
+        "description": "Includes engineering professions in fields such as mechanical, electrical, civil, software, primarily involved in the design, construction, and maintenance of various infrastructure and technical systems."
+    },
+    {
+        "category": "Education",
+        "description": "Occupations involved in teaching and academic research, such as teachers, professors, etc., dedicated to the transmission of knowledge and the management of learning environments."
+    },
+    {
+        "category": "Finance",
+        "description": "Occupations involved in money management, investments, and financial planning, such as accountants, financial analysts, etc., responsible for maintaining and growing the financial assets of individuals or businesses."
+    },
+    {
+        "category": "Information Technology",
+        "description": "Covers professions such as software development, network management, database management, primarily involved in the development and maintenance of computer systems and networks."
+    },
+    {
+        "category": "Creative Arts",
+        "description": "Occupations related to artistic creation and performance, such as graphic designers, musicians, writers, etc., focused on expressing emotions and ideas through art."
+    },
+    {
+        "category": "Legal",
+        "description": "Occupations involved in legal consulting, litigation, and arbitration, such as lawyers, judges, etc., aimed at ensuring the implementation of law and the maintenance of justice."
+    },
+    {
+        "category": "Hospitality and Tourism",
+        "description": "Includes professions in hotel management, catering, and tourism services, such as hotel managers, tour guides, etc., aimed at providing quality service experiences to tourists and travelers."
+    },
+    {
+        "category": "Architecture",
+        "description": "Covers professions involved in architectural design, construction, and maintenance, such as architects, construction workers, etc., primarily engaged in the planning and construction of buildings and infrastructure."
+    },
+    {
+        "category": "Sales and Marketing",
+        "description": "Occupations involved in sales, marketing, and public relations, such as sales managers, marketing specialists, etc., focused on promoting and selling products and services."
+    },
+    {
+        "category": "Student",
+        "description": "Includes student groups of different age ranges, from elementary school students to university students, primarily engaged in learning and academic activities with the aim of acquiring knowledge and skills."
+    },
+    {
+        "category": "Patient",
+        "description": "Includes individuals receiving medical or nursing care, possibly involving short-term or long-term health issues, requiring treatment and care through medical services."
+    },
+    {
+        "category": "Elderly Services",
+        "description": "Occupations involved in providing support and care for the elderly, such as nursing home caregivers, elderly care workers, etc., helping elderly people maintain health and quality of life."
+    },
+    {
+        "category": "Youth Services",
+        "description": "Includes professions related to education, counseling, and social services for youth, helping young people develop skills and address the challenges they may face."
+    },
+    {
+        "category": "Transportation",
+        "description": "Covers occupations related to the transportation industry, such as bus drivers, railroad engineers, transportation planners, etc., ensuring the safe movement of people and goods."
+    },
+    {
+        "category": "Diet and Cooking Advice",
+        "description": "Provides professions related to diet, nutrition, and healthy eating, such as dietitians, chefs, etc., helping people create healthy eating plans and providing cooking services."
+    },
+    {
+        "category": "Government Jobs",
+        "description": "Covers occupations working in various levels of government departments, such as civil servants, policy analysts, etc., responsible for formulating and implementing public policies and providing public services."
+    },
+    {
+        "category": "Public Utilities",
+        "description": "Includes various occupations providing essential services to the public, such as water and electricity management, waste disposal, etc., ensuring the normal operation of community infrastructure and services."
+    },
+    {
+        "category": "Financial Investment and Stock Trading",
+        "description": "Covers activities related to the investment, asset management, and stock trading of individuals or businesses, such as investment advisors, stock brokers, helping people with financial planning and investment decisions."
+    },
+    {
+        "category": "Medication Advice",
+        "description": "Includes advice and services related to the use of medications provided by pharmacists or medical professionals, helping individuals use prescription and over-the-counter medications correctly."
+    },
+    {
+        "category": "Personal Computer Operation",
+        "description": "Covers activities related to daily computer usage, such as file management, software installation, and operation, helping individuals effectively use computers for work or entertainment."
+    },
+    {
+        "category": "Personal Mobile Operation",
+        "description": "Involves the daily use and setup of smartphones, such as app management, data backup, troubleshooting, etc., helping users optimize their mobile experience."
+    },
+    {
+        "category": "Smart Home",
+        "description": "Involves activities related to the setup and use of smart home devices, such as smart lighting, temperature control systems, security systems, etc., aiming to enhance the convenience and safety of home life."
+    },
+    {
+        "category": "Smart Car Operation",
+        "description": "Covers technical operations and usage related to smart cars, such as autonomous driving systems, in-car smart assistants, etc., helping drivers use vehicles more safely and efficiently."
+    },
+    {
+        "category": "Smart Delivery",
+        "description": "Involves the use and management of smart delivery systems, such as ordering food via mobile apps, smart delivery systems, etc., improving the efficiency of food ordering and delivery."
+    },
+    {
+        "category": "Pet Care",
+        "description": "Covers activities related to the care and nurturing of pets, such as pet diet, health care, behavior training, etc., helping pet owners take care of their pets effectively."
+    },
+    {
+        "category": "Child Education",
+        "description": "Involves activities related to children's education and early development, such as kindergarten teachers, early education specialists, etc., helping children gain knowledge and skills during preschool and primary school stages."
+    }
+]

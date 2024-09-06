@@ -1,0 +1,6443 @@
+[
+    {
+        "name": "李华",
+        "profession": "医生",
+        "description": "李华是一名35岁的内科医生，拥有医学博士学位，细心而耐心，对患者的需求非常关注。她对电脑有一定的了解，能熟练使用电子病历系统。对LLM的熟悉程度一般，经常使用智能设备来记录患者信息和健康数据。日常工作中，她需要与患者沟通，进行体检和开处方。",
+        "usage": [
+            "GoodDoctorOnline",
+            "HuaweiHealth"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "HuaweiHealth"
+        ],
+        "disadvantages": [
+            "Fitbit",
+            "MintHealth"
+        ]
+    },
+    {
+        "name": "张伟",
+        "profession": "护士",
+        "description": "张伟是一名28岁的注册护士，拥有护理学学士学位，性格细心且热情。他熟悉使用各种医疗设备和护理软件，对电脑操作有较高水平。对LLM的使用相对熟练，常用智能设备来监测病人的生命体征。",
+        "usage": [
+            "MintHealth",
+            "GoodDoctorOnline"
+        ],
+        "advantages": [
+            "MintHealth",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "Fitbit",
+            "YueDongQuan"
+        ]
+    },
+    {
+        "name": "王芳",
+        "profession": "药剂师",
+        "description": "王芳是一位26岁的药剂师，拥有药学硕士学位，工作细致认真，善于与患者沟通。她对药品管理软件非常熟悉，对电脑操作有一定基础，使用LLM的频率较低。她日常工作包括配药、解答患者药物相关问题。",
+        "usage": [
+            "WeiYi",
+            "GoodDoctorOnline"
+        ],
+        "advantages": [
+            "WeiYi",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "Fitbit",
+            "MintHealth"
+        ]
+    },
+    {
+        "name": "赵强",
+        "profession": "物理治疗师",
+        "description": "赵强是一名30岁的物理治疗师，拥有物理治疗学学士学位，性格细心且有耐心。他对电脑操作有较强能力，使用各种康复软件，并对LLM有一定的了解。日常工作包括为患者制定康复计划和指导运动。",
+        "usage": [
+            "Keep",
+            "GoodDoctorOnline"
+        ],
+        "advantages": [
+            "Keep",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "Fitbit",
+            "MintHealth"
+        ]
+    },
+    {
+        "name": "刘莉",
+        "profession": "营养师",
+        "description": "刘莉是一位32岁的注册营养师，拥有营养学硕士学位，性格温和细致。她对电脑的使用非常熟练，能够运用数据分析软件进行饮食分析。对LLM的使用比较熟悉，日常工作包括为客户制定饮食计划和进行营养咨询。",
+        "usage": [
+            "MintHealth",
+            "Keep"
+        ],
+        "advantages": [
+            "MintHealth",
+            "Keep"
+        ],
+        "disadvantages": [
+            "Fitbit",
+            "WeiYi"
+        ]
+    },
+    {
+        "name": "陈刚",
+        "profession": "牙医",
+        "description": "陈刚是一名38岁的牙医，拥有口腔医学博士学位，工作细致严谨。他对电脑的使用较为熟练，主要使用牙科管理软件。对LLM的了解不深，日常工作包括进行牙齿检查和治疗。",
+        "usage": [
+            "GoodDoctorOnline",
+            "HuaweiHealth"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "HuaweiHealth"
+        ],
+        "disadvantages": [
+            "Fitbit",
+            "MintHealth"
+        ]
+    },
+    {
+        "name": "孙梅",
+        "profession": "心理咨询师",
+        "description": "孙梅是一位45岁的心理咨询师，拥有心理学硕士学位，性格温柔细腻。她对电脑操作熟练，使用心理评估软件，对LLM的使用有一定的了解。日常工作包括与客户进行心理咨询和治疗。",
+        "usage": [
+            "WeiYi",
+            "SelfLearningPlatform"
+        ],
+        "advantages": [
+            "WeiYi",
+            "SelfLearningPlatform"
+        ],
+        "disadvantages": [
+            "Fitbit",
+            "MintHealth"
+        ]
+    },
+    {
+        "name": "周杰",
+        "profession": "公共卫生专家",
+        "description": "周杰是一名40岁的公共卫生专家，拥有公共卫生硕士学位，性格认真细致。他对电脑应用有较高的技能，使用统计分析软件进行数据分析。对LLM的熟悉程度较高，日常工作包括进行公共卫生研究和政策建议。",
+        "usage": [
+            "KhanAcademy",
+            "GoodDoctorOnline"
+        ],
+        "advantages": [
+            "KhanAcademy",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "Fitbit",
+            "MintHealth"
+        ]
+    },
+    {
+        "name": "蒋婷",
+        "profession": "急救员",
+        "description": "蒋婷是一名29岁的急救员，拥有急救医学的相关培训，性格冷静细致。她对电脑的使用较少，主要依赖于移动设备进行工作记录。对LLM的使用不太熟悉，日常工作包括在紧急情况下提供医疗救助。",
+        "usage": [
+            "GoodDoctorOnline",
+            "TrafficAssistant"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "TrafficAssistant"
+        ],
+        "disadvantages": [
+            "Fitbit",
+            "MintHealth"
+        ]
+    },
+    {
+        "name": "钱伟",
+        "profession": "家庭医生",
+        "description": "钱伟是一名50岁的家庭医生，拥有医学博士学位，性格和蔼细致，擅长与患者沟通。他熟悉使用电子病历系统，对LLM的了解一般，日常工作包括跟踪患者健康和提供常规检查。",
+        "usage": [
+            "GoodDoctorOnline",
+            "HuaweiHealth"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "HuaweiHealth"
+        ],
+        "disadvantages": [
+            "Fitbit",
+            "MintHealth"
+        ]
+    },
+    {
+        "name": "郑丽",
+        "profession": "生物医学工程师",
+        "description": "郑丽是一名33岁的生物医学工程师，拥有生物医学工程硕士学位，性格严谨细致。她对电脑技术有较高的了解，使用各种工程软件，对LLM的熟悉程度较高，日常工作包括设计和维护医疗设备。",
+        "usage": [
+            "Keep",
+            "GoodDoctorOnline"
+        ],
+        "advantages": [
+            "Keep",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "Fitbit",
+            "MintHealth"
+        ]
+    },
+    {
+        "name": "冯雪",
+        "profession": "健康管理师",
+        "description": "冯雪是一名36岁的健康管理师，拥有健康管理学士学位，性格细心且善于倾听。她对电脑操作比较熟练，使用健康管理软件，对LLM的使用较为熟悉，日常工作包括制定健康管理计划。",
+        "usage": [
+            "MintHealth",
+            "GoodDoctorOnline"
+        ],
+        "advantages": [
+            "MintHealth",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "Fitbit",
+            "WeiYi"
+        ]
+    },
+    {
+        "name": "何亮",
+        "profession": "医学影像技师",
+        "description": "何亮是一名31岁的医学影像技师，拥有医学影像学学士学位，性格细致且认真。他对电脑的使用非常熟练，能够操作各种影像设备和软件，对LLM的了解不深，日常工作包括进行影像检查和分析。",
+        "usage": [
+            "GoodDoctorOnline",
+            "HuaweiHealth"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "HuaweiHealth"
+        ],
+        "disadvantages": [
+            "Fitbit",
+            "MintHealth"
+        ]
+    },
+    {
+        "name": "刘峰",
+        "profession": "康复治疗师",
+        "description": "刘峰是一名29岁的康复治疗师，拥有康复医学学士学位，性格温和细致。他对电脑的使用较为熟悉，使用康复管理软件，对LLM的使用程度一般，日常工作包括为患者提供康复指导。",
+        "usage": [
+            "Keep",
+            "GoodDoctorOnline"
+        ],
+        "advantages": [
+            "Keep",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "Fitbit",
+            "MintHealth"
+        ]
+    },
+    {
+        "name": "李明",
+        "profession": "机械工程师",
+        "description": "李明是32岁的机械工程师，毕业于某知名大学机械工程专业，性格细心且耐心。他具备扎实的电脑知识，熟练使用CAD等设计软件，对LLM有一定了解，经常利用智能设备进行设计和项目管理。他的日常工作包括设计机械部件、参与项目讨论和进行数据分析。",
+        "usage": [
+            "ProgrammingCat",
+            "DockerApp"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "GitHub"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "张华",
+        "profession": "电气工程师",
+        "description": "张华是一名28岁的电气工程师，拥有电气工程硕士学位，性格严谨，对细节有极高的关注。他对电脑有深入的了解，熟练掌握电路设计软件，并熟悉LLM的基本概念。他习惯使用智能设备进行电气图纸的审核和修改，日常工作包括电气系统设计和故障排查。",
+        "usage": [
+            "YoudaoTranslation",
+            "GitHub"
+        ],
+        "advantages": [
+            "Postman",
+            "Swagger"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "王丽",
+        "profession": "土木工程师",
+        "description": "王丽是35岁的土木工程师，拥有土木工程博士学位，性格细致且有耐心。她对电脑技术非常熟悉，能够使用多种建筑设计软件，并且对LLM有一定的使用经验。她的日常工作包括参与建筑设计、项目管理和现场监督。",
+        "usage": [
+            "Coursera",
+            "NotionApp"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "MicrosoftProject"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "赵强",
+        "profession": "软件工程师",
+        "description": "赵强是一名24岁的软件工程师，毕业于计算机科学专业，性格细心且喜爱挑战。他对电脑技术有深入的了解，熟练掌握多种编程语言，并对LLM的使用非常熟悉。他的日常工作包括软件开发、代码审查和技术文档编写。",
+        "usage": [
+            "ProgrammingCat",
+            "Slack"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "GitBash"
+        ],
+        "disadvantages": [
+            "FFmpeg",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "陈芳",
+        "profession": "网络工程师",
+        "description": "陈芳是一名30岁的网络工程师，拥有网络工程学士学位，性格细心且逻辑性强。她对电脑网络有深入的了解，熟练使用网络监控和分析工具，对LLM有一定的使用经验。她的日常工作包括网络架构设计、故障排查和安全性评估。",
+        "usage": [
+            "MobileNetworkMonitoring",
+            "Nmap"
+        ],
+        "advantages": [
+            "GitHub"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "刘伟",
+        "profession": "系统工程师",
+        "description": "刘伟是29岁的系统工程师，拥有系统工程硕士学位，性格严谨且注重细节。他对电脑系统有深入的了解，熟练掌握多种系统管理工具，对LLM有一定的了解。他的日常工作包括系统集成、性能优化和故障排除。",
+        "usage": [
+            "CloudStoreManagement",
+            "WindowsPowerShell"
+        ],
+        "advantages": [
+            "DockerApp",
+            "GitHub"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "杨静",
+        "profession": "数据工程师",
+        "description": "杨静是一名26岁的数据工程师，毕业于数据科学专业，性格细心且善于分析。她对电脑数据处理有深入的了解，熟练使用数据分析工具，对LLM的使用也很熟悉。她的日常工作包括数据清洗、建模和分析报告的撰写。",
+        "usage": [
+            "DataCleaningAndIntegration",
+            "JupyterNotebook"
+        ],
+        "advantages": [
+            "Tableau",
+            "PowerBI"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "孙强",
+        "profession": "环境工程师",
+        "description": "孙强是34岁的环境工程师，拥有环境科学硕士学位，性格细致且有耐心。他对环境监测技术有深入了解，熟练使用环境分析工具，对LLM的使用也有一定经验。他的日常工作包括环境影响评估、数据分析和报告撰写。",
+        "usage": [
+            "ProgrammingCat",
+            "KhanAcademy"
+        ],
+        "advantages": [
+            "AutoCAD"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "FFmpeg"
+        ]
+    },
+    {
+        "name": "周敏",
+        "profession": "机械设计师",
+        "description": "周敏是一名27岁的机械设计师，毕业于机械设计专业，性格细心且富有创造力。她对电脑设计软件有深入的了解，熟练使用SolidWorks等工具，对LLM有一定的使用经验。她的日常工作包括机械零件设计和3D建模。",
+        "usage": [
+            "ProgrammingCat",
+            "FigmaApp"
+        ],
+        "advantages": [
+            "SolidWorks",
+            "AutoCAD"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "冯晓",
+        "profession": "建筑工程师",
+        "description": "冯晓是31岁的建筑工程师，拥有建筑学学士学位，性格严谨且注重细节。他对建筑设计软件非常熟悉，能够运用多种工具进行设计，对LLM的使用也有一定了解。他的日常工作包括建筑设计、项目管理和现场协调。",
+        "usage": [
+            "Coursera",
+            "NotionApp"
+        ],
+        "advantages": [
+            "AutoCAD",
+            "SketchUp"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "郭超",
+        "profession": "交通工程师",
+        "description": "郭超是一名29岁的交通工程师，拥有交通工程学士学位，性格细致且注重数据分析。他对交通管理系统有深入的了解，熟练使用交通模拟工具，对LLM的使用也很熟悉。他的日常工作包括交通流量分析和交通规划。",
+        "usage": [
+            "DataCleaningAndIntegration",
+            "KhanAcademy"
+        ],
+        "advantages": [
+            "VISSIM",
+            "Synchro"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "陈静",
+        "profession": "工业工程师",
+        "description": "陈静是33岁的工业工程师，拥有工业工程硕士学位，性格细心且逻辑性强。她对生产流程和管理有深入的了解，熟练使用工业工程工具，对LLM的使用也有一定经验。她的日常工作包括流程优化、生产计划制定和数据分析。",
+        "usage": [
+            "ProgrammingCat",
+            "KhanAcademy"
+        ],
+        "advantages": [
+            "Minitab",
+            "AutoCAD"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "李娜",
+        "profession": "质量工程师",
+        "description": "李娜是一名26岁的质量工程师，毕业于质量管理专业，性格细致且注重细节。她对质量控制技术有深入的了解，熟练使用质量管理工具，对LLM的使用也很熟悉。她的日常工作包括质量审核、数据分析和报告撰写。",
+        "usage": [
+            "ProgrammingCat",
+            "KhanAcademy"
+        ],
+        "advantages": [
+            "SPC",
+            "Six Sigma"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "朱伟",
+        "profession": "项目经理",
+        "description": "朱伟是38岁的项目经理，拥有项目管理硕士学位，性格细致且具备较强的协调能力。他对项目管理软件非常熟悉，能够有效组织和协调团队工作，对LLM的使用也有一定了解。他的日常工作包括项目规划、进度管理和团队沟通。",
+        "usage": [
+            "Slack",
+            "NotionApp"
+        ],
+        "advantages": [
+            "MicrosoftProject",
+            "Trello"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "李华",
+        "profession": "小学教师",
+        "description": "李华是一位35岁的小学教师，拥有教育学硕士学位，性格细心耐心，热爱孩子们的学习与成长。对电脑有基本的操作能力，熟悉办公软件和一些在线教学平台。对LLM的了解较少，但愿意尝试使用新技术来辅助教学。日常工作中，李华会准备课件、组织课堂活动和进行学生评估。",
+        "usage": [
+            "KhanAcademy",
+            "Quizlet"
+        ],
+        "advantages": [
+            "YoudaoNote",
+            "ShimoApp"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "张伟",
+        "profession": "大学教授",
+        "description": "张伟是一位45岁的大学教授，拥有博士学位，性格严谨，注重细节，特别是在学术研究方面。他对计算机的使用非常熟练，能够使用多种科研软件和数据分析工具。对LLM有一定的了解，常用其进行文献搜索和资料整理。日常工作包括授课、指导研究生以及撰写学术论文。",
+        "usage": [
+            "SelfLearningPlatform",
+            "Coursera"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "JupyterNotebook"
+        ],
+        "disadvantages": [
+            "Keep",
+            "Fitbit"
+        ]
+    },
+    {
+        "name": "王芳",
+        "profession": "中学英语教师",
+        "description": "王芳是一位28岁的中学英语教师，拥有英语教育学士学位。她性格开朗，细心，善于与学生沟通。对电脑有较强的使用能力，熟悉在线教学工具和社交媒体。对LLM的使用较为熟悉，常用其进行英语教学资源的搜索和翻译。日常工作包括备课、上课和进行课后辅导。",
+        "usage": [
+            "YoudaoTranslation",
+            "XiaoYuanSearch"
+        ],
+        "advantages": [
+            "NotionApp",
+            "Todoist"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "赵强",
+        "profession": "幼儿园园长",
+        "description": "赵强是一位50岁的幼儿园园长，拥有教育管理硕士学位，性格温和，注重细节。他对电脑有基本的操作能力，能够使用一些管理软件。对LLM的了解较少，但希望通过学习来提高管理效率。日常工作包括园所管理、教师培训和家长沟通。",
+        "usage": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "advantages": [
+            "Calendly",
+            "DingDing"
+        ],
+        "disadvantages": [
+            "Terraform",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "陈静",
+        "profession": "职业培训讲师",
+        "description": "陈静是一位38岁的职业培训讲师，拥有心理学硕士学位，性格细心且富有同理心。她对计算机的使用能力较强，熟悉在线培训平台和各种办公软件。对LLM有一定的了解，常用其进行课程设计和学员评估。日常工作包括授课、评估学员表现及反馈。",
+        "usage": [
+            "Coursera",
+            "Quizlet"
+        ],
+        "advantages": [
+            "Slack",
+            "NotionApp"
+        ],
+        "disadvantages": [
+            "GitHub",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "刘洋",
+        "profession": "科研助理",
+        "description": "刘洋是一位26岁的科研助理，拥有生物科学硕士学位，性格细心，注重数据的准确性。他对电脑使用非常熟练，尤其是在数据分析和文献管理方面。对LLM的使用较为熟悉，常用其进行数据处理和文献检索。日常工作包括实验数据记录、文献综述和实验室管理。",
+        "usage": [
+            "KhanAcademy",
+            "ProgrammingCat"
+        ],
+        "advantages": [
+            "JupyterNotebook",
+            "VisualStudioCode"
+        ],
+        "disadvantages": [
+            "FFmpeg",
+            "Curl"
+        ]
+    },
+    {
+        "name": "孙丽",
+        "profession": "大学辅导员",
+        "description": "孙丽是一位30岁的大学辅导员，拥有心理学学士学位，性格温和，善于倾听学生的需求。对电脑有基本的使用能力，熟悉校内管理系统。对LLM的了解较少，但愿意探索新技术来帮助学生。日常工作包括学生管理、心理辅导和组织活动。",
+        "usage": [
+            "WeChatApp",
+            "XiaoYuanSearch"
+        ],
+        "advantages": [
+            "DingDing",
+            "FeiShu"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "GitBash"
+        ]
+    },
+    {
+        "name": "周杰",
+        "profession": "外语学院院长",
+        "description": "周杰是一位52岁的外语学院院长，拥有外语学博士学位，性格严谨，注重细节，热爱学术研究。对电脑使用非常熟练，尤其擅长数据分析和学术写作。对LLM有一定的了解，常用其进行文献检索和课程设计。日常工作包括学院管理、课程安排和学术交流。",
+        "usage": [
+            "YoudaoTranslation",
+            "SelfLearningPlatform"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "JupyterNotebook"
+        ],
+        "disadvantages": [
+            "MintHealth",
+            "Keep"
+        ]
+    },
+    {
+        "name": "钱梅",
+        "profession": "艺术教师",
+        "description": "钱梅是一位33岁的艺术教师，拥有艺术教育硕士学位，性格开朗，富有创造力。对电脑有一定的使用能力，熟悉图像处理软件和在线教学工具。对LLM的了解较少，但期望通过学习提高教学效果。日常工作包括备课、授课和组织艺术展览。",
+        "usage": [
+            "Coursera",
+            "KhanAcademy"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "NotionApp"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "冯涛",
+        "profession": "职业技能培训师",
+        "description": "冯涛是一位40岁的职业技能培训师，拥有职业教育硕士学位，性格细心且耐心。他对电脑的使用能力较强，熟悉视频编辑软件和在线培训平台。对LLM有一定的了解，常用其进行课程设计和学员评估。日常工作包括授课、评估学员表现及反馈。",
+        "usage": [
+            "YoudaoNote",
+            "Quizlet"
+        ],
+        "advantages": [
+            "Slack",
+            "Lark"
+        ],
+        "disadvantages": [
+            "JupyterNotebook",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "郑丽",
+        "profession": "心理咨询师",
+        "description": "郑丽是一位36岁的心理咨询师，拥有心理学硕士学位，性格温和，关注细节。对电脑使用能力较强，熟悉在线咨询平台和数据分析软件。对LLM的了解较少，但希望通过学习提高工作效率。日常工作包括心理咨询、记录案例和撰写报告。",
+        "usage": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "advantages": [
+            "NotionApp",
+            "Todoist"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "何明",
+        "profession": "教育技术专员",
+        "description": "何明是一位29岁的教育技术专员，拥有信息技术学士学位，性格细心，擅长技术支持与问题解决。他对电脑的使用非常熟练，特别是在教育软件和工具方面。对LLM有较强的了解，常用其进行技术支持和教育资源的优化。日常工作包括技术培训、问题解决和用户支持。",
+        "usage": [
+            "SelfLearningPlatform",
+            "ProgrammingCat"
+        ],
+        "advantages": [
+            "GitHub",
+            "DockerApp"
+        ],
+        "disadvantages": [
+            "FFmpeg",
+            "Curl"
+        ]
+    },
+    {
+        "name": "朱晓",
+        "profession": "在线教育平台运营专员",
+        "description": "朱晓是一位34岁的在线教育平台运营专员，拥有市场营销硕士学位，性格细心，注重数据分析。对电脑的使用能力较强，熟悉数据分析和市场调研工具。对LLM有一定的了解，常用其进行内容优化和用户反馈分析。日常工作包括市场推广、数据分析和用户管理。",
+        "usage": [
+            "WeChatApp",
+            "BaiDuNews"
+        ],
+        "advantages": [
+            "GoogleCustomSearch",
+            "DataCleaningAndIntegration"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "林涛",
+        "profession": "教育咨询顾问",
+        "description": "林涛是一位41岁的教育咨询顾问，拥有教育管理硕士学位，性格细心，擅长与客户沟通。他对电脑的使用能力较强，熟悉在线沟通工具和数据分析软件。对LLM有一定的了解，常用其进行市场调研和客户需求分析。日常工作包括客户咨询、市场分析和报告撰写。",
+        "usage": [
+            "Zhihu",
+            "BaiDuTieba"
+        ],
+        "advantages": [
+            "Slack",
+            "NotionApp"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "吴静",
+        "profession": "职业发展教练",
+        "description": "吴静是一位37岁的职业发展教练，拥有心理学硕士学位，性格温和，注重倾听与理解。对电脑的使用能力较强，熟悉在线咨询平台和数据分析工具。对LLM有一定的了解，常用其进行职业规划和市场调研。日常工作包括个案咨询、职业规划和市场分析。",
+        "usage": [
+            "YoudaoTranslation",
+            "KhanAcademy"
+        ],
+        "advantages": [
+            "NotionApp",
+            "Todoist"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "李明",
+        "profession": "会计师",
+        "description": "李明，32岁，拥有会计学硕士学位，细心且注重细节，善于数字计算和数据分析。熟悉Excel、财务软件等电脑相关知识，对LLM的应用有一定了解，常使用智能手机和笔记本电脑进行工作和学习。作为会计师，他负责企业的财务报表编制、税务申报及财务分析，日常工作中需要使用各种财务软件进行数据处理和分析。",
+        "usage": [
+            "财务助手智能体",
+            "数据分析助手"
+        ],
+        "advantages": [
+            "XueQiu",
+            "LiCaiTong"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "王芳",
+        "profession": "金融分析师",
+        "description": "王芳，28岁，拥有金融学学士学位，性格外向，善于沟通，注重数据的准确性。对计算机有良好的掌握，熟悉Python和Excel，了解LLM的基本操作。她使用智能设备进行市场分析和投资决策，日常工作中负责收集和分析市场数据，为投资提供建议。",
+        "usage": [
+            "市场分析智能体",
+            "投资助手智能体"
+        ],
+        "advantages": [
+            "FutuNiuNiu",
+            "YiFangDaFund"
+        ],
+        "disadvantages": [
+            "Nmap",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "张伟",
+        "profession": "财务顾问",
+        "description": "张伟，40岁，拥有经济学博士学位，性格严谨，注重客户需求和财务规划。他对电脑和相关软件非常熟悉，能够灵活运用各种财务分析工具。对LLM的应用非常熟悉，常用智能设备进行客户沟通和财务分析。作为财务顾问，他为客户提供个性化的财务规划和投资建议。",
+        "usage": [
+            "财务规划智能体",
+            "客户管理助手"
+        ],
+        "advantages": [
+            "JdFinance",
+            "ZhiTouBao"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "刘敏",
+        "profession": "风险管理专员",
+        "description": "刘敏，30岁，拥有金融风险管理硕士学位，性格谨慎，善于分析潜在风险。熟悉风险评估模型和相关软件，对LLM的使用有基本了解，常用智能设备进行数据分析和报告撰写。她的工作主要是评估和监控企业的财务风险，提供风险管理建议。",
+        "usage": [
+            "风险评估智能体",
+            "数据管理助手"
+        ],
+        "advantages": [
+            "SmartPricingTool",
+            "UserBehaviorAnalysis"
+        ],
+        "disadvantages": [
+            "GitHub",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "陈静",
+        "profession": "税务顾问",
+        "description": "陈静，35岁，拥有税务法学硕士学位，性格细心，擅长税务相关法律法规。对电脑操作熟练，能够使用各种税务软件，对LLM有一定的了解，常用智能设备进行客户咨询和税务计算。她的工作主要是为客户提供税务规划和合规建议。",
+        "usage": [
+            "税务助手智能体",
+            "合规性评估智能体"
+        ],
+        "advantages": [
+            "Alipay",
+            "WeChatPay"
+        ],
+        "disadvantages": [
+            "FFmpeg",
+            "Curl"
+        ]
+    },
+    {
+        "name": "赵强",
+        "profession": "投资顾问",
+        "description": "赵强，45岁，拥有金融学硕士学位，性格稳重，注重市场趋势分析。熟悉各类投资工具和市场分析软件，对LLM的使用有丰富经验，常用智能设备进行投资组合管理和客户沟通。他的工作是为客户提供投资建议和市场分析。",
+        "usage": [
+            "投资分析智能体",
+            "市场趋势助手"
+        ],
+        "advantages": [
+            "XiaoZhuShortRent",
+            "TuNiu"
+        ],
+        "disadvantages": [
+            "WebScrapingDataAnalysis",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "孙丽",
+        "profession": "财务分析师",
+        "description": "孙丽，27岁，拥有会计学学士学位，性格积极，擅长数据分析和报告撰写。熟悉Excel和财务软件，对LLM的使用有一定了解，常用智能设备进行数据处理和分析。她的工作主要是分析企业财务数据，编制财务报告。",
+        "usage": [
+            "数据分析智能体",
+            "报告生成助手"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "Postman"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Nmap"
+        ]
+    },
+    {
+        "name": "周阳",
+        "profession": "证券分析师",
+        "description": "周阳，33岁，拥有金融学硕士学位，性格谨慎，注重市场数据分析。对电脑及证券分析软件非常熟悉，了解LLM的基本操作，常用智能设备进行市场监控和数据分析。他的工作是分析证券市场，提供投资建议。",
+        "usage": [
+            "证券分析智能体",
+            "市场监控助手"
+        ],
+        "advantages": [
+            "XueQiu",
+            "MintHealth"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "何峰",
+        "profession": "合规专员",
+        "description": "何峰，38岁，拥有法学硕士学位，性格严谨，擅长合规管理和风险控制。对电脑操作熟练，能够使用各种合规管理软件，对LLM的使用有一定了解，常用智能设备进行合规审核和报告撰写。他的工作主要是确保企业的合规性，评估潜在风险。",
+        "usage": [
+            "合规性审核智能体",
+            "风险评估助手"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "YoudaoNote"
+        ],
+        "disadvantages": [
+            "GitHub",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "林娜",
+        "profession": "财务经理",
+        "description": "林娜，42岁，拥有会计学硕士学位，性格领导力强，擅长团队管理和财务决策。熟悉财务软件和管理工具，对LLM的使用有丰富经验，常用智能设备进行财务分析和团队沟通。她的工作是管理财务团队，制定财务战略。",
+        "usage": [
+            "团队管理智能体",
+            "财务分析助手"
+        ],
+        "advantages": [
+            "FeiShu",
+            "NotionApp"
+        ],
+        "disadvantages": [
+            "Ansible",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "郭伟",
+        "profession": "预算分析师",
+        "description": "郭伟，29岁，拥有经济学学士学位，性格细心，擅长预算编制和控制。对Excel和预算管理软件非常熟悉，对LLM的使用有一定了解，常用智能设备进行预算分析和报告撰写。他的工作主要是编制和监控企业的预算。",
+        "usage": [
+            "预算管理智能体",
+            "数据分析助手"
+        ],
+        "advantages": [
+            "Calendly",
+            "Todoist"
+        ],
+        "disadvantages": [
+            "WebScrapingDataAnalysis",
+            "Nmap"
+        ]
+    },
+    {
+        "name": "朱莉",
+        "profession": "财务分析师",
+        "description": "朱莉，31岁，拥有会计学硕士学位，性格活泼，善于团队合作。熟悉各种财务软件，对LLM的使用有一定了解，常用智能设备进行数据分析和报告撰写。她的工作是分析财务数据，编制财务报告，提供决策支持。",
+        "usage": [
+            "数据分析智能体",
+            "报告生成助手"
+        ],
+        "advantages": [
+            "Slack",
+            "VisualStudioCode"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "马超",
+        "profession": "投资经理",
+        "description": "马超，50岁，拥有金融学硕士学位，性格稳重，擅长投资管理和大数据分析。对电脑和投资分析软件非常熟悉，了解LLM的应用，常用智能设备进行市场监控和数据分析。他的工作是管理投资组合，制定投资策略。",
+        "usage": [
+            "投资组合管理智能体",
+            "市场分析助手"
+        ],
+        "advantages": [
+            "XueQiu",
+            "YiFangDaFund"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "杨雪",
+        "profession": "财务顾问",
+        "description": "杨雪，36岁，拥有经济学硕士学位，性格开朗，擅长客户沟通和财务规划。熟悉财务软件和相关工具，对LLM的使用有一定了解，常用智能设备进行客户咨询和财务分析。她的工作主要是为客户提供个性化的财务建议和规划。",
+        "usage": [
+            "财务规划智能体",
+            "客户管理助手"
+        ],
+        "advantages": [
+            "WeChatPay",
+            "Alipay"
+        ],
+        "disadvantages": [
+            "GitHub",
+            "Nmap"
+        ]
+    },
+    {
+        "name": "李明",
+        "profession": "软件开发工程师",
+        "description": "李明，28岁，计算机科学硕士，性格细心，擅长解决复杂问题，熟悉多种编程语言如Python和Java。对于LLM有一定了解，常用智能设备包括笔记本和智能手机，主要使用Slack和VisualStudioCode进行工作，日常工作包括开发应用程序和维护数据库。",
+        "usage": [
+            "Slack",
+            "VisualStudioCode"
+        ],
+        "advantages": [
+            "GitHub",
+            "DockerApp"
+        ],
+        "disadvantages": [
+            "Nmap",
+            "FFmpeg"
+        ]
+    },
+    {
+        "name": "王芳",
+        "profession": "网络管理员",
+        "description": "王芳，35岁，信息技术专业本科毕业，性格谨慎，擅长网络维护和故障排查。对LLM的使用较为熟悉，日常使用智能设备包括路由器和监控摄像头。主要使用的工具有Todoist和Outlook，工作内容包括监控网络安全和优化网络性能。",
+        "usage": [
+            "Todoist",
+            "Outlook"
+        ],
+        "advantages": [
+            "WifiScanner",
+            "NetworkProxyService"
+        ],
+        "disadvantages": [
+            "Terraform",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "张伟",
+        "profession": "数据库管理员",
+        "description": "张伟，30岁，计算机专业本科，性格细致，擅长数据库设计和管理，熟悉SQL和NoSQL数据库。对LLM有一定的了解，使用智能设备包括工作站和智能手机，日常使用的工具包有DingDing和ShimoApp，主要负责数据库的备份和恢复。",
+        "usage": [
+            "DingDing",
+            "ShimoApp"
+        ],
+        "advantages": [
+            "DataCleaningAndIntegration",
+            "Postman"
+        ],
+        "disadvantages": [
+            "Curl",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "刘洋",
+        "profession": "前端开发工程师",
+        "description": "刘洋，24岁，计算机科学大专，性格活泼，擅长HTML、CSS和JavaScript，熟悉前端框架。对LLM的使用较为熟悉，日常使用的智能设备是笔记本和智能手表，主要使用的Agent有NotionApp和FigmaApp，负责网页的设计和开发。",
+        "usage": [
+            "NotionApp",
+            "FigmaApp"
+        ],
+        "advantages": [
+            "CodePen",
+            "VisualStudioCode"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "陈静",
+        "profession": "IT项目经理",
+        "description": "陈静，40岁，管理学硕士，性格严谨，擅长项目管理和团队协调，熟悉敏捷开发流程。对LLM有较高的熟悉度，日常使用的智能设备包括智能手机和笔记本，主要使用的Agent有Calendly和Slack，负责项目的整体规划和执行。",
+        "usage": [
+            "Calendly",
+            "Slack"
+        ],
+        "advantages": [
+            "Trello",
+            "Jira"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "赵强",
+        "profession": "云计算工程师",
+        "description": "赵强，32岁，计算机科学硕士，性格细致，擅长云架构设计和实施，熟悉AWS和Azure。对LLM的了解较为深入，日常使用的智能设备包括云服务器和笔记本，主要使用的Agent有Coursera和YoudaoNote，负责云服务的部署和管理。",
+        "usage": [
+            "Coursera",
+            "YoudaoNote"
+        ],
+        "advantages": [
+            "Terraform",
+            "DockerCLI"
+        ],
+        "disadvantages": [
+            "GitBash",
+            "FFmpeg"
+        ]
+    },
+    {
+        "name": "孙丽",
+        "profession": "数据分析师",
+        "description": "孙丽，29岁，统计学硕士，性格细致，擅长数据挖掘和分析，熟悉Python和R语言。对LLM有一定了解，日常使用的智能设备包括工作站和智能手机，主要使用的Agent有KhanAcademy和NotionApp，负责数据的收集和分析报告的撰写。",
+        "usage": [
+            "KhanAcademy",
+            "NotionApp"
+        ],
+        "advantages": [
+            "JupyterNotebook",
+            "DataCleaningAndIntegration"
+        ],
+        "disadvantages": [
+            "Nmap",
+            "FFmpeg"
+        ]
+    },
+    {
+        "name": "周杰",
+        "profession": "系统架构师",
+        "description": "周杰，38岁，计算机科学博士，性格严谨，擅长系统设计和架构优化，熟悉微服务架构。对LLM的使用较为熟悉，日常使用的智能设备包括服务器和笔记本，主要使用的Agent有Slack和NotionApp，负责系统的整体架构设计。",
+        "usage": [
+            "Slack",
+            "NotionApp"
+        ],
+        "advantages": [
+            "Kubernetes",
+            "Terraform"
+        ],
+        "disadvantages": [
+            "Curl",
+            "FFmpeg"
+        ]
+    },
+    {
+        "name": "郑鹏",
+        "profession": "信息安全专家",
+        "description": "郑鹏，36岁，网络安全硕士，性格细致，擅长信息安全和漏洞评估，熟悉各种安全工具。对LLM的了解较为深入，日常使用的智能设备包括安全监控设备和智能手机，主要使用的Agent有YoudaoTranslation和ProgrammingCat，负责公司的信息安全策略制定和实施。",
+        "usage": [
+            "YoudaoTranslation",
+            "ProgrammingCat"
+        ],
+        "advantages": [
+            "Nmap",
+            "VpnServiceApi"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "何娜",
+        "profession": "测试工程师",
+        "description": "何娜，27岁，计算机科学本科，性格细致，擅长软件测试和质量保证，熟悉自动化测试工具。对LLM的使用较为熟悉，日常使用的智能设备包括笔记本和智能手机，主要使用的Agent有ZuoYeBang和Todoist，负责软件的测试和缺陷管理。",
+        "usage": [
+            "ZuoYeBang",
+            "Todoist"
+        ],
+        "advantages": [
+            "Postman",
+            "GitHub"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "林伟",
+        "profession": "移动应用开发工程师",
+        "description": "林伟，26岁，计算机科学硕士，性格细心，擅长iOS和Android应用开发，熟悉Swift和Kotlin。对LLM有一定了解，日常使用的智能设备包括智能手机和笔记本，主要使用的Agent有Coursera和WeChatApp，负责移动应用的开发和维护。",
+        "usage": [
+            "Coursera",
+            "WeChatApp"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "GitHub"
+        ],
+        "disadvantages": [
+            "FFmpeg",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "杨静",
+        "profession": "产品经理",
+        "description": "杨静，33岁，市场营销硕士，性格外向，擅长产品规划和市场分析，熟悉用户需求调研。对LLM的使用较为熟悉，日常使用的智能设备包括智能手机和笔记本，主要使用的Agent有Flipboard和DingDing，负责产品的需求分析和市场推广。",
+        "usage": [
+            "Flipboard",
+            "DingDing"
+        ],
+        "advantages": [
+            "NotionApp",
+            "Slack"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Nmap"
+        ]
+    },
+    {
+        "name": "高明",
+        "profession": "人工智能工程师",
+        "description": "高明，31岁，计算机科学博士，性格专注，擅长机器学习和深度学习，熟悉TensorFlow和PyTorch。对LLM有较高的熟悉度，日常使用的智能设备包括高性能计算机和笔记本，主要使用的Agent有KhanAcademy和Coursera，负责模型的训练和优化。",
+        "usage": [
+            "KhanAcademy",
+            "Coursera"
+        ],
+        "advantages": [
+            "TensorFlow",
+            "JupyterNotebook"
+        ],
+        "disadvantages": [
+            "Nmap",
+            "FFmpeg"
+        ]
+    },
+    {
+        "name": "冯丽",
+        "profession": "技术支持工程师",
+        "description": "冯丽，29岁，计算机科学本科，性格耐心，擅长解决客户技术问题，熟悉各种软件和硬件。对LLM的了解较为深入，日常使用的智能设备包括笔记本和智能手机，主要使用的Agent有GoodDoctorOnline和Ximalaya，负责客户技术支持和培训。",
+        "usage": [
+            "GoodDoctorOnline",
+            "Ximalaya"
+        ],
+        "advantages": [
+            "Slack",
+            "Todoist"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "李明",
+        "profession": "平面设计师",
+        "description": "李明是一名28岁的平面设计师，毕业于美术学院，性格细心，有较强的审美能力。他对电脑相关技术有一定了解，熟练使用设计软件。对LLM的熟悉程度一般，主要用于寻找设计灵感和素材。他习惯使用智能设备进行设计工作，常用平板电脑和高性能笔记本。日常工作主要包括为客户设计品牌形象和广告宣传材料。",
+        "usage": [
+            "VisualStudioCode",
+            "FigmaApp"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "VisualStudioCode"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "张华",
+        "profession": "音乐制作人",
+        "description": "张华是一位35岁的音乐制作人，拥有音乐专业学位。他性格外向，但在工作时非常细心，注重每个音符的细节。他对电脑的使用非常熟练，特别是在音乐软件方面。对LLM的了解较深，常用其辅助创作和编曲。他使用高端音频工作站和智能手机进行日常工作，主要负责录音、混音和音乐制作。",
+        "usage": [
+            "QQMusic",
+            "Ximalaya"
+        ],
+        "advantages": [
+            "Ximalaya",
+            "QQMusic"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "王芳",
+        "profession": "作家",
+        "description": "王芳是一名42岁的小说作家，拥有文学硕士学位。她性格细腻，善于观察生活细节。对电脑的使用能力较强，常用文字处理软件。对LLM的熟悉程度较高，常用其进行文稿修改和灵感激发。她主要在笔记本电脑上工作，日常创作包括小说、短篇故事和剧本。",
+        "usage": [
+            "WangYiCloudReading",
+            "YoudaoNote"
+        ],
+        "advantages": [
+            "YoudaoNote",
+            "WangYiCloudReading"
+        ],
+        "disadvantages": [
+            "FFmpeg",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "刘伟",
+        "profession": "插画师",
+        "description": "刘伟是一名26岁的插画师，毕业于设计专业。他性格开朗，工作时非常细心，注重每个细节。他对电脑的使用能力强，熟练掌握多种插画软件。对LLM的了解较浅，主要用其搜索灵感和参考资料。他在使用平板和电脑进行插画创作，主要负责书籍插图和商业插画。",
+        "usage": [
+            "FigmaApp",
+            "NotionApp"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "NotionApp"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "陈婷",
+        "profession": "摄影师",
+        "description": "陈婷是一位30岁的职业摄影师，拥有摄影专业的本科学位。她性格细致，注重拍摄细节，擅长使用相机和后期处理软件。对电脑的使用非常熟练，熟悉多种摄影软件。对LLM的了解一般，常用于查询摄影技巧和后期处理方法。她主要使用相机和笔记本电脑进行工作，日常工作包括拍摄、编辑和客户沟通。",
+        "usage": [
+            "KugouMusic",
+            "Bilibili"
+        ],
+        "advantages": [
+            "Bilibili",
+            "KugouMusic"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "PowerToys"
+        ]
+    },
+    {
+        "name": "赵强",
+        "profession": "舞蹈编导",
+        "description": "赵强是一名38岁的舞蹈编导，拥有舞蹈专业的硕士学位。他性格温和，工作中非常细心，注重每个舞蹈动作的细节。他对电脑有一定的了解，主要使用视频编辑软件。对LLM的熟悉程度较低，偶尔用来查找舞蹈相关资料。他主要使用智能手机和笔记本电脑进行工作，日常工作包括编排舞蹈和排练。",
+        "usage": [
+            "DouyinShortVideo",
+            "Ximalaya"
+        ],
+        "advantages": [
+            "Ximalaya",
+            "DouyinShortVideo"
+        ],
+        "disadvantages": [
+            "GitHub",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "孙丽",
+        "profession": "服装设计师",
+        "description": "孙丽是一名32岁的服装设计师，毕业于服装设计专业。她性格细心，注重细节，擅长使用设计软件和制图工具。对电脑的使用能力较强，对LLM的了解一般，常用其寻找设计灵感。她主要使用笔记本电脑和智能设备来进行设计和样衣制作，日常工作包括时装设计和样品制作。",
+        "usage": [
+            "NotionApp",
+            "QQMusic"
+        ],
+        "advantages": [
+            "NotionApp",
+            "QQMusic"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "朱伟",
+        "profession": "动画师",
+        "description": "朱伟是一名29岁的动画师，拥有动画专业的本科学位。他性格活泼，工作时非常细心，擅长使用动画制作软件。对电脑的使用非常熟练，常用动画和特效软件。对LLM的了解较深，常用其进行动画创作和剧本撰写。他主要使用高性能电脑进行动画制作，日常工作包括角色设计和动画制作。",
+        "usage": [
+            "VisualStudioCode",
+            "FigmaApp"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "VisualStudioCode"
+        ],
+        "disadvantages": [
+            "GitHub",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "马婷",
+        "profession": "戏剧导演",
+        "description": "马婷是一名45岁的戏剧导演，拥有戏剧专业的硕士学位。她性格严谨，工作中非常细心，注重剧本和表演的每个细节。对电脑的使用能力较强，常用剧本编辑软件。对LLM的熟悉程度一般，主要用来查找戏剧相关资料。她主要使用笔记本电脑和智能设备进行工作，日常工作包括剧本分析和排练组织。",
+        "usage": [
+            "WangYiCloudReading",
+            "YoudaoTranslation"
+        ],
+        "advantages": [
+            "YoudaoTranslation",
+            "WangYiCloudReading"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "PowerToys"
+        ]
+    },
+    {
+        "name": "何军",
+        "profession": "游戏设计师",
+        "description": "何军是一名31岁的游戏设计师，拥有计算机科学学位。他性格细心，注重游戏机制和用户体验的细节。对电脑的使用能力非常强，精通多种游戏设计软件。对LLM的了解较深，常用其进行游戏策划和故事创作。他主要使用高性能电脑进行游戏设计，日常工作包括游戏概念设计和原型制作。",
+        "usage": [
+            "VisualStudioCode",
+            "GitHub"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "GitHub"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "周婷",
+        "profession": "插画师",
+        "description": "周婷是一名27岁的插画师，毕业于艺术设计专业。她性格温柔，工作中非常细心，擅长使用插画软件。对电脑的使用能力较强，对LLM的了解一般，常用其查找插画灵感。她主要使用平板和笔记本电脑进行工作，日常工作包括插画创作和客户沟通。",
+        "usage": [
+            "NotionApp",
+            "KugouMusic"
+        ],
+        "advantages": [
+            "NotionApp",
+            "KugouMusic"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "郑磊",
+        "profession": "广告文案",
+        "description": "郑磊是一名33岁的广告文案，拥有传播学学位。他性格外向，工作时非常细心，擅长文字表达和创意构思。对电脑的使用能力强，熟练使用文案编辑软件。对LLM的熟悉程度较高，常用其进行文案创作和灵感激发。他主要使用笔记本电脑进行工作，日常工作包括撰写广告文案和市场调研。",
+        "usage": [
+            "WangYiCloudReading",
+            "YoudaoTranslation"
+        ],
+        "advantages": [
+            "YoudaoTranslation",
+            "WangYiCloudReading"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "PowerToys"
+        ]
+    },
+    {
+        "name": "高飞",
+        "profession": "视频编辑",
+        "description": "高飞是一名36岁的视频编辑，拥有影视制作专业的本科学位。他性格细致，工作中非常注重每个镜头的细节。对电脑的使用能力非常强，熟练使用视频编辑软件。对LLM的了解一般，常用其查找剪辑技巧和素材。他主要使用高性能电脑进行视频编辑，日常工作包括剪辑视频和后期处理。",
+        "usage": [
+            "Bilibili",
+            "KugouMusic"
+        ],
+        "advantages": [
+            "Bilibili",
+            "KugouMusic"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "李娜",
+        "profession": "手工艺人",
+        "description": "李娜是一名40岁的手工艺人，专注于传统手工艺品的制作。她性格细腻，注重手工制作的每个细节。对电脑的使用能力一般，偶尔使用智能设备进行宣传。对LLM的了解较低，主要用来查找手工艺的灵感和技巧。她的日常工作主要包括手工制作和市场推广。",
+        "usage": [
+            "Douban",
+            "Zhihu"
+        ],
+        "advantages": [
+            "Douban",
+            "Zhihu"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "张伟",
+        "profession": "律师",
+        "description": "张伟，35岁，拥有法学硕士学位，性格细心且耐心，善于倾听客户需求。熟悉法律文件的撰写与审查，具备一定的计算机知识，能够使用办公软件和法律数据库。对LLM有一定了解，偶尔使用相关工具帮助整理案件材料。日常工作主要包括与客户沟通、准备法律文书、出庭辩护等。",
+        "usage": [
+            "法律咨询智能体",
+            "案件管理智能体"
+        ],
+        "advantages": [
+            "Gudu",
+            "YoudaoNote"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "李娜",
+        "profession": "法官",
+        "description": "李娜，42岁，法学博士，性格严谨，注重细节，对法律条款有深入理解。熟悉计算机操作，能够使用法院管理系统和法律信息检索工具。对LLM非常熟悉，常常利用其进行案件分析和数据整理。日常工作包括审理案件、撰写判决书、参与法庭讨论等。",
+        "usage": [
+            "案件分析智能体",
+            "法律文书撰写智能体"
+        ],
+        "advantages": [
+            "NotionApp",
+            "Slack"
+        ],
+        "disadvantages": [
+            "GitHub",
+            "Postman"
+        ]
+    },
+    {
+        "name": "王磊",
+        "profession": "法律助理",
+        "description": "王磊，28岁，法学本科生，性格细心，乐于学习新知识。熟悉基本的法律知识，计算机技能良好，能够使用Word和Excel进行文书工作。对LLM有基本了解，使用其帮助整理法律文档。日常工作包括协助律师准备案件材料、进行法律研究等。",
+        "usage": [
+            "法律文书智能体",
+            "研究辅助智能体"
+        ],
+        "advantages": [
+            "Coursera",
+            "Quizlet"
+        ],
+        "disadvantages": [
+            "Terraform",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "陈静",
+        "profession": "公证员",
+        "description": "陈静，30岁，法学学士，性格细致，注重准确性。熟悉公证流程及相关法律法规，能够熟练使用计算机进行文书处理。对LLM有一定的了解，偶尔使用以提高工作效率。日常工作包括审核公证文件、与客户沟通等。",
+        "usage": [
+            "文书审核智能体",
+            "客户沟通智能体"
+        ],
+        "advantages": [
+            "YoudaoTranslation",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "赵强",
+        "profession": "检察官",
+        "description": "赵强，38岁，法学硕士，性格严谨，善于分析问题。熟悉刑法及相关法律，计算机操作能力强，能够使用案件管理系统。对LLM有较高的熟悉度，常使用其进行案件分析与证据整理。日常工作包括审查案件、出庭公诉等。",
+        "usage": [
+            "案件管理智能体",
+            "证据分析智能体"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "Lark"
+        ],
+        "disadvantages": [
+            "FFmpeg",
+            "Curl"
+        ]
+    },
+    {
+        "name": "孙丽",
+        "profession": "法律顾问",
+        "description": "孙丽，45岁，法学博士，性格温和，善于沟通。擅长为企业提供法律咨询服务，熟悉相关法律法规，具备较强的计算机技能。对LLM的应用有丰富经验，常用其协助撰写法律意见书。日常工作包括客户咨询、合同审查等。",
+        "usage": [
+            "法律咨询智能体",
+            "合同审查智能体"
+        ],
+        "advantages": [
+            "ShimoApp",
+            "Calendly"
+        ],
+        "disadvantages": [
+            "Nmap",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "李明",
+        "profession": "法学研究员",
+        "description": "李明，29岁，法学硕士，性格细腻，专注于法律理论研究。熟悉法律文献检索与数据分析，计算机技能较强。对LLM非常熟悉，常利用其进行数据分析与文献整理。日常工作包括撰写研究论文、参与学术讨论等。",
+        "usage": [
+            "数据分析智能体",
+            "文献整理智能体"
+        ],
+        "advantages": [
+            "JupyterNotebook",
+            "GitHub"
+        ],
+        "disadvantages": [
+            "Terraform",
+            "DingDing"
+        ]
+    },
+    {
+        "name": "周华",
+        "profession": "法务专员",
+        "description": "周华，32岁，法学学士，性格严谨，注重细节。负责企业内部法律事务，熟悉合同法及相关法规，计算机操作能力良好。对LLM有一定了解，使用其帮助处理法律文件。日常工作包括合同审核、法律风险评估等。",
+        "usage": [
+            "合同管理智能体",
+            "法律风险评估智能体"
+        ],
+        "advantages": [
+            "NotionApp",
+            "Todoist"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "SocialMediaAnalysisApi"
+        ]
+    },
+    {
+        "name": "吴婷",
+        "profession": "知识产权律师",
+        "description": "吴婷，37岁，法学硕士，性格细致，专注于知识产权领域。精通商标法和专利法，计算机操作技能强。对LLM有较高的熟悉度，常用于检索相关法律信息及撰写法律文件。日常工作包括案件咨询、法律文书撰写等。",
+        "usage": [
+            "知识产权智能体",
+            "法律文书撰写智能体"
+        ],
+        "advantages": [
+            "ProgrammingCat",
+            "WangYiYunKeTang"
+        ],
+        "disadvantages": [
+            "GitBash",
+            "WebScrapingDataAnalysis"
+        ]
+    },
+    {
+        "name": "郑宇",
+        "profession": "法律记者",
+        "description": "郑宇，34岁，法学学士，性格好奇，擅长调查与分析。熟悉法律相关报道，计算机技能较强，能够使用数据分析软件。对LLM有一定了解，使用其帮助整理资料。日常工作包括撰写法律报道、采访法律专家等。",
+        "usage": [
+            "法律报道智能体",
+            "资料整理智能体"
+        ],
+        "advantages": [
+            "BaiduTieba",
+            "Zhihu"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "何晨",
+        "profession": "调解员",
+        "description": "何晨，40岁，心理学与法学双学士，性格温和，善于沟通与调解。熟悉调解流程，计算机技能一般。对LLM有基本了解，偶尔使用其帮助记录调解过程。日常工作包括调解纠纷、与各方沟通等。",
+        "usage": [
+            "调解记录智能体",
+            "沟通辅助智能体"
+        ],
+        "advantages": [
+            "QQ",
+            "WeChatApp"
+        ],
+        "disadvantages": [
+            "Terraform",
+            "Curl"
+        ]
+    },
+    {
+        "name": "邓雅",
+        "profession": "家庭律师",
+        "description": "邓雅，33岁，法学硕士，性格细腻，专注于家庭法律事务。熟悉离婚、抚养权等相关法律，计算机操作能力良好。对LLM有一定了解，使用其帮助撰写法律文件。日常工作包括客户咨询、法律文书撰写等。",
+        "usage": [
+            "家庭法律智能体",
+            "法律文书撰写智能体"
+        ],
+        "advantages": [
+            "YoudaoNote",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "严飞",
+        "profession": "刑事辩护律师",
+        "description": "严飞，39岁，法学博士，性格果断，擅长刑事案件辩护。熟悉刑法及相关程序，计算机操作技能较强。对LLM有丰富的使用经验，常用其进行案件分析与证据整理。日常工作包括出庭辩护、与客户沟通等。",
+        "usage": [
+            "刑事案件智能体",
+            "证据分析智能体"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "Slack"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "WebScrapingDataAnalysis"
+        ]
+    },
+    {
+        "name": "李明",
+        "profession": "酒店经理",
+        "description": "李明，35岁，拥有酒店管理硕士学位。他性格细心，注重细节，擅长与客户沟通，能快速解决问题。对电脑的基础知识较强，熟悉酒店管理软件，使用LLM的能力一般。他习惯使用智能手机和电脑进行日常工作，主要负责酒店的运营管理、员工培训和客户服务。",
+        "usage": [
+            "TravelManager",
+            "CtripApp"
+        ],
+        "advantages": [
+            "CtripApp",
+            "TravelManager"
+        ],
+        "disadvantages": [
+            "Keep",
+            "Fitbit"
+        ]
+    },
+    {
+        "name": "张伟",
+        "profession": "导游",
+        "description": "张伟，28岁，拥有旅游管理本科学位。他性格开朗，热情好客，注重客户体验。对电脑的应用能力较强，常使用旅游规划软件，熟悉LLM的基本操作。日常工作包括带领游客参观、讲解历史文化和处理客户反馈。",
+        "usage": [
+            "HelloTravel",
+            "YouXiaKe"
+        ],
+        "advantages": [
+            "HelloTravel",
+            "YouXiaKe"
+        ],
+        "disadvantages": [
+            "BaiduAPI",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "王芳",
+        "profession": "前台接待员",
+        "description": "王芳，22岁，正在攻读酒店管理专业的本科生。她性格细心，礼貌待客，能够快速学习新技能。对电脑的基本操作非常熟练，使用LLM的经验较少。日常工作包括接待顾客、办理入住和退房手续以及处理电话咨询。",
+        "usage": [
+            "WeChatApp",
+            "DingDing"
+        ],
+        "advantages": [
+            "WeChatApp",
+            "DingDing"
+        ],
+        "disadvantages": [
+            "GitHub",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "陈强",
+        "profession": "旅行社顾问",
+        "description": "陈强，30岁，拥有市场营销学士学位。他性格细心，擅长分析市场需求。对电脑知识掌握较好，使用LLM的能力中等。日常工作包括为客户规划旅行路线、报价和提供咨询服务。",
+        "usage": [
+            "TuNiu",
+            "Qunar"
+        ],
+        "advantages": [
+            "TuNiu",
+            "Qunar"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "赵丽",
+        "profession": "餐饮经理",
+        "description": "赵丽，40岁，拥有餐饮管理硕士学位。她性格细致，善于管理团队，注重顾客满意度。对电脑的操作熟练，能够使用一些餐饮管理软件，LLM的使用经验有限。负责餐厅的日常运营、菜单设计和员工培训。",
+        "usage": [
+            "FeiZhu",
+            "Meiyou"
+        ],
+        "advantages": [
+            "FeiZhu",
+            "Meiyou"
+        ],
+        "disadvantages": [
+            "WebScrapingDataAnalysis",
+            "GitBash"
+        ]
+    },
+    {
+        "name": "刘洋",
+        "profession": "旅游摄影师",
+        "description": "刘洋，27岁，自学成才，拥有丰富的摄影经验。他性格细腻，热爱自然，能够捕捉美丽瞬间。对电脑软件如Photoshop有一定了解，但对LLM的使用不太熟悉。日常工作包括拍摄旅游景点、编辑照片和与客户沟通。",
+        "usage": [
+            "TravelFrog",
+            "GaoDeMap"
+        ],
+        "advantages": [
+            "TravelFrog",
+            "GaoDeMap"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "Swagger"
+        ]
+    },
+    {
+        "name": "周杰",
+        "profession": "酒店清洁员",
+        "description": "周杰，45岁，拥有多年的酒店清洁经验。他性格细心，注重卫生，工作认真负责。对电脑知识了解不多，使用LLM的能力较弱。日常工作包括对酒店房间进行清洁、维护公共区域的卫生。",
+        "usage": [
+            "CaoCaoTravel",
+            "FeiChangZhun"
+        ],
+        "advantages": [
+            "CaoCaoTravel",
+            "FeiChangZhun"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "郑爽",
+        "profession": "旅游策划师",
+        "description": "郑爽，32岁，拥有旅游管理学士学位。她性格细心，擅长市场调研，能够制定出吸引游客的旅游产品。对电脑的应用能力强，熟悉LLM的使用。日常工作包括进行市场分析、策划旅游项目和撰写策划书。",
+        "usage": [
+            "TravelService",
+            "SmartPricingTool"
+        ],
+        "advantages": [
+            "TravelService",
+            "SmartPricingTool"
+        ],
+        "disadvantages": [
+            "Curl",
+            "FFmpeg"
+        ]
+    },
+    {
+        "name": "高飞",
+        "profession": "民宿经营者",
+        "description": "高飞，38岁，拥有酒店管理学位。他性格细致，热爱生活，擅长与顾客沟通。对电脑的使用较为熟练，LLM的使用经验一般。日常工作包括管理民宿运营、处理顾客预订和维护顾客关系。",
+        "usage": [
+            "XiaoZhuShortRent",
+            "TravelManager"
+        ],
+        "advantages": [
+            "XiaoZhuShortRent",
+            "TravelManager"
+        ],
+        "disadvantages": [
+            "KugouMusic",
+            "QQMusic"
+        ]
+    },
+    {
+        "name": "李娜",
+        "profession": "旅游产品经理",
+        "description": "李娜，29岁，拥有经济学硕士学位。她性格细心，擅长数据分析，能够制定有效的产品策略。对电脑知识掌握较好，熟悉LLM的应用。日常工作包括分析市场数据、开发新产品和与团队沟通。",
+        "usage": [
+            "UserBehaviorAnalysis",
+            "SocialCommerceApp"
+        ],
+        "advantages": [
+            "UserBehaviorAnalysis",
+            "SocialCommerceApp"
+        ],
+        "disadvantages": [
+            "VPNServiceApi",
+            "MobileNetworkMonitoring"
+        ]
+    },
+    {
+        "name": "王磊",
+        "profession": "酒店财务助理",
+        "description": "王磊，26岁，拥有财务管理学士学位。他性格细致，擅长数字分析，对财务数据有敏锐的洞察力。对电脑的操作熟练，使用LLM的经验较少。日常工作包括处理酒店的财务报表、预算编制和成本控制。",
+        "usage": [
+            "Calendly",
+            "TencentDocs"
+        ],
+        "advantages": [
+            "Calendly",
+            "TencentDocs"
+        ],
+        "disadvantages": [
+            "JupyterNotebook",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "黄婷",
+        "profession": "餐饮服务员",
+        "description": "黄婷，20岁，正在学习酒店管理专业。她性格开朗，乐于助人，注重顾客体验。对电脑的使用能力一般，LLM的使用较少。日常工作包括为顾客提供服务、处理订单和维护餐厅环境。",
+        "usage": [
+            "ElemeOpenPlatform",
+            "MeituanTakeaway"
+        ],
+        "advantages": [
+            "ElemeOpenPlatform",
+            "MeituanTakeaway"
+        ],
+        "disadvantages": [
+            "GitHub",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "马强",
+        "profession": "旅游安全顾问",
+        "description": "马强，34岁，拥有安全管理硕士学位。他性格细心，擅长风险评估，能够制定安全预案。对电脑知识掌握较好，熟悉LLM的使用。日常工作包括进行安全检查、评估旅游项目的风险和培训员工。",
+        "usage": [
+            "TrafficAssistant",
+            "FeiChangZhun"
+        ],
+        "advantages": [
+            "TrafficAssistant",
+            "FeiChangZhun"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "唐敏",
+        "profession": "酒店人力资源经理",
+        "description": "唐敏，36岁，拥有人力资源管理硕士学位。她性格细致，擅长员工培训和团队建设。对电脑的使用能力强，熟悉LLM的操作。日常工作包括招聘、员工关系管理和培训计划的制定。",
+        "usage": [
+            "Slack",
+            "Todoist"
+        ],
+        "advantages": [
+            "Slack",
+            "Todoist"
+        ],
+        "disadvantages": [
+            "DataCleaningAndIntegration",
+            "WebScrapingDataAnalysis"
+        ]
+    },
+    {
+        "name": "张伟",
+        "profession": "建筑师",
+        "description": "张伟，35岁，拥有建筑学硕士学位，细心且富有创造力。他对电脑有较强的操作能力，熟悉建筑设计软件如AutoCAD和Revit。对大型语言模型（LLM）有一定了解，能利用其进行设计灵感的获取和文献资料的查找。他习惯使用智能设备进行日常工作，如平板电脑和智能手机，常通过设计软件和项目管理工具进行工作。",
+        "usage": [
+            "NotionApp",
+            "Slack"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "VisualStudioCode"
+        ],
+        "disadvantages": [
+            "WindowsPowerShell",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "李娜",
+        "profession": "建筑工人",
+        "description": "李娜，28岁，高中毕业，注重细节，勤奋踏实。对电脑的基本操作有一定了解，但不太熟悉大型语言模型（LLM）。她习惯使用智能手机来查找施工资料和视频教程，工作中依赖于工具和机械设备。",
+        "usage": [
+            "YoudaoTranslation",
+            "QQ"
+        ],
+        "advantages": [
+            "Keep",
+            "Gudu"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "王强",
+        "profession": "室内设计师",
+        "description": "王强，30岁，拥有室内设计学位，个性细心，善于倾听客户需求。他对电脑操作非常熟练，精通Photoshop和Sketch等设计软件。对LLM有基本使用经验，能利用其获取设计灵感。习惯使用平板和智能手机进行设计和沟通。",
+        "usage": [
+            "Calendly",
+            "Lark"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "VisualStudioCode"
+        ],
+        "disadvantages": [
+            "GitBash",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "陈晨",
+        "profession": "建筑项目经理",
+        "description": "陈晨，40岁，拥有管理学硕士学位，性格严谨且注重细节。对电脑有深厚的知识背景，熟悉项目管理软件如Microsoft Project。对LLM的使用相对熟练，常用其进行项目进度分析和数据整理。习惯使用智能手机和电脑进行工作。",
+        "usage": [
+            "Todoist",
+            "FeiShu"
+        ],
+        "advantages": [
+            "Slack",
+            "NotionApp"
+        ],
+        "disadvantages": [
+            "Curl",
+            "Nmap"
+        ]
+    },
+    {
+        "name": "赵丽",
+        "profession": "建筑设计学生",
+        "description": "赵丽，21岁，正在攻读建筑学本科，性格开朗且对细节敏感。对电脑操作较为熟练，使用CAD和3D建模软件进行学习。对LLM有一定的了解，常用其进行课程学习和资料查找。习惯使用笔记本电脑和智能手机进行学习和交流。",
+        "usage": [
+            "KhanAcademy",
+            "YoudaoNote"
+        ],
+        "advantages": [
+            "Quizlet",
+            "SelfLearningPlatform"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "孙伟",
+        "profession": "施工监理",
+        "description": "孙伟，38岁，专科毕业，性格细致且认真。他对电脑的基本操作有一定了解，但不擅长使用复杂的软件。对LLM的使用较少，主要依赖纸质资料和口头沟通来完成工作。习惯使用智能手机来查看施工进度和与团队沟通。",
+        "usage": [
+            "QQ",
+            "DingDing"
+        ],
+        "advantages": [
+            "TrafficAssistant",
+            "BaiduMap"
+        ],
+        "disadvantages": [
+            "VisualStudioCode",
+            "Postman"
+        ]
+    },
+    {
+        "name": "周涛",
+        "profession": "景观设计师",
+        "description": "周涛，33岁，拥有环境艺术设计硕士学位，个性细腻，善于观察。他对电脑操作非常熟练，精通SketchUp和Lumion等软件。对LLM有一定了解，能用其进行设计创意的探索。习惯使用各种智能设备来辅助设计工作。",
+        "usage": [
+            "NotionApp",
+            "Slack"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "VisualStudioCode"
+        ],
+        "disadvantages": [
+            "Ansible",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "刘洋",
+        "profession": "建筑材料采购员",
+        "description": "刘洋，29岁，大学毕业，性格细心且具有较强的沟通能力。他对电脑的操作较为熟练，熟悉使用Excel进行数据整理。对LLM的了解较少，主要使用传统方式进行工作。习惯在工作中使用智能手机来与供应商沟通。",
+        "usage": [
+            "WeChatApp",
+            "Gmail"
+        ],
+        "advantages": [
+            "Todoist",
+            "CtripApp"
+        ],
+        "disadvantages": [
+            "GitHub",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "何磊",
+        "profession": "建筑安全员",
+        "description": "何磊，32岁，拥有安全工程学位，性格谨慎，注重细节。他对电脑的操作能力一般，主要使用基本的办公软件。对LLM不太熟悉，习惯依赖纸质材料进行工作。常使用智能手机来查看安全规范和进行现场交流。",
+        "usage": [
+            "DingDing",
+            "QQ"
+        ],
+        "advantages": [
+            "MintHealth",
+            "Keep"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "马云",
+        "profession": "建筑绘图员",
+        "description": "马云，26岁，大专毕业，性格细致，善于观察。他对电脑操作熟练，主要使用AutoCAD进行绘图。对LLM的了解有限，主要依赖于老师和同事的指导。习惯使用笔记本电脑进行工作。",
+        "usage": [
+            "YoudaoTranslation",
+            "ShimoApp"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "FigmaApp"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "郑敏",
+        "profession": "城市规划师",
+        "description": "郑敏，37岁，城市规划专业硕士，性格严谨，注重逻辑。他对电脑操作非常熟练，熟悉GIS软件。对LLM有一定了解，常利用其进行研究和数据分析。习惯使用高效的智能设备来辅助工作。",
+        "usage": [
+            "Calendly",
+            "Slack"
+        ],
+        "advantages": [
+            "DataCleaningAndIntegration",
+            "WebScrapingDataAnalysis"
+        ],
+        "disadvantages": [
+            "Curl",
+            "FFmpeg"
+        ]
+    },
+    {
+        "name": "陈飞",
+        "profession": "建筑摄影师",
+        "description": "陈飞，31岁，拥有摄影专业学位，性格细腻且富有创意。他对电脑操作熟练，使用Photoshop和Lightroom进行后期处理。对LLM的使用较少，主要依赖个人经验和灵感进行创作。习惯使用智能手机和专业相机进行工作。",
+        "usage": [
+            "KugouMusic",
+            "DouyinShortVideo"
+        ],
+        "advantages": [
+            "PowerToys",
+            "FigmaApp"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "高峰",
+        "profession": "建筑环保顾问",
+        "description": "高峰，42岁，环境科学硕士，性格细致且关注可持续发展。他对电脑操作熟练，使用数据分析软件进行工作。对LLM有一定的了解，能利用其进行环保数据的分析和报告撰写。习惯使用智能设备来进行数据收集和分析。",
+        "usage": [
+            "BaiduAPI",
+            "GoogleCustomSearch"
+        ],
+        "advantages": [
+            "DataCleaningAndIntegration",
+            "UserBehaviorAnalysis"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "杨雪",
+        "profession": "建筑合约管理员",
+        "description": "杨雪，34岁，法学学士，性格细致，善于沟通。他对电脑操作熟练，使用Excel和Word进行合同管理。对LLM有一定了解，能利用其进行合同条款的分析和整理。习惯使用智能设备来进行文件管理和沟通。",
+        "usage": [
+            "Slack",
+            "NotionApp"
+        ],
+        "advantages": [
+            "Todoist",
+            "FeiShu"
+        ],
+        "disadvantages": [
+            "Curl",
+            "GitBash"
+        ]
+    },
+    {
+        "name": "李明",
+        "profession": "销售经理",
+        "description": "李明，35岁，拥有市场营销硕士学位，性格外向，注重细节。他精通电脑操作，熟悉各种销售管理软件，对LLM有一定了解，常用智能设备如智能手机和笔记本电脑。他的日常工作包括制定销售策略、客户管理和市场分析，善于沟通和团队合作。",
+        "usage": [
+            "销售助手",
+            "客户关系管理智能体"
+        ],
+        "advantages": [
+            "SmartPricingTool",
+            "UserBehaviorAnalysis"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "张华",
+        "profession": "市场专员",
+        "description": "张华，28岁，具有市场营销学士学位，性格细心且耐心，对数据分析充满热情。她熟悉电脑操作，掌握Excel等办公软件，了解LLM的基本功能。日常使用智能手机和电脑，负责市场调研和活动策划。",
+        "usage": [
+            "市场分析智能体",
+            "数据分析助手"
+        ],
+        "advantages": [
+            "DataCleaningAndIntegration",
+            "SocialMediaAnalysisApi"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "王伟",
+        "profession": "公关专员",
+        "description": "王伟，30岁，拥有新闻传播学学士学位，性格开朗，注重细节。他对电脑有一定的了解，熟悉社交媒体平台，使用智能手机和笔记本电脑进行工作。日常任务包括撰写新闻稿、组织媒体活动和处理客户关系。",
+        "usage": [
+            "公关管理智能体",
+            "媒体监测助手"
+        ],
+        "advantages": [
+            "SocialCommerceApp",
+            "WeChatApp"
+        ],
+        "disadvantages": [
+            "Ansible",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "赵蕾",
+        "profession": "销售助理",
+        "description": "赵蕾，22岁，正在攻读市场营销学士学位，性格细心且善于学习。她对电脑操作非常熟练，熟悉各种办公软件，对LLM有基本了解。主要负责协助销售经理处理日常事务和客户资料管理。",
+        "usage": [
+            "销售助理智能体",
+            "客户管理助手"
+        ],
+        "advantages": [
+            "Todoist",
+            "NotionApp"
+        ],
+        "disadvantages": [
+            "JupyterNotebook",
+            "Swagger"
+        ]
+    },
+    {
+        "name": "陈涛",
+        "profession": "市场分析师",
+        "description": "陈涛，27岁，拥有统计学硕士学位，性格严谨，注重数据分析。他擅长电脑操作，熟练使用数据分析软件和编程工具，对LLM非常熟悉。工作内容包括市场数据收集与分析，为决策提供支持。",
+        "usage": [
+            "数据分析智能体",
+            "市场预测助手"
+        ],
+        "advantages": [
+            "WebScrapingDataAnalysis",
+            "TensorFlow"
+        ],
+        "disadvantages": [
+            "FigmaApp",
+            "PowerToys"
+        ]
+    },
+    {
+        "name": "孙丽",
+        "profession": "品牌经理",
+        "description": "孙丽，32岁，拥有工商管理硕士学位，性格外向，善于沟通。她对电脑软件使用非常熟练，尤其在品牌营销方面有丰富经验，对LLM也有一定的了解。日常工作包括品牌策略制定和市场推广活动组织。",
+        "usage": [
+            "品牌管理智能体",
+            "市场推广助手"
+        ],
+        "advantages": [
+            "Calendly",
+            "Slack"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "GitBash"
+        ]
+    },
+    {
+        "name": "刘洋",
+        "profession": "网络营销专员",
+        "description": "刘洋，26岁，拥有市场营销学士学位，性格积极，乐于学习。他熟悉电脑操作，擅长使用各种网络营销工具，对LLM的使用有一定经验。工作内容主要包括管理社交媒体账号和实施在线广告。",
+        "usage": [
+            "网络营销智能体",
+            "社交媒体助手"
+        ],
+        "advantages": [
+            "BaiduAPI",
+            "SocialMediaAnalysisApi"
+        ],
+        "disadvantages": [
+            "Nmap",
+            "FFmpeg"
+        ]
+    },
+    {
+        "name": "周强",
+        "profession": "销售代表",
+        "description": "周强，29岁，具有经济学学士学位，性格开朗，注重客户关系。他熟练使用电脑，了解销售管理软件，并对LLM有基本的了解。主要负责客户开发和销售目标达成。",
+        "usage": [
+            "客户开发智能体",
+            "销售跟踪助手"
+        ],
+        "advantages": [
+            "Gmail",
+            "YoudaoNote"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "吴娜",
+        "profession": "市场调研员",
+        "description": "吴娜，24岁，正在攻读社会学硕士学位，性格细致，喜欢数据分析。她熟悉电脑操作，掌握多种调研工具，对LLM的使用有一定了解。日常工作包括设计问卷和分析调研数据。",
+        "usage": [
+            "市场调研智能体",
+            "数据分析助手"
+        ],
+        "advantages": [
+            "Quizlet",
+            "KhanAcademy"
+        ],
+        "disadvantages": [
+            "Ansible",
+            "Nmap"
+        ]
+    },
+    {
+        "name": "郑健",
+        "profession": "广告专员",
+        "description": "郑健，31岁，拥有广告学学士学位，性格创造性强，对新事物充满好奇。他熟练使用各种设计软件，了解LLM的基本功能。日常工作包括广告创意策划和文案撰写。",
+        "usage": [
+            "广告创意智能体",
+            "文案助手"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "Postman"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "高峰",
+        "profession": "销售分析师",
+        "description": "高峰，34岁，拥有统计学硕士学位，性格严谨，注重数据。他擅长使用Excel和数据分析工具，对LLM有深入了解。工作内容包括销售数据分析和报告撰写。",
+        "usage": [
+            "销售数据智能体",
+            "报告生成助手"
+        ],
+        "advantages": [
+            "WebScrapingDataAnalysis",
+            "DataCleaningAndIntegration"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "黄婷",
+        "profession": "市场推广专员",
+        "description": "黄婷，25岁，具有市场营销学士学位，性格活泼，乐于交流。她熟悉电脑操作，擅长使用各种市场推广工具，对LLM有一定了解。日常工作包括策划市场推广活动和撰写宣传材料。",
+        "usage": [
+            "市场推广智能体",
+            "活动策划助手"
+        ],
+        "advantages": [
+            "NotionApp",
+            "Todoist"
+        ],
+        "disadvantages": [
+            "Nmap",
+            "Curl"
+        ]
+    },
+    {
+        "name": "林伟",
+        "profession": "销售顾问",
+        "description": "林伟，36岁，拥有心理学学士学位，性格温和，擅长与人沟通。他熟练使用电脑，了解销售和客户管理软件，对LLM有一定的了解。工作内容主要为客户提供专业咨询和产品推荐。",
+        "usage": [
+            "客户咨询智能体",
+            "销售跟踪助手"
+        ],
+        "advantages": [
+            "Slack",
+            "WeChatApp"
+        ],
+        "disadvantages": [
+            "JupyterNotebook",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "马丽",
+        "profession": "数字营销专员",
+        "description": "马丽，29岁，拥有市场营销学士学位，性格细致且富有创造力。她擅长使用各种数字营销工具，对LLM非常熟悉。工作内容包括实施数字营销活动和分析效果。",
+        "usage": [
+            "数字营销智能体",
+            "效果分析助手"
+        ],
+        "advantages": [
+            "SocialMediaAnalysisApi",
+            "BaiduAPI"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "李明",
+        "profession": "小学三年级学生",
+        "description": "李明是一个8岁的男孩，性格开朗，细心，喜欢观察周围的事物。他在学校的学习成绩优异，尤其擅长数学和科学。他对电脑的了解主要集中在基础操作和玩教育类游戏，熟悉基本的LLM应用，如语音助手和学习工具。他每天使用平板电脑完成作业和学习新知识。",
+        "usage": [
+            "YoudaoNote",
+            "Quizlet"
+        ],
+        "advantages": [
+            "KhanAcademy",
+            "ZuoYeBang"
+        ],
+        "disadvantages": [
+            "VisualStudioCode",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "张华",
+        "profession": "高中生",
+        "description": "张华是一名16岁的学生，性格内向但细心，喜欢阅读和写作。她对电脑有一定的了解，能够使用各种文档编辑和在线学习平台。对LLM有一定的认识，使用过语音助手和学习助手。她的日常学习主要依赖于电脑和手机，使用各种学习应用。",
+        "usage": [
+            "ZuoYeBang",
+            "SelfLearningPlatform"
+        ],
+        "advantages": [
+            "WangYiYunKeTang",
+            "Coursera"
+        ],
+        "disadvantages": [
+            "Postman",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "王伟",
+        "profession": "大学计算机专业学生",
+        "description": "王伟是一名21岁的大学生，性格开朗且细心，热爱编程和技术。他对计算机有深入的了解，熟悉多种编程语言和开发工具。对LLM有很高的熟悉度，常用智能助手进行编程和学习。他的日常学习和项目开发几乎全部依赖于电脑和各种开发工具。",
+        "usage": [
+            "ProgrammingCat",
+            "EnglishFluency"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "DockerApp"
+        ],
+        "disadvantages": [
+            "YoudaoTranslation",
+            "KugouMusic"
+        ]
+    },
+    {
+        "name": "赵敏",
+        "profession": "研究生",
+        "description": "赵敏是一名24岁的研究生，性格细心严谨，专注于生物医学研究。对电脑的知识非常丰富，熟悉各种数据分析和文献管理软件。她对LLM的应用较为熟悉，常使用智能助手进行文献检索和数据分析。日常工作中，她使用多种科研工具和平台。",
+        "usage": [
+            "KhanAcademy",
+            "Coursera"
+        ],
+        "advantages": [
+            "JupyterNotebook",
+            "TensorFlow"
+        ],
+        "disadvantages": [
+            "FeiShu",
+            "Slack"
+        ]
+    },
+    {
+        "name": "陈刚",
+        "profession": "中学数学老师",
+        "description": "陈刚是一名35岁的中学数学老师，性格耐心细致，热爱教学。他对电脑的操作相对熟练，能够使用各种教学软件和工具。对LLM的理解较为基础，主要使用智能助手来辅助课堂教学。他日常使用多种教育工具来提升教学效果。",
+        "usage": [
+            "ZuoYeBang",
+            "KhanAcademy"
+        ],
+        "advantages": [
+            "YoudaoNote",
+            "TencentDocs"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "刘婷",
+        "profession": "大专艺术设计学生",
+        "description": "刘婷是一名20岁的艺术设计专业学生，性格开朗，富有创造力。她对电脑的使用非常熟练，擅长使用各种设计软件。对LLM的应用有一定了解，使用智能助手进行项目管理和设计灵感收集。她的日常学习和创作都离不开电脑。",
+        "usage": [
+            "NotionApp",
+            "Todoist"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "VisualStudioCode"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "黄磊",
+        "profession": "软件工程师",
+        "description": "黄磊是一名28岁的软件工程师，性格细心，注重细节。他对电脑和技术有深入的理解，熟悉多种编程语言和开发框架。对LLM的应用非常熟悉，利用智能助手来提高工作效率。他的日常工作主要集中在编程和项目开发上。",
+        "usage": [
+            "ProgrammingCat",
+            "Slack"
+        ],
+        "advantages": [
+            "GitHub",
+            "DockerApp"
+        ],
+        "disadvantages": [
+            "KugouMusic",
+            "Meiyou"
+        ]
+    },
+    {
+        "name": "孙艳",
+        "profession": "市场营销专员",
+        "description": "孙艳是一名26岁的市场营销专员，性格外向，善于沟通。她对电脑的操作比较熟悉，主要使用各种营销和数据分析工具。对LLM的了解一般，使用智能助手进行市场分析和客户管理。日常工作中，她使用社交媒体和营销工具。",
+        "usage": [
+            "SocialMediaAnalysisApi",
+            "UserBehaviorAnalysis"
+        ],
+        "advantages": [
+            "NotionApp",
+            "Calendly"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "周峰",
+        "profession": "大学物理专业学生",
+        "description": "周峰是一名22岁的大学生，性格细心，对物理学充满热情。他对电脑的使用较为熟练，能够进行数据分析和模拟实验。对LLM的熟悉程度一般，偶尔使用智能助手进行学术研究和资料整理。他的日常学习主要依赖电脑。",
+        "usage": [
+            "Quizlet",
+            "KhanAcademy"
+        ],
+        "advantages": [
+            "JupyterNotebook",
+            "TensorFlow"
+        ],
+        "disadvantages": [
+            "Postman",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "吴晓",
+        "profession": "小学英语教师",
+        "description": "吴晓是一名30岁的英语教师，性格温和，细心负责。她对电脑的使用较为熟练，能够使用在线教学工具和资源。对LLM的理解较为基础，使用智能助手来辅助教学。她的日常工作主要包括备课和与学生互动。",
+        "usage": [
+            "YoudaoNote",
+            "ZuoYeBang"
+        ],
+        "advantages": [
+            "KhanAcademy",
+            "WangYiYunKeTang"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "郑亮",
+        "profession": "高校体育教师",
+        "description": "郑亮是一名32岁的体育教师，性格开朗，热爱运动。他对电脑的使用较为一般，主要使用基础的办公软件。对LLM的了解不深，偶尔使用智能助手进行课程安排和活动管理。日常工作主要集中在教学和运动管理上。",
+        "usage": [
+            "Keep",
+            "FitnessApp"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "Fitbit"
+        ],
+        "disadvantages": [
+            "GitHub",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "贾蕾",
+        "profession": "心理学研究生",
+        "description": "贾蕾是一名25岁的心理学研究生，性格细心，善于倾听。她对电脑有较强的使用能力，熟悉各种心理测试和数据分析软件。对LLM有一定的了解，使用智能助手进行研究和数据分析。日常学习和研究都依赖于电脑。",
+        "usage": [
+            "SelfLearningPlatform",
+            "KhanAcademy"
+        ],
+        "advantages": [
+            "JupyterNotebook",
+            "TensorFlow"
+        ],
+        "disadvantages": [
+            "Postman",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "高飞",
+        "profession": "高校人文学科教授",
+        "description": "高飞是一名45岁的教授，性格严谨，注重学术研究。他对电脑的使用非常熟练，能够使用各种学术资源和工具。对LLM的了解较为深入，常用智能助手进行文献检索和资料整理。日常工作主要集中在教学和研究上。",
+        "usage": [
+            "Zhihu",
+            "YoudaoTranslation"
+        ],
+        "advantages": [
+            "WangYiCloudReading",
+            "TencentDocs"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "林莉",
+        "profession": "大专商科学生",
+        "description": "林莉是一名19岁的商科学生，性格活泼，细心。她对电脑的操作较为熟悉，主要使用办公软件和在线学习平台。对LLM的了解一般，偶尔使用智能助手进行学习和课外活动的安排。日常学习和活动主要依赖于电脑和手机。",
+        "usage": [
+            "NotionApp",
+            "Todoist"
+        ],
+        "advantages": [
+            "Coursera",
+            "WangYiYunKeTang"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "张伟",
+        "profession": "大学生",
+        "description": "张伟是一名大二的医学专业学生，20岁，性格细心且耐心，擅长与患者沟通。他对计算机有一定的了解，能够使用基础的医疗软件，对 LLM 有一定的了解，常用智能设备进行学习和记录。日常工作包括参与临床实习、学习医学知识以及与同学讨论病例。",
+        "usage": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "disadvantages": [
+            "Fitbit",
+            "HuaweiHealth"
+        ]
+    },
+    {
+        "name": "李娜",
+        "profession": "护士",
+        "description": "李娜是一名30岁的护士，工作于大型医院，性格细心且善于观察。她有护理大专学历，对计算机操作熟练，能够使用医院的电子病历系统，对 LLM 有一定的了解，使用智能设备进行患者监测。日常工作包括为患者提供护理、记录病历和与医生沟通。",
+        "usage": [
+            "WeiYi",
+            "GoodDoctorOnline"
+        ],
+        "advantages": [
+            "WeiYi",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "Ximalaya",
+            "KugouMusic"
+        ]
+    },
+    {
+        "name": "王磊",
+        "profession": "退休老人",
+        "description": "王磊是一名65岁的退休老人，性格温和，细心。他有初中学历，对计算机知识有限，但会使用智能手机进行简单的社交和健康监测。对 LLM 的了解不深，日常使用智能设备来记录血糖和血压等健康数据。",
+        "usage": [
+            "Fitbit",
+            "HuaweiHealth"
+        ],
+        "advantages": [
+            "Fitbit",
+            "HuaweiHealth"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "陈静",
+        "profession": "医生",
+        "description": "陈静是一名35岁的内科医生，性格细心且严谨，拥有医学博士学位。她对计算机的知识背景较强，能够使用多种医疗软件，对 LLM 有较高的熟悉程度。日常工作包括诊断患者、开处方和指导护士工作。",
+        "usage": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "disadvantages": [
+            "YoudaoTranslation",
+            "Quizlet"
+        ]
+    },
+    {
+        "name": "赵强",
+        "profession": "心理咨询师",
+        "description": "赵强是一名28岁的心理咨询师，性格温和，细心。拥有心理学硕士学位，对计算机有一定的基础知识，能够使用心理测评软件，对 LLM 有一定的了解，日常工作包括与客户进行心理咨询和记录咨询内容。",
+        "usage": [
+            "WeChatApp",
+            "NotionApp"
+        ],
+        "advantages": [
+            "WeChatApp",
+            "NotionApp"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "刘洋",
+        "profession": "健身教练",
+        "description": "刘洋是一名健身教练，25岁，性格开朗，细心。他拥有健身相关的学历，在健身房工作，对计算机知识有限，但会使用健康监测设备和应用，对 LLM 了解不深。日常工作包括制定健身计划和指导客户锻炼。",
+        "usage": [
+            "Keep",
+            "Fitbit"
+        ],
+        "advantages": [
+            "Keep",
+            "Fitbit"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "周敏",
+        "profession": "家庭主妇",
+        "description": "周敏是一名40岁的家庭主妇，性格细心且温柔。她没有正式学历，但对家庭健康管理有一定的了解，使用智能设备监测全家人的健康状态，LMM 的使用较少。日常工作包括照顾家人和管理家庭日常事务。",
+        "usage": [
+            "HuaweiHealth",
+            "SmartScaleApp"
+        ],
+        "advantages": [
+            "HuaweiHealth",
+            "SmartScaleApp"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "孙伟",
+        "profession": "药剂师",
+        "description": "孙伟是一名45岁的药剂师，性格细心，具有医学和药学双学位。他对计算机有较强的知识背景，能够使用药品管理系统，对 LLM 有一定了解。日常工作包括调配药物和向患者提供用药指导。",
+        "usage": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "杨丽",
+        "profession": "营养师",
+        "description": "杨丽是一名32岁的营养师，性格细心且有耐心。她拥有营养学硕士学位，对计算机的使用非常熟练，能够使用营养分析软件，对 LLM 有较高的了解。日常工作包括为客户制定饮食计划和进行营养咨询。",
+        "usage": [
+            "MintHealth",
+            "Fitbit"
+        ],
+        "advantages": [
+            "MintHealth",
+            "Fitbit"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "何婷",
+        "profession": "物理治疗师",
+        "description": "何婷是一名29岁的物理治疗师，性格细心且善于沟通。她拥有物理治疗学士学位，对计算机有一定的了解，能够使用物理治疗相关软件，对 LLM 有一定的了解。日常工作包括为患者提供物理治疗和制定康复计划。",
+        "usage": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "马超",
+        "profession": "社工",
+        "description": "马超是一名36岁的社工，性格细心且富有同情心。他拥有社会工作硕士学位，对计算机知识一般，使用社工相关软件和智能设备对 LLM 的了解有限。日常工作包括为社区提供服务和支持。",
+        "usage": [
+            "WeChatApp",
+            "NotionApp"
+        ],
+        "advantages": [
+            "WeChatApp",
+            "NotionApp"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "江涛",
+        "profession": "护理专业学生",
+        "description": "江涛是一名护理专业的大一学生，20岁，性格细心且乐于助人。对计算机有一定的基础知识，能够使用基本的医疗软件，对 LLM 有些了解，日常使用智能设备记录学习进度。",
+        "usage": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "郭莉",
+        "profession": "牙医",
+        "description": "郭莉是一名38岁的牙医，性格细心且严谨，拥有牙医学博士学位。她对计算机知识较强，能够使用牙科管理软件，对 LLM 有较高的熟悉度。日常工作包括为患者进行牙齿治疗和健康咨询。",
+        "usage": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "林峰",
+        "profession": "急救人员",
+        "description": "林峰是一名急救人员，27岁，性格细心且反应迅速。他拥有急救医学相关学历，对计算机知识一般，使用急救管理软件，对 LLM 有一定了解。日常工作包括快速响应急救呼叫和提供现场急救。",
+        "usage": [
+            "WeiYi",
+            "GoodDoctorOnline"
+        ],
+        "advantages": [
+            "WeiYi",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "李华",
+        "profession": "养老院护工",
+        "description": "李华，35岁，具有护理专业大专学历，性格温和细心，擅长与老人沟通，能够耐心倾听他们的需求。对电脑有基本的操作知识，能使用常见的办公软件。对 LLM 有一定了解，使用智能设备频繁，尤其是健康监测设备，每日使用智能手机应用记录老人的健康状态。日常工作包括协助老人洗漱、用餐，定期进行健康检查，安排活动等。",
+        "usage": [
+            "GoodDoctorOnline",
+            "HuaweiHealth"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "HuaweiHealth"
+        ],
+        "disadvantages": [
+            "Fitbit",
+            "MintHealth"
+        ]
+    },
+    {
+        "name": "王明",
+        "profession": "老年护理员",
+        "description": "王明，28岁，大学本科学历，心理学专业，性格细致且富有同情心。对电脑的使用非常熟练，能够进行简单的数据分析。对 LLM 有较高的熟悉度，常使用智能设备与老人进行互动，使用语音助手帮助老人获取信息。工作内容包括制定老人的日常活动计划，提供心理支持，记录老人情绪变化等。",
+        "usage": [
+            "XiaoZhuShortRent",
+            "Fitbit"
+        ],
+        "advantages": [
+            "Fitbit",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "CtripApp"
+        ]
+    },
+    {
+        "name": "张丽",
+        "profession": "社区老年服务管理者",
+        "description": "张丽，45岁，社会工作专业硕士，性格开朗且组织能力强。对电脑相关知识较为熟悉，能够使用各类办公软件和数据管理工具。对 LLM 的使用较为频繁，利用智能设备来管理社区活动和老年人信息。工作内容包括组织社区活动，协调志愿者服务，收集和分析老年人需求等。",
+        "usage": [
+            "NotionApp",
+            "DingDing"
+        ],
+        "advantages": [
+            "NotionApp",
+            "Slack"
+        ],
+        "disadvantages": [
+            "Fitbit",
+            "HuaweiHealth"
+        ]
+    },
+    {
+        "name": "孙强",
+        "profession": "老年营养师",
+        "description": "孙强，38岁，营养学硕士，性格细心且热爱研究。对电脑和智能设备的使用非常熟练，能够使用数据分析软件进行营养评估。对 LLM 的了解较多，常使用智能健康应用来跟踪老年人的饮食习惯。日常工作包括为老人制定营养餐单，进行饮食指导，定期评估老人的健康状况等。",
+        "usage": [
+            "MintHealth",
+            "SmartScaleApp"
+        ],
+        "advantages": [
+            "MintHealth",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "KugouMusic",
+            "Ximalaya"
+        ]
+    },
+    {
+        "name": "陈刚",
+        "profession": "老年心理咨询师",
+        "description": "陈刚，50岁，心理学博士，性格温和且耐心。对电脑的使用有一定了解，能够进行在线咨询。对 LLM 有一定的了解，使用智能设备与客户进行沟通，日常工作包括提供心理咨询、帮助老人调整情绪、进行团体心理辅导等。",
+        "usage": [
+            "YoudaoNote",
+            "WeChatApp"
+        ],
+        "advantages": [
+            "YoudaoNote",
+            "Slack"
+        ],
+        "disadvantages": [
+            "DingDing",
+            "TrafficAssistant"
+        ]
+    },
+    {
+        "name": "赵婷",
+        "profession": "养老院活动策划师",
+        "description": "赵婷，30岁，文化产业管理专业本科，性格活泼且富有创造力。对电脑使用非常熟练，能够使用设计软件制作活动宣传。对 LLM 有较高的熟悉度，常利用智能设备进行活动宣传和报名管理。工作内容包括策划和组织各类文娱活动，吸引老年人参与，提升他们的生活质量。",
+        "usage": [
+            "FeiShu",
+            "Calendly"
+        ],
+        "advantages": [
+            "NotionApp",
+            "Calendly"
+        ],
+        "disadvantages": [
+            "SmartScaleApp",
+            "Meiyou"
+        ]
+    },
+    {
+        "name": "刘洋",
+        "profession": "老年照护培训师",
+        "description": "刘洋，33岁，护理学硕士，性格细致且善于沟通。对电脑的基本操作非常熟练，能够使用在线教学平台。对 LLM 有一定的了解，使用智能设备进行在线授课。日常工作包括为新入职的护理人员进行培训，教授老年照护的知识和技能。",
+        "usage": [
+            "WangYiYunKeTang",
+            "Coursera"
+        ],
+        "advantages": [
+            "Coursera",
+            "YoudaoTranslation"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "KhanAcademy"
+        ]
+    },
+    {
+        "name": "周杰",
+        "profession": "老年人社交活动组织者",
+        "description": "周杰，40岁，社会学博士，性格外向且乐于助人。对电脑有较强的操作能力，能够进行社交媒体管理。对 LLM 有一定的了解，常使用智能设备与老年人保持联系。工作内容包括组织老年人的社交活动，促进他们的交流与互动。",
+        "usage": [
+            "Douban",
+            "QQ"
+        ],
+        "advantages": [
+            "QQ",
+            "WeChatApp"
+        ],
+        "disadvantages": [
+            "Ximalaya",
+            "KugouMusic"
+        ]
+    },
+    {
+        "name": "何静",
+        "profession": "老年人法律顾问",
+        "description": "何静，55岁，法律专业本科，性格严谨且富有责任感。对电脑使用较为熟练，能够使用法律文书软件。对 LLM 的熟悉度较高，使用智能设备进行在线咨询。日常工作包括为老年人提供法律咨询，解答相关法律问题。",
+        "usage": [
+            "Flipboard",
+            "Gmail"
+        ],
+        "advantages": [
+            "Gmail",
+            "Douban"
+        ],
+        "disadvantages": [
+            "MintHealth",
+            "DidiRide"
+        ]
+    },
+    {
+        "name": "蒋红",
+        "profession": "老年康复治疗师",
+        "description": "蒋红，36岁，物理治疗专业硕士，性格细心且耐心。对电脑有一定的操作能力，能够使用康复管理软件。对 LLM 有一定了解，使用智能设备跟踪老年人的康复进程。工作内容包括制定康复计划，指导老年人进行康复训练。",
+        "usage": [
+            "Fitbit",
+            "GoodDoctorOnline"
+        ],
+        "advantages": [
+            "Fitbit",
+            "HuaweiHealth"
+        ],
+        "disadvantages": [
+            "MintHealth",
+            "Gudu"
+        ]
+    },
+    {
+        "name": "冯伟",
+        "profession": "老年人健康管理师",
+        "description": "冯伟，42岁，公共卫生专业硕士，性格细致且善于观察。对电脑的操作能力较强，能够使用健康管理软件。对 LLM 有一定了解，使用智能设备进行健康数据记录。工作内容包括为老年人提供健康管理方案，定期评估健康状况。",
+        "usage": [
+            "HuaweiHealth",
+            "SmartScaleApp"
+        ],
+        "advantages": [
+            "HuaweiHealth",
+            "MintHealth"
+        ],
+        "disadvantages": [
+            "Keep",
+            "DingDing"
+        ]
+    },
+    {
+        "name": "杨帆",
+        "profession": "老年人文化活动志愿者",
+        "description": "杨帆，26岁，中文专业本科，性格开朗且热情。对电脑的基本操作有一定了解，能使用社交软件。对 LLM 的了解较少，使用智能设备与老年人保持联系。工作内容包括组织文化活动，陪伴老人，丰富他们的精神生活。",
+        "usage": [
+            "WeChatApp",
+            "Bilibili"
+        ],
+        "advantages": [
+            "Bilibili",
+            "WeChatApp"
+        ],
+        "disadvantages": [
+            "KugouMusic",
+            "Ximalaya"
+        ]
+    },
+    {
+        "name": "李娜",
+        "profession": "老年人活动助理",
+        "description": "李娜，29岁，心理学专业硕士，性格温柔且体贴。对电脑操作熟练，能够使用在线办公软件。对 LLM 有一定了解，使用智能设备进行活动安排和记录。日常工作包括协助组织老人活动，记录参与情况。",
+        "usage": [
+            "NotionApp",
+            "Todoist"
+        ],
+        "advantages": [
+            "NotionApp",
+            "Todoist"
+        ],
+        "disadvantages": [
+            "Gmail",
+            "DingDing"
+        ]
+    },
+    {
+        "name": "张伟",
+        "profession": "老年人家庭护理师",
+        "description": "张伟，47岁，护理专业大专，性格细心且负责。对电脑有一定的操作能力，能够使用健康监测软件。对 LLM 有一定了解，使用智能设备记录老人的日常健康数据。工作内容包括为老人提供家庭护理服务，协助进行日常生活。",
+        "usage": [
+            "GoodDoctorOnline",
+            "HuaweiHealth"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "HuaweiHealth"
+        ],
+        "disadvantages": [
+            "MintHealth",
+            "Fitbit"
+        ]
+    },
+    {
+        "name": "李明",
+        "profession": "心理辅导老师",
+        "description": "李明拥有心理学硕士学位，32岁，性格温和细心，善于倾听，能够理解学生的情感需求。对电脑有一定的知识，熟悉使用办公软件和心理测试工具。对LLM有一定了解，能利用其辅助心理咨询。日常使用智能手机和电脑进行学生档案管理、心理测评分析和在线辅导。",
+        "usage": [
+            "KhanAcademy",
+            "YoudaoTranslation"
+        ],
+        "advantages": [
+            "YoudaoNote",
+            "Coursera"
+        ],
+        "disadvantages": [
+            "VisualStudioCode",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "张婷",
+        "profession": "青少年体育教练",
+        "description": "张婷是一名体育教育专业的本科生，24岁，热情活泼，注重细节，擅长与青少年沟通。对电脑知识较为基础，主要使用体育相关软件。熟悉LLM的基本概念，能够使用其帮助制定训练计划。日常通过智能手表记录运动数据，使用手机应用进行运动管理。",
+        "usage": [
+            "Keep",
+            "GoodDoctorOnline"
+        ],
+        "advantages": [
+            "Fitbit",
+            "MintHealth"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "王鹏",
+        "profession": "职业规划顾问",
+        "description": "王鹏具有人力资源管理硕士学位，35岁，个性细腻，能深入了解青少年的职业需求。电脑使用熟练，尤其擅长数据分析和报告撰写。对LLM有较高的熟悉度，能利用其帮助学生制定职业发展计划。日常使用笔记本电脑和智能手机进行咨询和沟通。",
+        "usage": [
+            "Quizlet",
+            "SelfLearningPlatform"
+        ],
+        "advantages": [
+            "NotionApp",
+            "Slack"
+        ],
+        "disadvantages": [
+            "JupyterNotebook",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "陈静",
+        "profession": "英语辅导老师",
+        "description": "陈静是一名英语专业研究生，28岁，性格细心，热爱教育。对电脑应用熟练，常用在线教育平台进行教学。对LLM的应用有较高的理解，能够利用其帮助学生提高英语水平。日常使用平板和智能手机进行在线教学和资料整理。",
+        "usage": [
+            "Coursera",
+            "WangYiYunKeTang"
+        ],
+        "advantages": [
+            "YoudaoTranslation",
+            "Douban"
+        ],
+        "disadvantages": [
+            "GitHub",
+            "Curl"
+        ]
+    },
+    {
+        "name": "赵伟",
+        "profession": "社会工作者",
+        "description": "赵伟拥有社会工作硕士学位，30岁，性格温和且细心，擅长与青少年建立信任关系。对电脑知识一般，主要使用社交媒体和管理软件。对LLM有一定的了解，能帮助他更好地服务青少年。日常使用智能手机进行沟通和记录。",
+        "usage": [
+            "DouyinShortVideo",
+            "BaiDuNews"
+        ],
+        "advantages": [
+            "FeiShu",
+            "YouXiaKe"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "刘洋",
+        "profession": "青少年心理健康讲师",
+        "description": "刘洋拥有心理学博士学位，40岁，性格耐心细致，擅长进行心理健康教育。对电脑使用熟练，能够进行复杂的数据分析。对LLM的使用非常熟悉，能够运用其进行心理健康知识的传播。日常使用电脑和手机进行课程设计和在线讲座。",
+        "usage": [
+            "KhanAcademy",
+            "ZuoYeBang"
+        ],
+        "advantages": [
+            "Ximalaya",
+            "TencentDocs"
+        ],
+        "disadvantages": [
+            "WebScrapingDataAnalysis",
+            "Nmap"
+        ]
+    },
+    {
+        "name": "孙芳",
+        "profession": "青年活动组织者",
+        "description": "孙芳是一名社会学本科生，26岁，性格开朗且细心，擅长组织活动与协调。对电脑操作较为熟练，常用电子表格和社交媒体。对LLM有一定了解，能够利用其进行活动宣传和组织。日常使用智能手机和电脑进行活动策划。",
+        "usage": [
+            "Flipboard",
+            "Douban"
+        ],
+        "advantages": [
+            "Slack",
+            "Calendly"
+        ],
+        "disadvantages": [
+            "GitBash",
+            "FFmpeg"
+        ]
+    },
+    {
+        "name": "钱伟",
+        "profession": "青少年法律顾问",
+        "description": "钱伟是一名法学硕士，34岁，性格严谨细致，擅长法律咨询。对电脑操作熟练，擅长使用法律数据库。对LLM有一定了解，能够运用其辅助法律咨询和文件撰写。日常使用笔记本电脑和手机进行案件分析。",
+        "usage": [
+            "Zhihu",
+            "BaiduTieba"
+        ],
+        "advantages": [
+            "NotionApp",
+            "Gmail"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "周敏",
+        "profession": "青少年艺术教育者",
+        "description": "周敏拥有艺术教育硕士学位，29岁，性格细腻，热爱艺术教育。对电脑操作较为熟练，常用设计软件和在线教育平台。对LLM应用有一定了解，能辅助艺术课程的设计与推广。日常使用平板和智能手机进行课程设计与推广。",
+        "usage": [
+            "AiQiYi",
+            "Bilibili"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "Keep"
+        ],
+        "disadvantages": [
+            "DataCleaningAndIntegration",
+            "Curl"
+        ]
+    },
+    {
+        "name": "吴涛",
+        "profession": "青少年科技辅导员",
+        "description": "吴涛是一名计算机专业本科生，25岁，性格细心，热爱科技教育。对电脑有较强的知识背景，熟悉编程和科技工具。对LLM有较高的熟悉度，能利用其帮助学生学习编程。日常使用笔记本电脑和智能手机进行教学和项目管理。",
+        "usage": [
+            "ProgrammingCat",
+            "YoudaoTranslation"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "DockerApp"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "Swagger"
+        ]
+    },
+    {
+        "name": "何玲",
+        "profession": "青少年营养师",
+        "description": "何玲拥有营养学硕士学位，31岁，性格细腻，擅长营养咨询。对电脑知识较为基础，主要使用营养分析软件。对LLM有一定了解，能帮助学生制定健康饮食计划。日常使用智能手机进行饮食记录和分析。",
+        "usage": [
+            "MintHealth",
+            "GoodDoctorOnline"
+        ],
+        "advantages": [
+            "Fitbit",
+            "SmartScaleApp"
+        ],
+        "disadvantages": [
+            "Ansible",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "郑宇",
+        "profession": "青少年社交技能培训师",
+        "description": "郑宇是一名社会学研究生，27岁，性格外向，擅长社交技巧培训。对电脑操作熟练，常用在线培训平台进行教学。对LLM有一定了解，能帮助学生提升社交技巧。日常使用智能手机和电脑进行课程设计与互动。",
+        "usage": [
+            "Quizlet",
+            "ZuoYeBang"
+        ],
+        "advantages": [
+            "Slack",
+            "FeiShu"
+        ],
+        "disadvantages": [
+            "JupyterNotebook",
+            "WebScrapingDataAnalysis"
+        ]
+    },
+    {
+        "name": "黄凯",
+        "profession": "青少年艺术治疗师",
+        "description": "黄凯拥有艺术治疗硕士学位，33岁，性格温和细腻，擅长通过艺术促进青少年心理健康。对电脑知识一般，使用设计软件进行艺术创作。对LLM有一定了解，能利用其辅助艺术治疗课程的设计。日常使用平板和智能手机进行艺术创作与教学。",
+        "usage": [
+            "AiQiYi",
+            "Ximalaya"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "Keep"
+        ],
+        "disadvantages": [
+            "Terraform",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "高峰",
+        "profession": "青少年科技创新导师",
+        "description": "高峰是一名计算机科学专业博士，36岁，性格严谨，善于激发学生的创新能力。对电脑操作非常熟练，擅长各种编程语言和科技工具。对LLM有较高的熟悉度，能利用其帮助学生进行科技创新项目。日常使用高性能的电脑进行项目开发和管理。",
+        "usage": [
+            "ProgrammingCat",
+            "KhanAcademy"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "GitHub"
+        ],
+        "disadvantages": [
+            "Curl",
+            "Nmap"
+        ]
+    },
+    {
+        "name": "李伟",
+        "profession": "公交司机",
+        "description": "李伟，45岁，拥有大专学历，性格稳重且细心，尤其在驾驶过程中极具责任心。他熟悉基本的电脑操作，能够使用导航软件和车辆调度系统，对LLM的了解较为基础，偶尔使用智能设备如手机和车载导航。作为公交司机，他的工作内容包括接送乘客、遵守交通规则和维护车辆安全。",
+        "usage": [
+            "TrafficAssistant",
+            "DidiRide"
+        ],
+        "advantages": [
+            "BaiduMap",
+            "GaoDeMap"
+        ],
+        "disadvantages": [
+            "UberApp",
+            "HelloTravel"
+        ]
+    },
+    {
+        "name": "张婷",
+        "profession": "交通规划师",
+        "description": "张婷，32岁，硕士学历，性格细致且具有创新思维。她精通各种交通规划软件，对电脑相关知识有较深的了解，熟悉LLM的使用，常用智能设备进行数据分析和项目管理。她的工作主要包括研究交通流量、制定规划方案以及与政府部门沟通。",
+        "usage": [
+            "ProgrammingCat",
+            "NotionApp"
+        ],
+        "advantages": [
+            "TrafficAssistant",
+            "GaoDeMap"
+        ],
+        "disadvantages": [
+            "DidiRide",
+            "FeiChangZhun"
+        ]
+    },
+    {
+        "name": "王磊",
+        "profession": "铁路工程师",
+        "description": "王磊，28岁，本科毕业，性格严谨且耐心，注重细节。他具备一定的电脑编程能力，了解基础的工程软件，对LLM的使用有一定的经验，常用智能设备进行日常工作记录。作为铁路工程师，他的工作包括设计铁路线路、进行现场勘查和维护铁路安全。",
+        "usage": [
+            "JupyterNotebook",
+            "GitHub"
+        ],
+        "advantages": [
+            "DockerApp",
+            "Terraform"
+        ],
+        "disadvantages": [
+            "FeiChangZhun",
+            "KugouMusic"
+        ]
+    },
+    {
+        "name": "刘静",
+        "profession": "交通监控员",
+        "description": "刘静，38岁，高中学历，性格细心且耐心，擅长观察和分析。她对电脑操作有基本掌握，熟悉使用监控系统，对LLM的了解较少，使用智能设备进行日常监控和数据记录。她的工作内容包括监控交通流量、记录交通事故和协助交警处理突发事件。",
+        "usage": [
+            "TrafficAssistant",
+            "FeiChangZhun"
+        ],
+        "advantages": [
+            "CaoCaoTravel",
+            "FeiZhu"
+        ],
+        "disadvantages": [
+            "Keep",
+            "Bilibili"
+        ]
+    },
+    {
+        "name": "陈明",
+        "profession": "出租车司机",
+        "description": "陈明，50岁，初中学历，性格随和且善于沟通。他熟悉智能手机的使用，能够操作导航软件，了解LLM的基本功能。作为出租车司机，他的工作包括接送乘客、计算车费和维护车辆状态。",
+        "usage": [
+            "DidiRide",
+            "UberApp"
+        ],
+        "advantages": [
+            "BaiduMap",
+            "TencentMap"
+        ],
+        "disadvantages": [
+            "TrafficAssistant",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "赵丽",
+        "profession": "物流管理员",
+        "description": "赵丽，27岁，大专学历，性格细致且有条理。她熟悉电脑操作，擅长使用各种物流管理软件，对LLM有一定的了解。她的工作主要包括管理仓库货物、跟踪运输状态和协调配送安排。",
+        "usage": [
+            "Gudu",
+            "GoodDoctorOnline"
+        ],
+        "advantages": [
+            "FeiZhu",
+            "XiaoZhuShortRent"
+        ],
+        "disadvantages": [
+            "Kuaishou",
+            "DouyinShortVideo"
+        ]
+    },
+    {
+        "name": "孙伟",
+        "profession": "航空维修工程师",
+        "description": "孙伟，35岁，本科毕业，性格严谨且细心，对技术细节非常关注。他对电脑操作熟练，能使用多种维修软件，对LLM的使用较为熟悉。作为航空维修工程师，他的工作包括检查和维护飞机的各个部分，以确保飞行安全。",
+        "usage": [
+            "Postman",
+            "DockerCLI"
+        ],
+        "advantages": [
+            "GitHub",
+            "Terraform"
+        ],
+        "disadvantages": [
+            "Keep",
+            "MintHealth"
+        ]
+    },
+    {
+        "name": "周芳",
+        "profession": "交通安全评估师",
+        "description": "周芳，40岁，硕士学历，性格细致且富有责任感。她对电脑相关知识有较深的了解，能够使用数据分析工具，对LLM的使用较为熟悉。她的工作包括评估交通安全隐患、撰写评估报告及提出改进建议。",
+        "usage": [
+            "DataCleaningAndIntegration",
+            "VisualStudioCode"
+        ],
+        "advantages": [
+            "TrafficAssistant",
+            "WangYiYunKeTang"
+        ],
+        "disadvantages": [
+            "DouyinShortVideo",
+            "MeituanTakeaway"
+        ]
+    },
+    {
+        "name": "杨洋",
+        "profession": "城市交通研究员",
+        "description": "杨洋，30岁，博士在读，性格细致且具备较强的分析能力。他对电脑操作非常熟练，擅长使用统计软件，对LLM有一定的研究。作为城市交通研究员，他的工作包括进行交通流量分析、撰写研究论文和参与学术交流。",
+        "usage": [
+            "KhanAcademy",
+            "Coursera"
+        ],
+        "advantages": [
+            "JupyterNotebook",
+            "GitHub"
+        ],
+        "disadvantages": [
+            "DidiRide",
+            "HelloTravel"
+        ]
+    },
+    {
+        "name": "高飞",
+        "profession": "交通设施维护工",
+        "description": "高飞，33岁，高中学历，性格踏实且细心。他对基本的电脑操作有一定了解，偶尔使用智能设备进行工作记录。作为交通设施维护工，他的工作包括检查和维护交通信号灯、路标和其他交通设施。",
+        "usage": [
+            "TrafficAssistant",
+            "FeiChangZhun"
+        ],
+        "advantages": [
+            "CaoCaoTravel",
+            "GaoDeMap"
+        ],
+        "disadvantages": [
+            "Postman",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "陈晓",
+        "profession": "民航调度员",
+        "description": "陈晓，29岁，大专学历，性格冷静且善于沟通。她对电脑操作非常熟练，能够使用调度系统，对LLM的使用有一定的经验。作为民航调度员，她的工作包括协调航班调度、处理航班延误和与各方沟通。",
+        "usage": [
+            "Calendly",
+            "Slack"
+        ],
+        "advantages": [
+            "FeiZhu",
+            "XiaoZhuShortRent"
+        ],
+        "disadvantages": [
+            "Keep",
+            "GoodDoctorOnline"
+        ]
+    },
+    {
+        "name": "李娜",
+        "profession": "交通事故处理员",
+        "description": "李娜，36岁，高中学历，性格坚韧且细心。她对电脑有基本的操作能力，了解事故处理相关软件，对LLM的熟悉程度一般。她的工作内容包括现场勘查、事故报告撰写和与保险公司沟通。",
+        "usage": [
+            "TrafficAssistant",
+            "FeiChangZhun"
+        ],
+        "advantages": [
+            "CaoCaoTravel",
+            "GaoDeMap"
+        ],
+        "disadvantages": [
+            "DidiRide",
+            "KugouMusic"
+        ]
+    },
+    {
+        "name": "马强",
+        "profession": "公共交通运营经理",
+        "description": "马强，42岁，本科学历，性格果断且具备领导能力。他熟悉各种管理软件，懂得数据分析，对LLM的熟悉程度较高。作为公共交通运营经理，他的工作包括管理公交线路、协调司机和维护运营效率。",
+        "usage": [
+            "NotionApp",
+            "Todoist"
+        ],
+        "advantages": [
+            "TrafficAssistant",
+            "GaoDeMap"
+        ],
+        "disadvantages": [
+            "Kuaishou",
+            "DouyinShortVideo"
+        ]
+    },
+    {
+        "name": "王芳",
+        "profession": "交通数据分析师",
+        "description": "王芳，31岁，硕士学历，性格细致且分析能力强。她擅长使用各种数据分析工具，对LLM有较深入的了解。作为交通数据分析师，她的工作包括收集和分析交通数据、撰写分析报告和提出改善方案。",
+        "usage": [
+            "DataCleaningAndIntegration",
+            "VisualStudioCode"
+        ],
+        "advantages": [
+            "TrafficAssistant",
+            "WangYiYunKeTang"
+        ],
+        "disadvantages": [
+            "Keep",
+            "MintHealth"
+        ]
+    },
+    {
+        "name": "李明",
+        "profession": "营养师",
+        "description": "李明是一名28岁的营养师，毕业于营养学专业，性格细心，热爱研究健康饮食。他对电脑有一定的了解，能够使用常见的办公软件。他对大语言模型有一定的熟悉程度，常使用智能设备记录饮食数据，习惯使用手机应用进行健康管理。日常工作包括为客户制定个性化的饮食计划，进行营养咨询和健康讲座。",
+        "usage": [
+            "MintHealth",
+            "GoodDoctorOnline"
+        ],
+        "advantages": [
+            "MintHealth",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Keep"
+        ]
+    },
+    {
+        "name": "张华",
+        "profession": "厨师",
+        "description": "张华是一位35岁的厨师，拥有烹饪艺术学位，性格热情和细心。他对电脑的使用较为熟练，能够使用餐饮管理软件。他对LLM的了解较少，但乐于尝试新技术。张华喜欢使用智能设备来记录食谱和烹饪技巧，日常工作包括为顾客准备美食，管理厨房团队和进行菜单设计。",
+        "usage": [
+            "Keep",
+            "YouXiaKe"
+        ],
+        "advantages": [
+            "Keep",
+            "YouXiaKe"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Fitbit"
+        ]
+    },
+    {
+        "name": "王莉",
+        "profession": "食品科学研究员",
+        "description": "王莉是一名30岁的食品科学研究员，拥有硕士学位，性格严谨，对细节非常敏感。她对电脑技术有深入的了解，擅长使用数据分析软件。王莉对LLM的应用相对熟悉，经常使用智能设备进行实验记录。她的工作主要包括食品安全评估和新产品开发。",
+        "usage": [
+            "GoodDoctorOnline",
+            "SmartScaleApp"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "SmartScaleApp"
+        ],
+        "disadvantages": [
+            "Meiyou",
+            "Gudu"
+        ]
+    },
+    {
+        "name": "刘洋",
+        "profession": "饮食顾问",
+        "description": "刘洋是一名24岁的饮食顾问，大学在读，专业为食品与营养，性格开朗且细心。他对电脑有基本的操作能力，使用社交媒体较多，对LLM有一定的了解。刘洋习惯使用手机应用记录客户的饮食习惯，日常工作包括提供饮食建议和进行营养讲座。",
+        "usage": [
+            "WeiYi",
+            "Fitbit"
+        ],
+        "advantages": [
+            "WeiYi",
+            "Fitbit"
+        ],
+        "disadvantages": [
+            "HuaweiHealth",
+            "Gudu"
+        ]
+    },
+    {
+        "name": "陈晓",
+        "profession": "健康饮食博主",
+        "description": "陈晓是一名32岁的健康饮食博主，拥有营养学背景，性格外向，细心。他对电脑技术非常熟练，尤其擅长使用图像编辑软件。他对LLM的使用非常熟悉，利用智能设备进行视频拍摄和编辑。日常工作包括撰写健康饮食文章，拍摄烹饪视频和与粉丝互动。",
+        "usage": [
+            "Ximalaya",
+            "DouyinShortVideo"
+        ],
+        "advantages": [
+            "Ximalaya",
+            "DouyinShortVideo"
+        ],
+        "disadvantages": [
+            "Keep",
+            "MintHealth"
+        ]
+    },
+    {
+        "name": "赵强",
+        "profession": "健身教练",
+        "description": "赵强是一名26岁的健身教练，拥有健身营养课程的认证，性格积极向上且细心。他对电脑的使用较为熟练，能够使用健身管理软件。他对LLM的了解有限，使用智能设备来跟踪客户的健身进度。日常工作包括为客户制定健身和饮食计划，进行一对一的健身指导。",
+        "usage": [
+            "Keep",
+            "Fitbit"
+        ],
+        "advantages": [
+            "Keep",
+            "Fitbit"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Gudu"
+        ]
+    },
+    {
+        "name": "孙婷",
+        "profession": "厨房经理",
+        "description": "孙婷是一名40岁的厨房经理，拥有餐饮管理学位，性格细心且组织能力强。她对电脑技术有良好的掌握，能够使用厨房管理软件。孙婷对LLM的使用比较熟悉，习惯使用智能设备进行库存管理。日常工作包括管理厨房运营，培训员工和制定菜单。",
+        "usage": [
+            "TuNiu",
+            "XiaoZhuShortRent"
+        ],
+        "advantages": [
+            "TuNiu",
+            "XiaoZhuShortRent"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Meiyou"
+        ]
+    },
+    {
+        "name": "周杰",
+        "profession": "健康咨询师",
+        "description": "周杰是一名29岁的健康咨询师，拥有心理学和营养学双学位，性格细心且耐心。他对电脑技术有较高的了解，能够使用各种办公软件和数据分析工具。他对LLM的应用有一定的经验，使用智能设备进行客户管理。日常工作包括为客户提供心理和饮食咨询，帮助他们改善生活方式。",
+        "usage": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Keep"
+        ]
+    },
+    {
+        "name": "黄梅",
+        "profession": "营养学讲师",
+        "description": "黄梅是一名38岁的营养学讲师，拥有博士学位，性格严谨，注重细节。她对电脑技术非常熟练，能够使用多种教育软件。黄梅对LLM的应用较为熟悉，习惯使用智能设备进行在线授课。日常工作包括教授营养学课程，进行学术研究和撰写论文。",
+        "usage": [
+            "Coursera",
+            "KhanAcademy"
+        ],
+        "advantages": [
+            "Coursera",
+            "KhanAcademy"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Fitbit"
+        ]
+    },
+    {
+        "name": "李娜",
+        "profession": "饮食健康推广员",
+        "description": "李娜是一名27岁的饮食健康推广员，拥有公共卫生学位，性格开朗，乐于助人。她对电脑技术有基本的了解，能够使用办公软件。李娜对LLM的使用有一定的经验，习惯使用智能设备进行健康活动的推广。日常工作包括组织健康饮食活动，进行社区宣传和提供健康咨询。",
+        "usage": [
+            "YoudaoTranslation",
+            "GoodDoctorOnline"
+        ],
+        "advantages": [
+            "YoudaoTranslation",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Keep"
+        ]
+    },
+    {
+        "name": "郑伟",
+        "profession": "餐饮创业者",
+        "description": "郑伟是一名34岁的餐饮创业者，拥有工商管理学位，性格细心且具有商业头脑。他对电脑技术非常熟练，能够使用各种商业管理软件。他对LLM的了解较少，但愿意尝试新技术。郑伟习惯使用智能设备进行市场分析和客户管理。日常工作包括管理餐厅运营，制定商业计划和进行市场推广。",
+        "usage": [
+            "CtripApp",
+            "FeiZhu"
+        ],
+        "advantages": [
+            "CtripApp",
+            "FeiZhu"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Fitbit"
+        ]
+    },
+    {
+        "name": "马静",
+        "profession": "食品安全检测员",
+        "description": "马静是一名31岁的食品安全检测员，拥有食品科学专业的学位，性格严谨，对细节非常敏感。她对电脑技术有较好的掌握，能够使用数据分析软件。马静对LLM的使用较为熟悉，习惯使用智能设备进行检测数据的记录。日常工作包括进行食品安全检测，撰写检测报告和提出改进建议。",
+        "usage": [
+            "SmartScaleApp",
+            "GoodDoctorOnline"
+        ],
+        "advantages": [
+            "SmartScaleApp",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Gudu"
+        ]
+    },
+    {
+        "name": "孙伟",
+        "profession": "素食厨师",
+        "description": "孙伟是一名29岁的素食厨师，拥有烹饪艺术学位，性格细心且富有创造力。他对电脑技术有一定的了解，能够使用食谱管理软件。他对LLM的应用较为熟悉，习惯使用智能设备记录食谱和烹饪技巧。日常工作包括为顾客准备素食菜单，进行烹饪教学和推广健康饮食文化。",
+        "usage": [
+            "Keep",
+            "MintHealth"
+        ],
+        "advantages": [
+            "Keep",
+            "MintHealth"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Fitbit"
+        ]
+    },
+    {
+        "name": "李明",
+        "profession": "公务员",
+        "description": "李明，35岁，拥有公共管理硕士学位，性格细心，注重细节，对电脑有较强的操作能力，熟悉各种办公软件，对LLM有一定了解，日常使用智能手机和电脑。他的工作主要涉及制定和实施公共政策，负责撰写政策文件和报告，处理公众咨询，协调各部门的工作。",
+        "usage": [
+            "DingDing",
+            "NotionApp"
+        ],
+        "advantages": [
+            "DingDing",
+            "NotionApp"
+        ],
+        "disadvantages": [
+            "SocialMediaAnalysisApi",
+            "DataCleaningAndIntegration"
+        ]
+    },
+    {
+        "name": "张丽",
+        "profession": "政策分析师",
+        "description": "张丽，28岁，拥有经济学学士学位，性格谨慎，善于分析和推理，精通数据分析软件，熟悉LLM，日常使用高性能电脑和数据分析工具。她的工作内容包括收集和分析政策数据，撰写分析报告，提供政策建议。",
+        "usage": [
+            "ProgrammingCat",
+            "Coursera"
+        ],
+        "advantages": [
+            "ProgrammingCat",
+            "Coursera"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "王强",
+        "profession": "城市规划师",
+        "description": "王强，40岁，拥有城市规划硕士学位，性格细心，注重逻辑思维，熟悉CAD等设计软件，对LLM有一定的应用了解，日常使用平板和智能手机。他负责制定城市发展计划，进行土地使用分析，与各方协调。",
+        "usage": [
+            "Calendly",
+            "NotionApp"
+        ],
+        "advantages": [
+            "Calendly",
+            "NotionApp"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "赵阳",
+        "profession": "公共卫生官员",
+        "description": "赵阳，32岁，拥有公共卫生硕士学位，性格细致，注重数据的准确性，熟悉健康相关软件，对LLM有一定了解，日常使用智能手机和数据分析工具。他的工作主要涉及公共卫生政策的实施与评估，数据收集与分析，健康教育推广。",
+        "usage": [
+            "GoodDoctorOnline",
+            "YoudaoTranslation"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "YoudaoTranslation"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "陈娜",
+        "profession": "社会工作者",
+        "description": "陈娜，26岁，拥有社会工作学士学位，性格热情，善于沟通，熟悉社交媒体和办公软件，对LLM有一定的使用经验，日常使用智能手机和社交平台。她的工作包括为社区提供支持和服务，组织活动，协调资源。",
+        "usage": [
+            "WeChatApp",
+            "Slack"
+        ],
+        "advantages": [
+            "WeChatApp",
+            "Slack"
+        ],
+        "disadvantages": [
+            "GitBash",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "刘伟",
+        "profession": "环境保护专员",
+        "description": "刘伟，30岁，拥有环境科学硕士学位，性格细心，注重分析，熟悉环境监测软件，对LLM有一定了解，日常使用电脑和专业分析工具。他的工作主要涉及环境政策的实施，环境数据的收集与分析，撰写环境报告。",
+        "usage": [
+            "DataCleaningAndIntegration",
+            "VisualStudioCode"
+        ],
+        "advantages": [
+            "DataCleaningAndIntegration",
+            "VisualStudioCode"
+        ],
+        "disadvantages": [
+            "WebScrapingDataAnalysis",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "孙婷",
+        "profession": "交通规划师",
+        "description": "孙婷，38岁，拥有交通工程硕士学位，性格细致，善于逻辑思维，精通交通模拟软件，对LLM有一定的了解，日常使用高性能电脑和相关软件。她负责城市交通系统的规划与设计，交通数据的分析。",
+        "usage": [
+            "BaiduMap",
+            "GaoDeMap"
+        ],
+        "advantages": [
+            "BaiduMap",
+            "GaoDeMap"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "周浩",
+        "profession": "法律顾问",
+        "description": "周浩，45岁，拥有法学硕士学位，性格严谨，注重条理性，熟悉法律相关软件，对LLM有一定的了解，日常使用电脑和法律数据库。他的工作主要涉及法律咨询，撰写法律文件，与客户沟通。",
+        "usage": [
+            "Gmail",
+            "Outlook"
+        ],
+        "advantages": [
+            "Gmail",
+            "Outlook"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "吴敏",
+        "profession": "人力资源专员",
+        "description": "吴敏，29岁，拥有人力资源管理学士学位，性格细致，善于沟通，熟悉人力资源管理软件，对LLM有一定的了解，日常使用电脑和办公软件。她的工作包括招聘、员工关系管理和培训组织。",
+        "usage": [
+            "Todoist",
+            "Slack"
+        ],
+        "advantages": [
+            "Todoist",
+            "Slack"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "郑刚",
+        "profession": "社区服务经理",
+        "description": "郑刚，37岁，拥有社会工作硕士学位，性格热情，注重团队合作，熟悉社区服务相关软件，对LLM有一定了解，日常使用智能手机和电脑。他的工作主要涉及社区项目的管理与实施，协调与各方的沟通。",
+        "usage": [
+            "FeiShu",
+            "NotionApp"
+        ],
+        "advantages": [
+            "FeiShu",
+            "NotionApp"
+        ],
+        "disadvantages": [
+            "GitHub",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "马丽",
+        "profession": "公共关系专员",
+        "description": "马丽，34岁，拥有传播学硕士学位，性格外向，善于沟通，熟悉社交媒体和办公软件，对LLM有一定的了解，日常使用电脑和智能手机。她的工作主要涉及与媒体沟通，撰写新闻稿和组织活动。",
+        "usage": [
+            "WeChatApp",
+            "QQ"
+        ],
+        "advantages": [
+            "WeChatApp",
+            "QQ"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "李霞",
+        "profession": "教育政策分析师",
+        "description": "李霞，31岁，拥有教育学硕士学位，性格细致，注重数据分析，熟悉教育相关软件，对LLM有一定了解，日常使用电脑和数据分析工具。她负责分析教育政策的影响，撰写政策建议报告。",
+        "usage": [
+            "ProgrammingCat",
+            "Coursera"
+        ],
+        "advantages": [
+            "ProgrammingCat",
+            "Coursera"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "何伟",
+        "profession": "公共事务经理",
+        "description": "何伟，39岁，拥有公共管理硕士学位，性格细心，注重逻辑，熟悉项目管理软件，对LLM有一定的了解，日常使用电脑和办公软件。他的工作主要涉及公共事务的沟通与协调，项目的管理与实施。",
+        "usage": [
+            "NotionApp",
+            "Todoist"
+        ],
+        "advantages": [
+            "NotionApp",
+            "Todoist"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "潘婷",
+        "profession": "国际关系专员",
+        "description": "潘婷，33岁，拥有国际关系硕士学位，性格细致，善于分析，熟悉国际事务相关软件，对LLM有一定了解，日常使用电脑和数据分析工具。她的工作主要涉及国际事务的研究与分析，撰写政策建议。",
+        "usage": [
+            "GoogleCustomSearch",
+            "BingSearch"
+        ],
+        "advantages": [
+            "GoogleCustomSearch",
+            "BingSearch"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "李明",
+        "profession": "水务管理员",
+        "description": "李明，35岁，拥有水利工程专业本科文凭，性格细心且耐心，擅长处理复杂的水务系统问题。对电脑有基础知识，熟悉常用软件，了解数据分析基础。对LLM有一定的了解，能够利用其进行信息查询和数据处理。日常工作包括监测水质、维护水管网、处理市民报修等。他使用智能设备记录水质数据，并通过应用程序进行日常管理。",
+        "usage": [
+            "GoodDoctorOnline",
+            "BaiduMap",
+            "TrafficAssistant"
+        ],
+        "advantages": [
+            "WeiYi",
+            "SmartScaleApp"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "王芳",
+        "profession": "垃圾分类管理员",
+        "description": "王芳，28岁，环境科学硕士，性格细致，注重细节。熟悉计算机操作，能够使用多种办公软件，了解数据统计。对于LLM的使用较为熟悉，能够利用其进行垃圾分类知识的普及和宣传。工作内容包括社区垃圾分类的监督和宣传，日常使用智能设备进行数据记录和分类效果评估。",
+        "usage": [
+            "YoudaoTranslation",
+            "SocialMediaAnalysisApi"
+        ],
+        "advantages": [
+            "Keep",
+            "Ximalaya"
+        ],
+        "disadvantages": [
+            "Ansible",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "张伟",
+        "profession": "电力调度员",
+        "description": "张伟，40岁，电气工程本科，性格严谨，注重工作流程的规范性。对计算机系统有较深入的了解，掌握电力调度系统的操作。对LLM了解有限，主要用于查询电力负荷和调度信息。工作职责包括监控电力系统，协调电力分配，处理突发事件等，日常使用智能设备进行实时数据监控。",
+        "usage": [
+            "TrafficAssistant",
+            "GaoDeMap"
+        ],
+        "advantages": [
+            "TaoBaoOpenPlatform",
+            "DidiRide"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "PowerToys"
+        ]
+    },
+    {
+        "name": "陈丽",
+        "profession": "社区服务中心志愿者",
+        "description": "陈丽，22岁，大学在读，专业为社会工作，性格开朗，乐于助人。对电脑操作熟练，常用社交软件，了解基本的数据处理。对LLM有一定的使用经验，能够利用其进行资料查询和活动策划。工作内容包括组织社区活动，协助居民解决问题，使用智能设备记录活动反馈和居民需求。",
+        "usage": [
+            "Douban",
+            "Slack"
+        ],
+        "advantages": [
+            "FeiShu",
+            "YoudaoNote"
+        ],
+        "disadvantages": [
+            "Terraform",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "刘强",
+        "profession": "交通管理人员",
+        "description": "刘强，30岁，交通工程本科，性格细致，善于分析数据。对计算机技术有一定了解，能够使用交通管理系统。对LLM的使用较为熟悉，常用其进行交通流量预测和问题分析。工作职责包括监控交通状况，处理交通事故，维护交通秩序，使用智能设备进行数据采集和分析。",
+        "usage": [
+            "BaiduMap",
+            "FeiChangZhun"
+        ],
+        "advantages": [
+            "Calendar",
+            "TrafficAssistant"
+        ],
+        "disadvantages": [
+            "JupyterNotebook",
+            "FFmpeg"
+        ]
+    },
+    {
+        "name": "赵敏",
+        "profession": "市政设施维护工",
+        "description": "赵敏，45岁，高中学历，性格踏实，工作认真。对电脑知识较为有限，主要使用基本的办公软件。对LLM的认知较为模糊，主要用作简单的信息查询。工作内容包括市政设施的日常维护和检修，使用智能设备记录维护情况。",
+        "usage": [
+            "Gmail",
+            "WeChatApp"
+        ],
+        "advantages": [
+            "MintHealth",
+            "Fitbit"
+        ],
+        "disadvantages": [
+            "VisualStudioCode",
+            "GitBash"
+        ]
+    },
+    {
+        "name": "黄小华",
+        "profession": "公园管理人员",
+        "description": "黄小华，32岁，园艺专业本科，性格温和，注重团队合作。对计算机操作较为熟练，能够使用管理软件和社交媒体。对LLM有一定的了解，常用于信息查询和宣传活动。工作内容包括公园的日常管理和活动组织，使用智能设备进行园区监测和数据记录。",
+        "usage": [
+            "QingTingFM",
+            "DouyinShortVideo"
+        ],
+        "advantages": [
+            "Keep",
+            "CtripApp"
+        ],
+        "disadvantages": [
+            "WebScrapingDataAnalysis",
+            "Nmap"
+        ]
+    },
+    {
+        "name": "杨帆",
+        "profession": "环保督察员",
+        "description": "杨帆，38岁，环境保护专业硕士，性格严谨，细心。对电脑操作非常熟练，精通数据分析软件。对LLM的使用非常熟悉，能够进行深入的数据分析和报告撰写。工作内容包括环保政策的监督和实施，使用智能设备进行数据收集和分析。",
+        "usage": [
+            "ProgrammingCat",
+            "SocialCommerceApp"
+        ],
+        "advantages": [
+            "DataCleaningAndIntegration",
+            "MobileNetworkMonitoring"
+        ],
+        "disadvantages": [
+            "Ansible",
+            "Curl"
+        ]
+    },
+    {
+        "name": "徐伟",
+        "profession": "城市规划师",
+        "description": "徐伟，29岁，城市规划专业硕士，性格创造性强，注重细节。对电脑操作非常熟练，使用多种设计软件。对LLM的使用非常熟悉，能够利用其进行规划方案的设计和分析。工作内容包括城市发展规划，使用智能设备进行数据分析和设计方案的呈现。",
+        "usage": [
+            "FigmaApp",
+            "NotionApp"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "Swagger"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "周鹏",
+        "profession": "公共卫生管理员",
+        "description": "周鹏，34岁，公共卫生专业本科，性格细致，注重数据分析。对计算机有较强的操作能力，能够使用相关软件进行数据处理。对LLM的使用较为熟悉，能够进行健康数据的分析和报告撰写。工作内容包括公共卫生数据的监测与分析，使用智能设备记录健康数据。",
+        "usage": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "advantages": [
+            "HuaweiHealth",
+            "Fitbit"
+        ],
+        "disadvantages": [
+            "Nmap",
+            "FFmpeg"
+        ]
+    },
+    {
+        "name": "宋玲",
+        "profession": "社区心理咨询师",
+        "description": "宋玲，26岁，心理学硕士，性格温柔，善于倾听。对计算机操作熟练，常用各种心理咨询软件。对LLM的使用较为熟悉，能够利用其进行资料查询和咨询记录。工作内容包括为社区居民提供心理咨询服务，使用智能设备记录咨询情况。",
+        "usage": [
+            "WeChatApp",
+            "QQ"
+        ],
+        "advantages": [
+            "YoudaoNote",
+            "DingDing"
+        ],
+        "disadvantages": [
+            "GitBash",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "唐亮",
+        "profession": "公共交通调度员",
+        "description": "唐亮，33岁，交通管理专业本科，性格细致，注重时间管理。对计算机操作熟练，能够使用调度系统。对LLM的使用较为熟悉，能够进行交通数据的分析和调度调整。工作内容包括监控公共交通运行情况，调整交通路线，使用智能设备进行数据记录。",
+        "usage": [
+            "DidiRide",
+            "FeiChangZhun"
+        ],
+        "advantages": [
+            "TrafficAssistant",
+            "BaiduMap"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "贾玲",
+        "profession": "社区网络管理员",
+        "description": "贾玲，31岁，计算机科学本科，性格细心，擅长网络管理。对计算机技术非常熟练，能够使用各种网络监控工具。对LLM的使用非常熟悉，能够进行网络数据的分析和处理。工作内容包括社区网络的维护与管理，使用智能设备进行网络监控和数据分析。",
+        "usage": [
+            "WifiScanner",
+            "GoogleCustomSearch"
+        ],
+        "advantages": [
+            "WebScrapingDataAnalysis",
+            "DataCleaningAndIntegration"
+        ],
+        "disadvantages": [
+            "Curl",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "沈波",
+        "profession": "城市环境监测员",
+        "description": "沈波，39岁，环境科学本科，性格严谨，注重细节。对计算机操作较为熟练，能够使用数据分析软件。对LLM的使用了解有限，主要用于简单的数据查询。工作内容包括城市环境质量的监测，使用智能设备进行数据记录和分析。",
+        "usage": [
+            "YoudaoTranslation",
+            "BaiduAPI"
+        ],
+        "advantages": [
+            "KhanAcademy",
+            "XueQiu"
+        ],
+        "disadvantages": [
+            "PowerToys",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "李明",
+        "profession": "投资顾问",
+        "description": "李明，35岁，拥有金融学硕士学位，性格细心且耐心，乐于帮助他人进行财务规划。对电脑相关知识有较强的掌握，熟悉各种投资软件。对 LLM 有一定的了解，能利用其辅助决策。智能设备使用频繁，主要依赖手机和笔记本电脑进行工作。日常工作包括为客户提供投资建议、分析市场趋势和管理客户资产。",
+        "usage": [
+            "TongHuaShun",
+            "XueQiu",
+            "FutuNiuNiu"
+        ],
+        "advantages": [
+            "XueQiu",
+            "FutuNiuNiu"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "张伟",
+        "profession": "股票经纪人",
+        "description": "张伟，28岁，拥有经济学学士学位，性格外向，具有较强的沟通能力和细心程度。他对电脑有一定的了解，能够熟练使用交易软件，对 LLM 有初步了解，常用智能设备包括手机和电脑。工作中主要负责为客户执行交易、跟踪市场动态以及提供投资建议。",
+        "usage": [
+            "TongHuaShun",
+            "JdFinance"
+        ],
+        "advantages": [
+            "TongHuaShun",
+            "JdFinance"
+        ],
+        "disadvantages": [
+            "Ansible",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "王芳",
+        "profession": "金融分析师",
+        "description": "王芳，30岁，拥有金融学博士学位，性格严谨且细心，擅长数据分析，对电脑的使用非常熟练，能够进行复杂的财务建模。对 LLM 有深入了解，常用智能设备包括高性能笔记本和智能手机。日常工作主要包括分析财务报表、预测市场趋势和撰写研究报告。",
+        "usage": [
+            "ZhiTouBao",
+            "FutuNiuNiu"
+        ],
+        "advantages": [
+            "FutuNiuNiu",
+            "ZhiTouBao"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "陈晨",
+        "profession": "财务规划师",
+        "description": "陈晨，40岁，拥有会计学学士学位，性格细致且耐心，擅长为个人和家庭提供财务规划服务。对电脑操作熟练，了解多种财务软件。对 LLM 有一定的使用经验，主要使用智能手机和平板电脑进行工作。日常工作包括制定财务计划、投资组合管理及税务筹划。",
+        "usage": [
+            "Alipay",
+            "WeChatPay"
+        ],
+        "advantages": [
+            "WeChatPay",
+            "Alipay"
+        ],
+        "disadvantages": [
+            "Terraform",
+            "Postman"
+        ]
+    },
+    {
+        "name": "刘强",
+        "profession": "资产管理顾问",
+        "description": "刘强，45岁，拥有经济学硕士学位，性格稳重，细心程度高，专注于为企业提供资产管理建议。对电脑知识掌握较好，熟悉多种资产管理工具。对 LLM 的使用较为熟悉，常用智能设备包括桌面电脑和智能手机。日常工作涉及资产评估、投资组合优化和风险管理。",
+        "usage": [
+            "FutuNiuNiu",
+            "LiCaiTong"
+        ],
+        "advantages": [
+            "FutuNiuNiu",
+            "LiCaiTong"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "赵丽",
+        "profession": "风险管理专员",
+        "description": "赵丽，33岁，拥有金融风险管理硕士学位，性格谨慎，细心程度极高，擅长识别和分析潜在风险。对电脑相关知识有较强的掌握，能够使用多种风险评估软件。对 LLM 有一定的了解，智能设备使用主要集中在笔记本电脑和手机。日常工作包括评估风险、制定风险控制策略和监控市场变化。",
+        "usage": [
+            "XueQiu",
+            "SmartPricingTool"
+        ],
+        "advantages": [
+            "XueQiu",
+            "SmartPricingTool"
+        ],
+        "disadvantages": [
+            "Nmap",
+            "FFmpeg"
+        ]
+    },
+    {
+        "name": "孙浩",
+        "profession": "财务分析学员",
+        "description": "孙浩，22岁，正在攻读金融学学士学位，性格活泼，细心程度一般，学习能力强。对电脑知识有基础了解，正在逐步学习使用 LLM，日常使用智能设备包括笔记本电脑和智能手机。学习内容主要涉及财务报表分析、市场研究和投资基础知识。",
+        "usage": [
+            "KhanAcademy",
+            "Quizlet"
+        ],
+        "advantages": [
+            "KhanAcademy",
+            "Quizlet"
+        ],
+        "disadvantages": [
+            "GitBash",
+            "Curl"
+        ]
+    },
+    {
+        "name": "周婷",
+        "profession": "证券分析师",
+        "description": "周婷，29岁，拥有经济学硕士学位，性格细心且富有分析能力，擅长进行证券市场的研究和分析。对电脑知识掌握较好，能够使用多种分析工具，对 LLM 有一定的了解。日常工作主要使用笔记本电脑进行数据分析和撰写报告。",
+        "usage": [
+            "TongHuaShun",
+            "GoodDoctorOnline"
+        ],
+        "advantages": [
+            "TongHuaShun",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "Terraform",
+            "DataCleaningAndIntegration"
+        ]
+    },
+    {
+        "name": "杨杰",
+        "profession": "投资组合经理",
+        "description": "杨杰，38岁，拥有金融学博士学位，性格严谨，注重细节，擅长管理和优化投资组合。对电脑相关知识相当精通，能够熟练使用多种投资管理软件。对 LLM 有较深的理解，日常工作主要使用高性能电脑和智能手机。",
+        "usage": [
+            "FutuNiuNiu",
+            "LiCaiTong"
+        ],
+        "advantages": [
+            "FutuNiuNiu",
+            "LiCaiTong"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "何静",
+        "profession": "财富管理顾问",
+        "description": "何静，42岁，拥有工商管理硕士学位，性格温和，细心且善于倾听，专注于为高净值客户提供财富管理服务。对电脑知识掌握良好，熟练使用各种财务软件，对 LLM 的使用经验丰富。日常工作主要通过手机和电脑进行客户沟通和数据分析。",
+        "usage": [
+            "ZhiTouBao",
+            "XueQiu"
+        ],
+        "advantages": [
+            "ZhiTouBao",
+            "XueQiu"
+        ],
+        "disadvantages": [
+            "GitHub",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "吴伟",
+        "profession": "企业财务主管",
+        "description": "吴伟，50岁，拥有会计学学士学位，性格认真，细心程度高，负责企业的财务规划和管理工作。对电脑相关知识非常熟练，能够使用多种财务管理软件。对 LLM 有基本了解，主要使用台式电脑进行工作。日常工作包括财务报表编制、预算管理及税务筹划。",
+        "usage": [
+            "GoodDoctorOnline",
+            "WeChatPay"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "WeChatPay"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "郑华",
+        "profession": "投资顾问助理",
+        "description": "郑华，25岁，拥有金融学学士学位，性格开朗，细心程度一般，正在学习如何为客户提供投资建议。对电脑知识有一定掌握，熟悉基本的理财软件，对 LLM 逐渐产生兴趣。日常使用智能设备包括笔记本电脑和手机，工作内容主要为数据整理和市场调研。",
+        "usage": [
+            "Quizlet",
+            "Coursera"
+        ],
+        "advantages": [
+            "Quizlet",
+            "Coursera"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "FFmpeg"
+        ]
+    },
+    {
+        "name": "任丽",
+        "profession": "财务分析师助理",
+        "description": "任丽，26岁，正在攻读金融学硕士学位，性格细心，善于分析数据，熟悉使用 Excel 和其他财务软件。对 LLM 有一定了解，智能设备使用主要在高性能笔记本电脑和手机。工作内容主要包括协助财务分析师进行数据收集和分析。",
+        "usage": [
+            "KhanAcademy",
+            "YoudaoTranslation"
+        ],
+        "advantages": [
+            "KhanAcademy",
+            "YoudaoTranslation"
+        ],
+        "disadvantages": [
+            "GitBash",
+            "Curl"
+        ]
+    },
+    {
+        "name": "廖强",
+        "profession": "股票交易员",
+        "description": "廖强，34岁，拥有金融学学士学位，性格果断，注重细节，专注于股票交易。对电脑知识非常熟练，能够使用多种交易软件和分析工具。对 LLM 有一定了解，日常使用智能设备包括高性能的桌面电脑和手机。工作主要包括实时跟踪市场动态和执行交易策略。",
+        "usage": [
+            "TongHuaShun",
+            "FutuNiuNiu"
+        ],
+        "advantages": [
+            "TongHuaShun",
+            "FutuNiuNiu"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "李晓华",
+        "profession": "药剂师",
+        "description": "李晓华是一名35岁的药剂师，拥有药学硕士学位，性格细心且耐心，善于倾听病人的需求。她对电脑的知识背景较强，能够熟练使用各种药品管理软件，对 LLM 的熟悉程度中等，能够使用其获取药物信息。她习惯使用智能设备来管理药品库存和病人信息，每天的工作包括为病人提供药物咨询、配药和记录病历。",
+        "usage": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Fitbit"
+        ]
+    },
+    {
+        "name": "张伟",
+        "profession": "医学研究生",
+        "description": "张伟是一名24岁的医学研究生，正在攻读博士学位。他性格严谨，细致入微，擅长数据分析和科研文献的查找。他对于电脑相关知识非常熟悉，对 LLM 的使用也有一定的应用，能够利用其进行文献综述和数据分析。他每天的学习和研究任务包括实验设计、数据收集和文献阅读。",
+        "usage": [
+            "KhanAcademy",
+            "YoudaoTranslation"
+        ],
+        "advantages": [
+            "KhanAcademy",
+            "YoudaoTranslation"
+        ],
+        "disadvantages": [
+            "MintHealth",
+            "HuaweiHealth"
+        ]
+    },
+    {
+        "name": "王丽",
+        "profession": "护士",
+        "description": "王丽是一名28岁的护士，拥有护理学学士学位。她性格温和，细心且富有同情心，经常与病人沟通，及时了解他们的需求。对电脑的知识掌握一般，使用 LLM 的频率较低，但能够使用一些医疗管理软件。日常工作包括为病人提供护理、记录病情以及协助医生进行治疗。",
+        "usage": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Keep"
+        ]
+    },
+    {
+        "name": "赵强",
+        "profession": "医疗设备销售代表",
+        "description": "赵强是一名30岁的医疗设备销售代表，拥有市场营销学士学位。他性格外向，善于沟通，能够快速了解客户需求。他对电脑的知识背景良好，熟悉使用各种办公软件和销售管理工具，对 LLM 的使用有一定了解，常常利用其进行市场调研和客户分析。",
+        "usage": [
+            "Slack",
+            "NotionApp"
+        ],
+        "advantages": [
+            "Slack",
+            "NotionApp"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "GoodDoctorOnline"
+        ]
+    },
+    {
+        "name": "刘晨",
+        "profession": "社区健康工作者",
+        "description": "刘晨是一名26岁的社区健康工作者，拥有公共卫生学学士学位。她性格开朗，细心且积极向上，致力于改善社区的健康状况。对电脑的知识掌握一般，使用 LLM 的频率较低，但能够使用一些健康管理软件。日常工作包括为社区居民提供健康咨询、组织健康活动和收集健康数据。",
+        "usage": [
+            "Fitbit",
+            "GoodDoctorOnline"
+        ],
+        "advantages": [
+            "Fitbit",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "MintHealth"
+        ]
+    },
+    {
+        "name": "陈晓东",
+        "profession": "药物研究员",
+        "description": "陈晓东是一名32岁的药物研究员，拥有药物化学博士学位。他性格严谨，细致入微，擅长实验设计和数据分析。对电脑的知识背景非常强，能够熟练使用各种科研工具，对 LLM 的使用非常熟悉，能够利用其进行文献分析和数据处理。",
+        "usage": [
+            "TensorFlow",
+            "JupyterNotebook"
+        ],
+        "advantages": [
+            "TensorFlow",
+            "JupyterNotebook"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Fitbit"
+        ]
+    },
+    {
+        "name": "孙婷",
+        "profession": "临床药师",
+        "description": "孙婷是一名29岁的临床药师，拥有药学硕士学位。她性格细心且富有责任感，能够为患者提供个性化的用药建议。对电脑的知识掌握良好，能够使用一些医疗软件，熟悉 LLM 的基本使用，常常利用其获取药物信息和临床指南。",
+        "usage": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Keep"
+        ]
+    },
+    {
+        "name": "周杰",
+        "profession": "药品监管专员",
+        "description": "周杰是一名33岁的药品监管专员，拥有药学学士学位。他性格严谨，细心，关注药品的安全和有效性。对电脑的知识背景较强，能够使用各种监管软件，对 LLM 的使用较为熟悉，能够利用其进行数据分析和报告撰写。",
+        "usage": [
+            "DataCleaningAndIntegration",
+            "WebScrapingDataAnalysis"
+        ],
+        "advantages": [
+            "DataCleaningAndIntegration",
+            "WebScrapingDataAnalysis"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Fitbit"
+        ]
+    },
+    {
+        "name": "杨梅",
+        "profession": "医学翻译",
+        "description": "杨梅是一名27岁的医学翻译，拥有英语学士学位。她性格细心，热爱语言，能够准确翻译医学文献。对电脑的知识掌握良好，熟悉 LLM 的使用，常常利用其进行文献翻译和术语查找。",
+        "usage": [
+            "YoudaoTranslation",
+            "Gmail"
+        ],
+        "advantages": [
+            "YoudaoTranslation",
+            "Gmail"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Fitbit"
+        ]
+    },
+    {
+        "name": "刘刚",
+        "profession": "药物经济学家",
+        "description": "刘刚是一名31岁的药物经济学家，拥有经济学硕士学位。他性格细致，善于分析数据，关注药物的成本效益分析。对电脑的知识背景非常强，熟练使用各种数据分析工具，对 LLM 的使用非常熟悉，能够利用其进行市场分析和模型构建。",
+        "usage": [
+            "TensorFlow",
+            "JupyterNotebook"
+        ],
+        "advantages": [
+            "TensorFlow",
+            "JupyterNotebook"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Fitbit"
+        ]
+    },
+    {
+        "name": "黄莉",
+        "profession": "药物临床试验协调员",
+        "description": "黄莉是一名30岁的药物临床试验协调员，拥有生物学学士学位。她性格细心，擅长组织和协调试验，确保试验的顺利进行。对电脑的知识掌握一般，使用 LLM 的频率较低，但能够使用一些临床试验管理软件。",
+        "usage": [
+            "Slack",
+            "NotionApp"
+        ],
+        "advantages": [
+            "Slack",
+            "NotionApp"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Fitbit"
+        ]
+    },
+    {
+        "name": "朱莉",
+        "profession": "药物咨询师",
+        "description": "朱莉是一名26岁的药物咨询师，拥有药学学士学位。她性格开朗，细心，致力于为患者提供药物使用的指导。对电脑的知识背景一般，使用 LLM 的频率较低，但能够使用一些药品管理软件。",
+        "usage": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Fitbit"
+        ]
+    },
+    {
+        "name": "程伟",
+        "profession": "药品销售代表",
+        "description": "程伟是一名29岁的药品销售代表，拥有市场营销学士学位。他性格外向，善于沟通，能够快速了解客户需求。对电脑的知识背景良好，熟悉使用各种办公软件和销售管理工具，对 LLM 的使用有一定了解，常常利用其进行市场调研和客户分析。",
+        "usage": [
+            "Slack",
+            "NotionApp"
+        ],
+        "advantages": [
+            "Slack",
+            "NotionApp"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "GoodDoctorOnline"
+        ]
+    },
+    {
+        "name": "邓超",
+        "profession": "药物研发工程师",
+        "description": "邓超是一名34岁的药物研发工程师，拥有药物化学博士学位。他性格严谨，细致，擅长实验设计和数据分析。对电脑的知识背景强，能够熟练使用各种科研工具，对 LLM 的使用非常熟悉，能够利用其进行文献分析和数据处理。",
+        "usage": [
+            "TensorFlow",
+            "JupyterNotebook"
+        ],
+        "advantages": [
+            "TensorFlow",
+            "JupyterNotebook"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Fitbit"
+        ]
+    },
+    {
+        "name": "张伟",
+        "profession": "大学生",
+        "description": "21岁，正在攻读计算机科学与技术专业，性格细心且耐心，擅长文件管理和基础编程，熟悉常见软件的安装与使用，对LLM有一定了解，日常使用智能手机和笔记本电脑，主要使用学习类应用。日常学习内容包括编程作业、项目开发和文献查阅。",
+        "usage": [
+            "KhanAcademy",
+            "Coursera",
+            "YoudaoTranslation"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "GitHub"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "李娜",
+        "profession": "中学教师",
+        "description": "35岁，拥有教育学硕士学位，性格温和且细心，擅长使用教育类软件与在线教学平台，熟悉电脑操作和文件管理，对LLM有基本了解，日常使用智能设备进行教学和管理学生信息，主要使用教学管理工具。日常工作包括备课、授课和批改作业。",
+        "usage": [
+            "ZuoYeBang",
+            "WangYiYunKeTang"
+        ],
+        "advantages": [
+            "TencentDocs",
+            "NotionApp"
+        ],
+        "disadvantages": [
+            "Terraform",
+            "WebScrapingDataAnalysis"
+        ]
+    },
+    {
+        "name": "王强",
+        "profession": "软件工程师",
+        "description": "28岁，计算机科学学士，性格严谨且细致，精通多种编程语言和开发工具，熟悉软件开发生命周期，对LLM有深入了解，使用多种智能设备进行开发和测试，日常使用代码管理和项目管理工具。日常工作包括软件开发、代码审核和团队协作。",
+        "usage": [
+            "ProgrammingCat",
+            "GitHub"
+        ],
+        "advantages": [
+            "DockerApp",
+            "Postman"
+        ],
+        "disadvantages": [
+            "FFmpeg",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "陈静",
+        "profession": "平面设计师",
+        "description": "30岁，艺术设计专业本科，性格创造性强且细致，熟练使用设计软件，了解基本的电脑操作，LLM的使用相对较少，日常使用智能设备进行设计创作，主要使用设计类工具。日常工作包括设计图稿、客户沟通和项目管理。",
+        "usage": [
+            "FigmaApp",
+            "NotionApp"
+        ],
+        "advantages": [
+            "PowerToys",
+            "VisualStudioCode"
+        ],
+        "disadvantages": [
+            "Ansible",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "赵敏",
+        "profession": "财务顾问",
+        "description": "40岁，拥有财务管理硕士学位，性格细致且有条理，擅长使用财务软件和数据分析工具，熟悉电脑操作，对LLM有一定了解，日常使用智能设备进行客户管理和财务分析，主要使用财务管理工具。日常工作包括财务报表分析、客户咨询和财务规划。",
+        "usage": [
+            "XueQiu",
+            "JdFinance"
+        ],
+        "advantages": [
+            "ExcelApp",
+            "DataCleaningAndIntegration"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "刘洋",
+        "profession": "网络营销专员",
+        "description": "26岁，市场营销专业本科，性格外向且细心，熟悉各种网络营销工具，了解电脑操作，对LLM有一定了解，日常使用智能设备进行市场调研和推广，主要使用社交媒体和数据分析工具。日常工作包括市场分析、广告投放和客户沟通。",
+        "usage": [
+            "SocialMediaAnalysisApi",
+            "UserBehaviorAnalysis"
+        ],
+        "advantages": [
+            "GoogleCustomSearch",
+            "BingSearch"
+        ],
+        "disadvantages": [
+            "Nmap",
+            "WebScrapingDataAnalysis"
+        ]
+    },
+    {
+        "name": "张涛",
+        "profession": "IT支持工程师",
+        "description": "32岁，计算机网络专业大专，性格耐心且细心，擅长解决各种电脑问题，熟悉操作系统和常见软件，对LLM有一定了解，日常使用智能设备进行远程支持，主要使用远程控制和监控工具。日常工作包括故障排查、设备维护和用户支持。",
+        "usage": [
+            "WindowsPowerShell",
+            "TrafficAssistant"
+        ],
+        "advantages": [
+            "WifiScanner",
+            "MobileNetworkMonitoring"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "孙丽",
+        "profession": "内容创作者",
+        "description": "24岁，传媒专业本科，性格活泼且富有创造力，擅长使用视频编辑和图文设计软件，了解电脑操作，对LLM有一定了解，日常使用智能设备进行内容创作，主要使用社交媒体和视频编辑工具。日常工作包括拍摄、剪辑和发布内容。",
+        "usage": [
+            "DouyinShortVideo",
+            "Bilibili"
+        ],
+        "advantages": [
+            "FFmpeg",
+            "Kuaishou"
+        ],
+        "disadvantages": [
+            "Ansible",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "周杰",
+        "profession": "数据分析师",
+        "description": "29岁，统计学硕士，性格严谨且细致，擅长使用数据分析软件，熟悉电脑操作，对LLM有一定了解，日常使用智能设备进行数据分析和报告撰写，主要使用数据处理和分析工具。日常工作包括数据清洗、分析和报告撰写。",
+        "usage": [
+            "DataCleaningAndIntegration",
+            "ProgrammingCat"
+        ],
+        "advantages": [
+            "JupyterNotebook",
+            "TensorFlow"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "杨帆",
+        "profession": "项目经理",
+        "description": "38岁，项目管理专业本科，性格细致且有组织能力，擅长使用项目管理软件，熟悉电脑操作，对LLM有一定了解，日常使用智能设备进行项目协调，主要使用项目管理和沟通工具。日常工作包括项目规划、团队沟通和进度跟踪。",
+        "usage": [
+            "Slack",
+            "NotionApp"
+        ],
+        "advantages": [
+            "Calendly",
+            "Todoist"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "GitBash"
+        ]
+    },
+    {
+        "name": "何静",
+        "profession": "人力资源专员",
+        "description": "33岁，人力资源管理硕士，性格细致且有同理心，擅长使用人力资源管理软件，熟悉电脑操作，对LLM有一定了解，日常使用智能设备进行员工管理，主要使用HR管理工具。日常工作包括招聘、培训和员工关系管理。",
+        "usage": [
+            "YoudaoNote",
+            "DingDing"
+        ],
+        "advantages": [
+            "NotionApp",
+            "Slack"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "林浩",
+        "profession": "电子商务专员",
+        "description": "27岁，电子商务专业本科，性格细心且具有市场敏锐度，擅长使用电商平台和数据分析工具，熟悉电脑操作，对LLM有一定了解，日常使用智能设备进行产品管理，主要使用电商管理工具。日常工作包括商品上架、市场分析和客户服务。",
+        "usage": [
+            "TaoBaoOpenPlatform",
+            "PinduoduoOpenPlatform"
+        ],
+        "advantages": [
+            "UserBehaviorAnalysis",
+            "SocialCommerceApp"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "高飞",
+        "profession": "法律顾问",
+        "description": "45岁，法学硕士，性格严谨且细致，擅长法律文书的撰写和研究，熟悉电脑操作，对LLM有一定了解，日常使用智能设备进行法律咨询，主要使用法律文书和案例分析工具。日常工作包括法律咨询、文书起草和案件研究。",
+        "usage": [
+            "Zhihu",
+            "BaiDuNews"
+        ],
+        "advantages": [
+            "NotionApp",
+            "GoogleCustomSearch"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "马丽",
+        "profession": "医务人员",
+        "description": "31岁，护理专业本科，性格细心且有同情心，擅长使用电子病历和医疗管理软件，熟悉电脑操作，对LLM有一定了解，日常使用智能设备进行病历管理，主要使用医疗管理工具。日常工作包括患者护理、病历记录和沟通协调。",
+        "usage": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "advantages": [
+            "SmartScaleApp",
+            "HuaweiHealth"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "李华",
+        "profession": "小学生",
+        "description": "李华，10岁，在读小学四年级，性格活泼开朗，细心程度较高，能独立完成老师布置的作业。对电脑知识有一定了解，会使用简单的绘画软件和学习应用。对 LLM 的熟悉程度一般，主要通过父母的指导使用智能设备。使用智能设备的习惯较好，主要用于学习和游戏，日常使用的应用包括学习类和娱乐类。李华的日常学习内容包括做作业、观看学习视频和与同学交流，使用智能手机进行学习和娱乐。",
+        "usage": [
+            "KhanAcademy",
+            "Quizlet",
+            "YoudaoTranslation"
+        ],
+        "advantages": [
+            "KhanAcademy",
+            "Quizlet"
+        ],
+        "disadvantages": [
+            "Github",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "张伟",
+        "profession": "大学生",
+        "description": "张伟，20岁，正在读大学，主修计算机科学。性格细心、严谨，对电脑和编程有较深的理解，能够熟练使用多种编程工具。对 LLM 的熟悉程度较高，常用其进行学习和项目辅助。使用智能设备的习惯很好，通常使用手机进行学习、社交和娱乐，日常使用的应用包括编程工具和社交媒体。张伟的日常学习内容包括编写代码、参加课程讨论和与同学合作项目。",
+        "usage": [
+            "ProgrammingCat",
+            "Coursera",
+            "GitHub"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "GitHub"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Fitbit"
+        ]
+    },
+    {
+        "name": "王芳",
+        "profession": "中学教师",
+        "description": "王芳，35岁，中学英语教师，性格温和，细心且耐心，善于与学生沟通。对电脑相关的知识有一定的掌握，能够使用多种教育软件。对 LLM 的熟悉程度一般，偶尔使用其辅助教学。使用智能设备的习惯良好，主要用于备课、组织课堂和与家长沟通，日常使用的工具包括教育类和办公类应用。王芳的日常工作内容包括备课、授课和批改作业。",
+        "usage": [
+            "YoudaoNote",
+            "FeiShu",
+            "ZuoYeBang"
+        ],
+        "advantages": [
+            "YoudaoNote",
+            "FeiShu"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "赵强",
+        "profession": "软件工程师",
+        "description": "赵强，28岁，软件工程师，性格严谨，注重细节，对技术有深入研究，熟悉多种编程语言和工具。对 LLM 的熟悉程度较高，常用其进行代码辅助和文档编写。使用智能设备的习惯非常好，主要用于工作和个人项目，日常使用的工具包括开发工具和项目管理应用。赵强的日常工作内容包括开发软件、进行代码审查和参与团队会议。",
+        "usage": [
+            "VisualStudioCode",
+            "DockerApp",
+            "GitHub"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "GitHub"
+        ],
+        "disadvantages": [
+            "Keep",
+            "Meiyou"
+        ]
+    },
+    {
+        "name": "陈丽",
+        "profession": "财务分析师",
+        "description": "陈丽，30岁，财务分析师，性格细致，喜欢数据分析，擅长使用 Excel 和财务软件。对电脑相关知识有较强的运用能力，对 LLM 的熟悉程度一般，偶尔使用其进行数据分析和报告生成。智能设备使用习惯良好，主要用于工作和个人理财，日常使用的应用包括财务管理和办公软件。陈丽的日常工作内容包括数据分析、编制财务报表和与团队沟通。",
+        "usage": [
+            "XueQiu",
+            "JdFinance",
+            "Slack"
+        ],
+        "advantages": [
+            "XueQiu",
+            "Slack"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "刘伟",
+        "profession": "市场专员",
+        "description": "刘伟，26岁，市场专员，性格外向，细心，擅长与人沟通和协调。对电脑知识有一定的了解，熟悉市场分析工具。对 LLM 的熟悉程度较高，常用其进行市场调研和数据分析。使用智能设备的习惯很好，主要用于工作和社交，日常使用的应用包括市场分析和社交媒体。刘伟的日常工作内容包括市场调研、撰写报告和与客户沟通。",
+        "usage": [
+            "SocialCommerceApp",
+            "GoogleCustomSearch",
+            "QQ"
+        ],
+        "advantages": [
+            "SocialCommerceApp",
+            "GoogleCustomSearch"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "孙静",
+        "profession": "护士",
+        "description": "孙静，32岁，护士，性格温柔，细心，注重患者的健康和安全。对电脑相关知识有基本了解，能够使用医院的管理系统。对 LLM 的熟悉程度一般，偶尔使用其进行资料查询和学习。使用智能设备的习惯良好，主要用于工作和个人生活，日常使用的应用包括医疗健康和通讯工具。孙静的日常工作内容包括护理病人、记录病历和与医生沟通。",
+        "usage": [
+            "GoodDoctorOnline",
+            "MintHealth",
+            "WeChatApp"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "周敏",
+        "profession": "大学生",
+        "description": "周敏，22岁，大学艺术专业学生，性格开朗，细心，擅长设计和创作。对电脑相关知识有较强的理解，能够熟练使用设计软件。对 LLM 的熟悉程度一般，偶尔使用其进行创作灵感的获取。使用智能设备的习惯良好，主要用于学习和创作，日常使用的应用包括设计工具和社交媒体。周敏的日常学习内容包括绘画、设计和与同学交流。",
+        "usage": [
+            "FigmaApp",
+            "DouyinShortVideo",
+            "Bilibili"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "Bilibili"
+        ],
+        "disadvantages": [
+            "WindowsPowerShell",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "钱磊",
+        "profession": "产品经理",
+        "description": "钱磊，34岁，产品经理，性格细致，善于沟通，注重用户体验。对电脑相关知识有较强的应用能力，熟悉多种产品管理工具。对 LLM 的熟悉程度较高，常用于产品设计和用户反馈收集。使用智能设备的习惯良好，主要用于工作和社交，日常使用的应用包括项目管理和用户反馈工具。钱磊的日常工作内容包括产品规划、用户调研和团队协调。",
+        "usage": [
+            "NotionApp",
+            "Slack",
+            "Todoist"
+        ],
+        "advantages": [
+            "NotionApp",
+            "Todoist"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "GitBash"
+        ]
+    },
+    {
+        "name": "吴霞",
+        "profession": "物流专员",
+        "description": "吴霞，29岁，物流专员，性格细致，注重流程管理。对电脑相关知识有一定了解，熟悉物流管理系统。对 LLM 的熟悉程度一般，偶尔使用其进行数据查询和报告生成。使用智能设备的习惯良好，主要用于工作和个人生活，日常使用的应用包括物流管理和通讯工具。吴霞的日常工作内容包括订单处理、运输协调和客户沟通。",
+        "usage": [
+            "TrafficAssistant",
+            "WeChatPay",
+            "DingDing"
+        ],
+        "advantages": [
+            "TrafficAssistant",
+            "DingDing"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "郑宇",
+        "profession": "网页设计师",
+        "description": "郑宇，27岁，网页设计师，性格创意丰富，细心，擅长用户界面设计。对电脑相关知识有较强的理解，能够熟练使用设计和开发工具。对 LLM 的熟悉程度较高，常用于设计灵感的获取和代码辅助。使用智能设备的习惯很好，主要用于工作和个人项目，日常使用的应用包括设计软件和开发工具。郑宇的日常工作内容包括网站设计、用户测试和与客户沟通。",
+        "usage": [
+            "FigmaApp",
+            "VisualStudioCode",
+            "GitHub"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "VisualStudioCode"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "何婷",
+        "profession": "心理咨询师",
+        "description": "何婷，31岁，心理咨询师，性格温柔，细心，注重倾听和沟通。对电脑相关知识有一定了解，能够使用心理咨询管理软件。对 LLM 的熟悉程度一般，偶尔使用其进行资料查询和学习。使用智能设备的习惯良好，主要用于工作和个人生活，日常使用的应用包括心理健康和通讯工具。何婷的日常工作内容包括与客户沟通、记录咨询过程和撰写报告。",
+        "usage": [
+            "GoodDoctorOnline",
+            "YoudaoNote",
+            "WeChatApp"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "YoudaoNote"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "陆涛",
+        "profession": "教师",
+        "description": "陆涛，40岁，小学数学教师，性格细心，耐心，擅长数学教学。对电脑相关知识有一定的掌握，能够使用教育管理软件。对 LLM 的熟悉程度一般，偶尔使用其进行教学辅助。使用智能设备的习惯良好，主要用于备课和课堂教学，日常使用的应用包括教育类和办公软件。陆涛的日常工作内容包括备课、授课和与家长沟通。",
+        "usage": [
+            "ZuoYeBang",
+            "YoudaoNote",
+            "FeiShu"
+        ],
+        "advantages": [
+            "ZuoYeBang",
+            "YoudaoNote"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "高峰",
+        "profession": "建筑师",
+        "description": "高峰，38岁，建筑师，性格细致，注重设计与实用性。对电脑相关知识有较强的应用能力，擅长使用建筑设计软件。对 LLM 的熟悉程度较高，常用于设计灵感的获取和项目管理。使用智能设备的习惯良好，主要用于工作和个人项目，日常使用的应用包括设计软件和项目管理工具。高峰的日常工作内容包括建筑设计、项目协调和客户沟通。",
+        "usage": [
+            "FigmaApp",
+            "NotionApp",
+            "Slack"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "NotionApp"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "张伟",
+        "profession": "IT工程师",
+        "description": "张伟，28岁，计算机科学硕士，性格细心且有耐心，对新技术充满好奇，熟悉多种编程语言和框架。对 LLM 有一定了解，能够利用其进行代码生成和调试。日常使用智能家居设备如智能音箱和灯光控制，帮助提升生活便利性。工作中常负责智能家居系统的开发与维护，确保设备间的兼容性与安全性。",
+        "usage": [
+            "智能助手",
+            "家居管理助手"
+        ],
+        "advantages": [
+            "WeiYi",
+            "Keep"
+        ],
+        "disadvantages": [
+            "TrafficAssistant",
+            "DidiRide"
+        ]
+    },
+    {
+        "name": "李娜",
+        "profession": "大学生",
+        "description": "李娜，21岁，正在攻读环境科学本科，性格细致且善于观察，具备基本的电脑操作能力，对 LLM 有一定的使用经验，能够利用其进行资料查找和写作辅助。习惯使用智能设备进行学习和生活管理，如智能手表和温控设备，帮助她更好地规划学习和生活。",
+        "usage": [
+            "学习助手",
+            "日程管理助手"
+        ],
+        "advantages": [
+            "KugouMusic",
+            "YoudaoTranslation"
+        ],
+        "disadvantages": [
+            "GitHub",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "王强",
+        "profession": "销售经理",
+        "description": "王强，35岁，市场营销学士，性格外向且细致，对电脑的应用较为熟悉，能够利用 LLM 进行市场分析和客户交流。日常使用智能手机和智能家居设备来管理工作和生活，确保生活的便利与安全，负责团队的销售策略制定与执行。",
+        "usage": [
+            "客户管理助手",
+            "销售分析助手"
+        ],
+        "advantages": [
+            "CtripApp",
+            "NotionApp"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "陈静",
+        "profession": "居家主妇",
+        "description": "陈静，30岁，高中毕业，性格温和细心，具备基本的电脑操作能力，对 LLM 有初步了解，能够利用其进行家务管理和食谱查询。日常使用智能家居设备如智能冰箱和智能扫地机器人，提高生活质量和效率，帮助家庭管理饮食和清洁工作。",
+        "usage": [
+            "家务管理助手",
+            "食谱推荐助手"
+        ],
+        "advantages": [
+            "Meiyou",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "GitBash",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "刘洋",
+        "profession": "建筑设计师",
+        "description": "刘洋，32岁，建筑学硕士，性格严谨且细致，对电脑及相关设计软件非常熟悉，对 LLM 有一定的了解，使用其进行设计灵感的收集与分析。习惯使用智能家居设备来提升工作环境的舒适度，负责住宅和商业建筑的设计工作。",
+        "usage": [
+            "设计灵感助手",
+            "项目管理助手"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "VisualStudioCode"
+        ],
+        "disadvantages": [
+            "Curl",
+            "WebScrapingDataAnalysis"
+        ]
+    },
+    {
+        "name": "赵丽",
+        "profession": "医生",
+        "description": "赵丽，40岁，医学博士，性格细心且富有责任心，熟悉医疗相关的电脑操作，对 LLM 有一定的使用经验，能够利用其进行病历分析和医学研究。日常使用智能健康设备，如智能血压计和心率监测器，帮助患者进行健康管理。",
+        "usage": [
+            "医学助手",
+            "健康管理助手"
+        ],
+        "advantages": [
+            "MintHealth",
+            "Fitbit"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "孙鹏",
+        "profession": "物流专员",
+        "description": "孙鹏，26岁，物流管理专业本科，性格细心且注重细节，熟悉物流管理软件，对 LLM 有基本的使用能力，能够帮助进行数据分析与报告生成。日常使用智能设备来追踪货物和优化物流流程，确保物流运作顺畅。",
+        "usage": [
+            "物流管理助手",
+            "数据分析助手"
+        ],
+        "advantages": [
+            "TrafficAssistant",
+            "FeiChangZhun"
+        ],
+        "disadvantages": [
+            "JupyterNotebook",
+            "Swagger"
+        ]
+    },
+    {
+        "name": "周媛",
+        "profession": "心理咨询师",
+        "description": "周媛，38岁，心理学硕士，性格细腻且敏感，擅长倾听与沟通，熟悉心理评估工具，对 LLM 有一定了解，能够利用其进行心理评估与资料整理。日常使用智能设备帮助安排咨询日程和记录客户回访，致力于提高客户的心理健康水平。",
+        "usage": [
+            "咨询管理助手",
+            "心理评估助手"
+        ],
+        "advantages": [
+            "YoudaoNote",
+            "Calendly"
+        ],
+        "disadvantages": [
+            "Terraform",
+            "PowerToys"
+        ]
+    },
+    {
+        "name": "吴刚",
+        "profession": "网络安全专家",
+        "description": "吴刚，30岁，网络安全硕士，性格严谨且细心，熟悉各类网络安全工具，对 LLM 有较深入的了解，能够利用其进行安全漏洞分析和网络监测。日常使用智能家居安防设备来提升家庭安全，负责企业的网络安全体系建设和维护。",
+        "usage": [
+            "安全监测助手",
+            "漏洞分析助手"
+        ],
+        "advantages": [
+            "Nmap",
+            "WiFiScanner"
+        ],
+        "disadvantages": [
+            "Keep",
+            "GoodDoctorOnline"
+        ]
+    },
+    {
+        "name": "郑爽",
+        "profession": "教师",
+        "description": "郑爽，29岁，教育学硕士，性格细心且耐心，熟悉教育相关软件，对 LLM 有一定的使用经验，能够利用其进行课程设计与学生管理。日常使用智能设备帮助管理课堂与学生作业，致力于提高教学质量。",
+        "usage": [
+            "课程管理助手",
+            "学生管理助手"
+        ],
+        "advantages": [
+            "WangYiYunKeTang",
+            "ShimoApp"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "何静",
+        "profession": "市场研究员",
+        "description": "何静，33岁，市场营销硕士，性格细致且善于分析，熟悉市场调研工具，对 LLM 有一定了解，能够利用其进行数据分析与报告撰写。日常使用智能设备来收集市场数据和进行分析，负责市场研究报告的撰写和分析。",
+        "usage": [
+            "市场分析助手",
+            "数据报告助手"
+        ],
+        "advantages": [
+            "ZhiTouBao",
+            "Flipboard"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "马超",
+        "profession": "软件测试工程师",
+        "description": "马超，27岁，计算机科学本科，性格细致且注重细节，熟悉软件测试流程，对 LLM 有一定的使用经验，能够利用其进行测试用例生成和缺陷跟踪。日常使用智能设备来帮助管理测试环境，确保软件的质量和稳定性。",
+        "usage": [
+            "测试管理助手",
+            "缺陷跟踪助手"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "Postman"
+        ],
+        "disadvantages": [
+            "TensorFlow",
+            "Swagger"
+        ]
+    },
+    {
+        "name": "杨帆",
+        "profession": "内容创作者",
+        "description": "杨帆，25岁，新闻传播专业本科，性格创意十足且细心，熟悉各类创作工具，对 LLM 有一定的了解，能够利用其进行内容生成和编辑。日常使用智能设备来管理内容创作流程，致力于生产高质量的内容。",
+        "usage": [
+            "内容管理助手",
+            "创作灵感助手"
+        ],
+        "advantages": [
+            "DouyinShortVideo",
+            "Ximalaya"
+        ],
+        "disadvantages": [
+            "Ansible",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "高飞",
+        "profession": "摄影师",
+        "description": "高飞，34岁，艺术专业本科，性格细腻且富有创意，熟悉摄影及后期处理软件，对 LLM 有一定的使用能力，能够利用其进行照片编辑及素材管理。日常使用智能设备，如智能相机和无反相机，提升拍摄效率和作品质量。",
+        "usage": [
+            "照片编辑助手",
+            "素材管理助手"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "Postman"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "李明",
+        "profession": "大学生",
+        "description": "李明是一名21岁的计算机科学专业学生，性格细心，对细节有较强的敏感性。他对电脑有较强的基础知识，熟悉编程语言和算法，对 LLM 也有一定的了解，常使用智能设备来辅助学习和生活，习惯使用智能助手进行日程管理和学习规划。日常工作包括编程作业、项目开发和参加技术讨论。",
+        "usage": [
+            "Todoist",
+            "Coursera"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "GitHub"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "张伟",
+        "profession": "汽车工程师",
+        "description": "张伟是一名35岁的汽车工程师，性格严谨，注重细节。他拥有硕士学位，熟悉汽车设计和智能汽车的技术，擅长使用各种工程软件，对 LLM 有较好的理解，日常工作中常用智能助手协助设计工作和项目管理。",
+        "usage": [
+            "TrafficAssistant",
+            "SmartPricingTool"
+        ],
+        "advantages": [
+            "Ansible",
+            "DockerCLI"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "王芳",
+        "profession": "智能汽车销售顾问",
+        "description": "王芳是一名28岁的智能汽车销售顾问，性格开朗，细心且善于沟通。她拥有市场营销学士学位，熟悉智能汽车的各项功能，对电脑和智能设备的使用非常熟练，常用 LLM 来分析市场数据和客户反馈。",
+        "usage": [
+            "GoodDoctorOnline",
+            "WeChatApp"
+        ],
+        "advantages": [
+            "SocialMediaAnalysisApi",
+            "UserBehaviorAnalysis"
+        ],
+        "disadvantages": [
+            "DataCleaningAndIntegration",
+            "WebScrapingDataAnalysis"
+        ]
+    },
+    {
+        "name": "陈浩",
+        "profession": "自动驾驶软件开发工程师",
+        "description": "陈浩是一名30岁的自动驾驶软件开发工程师，性格细致，逻辑思维能力强。他拥有计算机科学硕士学位，对编程和机器学习有深入了解，熟悉 LLM 的应用，日常使用智能助手来管理代码和调试工作。",
+        "usage": [
+            "Slack",
+            "VisualStudioCode"
+        ],
+        "advantages": [
+            "TensorFlow",
+            "Postman"
+        ],
+        "disadvantages": [
+            "Curl",
+            "FFmpeg"
+        ]
+    },
+    {
+        "name": "刘婷",
+        "profession": "智能交通系统分析师",
+        "description": "刘婷是一名32岁的智能交通系统分析师，性格细心且有耐心。她拥有交通工程硕士学位，熟悉智能交通相关技术和数据分析，使用 LLM 来辅助分析交通数据和优化方案。",
+        "usage": [
+            "BaiduMap",
+            "TrafficAssistant"
+        ],
+        "advantages": [
+            "DataCleaningAndIntegration",
+            "GoogleCustomSearch"
+        ],
+        "disadvantages": [
+            "Curl",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "赵强",
+        "profession": "汽车维修技师",
+        "description": "赵强是一名40岁的汽车维修技师，性格踏实，注重实践。他拥有汽车维修大专学历，熟悉各类汽车的维护和修理，对电脑的使用较为基础，偶尔使用智能助手来查找维修资料和配件信息。",
+        "usage": [
+            "DidiRide",
+            "HelloTravel"
+        ],
+        "advantages": [
+            "Gudu",
+            "Keep"
+        ],
+        "disadvantages": [
+            "JupyterNotebook",
+            "Swagger"
+        ]
+    },
+    {
+        "name": "孙梅",
+        "profession": "智能汽车产品经理",
+        "description": "孙梅是一名29岁的智能汽车产品经理，性格开朗，善于沟通。有市场营销和产品管理双学位，熟悉市场需求和用户体验，使用 LLM 来分析用户反馈和市场趋势。",
+        "usage": [
+            "NotionApp",
+            "Flipboard"
+        ],
+        "advantages": [
+            "SocialCommerceApp",
+            "UserBehaviorAnalysis"
+        ],
+        "disadvantages": [
+            "Terraform",
+            "Kubernetes"
+        ]
+    },
+    {
+        "name": "周辉",
+        "profession": "智能汽车技术支持工程师",
+        "description": "周辉是一名27岁的智能汽车技术支持工程师，性格耐心，乐于助人。拥有计算机应用技术大专学历，熟悉智能汽车的各项功能和故障排查，熟练使用 LLM 进行技术问题解答。",
+        "usage": [
+            "GoodDoctorOnline",
+            "WeChatApp"
+        ],
+        "advantages": [
+            "Ansible",
+            "PowerToys"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "马丽",
+        "profession": "汽车设计师",
+        "description": "马丽是一名34岁的汽车设计师，性格创新，喜欢挑战。她拥有工业设计硕士学位，熟悉汽车外观和内饰设计，使用 LLM 来获取设计灵感和市场反馈。",
+        "usage": [
+            "FigmaApp",
+            "Bilibili"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "GitHub"
+        ],
+        "disadvantages": [
+            "Curl",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "何刚",
+        "profession": "智能汽车市场分析师",
+        "description": "何刚是一名36岁的市场分析师，性格细心，逻辑性强。他拥有经济学硕士学位，熟悉市场分析工具，使用 LLM 来分析市场数据和趋势，日常工作包括撰写市场报告和分析用户需求。",
+        "usage": [
+            "Douban",
+            "TencentNews"
+        ],
+        "advantages": [
+            "DataCleaningAndIntegration",
+            "UserBehaviorAnalysis"
+        ],
+        "disadvantages": [
+            "Curl",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "吴静",
+        "profession": "智能汽车售后服务经理",
+        "description": "吴静是一名33岁的售后服务经理，性格温和，善于沟通。她拥有服务管理学士学位，熟悉客户服务流程，使用 LLM 来优化服务流程和客户体验。",
+        "usage": [
+            "XiaoZhuShortRent",
+            "FeiChangZhun"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "SocialMediaAnalysisApi"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "郑宇",
+        "profession": "智能汽车安全分析师",
+        "description": "郑宇是一名31岁的安全分析师，性格严谨，注重细节。他拥有网络安全硕士学位，熟悉智能汽车的安全漏洞和防护措施，使用 LLM 来分析安全数据和案例。",
+        "usage": [
+            "BaiduAPI",
+            "Gmail"
+        ],
+        "advantages": [
+            "Ansible",
+            "DockerCLI"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "冯雪",
+        "profession": "智能汽车用户体验设计师",
+        "description": "冯雪是一名30岁的用户体验设计师，性格开朗，富有创意。她拥有设计学硕士学位，熟悉用户体验设计，使用 LLM 来分析用户反馈和优化设计方案。",
+        "usage": [
+            "NotionApp",
+            "AiQiYi"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "VisualStudioCode"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "钱磊",
+        "profession": "汽车电子工程师",
+        "description": "钱磊是一名29岁的汽车电子工程师，性格细致，善于分析。他拥有电子工程学士学位，熟悉汽车电子系统，使用 LLM 来辅助技术问题分析和解决方案制定。",
+        "usage": [
+            "Keep",
+            "ProgrammingCat"
+        ],
+        "advantages": [
+            "TensorFlow",
+            "Postman"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "Curl"
+        ]
+    },
+    {
+        "name": "任莉",
+        "profession": "智能汽车项目经理",
+        "description": "任莉是一名38岁的项目经理，性格稳重，组织能力强。她拥有项目管理硕士学位，熟悉项目管理流程，使用 LLM 来管理项目进度和团队协作。",
+        "usage": [
+            "Calendly",
+            "Slack"
+        ],
+        "advantages": [
+            "NotionApp",
+            "UserBehaviorAnalysis"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "李明",
+        "profession": "大学生",
+        "description": "李明是一名大三的计算机科学专业学生，22岁。他性格细心，注重细节，擅长使用各种电脑工具，对编程有良好的基础。他对大语言模型（LLM）有一定了解，常使用智能设备进行学习和生活管理，喜欢使用手机应用进行外卖订餐。他的日常工作包括完成课程作业、参与编程项目以及利用智能外卖系统解决饮食问题。",
+        "usage": [
+            "MeituanTakeaway",
+            "ElemeOpenPlatform"
+        ],
+        "advantages": [
+            "Keep",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "CtripApp",
+            "DidiRide"
+        ]
+    },
+    {
+        "name": "张伟",
+        "profession": "外卖配送员",
+        "description": "张伟是一名28岁的外卖配送员，性格外向，工作认真负责。他高中毕业，熟悉智能设备的使用，能够快速上手各种外卖配送应用。对大语言模型的使用了解不深，但他常用手机应用处理订单和路线规划。他的日常工作包括接单、配送及与客户沟通。",
+        "usage": [
+            "DidiRide",
+            "BaiduMap"
+        ],
+        "advantages": [
+            "FeiChangZhun",
+            "TrafficAssistant"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "王芳",
+        "profession": "餐饮管理者",
+        "description": "王芳是一名35岁的餐饮管理者，拥有酒店管理学士学位。她性格细心，注重客户体验，对餐饮行业有深入了解，熟悉电脑操作。她对大语言模型的应用有一定了解，使用智能设备来优化餐厅的外卖系统和顾客反馈收集。日常工作包括管理外卖订单、协调配送和维护客户关系。",
+        "usage": [
+            "MeituanTakeaway",
+            "ElemeOpenPlatform"
+        ],
+        "advantages": [
+            "NotionApp",
+            "Slack"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "赵强",
+        "profession": "程序员",
+        "description": "赵强是一名26岁的程序员，拥有计算机科学硕士学位，性格严谨，注重逻辑思维。他对电脑技术非常熟悉，能够使用多种编程工具，了解大语言模型的基本概念。日常工作包括开发和维护外卖系统的后台，使用智能设备管理工作与生活。",
+        "usage": [
+            "ProgrammingCat",
+            "Coursera"
+        ],
+        "advantages": [
+            "VisualStudioCode",
+            "Postman"
+        ],
+        "disadvantages": [
+            "Keep",
+            "WeiYi"
+        ]
+    },
+    {
+        "name": "陈丽",
+        "profession": "市场营销专员",
+        "description": "陈丽是一名30岁的市场营销专员，具有市场营销学士学位，性格开朗，擅长与人沟通。她对电脑和智能设备的使用比较熟练，了解大语言模型的应用，可以利用智能外卖系统进行市场分析和客户反馈收集。日常工作包括策划市场活动、分析数据和管理外卖推广。",
+        "usage": [
+            "WeChatApp",
+            "QQ"
+        ],
+        "advantages": [
+            "SocialCommerceApp",
+            "UserBehaviorAnalysis"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "刘洋",
+        "profession": "高中生",
+        "description": "刘洋是一名17岁的高中生，性格活泼好动，善于使用社交媒体。他对电脑的使用主要集中在学习和娱乐上，了解一些智能设备的基本操作，对大语言模型的概念有初步认知。他的日常活动包括利用智能外卖系统订餐和与朋友交流。",
+        "usage": [
+            "DouyinShortVideo",
+            "KugouMusic"
+        ],
+        "advantages": [
+            "Ximalaya",
+            "QQMusic"
+        ],
+        "disadvantages": [
+            "GitBash",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "孙婷",
+        "profession": "自由职业者",
+        "description": "孙婷是一名32岁的自由职业者，性格灵活，善于适应各种工作环境。她具有市场营销与设计双学位，熟悉电脑和智能设备的使用，对大语言模型有一定了解，利用智能外卖系统进行生活便利化。日常工作包括接单、设计与客户沟通。",
+        "usage": [
+            "NotionApp",
+            "Calendly"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "Slack"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "WindowsPowerShell"
+        ]
+    },
+    {
+        "name": "周杰",
+        "profession": "物流经理",
+        "description": "周杰是一名40岁的物流经理，拥有物流管理硕士学位，性格严谨，注重效率。他对电脑和物流软件的使用非常熟练，对大语言模型的应用有一定了解，日常工作包括管理外卖配送团队和优化配送路线。",
+        "usage": [
+            "TrafficAssistant",
+            "DidiRide"
+        ],
+        "advantages": [
+            "SmartPricingTool",
+            "UserBehaviorAnalysis"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "吴敏",
+        "profession": "营养师",
+        "description": "吴敏是一名29岁的营养师，拥有营养学硕士学位，性格细心，关注细节。她对电脑和智能设备的使用熟练，了解大语言模型的应用，利用智能外卖系统为客户提供健康饮食建议。日常工作包括制定饮食计划和与客户沟通。",
+        "usage": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "advantages": [
+            "Fitbit",
+            "SmartScaleApp"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "郑刚",
+        "profession": "厨师",
+        "description": "郑刚是一名45岁的厨师，性格稳重，经验丰富。他对电脑的使用较少，但对智能设备的基本操作有一定了解，了解大语言模型的概念。日常工作包括备餐和使用智能外卖系统接单。",
+        "usage": [
+            "Meiyou",
+            "ElemeOpenPlatform"
+        ],
+        "advantages": [
+            "YoudaoNote",
+            "FeiShu"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "何雪",
+        "profession": "大学生",
+        "description": "何雪是一名21岁的大学生，专业为市场营销，性格开朗，善于与人沟通。她对电脑和智能设备的使用熟练，了解大语言模型的应用，日常工作包括学习、参与小组讨论和使用智能外卖系统解决饮食问题。",
+        "usage": [
+            "MeituanTakeaway",
+            "ElemeOpenPlatform"
+        ],
+        "advantages": [
+            "WangYiCloudReading",
+            "Quizlet"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Nmap"
+        ]
+    },
+    {
+        "name": "马强",
+        "profession": "电商运营专员",
+        "description": "马强是一名34岁的电商运营专员，具有市场营销学士学位，性格细心，注重数据分析。他对电脑的使用非常熟练，了解大语言模型的应用，利用智能外卖系统进行市场分析。日常工作包括管理电商平台的运营和优化外卖业务。",
+        "usage": [
+            "PinduoduoOpenPlatform",
+            "TaoBaoOpenPlatform"
+        ],
+        "advantages": [
+            "DataCleaningAndIntegration",
+            "SocialMediaAnalysisApi"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "刘洋",
+        "profession": "外卖客服",
+        "description": "刘洋是一名26岁的外卖客服，性格耐心，擅长沟通。他对电脑和智能设备的使用较为熟练，了解大语言模型的基本用法，日常工作包括处理客户咨询和投诉，使用智能外卖系统管理订单。",
+        "usage": [
+            "WeChatApp",
+            "QQ"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "JupyterNotebook"
+        ]
+    },
+    {
+        "name": "范伟",
+        "profession": "数据分析师",
+        "description": "范伟是一名38岁的数据分析师，拥有统计学硕士学位，性格细心，注重数据的准确性。他对电脑和数据分析工具非常熟悉，对大语言模型有深入了解，日常工作包括分析外卖行业的数据和客户反馈。",
+        "usage": [
+            "DataCleaningAndIntegration",
+            "UserBehaviorAnalysis"
+        ],
+        "advantages": [
+            "TensorFlow",
+            "JupyterNotebook"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "DockerCLI"
+        ]
+    },
+    {
+        "name": "李华",
+        "profession": "兽医",
+        "description": "李华是一名28岁的兽医，拥有兽医学士学位。他性格细心，尤其在处理宠物健康问题时非常谨慎。他对电脑有一定的知识背景，熟悉基本的医疗软件和数据管理工具。李华熟悉大语言模型的使用，常用它来获取最新的兽医资讯和健康建议。他每天的工作主要包括为宠物进行体检、诊断疾病和提供护理建议。",
+        "usage": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "disadvantages": [
+            "Fitbit",
+            "Keep"
+        ]
+    },
+    {
+        "name": "张伟",
+        "profession": "宠物美容师",
+        "description": "张伟是一名35岁的宠物美容师，拥有宠物美容相关的职业培训。他性格开朗且细心，特别注意宠物的舒适度和安全。他对电脑有一定的了解，能够使用社交媒体和在线预约系统。他对大语言模型的熟悉程度一般，主要用来寻找新的美容技巧和客户管理方案。张伟的日常工作包括为宠物洗澡、剪毛和美容。",
+        "usage": [
+            "YoudaoNote",
+            "NotionApp"
+        ],
+        "advantages": [
+            "YoudaoNote",
+            "NotionApp"
+        ],
+        "disadvantages": [
+            "SmartScaleApp",
+            "Gudu"
+        ]
+    },
+    {
+        "name": "王芳",
+        "profession": "动物行为学家",
+        "description": "王芳是一名42岁的动物行为学家，拥有动物行为学的硕士学位。她性格温和，细心观察动物的行为和情绪。她对电脑的使用非常熟练，能够使用多种分析软件。王芳对大语言模型非常熟悉，常用它来获取研究资料和行为分析工具。她的工作包括研究动物行为、撰写报告和进行现场观察。",
+        "usage": [
+            "Coursera",
+            "KhanAcademy"
+        ],
+        "advantages": [
+            "Coursera",
+            "KhanAcademy"
+        ],
+        "disadvantages": [
+            "DingDing",
+            "Lark"
+        ]
+    },
+    {
+        "name": "陈刚",
+        "profession": "宠物营养师",
+        "description": "陈刚是一名29岁的宠物营养师，拥有动物营养学的学士学位。他性格细致且耐心，擅长为不同品种的宠物制定营养计划。他对电脑有良好的知识背景，常用营养分析软件。陈刚对大语言模型的使用相对熟悉，主要用于查找食谱和营养成分。日常工作包括为客户提供饮食建议和营养咨询。",
+        "usage": [
+            "WeiYi",
+            "Fitbit"
+        ],
+        "advantages": [
+            "WeiYi",
+            "Fitbit"
+        ],
+        "disadvantages": [
+            "CtripApp",
+            "Qunar"
+        ]
+    },
+    {
+        "name": "赵敏",
+        "profession": "宠物训练师",
+        "description": "赵敏是一名26岁的宠物训练师，拥有动物训练相关的资格证书。她性格活泼，且非常耐心，尤其擅长与宠物沟通。对电脑的使用较为熟悉，能够使用视频编辑软件和社交媒体平台。赵敏对大语言模型的了解一般，主要用来查找训练技巧和视频教程。她的日常工作包括训练宠物、编写训练计划和与客户沟通。",
+        "usage": [
+            "DouyinShortVideo",
+            "Kuaishou"
+        ],
+        "advantages": [
+            "DouyinShortVideo",
+            "Kuaishou"
+        ],
+        "disadvantages": [
+            "Slack",
+            "Todoist"
+        ]
+    },
+    {
+        "name": "孙丽",
+        "profession": "宠物寄养服务提供者",
+        "description": "孙丽是一名30岁的宠物寄养服务提供者，拥有相关的职业培训。她性格细心且富有爱心，能够很好地照顾寄养的宠物。她对电脑的使用较为熟练，能够管理在线预约系统。孙丽对大语言模型的使用一般，主要用来获取经营管理建议。她的工作包括接收寄养宠物、提供日常护理和与宠物主人沟通。",
+        "usage": [
+            "XiaoZhuShortRent",
+            "GoodDoctorOnline"
+        ],
+        "advantages": [
+            "XiaoZhuShortRent",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "FeiChangZhun",
+            "TrafficAssistant"
+        ]
+    },
+    {
+        "name": "周杰",
+        "profession": "宠物摄影师",
+        "description": "周杰是一名38岁的宠物摄影师，拥有摄影相关的学位。他性格细致且富有创意，擅长捕捉宠物的瞬间。他对电脑的使用非常熟练，能够使用图像处理软件。周杰对大语言模型的了解较为一般，主要用来寻找创意灵感和编辑技巧。日常工作包括为客户拍摄宠物照片和后期制作。",
+        "usage": [
+            "FigmaApp",
+            "VisualStudioCode"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "VisualStudioCode"
+        ],
+        "disadvantages": [
+            "YoudaoTranslation",
+            "ShimoApp"
+        ]
+    },
+    {
+        "name": "郑玲",
+        "profession": "宠物药品销售代表",
+        "description": "郑玲是一名34岁的宠物药品销售代表，拥有药学相关的学士学位。她性格细心且擅长沟通，能够为客户提供专业的药品建议。她对电脑的使用非常熟练，能够使用客户管理系统。郑玲对大语言模型的使用较为熟悉，常用于获取最新的药品信息和市场动态。她的工作包括与客户沟通、销售产品和提供售后服务。",
+        "usage": [
+            "Slack",
+            "Todoist"
+        ],
+        "advantages": [
+            "Slack",
+            "Todoist"
+        ],
+        "disadvantages": [
+            "Meiyou",
+            "Gudu"
+        ]
+    },
+    {
+        "name": "刘娜",
+        "profession": "宠物心理咨询师",
+        "description": "刘娜是一名32岁的宠物心理咨询师，拥有心理学相关的硕士学位。她性格温和，细心倾听客户和宠物的需求。她对电脑的使用非常熟练，能够使用心理评估工具。刘娜对大语言模型的使用较为熟悉，常用来获取心理咨询技巧和案例研究。她的工作包括进行咨询、撰写报告和提供建议。",
+        "usage": [
+            "GoodDoctorOnline",
+            "YoudaoNote"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "YoudaoNote"
+        ],
+        "disadvantages": [
+            "Keep",
+            "Meiyou"
+        ]
+    },
+    {
+        "name": "高飞",
+        "profession": "宠物展览策划师",
+        "description": "高飞是一名40岁的宠物展览策划师，拥有活动策划相关的学士学位。他性格细致且富有创意，擅长组织各种宠物活动。他对电脑的使用非常熟练，能够使用项目管理软件。高飞对大语言模型的使用较为熟悉，主要用来获取活动策划的灵感和资源。日常工作包括组织展览、与供应商沟通和进行市场推广。",
+        "usage": [
+            "NotionApp",
+            "Calendly"
+        ],
+        "advantages": [
+            "NotionApp",
+            "Calendly"
+        ],
+        "disadvantages": [
+            "WeiYi",
+            "Fitbit"
+        ]
+    },
+    {
+        "name": "何静",
+        "profession": "宠物用品销售员",
+        "description": "何静是一名27岁的宠物用品销售员，拥有市场营销相关的学士学位。她性格外向，擅长与客户沟通，能够提供专业的产品建议。她对电脑的使用较为熟练，能够管理库存和客户信息。何静对大语言模型的熟悉程度一般，主要用来获取产品知识和销售技巧。她的工作包括接待客户、销售产品和进行市场推广。",
+        "usage": [
+            "WeChatApp",
+            "QQ"
+        ],
+        "advantages": [
+            "WeChatApp",
+            "QQ"
+        ],
+        "disadvantages": [
+            "DingDing",
+            "Lark"
+        ]
+    },
+    {
+        "name": "杨帆",
+        "profession": "宠物科学作家",
+        "description": "杨帆是一名45岁的宠物科学作家，拥有生物学博士学位。他性格细致且热爱写作，擅长撰写宠物相关的科学文章。他对电脑的使用非常熟练，能够使用写作软件和数据分析工具。杨帆对大语言模型的熟悉程度很高，常用它来获取研究资料和撰写灵感。日常工作包括撰写文章、进行研究和参加讲座。",
+        "usage": [
+            "WangYiCloudReading",
+            "Coursera"
+        ],
+        "advantages": [
+            "WangYiCloudReading",
+            "Coursera"
+        ],
+        "disadvantages": [
+            "DingDing",
+            "Todoist"
+        ]
+    },
+    {
+        "name": "郭丽",
+        "profession": "宠物用品设计师",
+        "description": "郭丽是一名29岁的宠物用品设计师，拥有工业设计学位。她性格细致且富有创意，擅长设计创新的宠物用品。她对电脑的使用非常熟练，能够使用设计软件和渲染工具。郭丽对大语言模型的熟悉程度一般，主要用来获取设计灵感和行业动态。她的工作包括设计新产品、与制造商沟通和进行市场调研。",
+        "usage": [
+            "FigmaApp",
+            "VisualStudioCode"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "VisualStudioCode"
+        ],
+        "disadvantages": [
+            "Gudu",
+            "SmartScaleApp"
+        ]
+    },
+    {
+        "name": "徐强",
+        "profession": "宠物救助组织志愿者",
+        "description": "徐强是一名志愿者，定期参与宠物救助组织的活动。他性格热情，细心照顾待救助的宠物。他对电脑的使用较为熟练，能够使用社交媒体和志愿者管理系统。徐强对大语言模型的熟悉程度一般，主要用来获取救助知识和活动信息。他的工作包括参与救助、照顾宠物和与其他志愿者沟通。",
+        "usage": [
+            "WeChatPay",
+            "Alipay"
+        ],
+        "advantages": [
+            "WeChatPay",
+            "Alipay"
+        ],
+        "disadvantages": [
+            "Fitbit",
+            "MintHealth"
+        ]
+    },
+    {
+        "name": "李华",
+        "profession": "幼儿园教师",
+        "description": "李华，28岁，拥有教育学硕士学位，细心且富有耐心。她对电脑的基础知识扎实，能够熟练使用办公软件。对 LLM 有一定了解，常用的智能设备包括平板和智能手机，习惯使用教育相关的应用程序。作为幼儿园教师，她的日常工作包括制定教学计划、组织活动、与家长沟通等。",
+        "usage": [
+            "KhanAcademy",
+            "ZuoYeBang"
+        ],
+        "advantages": [
+            "WeiYi",
+            "Quizlet"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "张伟",
+        "profession": "早教专家",
+        "description": "张伟，35岁，心理学博士，性格开朗，细心且富有同理心。他对电脑技术了解较少，但能使用基本的教育软件。对 LLM 了解一般，使用智能设备记录孩子的成长和发展。他的工作主要是评估儿童的心理发展，制定个性化教学方案，与家长沟通。",
+        "usage": [
+            "YoudaoTranslation",
+            "SelfLearningPlatform"
+        ],
+        "advantages": [
+            "Keep",
+            "GoodDoctorOnline"
+        ],
+        "disadvantages": [
+            "GitHub",
+            "DockerApp"
+        ]
+    },
+    {
+        "name": "王芳",
+        "profession": "小学教师",
+        "description": "王芳，30岁，拥有教育学学士学位，性格温和且细心。她对电脑的使用非常熟练，能够进行简单的编程。对 LLM 有较强的熟悉度，常用智能设备包括笔记本电脑和手机，使用教育类应用帮助学生学习。她的工作包括备课、上课、批改作业等。",
+        "usage": [
+            "WangYiYunKeTang",
+            "Coursera"
+        ],
+        "advantages": [
+            "XiaoYuanSearch",
+            "NotionApp"
+        ],
+        "disadvantages": [
+            "Ansible",
+            "Terraform"
+        ]
+    },
+    {
+        "name": "刘婷",
+        "profession": "儿童心理咨询师",
+        "description": "刘婷，32岁，拥有心理学硕士学位，性格细致且善于倾听。她对电脑知识有一定了解，使用智能设备进行在线咨询。熟悉 LLM，利用智能助手提高工作效率。她的工作主要是帮助儿童解决心理问题，与家长沟通。",
+        "usage": [
+            "GoodDoctorOnline",
+            "YoudaoNote"
+        ],
+        "advantages": [
+            "MintHealth",
+            "Fitbit"
+        ],
+        "disadvantages": [
+            "Kubernetes",
+            "Nmap"
+        ]
+    },
+    {
+        "name": "陈强",
+        "profession": "学前教育研究员",
+        "description": "陈强，40岁，教育学博士，性格严谨且细心。他对电脑的使用非常熟练，能够分析复杂的数据。对 LLM 有深入了解，使用智能设备进行数据分析。他的工作包括研究儿童教育理论，撰写论文，参与学术会议。",
+        "usage": [
+            "ProgrammingCat",
+            "Coursera"
+        ],
+        "advantages": [
+            "JupyterNotebook",
+            "DataCleaningAndIntegration"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "FFmpeg"
+        ]
+    },
+    {
+        "name": "赵雷",
+        "profession": "儿童艺术教育工作者",
+        "description": "赵雷，26岁，艺术教育专业本科生，性格开朗且富有创造力。对电脑的使用较为熟练，能够使用设计软件。对 LLM 有一定了解，使用智能设备记录和展示孩子们的艺术作品。日常工作包括组织艺术活动、指导孩子创作。",
+        "usage": [
+            "KhanAcademy",
+            "ZuoYeBang"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "Keep"
+        ],
+        "disadvantages": [
+            "Terraform",
+            "GitBash"
+        ]
+    },
+    {
+        "name": "孙丽",
+        "profession": "特教老师",
+        "description": "孙丽，38岁，特殊教育硕士，性格耐心且细致。对电脑有基本的操作能力，使用智能设备记录学生的学习进展。对 LLM 有一定了解，利用智能助手提高工作效率。她的工作主要是为特殊需求儿童制定个性化教学计划。",
+        "usage": [
+            "WangYiYunKeTang",
+            "SelfLearningPlatform"
+        ],
+        "advantages": [
+            "GoodDoctorOnline",
+            "WeiYi"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "周杰",
+        "profession": "小学数学教师",
+        "description": "周杰，29岁，数学教育硕士，性格严谨且细心。对电脑的使用非常熟练，能够使用数学软件进行教学。对 LLM 有较强的熟悉度，使用智能设备进行在线教学和作业布置。日常工作包括教授数学知识、批改作业。",
+        "usage": [
+            "Quizlet",
+            "KhanAcademy"
+        ],
+        "advantages": [
+            "NotionApp",
+            "Coursera"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "GitHub"
+        ]
+    },
+    {
+        "name": "黄梅",
+        "profession": "儿童营养师",
+        "description": "黄梅，33岁，营养学硕士，性格细致且关心他人。对电脑的使用熟练，能够使用营养分析软件。对 LLM 有一定的了解，使用智能设备记录儿童的饮食和健康数据。她的工作主要是为儿童提供营养指导。",
+        "usage": [
+            "GoodDoctorOnline",
+            "MintHealth"
+        ],
+        "advantages": [
+            "Fitbit",
+            "WeiYi"
+        ],
+        "disadvantages": [
+            "DockerApp",
+            "Nmap"
+        ]
+    },
+    {
+        "name": "李娜",
+        "profession": "儿童运动教练",
+        "description": "李娜，27岁，体育教育本科生，性格活泼且充满活力。对电脑的使用较少，主要使用智能设备记录运动数据。对 LLM 有初步了解，使用智能助手为孩子们制定运动计划。她的工作主要是教授儿童运动技能。",
+        "usage": [
+            "Keep",
+            "Gudu"
+        ],
+        "advantages": [
+            "Fitbit",
+            "WeiYi"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "FFmpeg"
+        ]
+    },
+    {
+        "name": "王强",
+        "profession": "儿童英语教师",
+        "description": "王强，31岁，英语教育硕士，性格开朗且细心。他对电脑的使用非常熟练，能够使用多种教育软件。对 LLM 有较强的熟悉度，使用智能设备进行在线教学和作业布置。日常工作包括教授英语、组织语言活动。",
+        "usage": [
+            "Coursera",
+            "KhanAcademy"
+        ],
+        "advantages": [
+            "Quizlet",
+            "ZuoYeBang"
+        ],
+        "disadvantages": [
+            "GitHub",
+            "Nmap"
+        ]
+    },
+    {
+        "name": "钱静",
+        "profession": "儿童科技教育工作者",
+        "description": "钱静，36岁，教育技术硕士，性格细致且善于思考。对电脑有很强的使用能力，能够编写简单的程序。对 LLM 有深入了解，使用智能设备进行科技教育的教学。她的工作主要是教授儿童编程和科技知识。",
+        "usage": [
+            "ProgrammingCat",
+            "Coursera"
+        ],
+        "advantages": [
+            "DockerApp",
+            "JupyterNotebook"
+        ],
+        "disadvantages": [
+            "Nmap",
+            "TensorFlow"
+        ]
+    },
+    {
+        "name": "郑丽",
+        "profession": "儿童戏剧教育工作者",
+        "description": "郑丽，34岁，戏剧教育硕士，性格开朗且富有创造力。对电脑的使用较为熟练，能够使用多媒体软件。对 LLM 有一定了解，使用智能助手进行戏剧教学。日常工作包括组织戏剧活动、指导孩子们表演。",
+        "usage": [
+            "KhanAcademy",
+            "ZuoYeBang"
+        ],
+        "advantages": [
+            "FigmaApp",
+            "Keep"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "Ansible"
+        ]
+    },
+    {
+        "name": "蒋伟",
+        "profession": "儿童音乐教育工作者",
+        "description": "蒋伟，29岁，音乐教育本科生，性格温柔且细心。他对电脑的基本操作能力较强，能够使用音乐相关软件。对 LLM 有一定了解，利用智能助手帮助学生学习乐器。日常工作包括教授音乐知识、组织音乐活动。",
+        "usage": [
+            "KhanAcademy",
+            "YoudaoNote"
+        ],
+        "advantages": [
+            "NetEaseCloudMusic",
+            "QQMusic"
+        ],
+        "disadvantages": [
+            "DockerCLI",
+            "GitHub"
+        ]
+    }
+]

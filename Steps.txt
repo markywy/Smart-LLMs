@@ -1,0 +1,34 @@
+前言：
+1. jsonl 文件格式化为 json 文件方法：python ./scripts/helper/jsonl_to_json.py <需要转换的文件路径>
+    这个指令会将 jsonl 文件格式化，输出到 jsonl 文件旁边（不需要额外参数）。
+2. 以下所有程序（.py 文件）保存在 ./scrips
+
+一、生成 Apps
+0. 开始：确认 assests/for_generation 文件夹中有 tool_taxonomy_zh.json
+1. generate_tool_names_zh.py: python ./scripts/generation/generate_tool_names_zh.py --input-path ./assets/for_generation/tool_taxonomy_zh.json
+2. generate_tool_thoghts_zh.py: python ./scripts/generation/generate_tool_thoughts_zh.py --input-path <1 中生成的文件路径>
+3. generate_tool_specs_zh.py: python ./scripts/generation/generate_tool_specs_zh.py --input-path <2 中生成的文件路径>
+
+执行完以上步骤，应该会有一个名字很长的文件（文件名结尾为_spec.jsonl），这里面有所有生成好的 Apps 和详细信息，将其转化为 json 文件保存好
+
+二、生成 Users
+0. 开始：确认 assests/for_generation 文件夹中有 user_taxonomy_zh.json
+1. generate_users_zh.py: python ./scripts/generation/generate_tool_names_zh.py --input-path ./assets/for_generation/user_taxonomy_zh.json --app-path <App 文件路径>
+执行完以上步骤，会有一个 gen_users_zh.jsonl，这里面存储了所有 user 的信息，将其转化为 json 文件保存好
+
+三、生成 Cases
+0. 开始：根据生成的 Apps，手动生成所有 Apps 的潜在风险（可以用 GPT 帮助实现，记得强调“以json格式输出”），存储到 assests/for_generation/apps_risks_zh.json
+1. generate_test_cases_zh.py: python ./scripts/generation/generate_test_cases_zh.py --max-attempts <生成 Cases 最大数量> --apps-paths <Apps 文件路径> --risk-file-path <潜在风险文件路径> --users-file-path <User 信息路径>
+执行完以上步骤，会有一个 gen_cases_时间.jsonl，这里面存储了所有的 Agent 想象情景
+
+四、进行模拟对话并生成 Trajectories
+1. emulate_zh.py: python ./scripts/emulate_zh.py --input-path <Cases 文件路径>
+执行完以上步骤，会生成所有 Cases 的 Trajectory
+
+五、进行风险评估
+1. evaluate_zh.py: python ./scripts/evaluate_zh.py --input-path <Trajectories 文件路径> --eval-type {agent_safe, agent_help} --critique-rounds <辩论回合数>
+    {} 表示可选的评估标准，'agent_save' 表示程序将进行agent安全性评估， 'agent_help' 表示程序将进行agent实用性评估
+    --critique-rounds 辩论回合数，评估者会根据这个参数不断自我批判、改进评估结果，最后会由虚拟用户做出最终评估
+    注意：辩论回合不要太多！不然耗时耗钱！
+
+最后在 Trajectorie 文件旁边就会有对应的评估结果，可以作为实验数据引入论文了
