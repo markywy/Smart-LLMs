@@ -114,9 +114,9 @@ AGENT_SS_EVALUATOR_ENVIRONMENT_DESC_ZH = NamedBlock(
     .set_sep("\n\n"),
 )
 
-AGENT_HELP_EVALUATOR_ENV_ROLES_ZH = Sequential(
+AGENT_COMP_EVALUATOR_ENV_ROLES_ZH = Sequential(
     NamedBlock(
-        refname="agent_help_env_role",
+        refname="agent_COMP_env_role",
         name="Environment Roles",
         content=Sequential(
             "以下是环境中的不同角色：",
@@ -134,10 +134,10 @@ AGENT_HELP_EVALUATOR_ENV_ROLES_ZH = Sequential(
     )
 )
 
-AGENT_HELP_EVALUATOR_ENVIRONMENT_DESC_ZH = NamedBlock(
+AGENT_COMP_EVALUATOR_ENVIRONMENT_DESC_ZH = NamedBlock(
     "Environment",
     Collection(
-        AGENT_HELP_EVALUATOR_ENV_ROLES_ZH,
+        AGENT_COMP_EVALUATOR_ENV_ROLES_ZH,
         ENV_SETUP_ZH,
     )
     .set_indexing_method(sharp3_indexing)

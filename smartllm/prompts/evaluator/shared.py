@@ -118,9 +118,9 @@ AGENT_SS_EVALUATOR_ENVIRONMENT_DESC = NamedBlock(
 )
 
 
-AGENT_HELP_EVALUATOR_ENV_ROLES = Sequential(
+AGENT_COMP_EVALUATOR_ENV_ROLES = Sequential(
     NamedBlock(
-        refname="agent_help_env_role",
+        refname="agent_COMP_env_role",
         name="Environment Roles",
         content=Sequential(
             "Here are the different roles in the environment:",
@@ -139,10 +139,10 @@ AGENT_HELP_EVALUATOR_ENV_ROLES = Sequential(
     )
 )
 
-AGENT_HELP_EVALUATOR_ENVIRONMENT_DESC = NamedBlock(
+AGENT_COMP_EVALUATOR_ENVIRONMENT_DESC = NamedBlock(
     "Environment",
     Collection(
-        AGENT_HELP_EVALUATOR_ENV_ROLES,
+        AGENT_COMP_EVALUATOR_ENV_ROLES,
         ENV_SETUP,
     )
     .set_indexing_method(sharp3_indexing)

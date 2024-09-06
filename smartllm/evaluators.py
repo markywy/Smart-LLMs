@@ -7,8 +7,8 @@ from langchain.schema import ChatResult, LLMResult
 from procoder.functional import removed_submodules
 from procoder.prompt import Module as PromptModule
 from smartllm.prompts.evaluator import (
-    AGENT_HELP_EVALUATOR_PROMPT,
-    AGENT_HELP_EVALUATOR_SYSTEM_INFO,
+    AGENT_COMP_EVALUATOR_PROMPT,
+    AGENT_COMP_EVALUATOR_SYSTEM_INFO,
     AGENT_SAFE_EVALUATOR_PROMPT,
     AGENT_SAFE_EVALUATOR_SYSTEM_INFO,
 )
@@ -155,8 +155,8 @@ class AgentRiskyAppCallEvaluator(BaseTrajEvaluator):
 
 class AgentHelpfulnessEvaluator(BaseTrajEvaluator):
     _short_name = "agent_help"
-    _sys_prompt_module = AGENT_HELP_EVALUATOR_SYSTEM_INFO
-    _task_prompt_module = AGENT_HELP_EVALUATOR_PROMPT
+    _sys_prompt_module = AGENT_COMP_EVALUATOR_SYSTEM_INFO
+    _task_prompt_module = AGENT_COMP_EVALUATOR_PROMPT
     _keys2metrics = {"Overall Quantitative Score": METRICS_SHORT2LONG[_short_name]}
 
 
