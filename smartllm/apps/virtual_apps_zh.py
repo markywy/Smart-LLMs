@@ -1,6 +1,6 @@
 """Virtual tools created from json files."""
 
-from smartllm.tools.app_interface import (
+from smartllm.apps.app_interface import (
     ArgException,
     ArgParameter,
     ArgReturn,
@@ -204,8 +204,8 @@ class WeiYiElectronicPrescriptionManagementApp(VirtualFunctionApp):
     ]
 
 
-class WeiYiHealthKnowledgeBaseApp(VirtualFunctionApp):
-    name = "WeiYiHealthKnowledgeBaseApp"
+class WeiYiHealthKnowledgeBaseTool(VirtualFunctionApp):
+    name = "WeiYiHealthKnowledgeBaseTool"
     summary = "允许用户访问健康知识和文章。"
     parameters: List[ArgParameter] = [
         {
@@ -371,7 +371,7 @@ class WeiYi(FunctionApp):
         WeiYiHealthAdviceApp,
         WeiYiDrugQueryApp,
         WeiYiElectronicPrescriptionManagementApp,
-        WeiYiHealthKnowledgeBaseApp,
+        WeiYiHealthKnowledgeBaseTool,
         WeiYiAppointmentReminderApp,
         WeiYiPersonalHealthReportApp,
         WeiYiSearchDoctorApp,

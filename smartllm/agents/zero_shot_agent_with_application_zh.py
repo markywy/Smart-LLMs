@@ -22,7 +22,7 @@ from langchain.schema import (
     HumanMessage,
     SystemMessage,
 )
-from langchain.tools.base import BaseApp
+from langchain.tools.base import BaseTool
 from procoder.functional import (
     add_refnames,
     collect_refnames,
@@ -30,7 +30,7 @@ from procoder.functional import (
     format_prompt,
 )
 from smartllm.prompts.agent import *
-from smartllm.tools.app_interface import BaseApp
+from smartllm.apps.app_interface import BaseTool
 from smartllm.utils import get_first_json_object_str
 from smartllm.utils.llm import get_model_category
 from smartllm.utils.my_typing import *
@@ -41,7 +41,7 @@ AGENT_TYPES = ["naive", "ss_only", "helpful_ss"]
 
 class ZeroShotAgentWithAppZh(ZeroShotAgent):
     @staticmethod
-    def get_all_tools(apps: Sequence[BaseApp]) -> List[BaseApp]:
+    def get_all_tools(apps: Sequence[BaseTool]) -> List[BaseTool]:
         """Return all tools available to the agent."""
         all_tools = []
         for app in apps:
@@ -52,7 +52,7 @@ class ZeroShotAgentWithAppZh(ZeroShotAgent):
     def create_prompt(
         cls,
         user, 
-        apps: Sequence[BaseApp],
+        apps: Sequence[BaseTool],
         prompt_type: Optional[str] = "naive",
         input_variables: Optional[List[str]] = None,
         use_chat_format: Optional[bool] = False,
@@ -111,7 +111,7 @@ class ZeroShotAgentWithAppZh(ZeroShotAgent):
         cls,
         user, 
         llm: BaseLanguageModel,
-        apps: Sequence[BaseApp],
+        apps: Sequence[BaseTool],
         agent_type: Optional[str] = "naive",
         callback_manager: Optional[BaseCallbackManager] = None,
         use_chat_format: Optional[bool] = False,

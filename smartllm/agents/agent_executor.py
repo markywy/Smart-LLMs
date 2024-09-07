@@ -19,9 +19,9 @@ from langchain.callbacks.manager import (
     Callbacks,
 )
 from langchain.schema import AgentAction, AgentFinish, OutputParserException
-from langchain.tools.base import BaseApp
-from smartllm.apps.app_interface import BaseApp
-from smartllm.utils import InvalidApp
+from langchain.tools.base import BaseTool
+from smartllm.apps.app_interface import BaseTool
+from smartllm.utils import InvalidTool
 from smartllm.utils.my_typing import *
 
 
@@ -29,13 +29,13 @@ class AgentExecutorWithApp(AgentExecutor):
     """Agent executor with apps"""
 
     app_names: List[str]
-    apps: List[BaseApp]
+    apps: List[BaseTool]
 
     @classmethod
     def from_agent_and_apps(
         cls,
         agent: Union[BaseSingleActionAgent, BaseMultiActionAgent],
-        apps: Sequence[BaseApp],
+        apps: Sequence[BaseTool],
         callbacks: Callbacks = None,
         **kwargs: Any,
     ) -> AgentExecutor:
@@ -55,7 +55,7 @@ class AgentExecutorWithApp(AgentExecutor):
     def from_agent_and_tools(
         cls,
         agent: Union[BaseSingleActionAgent, BaseMultiActionAgent],
-        tools: Sequence[BaseApp],
+        tools: Sequence[BaseTool],
         callbacks: Callbacks = None,
         **kwargs: Any,
     ) -> AgentExecutor:
@@ -100,10 +100,10 @@ class AgentExecutorWithApp(AgentExecutor):
             final_output["intermediate_steps"] = intermediate_steps
         return final_output
 
-    # Smartllm: below parts are just override to replace InvalidApp with ours, update at langchain==0.0.277
+    # Smartllm: below parts are just override to replace InvalidTool with ours, update at langchain==0.0.277
     def _take_next_step(
         self,
-        name_to_app_map: Dict[str, BaseApp],
+        name_to_app_map: Dict[str, BaseTool],
         color_mapping: Dict[str, str],
         inputs: Dict[str, str],
         intermediate_steps: List[Tuple[AgentAction, str]],
@@ -111,7 +111,7 @@ class AgentExecutorWithApp(AgentExecutor):
     ) -> Union[AgentFinish, List[Tuple[AgentAction, str]]]:
         """Take a single step in the thought-action-observation loop.
 
-        Override to use custom InvalidApp."""
+        Override to use custom InvalidTool."""
         try:
             intermediate_steps = self._prepare_intermediate_steps(intermediate_steps)
 
@@ -184,7 +184,7 @@ class AgentExecutorWithApp(AgentExecutor):
             else:
                 app_run_kwargs = self.agent.app_run_logging_kwargs()
                 # * ====== Smartllm: begin overwrite ======
-                observation = InvalidApp(available_tools=self.app_names).run(
+                observation = InvalidTool(available_tools=self.app_names).run(
                     agent_action.tool,
                     verbose=self.verbose,
                     color=None,
@@ -197,13 +197,13 @@ class AgentExecutorWithApp(AgentExecutor):
 
     async def _atake_next_step(
         self,
-        name_to_app_map: Dict[str, BaseApp],
+        name_to_app_map: Dict[str, BaseTool],
         color_mapping: Dict[str, str],
         inputs: Dict[str, str],
         intermediate_steps: List[Tuple[AgentAction, str]],
         run_manager: Optional[AsyncCallbackManagerForChainRun] = None,
     ) -> Union[AgentFinish, List[Tuple[AgentAction, str]]]:
-        """Override to use custom InvalidApp."""
+        """Override to use custom InvalidTool."""
         try:
             intermediate_steps = self._prepare_intermediate_steps(intermediate_steps)
 
@@ -278,7 +278,7 @@ class AgentExecutorWithApp(AgentExecutor):
             else:
                 app_run_kwargs = self.agent.app_run_logging_kwargs()
                 # * ====== Smartllm: begin overwrite ======
-                observation = await InvalidApp(available_tools=self.app_names).arun(
+                observation = await InvalidTool(available_tools=self.app_names).arun(
                     agent_action.tool,
                     verbose=self.verbose,
                     color=None,

@@ -21,7 +21,7 @@ def merge_data(naive_path, safe_path, COMP_path):
                 'case_idx': idx,
                 'input': item['input'],
                 'profession': item['case']['User']['Profession'],
-                'toolkits': item['case']['Appkits'],
+                'apps': item['case']['Appkits'],
                 'app_call_risk': safe_dict[idx],
                 'helpfulness': COMP_dict[idx]
             })

@@ -25,8 +25,8 @@ def process_data(input_path, output_path):
     processed_data = []
 
     for item in data:
-        # Rename 'toolkits' to 'applications'
-        item['applications'] = item.pop('toolkits', [])
+        # Rename 'apps' to 'applications'
+        item['applications'] = item.pop('apps', [])
         
         # Convert 'app_call_risk' and 'helpfulness' to int and handle potential bad formats
         app_call_risk = convert_int(item['app_call_risk'])

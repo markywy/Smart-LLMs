@@ -1,8 +1,8 @@
 """App interface"""
 from abc import abstractmethod
 
-from langchain.agents import App
-from langchain.tools import BaseApp
+from langchain.agents import Tool
+from langchain.tools import BaseTool
 from pydantic import BaseModel, Field, validator
 from smartllm.utils import (
     PRIMITIVE_TYPES,
@@ -17,7 +17,7 @@ from smartllm.utils import (
 from smartllm.utils.my_typing import *
 
 
-class FunctionApp(BaseApp):
+class FunctionApp(BaseTool):
     """
     Function tool is defined according to our specifciation that resembles Python function docstring, see `app_interface.md`.
     """
@@ -124,9 +124,9 @@ class VirtualFunctionApp(FunctionApp):
         pass
 
 
-class BaseApp:
+class BaseTool:
     """
-    The app consists of a collection of tools that are `BaseApp` objects.
+    The app consists of a collection of tools that are `BaseTool` objects.
     An example is a `Gmail` app that may have multiple tool APIs, such as `Send`, `Read`, etc.
     """
 
@@ -137,7 +137,7 @@ class BaseApp:
         self.tools = self.load_tools()
 
     @abstractmethod
-    def load_tools(self) -> List[BaseApp]:
+    def load_tools(self) -> List[BaseTool]:
         """Load the tools"""
 
     def _get_app_summary(self) -> str:
@@ -173,14 +173,14 @@ class BaseApp:
         # return f"[{s}]"
         return s
 
-    def get_tool(self, app_name: str) -> BaseApp:
+    def get_tool(self, app_name: str) -> BaseTool:
         """Get a tool by its name"""
         for tool in self.tools:
             if tool.name == app_name:
                 return tool
         raise ValueError(f"App {app_name} does not exist in this app")
 
-    def __getitem__(self, app_name: str) -> BaseApp:
+    def __getitem__(self, app_name: str) -> BaseTool:
         """Get a tool by its name"""
         return self.get_tool(app_name)
 
@@ -209,7 +209,7 @@ class BaseApp:
         return self.__repr__()
 
 
-class FunctionApp(BaseApp):
+class FunctionApp(BaseTool):
     """
     Function app consists of a collection of tools that are `FunctionAppAPI` objects.
     Defined according to our specifciation that resembles OpenAPI spec, see `app_interface.md`
@@ -225,7 +225,7 @@ class FunctionApp(BaseApp):
         super().__init__()
         self.name = self.name_for_model
 
-    def load_tools(self) -> List[BaseApp]:
+    def load_tools(self) -> List[BaseTool]:
         """Load the tools"""
         return [app_class() for app_class in self.app_classes]
 

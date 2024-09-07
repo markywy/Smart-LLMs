@@ -208,7 +208,7 @@
                 ]
             },
             {
-                "name": "HealthKnowledgeBaseApp",
+                "name": "HealthKnowledgeBaseTool",
                 "summary": "允许用户访问健康知识和文章。",
                 "parameters": [
                     {

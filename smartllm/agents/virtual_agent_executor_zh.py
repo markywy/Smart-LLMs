@@ -38,7 +38,7 @@ from langchain.schema import (
     HumanMessage,
     SystemMessage,
 )
-from langchain.tools.base import BaseApp, StructuredApp
+from langchain.tools.base import BaseTool, StructuredApp
 from langchain.utilities.asyncio import asyncio_timeout
 from procoder.functional import collect_refnames, format_multiple_prompts, format_prompt
 from procoder.prompt import Module as PromptModule
@@ -54,8 +54,8 @@ from smartllm.prompts.simulator import (
     STD_SIMULATOR_SYSTEM_INFO_ZH,
 )
 from smartllm.apps import RealHuman, RealHumanAssistanceQuery
-from smartllm.apps.app_interface import BaseApp
-from smartllm.utils import InvalidApp, run_with_input_validation, validate_outputs
+from smartllm.apps.app_interface import BaseTool
+from smartllm.utils import InvalidTool, run_with_input_validation, validate_outputs
 from smartllm.utils.my_typing import *
 
 from .agent_executor import AgentExecutorWithApp
@@ -94,7 +94,7 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
         cls,
         user, 
         agent: Union[BaseSingleActionAgent, BaseMultiActionAgent],
-        apps: Sequence[BaseApp],
+        apps: Sequence[BaseTool],
         llm_simulator: BaseLanguageModel,
         llm_critiquer: Optional[BaseLanguageModel] = None,
         num_critique_steps: Optional[int] = 0,
@@ -211,7 +211,7 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
         ]
 
     @property
-    def llm_simulator_tool(self) -> BaseApp:
+    def llm_simulator_tool(self) -> BaseTool:
         result = StructuredApp.from_function(
             func=lambda callbacks, **kwargs: self._get_simulated_observation(
                 callbacks, **kwargs
@@ -506,13 +506,13 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
 
     def _take_next_step(
         self,
-        name_to_app_map: Dict[str, BaseApp],
+        name_to_app_map: Dict[str, BaseTool],
         color_mapping: Dict[str, str],
         inputs: Dict[str, str],
         intermediate_steps: List[Tuple[AgentAction, str]],
         run_manager: Optional[CallbackManagerForChainRun] = None,
     ) -> Union[AgentFinish, List[Tuple[AgentAction, str]]]:
-        """Override to use virtual tool execution and custom InvalidApp."""
+        """Override to use virtual tool execution and custom InvalidTool."""
         # Call the LLM to see what to do.
         output = self.agent.plan(intermediate_steps, **inputs)
         # If the tool chosen is the finishing tool, then we end and return.
@@ -568,7 +568,7 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
                     )
             else:
                 app_run_kwargs = self.agent.app_run_logging_kwargs()
-                observation_text = InvalidApp(available_tools=self.app_names).run(
+                observation_text = InvalidTool(available_tools=self.app_names).run(
                     agent_action.tool,
                     verbose=self.verbose,
                     color=None,
@@ -584,12 +584,12 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
 
     async def _atake_next_step(
         self,
-        name_to_app_map: Dict[str, BaseApp],
+        name_to_app_map: Dict[str, BaseTool],
         color_mapping: Dict[str, str],
         inputs: Dict[str, str],
         intermediate_steps: List[Tuple[AgentAction, str]],
     ) -> Union[AgentFinish, List[Tuple[AgentAction, str]]]:
-        """Override to use virtual tool execution and custom InvalidApp."""
+        """Override to use virtual tool execution and custom InvalidTool."""
         # Call the LLM to see what to do.
         output = await self.agent.aplan(intermediate_steps, **inputs)
         # If the tool chosen is the finishing tool, then we end and return.
@@ -653,7 +653,7 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
                     )
             else:
                 app_run_kwargs = self.agent.app_run_logging_kwargs()
-                observation = await InvalidApp(available_tools=self.app_names).arun(
+                observation = await InvalidTool(available_tools=self.app_names).arun(
                     agent_action.tool,
                     verbose=self.verbose,
                     color=None,

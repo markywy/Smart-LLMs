@@ -13,7 +13,7 @@ from smartllm.utils import read_file
 
 PY_HEADER = """
 \"\"\"Virtual tools created from json files.\"\"\"
-from smartllm.tools.app_interface import (
+from smartllm.apps.app_interface import (
     ArgException,
     ArgParameter,
     ArgReturn,

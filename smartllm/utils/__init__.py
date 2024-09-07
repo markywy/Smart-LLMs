@@ -21,7 +21,7 @@ from .tool import (
     ArgParameter,
     ArgReturn,
     DummyAppWithMessage,
-    InvalidApp,
+    InvalidTool,
     create_str,
     find_app_spec,
     format_app_dict,
