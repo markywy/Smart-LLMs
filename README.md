@@ -7,17 +7,7 @@ With the widespread application of LLM-Agent, an increasing number of people are
 
 Our Multi-agent framework consists of two core components: an Interaction Simulator and an Evaluator. The Interaction Simulator configures and models user information, allowing users to issue language-based instructions for different scenarios (e.g., booking a flight). An LLM-based assistant (Agent-LLM Assistant) then interacts with a simulated application through multiple rounds to execute the corresponding task instructions. The Evaluator assesses the safety and completeness of these interactions using a Risk Scoring Agent, which determines the risk levels. Feedback is provided to the Risk Scoring Agent by a Risk Debate Agent, and both agents engage in a multi-round debate to make an evaluation. Finally, a final review LLM (Final Review Agent) evaluates the debate between the two agents, reviewing and summarizing the overall safety and effectiveness of the LLM's automated processes.
 
-![Framework](assets\figures\Framework.jpg)
-
-## Content
-
-This manual contains:
-
-* [Generating your own virtual apps, users and usage cases with LLM]
-  
-* [Customizing the simulation environment and conducting simulations.]
-
-* [Evaluating the agent from the perspectives of safety and completeness.]
+![Framework](./assets/figures/Framework.jpg)
 
 ## Preparations
 ### Installation
