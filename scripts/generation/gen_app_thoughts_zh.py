@@ -29,7 +29,7 @@ GenFuncExecutor.register_args(parser)
 
 parser.add_argument(
     "--apps-paths",
-    "-tp",
+    "-ap",
     type=str,
     nargs="+",
     default=["./assets/all_apps_zh.json"],

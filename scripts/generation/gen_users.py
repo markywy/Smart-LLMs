@@ -18,7 +18,7 @@ DataLoader.register_args(
     parser, default_input_path="assets/for_generation/user_taxonomy.json"
 )
 BaseFuncExecutor.register_args(parser)
-parser.add_argument("--app-path", "-tp", type=str, default="./assets/all_apps.json")
+parser.add_argument("--apps-path", "-ap", type=str, default="./assets/all_apps.json")
 parser.add_argument("--dump-dir", "-du", type=str, default="./dumps/users")
 parser.add_argument(
     "--output-file-name", "-out", type=str, default="gen_users.jsonl"

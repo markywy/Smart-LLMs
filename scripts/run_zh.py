@@ -3,9 +3,9 @@ import datetime
 import os
 import os.path as osp
 
-from smartllm.agents import AGENT_TYPES, SIMULATORS
+from smartllm.agents import AGENT_TYPES, SIMULATORS_ZH
 from smartllm.dataloader import DataLoader
-from smartllm.simulate import EVALUATORS
+from smartllm.simulate_zh import EVALUATORS_ZH
 from smartllm.utils import llm_register_args
 
 # format YYYY_MM_DD__HH_MM_SS
@@ -31,7 +31,7 @@ parser.add_argument(
     "-stp",
     type=str,
     default="adv_thought",
-    choices=list(SIMULATORS.keys()),
+    choices=list(SIMULATORS_ZH.keys()),
 )
 parser.add_argument("--batch-size", "-bs", type=int, default=None, help="batch size")
 parser.add_argument("--auto", "-auto", action="store_true", help="auto mode")
@@ -71,7 +71,7 @@ print("The trajectories are saved to", output_path)
 cmd = f"python {EVALUATE_SCRIPT} -inp {output_path}.jsonl"
 if args.batch_size is not None:
     cmd += f"-bs {args.batch_size}"
-for ev in EVALUATORS.keys():
+for ev in EVALUATORS_ZH.keys():
     run_command(f"{cmd} -ev {ev}")
 
 # read evaluation results

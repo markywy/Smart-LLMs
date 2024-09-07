@@ -51,13 +51,13 @@ class {app_cls_name}(VirtualFunctionApp):
 
 args = argparse.ArgumentParser()
 args.add_argument(
-    "--tool-spec-dir",
+    "--app-spec-dir",
     "-d",
     type=str,
     default="./assets",
 )
 args.add_argument(
-    "--tool-spec-files",
+    "--app-spec-files",
     "-i",
     type=str,
     nargs="+",

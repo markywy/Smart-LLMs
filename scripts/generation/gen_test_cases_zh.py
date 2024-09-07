@@ -32,7 +32,7 @@ parser.add_argument("--gen-filename", "-gen", type=str, default="gen_cases")
 
 parser.add_argument(
     "--apps-paths",
-    "-tp",
+    "-ap",
     nargs="+",
     type=str,
     default=["./assets/all_apps_zh.json"],
