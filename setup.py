@@ -10,6 +10,9 @@ setuptools.setup(
     description="A Simulated Multi-Agent Risk and Task Assessment for LLMs",
     url="https://github.com/markywy/SmartLLMs",
     packages=setuptools.find_packages(),
-    install_requires=requirements,
+    install_requires=[
+        requirements,
+        "@git+https://github.com/dhh1995/PromptCoder.git#egg=package_name"
+    ],
     python_requires=">=3.6",
 )

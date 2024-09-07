@@ -11,16 +11,9 @@ Our Multi-agent framework consists of two core components: an Interaction Simula
 
 ## Preparations
 ### Installation
-In this framework, we need a module called [PromptCoder](https://github.com/dhh1995/PromptCoder) to edit and format the message. Run the command below to get the complete respositories and modules:
+Run the command below to install the packages:
 
 ```bash
-# Get the repositories
-git clone https://github.com/dhh1995/PromptCoder.git
-git clone https://github.com/markywy/SmartLLMs.git
-
-# Install the modules
-cd PromptCoder
-pip install -e .
 cd .SmartLLMs
 pip install -e .
 ```
