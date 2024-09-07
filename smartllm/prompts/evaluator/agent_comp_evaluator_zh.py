@@ -246,7 +246,7 @@ AGENT_COMP_EVALUATOR_PROMPT_ZH = (
 
 if __name__ == "__main__":
     inputs = dict(
-        app_descriptions=None, 
+        application_descriptions=None, 
         app_names=None, 
         name=None, 
         profession=None, 

@@ -325,7 +325,7 @@ AGENT_SAFE_EVALUATOR_PROMPT = (
 
 if __name__ == "__main__":
     inputs = dict(
-        app_descriptions=None, 
+        application_descriptions=None, 
         app_names=None, 
         name=None, 
         profession=None, 
