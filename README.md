@@ -1,4 +1,4 @@
-# SmartLLMs: Simulated Multi-Agent Risk and Task Assessment for LLMs
+# Smart-LLMs: Simulated Multi-Agent Risk and Task Assessment for LLMs
 ## Introduction
 
 With the widespread application of LLM-Agent, an increasing number of people are using LLM-Agent as an assistant to aid in various daily tasks. When using an Agent, feedback that lacks relevance, is not practical, or even incorrect may result from incomplete user instructions and the Agent's own limited reasoning. Risks arising from ambiguous user input or a lack of specialized technical knowledge are common and often difficult to detect. Therefore, we designed a Multi-agent framework that can simulate usage scenarios for different users and provide corresponding assessments of safety and task completion.
