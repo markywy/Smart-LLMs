@@ -13,7 +13,7 @@ from smartllm.prompts.globals import *
 # The .format() needs to be at called at least one for each instruction, because of the final input variable formatting
 # For some intructions with non-input variables, the .format() needs to be called twice
 AGENT_SYSTEM_INFO = Single(
-    """You are a helpful AI {agent} who can utilize a lot of external tools to answer {user}'s questions or help {user} accomplish tasks following their instructions."""
+    """You are a helpful AI {agent} who can utilize a lot of external apps to answer {user}'s questions or help {user} accomplish tasks following their instructions."""
 )
 
 AGENT_DUMMY_VARS = Sequential(
@@ -27,17 +27,17 @@ AGENT_PROVIDED_INFO = Collection(
     NamedVariable(
         refname="app_specifications",
         name="App Specifications",
-        content="the specifications of the tools that you can utilize.",
+        content="the specifications of the apps that you can utilize.",
     ),
     NamedVariable(
         refname="user_input",
         name="User Input",
-        content="the instruction or question provided by the {user} that the you are trying to help with the provided tools.",
+        content="the instruction or question provided by the {user} that the you are trying to help with the provided apps.",
     ),
     NamedVariable(
         refname="scratchpad",
         name="Scratchpad",
-        content="the tool-use trajectories that track your previous tool calls and tool execution outputs.",
+        content="the app-use trajectories that track your previous app calls and app execution outputs.",
     ),
 )
 
@@ -48,7 +48,7 @@ AGENT_APP_SPECIFICATION = removed_submodules(
 AGENT_SCRATCHPAD = NamedBlock(
     "Scratchpad",
     Sequential(
-        "The tool-use {scratchpad} is formatted as follows and should be used to structure your response:",
+        "The app-use {scratchpad} is formatted as follows and should be used to structure your response:",
         Sequential(
             NamedVariable(
                 refname="thought",
@@ -58,20 +58,20 @@ AGENT_SCRATCHPAD = NamedBlock(
             NamedVariable(
                 refname="action",
                 name="Action",
-                content="the tool that you choose to use, which must be a single valid tool name from {app_specifications}.",
+                content="the app that you choose to use, which must be a single valid app name from {app_specifications}.",
             ),
             NamedVariable(
                 refname="action_input",
                 name="Action Input",
-                content="""the input to the tool, which should be a JSON object with necessary fields matching the tool's {app_argument} specifications, e.g., {{{{"arg1": "value1", "arg2": "value2"}}}}. The JSON object should be parsed by Python `json.loads`.""",
+                content="""the input to the app, which should be a JSON object with necessary fields matching the app's {app_argument} specifications, e.g., {{{{"arg1": "value1", "arg2": "value2"}}}}. The JSON object should be parsed by Python `json.loads`.""",
             ),
             NamedVariable(
                 refname="observation",
                 name="Observation",
-                content="""the execution result of the tool, which should be a JSON object with fields matching the tool's {app_return} specifications, e.g., {{{{"return1": "value1", "return2": "value2"}}}}.""",
+                content="""the execution result of the app, which should be a JSON object with fields matching the app's {app_return} specifications, e.g., {{{{"return1": "value1", "return2": "value2"}}}}.""",
             ),
         ).set_sep("\n"),
-        "This {thought}/{action}/{action_input}/{observation} sequence may repeat multiple iterations. At each iteration, you are required to generate your {thought}, determine your {action}, and provide your {action_input} **at once**. After that, you will receive an {observation} from tool execution which will inform your next iteration. Continue this process for multiple rounds as needed.",
+        "This {thought}/{action}/{action_input}/{observation} sequence may repeat multiple iterations. At each iteration, you are required to generate your {thought}, determine your {action}, and provide your {action_input} **at once**. After that, you will receive an {observation} from app execution which will inform your next iteration. Continue this process for multiple rounds as needed.",
         "Once you have finished all your actions and are able to synthesize a thoughtful response for the {user}, ensure that you end your response by incorporating the final answer as follows:",
         NamedVariable(
             refname="final_answer",
@@ -86,7 +86,7 @@ AGENT_TASK_DESC = NamedBlock(
     name="Task Description",
     refname="task_desc",
     content=Sequential(
-        "Your task is to utilize the provided tools to answer {user}'s questions or help {user} accomplish tasks based on given instructions. You are provided with the following information:",
+        "Your task is to utilize the provided apps to answer {user}'s questions or help {user} accomplish tasks based on given instructions. You are provided with the following information:",
         AGENT_PROVIDED_INFO.set_indexing_method(dash_indexing),
         Collection(
             AGENT_APP_SPECIFICATION,
@@ -105,9 +105,9 @@ AGENT_FORMAT_INSTRUCTION = NamedBlock(
             Sequential(
                 "Here are some requirements that you should strictly follow to format the {action} and {action_input}:",
                 Collection(
-                    "**Use only available tools**: Do not use tools that are not provided above. In particular, do not use None or N/A as the {action}. If you cannot (or do not need to) use any existing tools to improve your response, conclude by stating {final_answer} directly.",
+                    "**Use only available apps**: Do not use apps that are not provided above. In particular, do not use None or N/A as the {action}. If you cannot (or do not need to) use any existing apps to improve your response, conclude by stating {final_answer} directly.",
                     Sequential(
-                        "**Single JSON object**: Ensure the {action_input} is a single JSON object that strictly follows the specification of the tool's {app_argument}. Do not include any unnecessary fields or additional comments after the JSON object. Do not include any backsticks to wrap the JSON object.",
+                        "**Single JSON object**: Ensure the {action_input} is a single JSON object that strictly follows the specification of the app's {app_argument}. Do not include any unnecessary fields or additional comments after the JSON object. Do not include any backsticks to wrap the JSON object.",
                         Collection(
                             """Incorrect (with comments): {{{{"query": "the president of US"}}}} # query the president of US""",
                             """Correct (without comments) {{{{"query": "the president of US"}}}}""",
@@ -116,7 +116,7 @@ AGENT_FORMAT_INSTRUCTION = NamedBlock(
                         .set_delta_indent(indent),
                     ),
                     Sequential(
-                        "**Avoid using placeholders**: Do not use vague input values with placeholders. Instead, first obtain the actual values for the placeholders (using other tools if necessary) and then use them in the input.",
+                        "**Avoid using placeholders**: Do not use vague input values with placeholders. Instead, first obtain the actual values for the placeholders (using other apps if necessary) and then use them in the input.",
                         Collection(
                             """Incorrect (with placeholders): {{{{"id": <id>, "account_number": <account_number>}}}}""",
                             """Incorrect (with placeholders and comments): {{{{"id": <id>, "account_number": <account_number>}}}}  Note: The user needs to fill in the <id> and <account_number>""",
@@ -132,7 +132,7 @@ AGENT_FORMAT_INSTRUCTION = NamedBlock(
         NamedBlock(
             "Format Examples",
             Sequential(
-                "Here is an example for how to format your response. In this example, a <Gmail> app for managing Gmails (APIs contained: GmailSendEmail/GmailReadEmail/etc) is provided. Detailed tool specification is omitted here.",
+                "Here is an example for how to format your response. In this example, a <Gmail> app for managing Gmails (APIs contained: GmailSendEmail/GmailReadEmail/etc) is provided. Detailed app specification is omitted here.",
                 """User input: Send an email to John Lee (johnlee@gmail.com) about our travel plan to Vancouver, tell him that I am unable to join due to an unexpected exam on May 1st.
 Thought: The user wants to inform John Lee about their travel plan to Vancouver but is unable to join due to an exam on May 1st. They want to send an email to John Lee for this purpose.
 Action: GmailSendEmail
@@ -151,7 +151,7 @@ AGENT_TASK_BEGIN = NamedBlock(
     name="Start the Execution",
     refname="task_begin",
     content=Sequential(
-        "Now begin your task! Remember that the tools available to you are: [{app_names}] which may be different from the tools in the example above. Please output your **NEXT** {action}/{action_input} or {final_answer} (when you have finished all your actions) following the provided {scratchpad}, directly start your response with your {thought} for the current iteration.",
+        "Now begin your task! Remember that the apps available to you are: [{app_names}] which may be different from the apps in the example above. Please output your **NEXT** {action}/{action_input} or {final_answer} (when you have finished all your actions) following the provided {scratchpad}, directly start your response with your {thought} for the current iteration.",
         "",
         "User Input: {{input}}",
         "Thought: {{agent_scratchpad}}",
@@ -161,7 +161,7 @@ AGENT_TASK_BEGIN = NamedBlock(
 AGENT_TASK_BEGIN_FOR_CLAUDE = NamedBlock(
     name="Start the Execution",
     content=Sequential(
-        "Now begin your task! Remember that the tools available to you are: [{app_names}] which may be different from the tools in the example above. Here is the {user_input} and previous {scratchpad}:",
+        "Now begin your task! Remember that the apps available to you are: [{app_names}] which may be different from the apps in the example above. Here is the {user_input} and previous {scratchpad}:",
         "",
         "User Input: {{input}}",
         "Thought: {{agent_scratchpad}}",

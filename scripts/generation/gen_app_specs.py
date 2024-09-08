@@ -1,4 +1,4 @@
-"""Generate tools from spec from thoughts"""
+"""Generate apps from spec from thoughts"""
 # NOTE: some convertion from thoughts to spec might exceed context length.
 # You need to reduce the context length, or use claude or gpt-3.5-16k instead.
 
@@ -30,7 +30,7 @@ parser.add_argument(
     "--format-example-file",
     "-fe",
     type=str,
-    default="./assets/for_generation/format_example_tool.json",
+    default="./assets/for_generation/format_example_app.json",
 )
 parser.add_argument("--random-seed", "-seed", type=int, default=42)
 args = parser.parse_args()
@@ -48,12 +48,12 @@ def main():
 
     if generator._stop_at in ["preprocess", "prompt"]:
         result = generator(
-            dict(example_tools=[format_example], app=app_thoughts[0])
+            dict(example_apps=[format_example], app=app_thoughts[0])
         )
         print_intermediate_result_and_stop(result, generator._stop_at)
 
     def transform_thought(thought):
-        inputs = dict(example_tools=[format_example], app=thought)
+        inputs = dict(example_apps=[format_example], app=thought)
         try:
             return None, generator(inputs)
         except Exception as e:

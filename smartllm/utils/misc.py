@@ -1,4 +1,4 @@
-from functools import partial
+from funcapps import partial
 from multiprocessing import Pool
 
 import numpy as np

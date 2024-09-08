@@ -1,4 +1,4 @@
-"""Generate tools from seed tools"""
+"""Generate apps from seed apps"""
 
 import argparse
 import os
@@ -19,7 +19,7 @@ DataLoader.register_args(
     parser, default_input_path="assets/for_generation/app_taxonomy.json"
 )
 BaseFuncExecutor.register_args(parser)
-parser.add_argument("--dump-dir", "-du", type=str, default="./dumps/tools")
+parser.add_argument("--dump-dir", "-du", type=str, default="./dumps/apps")
 parser.add_argument(
     "--output-file-name", "-out", type=str, default="gen_app_names.jsonl"
 )
@@ -43,7 +43,7 @@ def generate(cat):
     try:
         return None, generator(inputs)
     except Exception as e:
-        print(f"Error encountered in generating tool names: {e}")
+        print(f"Error encountered in generating app names: {e}")
         return cat, None
 
 

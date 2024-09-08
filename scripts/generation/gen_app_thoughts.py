@@ -1,4 +1,4 @@
-"""Generate tools from seed tools"""
+"""Generate apps from seed apps"""
 
 import argparse
 import datetime
@@ -34,7 +34,7 @@ parser.add_argument(
     nargs="+",
     default=["./assets/all_apps.json"],
 )
-parser.add_argument("--dump-dir", "-du", type=str, default="./dumps/tools")
+parser.add_argument("--dump-dir", "-du", type=str, default="./dumps/apps")
 parser.add_argument("--gen-filename", "-gen", type=str, default="gen_app_thoughts")
 parser.add_argument(
     "--output-mode", "-om", choices=["overwrite", "append", "new"], default="new"
@@ -57,7 +57,7 @@ def main():
     existing_app_names = set([t["app"] for t in apps])
 
     os.makedirs(args.dump_dir, exist_ok=True)
-    base_name = args.gen_filename + ("_risky" if generator.gen_risky_tool else "_std")
+    base_name = args.gen_filename + ("_risky" if generator.gen_risky_app else "_std")
     if args.output_mode == "new":
         base_name += f"_{NOW}"
     output_file = osp.join(args.dump_dir, f"{base_name}.jsonl")
@@ -72,12 +72,12 @@ def main():
 
     if generator.brainstorm:
         if runner._target_num is None:
-            raise ValueError("Please specify --target-num when brainstorming new tools")
+            raise ValueError("Please specify --target-num when brainstorming new apps")
         dataset = None
     else:
         if app_names is None:
             raise ValueError(
-                "Please specify tool names with --input-path when using fixed tool names for generation"
+                "Please specify app names with --input-path when using fixed app names for generation"
             )
         dataset = [i for i in range(len(app_names))]
 
@@ -87,7 +87,7 @@ def main():
         else:
             app = app_names[index]
         inputs = dict(
-            existing_tools=existing_app_names,
+            existing_apps=existing_app_names,
             app=app,
             domain_blacklist=None,
         )

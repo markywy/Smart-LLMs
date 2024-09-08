@@ -24,7 +24,7 @@ def construct_trajec(
                 else:
                     if isinstance(step[0], AgentAction):
                         # include only the action
-                        trajec += f"Action: {step[0].tool}\nAction Input: {step[0].app_input}\n"
+                        trajec += f"Action: {step[0].app}\nAction Input: {step[0].app_input}\n"
                     else:
                         # include final answer
                         assert isinstance(step[0], AgentFinish)
@@ -69,17 +69,17 @@ def construct_simple_trajec(traject_dict, **kwargs):
     )
 
 
-def get_used_tools_in_trajec(
+def get_used_apps_in_trajec(
     traject_dict,
     is_dumped_dict=True,
 ):
-    used_tools = set()
+    used_apps = set()
     if not is_dumped_dict:
         for step in traject_dict["intermediate_steps"]:
             if isinstance(step[0], AgentAction):
-                used_tools.add(step[0].tool)
+                used_apps.add(step[0].app)
     else:
         for i, step in enumerate(traject_dict["intermediate_steps"]):
             if i != len(traject_dict["intermediate_steps"]) - 1:
-                used_tools.add(step[0][0])
-    return used_tools
+                used_apps.add(step[0][0])
+    return used_apps

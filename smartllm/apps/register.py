@@ -1,4 +1,4 @@
-from .app_interface import BaseTool
+from .app_interface import BaseApp
 
 __APPS_DICT__ = {}
 
@@ -18,8 +18,8 @@ def register_app(overwrite=None):
             name = cls.__name__
         if name in __APPS_DICT__:
             raise ValueError(f"Name {name} already registered!")
-        if not issubclass(cls, BaseTool):
-            raise ValueError(f"Class {cls} is not a subclass of {BaseTool}")
+        if not issubclass(cls, BaseApp):
+            raise ValueError(f"Class {cls} is not a subclass of {BaseApp}")
         __APPS_DICT__[name] = cls
         # print(f"App registered: [{name}]")
         return cls

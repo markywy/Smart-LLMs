@@ -7,7 +7,7 @@ setuptools.setup(
     name="smartllm",
     version="0.1.0",
     author="Mark Ye, Jerry Li, Jack Zhang",
-    description="A Simulated Multi-Agent Risk and Task Assessment for LLMs",
+    description=" Multi-Agent and Multilingual Framework for Personalized Risk Simulation and Assessment in Large Language Model Applications",
     url="https://github.com/markywy/SmartLLMs",
     packages=setuptools.find_packages(),
     install_requires=[

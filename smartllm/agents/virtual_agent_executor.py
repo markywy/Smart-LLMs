@@ -7,7 +7,7 @@ from langchain.agents import (
     BaseMultiActionAgent,
     BaseSingleActionAgent,
     App,
-    tool,
+    app,
 )
 from langchain.base_language import BaseLanguageModel
 from langchain.callbacks.base import BaseCallbackManager
@@ -38,7 +38,7 @@ from langchain.schema import (
     HumanMessage,
     SystemMessage,
 )
-from langchain.tools.base import BaseTool, StructuredApp
+from langchain.apps.base import BaseApp, StructuredApp
 from langchain.utilities.asyncio import asyncio_timeout
 from procoder.functional import collect_refnames, format_multiple_prompts, format_prompt
 from procoder.prompt import Module as PromptModule
@@ -54,8 +54,8 @@ from smartllm.prompts.simulator import (
     STD_SIMULATOR_SYSTEM_INFO,
 )
 from smartllm.apps import RealHuman, RealHumanAssistanceQuery
-from smartllm.apps.app_interface import BaseTool
-from smartllm.utils import InvalidTool, run_with_input_validation, validate_outputs
+from smartllm.apps.app_interface import BaseApp
+from smartllm.utils import InvalidApp, run_with_input_validation, validate_outputs
 from smartllm.utils.my_typing import *
 
 from .agent_executor import AgentExecutorWithApp
@@ -65,7 +65,7 @@ Prompt = Union[PromptModule, str]
 
 class SimulatorInputModel(BaseModel):
     simulator_scratchpad: Optional[Any]
-    current_tool: Optional[str]
+    current_app: Optional[str]
     current_app_description: Optional[str]
     app_descriptions: Optional[str]
     input: Optional[str]
@@ -76,8 +76,8 @@ class SimulatorInputModel(BaseModel):
 
 # TODO: decouple the simulator from the agent executor
 class StandardVirtualAgentExecutorWithApp(AgentExecutorWithApp):
-    # """Virtual agent executor that simulates the execution of virtual tools with LLMs"""
-    """Virtual agent executor that outputs thoughts before simulating the execution of virtual tools."""
+    # """Virtual agent executor that simulates the execution of virtual apps with LLMs"""
+    """Virtual agent executor that outputs thoughts before simulating the execution of virtual apps."""
 
     llm_simulator_chain: LLMChain
     llm_critiquer: Optional[BaseLanguageModel] = None
@@ -94,7 +94,7 @@ class StandardVirtualAgentExecutorWithApp(AgentExecutorWithApp):
         cls,
         user, 
         agent: Union[BaseSingleActionAgent, BaseMultiActionAgent],
-        apps: Sequence[BaseTool],
+        apps: Sequence[BaseApp],
         llm_simulator: BaseLanguageModel,
         llm_critiquer: Optional[BaseLanguageModel] = None,
         num_critique_steps: Optional[int] = 0,
@@ -104,8 +104,8 @@ class StandardVirtualAgentExecutorWithApp(AgentExecutorWithApp):
         **kwargs: Any,
     ) -> AgentExecutor:
         """Create from agent and apps."""
-        tools = agent.get_all_tools(apps)
-        app_names = [tool.name for tool in tools]
+        apps = agent.get_all_apps(apps)
+        app_names = [app.name for app in apps]
         if use_chat_format:
             assert isinstance(llm_simulator, BaseChatModel)
 
@@ -123,7 +123,7 @@ class StandardVirtualAgentExecutorWithApp(AgentExecutorWithApp):
         return cls(
             user=user, 
             agent=agent,
-            tools=tools,
+            apps=apps,
             apps=apps,
             app_names=app_names,
             llm_simulator_chain=llm_simulator_chain,
@@ -182,10 +182,10 @@ class StandardVirtualAgentExecutorWithApp(AgentExecutorWithApp):
             return PromptTemplate(template=template, input_variables=input_variables)
 
     def _get_current_app_descriptions(self, app_name: str) -> str:
-        # NOTE: assume only one app has the tool with app_name
+        # NOTE: assume only one app has the app with app_name
         for app in self.apps:
-            for tool in app.tools:
-                if tool.name == app_name:
+            for app in app.apps:
+                if app.name == app_name:
                     return app.create_description(detail_level="low")
         raise ValueError(f"App {app_name} not found in any of the apps.")
 
@@ -211,13 +211,13 @@ class StandardVirtualAgentExecutorWithApp(AgentExecutorWithApp):
         ]
 
     @property
-    def llm_simulator_tool(self) -> BaseTool:
+    def llm_simulator_app(self) -> BaseApp:
         result = StructuredApp.from_function(
             func=lambda callbacks, **kwargs: self._get_simulated_observation(
                 callbacks, **kwargs
             ),
             name="llm_simulator",
-            description="Simulate the execution of a tool with a language model",
+            description="Simulate the execution of a app with a language model",
             args_schema=SimulatorInputModel
             # infer_schema=False
         )
@@ -294,7 +294,7 @@ class StandardVirtualAgentExecutorWithApp(AgentExecutorWithApp):
         # this is copied from the agent's _construct_scratchpad
         scratchpad = ""
         for idx, (action, observation) in enumerate(intermediate_steps):
-            scratchpad += f"Action: {action.tool}\nAction Input: {action.app_input}\n"
+            scratchpad += f"Action: {action.app}\nAction Input: {action.app_input}\n"
 
             if idx == len(intermediate_steps) - 1:
                 scratchpad += "\n"
@@ -413,12 +413,12 @@ class StandardVirtualAgentExecutorWithApp(AgentExecutorWithApp):
     ):
         streaming_output = self.llm_critiquer.streaming
 
-        app_name = simulator_inputs["current_tool"]
-        app_mapping = dict(zip(self.app_names, self.tools))
-        tool = app_mapping[app_name]
+        app_name = simulator_inputs["current_app"]
+        app_mapping = dict(zip(self.app_names, self.apps))
+        app = app_mapping[app_name]
 
         def get_validation_result(obs):
-            msg = "The format of the output matches the specification of the tool."
+            msg = "The format of the output matches the specification of the app."
             exception = None
             try:
                 outputs = json.loads(obs)
@@ -427,9 +427,9 @@ class StandardVirtualAgentExecutorWithApp(AgentExecutorWithApp):
                 exception = e
             if exception is None:
                 try:
-                    validate_outputs(tool.returns, outputs)
+                    validate_outputs(app.returns, outputs)
                 except ValueError as e:
-                    msg = f"The format of the output does not match the specification of the tool."
+                    msg = f"The format of the output does not match the specification of the app."
                     exception = e
             return f"Format Validation: {msg}", exception
 
@@ -506,16 +506,16 @@ class StandardVirtualAgentExecutorWithApp(AgentExecutorWithApp):
 
     def _take_next_step(
         self,
-        name_to_app_map: Dict[str, BaseTool],
+        name_to_app_map: Dict[str, BaseApp],
         color_mapping: Dict[str, str],
         inputs: Dict[str, str],
         intermediate_steps: List[Tuple[AgentAction, str]],
         run_manager: Optional[CallbackManagerForChainRun] = None,
     ) -> Union[AgentFinish, List[Tuple[AgentAction, str]]]:
-        """Override to use virtual tool execution and custom InvalidTool."""
+        """Override to use virtual app execution and custom InvalidApp."""
         # Call the LLM to see what to do.
         output = self.agent.plan(intermediate_steps, **inputs)
-        # If the tool chosen is the finishing tool, then we end and return.
+        # If the app chosen is the finishing app, then we end and return.
         if isinstance(output, AgentFinish):
             return output
         actions: List[AgentAction]
@@ -529,14 +529,14 @@ class StandardVirtualAgentExecutorWithApp(AgentExecutorWithApp):
                 run_manager.on_agent_action(
                     agent_action, verbose=self.verbose, color="green"
                 )
-            # Otherwise we lookup the tool
-            if agent_action.tool in name_to_app_map:
-                tool = name_to_app_map[agent_action.tool]
-                return_direct = tool.return_direct
-                color = color_mapping[agent_action.tool]
+            # Otherwise we lookup the app
+            if agent_action.app in name_to_app_map:
+                app = name_to_app_map[agent_action.app]
+                return_direct = app.return_direct
+                color = color_mapping[agent_action.app]
                 app_run_kwargs = self.agent.app_run_logging_kwargs()
 
-                # We then call the llm to simulate the execution of the tool
+                # We then call the llm to simulate the execution of the app
                 empty_observation = ""  # for the current step
                 simulator_scratchpad = self._construct_simulator_scratchpad(
                     intermediate_steps + result + [(agent_action, empty_observation)]
@@ -544,18 +544,18 @@ class StandardVirtualAgentExecutorWithApp(AgentExecutorWithApp):
 
                 full_inputs = {
                     "simulator_scratchpad": simulator_scratchpad,
-                    "current_tool": agent_action.tool,
-                    "current_app_description": tool.description,
+                    "current_app": agent_action.app,
+                    "current_app_description": app.description,
                     "app_descriptions": self._get_current_app_descriptions(
-                        agent_action.tool
+                        agent_action.app
                     ),
                     **inputs,
                 }
 
                 observation = run_with_input_validation(
-                    self.llm_simulator_tool.run,
+                    self.llm_simulator_app.run,
                     full_inputs,
-                    tool,
+                    app,
                     agent_action.app_input,
                     verbose=self.verbose,
                     color=color,
@@ -568,8 +568,8 @@ class StandardVirtualAgentExecutorWithApp(AgentExecutorWithApp):
                     )
             else:
                 app_run_kwargs = self.agent.app_run_logging_kwargs()
-                observation_text = InvalidTool(available_tools=self.app_names).run(
-                    agent_action.tool,
+                observation_text = InvalidApp(available_apps=self.app_names).run(
+                    agent_action.app,
                     verbose=self.verbose,
                     color=None,
                     **app_run_kwargs,
@@ -584,15 +584,15 @@ class StandardVirtualAgentExecutorWithApp(AgentExecutorWithApp):
 
     async def _atake_next_step(
         self,
-        name_to_app_map: Dict[str, BaseTool],
+        name_to_app_map: Dict[str, BaseApp],
         color_mapping: Dict[str, str],
         inputs: Dict[str, str],
         intermediate_steps: List[Tuple[AgentAction, str]],
     ) -> Union[AgentFinish, List[Tuple[AgentAction, str]]]:
-        """Override to use virtual tool execution and custom InvalidTool."""
+        """Override to use virtual app execution and custom InvalidApp."""
         # Call the LLM to see what to do.
         output = await self.agent.aplan(intermediate_steps, **inputs)
-        # If the tool chosen is the finishing tool, then we end and return.
+        # If the app chosen is the finishing app, then we end and return.
         if isinstance(output, AgentFinish):
             return output
         actions: List[AgentAction]
@@ -610,14 +610,14 @@ class StandardVirtualAgentExecutorWithApp(AgentExecutorWithApp):
                 self.callback_manager.on_agent_action(
                     agent_action, verbose=self.verbose, color="green"
                 )
-            # Otherwise we lookup the tool
-            if agent_action.tool in name_to_app_map:
-                tool = name_to_app_map[agent_action.tool]
-                return_direct = tool.return_direct
-                color = color_mapping[agent_action.tool]
+            # Otherwise we lookup the app
+            if agent_action.app in name_to_app_map:
+                app = name_to_app_map[agent_action.app]
+                return_direct = app.return_direct
+                color = color_mapping[agent_action.app]
                 app_run_kwargs = self.agent.app_run_logging_kwargs()
 
-                # We then call the llm to simulate the execution of the tool
+                # We then call the llm to simulate the execution of the app
                 empty_observation = ""  # for the current step
                 simulator_scratchpad = self.agent._construct_scratchpad(
                     intermediate_steps + result + [(agent_action, empty_observation)],
@@ -628,19 +628,19 @@ class StandardVirtualAgentExecutorWithApp(AgentExecutorWithApp):
 
                 full_inputs = {
                     "simulator_scratchpad": simulator_scratchpad,
-                    "current_tool": agent_action.tool,
-                    "current_app_description": tool.description,
+                    "current_app": agent_action.app,
+                    "current_app_description": app.description,
                     "app_descriptions": self._get_current_app_descriptions(
-                        agent_action.tool
+                        agent_action.app
                     ),
                     **inputs,
                 }
 
-                # TODO: we may need to implement arun for the simulator tool
+                # TODO: we may need to implement arun for the simulator app
                 observation = await run_with_input_validation(
-                    self.llm_simulator_tool.arun,
+                    self.llm_simulator_app.arun,
                     full_inputs,
-                    tool,
+                    app,
                     agent_action.app_input,
                     verbose=self.verbose,
                     color=color,
@@ -653,8 +653,8 @@ class StandardVirtualAgentExecutorWithApp(AgentExecutorWithApp):
                     )
             else:
                 app_run_kwargs = self.agent.app_run_logging_kwargs()
-                observation = await InvalidTool(available_tools=self.app_names).arun(
-                    agent_action.tool,
+                observation = await InvalidApp(available_apps=self.app_names).arun(
+                    agent_action.app,
                     verbose=self.verbose,
                     color=None,
                     **app_run_kwargs,
@@ -671,7 +671,7 @@ class StandardVirtualAgentExecutorWithApp(AgentExecutorWithApp):
 class AdversarialVirtualAgentExecutorWithApp(
     StandardVirtualAgentExecutorWithApp
 ):
-    """Adversarial virtual agent executor that simulates the execution of virtual tools that attempt to guide the action agent to make mistakes.
+    """Adversarial virtual agent executor that simulates the execution of virtual apps that attempt to guide the action agent to make mistakes.
     It will output its thoughts before simualting the execution.
     """
 

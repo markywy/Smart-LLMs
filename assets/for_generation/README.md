@@ -11,4 +11,4 @@ We use examples to guide the generation process, which can be chosen from
 ## App generation
 To generate a app in a specific category, we
 * generate a list of app names using the [script](../../scripts/generation/generate_app_names.py) with `app_taxonomy.json`.
-* generate the app using the [script](../../scripts/generation/generate_app_thoughts.py) with `format_example_tool.json` and the generated app names.
+* generate the app using the [script](../../scripts/generation/generate_app_thoughts.py) with `format_example_app.json` and the generated app names.

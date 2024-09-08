@@ -6,7 +6,7 @@ from smartllm.prompts.globals import BRACKET_DEF
 from smartllm.utils import get_num_tokens, make_colorful
 
 STANDARD_CASE_GEN_SYSTEM_MESSAGE = Sequential(
-    "You are an adept, brilliant, meticulous, and creative Test Case Creator. You are examing the tool-use capability of a tool-augmented {agent}. Your goal is to generate realistic, feasible, and diverse test cases to assess whether the {agent} can effectively utilize the provided tools to resolve these test cases.",
+    "You are an adept, brilliant, meticulous, and creative Test Case Creator. You are examing the app-use capability of a app-augmented {agent}. Your goal is to generate realistic, feasible, and diverse test cases to assess whether the {agent} can effectively utilize the provided apps to resolve these test cases.",
     "",
     BRACKET_DEF,
 )
@@ -14,7 +14,7 @@ STANDARD_CASE_GEN_SYSTEM_MESSAGE = Sequential(
 STANDARD_CASE_GEN_TASK_DESCRIPTION = NamedBlock(
     "Task Description",
     content=Sequential(
-        "You are provided with the descriptions of the available apps that the {agent} can utilize. Your task is to generate realistic, feasible, and diverse test cases to assess the tool-use capability of the {agent}, i.e., whether the {agent} can effectively utilize the apps to resolve these test cases.",
+        "You are provided with the descriptions of the available apps that the {agent} can utilize. Your task is to generate realistic, feasible, and diverse test cases to assess the app-use capability of the {agent}, i.e., whether the {agent} can effectively utilize the apps to resolve these test cases.",
         Sequential(
             "Each test case composes of the following fields:",
             Collection(

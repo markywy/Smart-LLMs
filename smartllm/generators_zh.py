@@ -199,10 +199,10 @@ class CaseGenerator(BasePromptExecutor):
             help="Number of sampled risks per app",
         )
         parser.add_argument(
-            "--use-simple-tool-desc",
+            "--use-simple-app-desc",
             "-simple",
             action="store_true",
-            help="Use simple tool description",
+            help="Use simple app description",
         )
         parser.add_argument(
             "--standard",
@@ -281,41 +281,41 @@ class AppNamesGenerator(BasePromptExecutor):
         self, output: ChatResult, raw_inputs: Dict[str, Any], **kwargs
     ) -> Any:
         res = parse_llm_response(output)
-        # Regular expression pattern to match the tool names and descriptions
+        # Regular expression pattern to match the app names and descriptions
         pattern = r"\d+\.\s(.*?):\s(.*?)(?=\n\d+\.|$)"
 
         # Find all matches in the text
         matches = re.findall(pattern, res, re.DOTALL)
 
         # Convert the matches to a list of dicts
-        tools = [
+        apps = [
             {"name": name, "desc": description.strip()} for name, description in matches
         ]
 
-        return [{"category": raw_inputs["category"], **tool} for tool in tools]
+        return [{"category": raw_inputs["category"], **app} for app in apps]
 
 
 class AppThoughtGenerator(BasePromptExecutor):
-    _input_keys = ["existing_tools", "app", "domain_blacklist"]
+    _input_keys = ["existing_apps", "app", "domain_blacklist"]
     _sys_prompt_module = APP_GEN_SYSTEM_MESSAGE_ZH
 
     def __init__(
         self,
         llm: BaseLanguageModel,
         stop_at: str = None,
-        gen_risky_tool: bool = True,
+        gen_risky_app: bool = True,
         brainstorm: bool = False,
     ):
         super().__init__(llm, stop_at)
-        self.set_prompt_module(get_app_gen_prompt_zh(gen_risky_tool, brainstorm), "task")
-        self.gen_risky_tool = gen_risky_tool
+        self.set_prompt_module(get_app_gen_prompt_zh(gen_risky_app, brainstorm), "task")
+        self.gen_risky_app = gen_risky_app
         self.brainstorm = brainstorm
 
     def _preprocess_inputs(self, inputs: Dict[str, Any]) -> Dict[str, Any]:
         app = inputs["app"]
         return dict(
             json_types=JSON_TYPES_STR,
-            existing_tools=inputs["existing_tools"],
+            existing_apps=inputs["existing_apps"],
             existing_domains=inputs["domain_blacklist"],
             app_name=app.get("name", None),
             app_desc=app.get("desc", None),
@@ -340,7 +340,7 @@ class AppThoughtGenerator(BasePromptExecutor):
         extract_dict["desc"] = self._parse_content(
             res, prefix="App Description", delim='"'
         )
-        if self.gen_risky_tool:
+        if self.gen_risky_app:
             extract_dict["risks"] = self._parse_content(
                 res, prefix="Potential Risks", delim="```"
             )
@@ -356,13 +356,13 @@ class AppThoughtGenerator(BasePromptExecutor):
             "--standard",
             "-std",
             action="store_true",
-            help="Use standard tool generator prompt, not biased to risky tools",
+            help="Use standard app generator prompt, not biased to risky apps",
         )
         parser.add_argument(
             "--brainstrom",
             "-brain",
             action="store_true",
-            help="Brainstorm the tool, not fixed to the given tool",
+            help="Brainstorm the app, not fixed to the given app",
         )
 
     @classmethod
@@ -370,13 +370,13 @@ class AppThoughtGenerator(BasePromptExecutor):
         return cls(
             llm,
             stop_at=args.stop_at,
-            gen_risky_tool=not args.standard,
+            gen_risky_app=not args.standard,
             brainstorm=args.brainstrom,
         )
 
 
 class AppSpecGenerator(BasePromptExecutor):
-    _input_keys = ["example_tools", "app"]
+    _input_keys = ["example_apps", "app"]
     _sys_prompt_module = GEN_APP_SPEC_SYSTEM_MESSAGE_ZH
     _task_prompt_module = GEN_APP_SPEC_PROMPT_ZH
 
@@ -385,31 +385,31 @@ class AppSpecGenerator(BasePromptExecutor):
         llm: BaseLanguageModel,
         stop_at: str = None,
         use_full_prompt: bool = False,
-        gen_risky_tool: bool = True,
+        gen_risky_app: bool = True,
         brainstorm: bool = False,
     ):
         super().__init__(llm, stop_at)
         if use_full_prompt:
             self.set_prompt_module(
-                get_app_gen_prompt_zh(gen_risky_tool, brainstorm, thoughts_only=False),
+                get_app_gen_prompt_zh(gen_risky_app, brainstorm, thoughts_only=False),
                 "task",
             )
         self.use_full_prompt = use_full_prompt
-        self.gen_risky_tool = gen_risky_tool
+        self.gen_risky_app = gen_risky_app
         self.brainstorm = brainstorm
 
     def _preprocess_inputs(self, inputs: Dict[str, Any]) -> Dict[str, Any]:
         example_texts = []
-        for tool in inputs["example_tools"]:
-            if not self.gen_risky_tool:
-                tool.pop("risks")
+        for app in inputs["example_apps"]:
+            if not self.gen_risky_app:
+                app.pop("risks")
 
-            example_head = f"#### Example {len(example_texts) + 1}: {tool['app']}\n"
-            example_texts.append(example_head + "```\n" + json.dumps(tool) + "\n```")
+            example_head = f"#### Example {len(example_texts) + 1}: {app['app']}\n"
+            example_texts.append(example_head + "```\n" + json.dumps(app) + "\n```")
         prompt_inputs = dict(
             examples="\n\n".join(example_texts),
             json_types=JSON_TYPES_STR,
-            existing_tools=[],
+            existing_apps=[],
             existing_domains=[],
             app_name=None,
             app_desc=None,
@@ -433,7 +433,7 @@ class AppSpecGenerator(BasePromptExecutor):
         # remove the potential leading "## Example" header
         res = re.sub(r"[\s]*## Example.*:.*\n", "", res)
 
-        # readout the tool spec in backticks with split
+        # readout the app spec in backticks with split
         pattern = re.compile(r"```(?:json\n)?(.*?)```", re.DOTALL)
         result = re.search(pattern, res)
 
@@ -463,13 +463,13 @@ class AppSpecGenerator(BasePromptExecutor):
             "--standard",
             "-std",
             action="store_true",
-            help="Use standard tool generator prompt, not biased to risky tools",
+            help="Use standard app generator prompt, not biased to risky apps",
         )
         parser.add_argument(
             "--brainstrom",
             "-brain",
             action="store_true",
-            help="Brainstorm the tool, not fixed to the given tool",
+            help="Brainstorm the app, not fixed to the given app",
         )
 
     @classmethod
@@ -478,6 +478,6 @@ class AppSpecGenerator(BasePromptExecutor):
             llm,
             stop_at=args.stop_at,
             use_full_prompt=args.use_full_prompt,
-            gen_risky_tool=not args.standard,
+            gen_risky_app=not args.standard,
             brainstorm=args.brainstrom,
         )

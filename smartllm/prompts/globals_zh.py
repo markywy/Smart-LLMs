@@ -145,14 +145,14 @@ APP_DESCRIPTION_ZH = NamedBlock(
     ).set_sep("\n\n"),
 )
 
-USED_TOOLS_SPECIFICATIO_ZH = NamedBlock(
+USED_APPS_SPECIFICATIO_ZH = NamedBlock(
     "Detailed Specification of Used Apps",
     Sequential(
         Block("每个应用由以下内容指定：", APP_SPEC_COMPONENTS_ZH),
         Single(
             "以下应用由 {agent} 使用，其规范详述如下："
         ).set_refname("used_app_spec_intro"),
-        "{used_tools_descriptions}",
+        "{used_apps_descriptions}",
     ).set_sep("\n\n"),
 )
 
@@ -163,7 +163,7 @@ CURRENT_APP_SPECIFICATION_ZH = NamedBlock(
         Single(
             "当前由 {agent} 使用的应用及其详细规范如下："
         ).set_refname("current_app_spec_intro"),
-        "* {{current_tool}}: {{current_app_description}}",
+        "* {{current_app}}: {{current_app_description}}",
     ).set_sep("\n\n"),
 )
 

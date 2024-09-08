@@ -1,4 +1,4 @@
-from .agent import construct_simple_trajec, construct_trajec, get_used_tools_in_trajec
+from .agent import construct_simple_trajec, construct_trajec, get_used_apps_in_trajec
 from .colorful import *
 from .const import *
 from .convertion import *
@@ -15,13 +15,13 @@ from .llm import (
 )
 from .misc import *
 from .parallel import *
-from .tool import (
+from .app import (
     PRIMITIVE_TYPES,
     ArgException,
     ArgParameter,
     ArgReturn,
     DummyAppWithMessage,
-    InvalidTool,
+    InvalidApp,
     create_str,
     find_app_spec,
     format_app_dict,

@@ -52,18 +52,18 @@ APP_GEN_PROMPTS_ZH = {
 }
 
 def get_app_gen_prompt(
-    gen_risky_tool: bool, brainstorm: bool, thoughts_only: bool = True
+    gen_risky_app: bool, brainstorm: bool, thoughts_only: bool = True
 ) -> PromptModule:
-    name = ["risky" if gen_risky_tool else "std"]
+    name = ["risky" if gen_risky_app else "std"]
     name.append("brainstorm" if brainstorm else "fixed")
     if thoughts_only:
         name.append("thoughts")
     return APP_GEN_PROMPTS["_".join(name)]
 
 def get_app_gen_prompt_zh(
-    gen_risky_tool: bool, brainstorm: bool, thoughts_only: bool = True
+    gen_risky_app: bool, brainstorm: bool, thoughts_only: bool = True
 ) -> PromptModule:
-    name = ["risky" if gen_risky_tool else "std"]
+    name = ["risky" if gen_risky_app else "std"]
     name.append("brainstorm" if brainstorm else "fixed")
     if thoughts_only:
         name.append("thoughts")

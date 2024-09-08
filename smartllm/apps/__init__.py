@@ -1,6 +1,6 @@
 from .real_apps import *
 from .register import get_app_dict, apps_factory
-from .app_interface import BaseTool, FunctionApp
+from .app_interface import BaseApp, FunctionApp
 from .virtual_apps import *
 
 def get_apps_by_names(names: List[str]) -> List[FunctionApp]:
@@ -14,7 +14,7 @@ def get_apps_by_names(names: List[str]) -> List[FunctionApp]:
     return apps
 
 
-def get_app_class_by_name(apps: List[FunctionApp], name: str) -> BaseTool:
+def get_app_class_by_name(apps: List[FunctionApp], name: str) -> BaseApp:
     for app in apps:
         try:
             return app[name]

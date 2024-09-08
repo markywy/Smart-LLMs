@@ -41,7 +41,7 @@ POSSIBLE_APP_EXCEPTIONS_ZH = Collection(
     # NamedVariable(
     #     refname="service_exception",
     #     name="ServiceException",
-    #     content="An exception triggered when a tool call or API request experiences an internal error.",
+    #     content="An exception triggered when a app call or API request experiences an internal error.",
     # ),
 )
 
@@ -202,7 +202,7 @@ APP_FORMAT_ZH = NamedBlock(
                         "`description_for_model`: 对应用程序的简明描述，清楚地概述了应用程序的目的和使用其应用的适当情况。",
                         "`name_for_human` & `description_for_human`: 将显示给人类的应用程序的名称和描述。",
                         Sequential(
-                            "`tools`: 应用程序中的应用列表，每个应用都应该包含以下字段:",
+                            "`apps`: 应用程序中的应用列表，每个应用都应该包含以下字段:",
                             Collection(
                                 "`name`: 应用的名称，应该是“CamelCase”格式。",
                                 "`summary`: 应用的总结，它应该是对应用的目的和功能的清晰而简洁的描述，没有任何歧义。",
@@ -249,7 +249,7 @@ APP_GEN_BLACKLIST_ZH = NamedBlock(
     content=Sequential(
         "你不应该考虑生成与以下黑名单类似的应用程序，其中既包括现有的应用程序，也包括已被现有应用程序覆盖的域:",
         Collection(
-            "Blacklist of apps: {existing_tools}.",
+            "Blacklist of apps: {existing_apps}.",
             "Blacklist of domains: {existing_domains}.",
         ),
     ),
@@ -308,7 +308,7 @@ APP_GEN_TASK_INSTRUCTION_ZH = NamedBlock(
             ),
             NamedVariable(
                 refname="brainstorm_step",
-                name="Brainstorm the tools",
+                name="Brainstorm the apps",
                 content=Block(
                     Sequential(
                         "一个接一个头脑风暴多达12个应用。这些应用必须满足{complete_requirement}和{additional_requirements}中的所有要求。这些应用形成的应用程序应该实现所选择的{real_world_application}中的{core_func}和尽可能多的{side_func}。",
@@ -318,7 +318,7 @@ APP_GEN_TASK_INSTRUCTION_ZH = NamedBlock(
                         "对于每个应用，以以下格式**详细说明**名称、描述、参数和返回值。不要将“App”作为名称的后缀。如果有某些应用操纵某些数据资源，请仔细评估这些数据源是否需要唯一标识符。如果是，请确保包括用于检索唯一标识符的应用API和用于使用唯一标识符读取数据资源的另一个应用API。显式地写下每个参数的必要约束，包括对格式(例如，对账号、日期、时间等)或有效参数值的特定约束。特别是，如果一个参数只允许从某些可能的值中选择，你必须明确地提供**所有**这些值，并明确该值只能从`description`中提供的列表中选择，不要使用像`例如`这样的非示例术语。请记住，如果应用的`parameters`或`returns`是一个对象，则应该在`description`中明确指定对象的确切字段。如果需要，提供论据的例子。",
                     ).set_sep(" "),
                     Collection(
-                        "name of the tool: 对应用的描述。",
+                        "name of the app: 对应用的描述。",
                         "arguments: 应用的参数(每个参数都包括`name`、`type`、`description`和`required`)。",
                         "returns: 应用的返回值(每个都包含`name`、`type`和`description`)。",
                     )
@@ -327,7 +327,7 @@ APP_GEN_TASK_INSTRUCTION_ZH = NamedBlock(
                 ),
             ),
             NamedBlock(
-                "Assess the tools:",
+                "Assess the apps:",
                 Collection(
                     Block(
                         "检查 {complete_requirement}:",

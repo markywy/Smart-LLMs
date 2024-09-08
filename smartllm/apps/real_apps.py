@@ -1,10 +1,10 @@
-"""The function tools tht are actually implemented"""
+"""The function apps tht are actually implemented"""
 
 import json
 import subprocess
 
-from langchain.agents.load_tools import load_tools
-from langchain.tools import BaseTool
+from langchain.agents.load_apps import load_apps
+from langchain.apps import BaseApp
 from langchain.utilities.bash import BashProcess
 from smartllm.apps.app_interface import (
     ArgException,
@@ -84,16 +84,16 @@ class RealTerminalExecute(FunctionApp):
         }
     ]
 
-    _tool: BaseTool = MyBashProcess(return_err_output=True)
+    _app: BaseApp = MyBashProcess(return_err_output=True)
 
     def parse_return(self, app_output: Dict[str, Any]) -> str:
         return json.dumps({"output": app_output[0], "exit_code": app_output[1]})
 
-    def _runtool(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
-        return self._tool._run(app_input["command"])
+    def _runapp(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
+        return self._app._run(app_input["command"])
 
-    def _aruntool(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
-        return self._tool._arun(app_input["command"])
+    def _arunapp(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
+        return self._app._arun(app_input["command"])
 
 
 @register_app()
@@ -127,16 +127,16 @@ class RealPythonInterpreterExecute(FunctionApp):
         }
     ]
     exceptions: List[ArgException] = []
-    _tool: BaseTool = load_tools(["python_repl"])[0]
+    _app: BaseApp = load_apps(["python_repl"])[0]
 
     def parse_return(self, app_output: str) -> str:
         return json.dumps({"result": app_output})
 
-    def _runtool(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
-        return self._tool._run(app_input["script"])
+    def _runapp(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
+        return self._app._run(app_input["script"])
 
-    def _aruntool(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
-        return self._tool._arun(app_input["script"])
+    def _arunapp(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
+        return self._app._arun(app_input["script"])
 
 
 @register_app()
@@ -152,7 +152,7 @@ class RealPythonInterpreter(FunctionApp):
 #################### Wikipedia ####################
 class RealWikipediaSearch(FunctionApp):
     name = "WikipediaSearch"
-    summary = "Query the Wikipedia tool for a given query."
+    summary = "Query the Wikipedia app for a given query."
     parameters: List[ArgParameter] = [
         {
             "name": "query",
@@ -169,21 +169,21 @@ class RealWikipediaSearch(FunctionApp):
         }
     ]
     exceptions: List[ArgException] = []
-    _tool: BaseTool = load_tools(["wikipedia"])[0]
+    _app: BaseApp = load_apps(["wikipedia"])[0]
 
     def parse_return(self, app_output: str) -> str:
         return json.dumps({"result": app_output})
 
-    def _runtool(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
-        return self._tool._run(app_input["query"])
+    def _runapp(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
+        return self._app._run(app_input["query"])
 
-    def _aruntool(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
-        return self._tool._arun(app_input["query"])
+    def _arunapp(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
+        return self._app._arun(app_input["query"])
 
 
 @register_app()
 class RealWikipedia(FunctionApp):
-    name_for_human = "Wikipedia search tool"
+    name_for_human = "Wikipedia search app"
     description_for_human = "App for searching through Wikipedia."
     name_for_model = "Wikipedia"
     description_for_model = "App for searching through Wikipedia. Use it whenever you need to provide accurate responses for general questions about people, places, companies, historical events, or other subjects."
@@ -217,12 +217,12 @@ class RealHumanAssistanceQuery(FunctionApp):
     def parse_return(self, app_output: str) -> str:
         return json.dumps({"answer": app_output})
 
-    def _runtool(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
+    def _runapp(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
         print("\n" + app_input["question"] + "\n")
         return input(app_input["question"])
 
-    def _aruntool(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
-        return NotImplementedError("Human tool does not support async")
+    def _arunapp(self, app_input: Dict[str, Any]) -> Dict[str, Any]:
+        return NotImplementedError("Human app does not support async")
 
 
 @register_app()

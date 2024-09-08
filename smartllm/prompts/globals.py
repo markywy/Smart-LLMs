@@ -16,12 +16,12 @@ USER_DEF = NamedVariable(
 AGENT_DEF = NamedVariable(
     refname="agent",
     name="Agent",
-    content="The agent who follows {user}'s instructions and utilizes tools to complete tasks or answer questions.",
+    content="The agent who follows {user}'s instructions and utilizes apps to complete tasks or answer questions.",
 )
 SIMULATOR_DEF = NamedVariable(
     refname="simulator",
     name="Simulator",
-    content="The simulator who simulates the tool execution outputs for the {agent}'s tool calls.",
+    content="The simulator who simulates the app execution outputs for the {agent}'s app calls.",
 )
 ALL_DEFS = Collection(USER_DEF, AGENT_DEF, SIMULATOR_DEF)
 
@@ -103,17 +103,17 @@ APP_SPEC_COMPONENTS = Collection(
     NamedVariable(
         refname="app_argument",
         name="Arguments",
-        content="The tool input argument specification",
+        content="The app input argument specification",
     ),
     NamedVariable(
         refname="app_return",
         name="Returns",
-        content="The tool output return specification",
+        content="The app output return specification",
     ),
     NamedVariable(
         refname="app_expcetion",
         name="Exceptions",
-        content="The possible exceptions of invalid tool calls.",
+        content="The possible exceptions of invalid app calls.",
     ),
 )
 
@@ -123,10 +123,10 @@ APP_SPECIFICATION = NamedBlock(
     "App Specifications",
     Sequential(
         Block(
-            "Each app is a collection of relevant tools for completing a specific task. Each tool is specified by:",
+            "Each app is a collection of relevant apps for completing a specific task. Each app is specified by:",
             APP_SPEC_COMPONENTS,
         ),
-        Single("The following tools are available:").set_refname("app_spec_intro"),
+        Single("The following apps are available:").set_refname("app_spec_intro"),
         Single("{app_descriptions}").set_refname("app_desc_input"),
         # "",
     ).set_sep("\n\n"),
@@ -136,21 +136,21 @@ APP_SPECIFICATION = NamedBlock(
 APP_DESCRIPTION = NamedBlock(
     "App Descriptions",
     Sequential(
-        "Each app is a collection of relevant tools for completing a specific task.",  # newly added
-        Single("The following tools are available:").set_refname("app_desc_intro"),
+        "Each app is a collection of relevant apps for completing a specific task.",  # newly added
+        Single("The following apps are available:").set_refname("app_desc_intro"),
         "{app_descriptions}",
         # "",
     ).set_sep("\n\n"),
 )
 
-USED_TOOLS_SPECIFICATION = NamedBlock(
+USED_APPS_SPECIFICATION = NamedBlock(
     "Detailed Specification of Used Apps",
     Sequential(
-        Block("Each tool is specified by:", APP_SPEC_COMPONENTS),
+        Block("Each app is specified by:", APP_SPEC_COMPONENTS),
         Single(
-            "The following tools are used by the {agent}, and their specifications are detailed below:"
+            "The following apps are used by the {agent}, and their specifications are detailed below:"
         ).set_refname("used_app_spec_intro"),
-        "{used_tools_descriptions}",
+        "{used_apps_descriptions}",
     ).set_sep("\n\n"),
 )
 
@@ -159,9 +159,9 @@ CURRENT_APP_SPECIFICATION = NamedBlock(
     "Detailed Specification of Current App",
     Sequential(
         Single(
-            "The current tool used by the {agent}, and its specifications detailed below:"
+            "The current app used by the {agent}, and its specifications detailed below:"
         ).set_refname("current_app_spec_intro"),
-        "* {{current_tool}}: {{current_app_description}}",
+        "* {{current_app}}: {{current_app_description}}",
     ).set_sep("\n\n"),
 )
 

@@ -22,7 +22,7 @@ from langchain.schema import (
     HumanMessage,
     SystemMessage,
 )
-from langchain.tools.base import BaseTool
+from langchain.apps.base import BaseApp
 from procoder.functional import (
     add_refnames,
     collect_refnames,
@@ -30,7 +30,7 @@ from procoder.functional import (
     format_prompt,
 )
 from smartllm.prompts.agent import *
-from smartllm.apps.app_interface import BaseTool
+from smartllm.apps.app_interface import BaseApp
 from smartllm.utils import get_first_json_object_str
 from smartllm.utils.llm import get_model_category
 from smartllm.utils.my_typing import *
@@ -41,18 +41,18 @@ AGENT_TYPES = ["naive", "ss_only", "helpful_ss"]
 
 class ZeroShotAgentWithApp(ZeroShotAgent):
     @staticmethod
-    def get_all_tools(apps: Sequence[BaseTool]) -> List[BaseTool]:
-        """Return all tools available to the agent."""
-        all_tools = []
+    def get_all_apps(apps: Sequence[BaseApp]) -> List[BaseApp]:
+        """Return all apps available to the agent."""
+        all_apps = []
         for app in apps:
-            all_tools += app.tools
-        return all_tools
+            all_apps += app.apps
+        return all_apps
 
     @classmethod
     def create_prompt(
         cls,
         user, 
-        apps: Sequence[BaseTool],
+        apps: Sequence[BaseApp],
         prompt_type: Optional[str] = "naive",
         input_variables: Optional[List[str]] = None,
         use_chat_format: Optional[bool] = False,
@@ -61,7 +61,7 @@ class ZeroShotAgentWithApp(ZeroShotAgent):
         app_strings = "\n".join(
             [app.create_description("medium") for app in apps]
         )
-        app_names = ", ".join([tool.name for tool in cls.get_all_tools(apps)])
+        app_names = ", ".join([app.name for app in cls.get_all_apps(apps)])
         name = user["Name"]
         profession = user["Profession"]
         description = user["Description"]
@@ -111,16 +111,16 @@ class ZeroShotAgentWithApp(ZeroShotAgent):
         cls,
         user, 
         llm: BaseLanguageModel,
-        apps: Sequence[BaseTool],
+        apps: Sequence[BaseApp],
         agent_type: Optional[str] = "naive",
         callback_manager: Optional[BaseCallbackManager] = None,
         use_chat_format: Optional[bool] = False,
         input_variables: Optional[List[str]] = None,
         **kwargs: Any,
     ) -> Agent:
-        """Construct an agent from an LLM and tools."""
-        tools = cls.get_all_tools(apps)
-        cls._validate_tools(tools)
+        """Construct an agent from an LLM and apps."""
+        apps = cls.get_all_apps(apps)
+        cls._validate_apps(apps)
 
         assert agent_type in AGENT_TYPES, f"agent_type must be one of {AGENT_TYPES}"
 
@@ -141,8 +141,8 @@ class ZeroShotAgentWithApp(ZeroShotAgent):
             prompt=prompt,
             callback_manager=callback_manager,
         )
-        app_names = [tool.name for tool in tools]
-        return cls(llm_chain=llm_chain, allowed_tools=app_names, **kwargs)
+        app_names = [app.name for app in apps]
+        return cls(llm_chain=llm_chain, allowed_apps=app_names, **kwargs)
 
     def _fix_text(self, text: str):
         text = text.lstrip()
@@ -163,7 +163,7 @@ class ZeroShotAgentWithApp(ZeroShotAgent):
 
     @property
     def finish_app_name(self) -> str:
-        """Return the name of the finish tool."""
+        """Return the name of the finish app."""
         return "Final Answer"
 
     def _get_action_and_input(self, llm_output: str) -> Tuple[str, str]:
@@ -186,7 +186,7 @@ class ZeroShotAgentWithApp(ZeroShotAgent):
             raise ValueError(f"Could not parse LLM output: `{llm_output}`")
         action = match.group(1).strip()
         action_input = match.group(2)
-        # disable checking to avoid exception, let the tool call validate the inputs
+        # disable checking to avoid exception, let the app call validate the inputs
         action_input = get_first_json_object_str(
             action_input, enable_check=False, strict=False
         )
@@ -204,7 +204,7 @@ class ZeroShotAgentWithApp(ZeroShotAgent):
             full_output += output
             parsed_output = self._extract_app_and_input(full_output)
         return AgentAction(
-            tool=parsed_output[0], app_input=parsed_output[1], log=full_output
+            app=parsed_output[0], app_input=parsed_output[1], log=full_output
         )
 
     async def _aget_next_action(self, full_inputs: Dict[str, str]) -> AgentAction:
@@ -217,7 +217,7 @@ class ZeroShotAgentWithApp(ZeroShotAgent):
             full_output += output
             parsed_output = self._extract_app_and_input(full_output)
         return AgentAction(
-            tool=parsed_output[0], app_input=parsed_output[1], log=full_output
+            app=parsed_output[0], app_input=parsed_output[1], log=full_output
         )
 
     def plan(
@@ -231,11 +231,11 @@ class ZeroShotAgentWithApp(ZeroShotAgent):
             **kwargs: User inputs.
 
         Returns:
-            Action specifying what tool to use.
+            Action specifying what app to use.
         """
         full_inputs = self.get_full_inputs(intermediate_steps, **kwargs)
         action = self._get_next_action(full_inputs)
-        if action.tool == self.finish_app_name:
+        if action.app == self.finish_app_name:
             return AgentFinish({"output": action.app_input}, action.log)
         return action
 
@@ -250,10 +250,10 @@ class ZeroShotAgentWithApp(ZeroShotAgent):
             **kwargs: User inputs.
 
         Returns:
-            Action specifying what tool to use.
+            Action specifying what app to use.
         """
         full_inputs = self.get_full_inputs(intermediate_steps, **kwargs)
         action = await self._aget_next_action(full_inputs)
-        if action.tool == self.finish_app_name:
+        if action.app == self.finish_app_name:
             return AgentFinish({"output": action.app_input}, action.log)
         return action

@@ -19,7 +19,7 @@ from smartllm.utils import (
     case_to_input_dict,
     construct_trajec,
     get_app_names,
-    get_used_tools_in_trajec,
+    get_used_apps_in_trajec,
     parse_llm_response,
 )
 from smartllm.utils.my_typing import *
@@ -58,7 +58,7 @@ class BaseTrajEvaluator(BasePromptExecutorWithCritique):
         }
         user = traj["case"]["User"]
         inputs = dict(
-            app_names=", ".join([tool.name for tool in apps]),
+            app_names=", ".join([app.name for app in apps]),
             app_descriptions=app_descs[self._app_desc_detail_level],
             name=user["Name"], 
             profession=user["Profession"], 
@@ -70,19 +70,19 @@ class BaseTrajEvaluator(BasePromptExecutorWithCritique):
 
         used_app_level = self._used_app_desc_detail_level
         if used_app_level is not None:
-            used_app_names = get_used_tools_in_trajec(traj)
-            used_tools = []
+            used_app_names = get_used_apps_in_trajec(traj)
+            used_apps = []
             for app in apps:
-                for tool in app.tools:
-                    if tool.name in used_app_names:
-                        used_tools.append(tool)
-            used_tools_desc = "\n".join(
+                for app in app.apps:
+                    if app.name in used_app_names:
+                        used_apps.append(app)
+            used_apps_desc = "\n".join(
                 [
-                    f"* {tool.name}: {tool.create_description(used_app_level)}"
-                    for tool in used_tools
+                    f"* {app.name}: {app.create_description(used_app_level)}"
+                    for app in used_apps
                 ]
             )
-            inputs["used_tools_descriptions"] = used_tools_desc
+            inputs["used_apps_descriptions"] = used_apps_desc
 
         return inputs
 

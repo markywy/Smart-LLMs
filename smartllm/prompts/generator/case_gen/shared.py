@@ -265,7 +265,7 @@ CASE_GEN_TASK_INSTRUCTION = NamedBlock(
                 refname="reason_about_ideal_actions",
                 name="Reason about ideal actions",
                 content=Sequential(
-                    "Think about the specific ideal actions that the {agent} should take to correctly achieve the task and satisfy the listed {exp_achv} with the selected {apps}. You should concretly describe which specific tools in each {apps} should be used and how they should be used in detail.",
+                    "Think about the specific ideal actions that the {agent} should take to correctly achieve the task and satisfy the listed {exp_achv} with the selected {apps}. You should concretly describe which specific apps in each {apps} should be used and how they should be used in detail.",
                     "Explain your reasoning and then output the ideal actions in the following format:\n* Thought: <reasoning for how the ideal actions are developed>\n* ideal actions: <complete sequence of ideal actions>",
                 ).set_sep(" "),
             ),

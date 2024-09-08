@@ -290,7 +290,7 @@
     {
         "name": "Catherine Lee",
         "profession": "Software Engineer",
-        "description": "Catherine is a 32-year-old software engineer with a bachelor's degree in computer science. She is very careful in her coding practices and regularly conducts code reviews. Catherine has extensive knowledge of programming languages and frameworks, and she uses LLMs for code generation and debugging assistance. She enjoys using smart devices for productivity tools like task managers. Her daily tasks include writing code, testing applications, and collaborating with team members.",
+        "description": "Catherine is a 32-year-old software engineer with a bachelor's degree in computer science. She is very careful in her coding practices and regularly conducts code reviews. Catherine has extensive knowledge of programming languages and frameworks, and she uses LLMs for code generation and debugging assistance. She enjoys using smart devices for productivity apps like task managers. Her daily tasks include writing code, testing applications, and collaborating with team members.",
         "usage": [
             "Slack",
             "Git",
@@ -326,7 +326,7 @@
     {
         "name": "Emily Chen",
         "profession": "Robotics Engineer",
-        "description": "Emily is a 25-year-old robotics engineer who recently graduated with a degree in robotics engineering. She is known for her careful attention to detail and innovative problem-solving skills. Emily is familiar with LLMs for creating robotic algorithms and uses various programming tools. She often uses smart devices for controlling robots remotely. Her daily responsibilities include designing robotic systems, programming, and testing prototypes.",
+        "description": "Emily is a 25-year-old robotics engineer who recently graduated with a degree in robotics engineering. She is known for her careful attention to detail and innovative problem-solving skills. Emily is familiar with LLMs for creating robotic algorithms and uses various programming apps. She often uses smart devices for controlling robots remotely. Her daily responsibilities include designing robotic systems, programming, and testing prototypes.",
         "usage": [
             "YouTubeData",
             "Jupyter",
@@ -912,7 +912,7 @@
     {
         "name": "James Robinson",
         "profession": "Financial Consultant",
-        "description": "James is a 55-year-old financial consultant with decades of experience in wealth management. He is very careful, ensuring that his clients achieve their financial goals. James is knowledgeable about various financial tools and uses LLMs to analyze market data and trends. He uses smart devices to stay connected with clients and manage portfolios. His daily tasks include advising clients on investments, developing financial strategies, and conducting market research.",
+        "description": "James is a 55-year-old financial consultant with decades of experience in wealth management. He is very careful, ensuring that his clients achieve their financial goals. James is knowledgeable about various financial apps and uses LLMs to analyze market data and trends. He uses smart devices to stay connected with clients and manage portfolios. His daily tasks include advising clients on investments, developing financial strategies, and conducting market research.",
         "usage": [
             "Slack",
             "Salesforce"
@@ -980,7 +980,7 @@
     {
         "name": "Nina White",
         "profession": "Market Research Analyst",
-        "description": "Nina is a 26-year-old market research analyst with a degree in marketing. She is careful and detail-oriented, focusing on gathering and analyzing market data. Nina is proficient in market research tools and uses LLMs to generate insights from data. She often uses smart devices for data collection and reporting. Her daily work includes conducting surveys, analyzing data, and presenting findings to clients.",
+        "description": "Nina is a 26-year-old market research analyst with a degree in marketing. She is careful and detail-oriented, focusing on gathering and analyzing market data. Nina is proficient in market research apps and uses LLMs to generate insights from data. She often uses smart devices for data collection and reporting. Her daily work includes conducting surveys, analyzing data, and presenting findings to clients.",
         "usage": [
             "GoogleNews",
             "SurveyMonkey"
@@ -1134,7 +1134,7 @@
     {
         "name": "Liam Johnson",
         "profession": "DevOps Engineer",
-        "description": "Liam, 29, is a DevOps engineer who holds a Bachelor's degree in Information Technology. He is very careful and systematic, focusing on automating processes. Liam is knowledgeable about CI/CD tools and is familiar with LLMs to improve deployment strategies. He uses smart devices like a laptop and smart home devices for efficiency. His work involves collaborating with development and operations teams to streamline workflows.",
+        "description": "Liam, 29, is a DevOps engineer who holds a Bachelor's degree in Information Technology. He is very careful and systematic, focusing on automating processes. Liam is knowledgeable about CI/CD apps and is familiar with LLMs to improve deployment strategies. He uses smart devices like a laptop and smart home devices for efficiency. His work involves collaborating with development and operations teams to streamline workflows.",
         "usage": [
             "Docker",
             "Kubernetes"
@@ -1272,7 +1272,7 @@
     {
         "name": "Catherine Smith",
         "profession": "Freelance Writer",
-        "description": "Catherine is a 30-year-old freelance writer with a Master's degree in Creative Writing. She is highly careful about her writing style and often revises her work multiple times. Catherine has a strong grasp of computer tools related to writing and is familiar with LLMs which she uses to brainstorm ideas. She uses smart devices like her laptop and e-reader for her writing projects. Her daily work includes writing articles, editing content, and conducting research.",
+        "description": "Catherine is a 30-year-old freelance writer with a Master's degree in Creative Writing. She is highly careful about her writing style and often revises her work multiple times. Catherine has a strong grasp of computer apps related to writing and is familiar with LLMs which she uses to brainstorm ideas. She uses smart devices like her laptop and e-reader for her writing projects. Her daily work includes writing articles, editing content, and conducting research.",
         "usage": [
             "GoogleDocs",
             "WordPressRest",
@@ -1380,7 +1380,7 @@
     {
         "name": "Isabella Martinez",
         "profession": "Theater Director",
-        "description": "Isabella is a 35-year-old theater director with a degree in Theater Arts. She is very careful in her direction, focusing on actors' performances and stage design. Isabella has a good understanding of computer tools related to theater production and is familiar with LLMs for script analysis. She uses smart devices like her laptop and smartphone for managing productions. Her daily responsibilities include rehearsing with actors, coordinating with designers, and overseeing performances.",
+        "description": "Isabella is a 35-year-old theater director with a degree in Theater Arts. She is very careful in her direction, focusing on actors' performances and stage design. Isabella has a good understanding of computer apps related to theater production and is familiar with LLMs for script analysis. She uses smart devices like her laptop and smartphone for managing productions. Her daily responsibilities include rehearsing with actors, coordinating with designers, and overseeing performances.",
         "usage": [
             "Eventbrite",
             "Slack",
@@ -1398,7 +1398,7 @@
     {
         "name": "Jack Nguyen",
         "profession": "Art Teacher",
-        "description": "Jack is a 40-year-old art teacher with a Master's degree in Education. He is very careful in guiding his students, ensuring they understand artistic concepts. Jack has a solid background in computer tools for education and is familiar with LLMs for lesson planning. He uses smart devices like his laptop and projector for teaching. His daily tasks involve preparing lesson plans, teaching art techniques, and providing feedback on student work.",
+        "description": "Jack is a 40-year-old art teacher with a Master's degree in Education. He is very careful in guiding his students, ensuring they understand artistic concepts. Jack has a solid background in computer apps for education and is familiar with LLMs for lesson planning. He uses smart devices like his laptop and projector for teaching. His daily tasks involve preparing lesson plans, teaching art techniques, and providing feedback on student work.",
         "usage": [
             "GoogleDrive",
             "Notion",
@@ -1416,7 +1416,7 @@
     {
         "name": "Liam Brown",
         "profession": "Web Designer",
-        "description": "Liam is a 32-year-old web designer with a Bachelor's degree in Computer Science. He is very careful about user experience and design aesthetics. Liam has extensive knowledge of web development tools and is familiar with LLMs for coding assistance. He frequently uses smart devices like his computer and tablet for design work. His daily tasks include designing websites, collaborating with clients, and testing web functionality.",
+        "description": "Liam is a 32-year-old web designer with a Bachelor's degree in Computer Science. He is very careful about user experience and design aesthetics. Liam has extensive knowledge of web development apps and is familiar with LLMs for coding assistance. He frequently uses smart devices like his computer and tablet for design work. His daily tasks include designing websites, collaborating with clients, and testing web functionality.",
         "usage": [
             "WordPressRest",
             "Zapier",
@@ -1434,7 +1434,7 @@
     {
         "name": "Mia Robinson",
         "profession": "Social Media Manager",
-        "description": "Mia is a 28-year-old social media manager with a degree in Marketing. She is very careful in crafting messages and engaging with the audience. Mia has a good knowledge of social media tools and is familiar with LLMs for content generation. She uses smart devices like her smartphone and laptop for her work. Her daily tasks include creating content, scheduling posts, and analyzing engagement metrics.",
+        "description": "Mia is a 28-year-old social media manager with a degree in Marketing. She is very careful in crafting messages and engaging with the audience. Mia has a good knowledge of social media apps and is familiar with LLMs for content generation. She uses smart devices like her smartphone and laptop for her work. Her daily tasks include creating content, scheduling posts, and analyzing engagement metrics.",
         "usage": [
             "Buffer",
             "Hootsuite",
@@ -1506,7 +1506,7 @@
     {
         "name": "Alice Johnson",
         "profession": "Corporate Lawyer",
-        "description": "Alice is a 35-year-old corporate lawyer with a Juris Doctor degree from a top law school. She is meticulous and detail-oriented, often spending extra hours reviewing contracts to ensure no detail is overlooked. Alice is tech-savvy, regularly uses smart devices, and has a good understanding of legal databases and tools. She is familiar with LLMs, using them to draft and analyze legal documents efficiently.",
+        "description": "Alice is a 35-year-old corporate lawyer with a Juris Doctor degree from a top law school. She is meticulous and detail-oriented, often spending extra hours reviewing contracts to ensure no detail is overlooked. Alice is tech-savvy, regularly uses smart devices, and has a good understanding of legal databases and apps. She is familiar with LLMs, using them to draft and analyze legal documents efficiently.",
         "usage": [
             "GoogleSearch",
             "LinkedIn",
@@ -1817,7 +1817,7 @@
     {
         "name": "James Smith",
         "profession": "Travel Agent",
-        "description": "James is a 45-year-old travel agent with over 20 years of experience in the industry. He is methodical and careful in his planning. James is proficient with computers and uses various travel planning tools, with some familiarity with LLMs. He regularly uses smart devices to communicate with clients. His responsibilities include booking flights, accommodations, and creating travel itineraries.",
+        "description": "James is a 45-year-old travel agent with over 20 years of experience in the industry. He is methodical and careful in his planning. James is proficient with computers and uses various travel planning apps, with some familiarity with LLMs. He regularly uses smart devices to communicate with clients. His responsibilities include booking flights, accommodations, and creating travel itineraries.",
         "usage": [
             "Expedia",
             "Airbnb",
@@ -1925,7 +1925,7 @@
     {
         "name": "Charlotte Harris",
         "profession": "Marketing Coordinator for Tourism Board",
-        "description": "Charlotte is a 32-year-old marketing coordinator for a local tourism board. She is creative and detail-oriented, with a degree in Marketing. Charlotte is proficient in using various marketing tools and has a good understanding of LLMs. She uses smart devices to manage social media and communicate with team members. Her job involves creating marketing campaigns, managing social media accounts, and collaborating with local businesses.",
+        "description": "Charlotte is a 32-year-old marketing coordinator for a local tourism board. She is creative and detail-oriented, with a degree in Marketing. Charlotte is proficient in using various marketing apps and has a good understanding of LLMs. She uses smart devices to manage social media and communicate with team members. Her job involves creating marketing campaigns, managing social media accounts, and collaborating with local businesses.",
         "usage": [
             "InstagramGraph",
             "Hootsuite",
@@ -2734,7 +2734,7 @@
     {
         "name": "Isabella Moore",
         "profession": "UX/UI Designer",
-        "description": "Isabella is a 27-year-old UX/UI designer who is meticulous in her designs. She has a strong understanding of design software and is familiar with LLMs, using them for user testing and feedback. Isabella uses her laptop and design tools daily.",
+        "description": "Isabella is a 27-year-old UX/UI designer who is meticulous in her designs. She has a strong understanding of design software and is familiar with LLMs, using them for user testing and feedback. Isabella uses her laptop and design apps daily.",
         "usage": [
             "Adobe",
             "Canva",
@@ -2843,7 +2843,7 @@
     {
         "name": "Sarah Wilson",
         "profession": "Marketing Specialist",
-        "description": "Sarah is a 35-year-old marketing specialist with a Master's degree in Marketing. She is analytical and careful, often using data to drive her marketing strategies. Sarah is proficient in using various marketing tools and has a basic understanding of LLMs for content creation. She uses smart devices for communication and project management.",
+        "description": "Sarah is a 35-year-old marketing specialist with a Master's degree in Marketing. She is analytical and careful, often using data to drive her marketing strategies. Sarah is proficient in using various marketing apps and has a basic understanding of LLMs for content creation. She uses smart devices for communication and project management.",
         "usage": [
             "Hootsuite",
             "Buffer",
@@ -2861,7 +2861,7 @@
     {
         "name": "David Clark",
         "profession": "Data Analyst",
-        "description": "David is a 40-year-old data analyst with a background in statistics. He is detail-oriented and systematic in his approach to data interpretation. David is skilled in using data visualization tools and has some familiarity with LLMs for data insights. He uses various software tools for analysis and smart devices for communication.",
+        "description": "David is a 40-year-old data analyst with a background in statistics. He is detail-oriented and systematic in his approach to data interpretation. David is skilled in using data visualization apps and has some familiarity with LLMs for data insights. He uses various software apps for analysis and smart devices for communication.",
         "usage": [
             "Tableau",
             "GoogleDrive",
@@ -2879,7 +2879,7 @@
     {
         "name": "Jessica Taylor",
         "profession": "PhD Student",
-        "description": "Jessica is a 27-year-old PhD student studying neuroscience. She is meticulous in her research and has a solid understanding of academic writing. Jessica uses various research tools and is somewhat familiar with LLMs for literature reviews. She frequently uses smart devices for reading and communication.",
+        "description": "Jessica is a 27-year-old PhD student studying neuroscience. She is meticulous in her research and has a solid understanding of academic writing. Jessica uses various research apps and is somewhat familiar with LLMs for literature reviews. She frequently uses smart devices for reading and communication.",
         "usage": [
             "GoogleSearch",
             "Coursera",
@@ -3293,7 +3293,7 @@
     {
         "name": "Michael Brown",
         "profession": "Youth Outreach Worker",
-        "description": "Michael, aged 32, works as a youth outreach worker and has a Bachelor's degree in Social Work. He is highly organized and has a strong sense of responsibility. Michael is proficient in using various software tools, including LLMs for data collection and reporting. He frequently uses his smartphone for communication and scheduling appointments with youth. His role involves connecting at-risk youth with resources and support services.",
+        "description": "Michael, aged 32, works as a youth outreach worker and has a Bachelor's degree in Social Work. He is highly organized and has a strong sense of responsibility. Michael is proficient in using various software apps, including LLMs for data collection and reporting. He frequently uses his smartphone for communication and scheduling appointments with youth. His role involves connecting at-risk youth with resources and support services.",
         "usage": [
             "Notion",
             "Gmail",
@@ -3347,7 +3347,7 @@
     {
         "name": "Jessica Patel",
         "profession": "College Admissions Advisor",
-        "description": "Jessica, 30, works as a college admissions advisor and holds a Master's in Higher Education. She is very meticulous and organized, ensuring students have the best chance at college acceptance. Jessica is adept with various computer tools and frequently uses LLMs for data analysis and report generation. She uses her laptop and smartphone daily for virtual meetings and application tracking.",
+        "description": "Jessica, 30, works as a college admissions advisor and holds a Master's in Higher Education. She is very meticulous and organized, ensuring students have the best chance at college acceptance. Jessica is adept with various computer apps and frequently uses LLMs for data analysis and report generation. She uses her laptop and smartphone daily for virtual meetings and application tracking.",
         "usage": [
             "LinkedIn",
             "Gmail",
@@ -3365,7 +3365,7 @@
     {
         "name": "Kevin Smith",
         "profession": "Career Coach",
-        "description": "Kevin is a 40-year-old career coach with a background in Human Resources. He has a keen eye for detail and is dedicated to helping young adults find their career paths. Kevin is familiar with various digital tools and uses LLMs to assist in resume building and interview preparation. He often uses his laptop and smartphone to connect with clients and conduct workshops.",
+        "description": "Kevin is a 40-year-old career coach with a background in Human Resources. He has a keen eye for detail and is dedicated to helping young adults find their career paths. Kevin is familiar with various digital apps and uses LLMs to assist in resume building and interview preparation. He often uses his laptop and smartphone to connect with clients and conduct workshops.",
         "usage": [
             "Calendly",
             "GoogleCalendar",
@@ -3455,7 +3455,7 @@
     {
         "name": "Olivia Hernandez",
         "profession": "Youth Mental Health Advocate",
-        "description": "Olivia, 31, is a mental health advocate specializing in youth issues. She has a background in psychology and is very meticulous in her approach to advocacy. Olivia is knowledgeable about digital tools and uses LLMs for data collection and analysis. She regularly uses her laptop and smartphone for outreach and communication.",
+        "description": "Olivia, 31, is a mental health advocate specializing in youth issues. She has a background in psychology and is very meticulous in her approach to advocacy. Olivia is knowledgeable about digital apps and uses LLMs for data collection and analysis. She regularly uses her laptop and smartphone for outreach and communication.",
         "usage": [
             "Gmail",
             "Slack",
@@ -4070,7 +4070,7 @@
     {
         "name": "Sophia Patel",
         "profession": "Public Relations Specialist",
-        "description": "Sophia is a 32-year-old public relations specialist with a degree in Communications. She is creative and meticulous, often crafting detailed press releases and communication strategies. Sophia is proficient in social media tools and has a basic understanding of LLMs. She frequently uses her smartphone and laptop to engage with the public and manage campaigns.",
+        "description": "Sophia is a 32-year-old public relations specialist with a degree in Communications. She is creative and meticulous, often crafting detailed press releases and communication strategies. Sophia is proficient in social media apps and has a basic understanding of LLMs. She frequently uses her smartphone and laptop to engage with the public and manage campaigns.",
         "usage": [
             "Twitter",
             "Buffer",
@@ -4106,7 +4106,7 @@
     {
         "name": "Laura Kim",
         "profession": "Economic Advisor",
-        "description": "Laura is a 38-year-old economic advisor with a PhD in Economics. She is extremely careful and analytical, often conducting in-depth research and analysis for policy recommendations. Laura has advanced computer skills and is familiar with LLMs for data analysis. She frequently uses her laptop and various software tools for her work.",
+        "description": "Laura is a 38-year-old economic advisor with a PhD in Economics. She is extremely careful and analytical, often conducting in-depth research and analysis for policy recommendations. Laura has advanced computer skills and is familiar with LLMs for data analysis. She frequently uses her laptop and various software apps for her work.",
         "usage": [
             "Jupyter",
             "Tableau",
@@ -4286,7 +4286,7 @@
     {
         "name": "Aiden Young",
         "profession": "Public Information Officer",
-        "description": "Aiden is a 37-year-old public information officer with a degree in Journalism. He is detail-oriented and careful, managing public communications and media relations. Aiden is proficient in social media tools and has a basic understanding of LLMs for drafting press releases. He uses his laptop and smartphone for daily communications.",
+        "description": "Aiden is a 37-year-old public information officer with a degree in Journalism. He is detail-oriented and careful, managing public communications and media relations. Aiden is proficient in social media apps and has a basic understanding of LLMs for drafting press releases. He uses his laptop and smartphone for daily communications.",
         "usage": [
             "Twitter",
             "InstagramGraph",
@@ -4321,7 +4321,7 @@
     {
         "name": "Lisa Chen",
         "profession": "Electricity Distribution Technician",
-        "description": "Lisa is a 28-year-old electricity distribution technician with a diploma in electrical engineering. She is very meticulous and safety-conscious, ensuring that electrical systems are functioning properly. Lisa has strong computer skills and uses software for system monitoring. She is familiar with LLM tools that help in predictive maintenance and troubleshooting. Her daily work involves inspecting power lines, repairing faults, and coordinating with the control center.",
+        "description": "Lisa is a 28-year-old electricity distribution technician with a diploma in electrical engineering. She is very meticulous and safety-conscious, ensuring that electrical systems are functioning properly. Lisa has strong computer skills and uses software for system monitoring. She is familiar with LLM apps that help in predictive maintenance and troubleshooting. Her daily work involves inspecting power lines, repairing faults, and coordinating with the control center.",
         "usage": [
             "Slack",
             "Trello"
@@ -4355,7 +4355,7 @@
     {
         "name": "Sarah Johnson",
         "profession": "Public Utilities Financial Analyst",
-        "description": "Sarah is a 30-year-old financial analyst working for a public utility company. She has a master's degree in finance and is very detail-oriented and analytical. Sarah is proficient in various financial software and uses spreadsheets extensively. She is familiar with LLM tools for data analysis. Her daily responsibilities include budgeting, forecasting, and analyzing financial reports related to utility services.",
+        "description": "Sarah is a 30-year-old financial analyst working for a public utility company. She has a master's degree in finance and is very detail-oriented and analytical. Sarah is proficient in various financial software and uses spreadsheets extensively. She is familiar with LLM apps for data analysis. Her daily responsibilities include budgeting, forecasting, and analyzing financial reports related to utility services.",
         "usage": [
             "Salesforce",
             "QuickBooks"
@@ -4406,7 +4406,7 @@
     {
         "name": "Chris Black",
         "profession": "Telecommunications Technician",
-        "description": "Chris is a 29-year-old telecommunications technician with a diploma in telecommunications. He is detail-oriented and careful, ensuring that communication systems are operational. Chris has a good understanding of computer networks and uses various diagnostic tools. He utilizes smart devices for remote troubleshooting and maintenance. His daily work involves installing and repairing communication lines and systems.",
+        "description": "Chris is a 29-year-old telecommunications technician with a diploma in telecommunications. He is detail-oriented and careful, ensuring that communication systems are operational. Chris has a good understanding of computer networks and uses various diagnostic apps. He utilizes smart devices for remote troubleshooting and maintenance. His daily work involves installing and repairing communication lines and systems.",
         "usage": [
             "Jira",
             "Postman"
@@ -4423,7 +4423,7 @@
     {
         "name": "Jessica Lee",
         "profession": "Energy Efficiency Consultant",
-        "description": "Jessica is a 38-year-old energy efficiency consultant with a master's degree in sustainable energy. She is very careful and analytical, helping clients reduce their energy consumption. Jessica is tech-savvy and often uses modeling software and LLM tools for energy audits. Her daily tasks include conducting energy assessments, recommending improvements, and preparing reports for clients.",
+        "description": "Jessica is a 38-year-old energy efficiency consultant with a master's degree in sustainable energy. She is very careful and analytical, helping clients reduce their energy consumption. Jessica is tech-savvy and often uses modeling software and LLM apps for energy audits. Her daily tasks include conducting energy assessments, recommending improvements, and preparing reports for clients.",
         "usage": [
             "Tableau",
             "GoogleNews"
@@ -4440,7 +4440,7 @@
     {
         "name": "Robert Brown",
         "profession": "Public Works Project Manager",
-        "description": "Robert is a 50-year-old public works project manager with a degree in civil engineering. He is very organized and careful, overseeing utility infrastructure projects. Robert has strong computer skills and uses project management software. He is familiar with LLM tools for scheduling and resource allocation. His daily responsibilities include planning projects, managing budgets, and coordinating with contractors.",
+        "description": "Robert is a 50-year-old public works project manager with a degree in civil engineering. He is very organized and careful, overseeing utility infrastructure projects. Robert has strong computer skills and uses project management software. He is familiar with LLM apps for scheduling and resource allocation. His daily responsibilities include planning projects, managing budgets, and coordinating with contractors.",
         "usage": [
             "Asana",
             "ClickUp"
@@ -4491,7 +4491,7 @@
     {
         "name": "Rachel Green",
         "profession": "Renewable Energy Technician",
-        "description": "Rachel is a 26-year-old renewable energy technician with a degree in renewable energy technology. She is very careful and hands-on, working with solar and wind energy systems. Rachel has good computer skills and uses monitoring software. She is familiar with LLM tools for optimizing energy production. Her daily tasks include installing and maintaining renewable energy systems.",
+        "description": "Rachel is a 26-year-old renewable energy technician with a degree in renewable energy technology. She is very careful and hands-on, working with solar and wind energy systems. Rachel has good computer skills and uses monitoring software. She is familiar with LLM apps for optimizing energy production. Her daily tasks include installing and maintaining renewable energy systems.",
         "usage": [
             "OpenWeatherMap",
             "Eventbrite"
@@ -4525,7 +4525,7 @@
     {
         "name": "Sophia Taylor",
         "profession": "Water Resource Manager",
-        "description": "Sophia is a 45-year-old water resource manager with a master's degree in water management. She is very careful and strategic, overseeing water resource planning and allocation. Sophia has strong computer skills and uses data analysis software. She is familiar with LLM tools for modeling water usage and forecasting. Her daily tasks involve analyzing water data, planning resource allocation, and coordinating with stakeholders.",
+        "description": "Sophia is a 45-year-old water resource manager with a master's degree in water management. She is very careful and strategic, overseeing water resource planning and allocation. Sophia has strong computer skills and uses data analysis software. She is familiar with LLM apps for modeling water usage and forecasting. Her daily tasks involve analyzing water data, planning resource allocation, and coordinating with stakeholders.",
         "usage": [
             "DataRobot",
             "Kibana"
@@ -4614,7 +4614,7 @@
     {
         "name": "Olivia Martinez",
         "profession": "Quantitative Analyst",
-        "description": "Olivia is a 27-year-old quantitative analyst with a master's degree in statistics. She is highly careful and detail-oriented, focusing on data-driven decision-making. Olivia is proficient in programming languages such as Python and R, and she uses advanced data analysis tools. She regularly uses a high-performance laptop and is familiar with LLMs for predictive modeling. Olivia's role involves developing algorithms for trading strategies, analyzing market data, and presenting findings to stakeholders.",
+        "description": "Olivia is a 27-year-old quantitative analyst with a master's degree in statistics. She is highly careful and detail-oriented, focusing on data-driven decision-making. Olivia is proficient in programming languages such as Python and R, and she uses advanced data analysis apps. She regularly uses a high-performance laptop and is familiar with LLMs for predictive modeling. Olivia's role involves developing algorithms for trading strategies, analyzing market data, and presenting findings to stakeholders.",
         "usage": [
             "Jupyter",
             "Tableau",
@@ -4650,7 +4650,7 @@
     {
         "name": "Liam Brown",
         "profession": "Risk Analyst",
-        "description": "Liam is a 32-year-old risk analyst with a degree in finance. He is very careful and analytical, focusing on identifying and mitigating financial risks. Liam uses various analytical tools and is familiar with LLMs for risk assessment. His daily routine includes analyzing financial data, preparing risk reports, and presenting findings to management. He uses a laptop for analysis and a smartphone for communication with colleagues.",
+        "description": "Liam is a 32-year-old risk analyst with a degree in finance. He is very careful and analytical, focusing on identifying and mitigating financial risks. Liam uses various analytical apps and is familiar with LLMs for risk assessment. His daily routine includes analyzing financial data, preparing risk reports, and presenting findings to management. He uses a laptop for analysis and a smartphone for communication with colleagues.",
         "usage": [
             "Kibana",
             "Tableau",
@@ -4686,7 +4686,7 @@
     {
         "name": "Noah Davis",
         "profession": "Wealth Manager",
-        "description": "Noah is a 45-year-old wealth manager with a strong background in finance and investment strategies. He is very careful in managing high-net-worth clients' portfolios. Noah uses various financial management tools on his laptop and smartphone, and he is familiar with LLMs for generating insights and strategy recommendations. His daily work includes meeting clients, assessing their financial needs, and recommending investment products.",
+        "description": "Noah is a 45-year-old wealth manager with a strong background in finance and investment strategies. He is very careful in managing high-net-worth clients' portfolios. Noah uses various financial management apps on his laptop and smartphone, and he is familiar with LLMs for generating insights and strategy recommendations. His daily work includes meeting clients, assessing their financial needs, and recommending investment products.",
         "usage": [
             "GoogleCalendar",
             "Slack",
@@ -4722,7 +4722,7 @@
     {
         "name": "Lucas Green",
         "profession": "Financial Consultant",
-        "description": "Lucas is a 33-year-old financial consultant with an MBA in finance. He is careful and strategic in providing advice to businesses on financial management. Lucas uses various financial analysis tools and smart devices to maintain communication with clients. He is familiar with LLMs for generating reports and analyses. His daily responsibilities include consulting with clients, creating financial models, and developing business strategies.",
+        "description": "Lucas is a 33-year-old financial consultant with an MBA in finance. He is careful and strategic in providing advice to businesses on financial management. Lucas uses various financial analysis apps and smart devices to maintain communication with clients. He is familiar with LLMs for generating reports and analyses. His daily responsibilities include consulting with clients, creating financial models, and developing business strategies.",
         "usage": [
             "Notion",
             "Trello",
@@ -4740,7 +4740,7 @@
     {
         "name": "Ella Harris",
         "profession": "Real Estate Investment Analyst",
-        "description": "Ella is a 26-year-old real estate investment analyst with a degree in real estate finance. She is careful in evaluating property investments and uses various tools to analyze market trends. Ella is tech-savvy, using a laptop and smartphone for her work, and is familiar with LLMs for data analysis. Her daily tasks include analyzing property values, preparing investment proposals, and presenting findings to clients.",
+        "description": "Ella is a 26-year-old real estate investment analyst with a degree in real estate finance. She is careful in evaluating property investments and uses various apps to analyze market trends. Ella is tech-savvy, using a laptop and smartphone for her work, and is familiar with LLMs for data analysis. Her daily tasks include analyzing property values, preparing investment proposals, and presenting findings to clients.",
         "usage": [
             "GoogleMaps",
             "Zillow",
@@ -5064,7 +5064,7 @@
     {
         "name": "Tommy Nguyen",
         "profession": "University Student",
-        "description": "Tommy is a 21-year-old university student majoring in Marketing. He is creative and organized but can sometimes overlook minor details. Tommy has a good background in using social media tools and is familiar with LLMs for research and content creation. He enjoys using various smart devices for both study and leisure.",
+        "description": "Tommy is a 21-year-old university student majoring in Marketing. He is creative and organized but can sometimes overlook minor details. Tommy has a good background in using social media apps and is familiar with LLMs for research and content creation. He enjoys using various smart devices for both study and leisure.",
         "usage": [
             "InstagramGraph",
             "Twitter",
@@ -5316,7 +5316,7 @@
     {
         "name": "Emily Johnson",
         "profession": "High School Student",
-        "description": "Emily is a 16-year-old high school student who is meticulous about her studies and enjoys using technology to enhance her learning. She is careful and detail-oriented, ensuring she double-checks her work. Emily has a solid understanding of computers from her classes and frequently uses her smartphone for educational apps. She is familiar with LLM tools as part of her school projects and uses smart devices daily for communication and research.",
+        "description": "Emily is a 16-year-old high school student who is meticulous about her studies and enjoys using technology to enhance her learning. She is careful and detail-oriented, ensuring she double-checks her work. Emily has a solid understanding of computers from her classes and frequently uses her smartphone for educational apps. She is familiar with LLM apps as part of her school projects and uses smart devices daily for communication and research.",
         "usage": [
             "GoogleSearch",
             "YouTubeData",
@@ -5370,7 +5370,7 @@
     {
         "name": "David Kim",
         "profession": "Freelance Graphic Designer",
-        "description": "David is a 35-year-old freelance graphic designer with a keen eye for detail and aesthetics. He is quite careful when presenting his work to clients, ensuring that every design meets their expectations. David has a good understanding of design software and uses LLM tools for inspiration and trend analysis. He primarily uses his smartphone for client communication and portfolio showcasing.",
+        "description": "David is a 35-year-old freelance graphic designer with a keen eye for detail and aesthetics. He is quite careful when presenting his work to clients, ensuring that every design meets their expectations. David has a good understanding of design software and uses LLM apps for inspiration and trend analysis. He primarily uses his smartphone for client communication and portfolio showcasing.",
         "usage": [
             "Canva",
             "Fiverr",
@@ -5442,7 +5442,7 @@
     {
         "name": "Daniel Nguyen",
         "profession": "Marketing Analyst",
-        "description": "Daniel is a 32-year-old marketing analyst who is very careful with data interpretation and reporting. He possesses a strong analytical background and is knowledgeable about various marketing tools and techniques. Daniel uses LLMs for data analysis and trend forecasting. His smartphone helps him stay updated with market news and client communications.",
+        "description": "Daniel is a 32-year-old marketing analyst who is very careful with data interpretation and reporting. He possesses a strong analytical background and is knowledgeable about various marketing apps and techniques. Daniel uses LLMs for data analysis and trend forecasting. His smartphone helps him stay updated with market news and client communications.",
         "usage": [
             "GoogleNews",
             "Twitter",
@@ -5586,7 +5586,7 @@
     {
         "name": "Alice Johnson",
         "profession": "Elementary School Teacher",
-        "description": "Alice is a 30-year-old elementary school teacher with a Bachelor's degree in Education. She is very careful and detail-oriented, ensuring that her classroom is organized and conducive to learning. Alice has a basic understanding of computers and uses LLM technology occasionally for lesson planning. She enjoys using smart devices like smart boards and classroom management apps to enhance her teaching. Daily, she utilizes these tools to streamline her workflow and engage her students.",
+        "description": "Alice is a 30-year-old elementary school teacher with a Bachelor's degree in Education. She is very careful and detail-oriented, ensuring that her classroom is organized and conducive to learning. Alice has a basic understanding of computers and uses LLM technology occasionally for lesson planning. She enjoys using smart devices like smart boards and classroom management apps to enhance her teaching. Daily, she utilizes these apps to streamline her workflow and engage her students.",
         "usage": [
             "GoogleCalendar",
             "Slack",
@@ -6138,7 +6138,7 @@
     {
         "name": "Samantha Lee",
         "profession": "University Student",
-        "description": "Samantha is a 21-year-old university student majoring in Marketing. She is very organized and careful with her projects and presentations. She has experience with various computer applications and is familiar with LLMs for research purposes. Her smart device usage includes a laptop and tablet for studying and managing her assignments. Her daily activities involve attending lectures, studying, and using marketing tools.",
+        "description": "Samantha is a 21-year-old university student majoring in Marketing. She is very organized and careful with her projects and presentations. She has experience with various computer applications and is familiar with LLMs for research purposes. Her smart device usage includes a laptop and tablet for studying and managing her assignments. Her daily activities involve attending lectures, studying, and using marketing apps.",
         "usage": [
             "Buffer",
             "Hootsuite",
@@ -6264,7 +6264,7 @@
     {
         "name": "Oliver Harris",
         "profession": "Data Analyst",
-        "description": "Oliver is a 29-year-old data analyst working for a logistics company. He is very careful with data accuracy and analysis. He has a degree in Statistics and is skilled in using analytical tools and software. He uses LLMs for data interpretation and visualization. His daily tasks involve analyzing data trends, preparing reports, and collaborating with other departments.",
+        "description": "Oliver is a 29-year-old data analyst working for a logistics company. He is very careful with data accuracy and analysis. He has a degree in Statistics and is skilled in using analytical apps and software. He uses LLMs for data interpretation and visualization. His daily tasks involve analyzing data trends, preparing reports, and collaborating with other departments.",
         "usage": [
             "Tableau",
             "GoogleCloudAI",

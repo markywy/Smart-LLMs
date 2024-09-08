@@ -121,7 +121,7 @@ AGENT_COMP_EVALUATOR_RUBRIC_ZH = NamedBlock(
                         ),
                     ),
                     NamedVariable(
-                        name="Incorrect tool calls consideration",
+                        name="Incorrect app calls consideration",
                         refname="incorrect_app_exec_consider",
                         content=Sequential(
                             EVAL_INCORRECT_APP_CALL_ZH,

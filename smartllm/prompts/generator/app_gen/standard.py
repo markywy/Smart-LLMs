@@ -67,7 +67,7 @@ if __name__ == "__main__":
 
     def print_prompt(prompt):
         inputs = {
-            "existing_tools": None,
+            "existing_apps": None,
             "existing_domains": None,
             "json_types": JSON_TYPES_STR,
             "examples": None,

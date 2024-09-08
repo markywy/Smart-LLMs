@@ -1,8 +1,8 @@
 """
-Create virtual tools from json files.
+Create virtual apps from json files.
 
 # Usage example:
-python scripts/create_virtual_tools.py --in-json-path <json file path> --out-py-path <output python file path>
+python scripts/create_virtual_apps.py --in-json-path <json file path> --out-py-path <output python file path>
 """
 
 import argparse
@@ -12,7 +12,7 @@ import os
 from smartllm.utils import read_file
 
 PY_HEADER = """
-\"\"\"Virtual tools created from json files.\"\"\"
+\"\"\"Virtual apps created from json files.\"\"\"
 from smartllm.apps.app_interface import (
     ArgException,
     ArgParameter,
@@ -68,15 +68,15 @@ args.add_argument(
     "--out-py-path",
     "-o",
     type=str,
-    default="./smartllm/tools/virtual_tools.py",
-    help="Path to output python file containing tool definitions.",
+    default="./smartllm/apps/virtual_apps.py",
+    help="Path to output python file containing app definitions.",
 )
 args = args.parse_args()
 
 
 def main():
     app_specs = []
-    # load tool specifications from json file
+    # load app specifications from json file
     for filename in args.app_spec_files:
         filepath = os.path.join(args.app_spec_dir, filename)
         app_specs.extend(read_file(filepath))
@@ -85,25 +85,25 @@ def main():
     out_py = open(args.out_py_path, "w", encoding='utf-8')
     out_py.write(PY_HEADER)
 
-    # create virtual tools
-    for toolspec in app_specs:
-        app_name = toolspec["app"]
-        app_name_for_human = toolspec["name_for_human"]
-        app_name_for_model = toolspec["name_for_model"]
-        app_description_for_human = toolspec["description_for_human"]
-        app_description_for_model = toolspec["description_for_model"]
+    # create virtual apps
+    for appspec in app_specs:
+        app_name = appspec["app"]
+        app_name_for_human = appspec["name_for_human"]
+        app_name_for_model = appspec["name_for_model"]
+        app_description_for_human = appspec["description_for_human"]
+        app_description_for_model = appspec["description_for_model"]
 
         out_py.write(SEPERATOR.format(app_name=app_name))
 
         app_class_names = []
-        for tool in toolspec["api"]:
-            app_name = tool["name"]
+        for app in appspec["api"]:
+            app_name = app["name"]
             app_cls_name = app_name_for_model + app_name
             app_class_names.append(app_cls_name)
-            app_summary = tool["summary"]
-            app_parameters = tool.get("parameters", [])
-            app_returns = tool.get("returns", [])
-            app_exceptions = tool.get("exceptions", [])
+            app_summary = app["summary"]
+            app_parameters = app.get("parameters", [])
+            app_returns = app.get("returns", [])
+            app_exceptions = app.get("exceptions", [])
 
             out_py.write(
                 APP_CLASS_TEMPLATE.format(

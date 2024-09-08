@@ -8,7 +8,7 @@ from langchain.agents import (
     BaseMultiActionAgent,
     BaseSingleActionAgent,
     App,
-    tool,
+    app,
 )
 from langchain.agents.agent import ExceptionApp
 from langchain.base_language import BaseLanguageModel
@@ -19,9 +19,9 @@ from langchain.callbacks.manager import (
     Callbacks,
 )
 from langchain.schema import AgentAction, AgentFinish, OutputParserException
-from langchain.tools.base import BaseTool
-from smartllm.apps.app_interface import BaseTool
-from smartllm.utils import InvalidTool
+from langchain.apps.base import BaseApp
+from smartllm.apps.app_interface import BaseApp
+from smartllm.utils import InvalidApp
 from smartllm.utils.my_typing import *
 
 
@@ -29,22 +29,22 @@ class AgentExecutorWithApp(AgentExecutor):
     """Agent executor with apps"""
 
     app_names: List[str]
-    apps: List[BaseTool]
+    apps: List[BaseApp]
 
     @classmethod
     def from_agent_and_apps(
         cls,
         agent: Union[BaseSingleActionAgent, BaseMultiActionAgent],
-        apps: Sequence[BaseTool],
+        apps: Sequence[BaseApp],
         callbacks: Callbacks = None,
         **kwargs: Any,
     ) -> AgentExecutor:
         """Create from agent and apps."""
-        tools = agent.get_all_tools(apps)
-        app_names = [tool.name for tool in tools]
+        apps = agent.get_all_apps(apps)
+        app_names = [app.name for app in apps]
         return cls(
             agent=agent,
-            tools=tools,
+            apps=apps,
             apps=apps,
             app_names=app_names,
             callbacks=callbacks,
@@ -52,10 +52,10 @@ class AgentExecutorWithApp(AgentExecutor):
         )
 
     @classmethod
-    def from_agent_and_tools(
+    def from_agent_and_apps(
         cls,
         agent: Union[BaseSingleActionAgent, BaseMultiActionAgent],
-        tools: Sequence[BaseTool],
+        apps: Sequence[BaseApp],
         callbacks: Callbacks = None,
         **kwargs: Any,
     ) -> AgentExecutor:
@@ -100,10 +100,10 @@ class AgentExecutorWithApp(AgentExecutor):
             final_output["intermediate_steps"] = intermediate_steps
         return final_output
 
-    # Smartllm: below parts are just override to replace InvalidTool with ours, update at langchain==0.0.277
+    # Smartllm: below parts are just override to replace InvalidApp with ours, update at langchain==0.0.277
     def _take_next_step(
         self,
-        name_to_app_map: Dict[str, BaseTool],
+        name_to_app_map: Dict[str, BaseApp],
         color_mapping: Dict[str, str],
         inputs: Dict[str, str],
         intermediate_steps: List[Tuple[AgentAction, str]],
@@ -111,7 +111,7 @@ class AgentExecutorWithApp(AgentExecutor):
     ) -> Union[AgentFinish, List[Tuple[AgentAction, str]]]:
         """Take a single step in the thought-action-observation loop.
 
-        Override to use custom InvalidTool."""
+        Override to use custom InvalidApp."""
         try:
             intermediate_steps = self._prepare_intermediate_steps(intermediate_steps)
 
@@ -153,7 +153,7 @@ class AgentExecutorWithApp(AgentExecutor):
                 **app_run_kwargs,
             )
             return [(output, observation)]
-        # If the tool chosen is the finishing tool, then we end and return.
+        # If the app chosen is the finishing app, then we end and return.
         if isinstance(output, AgentFinish):
             return output
         actions: List[AgentAction]
@@ -165,16 +165,16 @@ class AgentExecutorWithApp(AgentExecutor):
         for agent_action in actions:
             if run_manager:
                 run_manager.on_agent_action(agent_action, color="green")
-            # Otherwise we lookup the tool
-            if agent_action.tool in name_to_app_map:
-                tool = name_to_app_map[agent_action.tool]
-                return_direct = tool.return_direct
-                color = color_mapping[agent_action.tool]
+            # Otherwise we lookup the app
+            if agent_action.app in name_to_app_map:
+                app = name_to_app_map[agent_action.app]
+                return_direct = app.return_direct
+                color = color_mapping[agent_action.app]
                 app_run_kwargs = self.agent.app_run_logging_kwargs()
                 if return_direct:
                     app_run_kwargs["llm_prefix"] = ""
-                # We then call the tool on the tool input to get an observation
-                observation = tool.run(
+                # We then call the app on the app input to get an observation
+                observation = app.run(
                     agent_action.app_input,
                     verbose=self.verbose,
                     color=color,
@@ -184,8 +184,8 @@ class AgentExecutorWithApp(AgentExecutor):
             else:
                 app_run_kwargs = self.agent.app_run_logging_kwargs()
                 # * ====== Smartllm: begin overwrite ======
-                observation = InvalidTool(available_tools=self.app_names).run(
-                    agent_action.tool,
+                observation = InvalidApp(available_apps=self.app_names).run(
+                    agent_action.app,
                     verbose=self.verbose,
                     color=None,
                     callbacks=run_manager.get_child() if run_manager else None,
@@ -197,13 +197,13 @@ class AgentExecutorWithApp(AgentExecutor):
 
     async def _atake_next_step(
         self,
-        name_to_app_map: Dict[str, BaseTool],
+        name_to_app_map: Dict[str, BaseApp],
         color_mapping: Dict[str, str],
         inputs: Dict[str, str],
         intermediate_steps: List[Tuple[AgentAction, str]],
         run_manager: Optional[AsyncCallbackManagerForChainRun] = None,
     ) -> Union[AgentFinish, List[Tuple[AgentAction, str]]]:
-        """Override to use custom InvalidTool."""
+        """Override to use custom InvalidApp."""
         try:
             intermediate_steps = self._prepare_intermediate_steps(intermediate_steps)
 
@@ -243,7 +243,7 @@ class AgentExecutorWithApp(AgentExecutor):
                 **app_run_kwargs,
             )
             return [(output, observation)]
-        # If the tool chosen is the finishing tool, then we end and return.
+        # If the app chosen is the finishing app, then we end and return.
         if isinstance(output, AgentFinish):
             return output
         actions: List[AgentAction]
@@ -259,16 +259,16 @@ class AgentExecutorWithApp(AgentExecutor):
                 await run_manager.on_agent_action(
                     agent_action, verbose=self.verbose, color="green"
                 )
-            # Otherwise we lookup the tool
-            if agent_action.tool in name_to_app_map:
-                tool = name_to_app_map[agent_action.tool]
-                return_direct = tool.return_direct
-                color = color_mapping[agent_action.tool]
+            # Otherwise we lookup the app
+            if agent_action.app in name_to_app_map:
+                app = name_to_app_map[agent_action.app]
+                return_direct = app.return_direct
+                color = color_mapping[agent_action.app]
                 app_run_kwargs = self.agent.app_run_logging_kwargs()
                 if return_direct:
                     app_run_kwargs["llm_prefix"] = ""
-                # We then call the tool on the tool input to get an observation
-                observation = await tool.arun(
+                # We then call the app on the app input to get an observation
+                observation = await app.arun(
                     agent_action.app_input,
                     verbose=self.verbose,
                     color=color,
@@ -278,8 +278,8 @@ class AgentExecutorWithApp(AgentExecutor):
             else:
                 app_run_kwargs = self.agent.app_run_logging_kwargs()
                 # * ====== Smartllm: begin overwrite ======
-                observation = await InvalidTool(available_tools=self.app_names).arun(
-                    agent_action.tool,
+                observation = await InvalidApp(available_apps=self.app_names).arun(
+                    agent_action.app,
                     verbose=self.verbose,
                     color=None,
                     callbacks=run_manager.get_child() if run_manager else None,
@@ -288,7 +288,7 @@ class AgentExecutorWithApp(AgentExecutor):
                 # * ====== Smartllm: end overwrite ======
             return agent_action, observation
 
-        # Use asyncio.gather to run multiple tool.arun() calls concurrently
+        # Use asyncio.gather to run multiple app.arun() calls concurrently
         result = await asyncio.gather(
             *[_aperform_agent_action(agent_action) for agent_action in actions]
         )

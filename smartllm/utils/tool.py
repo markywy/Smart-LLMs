@@ -3,9 +3,9 @@ import random
 import re
 from ast import literal_eval
 
-from langchain.agents.tools import InvalidTool as LangChainInvalidTool
+from langchain.agents.apps import InvalidApp as LangChainInvalidApp
 from langchain.callbacks.stdout import StdOutCallbackHandler
-from langchain.tools import BaseTool
+from langchain.apps import BaseApp
 
 from .my_typing import *
 
@@ -41,7 +41,7 @@ def create_str(
 
 
 class ArgParameter(TypedDict):
-    """The input parameter for a tool"""
+    """The input parameter for a app"""
 
     name: str
     type: str
@@ -50,7 +50,7 @@ class ArgParameter(TypedDict):
 
 
 class ArgReturn(TypedDict):
-    """The return value for a tool"""
+    """The return value for a app"""
 
     name: str
     type: str
@@ -58,17 +58,17 @@ class ArgReturn(TypedDict):
 
 
 class ArgException(TypedDict):
-    """The exception for a tool"""
+    """The exception for a app"""
 
     name: str
     description: str
 
 
-class DummyAppWithMessage(BaseTool):
+class DummyAppWithMessage(BaseApp):
     """App that is run when invalid situation is encountered by agent."""
 
     name = "dummy_app_with_message"
-    description = "Called when tool is not actually run."
+    description = "Called when app is not actually run."
 
     def _get_message(self, msg: str) -> str:
         return msg
@@ -80,19 +80,19 @@ class DummyAppWithMessage(BaseTool):
         return self._get_message(msg)
 
 
-class InvalidTool(DummyAppWithMessage):
-    """App that is run when invalid tool name is encountered by agent."""
+class InvalidApp(DummyAppWithMessage):
+    """App that is run when invalid app name is encountered by agent."""
 
-    name = "invalid_tool"
-    description = "Called when tool name is invalid."
-    available_tools: List[str]
+    name = "invalid_app"
+    description = "Called when app name is invalid."
+    available_apps: List[str]
 
     def _get_message(self, app_name: str) -> str:
-        availabel_app_string = ", ".join(self.available_tools)
+        availabel_app_string = ", ".join(self.available_apps)
         err_msg = (
-            f"{app_name} is not a valid tool, try another one. "
-            f"You should use available tools in [{availabel_app_string}] only. "
-            "If you cannot (or do not need to) use any existing tools to improve your response, "
+            f"{app_name} is not a valid app, try another one. "
+            f"You should use available apps in [{availabel_app_string}] only. "
+            "If you cannot (or do not need to) use any existing apps to improve your response, "
             "conclude by stating Final Answer directly."
         )
 
@@ -161,7 +161,7 @@ def load_dict(app_input: str) -> Dict[str, Any]:
                 f"Invalid syntax for \\', you may need to use \\\\' instead"
             )
         raise ValueError(
-            f"Invalid format: {e}. Please format it as a JSON object with necessary fields matching the tool's argument specifications. Do not include backsticks to wrap the JSON object."
+            f"Invalid format: {e}. Please format it as a JSON object with necessary fields matching the app's argument specifications. Do not include backsticks to wrap the JSON object."
         )
 
 
@@ -181,7 +181,7 @@ def check_type(name: str, value: Any, expected_type: type):
 
 
 def validate_inputs(parameters: List[ArgParameter], inputs: Dict[str, Any]):
-    """Validate the inputs for a tool."""
+    """Validate the inputs for a app."""
     remains = set(inputs.keys())
     for param in parameters:
         name = param["name"]
@@ -197,7 +197,7 @@ def validate_inputs(parameters: List[ArgParameter], inputs: Dict[str, Any]):
 
 
 def validate_outputs(returns: List[ArgReturn], outputs: Dict[str, Any]):
-    """Validate the outputs for a tool."""
+    """Validate the outputs for a app."""
     if not isinstance(outputs, dict):
         raise ValueError(
             f"Invalid type for outputs: {type(outputs).__name__}, expected dict."
@@ -220,14 +220,14 @@ def validate_outputs(returns: List[ArgReturn], outputs: Dict[str, Any]):
 def run_with_input_validation(
     run_func: Callable,
     inputs: Dict[str, str],
-    tool: BaseTool,
+    app: BaseApp,
     raw_inputs: str,
     **kwargs,
 ):
-    """Run a tool with inputs, where the format of raw inputs is validated."""
+    """Run a app with inputs, where the format of raw inputs is validated."""
     try:
         params = load_dict(raw_inputs)
-        validate_inputs(tool.parameters, params)
+        validate_inputs(app.parameters, params)
     except Exception as e:
         return DummyAppWithMessage().run(
             f'{{"error": "InvalidRequestException: {e}"}}', **kwargs
@@ -253,20 +253,20 @@ def format_app_dict(
 ):
     """Format a app specified as a dictionary into a string."""
     app_name = app[namekey]
-    desc = f"<{app_name}> app with following tool APIs:\n"
-    for tool in app["api"]:
+    desc = f"<{app_name}> app with following app APIs:\n"
+    for app in app["api"]:
         if use_simple_app_desc:
-            summary = tool["summary"].rstrip("\n ")
-            desc += f"{indent}* {tool['name']}: {summary}\n"
+            summary = app["summary"].rstrip("\n ")
+            desc += f"{indent}* {app['name']}: {summary}\n"
         else:
-            summary = tool["summary"].rstrip("\n ")
-            desc += f"{indent}* {tool['name']}"
+            summary = app["summary"].rstrip("\n ")
+            desc += f"{indent}* {app['name']}"
             params = []
-            for p in tool["parameters"]:
+            for p in app["parameters"]:
                 params.append(f"{p['name']}")
             desc += f"({', '.join(params)})"
             returns = []
-            for r in tool["returns"]:
+            for r in app["returns"]:
                 returns.append(f"{r['name']}")
             desc += f" -> {', '.join(returns)}"
             desc += f" : {summary}\n"
