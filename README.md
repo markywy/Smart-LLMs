@@ -67,8 +67,13 @@ After completing this step, a file named `gen_users.jsonl` will be generated, co
 After completing this step, a file named `gen_cases_<timestamp>.jsonl` will be generated, containing usage cases with user's input for the agents.
 
 ### Customizing the simulation environment and conducting simulations.
+Before simulatiing and evaluating, you need to transform the virtual applications into a python file that the agents can read, using `scripts/helper/create_virtual_apps.py` and running the command below:
 
-Simulate the usage case with `simulate.py`: `python scripts/simulate.py -inp <cases_file_path>`.
+```bash
+python scripts/helper/create_virtual_apps.py -i <apps_spec_path>
+``` 
+
+Simulate the usage cases with `simulate.py`: `python scripts/simulate.py -inp <cases_file_path>`.
 
 - Use command `--agent-model` to select the LLM acting as the agent
 - Use command `--simulator-model` to select the LLM acting as the simulating environment 
