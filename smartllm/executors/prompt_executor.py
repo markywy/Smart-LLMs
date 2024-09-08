@@ -273,7 +273,7 @@ class BasePromptExecutorWithCritique(BasePromptExecutor):
             "--critique-rounds",
             "-cr",
             type=int,
-            default=0,
+            default=2,
             help="The number of critique rounds",
         )
 

@@ -6,8 +6,8 @@ from langchain.agents import (
     AgentExecutor,
     BaseMultiActionAgent,
     BaseSingleActionAgent,
-    App,
-    app,
+    Tool,
+    tool,
 )
 from langchain.base_language import BaseLanguageModel
 from langchain.callbacks.base import BaseCallbackManager
@@ -38,7 +38,7 @@ from langchain.schema import (
     HumanMessage,
     SystemMessage,
 )
-from langchain.apps.base import BaseApp, StructuredApp
+from langchain.tools.base import BaseTool, StructuredTool
 from langchain.utilities.asyncio import asyncio_timeout
 from procoder.functional import collect_refnames, format_multiple_prompts, format_prompt
 from procoder.prompt import Module as PromptModule
@@ -54,7 +54,7 @@ from smartllm.prompts.simulator import (
     STD_SIMULATOR_SYSTEM_INFO_ZH,
 )
 from smartllm.apps import RealHuman, RealHumanAssistanceQuery
-from smartllm.apps.app_interface import BaseApp
+from smartllm.apps.app_interface import BaseToolkit
 from smartllm.utils import InvalidApp, run_with_input_validation, validate_outputs
 from smartllm.utils.my_typing import *
 
@@ -94,7 +94,7 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
         cls,
         user, 
         agent: Union[BaseSingleActionAgent, BaseMultiActionAgent],
-        apps: Sequence[BaseApp],
+        applications: Sequence[BaseToolkit],
         llm_simulator: BaseLanguageModel,
         llm_critiquer: Optional[BaseLanguageModel] = None,
         num_critique_steps: Optional[int] = 0,
@@ -104,7 +104,7 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
         **kwargs: Any,
     ) -> AgentExecutor:
         """Create from agent and apps."""
-        apps = agent.get_all_apps(apps)
+        apps = agent.get_all_apps(applications)
         app_names = [app.name for app in apps]
         if use_chat_format:
             assert isinstance(llm_simulator, BaseChatModel)
@@ -124,7 +124,7 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
             user=user, 
             agent=agent,
             apps=apps,
-            apps=apps,
+            applications=applications,
             app_names=app_names,
             llm_simulator_chain=llm_simulator_chain,
             llm_critiquer=llm_critiquer,
@@ -183,10 +183,10 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
 
     def _get_current_app_descriptions(self, app_name: str) -> str:
         # NOTE: assume only one app has the app with app_name
-        for app in self.apps:
-            for app in app.apps:
+        for application in self.applications:
+            for app in application.apps:
                 if app.name == app_name:
-                    return app.create_description(detail_level="low")
+                    return application.create_description(detail_level="low")
         raise ValueError(f"App {app_name} not found in any of the apps.")
 
     @property
@@ -211,8 +211,8 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
         ]
 
     @property
-    def llm_simulator_app(self) -> BaseApp:
-        result = StructuredApp.from_function(
+    def llm_simulator_app(self) -> BaseTool:
+        result = StructuredTool.from_function(
             func=lambda callbacks, **kwargs: self._get_simulated_observation(
                 callbacks, **kwargs
             ),
@@ -294,7 +294,7 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
         # this is copied from the agent's _construct_scratchpad
         scratchpad = ""
         for idx, (action, observation) in enumerate(intermediate_steps):
-            scratchpad += f"Action: {action.app}\nAction Input: {action.app_input}\n"
+            scratchpad += f"Action: {action.tool}\nAction Input: {action.tool_input}\n"
 
             if idx == len(intermediate_steps) - 1:
                 scratchpad += "\n"
@@ -506,7 +506,7 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
 
     def _take_next_step(
         self,
-        name_to_app_map: Dict[str, BaseApp],
+        name_to_app_map: Dict[str, BaseTool],
         color_mapping: Dict[str, str],
         inputs: Dict[str, str],
         intermediate_steps: List[Tuple[AgentAction, str]],
@@ -530,10 +530,10 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
                     agent_action, verbose=self.verbose, color="green"
                 )
             # Otherwise we lookup the app
-            if agent_action.app in name_to_app_map:
-                app = name_to_app_map[agent_action.app]
+            if agent_action.tool in name_to_app_map:
+                app = name_to_app_map[agent_action.tool]
                 return_direct = app.return_direct
-                color = color_mapping[agent_action.app]
+                color = color_mapping[agent_action.tool]
                 app_run_kwargs = self.agent.app_run_logging_kwargs()
 
                 # We then call the llm to simulate the execution of the app
@@ -544,10 +544,10 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
 
                 full_inputs = {
                     "simulator_scratchpad": simulator_scratchpad,
-                    "current_app": agent_action.app,
+                    "current_app": agent_action.tool,
                     "current_app_description": app.description,
                     "app_descriptions": self._get_current_app_descriptions(
-                        agent_action.app
+                        agent_action.tool
                     ),
                     **inputs,
                 }
@@ -556,7 +556,7 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
                     self.llm_simulator_app.run,
                     full_inputs,
                     app,
-                    agent_action.app_input,
+                    agent_action.tool_input,
                     verbose=self.verbose,
                     color=color,
                     **app_run_kwargs,
@@ -569,7 +569,7 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
             else:
                 app_run_kwargs = self.agent.app_run_logging_kwargs()
                 observation_text = InvalidApp(available_apps=self.app_names).run(
-                    agent_action.app,
+                    agent_action.tool,
                     verbose=self.verbose,
                     color=None,
                     **app_run_kwargs,
@@ -584,7 +584,7 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
 
     async def _atake_next_step(
         self,
-        name_to_app_map: Dict[str, BaseApp],
+        name_to_app_map: Dict[str, BaseTool],
         color_mapping: Dict[str, str],
         inputs: Dict[str, str],
         intermediate_steps: List[Tuple[AgentAction, str]],
@@ -611,10 +611,10 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
                     agent_action, verbose=self.verbose, color="green"
                 )
             # Otherwise we lookup the app
-            if agent_action.app in name_to_app_map:
-                app = name_to_app_map[agent_action.app]
+            if agent_action.tool in name_to_app_map:
+                app = name_to_app_map[agent_action.tool]
                 return_direct = app.return_direct
-                color = color_mapping[agent_action.app]
+                color = color_mapping[agent_action.tool]
                 app_run_kwargs = self.agent.app_run_logging_kwargs()
 
                 # We then call the llm to simulate the execution of the app
@@ -628,10 +628,10 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
 
                 full_inputs = {
                     "simulator_scratchpad": simulator_scratchpad,
-                    "current_app": agent_action.app,
+                    "current_app": agent_action.tool,
                     "current_app_description": app.description,
                     "app_descriptions": self._get_current_app_descriptions(
-                        agent_action.app
+                        agent_action.tool
                     ),
                     **inputs,
                 }
@@ -641,7 +641,7 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
                     self.llm_simulator_app.arun,
                     full_inputs,
                     app,
-                    agent_action.app_input,
+                    agent_action.tool_input,
                     verbose=self.verbose,
                     color=color,
                     **app_run_kwargs,
@@ -654,7 +654,7 @@ class StandardVirtualAgentExecutorWithAppZh(AgentExecutorWithApp):
             else:
                 app_run_kwargs = self.agent.app_run_logging_kwargs()
                 observation = await InvalidApp(available_apps=self.app_names).arun(
-                    agent_action.app,
+                    agent_action.tool,
                     verbose=self.verbose,
                     color=None,
                     **app_run_kwargs,

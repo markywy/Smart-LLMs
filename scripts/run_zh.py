@@ -5,7 +5,7 @@ import os.path as osp
 
 from smartllm.agents import AGENT_TYPES, SIMULATORS_ZH
 from smartllm.dataloader import DataLoader
-from smartllm.simulate_zh import EVALUATORS_ZH
+from smartllm.evaluator_zh import EVALUATORS_ZH
 from smartllm.utils import llm_register_args
 
 # format YYYY_MM_DD__HH_MM_SS

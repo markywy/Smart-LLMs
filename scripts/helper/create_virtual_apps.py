@@ -30,14 +30,14 @@ SEPERATOR = """
 #################### {app_name} ####################
 """
 
-APP_CLASS_TEMPLATE = """
+APPLICATION_CLASS_TEMPLATE = """
 @register_app()
-class {app_name}(FunctionApp):
-    name_for_human = "{app_name_for_human}"
-    description_for_human = "{app_description_for_human}"
-    name_for_model = "{app_name_for_model}"
-    description_for_model = "{app_description_for_model}"
-    app_classes = {app_class_names}
+class {application_name}(FunctionApp):
+    name_for_human = "{application_name_for_human}"
+    description_for_human = "{application_description_for_human}"
+    name_for_model = "{application_name_for_model}"
+    description_for_model = "{application_description_for_model}"
+    app_classes = {application_class_names}
 """
 
 APP_CLASS_TEMPLATE = """
@@ -87,19 +87,19 @@ def main():
 
     # create virtual apps
     for appspec in app_specs:
-        app_name = appspec["app"]
-        app_name_for_human = appspec["name_for_human"]
-        app_name_for_model = appspec["name_for_model"]
-        app_description_for_human = appspec["description_for_human"]
-        app_description_for_model = appspec["description_for_model"]
+        application_name = appspec["application"]
+        application_name_for_human = appspec["name_for_human"]
+        application_name_for_model = appspec["name_for_model"]
+        application_description_for_human = appspec["description_for_human"]
+        application_description_for_model = appspec["description_for_model"]
 
-        out_py.write(SEPERATOR.format(app_name=app_name))
+        out_py.write(SEPERATOR.format(app_name=application_name))
 
-        app_class_names = []
+        application_class_names = []
         for app in appspec["api"]:
             app_name = app["name"]
-            app_cls_name = app_name_for_model + app_name
-            app_class_names.append(app_cls_name)
+            app_cls_name = application_name_for_model + app_name
+            application_class_names.append(app_cls_name)
             app_summary = app["summary"]
             app_parameters = app.get("parameters", [])
             app_returns = app.get("returns", [])
@@ -116,13 +116,13 @@ def main():
             )
 
         out_py.write(
-            APP_CLASS_TEMPLATE.format(
-                app_name=app_name,
-                app_name_for_human=app_name_for_human,
-                app_name_for_model=app_name_for_model,
-                app_description_for_human=app_description_for_human,
-                app_description_for_model=app_description_for_model,
-                app_class_names="[{}]".format(", ".join(app_class_names)),
+            APPLICATION_CLASS_TEMPLATE.format(
+                application_name=application_name,
+                application_name_for_human=application_name_for_human,
+                application_name_for_model=application_name_for_model,
+                application_description_for_human=application_description_for_human,
+                application_description_for_model=application_description_for_model,
+                application_class_names="[{}]".format(", ".join(application_class_names)),
             )
         )
 

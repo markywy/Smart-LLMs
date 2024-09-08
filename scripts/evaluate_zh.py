@@ -9,7 +9,7 @@ import random
 
 from dotenv import load_dotenv
 from smartllm.dataloader import DataLoader
-from smartllm.evaluators_zh import EVALUATORS_ZH
+from smartllm.evaluator_zh import EVALUATORS_ZH
 from smartllm.executors import FuncExecutorWithRetry
 from smartllm.utils import (
     llm_register_args,

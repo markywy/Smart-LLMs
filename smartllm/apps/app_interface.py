@@ -1,8 +1,8 @@
 """App interface"""
 from abc import abstractmethod
 
-from langchain.agents import App
-from langchain.apps import BaseApp
+from langchain.agents import Tool
+from langchain.tools import BaseTool
 from pydantic import BaseModel, Field, validator
 from smartllm.utils import (
     PRIMITIVE_TYPES,
@@ -17,7 +17,7 @@ from smartllm.utils import (
 from smartllm.utils.my_typing import *
 
 
-class FunctionApp(BaseApp):
+class FunctionApp(BaseTool):
     """
     Function app is defined according to our specifciation that resembles Python function docstring, see `app_interface.md`.
     """
@@ -124,9 +124,9 @@ class VirtualFunctionApp(FunctionApp):
         pass
 
 
-class BaseApp:
+class BaseToolkit:
     """
-    The app consists of a collection of apps that are `BaseApp` objects.
+    The app consists of a collection of apps that are `BaseTool` objects.
     An example is a `Gmail` app that may have multiple app APIs, such as `Send`, `Read`, etc.
     """
 
@@ -134,10 +134,10 @@ class BaseApp:
     app_classes: List[Any]
 
     def __init__(self):
-        self.apps = self.load_apps()
+        self.apps = self.load_tools()
 
     @abstractmethod
-    def load_apps(self) -> List[BaseApp]:
+    def load_tools(self) -> List[BaseTool]:
         """Load the apps"""
 
     def _get_app_summary(self) -> str:
@@ -173,14 +173,14 @@ class BaseApp:
         # return f"[{s}]"
         return s
 
-    def get_app(self, app_name: str) -> BaseApp:
+    def get_app(self, app_name: str) -> BaseTool:
         """Get a app by its name"""
         for app in self.apps:
             if app.name == app_name:
                 return app
         raise ValueError(f"App {app_name} does not exist in this app")
 
-    def __getitem__(self, app_name: str) -> BaseApp:
+    def __getitem__(self, app_name: str) -> BaseTool:
         """Get a app by its name"""
         return self.get_app(app_name)
 
@@ -209,7 +209,7 @@ class BaseApp:
         return self.__repr__()
 
 
-class FunctionApp(BaseApp):
+class FunctionApp(BaseToolkit):
     """
     Function app consists of a collection of apps that are `FunctionAppAPI` objects.
     Defined according to our specifciation that resembles OpenAPI spec, see `app_interface.md`
@@ -225,7 +225,7 @@ class FunctionApp(BaseApp):
         super().__init__()
         self.name = self.name_for_model
 
-    def load_apps(self) -> List[BaseApp]:
+    def load_tools(self) -> List[BaseTool]:
         """Load the apps"""
         return [app_class() for app_class in self.app_classes]
 

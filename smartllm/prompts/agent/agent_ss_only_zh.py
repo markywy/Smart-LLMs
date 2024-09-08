@@ -36,16 +36,7 @@ AGENT_SS_ONLY_CLAUDE_PROMPT_ZH = replaced_submodule(
 
 
 if __name__ == "__main__":
-    inputs = dict(
-        app_descriptions=None, 
-        app_names=None, 
-        name=None, 
-        profession=None, 
-        description=None, 
-        usage=None, 
-        advantage=None, 
-        disadvantage=None, 
-    )
+    inputs = dict(application_descriptions=None, app_names=None)
     add_refnames(AGENT_DUMMY_VARS_ZH, inputs, include_brackets=False)
     system_prompt, example_prompt = format_multiple_prompts(
         [

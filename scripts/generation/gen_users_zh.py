@@ -21,7 +21,7 @@ BaseFuncExecutor.register_args(parser)
 parser.add_argument("--apps-path", "-ap", type=str, default="./assets/all_apps_zh.json")
 parser.add_argument("--dump-dir", "-du", type=str, default="./dumps/users")
 parser.add_argument(
-    "--output-file-name", "-out", type=str, default="gen_users_zh.jsonl"
+    "--output-file-name", "-out", type=str, default="gen_users_zh.json"
 )
 parser.add_argument("--num-gen-per-cat", "-ng", type=int, default=15)
 parser.add_argument("--min-apps", "-mt", type=int, default=2)
@@ -34,7 +34,7 @@ generator = UsersGenerator.from_args(args, llm)
 taxonomy = DataLoader.from_args(args)
 runner = BaseFuncExecutor.from_args(args, multiple_results=True)    
 
-apps = read_file(args.app_path)
+apps = read_file(args.apps_path)
 print(f"Loaded {len(apps)} apps")
 name2app = {app["app"]: app for app in apps}
 all_app_names = list(name2app.keys())   

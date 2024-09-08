@@ -30,7 +30,7 @@ parser.add_argument(
     "--format-example-file",
     "-fe",
     type=str,
-    default="./assets/for_generation/format_example_app.json",
+    default="./assets/for_generation/format_example_tool.json",
 )
 parser.add_argument("--random-seed", "-seed", type=int, default=42)
 args = parser.parse_args()

@@ -6,13 +6,13 @@ from smartllm.agents import (
     AgentExecutorWithApp,
     ZeroShotAgentWithAppZh,
 )
-from smartllm.apps import get_apps_by_names
+from smartllm.apps import get_applications_by_names
 from smartllm.utils.my_typing import *
 
 
 def build_agent_executor(
     user, 
-    apps: List[str],
+    applications: List[str],
     agent_llm: BaseLanguageModel,
     simulator_llm: BaseLanguageModel,
     critiquer_llm: Optional[BaseLanguageModel] = None,
@@ -25,10 +25,10 @@ def build_agent_executor(
     max_iterations: int = 15,
     callback_manager: Optional[BaseCallbackManager] = None,
 ) -> Type[AgentExecutorWithApp]:
-    apps = get_apps_by_names(apps)
+    applications = get_applications_by_names(applications)
     agent = ZeroShotAgentWithAppZh.from_llm_and_apps(
         user=user, 
-        apps=apps,
+        applications=applications,
         llm=agent_llm,
         agent_type=agent_type,
         use_chat_format=isinstance(agent_llm, BaseChatModel),
@@ -37,7 +37,7 @@ def build_agent_executor(
     if simulator_type != "normal":
         agent_executer = executor_class.from_agent_and_apps(
             user=user, 
-            apps=apps,
+            applications=applications,
             agent=agent,
             verbose=verbose,
             llm_simulator=simulator_llm,
@@ -52,7 +52,7 @@ def build_agent_executor(
     else:
         agent_executer = executor_class.from_agent_and_apps(
             user=user, 
-            apps=apps,
+            applications=applications,
             agent=agent,
             verbose=verbose,
             max_iterations=max_iterations,

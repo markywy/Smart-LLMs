@@ -3,9 +3,9 @@ import random
 import re
 from ast import literal_eval
 
-from langchain.agents.apps import InvalidApp as LangChainInvalidApp
+from langchain.agents.tools import InvalidTool as LangChainInvalidApp
 from langchain.callbacks.stdout import StdOutCallbackHandler
-from langchain.apps import BaseApp
+from langchain.tools import BaseTool
 
 from .my_typing import *
 
@@ -64,7 +64,7 @@ class ArgException(TypedDict):
     description: str
 
 
-class DummyAppWithMessage(BaseApp):
+class DummyAppWithMessage(BaseTool):
     """App that is run when invalid situation is encountered by agent."""
 
     name = "dummy_app_with_message"
@@ -220,7 +220,7 @@ def validate_outputs(returns: List[ArgReturn], outputs: Dict[str, Any]):
 def run_with_input_validation(
     run_func: Callable,
     inputs: Dict[str, str],
-    app: BaseApp,
+    app: BaseTool,
     raw_inputs: str,
     **kwargs,
 ):

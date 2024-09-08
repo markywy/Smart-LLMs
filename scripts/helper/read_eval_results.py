@@ -10,7 +10,7 @@ import collections
 import os
 
 import numpy as np
-from smartllm.simulate import EVALUATORS, EVALUATORS2METRICS
+from smartllm.evaluator import EVALUATORS, EVALUATORS2METRICS
 from smartllm.utils import METRICS2BIN_THRESHOLDS, convert_to_score, read_file
 
 # default threshold for binarizing the label, upper closed, i.e., [0, threshold) is 0, [threshold, 3] is 1

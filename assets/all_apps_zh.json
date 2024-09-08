@@ -1,6 +1,6 @@
 [
     {
-        "app": "WeiYi",
+        "application": "WeiYi",
         "name_for_model": "WeiYi",
         "description_for_model": "微医应用程序提供在线医生咨询、预约挂号、健康档案管理等功能，帮助用户方便快捷地获取医疗服务和健康建议，同时考虑到用户隐私和数据安全。",
         "name_for_human": "微医",
@@ -379,7 +379,7 @@
         "category": "运动与健康应用"
     },
     {
-        "app": "MintHealth",
+        "application": "MintHealth",
         "name_for_model": "MintHealth",
         "description_for_model": "薄荷健康是一款综合性的健康管理应用，帮助用户记录饮食、计算卡路里、记录运动、设置目标以及跟踪健康进展，旨在提升用户的健康意识和管理能力。",
         "name_for_human": "薄荷健康",
@@ -741,7 +741,7 @@
         "category": "运动与健康应用"
     },
     {
-        "app": "HuaweiHealth",
+        "application": "HuaweiHealth",
         "name_for_model": "HuaweiHealth",
         "description_for_model": "HuaweiHealth应用程序提供全面的运动数据跟踪，包括步数、心率、睡眠质量等功能，帮助用户监测和改善健康状况，并提供个性化建议和健康报告。",
         "name_for_human": "华为运动健康",
@@ -1084,7 +1084,7 @@
         "category": "运动与健康应用"
     },
     {
-        "app": "Keep",
+        "application": "Keep",
         "name_for_model": "Keep",
         "description_for_model": "Keep 是一个健身应用程序，提供创建健身计划、选择运动课程、记录锻炼进度、社交互动、提供反馈等功能，旨在帮助用户实现个人健身目标并促进健康生活。",
         "name_for_human": "Keep Fitness App",
@@ -1422,7 +1422,7 @@
         "category": "运动与健康应用"
     },
     {
-        "app": "Meiyou",
+        "application": "Meiyou",
         "name_for_model": "Meiyou",
         "description_for_model": "美柚应用程序旨在帮助女性用户管理生理健康，通过记录月经周期、症状、获取健康知识以及分析健康数据，提供全面的健康管理解决方案。",
         "name_for_human": "美柚",
@@ -1753,7 +1753,7 @@
         "category": "运动与健康应用"
     },
     {
-        "app": "Fitbit",
+        "application": "Fitbit",
         "name_for_model": "Fitbit",
         "description_for_model": "Fitbit应用程序用于帮助用户监测和管理健康数据，包括心率、活动水平、睡眠质量等，支持用户设定健康目标、记录饮食信息，并生成健康报告，确保用户全面了解自己的健康状况。",
         "name_for_human": "Fitbit App",
@@ -2055,7 +2055,7 @@
         "category": "运动与健康应用"
     },
     {
-        "app": "Gudu",
+        "application": "Gudu",
         "name_for_model": "Gudu",
         "description_for_model": "Gudu应用程序提供了一系列功能，帮助用户记录和管理运动数据，支持社交互动和挑战功能，旨在提升用户的运动动力和社交体验。",
         "name_for_human": "Gudu",
@@ -2392,7 +2392,7 @@
         "category": "运动与健康应用"
     },
     {
-        "app": "SmartScaleApp",
+        "application": "SmartScaleApp",
         "name_for_model": "SmartScaleApp",
         "description_for_model": "该应用程序旨在帮助用户通过智能体重秤记录体重、体脂率等健康数据，并生成健康报告，提供数据分析、目标设置等功能，以促进用户的健康管理。",
         "name_for_human": "智能体重秤APP",
@@ -2771,7 +2771,7 @@
         "category": "运动与健康应用"
     },
     {
-        "app": "GoodDoctorOnline",
+        "application": "GoodDoctorOnline",
         "name_for_model": "GoodDoctorOnline",
         "description_for_model": "GoodDoctorOnline应用程序提供在线问诊、健康咨询、预约医生和健康知识分享等功能，旨在为用户提供便捷的医疗服务和健康指导。",
         "name_for_human": "好医生在线",
@@ -3195,7 +3195,7 @@
         "category": "运动与健康应用"
     },
     {
-        "app": "YueDongQuan",
+        "application": "YueDongQuan",
         "name_for_model": "YueDongQuan",
         "description_for_model": "悦动圈应用程序为运动爱好者提供了一个全面的解决方案，用户可以记录和分享运动数据，参加线上活动，获取运动激励，并与朋友互动，旨在提升用户的运动积极性和社交体验。",
         "name_for_human": "悦动圈",
@@ -3571,7 +3571,7 @@
         "category": "运动与健康应用"
     },
     {
-        "app": "CtripApp",
+        "application": "CtripApp",
         "name_for_model": "CtripApp",
         "description_for_model": "CtripApp是一个一站式旅游服务应用程序，提供航班查询、酒店预订、租车服务、旅游度假产品查询及用户信息管理等功能，旨在帮助用户方便快捷地获取和管理旅行相关信息。",
         "name_for_human": "携程旅行应用程序",
@@ -3889,7 +3889,7 @@
         "category": "旅游预定应用"
     },
     {
-        "app": "XiaoZhuShortRent",
+        "application": "XiaoZhuShortRent",
         "name_for_model": "XiaoZhuShortRent",
         "description_for_model": "该应用程序旨在为用户提供小猪短租平台的访问，允许用户搜索、预订和管理短租房屋，同时提供用户评论、房东信息等功能，以便用户能够做出明智的选择。",
         "name_for_human": "小猪短租",
@@ -4195,7 +4195,7 @@
         "category": "旅游预定应用"
     },
     {
-        "app": "TuNiu",
+        "application": "TuNiu",
         "name_for_model": "TuNiu",
         "description_for_model": "该应用程序提供了方便用户搜索和预订旅游产品的功能，支持获取旅游产品详情、用户评价和管理订单等操作，旨在提升用户的旅游体验。",
         "name_for_human": "途牛旅游网",
@@ -4490,7 +4490,7 @@
         "category": "旅游预定应用"
     },
     {
-        "app": "Qunar",
+        "application": "Qunar",
         "name_for_model": "Qunar",
         "description_for_model": "Qunar应用程序提供了一系列API接口，帮助用户搜索和预订航班、酒店，管理订单、地址和支付方式，支持价格提醒和评价提交。通过这些应用，用户可以高效地管理旅行相关的服务。",
         "name_for_human": "Qunar App",
@@ -4889,7 +4889,7 @@
         "category": "旅游预定应用"
     },
     {
-        "app": "FeiZhu",
+        "application": "FeiZhu",
         "name_for_model": "FeiZhu",
         "description_for_model": "FeiZhu应用程序提供了一个全面的API集，用于查询和预订航班、酒店和景点信息，帮助开发者创建旅游相关应用。该应用程序还包括获取用户历史预订和账户信息的功能，增强了用户体验和服务的个性化。",
         "name_for_human": "飞猪",
@@ -5302,7 +5302,7 @@
         "category": "旅游预定应用"
     },
     {
-        "app": "LvMama",
+        "application": "LvMama",
         "name_for_model": "LvMama",
         "description_for_model": "LvMama应用程序提供便捷的旅游产品查询和预订功能，用户可以获取门票、酒店、旅游套餐信息，并提交评价和检索历史订单，同时确保用户信息的安全性和隐私保护。",
         "name_for_human": "驴妈妈旅游网",
@@ -5681,7 +5681,7 @@
         "category": "旅游预定应用"
     },
     {
-        "app": "TravelManager",
+        "application": "TravelManager",
         "name_for_model": "TravelManager",
         "description_for_model": "行程管家应用程序帮助用户规划和管理旅行行程，提供创建、更新、查看、删除和搜索行程的功能，并允许用户访问保存的地址和支付方式，支持行程共享、导入和导出。",
         "name_for_human": "行程管家",
@@ -6031,7 +6031,7 @@
         "category": "旅游预定应用"
     },
     {
-        "app": "YouXiaKe",
+        "application": "YouXiaKe",
         "name_for_model": "YouXiaKe",
         "description_for_model": "YouXiaKe应用程序提供自助游和个性化定制旅游服务的API，允许用户获取旅游攻略、行程规划、景点推荐、预算计算及用户评论等功能，旨在增强用户的旅行体验。",
         "name_for_human": "游侠客",
@@ -6293,7 +6293,7 @@
         "category": "旅游预定应用"
     },
     {
-        "app": "TravelFrog",
+        "application": "TravelFrog",
         "name_for_model": "TravelFrog",
         "description_for_model": "TravelFrog应用程序允许用户创建、查看、更新和删除旅行计划，分享旅行经验，并通过搜索和推荐获取灵感。该应用程序旨在帮助旅行爱好者记录和分享他们的旅行经历。",
         "name_for_human": "Travel Frog",
@@ -6651,7 +6651,7 @@
         "category": "旅游预定应用"
     },
     {
-        "app": "TravelService",
+        "application": "TravelService",
         "name_for_model": "TravelService",
         "description_for_model": "TravelService应用程序提供一站式旅游服务，包括查询机票、酒店、旅游度假产品和景点门票信息，支持用户预订、修改和取消预订，获取历史记录及支付方式，旨在帮助用户快速便捷地处理旅游相关事务。",
         "name_for_human": "Travel Service",
@@ -6976,7 +6976,7 @@
         "category": "旅游预定应用"
     },
     {
-        "app": "BaiduMap",
+        "application": "BaiduMap",
         "name_for_model": "BaiduMap",
         "description_for_model": "BaiduMap应用程序提供实时交通信息、路线规划、周边搜索、街景查看和多种出行方式，旨在帮助用户高效、安全地获取导航信息和周边服务。",
         "name_for_human": "百度地图",
@@ -7253,7 +7253,7 @@
         "category": "导航出行应用"
     },
     {
-        "app": "GaoDeMap",
+        "application": "GaoDeMap",
         "name_for_model": "GaoDeMap",
         "description_for_model": "高德地图应用程序提供精准的导航服务和实时路况监测，支持多种出行方式，包括打车和共享单车，旨在帮助用户高效、安全地规划和执行出行。",
         "name_for_human": "高德地图",
@@ -7537,7 +7537,7 @@
         "category": "导航出行应用"
     },
     {
-        "app": "CaoCaoTravel",
+        "application": "CaoCaoTravel",
         "name_for_model": "CaoCaoTravel",
         "description_for_model": "CaoCaoTravel应用程序提供环保打车服务，支持实时叫车、预约打车、查看司机信息、支付管理和行程历史等功能，旨在为用户提供安全、舒适和便利的出行体验。",
         "name_for_human": "曹操出行",
@@ -7873,7 +7873,7 @@
         "category": "导航出行应用"
     },
     {
-        "app": "TencentMap",
+        "application": "TencentMap",
         "name_for_model": "TencentMap",
         "description_for_model": "腾讯地图应用程序提供地图浏览、导航和交通信息查询功能，支持语音导航和多种出行方式选择，适合日常出行和长途旅行。该应用程序还包括保存位置、分享位置、查看周边设施、记录历史和离线地图等附加功能。",
         "name_for_human": "腾讯地图",
@@ -8230,7 +8230,7 @@
         "category": "导航出行应用"
     },
     {
-        "app": "DidiRide",
+        "application": "DidiRide",
         "name_for_model": "DidiRide",
         "description_for_model": "DidiRide应用程序提供了全面的出行服务，包括打车、顺风车、专车和代驾，用户可以实时查看司机位置，选择多种支付方式，并访问历史订单与评价服务，确保用户的出行体验安全、便捷。",
         "name_for_human": "滴滴出行",
@@ -8768,7 +8768,7 @@
         "category": "导航出行应用"
     },
     {
-        "app": "HelloTravel",
+        "application": "HelloTravel",
         "name_for_model": "HelloTravel",
         "description_for_model": "HelloTravel应用程序提供了一系列应用，旨在帮助用户快速找到附近的共享单车和电单车，解锁共享单车，预订打车服务，查询骑行记录，支付费用等，适合短途出行的个人用户。",
         "name_for_human": "Hello Travel",
@@ -9054,7 +9054,7 @@
         "category": "导航出行应用"
     },
     {
-        "app": "Mobike",
+        "application": "Mobike",
         "name_for_model": "Mobike",
         "description_for_model": "Mobike应用程序支持用户通过手机应用快速找到、租赁、解锁和支付共享单车，适合城市内短途出行，确保用户能够方便地获取单车服务。",
         "name_for_human": "Mobike",
@@ -9401,7 +9401,7 @@
         "category": "导航出行应用"
     },
     {
-        "app": "UberApp",
+        "application": "UberApp",
         "name_for_model": "UberApp",
         "description_for_model": "Uber应用程序提供了一系列应用，帮助用户通过文本接口与Uber服务进行交互，包括叫车、追踪行程、共享行程、取消行程和费用估算等功能，同时管理支付方式和查看历史行程。",
         "name_for_human": "Uber App",
@@ -9741,7 +9741,7 @@
         "category": "导航出行应用"
     },
     {
-        "app": "TrafficAssistant",
+        "application": "TrafficAssistant",
         "name_for_model": "TrafficAssistant",
         "description_for_model": "TrafficAssistant 是一款提供实时路况监测、事故报告和社交分享功能的应用程序，帮助用户规避拥堵和危险路段，优化出行体验。",
         "name_for_human": "Traffic Assistant",
@@ -10088,7 +10088,7 @@
         "category": "导航出行应用"
     },
     {
-        "app": "FeiChangZhun",
+        "application": "FeiChangZhun",
         "name_for_model": "FeiChangZhun",
         "description_for_model": "飞常准应用程序提供航班信息查询、实时状态更新、机场导航和历史航班记录查询等功能，帮助长途旅行者获取准确的航班信息和动态更新，确保顺利出行。",
         "name_for_human": "飞常准",
@@ -10361,7 +10361,7 @@
         "category": "导航出行应用"
     },
     {
-        "app": "NetEaseCloudMusic",
+        "application": "NetEaseCloudMusic",
         "name_for_model": "NetEaseCloudMusic",
         "description_for_model": "NetEase Cloud Music app provides functionalities such as music search, playlist management, comment interaction, music upload, and personalized recommendations, aimed at helping users discover music, share their works, and interact with others.",
         "name_for_human": "NetEase Cloud Music",
@@ -10661,7 +10661,7 @@
         "category": "媒体播放软件"
     },
     {
-        "app": "QQMusic",
+        "application": "QQMusic",
         "name_for_model": "QQMusic",
         "description_for_model": "QQ音乐应用程序提供个性化音乐推荐、在线收听、歌单管理、下载功能和社交分享等功能，旨在增强用户的音乐体验，同时确保用户的隐私和版权得到保护。",
         "name_for_human": "QQ音乐",
@@ -10947,7 +10947,7 @@
         "category": "媒体播放软件"
     },
     {
-        "app": "Ximalaya",
+        "application": "Ximalaya",
         "name_for_model": "Ximalaya",
         "description_for_model": "Ximalaya应用程序使用户能够搜索、播放音频内容，创建个人电台，关注创作者，发表评论，并获取推荐音频内容，旨在提升用户与音频内容的互动体验。",
         "name_for_human": "喜马拉雅",
@@ -11231,7 +11231,7 @@
         "category": "媒体播放软件"
     },
     {
-        "app": "QingTingFM",
+        "application": "QingTingFM",
         "name_for_model": "QingTingFM",
         "description_for_model": "蜻蜓FM应用程序提供丰富的电台节目和有声内容，允许用户搜索、订阅和管理电台频道，支持离线收听和个性化推荐，旨在增强用户的音频内容体验。",
         "name_for_human": "蜻蜓FM应用程序",
@@ -11515,7 +11515,7 @@
         "category": "媒体播放软件"
     },
     {
-        "app": "KugouMusic",
+        "application": "KugouMusic",
         "name_for_model": "KugouMusic",
         "description_for_model": "酷狗音乐应用程序集成了音乐播放、歌词显示、MV观看等功能，支持用户自定义推荐和个性化电台，提供离线下载和音效调节选项，旨在为音乐爱好者提供全面的音乐体验。",
         "name_for_human": "酷狗音乐",
@@ -11814,7 +11814,7 @@
         "category": "媒体播放软件"
     },
     {
-        "app": "Kuaishou",
+        "application": "Kuaishou",
         "name_for_model": "Kuaishou",
         "description_for_model": "Kuaishou应用程序用于创建、分享和管理短视频内容，支持用户互动和视频搜索，旨在提升用户在快手平台上的体验。",
         "name_for_human": "Kuaishou App",
@@ -12127,7 +12127,7 @@
         "category": "媒体播放软件"
     },
     {
-        "app": "AiQiYi",
+        "application": "AiQiYi",
         "name_for_model": "AiQiYi",
         "description_for_model": "爱奇艺应用程序提供了搜索、播放、管理观看列表、订阅会员、下载内容等功能，旨在为用户提供全面的流媒体体验，并确保用户的隐私和账户安全。",
         "name_for_human": "爱奇艺应用程序",
@@ -12423,7 +12423,7 @@
         "category": "媒体播放软件"
     },
     {
-        "app": "Bilibili",
+        "application": "Bilibili",
         "name_for_model": "Bilibili",
         "description_for_model": "该应用程序为Bilibili用户提供视频搜索、上传、播放、评论和用户互动等功能，旨在增强用户在平台上的体验。",
         "name_for_human": "Bilibili App",
@@ -12721,7 +12721,7 @@
         "category": "媒体播放软件"
     },
     {
-        "app": "DouyinShortVideo",
+        "application": "DouyinShortVideo",
         "name_for_model": "DouyinShortVideo",
         "description_for_model": "该应用程序允许用户创建、编辑和分享短视频，添加音乐和特效，并与其他创作者互动，确保用户能够充分利用抖音短视频平台的功能。",
         "name_for_human": "抖音短视频应用程序",
@@ -13122,7 +13122,7 @@
         "category": "媒体播放软件"
     },
     {
-        "app": "XiaoYuzhou",
+        "application": "XiaoYuzhou",
         "name_for_model": "XiaoYuzhou",
         "description_for_model": "小宇宙应用程序提供了一系列功能，帮助用户搜索、播放和管理播客节目，允许创建播放列表和关注喜欢的节目，同时根据用户的听取历史进行个性化推荐。",
         "name_for_human": "小宇宙",
@@ -13412,7 +13412,7 @@
         "category": "媒体播放软件"
     },
     {
-        "app": "JinRiTouTiao",
+        "application": "JinRiTouTiao",
         "name_for_model": "JinRiTouTiao",
         "description_for_model": "今日头条应用程序提供个性化新闻推荐、搜索、收藏、评论和分享功能，旨在帮助用户获取与其兴趣相关的最新新闻和信息，同时管理其收藏和阅读历史。",
         "name_for_human": "今日头条",
@@ -13789,7 +13789,7 @@
         "category": "资讯阅读应用"
     },
     {
-        "app": "WangYiCloudReading",
+        "application": "WangYiCloudReading",
         "name_for_model": "WangYiCloudReading",
         "description_for_model": "WangYiCloudReading应用程序提供了一个全面的接口，允许用户搜索、阅读、下载和分享电子书及文章，同时支持书评和书单功能，促进知识分享和管理。",
         "name_for_human": "网易云阅读",
@@ -14081,7 +14081,7 @@
         "category": "资讯阅读应用"
     },
     {
-        "app": "DongfangCaiFu",
+        "application": "DongfangCaiFu",
         "name_for_model": "DongfangCaiFu",
         "description_for_model": "该应用程序提供了一个全面的财经资讯平台，用户可以获取实时行情、财经新闻、投资组合管理、历史数据分析等功能，帮助个人投资者和财经分析师做出明智的投资决策。",
         "name_for_human": "东方财富网应用程序",
@@ -14393,7 +14393,7 @@
         "category": "资讯阅读应用"
     },
     {
-        "app": "XinHua",
+        "application": "XinHua",
         "name_for_model": "XinHua",
         "description_for_model": "该应用程序提供权威的新闻报道和实时更新，用户可以获取最新的官方消息、深度分析和多种新闻分类，适用于普通公众、媒体工作者和研究人员。",
         "name_for_human": "新华社",
@@ -14707,7 +14707,7 @@
         "category": "资讯阅读应用"
     },
     {
-        "app": "Douban",
+        "application": "Douban",
         "name_for_model": "Douban",
         "description_for_model": "该应用程序允许用户获取、提交和管理书籍、电影和音乐的评论，促进文化交流和信息分享，同时提供搜索功能和用户评论历史访问。",
         "name_for_human": "豆瓣应用程序",
@@ -15005,7 +15005,7 @@
         "category": "资讯阅读应用"
     },
     {
-        "app": "TencentNews",
+        "application": "TencentNews",
         "name_for_model": "TencentNews",
         "description_for_model": "该应用程序提供了一个综合性的新闻平台，允许用户浏览、搜索、阅读、评论和分享新闻，同时提供个性化推荐和热门新闻功能，适合希望获取最新信息的个人用户。",
         "name_for_human": "腾讯新闻",
@@ -15278,7 +15278,7 @@
         "category": "资讯阅读应用"
     },
     {
-        "app": "Flipboard",
+        "application": "Flipboard",
         "name_for_model": "Flipboard",
         "description_for_model": "The Flipboard app allows users to create, manage, and share personalized magazines, aggregating content of interest and sharing it with others, while providing content search and management functionalities.",
         "name_for_human": "Flipboard App",
@@ -15580,7 +15580,7 @@
         "category": "资讯阅读应用"
     },
     {
-        "app": "BaiDuNews",
+        "application": "BaiDuNews",
         "name_for_model": "BaiDuNews",
         "description_for_model": "百度新闻应用程序提供海量新闻信息和实时热点，用户可以通过关键词搜索获取相关资讯，支持新闻订阅和个性化推荐，同时具备历史查询、收藏、分享和评论功能，旨在提升用户获取新闻的效率和体验。",
         "name_for_human": "百度新闻",
@@ -15845,7 +15845,7 @@
         "category": "资讯阅读应用"
     },
     {
-        "app": "KhanAcademy",
+        "application": "KhanAcademy",
         "name_for_model": "KhanAcademy",
         "description_for_model": "Khan Academy应用程序提供了访问在线课程和学习资源的功能，允许用户检索课程列表、获取课程内容、跟踪学习进度、创建和管理学习笔记等。此应用程序旨在帮助教育工作者和学生通过API高效地获取学习材料。",
         "name_for_human": "Khan Academy App",
@@ -16162,7 +16162,7 @@
         "category": "教育学习应用"
     },
     {
-        "app": "YoudaoTranslation",
+        "application": "YoudaoTranslation",
         "name_for_model": "YoudaoTranslation",
         "description_for_model": "YoudaoTranslation应用程序提供多种语言之间的文本和语音翻译服务，支持语言检测、词汇查询和语音合成等功能，旨在满足用户的翻译需求并促进语言学习。",
         "name_for_human": "有道翻译",
@@ -16457,7 +16457,7 @@
         "category": "教育学习应用"
     },
     {
-        "app": "ProgrammingCat",
+        "application": "ProgrammingCat",
         "name_for_model": "ProgrammingCat",
         "description_for_model": "编程猫应用程序为儿童编程教育提供了一系列API，用户可以搜索课程、创建和管理项目，获取学习进度和推荐课程，从而帮助他们培养编程思维和技能。",
         "name_for_human": "编程猫应用程序",
@@ -16775,7 +16775,7 @@
         "category": "教育学习应用"
     },
     {
-        "app": "Quizlet",
+        "application": "Quizlet",
         "name_for_model": "Quizlet",
         "description_for_model": "Quizlet应用程序提供了一系列应用，帮助用户创建、管理和分享学习卡片及测验，旨在增强用户的学习体验和知识复习能力。",
         "name_for_human": "Quizlet",
@@ -17071,7 +17071,7 @@
         "category": "教育学习应用"
     },
     {
-        "app": "ZuoYeBang",
+        "application": "ZuoYeBang",
         "name_for_model": "ZuoYeBang",
         "description_for_model": "作业帮是一个为中小学生提供在线学习支持的应用程序，包含题库搜索、在线辅导、作业提交等功能，旨在帮助学生获取学习资源和解题思路，促进学习效果。",
         "name_for_human": "作业帮",
@@ -17347,7 +17347,7 @@
         "category": "教育学习应用"
     },
     {
-        "app": "Coursera",
+        "application": "Coursera",
         "name_for_model": "Coursera",
         "description_for_model": "Coursera应用程序提供了一套API，允许用户搜索课程、注册课程、查看证书和获取学习进度，旨在提升用户的知识和技能。",
         "name_for_human": "Coursera App",
@@ -17619,7 +17619,7 @@
         "category": "教育学习应用"
     },
     {
-        "app": "EnglishFluency",
+        "application": "EnglishFluency",
         "name_for_model": "EnglishFluency",
         "description_for_model": "英语流利说应用程序提供个性化的英语学习体验，包括口语和听力练习、学习进度跟踪、实时反馈及社交互动功能，旨在帮助用户提高英语能力并增强学习效果。",
         "name_for_human": "英语流利说",
@@ -17942,7 +17942,7 @@
         "category": "教育学习应用"
     },
     {
-        "app": "XiaoYuanSearch",
+        "application": "XiaoYuanSearch",
         "name_for_model": "XiaoYuanSearch",
         "description_for_model": "小猿搜题应用程序提供题库搜索和解答服务，用户可以通过上传题目图片获取解题思路和参考答案，适合中小学生的学习辅助。",
         "name_for_human": "小猿搜题",
@@ -18209,7 +18209,7 @@
         "category": "教育学习应用"
     },
     {
-        "app": "SelfLearningPlatform",
+        "application": "SelfLearningPlatform",
         "name_for_model": "SelfLearningPlatform",
         "description_for_model": "自学网应用程序提供多领域的自学资源和在线课程，通过API访问学习资料和视频，支持用户创建和管理学习计划，获取推荐课程，评价课程等功能，鼓励自主学习和技能提升。",
         "name_for_human": "自学网",
@@ -18478,7 +18478,7 @@
         "category": "教育学习应用"
     },
     {
-        "app": "WangYiYunKeTang",
+        "application": "WangYiYunKeTang",
         "name_for_model": "WangYiYunKeTang",
         "description_for_model": "该应用程序提供了网易云课堂的API接口，用户可以通过搜索课程、获取课程详情、更新学习进度、提交课程评价等功能来管理自己的学习体验。同时，用户还可以收藏课程、获取推荐、按类别浏览课程以及提交反馈。",
         "name_for_human": "网易云课堂应用程序",
@@ -18800,7 +18800,7 @@
         "category": "教育学习应用"
     },
     {
-        "app": "FeiShu",
+        "application": "FeiShu",
         "name_for_model": "FeiShu",
         "description_for_model": "飞书应用程序提供了一系列应用，用于即时通讯、视频会议、文档共享和日历管理，旨在提高团队协作效率，确保信息安全与有效共享。",
         "name_for_human": "飞书应用程序",
@@ -19097,7 +19097,7 @@
         "category": "办公生产应用"
     },
     {
-        "app": "YoudaoNote",
+        "application": "YoudaoNote",
         "name_for_model": "YoudaoNote",
         "description_for_model": "YoudaoNote 是一个多功能的云端笔记应用，允许用户创建、管理和分享文本、图像和音频笔记，适合个人学习和工作记录，支持分类、搜索和导出功能。",
         "name_for_human": "有道云笔记",
@@ -19402,7 +19402,7 @@
         "category": "办公生产应用"
     },
     {
-        "app": "DingDing",
+        "application": "DingDing",
         "name_for_model": "DingDing",
         "description_for_model": "DingDing应用程序提供了一系列应用，旨在增强企业内部的沟通、协作和管理效率。用户可以通过发送消息、创建视频会议、管理任务和考勤等功能，提升工作效率并促进团队合作。",
         "name_for_human": "DingDing App",
@@ -19747,7 +19747,7 @@
         "category": "办公生产应用"
     },
     {
-        "app": "ShimoApp",
+        "application": "ShimoApp",
         "name_for_model": "ShimoApp",
         "description_for_model": "ShimoApp是一个用于在线文档创建、编辑和共享的应用程序，支持团队协作、实时编辑、文档版本控制和权限管理，旨在增强企业用户的协作效率。",
         "name_for_human": "石墨文档应用程序",
@@ -20130,7 +20130,7 @@
         "category": "办公生产应用"
     },
     {
-        "app": "TencentDocs",
+        "application": "TencentDocs",
         "name_for_model": "TencentDocs",
         "description_for_model": "腾讯文档应用程序提供了一系列功能，帮助用户创建、编辑和共享文档，支持实时协作与评论，确保团队高效合作。",
         "name_for_human": "腾讯文档",
@@ -20479,7 +20479,7 @@
         "category": "办公生产应用"
     },
     {
-        "app": "LieYun",
+        "application": "LieYun",
         "name_for_model": "LieYun",
         "description_for_model": "猎云应用程序旨在为求职者和招聘方提供高效的求职和招聘服务，包括发布招聘信息、搜索求职者简历、提交求职申请等功能，同时考虑到潜在的安全风险和数据保护。",
         "name_for_human": "猎云",
@@ -20734,7 +20734,7 @@
                                 "description": "招聘信息的浏览量。"
                             },
                             {
-                                "name": "applications",
+                                "name": "application",
                                 "type": "integer",
                                 "description": "招聘信息的申请量。"
                             }
@@ -20795,7 +20795,7 @@
         "category": "办公生产应用"
     },
     {
-        "app": "Calendly",
+        "application": "Calendly",
         "name_for_model": "Calendly",
         "description_for_model": "Calendly app provides a set of apps for efficiently creating, managing, and scheduling meetings, supporting users in checking availability, sending invitations, viewing meeting history, setting reminders, and more, suitable for individuals and teams.",
         "name_for_human": "Calendly",
@@ -21121,7 +21121,7 @@
         "category": "办公生产应用"
     },
     {
-        "app": "NotionApp",
+        "application": "NotionApp",
         "name_for_model": "NotionApp",
         "description_for_model": "NotionApp 是一个多功能的笔记和项目管理应用程序，支持创建、更新、删除笔记和任务，管理数据库，搜索信息，分享内容等功能，旨在帮助用户高效管理和组织信息。",
         "name_for_human": "Notion App",
@@ -21510,7 +21510,7 @@
         "category": "办公生产应用"
     },
     {
-        "app": "Todoist",
+        "application": "Todoist",
         "name_for_model": "Todoist",
         "description_for_model": "Todoist应用程序提供了一组强大的任务管理应用，帮助用户创建、更新、删除和跟踪任务，设置优先级和提醒，适合个人和团队使用。",
         "name_for_human": "Todoist",
@@ -21831,7 +21831,7 @@
         "category": "办公生产应用"
     },
     {
-        "app": "Slack",
+        "application": "Slack",
         "name_for_model": "Slack",
         "description_for_model": "Slack应用程序旨在增强团队沟通和协作的能力，提供消息发送、频道管理、文件共享等功能，适用于企业用户和团队。",
         "name_for_human": "Slack",
@@ -22139,7 +22139,7 @@
         "category": "办公生产应用"
     },
     {
-        "app": "TongHuaShun",
+        "application": "TongHuaShun",
         "name_for_model": "TongHuaShun",
         "description_for_model": "同花顺应用程序提供股票交易、行情分析、投资组合管理等功能，旨在帮助个人投资者实时获取股票数据、历史交易记录和市场资讯，以便做出明智的投资决策。",
         "name_for_human": "同花顺",
@@ -22402,7 +22402,7 @@
         "category": "金融理财平台"
     },
     {
-        "app": "WeChatPay",
+        "application": "WeChatPay",
         "name_for_model": "WeChatPay",
         "description_for_model": "微信支付应用程序集成了多种支付功能，包括订单创建、支付状态确认、转账和红包发送等。该应用程序旨在帮助用户方便快捷地进行支付操作，同时确保交易的安全性和隐私保护。",
         "name_for_human": "微信支付",
@@ -22668,7 +22668,7 @@
         "category": "金融理财平台"
     },
     {
-        "app": "Alipay",
+        "application": "Alipay",
         "name_for_model": "Alipay",
         "description_for_model": "Alipay app provides convenient online payment, fund transfer, investment product purchase, and credit card repayment functionalities, allowing users to access payment records, account balances, and transaction details via API.",
         "name_for_human": "Alipay App",
@@ -22999,7 +22999,7 @@
         "category": "金融理财平台"
     },
     {
-        "app": "JdFinance",
+        "application": "JdFinance",
         "name_for_model": "JdFinance",
         "description_for_model": "此应用程序提供了与京东金融服务的无缝集成，允许开发者访问用户的信用评分、理财产品信息、交易记录以及其他金融服务，旨在增强金融应用的功能和用户体验。",
         "name_for_human": "京东金融",
@@ -23283,7 +23283,7 @@
         "category": "金融理财平台"
     },
     {
-        "app": "XueQiu",
+        "application": "XueQiu",
         "name_for_model": "XueQiu",
         "description_for_model": "XueQiu应用程序提供了一个全面的股票投资管理平台，允许用户获取实时股票行情、管理投资组合、获取财经资讯以及进行市场分析。该应用程序旨在帮助个人投资者做出明智的投资决策，同时也面临一定的潜在风险，如财务损失和隐私泄露。",
         "name_for_human": "雪球",
@@ -23708,7 +23708,7 @@
         "category": "金融理财平台"
     },
     {
-        "app": "FutuNiuNiu",
+        "application": "FutuNiuNiu",
         "name_for_model": "FutuNiuNiu",
         "description_for_model": "富途牛牛应用程序提供了一个全面的API接口，允许用户实时获取股票行情、查询交易记录和账户信息，并执行买入和卖出操作，旨在帮助个人投资者有效管理其投资组合和交易活动。",
         "name_for_human": "富途牛牛",
@@ -23983,7 +23983,7 @@
         "category": "金融理财平台"
     },
     {
-        "app": "XiaomiFinance",
+        "application": "XiaomiFinance",
         "name_for_model": "XiaomiFinance",
         "description_for_model": "小米金融应用程序提供了全面的金融服务API，允许用户查询账户信息、交易记录和理财产品，提交信贷申请，并管理保险产品。该应用程序旨在帮助用户高效管理个人金融信息，同时确保安全性和隐私保护。",
         "name_for_human": "小米金融",
@@ -24286,7 +24286,7 @@
         "category": "金融理财平台"
     },
     {
-        "app": "YiFangDaFund",
+        "application": "YiFangDaFund",
         "name_for_model": "YiFangDaFund",
         "description_for_model": "易方达基金应用程序提供一系列API，允许用户获取基金的净值、投资组合、历史表现等信息，帮助用户做出明智的投资决策，同时也关注用户的账户信息和投资风险评估。",
         "name_for_human": "易方达基金应用程序",
@@ -24646,7 +24646,7 @@
         "category": "金融理财平台"
     },
     {
-        "app": "LiCaiTong",
+        "application": "LiCaiTong",
         "name_for_model": "LiCaiTong",
         "description_for_model": "理财通应用程序提供了丰富的理财产品信息及用户投资管理功能，帮助个人投资者获取理财产品、管理投资组合、查看收益，并提供个性化的投资建议和市场动态信息。",
         "name_for_human": "理财通",
@@ -24958,7 +24958,7 @@
         "category": "金融理财平台"
     },
     {
-        "app": "ZhiTouBao",
+        "application": "ZhiTouBao",
         "name_for_model": "ZhiTouBao",
         "description_for_model": "智投宝是一个智能投资顾问应用，利用人工智能分析用户风险偏好和市场趋势，提供个性化投资建议，帮助用户做出更明智的投资决策。",
         "name_for_human": "智投宝",
@@ -25281,7 +25281,7 @@
         "category": "金融理财平台"
     },
     {
-        "app": "BaiduTieba",
+        "application": "BaiduTieba",
         "name_for_model": "BaiduTieba",
         "description_for_model": "BaiduTieba app provides a set of functionalities that allow users to create, search, read, and delete posts in Baidu Tieba, retrieve user posts and tieba information, view comments and like posts, as well as report inappropriate content, aimed at enhancing social interaction and community management.",
         "name_for_human": "Baidu Tieba App",
@@ -25588,7 +25588,7 @@
         "category": "通讯交流应用"
     },
     {
-        "app": "Zhihu",
+        "application": "Zhihu",
         "name_for_model": "Zhihu",
         "description_for_model": "该应用程序提供了一组API，允许用户在知乎平台上进行提问、回答、评论和搜索问题，旨在增强用户的知识分享与获取能力。",
         "name_for_human": "知乎应用程序",
@@ -25894,7 +25894,7 @@
         "category": "通讯交流应用"
     },
     {
-        "app": "WeChatApp",
+        "application": "WeChatApp",
         "name_for_model": "WeChatApp",
         "description_for_model": "WeChatApp 是一个多功能API应用程序，旨在帮助开发者集成微信的即时通讯、社交网络和支付功能。它支持发送和接收消息、创建群聊、进行支付、查询好友列表及更多功能，同时提供安全性和隐私保护机制。",
         "name_for_human": "WeChat App",
@@ -26274,7 +26274,7 @@
         "category": "通讯交流应用"
     },
     {
-        "app": "QQ",
+        "application": "QQ",
         "name_for_model": "QQ",
         "description_for_model": "QQ应用程序提供了丰富的即时通讯功能，包括消息发送、接收、文件传输和群组管理，旨在帮助开发者创建和集成基于QQ的插件和服务。",
         "name_for_human": "QQ App",
@@ -26552,7 +26552,7 @@
         "category": "通讯交流应用"
     },
     {
-        "app": "TaoBaoOpenPlatform",
+        "application": "TaoBaoOpenPlatform",
         "name_for_model": "TaoBaoOpenPlatform",
         "description_for_model": "淘宝开放平台应用程序提供对淘宝网数据的全面访问，包括商品信息、订单管理和用户评论，旨在帮助开发者高效地进行商品上架、订单处理和用户互动。",
         "name_for_human": "淘宝开放平台",
@@ -26886,7 +26886,7 @@
         "category": "电商服务应用"
     },
     {
-        "app": "Gmail",
+        "application": "Gmail",
         "name_for_model": "Gmail",
         "description_for_model": "该Gmail应用程序通过API简化电子邮件的发送、接收、搜索、删除和管理草稿的过程，同时提供附件管理、标签管理、邮件转发和日历集成功能，适用于需要高效管理电子邮件的个人用户和小型企业。",
         "name_for_human": "Gmail App",
@@ -27255,7 +27255,7 @@
         "category": "通讯交流应用"
     },
     {
-        "app": "Lark",
+        "application": "Lark",
         "name_for_model": "Lark",
         "description_for_model": "Lark应用程序提供企业协作所需的核心功能，包括即时通讯、文档编辑、日历管理、任务管理和文件共享，旨在提升团队的沟通和工作效率。",
         "name_for_human": "Lark",
@@ -27644,7 +27644,7 @@
         "category": "通讯交流应用"
     },
     {
-        "app": "Outlook",
+        "application": "Outlook",
         "name_for_model": "Outlook",
         "description_for_model": "The Outlook app provides a comprehensive set of apps for managing emails, calendar events, tasks, and contacts, enabling users to efficiently handle their communication and organization needs.",
         "name_for_human": "Outlook App",
@@ -28014,7 +28014,7 @@
         "category": "通讯交流应用"
     },
     {
-        "app": "ElemeOpenPlatform",
+        "application": "ElemeOpenPlatform",
         "name_for_model": "ElemeOpenPlatform",
         "description_for_model": "这个应用程序提供对饿了么的订单、商家和用户数据的访问，允许开发者通过API实现外卖下单、订单跟踪、用户评价管理等功能，旨在提升用户体验和订单管理效率。",
         "name_for_human": "饿了么开放平台",
@@ -28315,7 +28315,7 @@
         "category": "电商服务应用"
     },
     {
-        "app": "JdUnionApi",
+        "application": "JdUnionApi",
         "name_for_model": "JdUnionApi",
         "description_for_model": "京东联盟API应用程序为电商营销人员提供获取京东商品信息和推广数据的能力，支持商品搜索、推广链接创建及效果查询等功能，旨在优化产品推广策略。",
         "name_for_human": "京东联盟API应用程序",
@@ -28612,7 +28612,7 @@
         "category": "电商服务应用"
     },
     {
-        "app": "AlipayOpenPlatform",
+        "application": "AlipayOpenPlatform",
         "name_for_model": "AlipayOpenPlatform",
         "description_for_model": "AlipayOpenPlatform是一个为电商平台开发者设计的应用程序，提供支付、退款、账单查询等功能，帮助用户实现高效的支付集成和管理。",
         "name_for_human": "支付宝开放平台",
@@ -29017,7 +29017,7 @@
         "category": "电商服务应用"
     },
     {
-        "app": "MeituanTakeaway",
+        "application": "MeituanTakeaway",
         "name_for_model": "MeituanTakeaway",
         "description_for_model": "美团外卖API应用程序提供了获取外卖订单、商家信息、用户评价等功能，旨在帮助开发者构建外卖推荐系统或集成外卖服务到其他应用中。",
         "name_for_human": "美团外卖API",
@@ -29310,7 +29310,7 @@
         "category": "电商服务应用"
     },
     {
-        "app": "PinduoduoOpenPlatform",
+        "application": "PinduoduoOpenPlatform",
         "name_for_model": "PinduoduoOpenPlatform",
         "description_for_model": "拼多多开放平台应用程序为电商开发者提供商品上架、订单管理、用户信息访问等功能，支持高效的市场分析和数据管理，旨在优化电商业务流程。",
         "name_for_human": "拼多多开放平台",
@@ -29758,7 +29758,7 @@
         "category": "电商服务应用"
     },
     {
-        "app": "BaiduAPI",
+        "application": "BaiduAPI",
         "name_for_model": "BaiduAPI",
         "description_for_model": "BaiduAPI应用程序提供对百度搜索结果的访问，包括网页、图片和新闻等，旨在帮助开发人员将搜索功能集成到应用程序中。",
         "name_for_human": "Baidu API",
@@ -30041,7 +30041,7 @@
         "category": "网络服务应用"
     },
     {
-        "app": "CloudStoreManagement",
+        "application": "CloudStoreManagement",
         "name_for_model": "CloudStoreManagement",
         "description_for_model": "CloudStoreManagement应用程序旨在帮助小型商家管理在线店铺，提供库存管理、订单处理、客户管理和数据分析等功能，确保商家能够高效运营并做出数据驱动的决策。",
         "name_for_human": "Cloud Store Management",
@@ -30434,7 +30434,7 @@
         "category": "电商服务应用"
     },
     {
-        "app": "SmartPricingApp",
+        "application": "SmartPricingApp",
         "name_for_model": "SmartPricingApp",
         "description_for_model": "智能定价应用程序为电商卖家提供动态定价策略，利用市场数据分析和机器学习算法生成实时定价建议，确保卖家在竞争中保持优势。",
         "name_for_human": "智能定价应用",
@@ -30893,7 +30893,7 @@
         "category": "电商服务应用"
     },
     {
-        "app": "SocialCommerceApp",
+        "application": "SocialCommerceApp",
         "name_for_model": "SocialCommerceApp",
         "description_for_model": "该应用程序旨在帮助商家通过社交媒体平台进行商品推广和销售，集成了多种功能，包括商品发布、用户互动、销售分析、促销活动管理和用户反馈收集，旨在增强商家的在线营销能力。",
         "name_for_human": "社交电商营销应用",
@@ -31322,7 +31322,7 @@
         "category": "电商服务应用"
     },
     {
-        "app": "UserBehaviorAnalysis",
+        "application": "UserBehaviorAnalysis",
         "name_for_model": "UserBehaviorAnalysis",
         "description_for_model": "该应用程序用于分析电商平台用户的行为数据，帮助商家优化购物体验。通过分析用户的浏览、购买和反馈数据，生成详细报告和个性化推荐，从而提升销售和用户满意度。",
         "name_for_human": "用户行为分析应用",
@@ -31712,7 +31712,7 @@
         "category": "电商服务应用"
     },
     {
-        "app": "WifiScanner",
+        "application": "WifiScanner",
         "name_for_model": "WifiScanner",
         "description_for_model": "该应用程序提供了一系列应用，用于扫描和连接可用的WIFI网络，获取信号强度和网络详细信息，帮助用户选择最佳的网络连接，同时提供故障排除建议。",
         "name_for_human": "WIFI探测应用",
@@ -31986,7 +31986,7 @@
         "category": "网络服务应用"
     },
     {
-        "app": "GoogleCustomSearch",
+        "application": "GoogleCustomSearch",
         "name_for_model": "GoogleCustomSearch",
         "description_for_model": "GoogleCustomSearch应用程序允许开发者在自定义网站上集成Google搜索功能，支持自定义搜索结果、过滤器和分析功能，旨在增强用户体验和信息检索效率。",
         "name_for_human": "Google Custom Search",
@@ -32279,7 +32279,7 @@
         "category": "网络服务应用"
     },
     {
-        "app": "MobileNetworkMonitoring",
+        "application": "MobileNetworkMonitoring",
         "name_for_model": "MobileNetworkMonitoring",
         "description_for_model": "该应用程序旨在监测和分析移动网络的速度和稳定性，为用户提供网络质量评估，包含多种应用以满足不同的网络监测需求。",
         "name_for_human": "移动网络监测应用",
@@ -32566,7 +32566,7 @@
         "category": "网络服务应用"
     },
     {
-        "app": "NetworkProxyService",
+        "application": "NetworkProxyService",
         "name_for_model": "NetworkProxyService",
         "description_for_model": "该应用程序提供可编程访问不同地区的网络代理服务，适合需要进行数据抓取和匿名浏览的用户，包含创建、管理和验证代理的多种功能，同时确保用户数据的安全性和隐私。",
         "name_for_human": "Network Proxy Service",
@@ -32856,7 +32856,7 @@
         "category": "网络服务应用"
     },
     {
-        "app": "BingSearch",
+        "application": "BingSearch",
         "name_for_model": "BingSearch",
         "description_for_model": "该应用程序提供对Bing搜索引擎的访问，支持网页、图片、视频和新闻搜索，旨在增强应用程序的信息检索能力，并允许用户存储和管理搜索历史。",
         "name_for_human": "Bing Search",
@@ -33199,7 +33199,7 @@
         "category": "网络服务应用"
     },
     {
-        "app": "VpnServiceApi",
+        "application": "VpnServiceApi",
         "name_for_model": "VpnServiceApi",
         "description_for_model": "VpnServiceApi提供对虚拟私人网络的编程访问，允许用户安全地浏览互联网，并保护隐私，同时提供多种功能以增强用户体验和安全性。",
         "name_for_human": "VPN Service API",
@@ -33422,7 +33422,7 @@
         "category": "网络服务应用"
     },
     {
-        "app": "SocialMediaAnalysisApi",
+        "application": "SocialMediaAnalysisApi",
         "name_for_model": "SocialMediaAnalysisApi",
         "description_for_model": "社交媒体分析API提供对社交媒体平台数据的访问，支持用户行为分析、舆情监测、关键字搜索等功能，旨在帮助品牌营销人员和用户洞察市场动态。",
         "name_for_human": "社交媒体分析API",
@@ -33824,7 +33824,7 @@
         "category": "网络服务应用"
     },
     {
-        "app": "DataCleaningAndIntegration",
+        "application": "DataCleaningAndIntegration",
         "name_for_model": "DataCleaningAndIntegration",
         "description_for_model": "该应用程序提供了一系列应用，用于从多个网络数据源中提取、清洗和整合数据，适用于数据科学和商业智能应用。应用程序确保数据处理的合规性和安全性，支持数据存储、分析和可视化。",
         "name_for_human": "数据清洗与整合应用",
@@ -34126,7 +34126,7 @@
         "category": "网络服务应用"
     },
     {
-        "app": "WindowsPowerShell",
+        "application": "WindowsPowerShell",
         "name_for_model": "WindowsPowerShell",
         "description_for_model": "WindowsPowerShell应用程序提供了一组强大的命令行应用，允许用户执行系统管理、自动化和配置管理任务，适合系统管理员和高级用户。它支持命令执行、服务管理、文件管理、用户管理、系统配置等功能，同时具备潜在的风险，如未授权访问和数据丢失。",
         "name_for_human": "Windows PowerShell",
@@ -34495,7 +34495,7 @@
         "category": "系统终端应用"
     },
     {
-        "app": "WebScrapingDataAnalysis",
+        "application": "WebScrapingDataAnalysis",
         "name_for_model": "WebScrapingDataAnalysis",
         "description_for_model": "该应用程序为市场研究和竞争分析提供强大的数据提取、清理、分析和可视化功能，旨在帮助用户从网络爬虫中提取有价值的数据并进行深入分析，同时需注意潜在的法律和隐私风险。",
         "name_for_human": "Web Scraping Data Analysis",
@@ -34795,7 +34795,7 @@
         "category": "网络服务应用"
     },
     {
-        "app": "GitBash",
+        "application": "GitBash",
         "name_for_model": "GitBash",
         "description_for_model": "GitBash应用程序为开发者提供一套基于Bash的命令行接口，用于高效管理Git版本控制操作，包括提交、推送、拉取、克隆仓库、创建和删除分支等功能，旨在增强开发者在版本控制中的效率和控制力。",
         "name_for_human": "Git Bash",
@@ -35081,7 +35081,7 @@
         "category": "系统终端应用"
     },
     {
-        "app": "Ansible",
+        "application": "Ansible",
         "name_for_model": "Ansible",
         "description_for_model": "Ansible应用程序提供了一系列自动化管理应用，旨在简化配置管理、应用程序部署和云资源管理等任务。通过使用简单的参数，用户可以轻松管理和自动化其系统配置，提高操作效率，同时降低潜在的风险。",
         "name_for_human": "Ansible App",
@@ -35475,7 +35475,7 @@
         "category": "系统终端应用"
     },
     {
-        "app": "DockerCLI",
+        "application": "DockerCLI",
         "name_for_model": "DockerCLI",
         "description_for_model": "DockerCLI应用程序提供对Docker容器的全面管理和编排功能，包括创建、启动、停止和删除容器，支持查看状态和日志，文件复制和命令执行等功能，旨在帮助开发和运维人员高效管理容器。",
         "name_for_human": "Docker CLI",
@@ -35764,7 +35764,7 @@
         "category": "系统终端应用"
     },
     {
-        "app": "Nmap",
+        "application": "Nmap",
         "name_for_model": "Nmap",
         "description_for_model": "Nmap应用程序提供了一系列应用，用于网络扫描和安全审计，包括主机发现、端口扫描、服务版本检测、操作系统识别和网络映射。该应用程序适用于网络安全专家，帮助他们识别和评估网络中的潜在安全风险，同时也考虑到滥用可能带来的风险。",
         "name_for_human": "Nmap App",
@@ -36097,7 +36097,7 @@
         "category": "系统终端应用"
     },
     {
-        "app": "FFmpeg",
+        "application": "FFmpeg",
         "name_for_model": "FFmpeg",
         "description_for_model": "FFmpeg应用程序提供强大的音视频处理功能，包括格式转换、视频剪辑、音频提取和流处理，旨在帮助用户高效处理多媒体文件，同时需注意潜在的版权和隐私风险。",
         "name_for_human": "FFmpeg App",
@@ -36417,7 +36417,7 @@
         "category": "系统终端应用"
     },
     {
-        "app": "Jq",
+        "application": "Jq",
         "name_for_model": "Jq",
         "description_for_model": "jq应用程序提供了一系列强大的应用，用于解析、操作和管理JSON数据，适用于开发者和数据分析师，帮助他们高效处理数据，同时注意潜在的数据泄露和误操作风险。",
         "name_for_human": "jq App",
@@ -36751,7 +36751,7 @@
         "category": "系统终端应用"
     },
     {
-        "app": "GitHub",
+        "application": "GitHub",
         "name_for_model": "GitHub",
         "description_for_model": "GitHub应用程序提供了一系列API，允许开发者创建、管理和删除代码仓库，获取仓库和提交的详细信息，以及进行分支操作，旨在提高开发者在GitHub上的工作效率。",
         "name_for_human": "GitHub App",
@@ -37073,7 +37073,7 @@
         "category": "开发设计应用"
     },
     {
-        "app": "Curl",
+        "application": "Curl",
         "name_for_model": "Curl",
         "description_for_model": "The curl app provides a command-line interface for data transfer, enabling users to send and receive data via various protocols. It supports GET and POST requests, file uploads, and custom configurations, while managing potential risks associated with API usage.",
         "name_for_human": "Curl App",
@@ -37401,7 +37401,7 @@
         "category": "系统终端应用"
     },
     {
-        "app": "Terraform",
+        "application": "Terraform",
         "name_for_model": "Terraform",
         "description_for_model": "Terraform应用程序提供了一组API，帮助用户高效管理云基础设施，包括创建、更新、删除和检索资源，同时支持资源搜索和标签管理，旨在降低操作风险并提高资源管理的灵活性。",
         "name_for_human": "Terraform",
@@ -37705,7 +37705,7 @@
         "category": "系统终端应用"
     },
     {
-        "app": "PowerToys",
+        "application": "PowerToys",
         "name_for_model": "PowerToys",
         "description_for_model": "PowerToys 是一组增强Windows操作系统功能的实用应用，旨在提高用户的工作效率，提供窗口管理、文件预览、颜色选择、图像调整和批量重命名等功能，同时包含潜在风险以确保用户谨慎使用。",
         "name_for_human": "PowerToys",
@@ -38057,7 +38057,7 @@
         "category": "系统终端应用"
     },
     {
-        "app": "FigmaApp",
+        "application": "FigmaApp",
         "name_for_model": "FigmaApp",
         "description_for_model": "FigmaApp是一个集成的应用程序，旨在帮助设计师和团队高效管理Figma中的设计项目，包括创建、读取、更新和删除设计文件，以及协作评论、搜索和导入资源等功能。",
         "name_for_human": "Figma App",
@@ -38359,7 +38359,7 @@
         "category": "开发设计应用"
     },
     {
-        "app": "VisualStudioCode",
+        "application": "VisualStudioCode",
         "name_for_model": "VisualStudioCode",
         "description_for_model": "这个应用程序为开发者提供了一系列强大的应用，用于高效编写、调试和管理代码，包括代码编辑、调试、版本控制、扩展管理、代码片段管理等功能，同时也考虑了潜在的安全风险和数据管理需求。",
         "name_for_human": "Visual Studio Code App",
@@ -38742,7 +38742,7 @@
         "category": "开发设计应用"
     },
     {
-        "app": "CodePen",
+        "application": "CodePen",
         "name_for_model": "CodePen",
         "description_for_model": "CodePen应用程序为前端开发人员提供实时预览、代码分享、保存、导入和导出功能，支持主题选择、版本控制、社区互动等多种功能，旨在提升代码开发和分享的效率。",
         "name_for_human": "CodePen",
@@ -39069,7 +39069,7 @@
         "category": "开发设计应用"
     },
     {
-        "app": "Postman",
+        "application": "Postman",
         "name_for_model": "Postman",
         "description_for_model": "Postman应用程序提供了一整套API开发和测试应用，允许用户创建、管理和测试API请求，支持多种认证方式和环境变量管理，适合开发者进行高效的API调试和文档生成。",
         "name_for_human": "Postman App",
@@ -39456,7 +39456,7 @@
         "category": "开发设计应用"
     },
     {
-        "app": "DockerApp",
+        "application": "DockerApp",
         "name_for_model": "DockerApp",
         "description_for_model": "DockerApp provides a comprehensive set of apps for developers and operations personnel to create, manage, and deploy Docker containerized applications, supporting efficient microservices architecture management.",
         "name_for_human": "Docker App",
@@ -39716,7 +39716,7 @@
         "category": "开发设计应用"
     },
     {
-        "app": "Kubernetes",
+        "application": "Kubernetes",
         "name_for_model": "Kubernetes",
         "description_for_model": "Kubernetes应用程序提供了一系列应用，用于自动化容器化应用的部署、监控、扩展和管理，以确保高可用性和弹性，适用于开发人员和运维团队。",
         "name_for_human": "Kubernetes App",
@@ -40070,7 +40070,7 @@
         "category": "开发设计应用"
     },
     {
-        "app": "JupyterNotebook",
+        "application": "JupyterNotebook",
         "name_for_model": "JupyterNotebook",
         "description_for_model": "该应用程序提供了一系列应用，帮助用户在Jupyter Notebook环境中执行代码、创建文档、可视化数据、训练机器学习模型并共享笔记本，适用于数据科学家和分析师进行数据分析和机器学习。",
         "name_for_human": "Jupyter Notebook App",
@@ -40370,7 +40370,7 @@
         "category": "开发设计应用"
     },
     {
-        "app": "Swagger",
+        "application": "Swagger",
         "name_for_model": "Swagger",
         "description_for_model": "Swagger应用程序通过自动生成API文档、客户端代码和提供API设计、测试及版本管理功能，旨在提升开发者在API开发过程中的效率和准确性，同时确保文档的安全性与可靠性。",
         "name_for_human": "Swagger App",
@@ -40716,7 +40716,7 @@
         "category": "开发设计应用"
     },
     {
-        "app": "TensorFlow",
+        "application": "TensorFlow",
         "name_for_model": "TensorFlow",
         "description_for_model": "TensorFlow应用程序提供了一个全面的机器学习框架，支持模型构建、训练、评估和预测，适合开发人员和数据科学家在实际应用中使用。",
         "name_for_human": "TensorFlow App",

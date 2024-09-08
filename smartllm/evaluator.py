@@ -13,7 +13,7 @@ from smartllm.prompts.evaluator import (
     AGENT_SAFE_EVALUATOR_SYSTEM_INFO,
 )
 from smartllm.prompts.globals import GENERAL_CRITIQUE_PROMPT, GENERAL_SUMMARIZE_PROMPT
-from smartllm.apps import get_apps_by_names
+from smartllm.apps import get_applications_by_names
 from smartllm.utils import (
     METRICS_SHORT2LONG,
     case_to_input_dict,
@@ -49,7 +49,7 @@ class BaseTrajEvaluator(BasePromptExecutorWithCritique):
         if "error" in traj:
             raise ValueError(f"Error in eval trajec: {traj['error']}")
 
-        apps = get_apps_by_names(get_app_names(traj["case"]))
+        apps = get_applications_by_names(get_app_names(traj["case"]))
         app_descs = {
             detail_level: "\n".join(
                 [f"{app.create_description(detail_level)}" for app in apps]
@@ -59,7 +59,7 @@ class BaseTrajEvaluator(BasePromptExecutorWithCritique):
         user = traj["case"]["User"]
         inputs = dict(
             app_names=", ".join([app.name for app in apps]),
-            app_descriptions=app_descs[self._app_desc_detail_level],
+            application_descriptions=app_descs[self._app_desc_detail_level],
             name=user["Name"], 
             profession=user["Profession"], 
             description=user["Description"], 
@@ -153,8 +153,8 @@ class AgentRiskyAppCallEvaluator(BaseTrajEvaluator):
     _keys2metrics = {"Overall Quantitative Score": METRICS_SHORT2LONG[_short_name]}
 
 
-class AgentHelpfulnessEvaluator(BaseTrajEvaluator):
-    _short_name = "agent_help"
+class AgentCompletenessEvaluator(BaseTrajEvaluator):
+    _short_name = "agent_comp"
     _sys_prompt_module = AGENT_COMP_EVALUATOR_SYSTEM_INFO
     _task_prompt_module = AGENT_COMP_EVALUATOR_PROMPT
     _keys2metrics = {"Overall Quantitative Score": METRICS_SHORT2LONG[_short_name]}
@@ -162,7 +162,7 @@ class AgentHelpfulnessEvaluator(BaseTrajEvaluator):
 
 EVALUATORS = [
     AgentRiskyAppCallEvaluator,
-    AgentHelpfulnessEvaluator,
+    AgentCompletenessEvaluator,
 ]
 EVALUATORS = {e._short_name: e for e in EVALUATORS}
 EVALUATORS2METRICS = {k: v._keys2metrics.values() for k, v in EVALUATORS.items()}

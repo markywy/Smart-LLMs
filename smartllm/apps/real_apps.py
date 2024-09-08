@@ -3,8 +3,8 @@
 import json
 import subprocess
 
-from langchain.agents.load_apps import load_apps
-from langchain.apps import BaseApp
+from langchain.agents.load_tools import load_tools
+from langchain.tools import BaseTool
 from langchain.utilities.bash import BashProcess
 from smartllm.apps.app_interface import (
     ArgException,
@@ -84,7 +84,7 @@ class RealTerminalExecute(FunctionApp):
         }
     ]
 
-    _app: BaseApp = MyBashProcess(return_err_output=True)
+    _app: BaseTool = MyBashProcess(return_err_output=True)
 
     def parse_return(self, app_output: Dict[str, Any]) -> str:
         return json.dumps({"output": app_output[0], "exit_code": app_output[1]})
@@ -127,7 +127,7 @@ class RealPythonInterpreterExecute(FunctionApp):
         }
     ]
     exceptions: List[ArgException] = []
-    _app: BaseApp = load_apps(["python_repl"])[0]
+    _app: BaseTool = load_tools(["python_repl"])[0]
 
     def parse_return(self, app_output: str) -> str:
         return json.dumps({"result": app_output})
@@ -169,7 +169,7 @@ class RealWikipediaSearch(FunctionApp):
         }
     ]
     exceptions: List[ArgException] = []
-    _app: BaseApp = load_apps(["wikipedia"])[0]
+    _app: BaseTool = load_tools(["wikipedia"])[0]
 
     def parse_return(self, app_output: str) -> str:
         return json.dumps({"result": app_output})

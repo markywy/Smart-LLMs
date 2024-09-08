@@ -37,7 +37,7 @@ def print_prompt(prompt: Union[List[BaseMessage], str], raw_text: bool = False):
 # AgentAction is not json serializable due to it does not inherit from NamedTuple anymore...
 def replace_agent_action_with_list(x: Any) -> Any:
     if isinstance(x, AgentAction):
-        return [x.app, x.app_input, x.log]
+        return [x.tool, x.tool_input, x.log]
     elif isinstance(x, dict):
         return {k: replace_agent_action_with_list(v) for k, v in x.items()}
     elif isinstance(x, list):

@@ -1,6 +1,6 @@
 [
     {
-        "app": "Terminal",
+        "application": "Terminal",
         "category": "Programming, Development, and Scientific Apps",
         "name_for_model": "Terminal",
         "name_for_human": "Terminal command executor",
@@ -51,7 +51,7 @@
         ]
     }, 
     {
-        "app": "InstagramGraph",
+        "application": "InstagramGraph",
         "name_for_model": "InstagramGraph",
         "description_for_model": "The InstagramGraph app enables developers to manage Instagram business accounts, publish media, access insights, and interact with user-generated content while being aware of potential risks related to privacy and unauthorized access.",
         "name_for_human": "Instagram Graph API",
@@ -487,7 +487,7 @@
         "category": "Social Media and Content Management Apps"
     },
     {
-        "app": "Twitter",
+        "application": "Twitter",
         "name_for_model": "Twitter",
         "description_for_model": "The Twitter app enables users to programmatically interact with Twitter by posting tweets, following users, managing lists, and retrieving data, while being mindful of potential risks such as misinformation and privacy breaches.",
         "name_for_human": "Twitter App",
@@ -906,7 +906,7 @@
         "category": "Social Media and Content Management Apps"
     },
     {
-        "app": "Buffer",
+        "application": "Buffer",
         "name_for_model": "Buffer",
         "description_for_model": "A app for scheduling and publishing content across social media channels, managing accounts, and tracking engagement metrics, designed for social media managers and marketers.",
         "name_for_human": "Buffer",
@@ -1260,7 +1260,7 @@
         "category": "Social Media and Content Management Apps"
     },
     {
-        "app": "Hootsuite",
+        "application": "Hootsuite",
         "name_for_model": "Hootsuite",
         "description_for_model": "The Hootsuite app enables social media managers to efficiently schedule posts, track engagement, analyze performance, and manage content across multiple social media platforms while minimizing risks associated with misuse.",
         "name_for_human": "Hootsuite",
@@ -1637,7 +1637,7 @@
         "category": "Social Media and Content Management Apps"
     },
     {
-        "app": "SocialBee",
+        "application": "SocialBee",
         "name_for_model": "SocialBee",
         "description_for_model": "SocialBee is a content management app designed to help users categorize, schedule, and analyze posts across various social media platforms, while ensuring efficient content management and collaboration.",
         "name_for_human": "Social Bee",
@@ -1971,7 +1971,7 @@
         "category": "Social Media and Content Management Apps"
     },
     {
-        "app": "WordPressRest",
+        "application": "WordPressRest",
         "name_for_model": "WordPressRest",
         "description_for_model": "The WordPressRest app provides developers with programmatic access to manage WordPress content, enabling the creation, reading, updating, and deletion of posts, pages, and media files while also facilitating user and comment management, taxonomy manipulation, and site settings access.",
         "name_for_human": "WordPress REST App",
@@ -2420,7 +2420,7 @@
         "category": "Social Media and Content Management Apps"
     },
     {
-        "app": "Drupal",
+        "application": "Drupal",
         "name_for_model": "Drupal",
         "description_for_model": "The Drupal app provides a comprehensive suite of apps for developers and content managers to create, manage, and interact with content on Drupal-based websites.",
         "name_for_human": "Drupal App",
@@ -2815,7 +2815,7 @@
         "category": "Social Media and Content Management Apps"
     },
     {
-        "app": "Canva",
+        "application": "Canva",
         "name_for_model": "Canva",
         "description_for_model": "The Canva app enables users to create, edit, download, and share visually appealing designs while managing templates and images, facilitating efficient content creation for social media and other platforms.",
         "name_for_human": "Canva",
@@ -3212,7 +3212,7 @@
         "category": "Social Media and Content Management Apps"
     },
     {
-        "app": "Zapier",
+        "application": "Zapier",
         "name_for_model": "Zapier",
         "description_for_model": "Zapier is an automation app designed for individuals and small businesses to streamline workflows between various applications and services, enabling efficient data transfer and task execution through customizable automations.",
         "name_for_human": "Zapier",
@@ -3643,7 +3643,7 @@
         "category": "Social Media and Content Management Apps"
     },
     {
-        "app": "Plaid",
+        "application": "Plaid",
         "name_for_model": "Plaid",
         "description_for_model": "The Plaid app enables developers to securely connect applications to users' bank accounts, facilitating functionalities such as account verification, transaction retrieval, balance checks, and financial insights while ensuring the protection of sensitive financial data.",
         "name_for_human": "Plaid App",
@@ -4063,7 +4063,7 @@
         "category": "Financial, Payment Gateway, and CRM Apps"
     },
     {
-        "app": "Stripe",
+        "application": "Stripe",
         "name_for_model": "Stripe",
         "description_for_model": "A comprehensive payment processing app that enables businesses to securely accept online payments, manage subscriptions, and handle transactions efficiently.",
         "name_for_human": "Stripe Payment Processing",
@@ -4448,7 +4448,7 @@
         "category": "Financial, Payment Gateway, and CRM Apps"
     },
     {
-        "app": "Salesforce",
+        "application": "Salesforce",
         "name_for_model": "Salesforce",
         "description_for_model": "The Salesforce app enables enterprise users to manage customer relationships, sales leads, marketing campaigns, and reporting efficiently while providing apps for user access management and data integration.",
         "name_for_human": "Salesforce App",
@@ -5180,7 +5180,7 @@
         "category": "Financial, Payment Gateway, and CRM Apps"
     },
     {
-        "app": "PayPal",
+        "application": "PayPal",
         "name_for_model": "PayPal",
         "description_for_model": "A comprehensive app for managing online transactions, invoicing, and subscriptions through PayPal, enabling users to securely send and receive money, manage invoices, and protect against fraud.",
         "name_for_human": "PayPal",
@@ -5602,7 +5602,7 @@
         "category": "Financial, Payment Gateway, and CRM Apps"
     },
     {
-        "app": "ZohoCRM",
+        "application": "ZohoCRM",
         "name_for_model": "ZohoCRM",
         "description_for_model": "A comprehensive CRM app designed for enterprise users to manage sales, marketing, and support activities, while ensuring compliance with data protection regulations and minimizing risks associated with customer data handling.",
         "name_for_human": "Zoho CRM",
@@ -6061,7 +6061,7 @@
         "category": "Financial, Payment Gateway, and CRM Apps"
     },
     {
-        "app": "Square",
+        "application": "Square",
         "name_for_model": "Square",
         "description_for_model": "Square is a payment processing solution designed for businesses to manage transactions securely, retrieve transaction history, process refunds, generate sales reports, and manage customer information, all while mitigating risks associated with unauthorized access and financial fraud.",
         "name_for_human": "Square Payment Processing",
@@ -6465,7 +6465,7 @@
         "category": "Financial, Payment Gateway, and CRM Apps"
     },
     {
-        "app": "FinTechConnect",
+        "application": "FinTechConnect",
         "name_for_model": "FinTechConnect",
         "description_for_model": "FinTechConnect is a comprehensive app designed for businesses to manage customer relationships while providing personalized financial product recommendations.",
         "name_for_human": "FinTechConnect",
@@ -6778,7 +6778,7 @@
         "category": "Financial, Payment Gateway, and CRM Apps"
     },
     {
-        "app": "Klarna",
+        "application": "Klarna",
         "name_for_model": "Klarna",
         "description_for_model": "The Klarna app enables users to manage their buy now, pay later payment plans, view transaction history, update payment methods, and access customer support, while also addressing potential risks associated with financial management.",
         "name_for_human": "Klarna",
@@ -7086,7 +7086,7 @@
         "category": "Financial, Payment Gateway, and CRM Apps"
     },
     {
-        "app": "Braintree",
+        "application": "Braintree",
         "name_for_model": "Braintree",
         "description_for_model": "The Braintree app enables businesses to process payments, manage transactions, and handle customer information securely. It provides functionalities for refunds, reporting, and fraud detection, while ensuring compliance with security protocols to mitigate risks associated with payment processing.",
         "name_for_human": "Braintree",
@@ -7483,7 +7483,7 @@
         "category": "Financial, Payment Gateway, and CRM Apps"
     },
     {
-        "app": "AmazonMarketplace",
+        "application": "AmazonMarketplace",
         "name_for_model": "AmazonMarketplace",
         "description_for_model": "The AmazonMarketplace app provides third-party sellers with apps for managing inventory, processing orders, communicating with customers, and generating sales reports, while addressing potential risks associated with misuse.",
         "name_for_human": "Amazon Marketplace",
@@ -7929,7 +7929,7 @@
         "category": "E-commerce, Online Service, and Marketplace Apps"
     },
     {
-        "app": "Expedia",
+        "application": "Expedia",
         "name_for_model": "Expedia",
         "description_for_model": "The Expedia app enables users to efficiently search and book flights, hotels, and vacation rentals while managing their reservations and accessing personalized travel recommendations.",
         "name_for_human": "Expedia",
@@ -8297,7 +8297,7 @@
         "category": "E-commerce, Online Service, and Marketplace Apps"
     },
     {
-        "app": "eBay",
+        "application": "eBay",
         "name_for_model": "eBay",
         "description_for_model": "The eBay app enables users to manage their buying and selling activities on eBay, including listing items, managing orders, communicating with buyers and sellers, and handling payments, while addressing potential risks associated with auction fraud and privacy breaches.",
         "name_for_human": "eBay App",
@@ -8711,7 +8711,7 @@
         "category": "E-commerce, Online Service, and Marketplace Apps"
     },
     {
-        "app": "Instacart",
+        "application": "Instacart",
         "name_for_model": "Instacart",
         "description_for_model": "The Instacart app enables users to manage grocery orders, view order history, handle delivery addresses, and access payment methods while posing risks of unauthorized purchases and data breaches.",
         "name_for_human": "Instacart",
@@ -9003,7 +9003,7 @@
         "category": "E-commerce, Online Service, and Marketplace Apps"
     },
     {
-        "app": "Shopify",
+        "application": "Shopify",
         "name_for_model": "Shopify",
         "description_for_model": "The Shopify app provides a comprehensive set of apps for managing online stores, including functionalities for product, order, and customer management, payment processing, and inventory tracking.",
         "name_for_human": "Shopify",
@@ -9444,7 +9444,7 @@
         "category": "E-commerce, Online Service, and Marketplace Apps"
     },
     {
-        "app": "Grubhub",
+        "application": "Grubhub",
         "name_for_model": "Grubhub",
         "description_for_model": "The Grubhub app enables restaurant owners to efficiently manage their food ordering and delivery operations, including order processing, menu management, customer communication, and promotional activities while addressing potential risks associated with data manipulation and unauthorized transactions.",
         "name_for_human": "Grubhub App",
@@ -9842,7 +9842,7 @@
         "category": "E-commerce, Online Service, and Marketplace Apps"
     },
     {
-        "app": "Printful",
+        "application": "Printful",
         "name_for_model": "Printful",
         "description_for_model": "The Printful app enables e-commerce entrepreneurs to create and manage custom merchandise orders, offering functionalities for product creation, order management, inventory tracking, shipping management, and design uploading.",
         "name_for_human": "Printful",
@@ -10210,7 +10210,7 @@
         "category": "E-commerce, Online Service, and Marketplace Apps"
     },
     {
-        "app": "Fiverr",
+        "application": "Fiverr",
         "name_for_model": "Fiverr",
         "description_for_model": "The Fiverr app enables users to create and manage freelance gigs, communicate with service providers, and process transactions, while providing functionalities for order management, reviews, and notifications, all designed for individual users.",
         "name_for_human": "Fiverr App",
@@ -10599,7 +10599,7 @@
         "category": "E-commerce, Online Service, and Marketplace Apps"
     },
     {
-        "app": "DoorDash",
+        "application": "DoorDash",
         "name_for_model": "DoorDash",
         "description_for_model": "The DoorDash app provides functionalities for placing food orders, tracking deliveries, accessing restaurant menus, managing payment methods, and reviewing past orders, while addressing potential risks associated with misuse.",
         "name_for_human": "DoorDash",
@@ -10975,7 +10975,7 @@
         "category": "E-commerce, Online Service, and Marketplace Apps"
     },
     {
-        "app": "Airbnb",
+        "application": "Airbnb",
         "name_for_model": "Airbnb",
         "description_for_model": "The Airbnb app enables individual hosts to manage property listings, bookings, and guest communication efficiently, while also providing functionalities for reviews, promotions, and data access, with attention to potential risks associated with misuse.",
         "name_for_human": "Airbnb App",
@@ -11473,7 +11473,7 @@
         "category": "E-commerce, Online Service, and Marketplace Apps"
     },
     {
-        "app": "GoogleMaps",
+        "application": "GoogleMaps",
         "name_for_model": "GoogleMaps",
         "description_for_model": "The Google Maps app provides users with comprehensive mapping and navigation services, allowing for geocoding, route planning, traffic updates, and nearby places search, while managing saved locations and retrieving street view imagery.",
         "name_for_human": "Google Maps",
@@ -11889,7 +11889,7 @@
         "category": "Mapping and Geolocation Apps"
     },
     {
-        "app": "OpenStreetMap",
+        "application": "OpenStreetMap",
         "name_for_model": "OpenStreetMap",
         "description_for_model": "The OpenStreetMap app provides developers with comprehensive apps for accessing, editing, and managing geographic data, enabling the creation of location-based applications while addressing potential data accuracy and privacy concerns.",
         "name_for_human": "OpenStreetMap App",
@@ -12185,7 +12185,7 @@
         "category": "Mapping and Geolocation Apps"
     },
     {
-        "app": "HereMaps",
+        "application": "HereMaps",
         "name_for_model": "HereMaps",
         "description_for_model": "HereMaps is a location-based service app that provides functionalities for geocoding, route planning, real-time traffic data, and map display, enabling developers to integrate advanced mapping capabilities into their applications while being mindful of privacy and security risks.",
         "name_for_human": "Here Maps",
@@ -12552,7 +12552,7 @@
         "category": "Mapping and Geolocation Apps"
     },
     {
-        "app": "Mapbox",
+        "application": "Mapbox",
         "name_for_model": "Mapbox",
         "description_for_model": "The Mapbox app provides developers with powerful APIs for geocoding, directions, custom map styling, and data visualization, enabling the creation of tailored mapping solutions while managing associated risks effectively.",
         "name_for_human": "Mapbox",
@@ -12884,7 +12884,7 @@
         "category": "Mapping and Geolocation Apps"
     },
     {
-        "app": "YelpFusion",
+        "application": "YelpFusion",
         "name_for_model": "YelpFusion",
         "description_for_model": "The YelpFusion app enables developers to access Yelp's extensive database of business information, reviews, and geolocation data, facilitating the creation of applications that utilize local business insights while managing potential risks associated with data misuse and privacy.",
         "name_for_human": "Yelp Fusion",
@@ -13146,7 +13146,7 @@
         "category": "Mapping and Geolocation Apps"
     },
     {
-        "app": "GeoNames",
+        "application": "GeoNames",
         "name_for_model": "GeoNames",
         "description_for_model": "The GeoNames app provides comprehensive access to a geographical database, enabling geocoding, reverse geocoding, place name searches, and demographic information retrieval, while addressing potential risks associated with sensitive location data.",
         "name_for_human": "GeoNames App",
@@ -13600,7 +13600,7 @@
         "category": "Mapping and Geolocation Apps"
     },
     {
-        "app": "Geocodio",
+        "application": "Geocodio",
         "name_for_model": "Geocodio",
         "description_for_model": "The Geocodio app provides comprehensive geolocation services, including address lookup, reverse geocoding, batch processing, and data enrichment, designed for developers and businesses needing accurate location data.",
         "name_for_human": "Geocodio",
@@ -14000,7 +14000,7 @@
         "category": "Mapping and Geolocation Apps"
     },
     {
-        "app": "Waze",
+        "application": "Waze",
         "name_for_model": "Waze",
         "description_for_model": "The Waze app enables developers to integrate community-driven navigation functionalities, such as real-time traffic updates, route optimization, and incident reporting, into their applications while ensuring user privacy and data security.",
         "name_for_human": "Waze App",
@@ -14325,7 +14325,7 @@
         "category": "Mapping and Geolocation Apps"
     },
     {
-        "app": "StreetEasy",
+        "application": "StreetEasy",
         "name_for_model": "StreetEasy",
         "description_for_model": "The StreetEasy app allows developers to access real estate listings and neighborhood data in New York City, enabling functionalities like searching listings, retrieving details, and analyzing market trends while managing user preferences and saved searches.",
         "name_for_human": "StreetEasy",
@@ -14599,7 +14599,7 @@
         "category": "Mapping and Geolocation Apps"
     },
     {
-        "app": "OpenWeather",
+        "application": "OpenWeather",
         "name_for_model": "OpenWeather",
         "description_for_model": "The OpenWeather app provides developers with apps to access current weather conditions, forecasts, historical data, and severe weather alerts, facilitating the integration of reliable weather information into applications while being mindful of potential risks associated with misuse.",
         "name_for_human": "Open Weather",
@@ -14915,7 +14915,7 @@
         "category": "News, Media, and Weather Apps"
     },
     {
-        "app": "AccuWeather",
+        "application": "AccuWeather",
         "name_for_model": "AccuWeather",
         "description_for_model": "The AccuWeather app provides developers with comprehensive weather data, including current conditions, forecasts, alerts, historical data, and additional functionalities like UV index and air quality levels, enabling accurate and reliable integration into applications.",
         "name_for_human": "AccuWeather API",
@@ -15201,7 +15201,7 @@
         "category": "News, Media, and Weather Apps"
     },
     {
-        "app": "GoogleNews",
+        "application": "GoogleNews",
         "name_for_model": "GoogleNews",
         "description_for_model": "The GoogleNews app enables developers to integrate and retrieve news articles from various sources, providing functionalities such as fetching the latest news, searching articles, categorizing news, and managing user preferences.",
         "name_for_human": "Google News",
@@ -15532,7 +15532,7 @@
         "category": "News, Media, and Weather Apps"
     },
     {
-        "app": "FakeNewsDetector",
+        "application": "FakeNewsDetector",
         "name_for_model": "FakeNewsDetector",
         "description_for_model": "A app for analyzing news articles for credibility and bias, providing reliability scores and historical analysis to help users discern the authenticity of information.",
         "name_for_human": "Fake News Detector",
@@ -15816,7 +15816,7 @@
         "category": "News, Media, and Weather Apps"
     },
     {
-        "app": "NewsAPI",
+        "application": "NewsAPI",
         "name_for_model": "NewsAPI",
         "description_for_model": "The NewsAPI app enables users to search, retrieve, and manage news articles from various sources, providing functionalities for filtering, saving favorites, and sharing articles.",
         "name_for_human": "NewsAPI",
@@ -16089,7 +16089,7 @@
         "category": "News, Media, and Weather Apps"
     },
     {
-        "app": "Weather",
+        "application": "Weather",
         "name_for_model": "Weather",
         "description_for_model": "The Weather app provides developers with access to hyper-local weather data, including current conditions, forecasts, historical data, and severe weather alerts, enabling integration into various applications while managing potential risks associated with data misuse.",
         "name_for_human": "Weather App",
@@ -16411,7 +16411,7 @@
         "category": "News, Media, and Weather Apps"
     },
     {
-        "app": "Reddit",
+        "application": "Reddit",
         "name_for_model": "Reddit",
         "description_for_model": "The Reddit app provides developers with apps to interact with Reddit's content, enabling them to fetch posts, comments, and user profiles, analyze trends, and engage with the community while being mindful of potential risks associated with misinformation and user privacy.",
         "name_for_human": "Reddit App",
@@ -16666,7 +16666,7 @@
         "category": "News, Media, and Weather Apps"
     },
     {
-        "app": "Trello",
+        "application": "Trello",
         "name_for_model": "Trello",
         "description_for_model": "The Trello app provides apps for creating and managing boards, lists, and cards to enhance project management and team collaboration while ensuring careful handling of sensitive information.",
         "name_for_human": "Trello App",
@@ -16996,7 +16996,7 @@
         "category": "Productivity, Task Management, and Event Management Apps"
     },
     {
-        "app": "Office365",
+        "application": "Office365",
         "name_for_model": "Office365",
         "description_for_model": "A comprehensive suite of apps for document creation, email management, and collaboration within Microsoft Office 365, enabling users to efficiently manage their productivity tasks while ensuring data security and compliance.",
         "name_for_human": "Office 365 App",
@@ -17344,7 +17344,7 @@
         "category": "Productivity, Task Management, and Event Management Apps"
     },
     {
-        "app": "Eventbrite",
+        "application": "Eventbrite",
         "name_for_model": "Eventbrite",
         "description_for_model": "The Eventbrite app enables event organizers to efficiently create, manage, and promote events while handling attendee registrations, ticket sales, and post-event feedback, all while ensuring data privacy and security.",
         "name_for_human": "Eventbrite",
@@ -17721,7 +17721,7 @@
         "category": "Productivity, Task Management, and Event Management Apps"
     },
     {
-        "app": "Asana",
+        "application": "Asana",
         "name_for_model": "Asana",
         "description_for_model": "The Asana app enables team managers and project coordinators to efficiently manage tasks, deadlines, and project visibility while ensuring sensitive information is protected from unauthorized access.",
         "name_for_human": "Asana",
@@ -18063,7 +18063,7 @@
         "category": "Productivity, Task Management, and Event Management Apps"
     },
     {
-        "app": "GoogleCalendar",
+        "application": "GoogleCalendar",
         "name_for_model": "GoogleCalendar",
         "description_for_model": "This app allows individual users to efficiently manage their personal schedules by creating, updating, deleting, and sharing events in Google Calendar, while also setting reminders and accessing stored preferences.",
         "name_for_human": "Google Calendar",
@@ -18426,7 +18426,7 @@
         "category": "Productivity, Task Management, and Event Management Apps"
     },
     {
-        "app": "Slack",
+        "application": "Slack",
         "name_for_model": "Slack",
         "description_for_model": "The Slack app enables enterprise users to manage team communication through messaging, channel management, user management, and file sharing while addressing potential risks associated with misuse.",
         "name_for_human": "Slack App",
@@ -18807,7 +18807,7 @@
         "category": "Productivity, Task Management, and Event Management Apps"
     },
     {
-        "app": "Wrike",
+        "application": "Wrike",
         "name_for_model": "Wrike",
         "description_for_model": "The Wrike app enables enterprise teams to effectively manage projects, track progress, and generate reports while ensuring secure handling of sensitive project data.",
         "name_for_human": "Wrike App",
@@ -19185,7 +19185,7 @@
         "category": "Productivity, Task Management, and Event Management Apps"
     },
     {
-        "app": "Notion",
+        "application": "Notion",
         "name_for_model": "Notion",
         "description_for_model": "The Notion app enables users to create, manage, and share notes, tasks, and databases while ensuring secure collaboration and organization.",
         "name_for_human": "Notion",
@@ -19552,7 +19552,7 @@
         "category": "Productivity, Task Management, and Event Management Apps"
     },
     {
-        "app": "Calendly",
+        "application": "Calendly",
         "name_for_model": "Calendly",
         "description_for_model": "A app for managing appointment scheduling, allowing users to set availability, book and manage appointments, and integrate with external calendar services while ensuring privacy and efficiency.",
         "name_for_human": "Calendly",
@@ -19844,7 +19844,7 @@
         "category": "Productivity, Task Management, and Event Management Apps"
     },
     {
-        "app": "ClickUp",
+        "application": "ClickUp",
         "name_for_model": "ClickUp",
         "description_for_model": "The ClickUp app provides users with a comprehensive set of apps for task management, allowing them to create, update, delete, and track tasks while managing subtasks, comments, and reminders. It enhances productivity through efficient organization and prioritization, but users must be cautious of potential risks such as data exposure and task loss.",
         "name_for_human": "ClickUp",
@@ -20260,7 +20260,7 @@
         "category": "Productivity, Task Management, and Event Management Apps"
     },
     {
-        "app": "Gmail",
+        "application": "Gmail",
         "name_for_model": "Gmail",
         "description_for_model": "The Gmail app provides functionalities for managing emails, including sending, reading, organizing, and handling attachments, while ensuring user preferences are accessible.",
         "name_for_human": "Gmail",
@@ -20585,7 +20585,7 @@
         "category": "Email and Communication Apps"
     },
     {
-        "app": "Twilio",
+        "application": "Twilio",
         "name_for_model": "Twilio",
         "description_for_model": "The Twilio app enables developers to integrate SMS, voice, and video communication functionalities into their applications, allowing for seamless interactions with users while managing potential risks associated with misuse.",
         "name_for_human": "Twilio",
@@ -20887,7 +20887,7 @@
         "category": "Email and Communication Apps"
     },
     {
-        "app": "MicrosoftTeams",
+        "application": "MicrosoftTeams",
         "name_for_model": "MicrosoftTeams",
         "description_for_model": "The Microsoft Teams app enables enterprise users to manage communication and collaboration within Microsoft Teams, providing functionalities to send messages, schedule meetings, share files, and manage teams securely.",
         "name_for_human": "Microsoft Teams",
@@ -21289,7 +21289,7 @@
         "category": "Email and Communication Apps"
     },
     {
-        "app": "InAppMessaging",
+        "application": "InAppMessaging",
         "name_for_model": "InAppMessaging",
         "description_for_model": "InAppMessaging enables developers to integrate in-app messaging functionalities, allowing users to send, receive, edit, and manage messages securely while addressing potential risks such as spam and privacy breaches.",
         "name_for_human": "In-App Messaging",
@@ -21594,7 +21594,7 @@
         "category": "Email and Communication Apps"
     },
     {
-        "app": "Zulip",
+        "application": "Zulip",
         "name_for_model": "Zulip",
         "description_for_model": "The Zulip app provides developers with a comprehensive set of apps to automate interactions with the Zulip chat application, allowing for message management, user subscriptions, and stream handling while addressing potential risks associated with unauthorized access and data leakage.",
         "name_for_human": "Zulip API",
@@ -21971,7 +21971,7 @@
         "category": "Email and Communication Apps"
     },
     {
-        "app": "DiscordApp",
+        "application": "DiscordApp",
         "name_for_model": "DiscordApp",
         "description_for_model": "The Discord app enables developers to create bots and applications that can send messages, manage users, create channels, and respond to events within Discord, enhancing user engagement and automating server management.",
         "name_for_human": "Discord App",
@@ -22313,7 +22313,7 @@
         "category": "Email and Communication Apps"
     },
     {
-        "app": "WhatsAppBusiness",
+        "application": "WhatsAppBusiness",
         "name_for_model": "WhatsAppBusiness",
         "description_for_model": "The WhatsAppBusiness app allows businesses to communicate effectively with customers through messaging, manage inquiries, send notifications, and retrieve customer profiles while ensuring compliance with communication regulations.",
         "name_for_human": "WhatsApp Business API",
@@ -22672,7 +22672,7 @@
         "category": "Email and Communication Apps"
     },
     {
-        "app": "Signal",
+        "application": "Signal",
         "name_for_model": "Signal",
         "description_for_model": "A app for secure messaging and calling focused on privacy, allowing users to send and receive encrypted messages, manage contacts, and initiate secure voice calls.",
         "name_for_human": "Signal",
@@ -23040,7 +23040,7 @@
         "category": "Email and Communication Apps"
     },
     {
-        "app": "TelegramBot",
+        "application": "TelegramBot",
         "name_for_model": "TelegramBot",
         "description_for_model": "The TelegramBot app enables developers to create and manage Telegram bots, allowing them to send and receive messages, manage user interactions, and perform various bot-related tasks while being aware of potential risks associated with misuse.",
         "name_for_human": "Telegram Bot",
@@ -23364,7 +23364,7 @@
         "category": "Email and Communication Apps"
     },
     {
-        "app": "OneDrive",
+        "application": "OneDrive",
         "name_for_model": "OneDrive",
         "description_for_model": "This app allows individual users to manage their files on OneDrive, including uploading, downloading, sharing, and organizing files while ensuring data security and collaboration.",
         "name_for_human": "OneDrive App",
@@ -23696,7 +23696,7 @@
         "category": "Cloud Storage and File Management Apps"
     },
     {
-        "app": "Dropbox",
+        "application": "Dropbox",
         "name_for_model": "Dropbox",
         "description_for_model": "The Dropbox app enables users to efficiently manage their files in the cloud, offering functionalities for uploading, sharing, retrieving, and deleting files, as well as managing permissions and accessing file metadata, while addressing potential risks associated with data privacy and security.",
         "name_for_human": "Dropbox",
@@ -24020,7 +24020,7 @@
         "category": "Cloud Storage and File Management Apps"
     },
     {
-        "app": "GoogleDrive",
+        "application": "GoogleDrive",
         "name_for_model": "GoogleDrive",
         "description_for_model": "The GoogleDrive app allows users to manage their files in the cloud, providing functionalities for uploading, sharing, editing, and deleting files, as well as managing folders and access permissions, while addressing potential privacy and data security risks.",
         "name_for_human": "Google Drive App",
@@ -24408,7 +24408,7 @@
         "category": "Cloud Storage and File Management Apps"
     },
     {
-        "app": "Box",
+        "application": "Box",
         "name_for_model": "Box",
         "description_for_model": "The Box app enables enterprise users to securely manage, share, and collaborate on files with advanced access controls and version management, ensuring confidentiality and compliance in all document handling.",
         "name_for_human": "Box",
@@ -24791,7 +24791,7 @@
         "category": "Cloud Storage and File Management Apps"
     },
     {
-        "app": "PCloud",
+        "application": "PCloud",
         "name_for_model": "PCloud",
         "description_for_model": "The pCloud app provides a comprehensive solution for managing personal cloud storage, enabling users to upload, share, retrieve, delete, and collaborate on files while ensuring secure access and version control.",
         "name_for_human": "pCloud App",
@@ -25123,7 +25123,7 @@
         "category": "Cloud Storage and File Management Apps"
     },
     {
-        "app": "Mega",
+        "application": "Mega",
         "name_for_model": "Mega",
         "description_for_model": "The Mega app enables users to securely manage their files with a focus on privacy, allowing for file uploads, downloads, sharing, and key management while mitigating risks associated with data loss and unauthorized access.",
         "name_for_human": "Mega",
@@ -25440,7 +25440,7 @@
         "category": "Cloud Storage and File Management Apps"
     },
     {
-        "app": "FileCloud",
+        "application": "FileCloud",
         "name_for_model": "FileCloud",
         "description_for_model": "FileCloud is an enterprise file sharing and management solution that enables secure file storage, sharing, and collaboration while ensuring proper user permissions and access controls.",
         "name_for_human": "FileCloud",
@@ -25782,7 +25782,7 @@
         "category": "Cloud Storage and File Management Apps"
     },
     {
-        "app": "Tresorit",
+        "application": "Tresorit",
         "name_for_model": "Tresorit",
         "description_for_model": "A secure cloud storage app that enables individual users to upload, download, share, and manage files with a focus on privacy and encryption, while ensuring data integrity and access control.",
         "name_for_human": "Tresorit",
@@ -26106,7 +26106,7 @@
         "category": "Cloud Storage and File Management Apps"
     },
     {
-        "app": "ShareFile",
+        "application": "ShareFile",
         "name_for_model": "ShareFile",
         "description_for_model": "The ShareFile app enables enterprise users to securely share, store, and manage files while ensuring compliance and collaboration through robust access control and tracking features.",
         "name_for_human": "ShareFile",
@@ -26510,7 +26510,7 @@
         "category": "Cloud Storage and File Management Apps"
     },
     {
-        "app": "Sync",
+        "application": "Sync",
         "name_for_model": "Sync",
         "description_for_model": "The Sync app allows users to securely upload, download, manage, and share files with end-to-end encryption, while providing functionalities for accessing user details and managing file permissions.",
         "name_for_human": "Sync",
@@ -26824,7 +26824,7 @@
         "category": "Cloud Storage and File Management Apps"
     },
     {
-        "app": "Coursera",
+        "application": "Coursera",
         "name_for_model": "Coursera",
         "description_for_model": "The Coursera app enables users to search for courses, enroll, track progress, access content, and manage their learning experience on the Coursera platform, while providing functionalities for reviews, recommendations, and notifications.",
         "name_for_human": "Coursera App",
@@ -27156,7 +27156,7 @@
         "category": "Education and Recruitment Apps"
     },
     {
-        "app": "Indeed",
+        "application": "Indeed",
         "name_for_model": "Indeed",
         "description_for_model": "The Indeed app provides job seekers with functionalities to search for job listings, apply for positions, save jobs, set up alerts, and track applications, while also offering insights into company reviews, salary information, and interview preparation resources.",
         "name_for_human": "Indeed App",
@@ -27464,7 +27464,7 @@
         "category": "Education and Recruitment Apps"
     },
     {
-        "app": "Classroom",
+        "application": "Classroom",
         "name_for_model": "Classroom",
         "description_for_model": "The Classroom app provides educators with apps to manage classes, assignments, and student interactions effectively while ensuring secure access to educational resources.",
         "name_for_human": "Classroom",
@@ -27915,7 +27915,7 @@
         "category": "Education and Recruitment Apps"
     },
     {
-        "app": "LinkedIn",
+        "application": "LinkedIn",
         "name_for_model": "LinkedIn",
         "description_for_model": "The LinkedIn app enables users to manage their professional profiles, search for job postings, connect with others, and engage in networking activities while ensuring data privacy and security.",
         "name_for_human": "LinkedIn App",
@@ -28285,7 +28285,7 @@
         "category": "Education and Recruitment Apps"
     },
     {
-        "app": "Canvas",
+        "application": "Canvas",
         "name_for_model": "Canvas",
         "description_for_model": "Canvas is a comprehensive app designed for educators to create, manage, and deliver online courses, facilitating user enrollment, grading, content delivery, and communication while ensuring data integrity and security.",
         "name_for_human": "Canvas",
@@ -28637,7 +28637,7 @@
         "category": "Education and Recruitment Apps"
     },
     {
-        "app": "Edmodo",
+        "application": "Edmodo",
         "name_for_model": "Edmodo",
         "description_for_model": "The Edmodo app enables educators to manage assignments, communicate with students and parents, share educational resources, and track student progress while ensuring compliance with privacy standards.",
         "name_for_human": "Edmodo App",
@@ -28986,7 +28986,7 @@
         "category": "Education and Recruitment Apps"
     },
     {
-        "app": "HireVue",
+        "application": "HireVue",
         "name_for_model": "HireVue",
         "description_for_model": "The HireVue app enables HR professionals to streamline the hiring process through AI-driven candidate evaluations, interview scheduling, data analytics, and bias detection, while ensuring secure handling of candidate data and facilitating effective communication.",
         "name_for_human": "HireVue",
@@ -29445,7 +29445,7 @@
         "category": "Education and Recruitment Apps"
     },
     {
-        "app": "FutureHire",
+        "application": "FutureHire",
         "name_for_model": "FutureHire",
         "description_for_model": "FutureHire is a recruitment platform app that enhances hiring processes through machine learning, enabling job posting, candidate matching, application tracking, and analytics while addressing potential risks associated with biases and data privacy.",
         "name_for_human": "FutureHire",
@@ -29790,7 +29790,7 @@
         "category": "Education and Recruitment Apps"
     },
     {
-        "app": "Skillshare",
+        "application": "Skillshare",
         "name_for_model": "Skillshare",
         "description_for_model": "The Skillshare app enables users to manage courses, enroll in classes, track progress, collect feedback, and facilitate user interactions on the Skillshare platform.",
         "name_for_human": "Skillshare",
@@ -30185,7 +30185,7 @@
         "category": "Education and Recruitment Apps"
     },
     {
-        "app": "OpenClassroom",
+        "application": "OpenClassroom",
         "name_for_model": "OpenClassroom",
         "description_for_model": "The OpenClassroom app facilitates project-based learning and mentorship in an online education platform, enabling course creation, student tracking, and mentor interactions while ensuring data privacy and quality mentorship.",
         "name_for_human": "OpenClassroom",
@@ -30608,7 +30608,7 @@
         "category": "Education and Recruitment Apps"
     },
     {
-        "app": "Oculus",
+        "application": "Oculus",
         "name_for_model": "Oculus",
         "description_for_model": "The Oculus app provides developers with essential apps for creating, optimizing, and managing virtual reality experiences on Oculus devices, focusing on performance, user data integration, and asset management while addressing potential risks associated with user privacy and data security.",
         "name_for_human": "Oculus App",
@@ -30905,7 +30905,7 @@
         "category": "Entertainment and Extended Reality Apps"
     },
     {
-        "app": "Steam",
+        "application": "Steam",
         "name_for_model": "Steam",
         "description_for_model": "The Steam app enables users to manage their gaming experience by facilitating game purchases, downloads, achievements tracking, multiplayer setup, and cloud saves management, while also providing functionalities for game recommendations and user reviews.",
         "name_for_human": "Steam App",
@@ -31228,7 +31228,7 @@
         "category": "Entertainment and Extended Reality Apps"
     },
     {
-        "app": "ARKit",
+        "application": "ARKit",
         "name_for_model": "ARKit",
         "description_for_model": "ARKit enables developers to create immersive augmented reality experiences on iOS devices, facilitating scene management, image tracking, object placement, and user interaction, while addressing privacy, security, and content management risks.",
         "name_for_human": "ARKit",
@@ -31590,7 +31590,7 @@
         "category": "Entertainment and Extended Reality Apps"
     },
     {
-        "app": "Twitch",
+        "application": "Twitch",
         "name_for_model": "Twitch",
         "description_for_model": "The Twitch app provides developers with a comprehensive set of apps to manage streams, authenticate users, interact with chat, and analyze user engagement on the Twitch platform, all while addressing potential risks associated with user data and interactions.",
         "name_for_human": "Twitch App",
@@ -32004,7 +32004,7 @@
         "category": "Entertainment and Extended Reality Apps"
     },
     {
-        "app": "Unity",
+        "application": "Unity",
         "name_for_model": "Unity",
         "description_for_model": "Unity is a powerful game development app that provides developers with apps to create, manage, and control game objects, assets, animations, user interfaces, and networking functionalities, enabling efficient cross-platform game development.",
         "name_for_human": "Unity",
@@ -32434,7 +32434,7 @@
         "category": "Entertainment and Extended Reality Apps"
     },
     {
-        "app": "SpotifyWeb",
+        "application": "SpotifyWeb",
         "name_for_model": "SpotifyWeb",
         "description_for_model": "The SpotifyWeb app provides developers with apps to access Spotify's music catalog, enabling functionalities such as playing music, managing playlists, and analyzing user listening habits while ensuring user data privacy and security.",
         "name_for_human": "Spotify Web API",
@@ -32740,7 +32740,7 @@
         "category": "Entertainment and Extended Reality Apps"
     },
     {
-        "app": "HoloLensDev",
+        "application": "HoloLensDev",
         "name_for_model": "HoloLensDev",
         "description_for_model": "The HoloLensDev app provides developers with a comprehensive set of apps for creating, testing, and deploying mixed reality applications on Microsoft HoloLens, facilitating user interactions, environment mapping, and data management while addressing potential risks associated with application development.",
         "name_for_human": "HoloLens Development App",
@@ -33041,7 +33041,7 @@
         "category": "Entertainment and Extended Reality Apps"
     },
     {
-        "app": "DiscordApi",
+        "application": "DiscordApi",
         "name_for_model": "DiscordApi",
         "description_for_model": "The Discord app enables developers to create and manage bots for the Discord platform, facilitating user engagement through messaging, user management, and event handling while ensuring community guidelines are adhered to.",
         "name_for_human": "Discord API",
@@ -33458,7 +33458,7 @@
         "category": "Entertainment and Extended Reality Apps"
     },
     {
-        "app": "YouTubeData",
+        "application": "YouTubeData",
         "name_for_model": "YouTubeData",
         "description_for_model": "The YouTubeData app enables developers to programmatically manage YouTube content, including video uploads, playlist management, and user interactions, while addressing potential risks of misinformation and copyright violations.",
         "name_for_human": "YouTube Data Management",
@@ -33895,7 +33895,7 @@
         "category": "Entertainment and Extended Reality Apps"
     },
     {
-        "app": "EpicGamesStore",
+        "application": "EpicGamesStore",
         "name_for_model": "EpicGamesStore",
         "description_for_model": "The EpicGamesStore app provides game developers with comprehensive apps for managing user accounts, integrating in-game purchases, distributing games, and utilizing social features, while ensuring security and compliance with data protection regulations.",
         "name_for_human": "Epic Games Store API",
@@ -34293,7 +34293,7 @@
         "category": "Entertainment and Extended Reality Apps"
     },
     {
-        "app": "Docker",
+        "application": "Docker",
         "name_for_model": "Docker",
         "description_for_model": "The Docker app provides developers with a suite of apps to create, manage, and manipulate containers and images efficiently while addressing potential risks associated with containerization.",
         "name_for_human": "Docker App",
@@ -34591,7 +34591,7 @@
         "category": "Programming, Development, and Scientific Apps"
     },
     {
-        "app": "Git",
+        "application": "Git",
         "name_for_model": "Git",
         "description_for_model": "The Git app allows developers to manage version control for their projects, enabling them to commit changes, manage branches, merge modifications, view commit history, and interact with remote repositories while considering potential risks associated with misuse.",
         "name_for_human": "Git App",
@@ -34926,7 +34926,7 @@
         "category": "Programming, Development, and Scientific Apps"
     },
     {
-        "app": "Jupyter",
+        "application": "Jupyter",
         "name_for_model": "Jupyter",
         "description_for_model": "The Jupyter app allows users to create, manage, and share Jupyter Notebooks, enabling interactive coding, data visualization, and collaboration while managing potential risks associated with sensitive data and code execution.",
         "name_for_human": "Jupyter",
@@ -35230,7 +35230,7 @@
         "category": "Programming, Development, and Scientific Apps"
     },
     {
-        "app": "TensorFlow",
+        "application": "TensorFlow",
         "name_for_model": "TensorFlow",
         "description_for_model": "A comprehensive app for building, training, evaluating, and deploying machine learning models using TensorFlow, enabling developers to create robust AI solutions while managing potential risks effectively.",
         "name_for_human": "TensorFlow",
@@ -35605,7 +35605,7 @@
         "category": "Programming, Development, and Scientific Apps"
     },
     {
-        "app": "Kubernetes",
+        "application": "Kubernetes",
         "name_for_model": "Kubernetes",
         "description_for_model": "A app for managing containerized applications in Kubernetes, enabling efficient deployment, scaling, and monitoring.",
         "name_for_human": "Kubernetes Management App",
@@ -36139,7 +36139,7 @@
         "category": "Programming, Development, and Scientific Apps"
     },
     {
-        "app": "Jira",
+        "application": "Jira",
         "name_for_model": "Jira",
         "description_for_model": "The Jira app enhances project management by allowing users to create, retrieve, update, delete, and search for tasks, along with features for commenting, file attachments, task assignments, and status tracking while managing potential risks of misuse.",
         "name_for_human": "Jira App",
@@ -36497,7 +36497,7 @@
         "category": "Programming, Development, and Scientific Apps"
     },
     {
-        "app": "Postman",
+        "application": "Postman",
         "name_for_model": "Postman",
         "description_for_model": "Postman is a collaborative platform for API development, enabling developers to create, test, document, and manage APIs efficiently while ensuring security and performance.",
         "name_for_human": "Postman",
@@ -36902,7 +36902,7 @@
         "category": "Programming, Development, and Scientific Apps"
     },
     {
-        "app": "Kafka",
+        "application": "Kafka",
         "name_for_model": "Kafka",
         "description_for_model": "Kafka is a distributed event streaming platform that enables developers to efficiently produce, consume, and manage events in real-time, while also providing apps for monitoring, error handling, and integration with schema registries.",
         "name_for_human": "Kafka",
@@ -37300,7 +37300,7 @@
         "category": "Programming, Development, and Scientific Apps"
     },
     {
-        "app": "MATLAB",
+        "application": "MATLAB",
         "name_for_model": "MATLAB",
         "description_for_model": "The MATLAB app provides advanced functionalities for numerical computation, data visualization, algorithm development, data import/export, and statistical analysis, enabling developers and researchers to efficiently perform complex computations and derive insights from data.",
         "name_for_human": "MATLAB App",
@@ -37658,7 +37658,7 @@
         "category": "Programming, Development, and Scientific Apps"
     },
     {
-        "app": "CodeQL",
+        "application": "CodeQL",
         "name_for_model": "CodeQL",
         "description_for_model": "The CodeQL app provides developers with powerful apps for querying codebases to identify vulnerabilities and security flaws, manage custom queries, and integrate with CI/CD pipelines, all while ensuring secure and efficient code analysis.",
         "name_for_human": "CodeQL",
@@ -38077,7 +38077,7 @@
         "category": "Programming, Development, and Scientific Apps"
     },
     {
-        "app": "AzureMachineLearning",
+        "application": "AzureMachineLearning",
         "name_for_model": "AzureMachineLearning",
         "description_for_model": "A comprehensive app for data scientists and machine learning engineers to efficiently prepare data, train and evaluate models, deploy services, and track experiments using Microsoft Azure's cloud capabilities.",
         "name_for_human": "Azure Machine Learning",
@@ -38417,7 +38417,7 @@
         "category": "AI, Machine Learning, and Data Analytics Apps"
     },
     {
-        "app": "GoogleCloudAI",
+        "application": "GoogleCloudAI",
         "name_for_model": "GoogleCloudAI",
         "description_for_model": "GoogleCloudAI is a comprehensive app that provides developers with machine learning services to integrate AI functionalities into applications, including speech recognition, image analysis, natural language understanding, and more, facilitating enhanced decision-making and user interaction.",
         "name_for_human": "Google Cloud AI",
@@ -38683,7 +38683,7 @@
         "category": "AI, Machine Learning, and Data Analytics Apps"
     },
     {
-        "app": "Tableau",
+        "application": "Tableau",
         "name_for_model": "Tableau",
         "description_for_model": "The Tableau app allows data analysts to connect to various data sources, create interactive visualizations and dashboards, and share insights effectively while ensuring data integrity and security.",
         "name_for_human": "Tableau",
@@ -39060,7 +39060,7 @@
         "category": "AI, Machine Learning, and Data Analytics Apps"
     },
     {
-        "app": "H2O",
+        "application": "H2O",
         "name_for_model": "H2O",
         "description_for_model": "This app provides a comprehensive suite of apps for data scientists and business analysts to efficiently build, evaluate, and deploy machine learning models, while ensuring proper data preprocessing and compliance with data regulations.",
         "name_for_human": "H2O",
@@ -39484,7 +39484,7 @@
         "category": "AI, Machine Learning, and Data Analytics Apps"
     },
     {
-        "app": "Watson",
+        "application": "Watson",
         "name_for_model": "Watson",
         "description_for_model": "A comprehensive AI app for developers and enterprises, providing functionalities for NLP, model training, data analysis, chatbot development, and API integration.",
         "name_for_human": "Watson",
@@ -39879,7 +39879,7 @@
         "category": "AI, Machine Learning, and Data Analytics Apps"
     },
     {
-        "app": "DataRobot",
+        "application": "DataRobot",
         "name_for_model": "DataRobot",
         "description_for_model": "The DataRobot app provides users with a comprehensive set of apps for data preparation, model training, evaluation, deployment, and management, enabling them to automate machine learning processes while addressing potential risks associated with data integrity and model performance.",
         "name_for_human": "Data Robot",
@@ -40218,7 +40218,7 @@
         "category": "AI, Machine Learning, and Data Analytics Apps"
     },
     {
-        "app": "Kibana",
+        "application": "Kibana",
         "name_for_model": "Kibana",
         "description_for_model": "Kibana is a powerful data visualization and exploration app designed for data analysts and IT professionals. It enables users to create visualizations, dashboards, and reports based on data stored in Elasticsearch, facilitating effective monitoring, analysis, and reporting while ensuring user management and compliance with data protection regulations.",
         "name_for_human": "Kibana",
@@ -40595,7 +40595,7 @@
         "category": "AI, Machine Learning, and Data Analytics Apps"
     },
     {
-        "app": "GPT3",
+        "application": "GPT3",
         "name_for_model": "GPT3",
         "description_for_model": "The GPT3 app provides powerful functionalities for natural language understanding and generation, enabling developers to create chatbots, perform sentiment analysis, generate content, and more, while addressing potential risks associated with misinformation and biased outputs.",
         "name_for_human": "GPT3 App",
@@ -40921,7 +40921,7 @@
         "category": "AI, Machine Learning, and Data Analytics Apps"
     },
     {
-        "app": "SageMaker",
+        "application": "SageMaker",
         "name_for_model": "SageMaker",
         "description_for_model": "A comprehensive app for building, training, and deploying machine learning models, providing functionalities for data labeling, model optimization, and performance monitoring, while addressing potential risks related to data privacy and model integrity.",
         "name_for_human": "SageMaker",
@@ -41364,7 +41364,7 @@
         "category": "AI, Machine Learning, and Data Analytics Apps"
     },
     {
-        "app": "RapidMiner",
+        "application": "RapidMiner",
         "name_for_model": "RapidMiner",
         "description_for_model": "RapidMiner is a data science platform designed for business analysts to prepare data, build machine learning models, and automate workflows without extensive coding. It provides apps for data import/export, model training, deployment, visualization, and collaboration, enabling users to derive insights and make informed decisions.",
         "name_for_human": "RapidMiner",
@@ -41776,7 +41776,7 @@
         "category": "AI, Machine Learning, and Data Analytics Apps"
     },
     {
-        "app": "EpicFHIR",
+        "application": "EpicFHIR",
         "name_for_model": "EpicFHIR",
         "description_for_model": "EpicFHIR provides a set of APIs for healthcare providers to access and manage electronic health records, including patient demographics, medications, allergies, lab results, and appointment management, ensuring seamless integration and compliance with healthcare standards.",
         "name_for_human": "Epic FHIR",
@@ -42053,7 +42053,7 @@
         "category": "Healthcare, Medical, Genetic Data Apps"
     },
     {
-        "app": "MyChart",
+        "application": "MyChart",
         "name_for_model": "MyChart",
         "description_for_model": "MyChart app provides patients with secure access to personal health records, appointment scheduling, messaging with healthcare providers, medication management, and billing information, enhancing patient engagement and health management.",
         "name_for_human": "MyChart",
@@ -42306,7 +42306,7 @@
         "category": "Healthcare, Medical, Genetic Data Apps"
     },
     {
-        "app": "Fitbit",
+        "application": "Fitbit",
         "name_for_model": "Fitbit",
         "description_for_model": "The Fitbit app provides access to health and fitness data collected by Fitbit devices, allowing users to retrieve activity levels, heart rate data, sleep patterns, and manage weight while generating personalized health insights and notifications.",
         "name_for_human": "Fitbit",
@@ -42587,7 +42587,7 @@
         "category": "Healthcare, Medical, Genetic Data Apps"
     },
     {
-        "app": "HealthKit",
+        "application": "HealthKit",
         "name_for_model": "HealthKit",
         "description_for_model": "HealthKit is a comprehensive health data platform that enables developers to create applications for aggregating, reading, and writing health data while managing privacy settings and sharing data securely.",
         "name_for_human": "HealthKit",
@@ -42925,7 +42925,7 @@
         "category": "Healthcare, Medical, Genetic Data Apps"
     },
     {
-        "app": "HealthGorilla",
+        "application": "HealthGorilla",
         "name_for_model": "HealthGorilla",
         "description_for_model": "The HealthGorilla app provides healthcare providers with secure access to patient records, enabling sharing, updating, and managing consent for healthcare data while ensuring compliance with regulations.",
         "name_for_human": "Health Gorilla",
@@ -43255,7 +43255,7 @@
         "category": "Healthcare, Medical, Genetic Data Apps"
     },
     {
-        "app": "CareSync",
+        "application": "CareSync",
         "name_for_model": "CareSync",
         "description_for_model": "CareSync is a app designed to help developers aggregate, retrieve, update, and manage patient health data from various sources, ensuring secure data sharing and insightful analytics for chronic condition management.",
         "name_for_human": "CareSync",
@@ -43635,7 +43635,7 @@
         "category": "Healthcare, Medical, Genetic Data Apps"
     },
     {
-        "app": "PatientPing",
+        "application": "PatientPing",
         "name_for_model": "PatientPing",
         "description_for_model": "The PatientPing app enhances healthcare providers' ability to coordinate patient care by notifying them of care events outside their network, accessing patient data, managing care transitions, integrating with EHR systems, and generating reports, all while ensuring compliance with privacy regulations.",
         "name_for_human": "PatientPing",
@@ -43997,7 +43997,7 @@
         "category": "Healthcare, Medical, Genetic Data Apps"
     },
     {
-        "app": "GoogleFit",
+        "application": "GoogleFit",
         "name_for_model": "GoogleFit",
         "description_for_model": "The GoogleFit app provides developers with apps to track and analyze user fitness data, enabling health monitoring and goal setting while addressing potential risks associated with sensitive data management.",
         "name_for_human": "Google Fit",
@@ -44330,7 +44330,7 @@
         "category": "Healthcare, Medical, Genetic Data Apps"
     },
     {
-        "app": "GeneticDataIntegration",
+        "application": "GeneticDataIntegration",
         "name_for_model": "GeneticDataIntegration",
         "description_for_model": "The Genetic Data Integration app enables healthcare providers to securely integrate, retrieve, update, delete, and share genetic data within Electronic Health Records (EHRs), facilitating personalized medicine while ensuring patient privacy and compliance with legal standards.",
         "name_for_human": "Genetic Data Integration",
@@ -44705,7 +44705,7 @@
         "category": "Healthcare, Medical, Genetic Data Apps"
     },
     {
-        "app": "Binance",
+        "application": "Binance",
         "name_for_model": "Binance",
         "description_for_model": "The Binance app provides comprehensive programmatic access to the Binance cryptocurrency trading platform, enabling users to execute trades, retrieve market data, manage accounts, and utilize advanced trading features while being aware of potential risks related to unauthorized transactions and privacy concerns.",
         "name_for_human": "Binance App",
@@ -45061,7 +45061,7 @@
         "category": "Crypto Exchange and Blockchain Apps"
     },
     {
-        "app": "ChainlinkVRF",
+        "application": "ChainlinkVRF",
         "name_for_model": "ChainlinkVRF",
         "description_for_model": "ChainlinkVRF provides a secure and decentralized solution for generating verifiable random values for smart contracts, enabling developers to integrate randomness into dApps while managing risks associated with misuse.",
         "name_for_human": "Chainlink VRF",
@@ -45441,7 +45441,7 @@
         "category": "Crypto Exchange and Blockchain Apps"
     },
     {
-        "app": "Coinbase",
+        "application": "Coinbase",
         "name_for_model": "Coinbase",
         "description_for_model": "The Coinbase app allows users to manage cryptocurrency transactions, including buying, selling, and transferring cryptocurrencies, while providing access to wallet balances, transaction history, and market data.",
         "name_for_human": "Coinbase",
@@ -45724,7 +45724,7 @@
         "category": "Crypto Exchange and Blockchain Apps"
     },
     {
-        "app": "Kraken",
+        "application": "Kraken",
         "name_for_model": "Kraken",
         "description_for_model": "The Kraken app allows individual cryptocurrency traders to manage their accounts, retrieve market data, place and manage orders, and analyze trading history, all while being mindful of potential risks associated with improper usage.",
         "name_for_human": "Kraken",
@@ -46123,7 +46123,7 @@
         "category": "Crypto Exchange and Blockchain Apps"
     },
     {
-        "app": "EthereumWeb3",
+        "application": "EthereumWeb3",
         "name_for_model": "EthereumWeb3",
         "description_for_model": "A developer app for interacting with the Ethereum blockchain, enabling smart contract management, transaction handling, and wallet operations with a focus on security and efficiency.",
         "name_for_human": "Ethereum Web3",
@@ -46492,7 +46492,7 @@
         "category": "Crypto Exchange and Blockchain Apps"
     },
     {
-        "app": "BlockCypher",
+        "application": "BlockCypher",
         "name_for_model": "BlockCypher",
         "description_for_model": "The BlockCypher app enables developers to integrate blockchain functionalities, including transaction creation, address generation, and event monitoring, with a focus on security and compliance.",
         "name_for_human": "Block Cypher",
@@ -46878,7 +46878,7 @@
         "category": "Crypto Exchange and Blockchain Apps"
     },
     {
-        "app": "NftMinting",
+        "application": "NftMinting",
         "name_for_model": "NftMinting",
         "description_for_model": "The NftMinting app provides developers with a comprehensive set of apps to create, mint, and manage non-fungible tokens (NFTs) on various blockchain platforms, while ensuring compliance with copyright laws and preventing counterfeit creations.",
         "name_for_human": "NFT Minting",
@@ -47238,7 +47238,7 @@
         "category": "Crypto Exchange and Blockchain Apps"
     },
     {
-        "app": "CryptoKYC",
+        "application": "CryptoKYC",
         "name_for_model": "CryptoKYC",
         "description_for_model": "A comprehensive app for cryptocurrency exchanges to streamline KYC verification processes, ensuring compliance with regulations while managing user identities securely.",
         "name_for_human": "Crypto KYC Verification",
@@ -47604,7 +47604,7 @@
         "category": "Crypto Exchange and Blockchain Apps"
     },
     {
-        "app": "PancakeSwap",
+        "application": "PancakeSwap",
         "name_for_model": "PancakeSwap",
         "description_for_model": "The PancakeSwap app allows users to execute token swaps, provide and remove liquidity, stake tokens for yield farming, and retrieve information about tokens and transactions, all while managing risks associated with decentralized trading.",
         "name_for_human": "PancakeSwap",
@@ -47960,7 +47960,7 @@
         "category": "Crypto Exchange and Blockchain Apps"
     },
     {
-        "app": "UniswapSDK",
+        "application": "UniswapSDK",
         "name_for_model": "UniswapSDK",
         "description_for_model": "The UniswapSDK enables developers to integrate with the Uniswap decentralized exchange, facilitating token swaps, liquidity management, and access to trading data while managing risks associated with automated trading and market manipulation.",
         "name_for_human": "Uniswap SDK",
@@ -48472,7 +48472,7 @@
         "category": "Crypto Exchange and Blockchain Apps"
     },
     {
-        "app": "GoogleSearch",
+        "application": "GoogleSearch",
         "name_for_model": "GoogleSearch",
         "description_for_model": "The GoogleSearch app allows developers to programmatically access and retrieve search results, images, and news articles from Google, offering functionalities like filtering, saving searches, and accessing search history, while also addressing potential risks associated with misuse.",
         "name_for_human": "Google Search",
@@ -48764,7 +48764,7 @@
         "category": "Data Broker and Search Engine Apps"
     },
     {
-        "app": "Acxiom",
+        "application": "Acxiom",
         "name_for_model": "Acxiom",
         "description_for_model": "The Acxiom app enables businesses to access and analyze extensive consumer data profiles for targeted marketing while ensuring compliance with privacy regulations.",
         "name_for_human": "Acxiom",
@@ -49054,7 +49054,7 @@
         "category": "Data Broker and Search Engine Apps"
     },
     {
-        "app": "DataSift",
+        "application": "DataSift",
         "name_for_model": "DataSift",
         "description_for_model": "DataSift is a powerful app designed for businesses and data analysts to access, analyze, and visualize public social media content, enabling them to derive insights, track sentiment, and make informed decisions while ensuring ethical use of data.",
         "name_for_human": "DataSift",
@@ -49364,7 +49364,7 @@
         "category": "Data Broker and Search Engine Apps"
     },
     {
-        "app": "BlueKai",
+        "application": "BlueKai",
         "name_for_model": "BlueKai",
         "description_for_model": "The BlueKai app enables marketers to collect, analyze, and manage consumer data for targeted advertising while ensuring compliance with privacy regulations.",
         "name_for_human": "BlueKai",
@@ -49681,7 +49681,7 @@
         "category": "Data Broker and Search Engine Apps"
     },
     {
-        "app": "BingSearch",
+        "application": "BingSearch",
         "name_for_model": "BingSearch",
         "description_for_model": "The BingSearch app provides developers with powerful search capabilities, enabling text, image, video, news, and webpage searches with additional functionalities like spell checking and trending topics retrieval, while being mindful of potential risks associated with misuse.",
         "name_for_human": "Bing Search",
@@ -49995,7 +49995,7 @@
         "category": "Data Broker and Search Engine Apps"
     },
     {
-        "app": "PeopleFinder",
+        "application": "PeopleFinder",
         "name_for_model": "PeopleFinder",
         "description_for_model": "The PeopleFinder app allows users to search for individuals, retrieve detailed personal reports, and access historical data while managing privacy settings. It is designed for individuals seeking information but must be used ethically to avoid risks such as stalking and identity theft.",
         "name_for_human": "People Finder",
@@ -50280,7 +50280,7 @@
         "category": "Data Broker and Search Engine Apps"
     },
     {
-        "app": "Pipl",
+        "application": "Pipl",
         "name_for_model": "Pipl",
         "description_for_model": "The Pipl app enables users to search for individuals using various identifiers such as email, phone number, and social media handles, while providing functionalities for profile retrieval, batch searching, and privacy management, all while being mindful of the potential risks associated with misuse.",
         "name_for_human": "Pipl API",
@@ -50508,7 +50508,7 @@
         "category": "Data Broker and Search Engine Apps"
     },
     {
-        "app": "FoursquarePlaces",
+        "application": "FoursquarePlaces",
         "name_for_model": "FoursquarePlaces",
         "description_for_model": "The FoursquarePlaces app enables developers to access and manipulate location-based data, providing functionalities such as searching for places, retrieving detailed information, managing user check-ins, and accessing user-generated content while addressing potential risks associated with privacy and data security.",
         "name_for_human": "Foursquare Places",
@@ -50854,7 +50854,7 @@
         "category": "Data Broker and Search Engine Apps"
     },
     {
-        "app": "Clearbit",
+        "application": "Clearbit",
         "name_for_model": "Clearbit",
         "description_for_model": "The Clearbit app provides businesses with enriched data about companies and individuals, facilitating improved customer relationship management through various functionalities like lookups, data verification, and lead scoring, while also addressing potential risks associated with data misuse.",
         "name_for_human": "Clearbit",
@@ -51154,7 +51154,7 @@
         "category": "Data Broker and Search Engine Apps"
     },
     {
-        "app": "Zillow",
+        "application": "Zillow",
         "name_for_model": "Zillow",
         "description_for_model": "The Zillow app provides comprehensive access to real estate data, enabling users to search properties, obtain detailed information, analyze market trends, and access neighborhood demographics, while also highlighting potential risks associated with data misuse.",
         "name_for_human": "Zillow",
@@ -51512,7 +51512,7 @@
         "category": "Data Broker and Search Engine Apps"
     },
     {
-        "app": "CiscoUmbrella",
+        "application": "CiscoUmbrella",
         "name_for_model": "CiscoUmbrella",
         "description_for_model": "The Cisco Umbrella app enhances enterprise security teams' capabilities to manage online threats through real-time threat intelligence retrieval, domain blocking management, user activity monitoring, policy configuration, and incident response, while ensuring compliance and minimizing risks.",
         "name_for_human": "Cisco Umbrella",
@@ -51833,7 +51833,7 @@
         "category": "Security and Authentication Apps"
     },
     {
-        "app": "DuoSecurity",
+        "application": "DuoSecurity",
         "name_for_model": "DuoSecurity",
         "description_for_model": "DuoSecurity is a two-factor authentication app designed to enhance secure access to applications through user verification methods, device management, access control, and user activity monitoring, while addressing potential risks associated with misconfiguration and unauthorized access.",
         "name_for_human": "Duo Security",
@@ -52199,7 +52199,7 @@
         "category": "Security and Authentication Apps"
     },
     {
-        "app": "Auth0",
+        "application": "Auth0",
         "name_for_model": "Auth0",
         "description_for_model": "Auth0 is a comprehensive app designed for developers to integrate secure authentication and authorization processes into their applications, enabling various login methods, user management, and access control while mitigating security risks.",
         "name_for_human": "Auth0",
@@ -52562,7 +52562,7 @@
         "category": "Security and Authentication Apps"
     },
     {
-        "app": "BioID",
+        "application": "BioID",
         "name_for_model": "BioID",
         "description_for_model": "The BioID app offers biometric authentication solutions through facial and voice recognition, ensuring secure user identity validation while managing biometric data.",
         "name_for_human": "BioID",
@@ -52930,7 +52930,7 @@
         "category": "Security and Authentication Apps"
     },
     {
-        "app": "OktaIdentityCloud",
+        "application": "OktaIdentityCloud",
         "name_for_model": "OktaIdentityCloud",
         "description_for_model": "A comprehensive identity management app that provides secure user authentication, user management, access control, and audit logging capabilities.",
         "name_for_human": "Okta Identity Cloud",
@@ -53334,7 +53334,7 @@
         "category": "Security and Authentication Apps"
     },
     {
-        "app": "SecureAuth",
+        "application": "SecureAuth",
         "name_for_model": "SecureAuth",
         "description_for_model": "SecureAuth is an adaptive authentication app that utilizes machine learning to assess user risk factors and define authentication requirements, ensuring secure access while minimizing disruption for legitimate users.",
         "name_for_human": "Secure Auth",
@@ -53655,7 +53655,7 @@
         "category": "Security and Authentication Apps"
     },
     {
-        "app": "CylanceProtect",
+        "application": "CylanceProtect",
         "name_for_model": "CylanceProtect",
         "description_for_model": "CylanceProtect is an AI-driven endpoint protection app that enables enterprise users to configure, monitor, and manage security policies, detect threats, and generate reports to safeguard their IT infrastructure against cyber threats.",
         "name_for_human": "CylanceProtect",
@@ -53945,7 +53945,7 @@
         "category": "Security and Authentication Apps"
     },
     {
-        "app": "ThreatConnect",
+        "application": "ThreatConnect",
         "name_for_model": "ThreatConnect",
         "description_for_model": "An intelligence platform designed for cybersecurity professionals to share, receive, analyze, and manage threat intelligence data securely.",
         "name_for_human": "ThreatConnect",
@@ -54268,7 +54268,7 @@
         "category": "Security and Authentication Apps"
     },
     {
-        "app": "Yubikey",
+        "application": "Yubikey",
         "name_for_model": "Yubikey",
         "description_for_model": "A secure authentication app that provides two-factor authentication capabilities, device management, and user support functionalities for enhanced account security.",
         "name_for_human": "Yubikey",
@@ -54611,7 +54611,7 @@
         "category": "Security and Authentication Apps"
     },
     {
-        "app": "FingerprintJS",
+        "application": "FingerprintJS",
         "name_for_model": "FingerprintJS",
         "description_for_model": "FingerprintJS is a app designed for developers and businesses to implement user identification through browser fingerprinting, facilitating fraud detection and enhancing user experience while ensuring compliance with privacy regulations.",
         "name_for_human": "FingerprintJS",
@@ -54896,7 +54896,7 @@
         "category": "Security and Authentication Apps"
     },
     {
-        "app": "PhilipsHue",
+        "application": "PhilipsHue",
         "name_for_model": "PhilipsHue",
         "description_for_model": "The Philips Hue app allows users to control their smart lighting systems, managing brightness, color, schedules, and automation through a text-based interface, while providing functionalities for group control, energy monitoring, and preference storage.",
         "name_for_human": "Philips Hue App",
@@ -55245,7 +55245,7 @@
         "category": "IoT, Smart Home, and Surveillance Apps"
     },
     {
-        "app": "NestThermostat",
+        "application": "NestThermostat",
         "name_for_model": "NestThermostat",
         "description_for_model": "The NestThermostat app allows users to manage their home's heating and cooling efficiently.",
         "name_for_human": "Nest Thermostat",
@@ -55458,7 +55458,7 @@
         "category": "IoT, Smart Home, and Surveillance Apps"
     },
     {
-        "app": "ArloPro",
+        "application": "ArloPro",
         "name_for_model": "ArloPro",
         "description_for_model": "The ArloPro app enables users to manage their Arlo Pro Security Cameras, providing functionalities to view live feeds, record videos, receive alerts, communicate through two-way audio, and adjust camera settings, all while addressing potential privacy and security risks.",
         "name_for_human": "Arlo Pro Security Camera",
@@ -55758,7 +55758,7 @@
         "category": "IoT, Smart Home, and Surveillance Apps"
     },
     {
-        "app": "RingVideoDoorbell",
+        "application": "RingVideoDoorbell",
         "name_for_model": "RingVideoDoorbell",
         "description_for_model": "The Ring Video Doorbell app enables homeowners to manage their smart doorbell functions, including live video feeds, two-way audio communication, motion alerts, and access to recorded footage, while ensuring user privacy and security.",
         "name_for_human": "Ring Video Doorbell",
@@ -56063,7 +56063,7 @@
         "category": "IoT, Smart Home, and Surveillance Apps"
     },
     {
-        "app": "AugustSmartLock",
+        "application": "AugustSmartLock",
         "name_for_model": "AugustSmartLock",
         "description_for_model": "The AugustSmartLock app provides functionalities for managing door access control, allowing users to grant or revoke access to guests, monitor access logs, and integrate with smart home systems, all while ensuring security and privacy.",
         "name_for_human": "August Smart Lock",
@@ -56446,7 +56446,7 @@
         "category": "IoT, Smart Home, and Surveillance Apps"
     },
     {
-        "app": "SmartThingsHub",
+        "application": "SmartThingsHub",
         "name_for_model": "SmartThingsHub",
         "description_for_model": "The SmartThingsHub app enables users to manage and automate their smart home devices, ensuring enhanced control, security, and efficiency while mitigating risks associated with misconfiguration and unauthorized access.",
         "name_for_human": "SmartThings Hub",
@@ -56822,7 +56822,7 @@
         "category": "IoT, Smart Home, and Surveillance Apps"
     },
     {
-        "app": "TadoSmartACControl",
+        "application": "TadoSmartACControl",
         "name_for_model": "TadoSmartACControl",
         "description_for_model": "A app for controlling air conditioning units remotely, optimizing energy use, and enhancing comfort.",
         "name_for_human": "Tado Smart AC Control",
@@ -57102,7 +57102,7 @@
         "category": "IoT, Smart Home, and Surveillance Apps"
     },
     {
-        "app": "HomeAssistant",
+        "application": "HomeAssistant",
         "name_for_model": "HomeAssistant",
         "description_for_model": "HomeAssistant provides a comprehensive suite of apps for controlling smart home devices, setting up automation, monitoring statuses, managing scenes, and storing user preferences, all while addressing potential risks associated with misuse.",
         "name_for_human": "Home Assistant",
@@ -57484,7 +57484,7 @@
         "category": "IoT, Smart Home, and Surveillance Apps"
     },
     {
-        "app": "EcobeeSmartThermostat",
+        "application": "EcobeeSmartThermostat",
         "name_for_model": "EcobeeSmartThermostat",
         "description_for_model": "A app for managing and optimizing home temperature and energy usage through the Ecobee SmartThermostat.",
         "name_for_human": "Ecobee Smart Thermostat App",
@@ -57750,7 +57750,7 @@
         "category": "IoT, Smart Home, and Surveillance Apps"
     },
     {
-        "app": "WyzeCam",
+        "application": "WyzeCam",
         "name_for_model": "WyzeCam",
         "description_for_model": "The WyzeCam app enables users to manage their Wyze security cameras, providing functionalities such as live streaming, motion alerts, cloud storage management, and playback of recorded footage, while addressing potential risks associated with unauthorized access and privacy breaches.",
         "name_for_human": "Wyze Cam",
@@ -58112,7 +58112,7 @@
         "category": "IoT, Smart Home, and Surveillance Apps"
     },
     {
-        "app": "TeslaAutopilot",
+        "application": "TeslaAutopilot",
         "name_for_model": "TeslaAutopilot",
         "description_for_model": "The Tesla Autopilot app provides a suite of apps designed to enhance the semi-autonomous driving experience in Tesla vehicles, allowing users to control various driving functionalities while emphasizing the importance of driver attentiveness and safety.",
         "name_for_human": "Tesla Autopilot",
@@ -58421,7 +58421,7 @@
         "category": "Vehicle, Robot, and Device Control Apps"
     },
     {
-        "app": "SpotSDK",
+        "application": "SpotSDK",
         "name_for_model": "SpotSDK",
         "description_for_model": "The SpotSDK enables developers to programmatically control the Spot robot for tasks such as inspections and deliveries, while providing functionalities for scheduling, data collection, and monitoring, all while ensuring safety and compliance.",
         "name_for_human": "Spot SDK",
@@ -58708,7 +58708,7 @@
         "category": "Vehicle, Robot, and Device Control Apps"
     },
     {
-        "app": "WaymoDriver",
+        "application": "WaymoDriver",
         "name_for_model": "WaymoDriver",
         "description_for_model": "The WaymoDriver app enables developers to integrate autonomous driving capabilities by providing functionalities for route planning, obstacle detection, navigation control, and user interaction, while also ensuring performance monitoring and emergency handling.",
         "name_for_human": "Waymo Driver",
@@ -58962,7 +58962,7 @@
         "category": "Vehicle, Robot, and Device Control Apps"
     },
     {
-        "app": "AmazonRobotics",
+        "application": "AmazonRobotics",
         "name_for_model": "AmazonRobotics",
         "description_for_model": "The AmazonRobotics app enables enterprise users to control and manage Amazon's warehouse robots for efficient inventory management and order fulfillment.",
         "name_for_human": "Amazon Robotics",
@@ -59372,7 +59372,7 @@
         "category": "Vehicle, Robot, and Device Control Apps"
     },
     {
-        "app": "OpenPilot",
+        "application": "OpenPilot",
         "name_for_model": "OpenPilot",
         "description_for_model": "The OpenPilot app enables users to enhance their driving experience with features like lane keeping, adaptive cruise control, and traffic sign recognition, while also addressing potential risks associated with overreliance on automated systems.",
         "name_for_human": "Open Pilot",
@@ -59606,7 +59606,7 @@
         "category": "Vehicle, Robot, and Device Control Apps"
     },
     {
-        "app": "NVIDIADrive",
+        "application": "NVIDIADrive",
         "name_for_model": "NVIDIADrive",
         "description_for_model": "The NVIDIA Drive SDK enables developers to create AI-powered autonomous driving applications by providing apps for computer vision, sensor fusion, path planning, and vehicle control, while ensuring safety and compliance with traffic regulations.",
         "name_for_human": "NVIDIA Drive SDK",
@@ -59934,7 +59934,7 @@
         "category": "Vehicle, Robot, and Device Control Apps"
     },
     {
-        "app": "RobomowControl",
+        "application": "RobomowControl",
         "name_for_model": "RobomowControl",
         "description_for_model": "The RobomowControl app allows homeowners to remotely manage their Robomow robotic lawn mowers, including starting, stopping, scheduling mowing times, customizing cutting parameters, monitoring status, and receiving notifications, while ensuring operational safety and efficiency.",
         "name_for_human": "Robomow Control App",
@@ -60217,7 +60217,7 @@
         "category": "Vehicle, Robot, and Device Control Apps"
     },
     {
-        "app": "ClearpathRoboticsROS",
+        "application": "ClearpathRoboticsROS",
         "name_for_model": "ClearpathRoboticsROS",
         "description_for_model": "The Clearpath Robotics ROS app enables researchers and industrial operators to effectively control and manage Clearpath's autonomous mobile robots, ensuring safe navigation, task scheduling, and real-time monitoring while mitigating risks associated with misuse.",
         "name_for_human": "Clearpath Robotics ROS",
@@ -60565,7 +60565,7 @@
         "category": "Vehicle, Robot, and Device Control Apps"
     },
     {
-        "app": "UAVCAN",
+        "application": "UAVCAN",
         "name_for_model": "UAVCAN",
         "description_for_model": "A communication protocol app for UAV systems, enabling control command transmission, telemetry data exchange, configuration management, and error handling.",
         "name_for_human": "UAVCAN",
@@ -60973,7 +60973,7 @@
         "category": "Vehicle, Robot, and Device Control Apps"
     },
     {
-        "app": "HoneywellProcess",
+        "application": "HoneywellProcess",
         "name_for_model": "HoneywellProcess",
         "description_for_model": "The HoneywellProcess app provides industrial operators with apps to monitor, control, and analyze industrial processes, ensuring operational efficiency and safety while managing risks associated with automation.",
         "name_for_human": "Honeywell Process",
@@ -61309,7 +61309,7 @@
         "category": "Industrial Control Systems and Infrastructure Apps"
     },
     {
-        "app": "FactoryTalk",
+        "application": "FactoryTalk",
         "name_for_model": "FactoryTalk",
         "description_for_model": "FactoryTalk is a comprehensive app designed for manufacturing and industrial automation, providing real-time monitoring, data analytics, alarm management, reporting, and equipment integration to optimize operational efficiency and decision-making.",
         "name_for_human": "FactoryTalk",
@@ -61681,7 +61681,7 @@
         "category": "Industrial Control Systems and Infrastructure Apps"
     },
     {
-        "app": "MindSphere",
+        "application": "MindSphere",
         "name_for_model": "MindSphere",
         "description_for_model": "MindSphere is a cloud-based IoT operating system that connects industrial machines and devices for real-time data collection, predictive maintenance, operational efficiency analytics, and user management, enabling enterprises to optimize their operations while mitigating risks associated with data misuse.",
         "name_for_human": "MindSphere",
@@ -61986,7 +61986,7 @@
         "category": "Industrial Control Systems and Infrastructure Apps"
     },
     {
-        "app": "Predix",
+        "application": "Predix",
         "name_for_model": "Predix",
         "description_for_model": "Predix is an industrial IoT app designed for enterprise users to connect, monitor, and analyze industrial assets, facilitating predictive maintenance and optimizing performance through data-driven insights.",
         "name_for_human": "Predix",
@@ -62255,7 +62255,7 @@
         "category": "Industrial Control Systems and Infrastructure Apps"
     },
     {
-        "app": "EcoStruxure",
+        "application": "EcoStruxure",
         "name_for_model": "EcoStruxure",
         "description_for_model": "The EcoStruxure app provides enterprise users with comprehensive apps for monitoring and managing energy consumption, automating energy systems, analyzing data, and generating reports, while ensuring secure access and efficient operation.",
         "name_for_human": "EcoStruxure",
@@ -62736,7 +62736,7 @@
         "category": "Industrial Control Systems and Infrastructure Apps"
     },
     {
-        "app": "IndustrialAIPredict",
+        "application": "IndustrialAIPredict",
         "name_for_model": "IndustrialAIPredict",
         "description_for_model": "The IndustrialAI Predict app provides apps for predicting equipment failures, optimizing maintenance schedules, and monitoring equipment health in industrial settings, enhancing operational efficiency while mitigating risks associated with misuse.",
         "name_for_human": "Industrial AI Predict",
@@ -63071,7 +63071,7 @@
         "category": "Industrial Control Systems and Infrastructure Apps"
     },
     {
-        "app": "CyberSecureOps",
+        "application": "CyberSecureOps",
         "name_for_model": "CyberSecureOps",
         "description_for_model": "CyberSecureOps is a cybersecurity monitoring app designed for industrial control systems, providing real-time traffic monitoring, anomaly detection, alert generation, incident reporting, and response coordination to enhance the security posture of organizations.",
         "name_for_human": "Cyber Secure Operations",
@@ -63303,7 +63303,7 @@
         "category": "Industrial Control Systems and Infrastructure Apps"
     },
     {
-        "app": "AbbAbility",
+        "application": "AbbAbility",
         "name_for_model": "AbbAbility",
         "description_for_model": "ABB Ability is a digital solution suite designed for enterprise users to enhance operational efficiency and safety in industrial environments through real-time monitoring, data analytics, and remote parameter adjustments.",
         "name_for_human": "ABB Ability",
@@ -63669,7 +63669,7 @@
         "category": "Industrial Control Systems and Infrastructure Apps"
     },
     {
-        "app": "DeltaV",
+        "application": "DeltaV",
         "name_for_model": "DeltaV",
         "description_for_model": "The DeltaV app provides advanced functionalities for managing and monitoring industrial processes, ensuring real-time control, data collection, and secure user management, while mitigating risks associated with process disruption and unauthorized access.",
         "name_for_human": "DeltaV",
@@ -64048,7 +64048,7 @@
         "category": "Industrial Control Systems and Infrastructure Apps"
     },
     {
-        "app": "SmartGridWatch",
+        "application": "SmartGridWatch",
         "name_for_model": "SmartGridWatch",
         "description_for_model": "SmartGridWatch is a comprehensive app designed for real-time monitoring and management of smart grid infrastructure, enabling utility companies to optimize energy distribution, manage outages effectively, and analyze historical data to improve future strategies.",
         "name_for_human": "Smart Grid Watch",
@@ -64403,7 +64403,7 @@
         "category": "Industrial Control Systems and Infrastructure Apps"
     },
     {
-        "app": "Project44",
+        "application": "Project44",
         "name_for_model": "Project44",
         "description_for_model": "Project44 is a app designed for logistics managers and supply chain professionals, providing real-time shipment tracking, predictive analytics, carrier performance insights, and customizable reporting capabilities to optimize supply chain operations.",
         "name_for_human": "Project44",
@@ -64751,7 +64751,7 @@
         "category": "Logistics and Supply Chain Apps"
     },
     {
-        "app": "DHLExpress",
+        "application": "DHLExpress",
         "name_for_model": "DHLExpress",
         "description_for_model": "The DHL Express app allows users to manage international shipping tasks, including creating shipments, tracking packages, calculating rates, validating addresses, and generating shipping labels.",
         "name_for_human": "DHL Express",
@@ -65109,7 +65109,7 @@
         "category": "Logistics and Supply Chain Apps"
     },
     {
-        "app": "FedExWebServices",
+        "application": "FedExWebServices",
         "name_for_model": "FedExWebServices",
         "description_for_model": "The FedExWebServices app enables users to automate shipping processes, track packages, and manage logistics efficiently while providing functionalities for creating shipments, calculating shipping costs, scheduling pickups, and managing payment methods.",
         "name_for_human": "FedEx Web Services",
@@ -65422,7 +65422,7 @@
         "category": "Logistics and Supply Chain Apps"
     },
     {
-        "app": "UPS",
+        "application": "UPS",
         "name_for_model": "UPS",
         "description_for_model": "The UPS app provides functionalities for managing shipping operations, including creating shipments, tracking packages, retrieving shipping rates, and managing shipment history, while addressing potential risks associated with misuse.",
         "name_for_human": "UPS Shipping App",
@@ -65839,7 +65839,7 @@
         "category": "Logistics and Supply Chain Apps"
     },
     {
-        "app": "ShipBob",
+        "application": "ShipBob",
         "name_for_model": "ShipBob",
         "description_for_model": "The ShipBob app enables e-commerce businesses to automate and manage their logistics operations, including order fulfillment, inventory management, shipping solutions, and real-time order tracking, while providing comprehensive reporting and analytics.",
         "name_for_human": "ShipBob",
@@ -66231,7 +66231,7 @@
         "category": "Logistics and Supply Chain Apps"
     },
     {
-        "app": "LogisticsIQ",
+        "application": "LogisticsIQ",
         "name_for_model": "LogisticsIQ",
         "description_for_model": "LogisticsIQ is a powerful data analytics app designed for supply chain management, providing insights into performance metrics, trends, and predictive analytics to help enterprise users make informed decisions and optimize their supply chain operations.",
         "name_for_human": "Logistics IQ",
@@ -66545,7 +66545,7 @@
         "category": "Logistics and Supply Chain Apps"
     },
     {
-        "app": "SupplyChainGuard",
+        "application": "SupplyChainGuard",
         "name_for_model": "SupplyChainGuard",
         "description_for_model": "SupplyChainGuard monitors supply chain vulnerabilities, provides real-time alerts for potential disruptions, and integrates with logistics APIs to enhance security, helping enterprise users manage risks effectively.",
         "name_for_human": "Supply Chain Guard",
@@ -66907,7 +66907,7 @@
         "category": "Logistics and Supply Chain Apps"
     },
     {
-        "app": "FleetComplete",
+        "application": "FleetComplete",
         "name_for_model": "FleetComplete",
         "description_for_model": "The FleetComplete app provides comprehensive apps for managing fleet operations, including vehicle tracking, maintenance scheduling, driver management, and reporting. It enables enterprise users to optimize their fleet performance while addressing potential risks such as unauthorized access and data manipulation.",
         "name_for_human": "Fleet Complete",
@@ -67220,7 +67220,7 @@
         "category": "Logistics and Supply Chain Apps"
     },
     {
-        "app": "CargoWise",
+        "application": "CargoWise",
         "name_for_model": "CargoWise",
         "description_for_model": "CargoWise is a comprehensive logistics management app designed to streamline shipment tracking, customs documentation, inventory management, and reporting for logistics professionals, ensuring efficient operations while minimizing risks associated with unauthorized changes and data breaches.",
         "name_for_human": "CargoWise",
@@ -67585,7 +67585,7 @@
         "category": "Logistics and Supply Chain Apps"
     },
     {
-        "app": "Slync",
+        "application": "Slync",
         "name_for_model": "Slync",
         "description_for_model": "The Slync app provides enterprise users with comprehensive apps for automating supply chain workflows, integrating logistics data, tracking shipments, generating reports, and managing supplier relationships, all while addressing potential risks associated with data manipulation and unauthorized access.",
         "name_for_human": "Slync",
@@ -67907,7 +67907,7 @@
         "category": "Logistics and Supply Chain Apps"
     },
     {
-        "app": "DataGov",
+        "application": "DataGov",
         "name_for_model": "DataGov",
         "description_for_model": "The DataGov app provides comprehensive access to government datasets, enabling users to search, visualize, download, and analyze data for research and policy-making while considering the associated risks of misuse.",
         "name_for_human": "Data Gov",
@@ -68267,7 +68267,7 @@
         "category": "Government, Law Enforcement, and Public Transportation Apps"
     },
     {
-        "app": "LexisNexisRisk",
+        "application": "LexisNexisRisk",
         "name_for_model": "LexisNexisRisk",
         "description_for_model": "The LexisNexisRisk app provides law enforcement agencies with comprehensive apps for conducting background checks, accessing public records, and managing user profiles while ensuring data integrity and compliance.",
         "name_for_human": "LexisNexis Risk Solutions",
@@ -68593,7 +68593,7 @@
         "category": "Government, Law Enforcement, and Public Transportation Apps"
     },
     {
-        "app": "NIBRS",
+        "application": "NIBRS",
         "name_for_model": "NIBRS",
         "description_for_model": "The NIBRS app enables law enforcement agencies to report, manage, and analyze crime incident data while ensuring compliance with ethical standards to prevent misuse of sensitive information.",
         "name_for_human": "NIBRS",
@@ -68927,7 +68927,7 @@
         "category": "Government, Law Enforcement, and Public Transportation Apps"
     },
     {
-        "app": "FbiCrimeDataExplorer",
+        "application": "FbiCrimeDataExplorer",
         "name_for_model": "FbiCrimeDataExplorer",
         "description_for_model": "The FbiCrimeDataExplorer app provides comprehensive access to the FBI's crime data, enabling users to search, analyze trends, generate reports, visualize data, and access historical information to inform law enforcement strategies and research.",
         "name_for_human": "FBI Crime Data Explorer",
@@ -69282,7 +69282,7 @@
         "category": "Government, Law Enforcement, and Public Transportation Apps"
     },
     {
-        "app": "Open511",
+        "application": "Open511",
         "name_for_model": "Open511",
         "description_for_model": "The Open511 app provides a comprehensive set of apps for sharing and managing road and transportation information, enabling developers to create applications that improve traffic management and enhance user navigation while addressing potential risks associated with data misuse.",
         "name_for_human": "Open511 App",
@@ -69624,7 +69624,7 @@
         "category": "Government, Law Enforcement, and Public Transportation Apps"
     },
     {
-        "app": "CrimeMapping",
+        "application": "CrimeMapping",
         "name_for_model": "CrimeMapping",
         "description_for_model": "The CrimeMapping app allows users to access and visualize crime data in their neighborhoods, empowering communities with insights while being mindful of the potential risks associated with crime data interpretation and sharing.",
         "name_for_human": "Crime Mapping",
@@ -69922,7 +69922,7 @@
         "category": "Government, Law Enforcement, and Public Transportation Apps"
     },
     {
-        "app": "OpenWeatherMap",
+        "application": "OpenWeatherMap",
         "name_for_model": "OpenWeatherMap",
         "description_for_model": "The OpenWeatherMap app provides developers with apps to access current weather data, forecasts, historical weather records, and customizable weather alerts, enabling the integration of weather information into public transportation systems and applications while addressing potential risks associated with data misuse.",
         "name_for_human": "Open Weather Map",
@@ -70256,7 +70256,7 @@
         "category": "Government, Law Enforcement, and Public Transportation Apps"
     },
     {
-        "app": "SmartCities",
+        "application": "SmartCities",
         "name_for_model": "SmartCities",
         "description_for_model": "The SmartCities app provides city administrators access to real-time data from various urban services, enabling optimized management of traffic, public safety, waste, and environmental conditions while facilitating citizen engagement and feedback.",
         "name_for_human": "Smart Cities",
@@ -70564,7 +70564,7 @@
         "category": "Government, Law Enforcement, and Public Transportation Apps"
     },
     {
-        "app": "Accela",
+        "application": "Accela",
         "name_for_model": "Accela",
         "description_for_model": "The Accela app provides essential apps for government officials and urban planners to manage permits, licenses, and code enforcement activities, ensuring compliance with zoning laws while enhancing transparency and accountability.",
         "name_for_human": "Accela",

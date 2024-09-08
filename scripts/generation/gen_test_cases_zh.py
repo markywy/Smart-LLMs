@@ -103,7 +103,7 @@ def get_app_names(full, subset=None):
 
 def main(idx: int):
 
-    name2app = {app["app"]: app for app in apps}
+    name2app = {app["application"]: app for app in apps}
     all_app_names = list(name2app.keys())
     prim_apps_names = get_app_names(all_app_names, args.prim_apps)
     aux_app_names = get_app_names(all_app_names, args.aux_apps)

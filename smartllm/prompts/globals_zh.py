@@ -129,7 +129,7 @@ APP_SPECIFICATION_ZH = NamedBlock(
             APP_SPEC_COMPONENTS_ZH,
         ),
         Single("以下应用可用：").set_refname("app_spec_intro"),
-        Single("{app_descriptions}").set_refname("app_desc_input"),
+        Single("{application_descriptions}").set_refname("app_desc_input"),
         # "",
     ).set_sep("\n\n"),
 )
@@ -140,7 +140,7 @@ APP_DESCRIPTION_ZH = NamedBlock(
     Sequential(
         "每个应用程序是完成特定任务的相关应用的集合。",  # newly added
         Single("以下应用可用：").set_refname("app_desc_intro"),
-        "{app_descriptions}",
+        "{application_descriptions}",
         # "",
     ).set_sep("\n\n"),
 )

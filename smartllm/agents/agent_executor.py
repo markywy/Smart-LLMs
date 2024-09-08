@@ -7,10 +7,10 @@ from langchain.agents import (
     AgentExecutor,
     BaseMultiActionAgent,
     BaseSingleActionAgent,
-    App,
-    app,
+    Tool,
+    tool,
 )
-from langchain.agents.agent import ExceptionApp
+from langchain.agents.agent import ExceptionTool
 from langchain.base_language import BaseLanguageModel
 from langchain.callbacks.base import BaseCallbackHandler, BaseCallbackManager
 from langchain.callbacks.manager import (
@@ -19,8 +19,8 @@ from langchain.callbacks.manager import (
     Callbacks,
 )
 from langchain.schema import AgentAction, AgentFinish, OutputParserException
-from langchain.apps.base import BaseApp
-from smartllm.apps.app_interface import BaseApp
+from langchain.tools.base import BaseTool
+from smartllm.apps.app_interface import BaseToolkit
 from smartllm.utils import InvalidApp
 from smartllm.utils.my_typing import *
 
@@ -29,23 +29,23 @@ class AgentExecutorWithApp(AgentExecutor):
     """Agent executor with apps"""
 
     app_names: List[str]
-    apps: List[BaseApp]
+    applications: List[BaseToolkit]
 
     @classmethod
     def from_agent_and_apps(
         cls,
         agent: Union[BaseSingleActionAgent, BaseMultiActionAgent],
-        apps: Sequence[BaseApp],
+        applications: Sequence[BaseToolkit],
         callbacks: Callbacks = None,
         **kwargs: Any,
     ) -> AgentExecutor:
         """Create from agent and apps."""
-        apps = agent.get_all_apps(apps)
+        apps = agent.get_all_apps(applications)
         app_names = [app.name for app in apps]
         return cls(
             agent=agent,
             apps=apps,
-            apps=apps,
+            applications=applications,
             app_names=app_names,
             callbacks=callbacks,
             **kwargs,
@@ -55,7 +55,7 @@ class AgentExecutorWithApp(AgentExecutor):
     def from_agent_and_apps(
         cls,
         agent: Union[BaseSingleActionAgent, BaseMultiActionAgent],
-        apps: Sequence[BaseApp],
+        apps: Sequence[BaseTool],
         callbacks: Callbacks = None,
         **kwargs: Any,
     ) -> AgentExecutor:
@@ -103,7 +103,7 @@ class AgentExecutorWithApp(AgentExecutor):
     # Smartllm: below parts are just override to replace InvalidApp with ours, update at langchain==0.0.277
     def _take_next_step(
         self,
-        name_to_app_map: Dict[str, BaseApp],
+        name_to_app_map: Dict[str, BaseTool],
         color_mapping: Dict[str, str],
         inputs: Dict[str, str],
         intermediate_steps: List[Tuple[AgentAction, str]],
@@ -145,7 +145,7 @@ class AgentExecutorWithApp(AgentExecutor):
             if run_manager:
                 run_manager.on_agent_action(output, color="green")
             app_run_kwargs = self.agent.app_run_logging_kwargs()
-            observation = ExceptionApp().run(
+            observation = ExceptionTool().run(
                 output.app_input,
                 verbose=self.verbose,
                 color=None,
@@ -166,16 +166,16 @@ class AgentExecutorWithApp(AgentExecutor):
             if run_manager:
                 run_manager.on_agent_action(agent_action, color="green")
             # Otherwise we lookup the app
-            if agent_action.app in name_to_app_map:
-                app = name_to_app_map[agent_action.app]
+            if agent_action.tool in name_to_app_map:
+                app = name_to_app_map[agent_action.tool]
                 return_direct = app.return_direct
-                color = color_mapping[agent_action.app]
+                color = color_mapping[agent_action.tool]
                 app_run_kwargs = self.agent.app_run_logging_kwargs()
                 if return_direct:
                     app_run_kwargs["llm_prefix"] = ""
                 # We then call the app on the app input to get an observation
                 observation = app.run(
-                    agent_action.app_input,
+                    agent_action.tool_input,
                     verbose=self.verbose,
                     color=color,
                     callbacks=run_manager.get_child() if run_manager else None,
@@ -185,7 +185,7 @@ class AgentExecutorWithApp(AgentExecutor):
                 app_run_kwargs = self.agent.app_run_logging_kwargs()
                 # * ====== Smartllm: begin overwrite ======
                 observation = InvalidApp(available_apps=self.app_names).run(
-                    agent_action.app,
+                    agent_action.tool,
                     verbose=self.verbose,
                     color=None,
                     callbacks=run_manager.get_child() if run_manager else None,
@@ -197,7 +197,7 @@ class AgentExecutorWithApp(AgentExecutor):
 
     async def _atake_next_step(
         self,
-        name_to_app_map: Dict[str, BaseApp],
+        name_to_app_map: Dict[str, BaseTool],
         color_mapping: Dict[str, str],
         inputs: Dict[str, str],
         intermediate_steps: List[Tuple[AgentAction, str]],
@@ -235,7 +235,7 @@ class AgentExecutorWithApp(AgentExecutor):
                 raise ValueError("Got unexpected type of `handle_parsing_errors`")
             output = AgentAction("_Exception", observation, text)
             app_run_kwargs = self.agent.app_run_logging_kwargs()
-            observation = await ExceptionApp().arun(
+            observation = await ExceptionTool().arun(
                 output.app_input,
                 verbose=self.verbose,
                 color=None,
@@ -260,16 +260,16 @@ class AgentExecutorWithApp(AgentExecutor):
                     agent_action, verbose=self.verbose, color="green"
                 )
             # Otherwise we lookup the app
-            if agent_action.app in name_to_app_map:
-                app = name_to_app_map[agent_action.app]
+            if agent_action.tool in name_to_app_map:
+                app = name_to_app_map[agent_action.tool]
                 return_direct = app.return_direct
-                color = color_mapping[agent_action.app]
+                color = color_mapping[agent_action.tool]
                 app_run_kwargs = self.agent.app_run_logging_kwargs()
                 if return_direct:
                     app_run_kwargs["llm_prefix"] = ""
                 # We then call the app on the app input to get an observation
                 observation = await app.arun(
-                    agent_action.app_input,
+                    agent_action.tool_input,
                     verbose=self.verbose,
                     color=color,
                     callbacks=run_manager.get_child() if run_manager else None,
@@ -279,7 +279,7 @@ class AgentExecutorWithApp(AgentExecutor):
                 app_run_kwargs = self.agent.app_run_logging_kwargs()
                 # * ====== Smartllm: begin overwrite ======
                 observation = await InvalidApp(available_apps=self.app_names).arun(
-                    agent_action.app,
+                    agent_action.tool,
                     verbose=self.verbose,
                     color=None,
                     callbacks=run_manager.get_child() if run_manager else None,

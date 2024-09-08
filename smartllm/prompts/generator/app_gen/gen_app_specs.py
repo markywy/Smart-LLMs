@@ -25,7 +25,7 @@ GEN_APP_SPEC_TASK_START = NamedBlock(
         "Now begin your task! You are provided with the following development thought:",
         "```\n{development_thought}\n```",
         "Translate the above thought into a JSON app specification. Output the detailed app specification as:\n```json\n<the output app specification follows the {app_format}>\n```",
-        "You must include the backsticks and adhere to the specification structure as {format_example}. You should specify a detailed description for each tool, and precisely include all the necessary information for the tool description (e.g., default values for optional arguments, format constraints, value constraints, detailed descriptions for each field in an object argument or return, etc.)",
+        "You must include the backsticks and adhere to the specification structure as {format_example}. You should specify a detailed description for each app, and precisely include all the necessary information for the app description (e.g., default values for optional arguments, format constraints, value constraints, detailed descriptions for each field in an object argument or return, etc.)",
         "You must strictly adhering to the above thoughts. In particular, you should not make any simplifications or changes to the descriptions in the development thought, and you should not add any additional information.",
     ),
 )
