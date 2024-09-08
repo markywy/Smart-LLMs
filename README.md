@@ -14,7 +14,7 @@ Our Multi-agent framework consists of two core components: an Interaction Simula
 Run the command below to install the packages:
 
 ```bash
-cd .SmartLLMs
+cd SmartLLMs
 pip install -e .
 ```
 ### Add your API keys
