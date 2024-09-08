@@ -18,12 +18,12 @@ USER_DEF_ZH = NamedVariable(
 AGENT_DEF_ZH = NamedVariable(
     refname="agent",
     name="Agent",
-    content="遵循 {user} 的指令并使用工具来完成任务或回答问题的 {agent}。",
+    content="遵循 {user} 的指令并使用应用来完成任务或回答问题的 {agent}。",
 )
 SIMULATOR_DEF_ZH = NamedVariable(
     refname="simulator",
     name="Simulator",
-    content="模拟 {agent} 工具调用的工具执行输出的模拟器。",
+    content="模拟 {agent} 应用调用的应用执行输出的模拟器。",
 )
 ALL_DEFS_ZH = Collection(USER_DEF_ZH, AGENT_DEF_ZH, SIMULATOR_DEF_ZH)
 
@@ -105,17 +105,17 @@ APP_SPEC_COMPONENTS_ZH = Collection(
     NamedVariable(
         refname="app_argument",
         name="Arguments",
-        content="工具输入参数规范",
+        content="应用输入参数规范",
     ),
     NamedVariable(
         refname="app_return",
         name="Returns",
-        content="工具输出返回规范",
+        content="应用输出返回规范",
     ),
     NamedVariable(
         refname="app_expcetion",
         name="Exceptions",
-        content="无效工具调用的可能异常",
+        content="无效应用调用的可能异常",
     ),
 )
 
@@ -125,10 +125,10 @@ APP_SPECIFICATION_ZH = NamedBlock(
     "App Specification",
     Sequential(
         Block(
-            "每个工具包是完成特定任务的相关工具的集合。每个工具由以下内容指定：",
+            "每个应用程序是完成特定任务的相关应用的集合。每个应用由以下内容指定：",
             APP_SPEC_COMPONENTS_ZH,
         ),
-        Single("以下工具可用：").set_refname("app_spec_intro"),
+        Single("以下应用可用：").set_refname("app_spec_intro"),
         Single("{app_descriptions}").set_refname("app_desc_input"),
         # "",
     ).set_sep("\n\n"),
@@ -138,8 +138,8 @@ APP_SPECIFICATION_ZH = NamedBlock(
 APP_DESCRIPTION_ZH = NamedBlock(
     "App Description",
     Sequential(
-        "每个工具包是完成特定任务的相关工具的集合。",  # newly added
-        Single("以下工具可用：").set_refname("app_desc_intro"),
+        "每个应用程序是完成特定任务的相关应用的集合。",  # newly added
+        Single("以下应用可用：").set_refname("app_desc_intro"),
         "{app_descriptions}",
         # "",
     ).set_sep("\n\n"),
@@ -148,9 +148,9 @@ APP_DESCRIPTION_ZH = NamedBlock(
 USED_TOOLS_SPECIFICATIO_ZH = NamedBlock(
     "Detailed Specification of Used Apps",
     Sequential(
-        Block("每个工具由以下内容指定：", APP_SPEC_COMPONENTS_ZH),
+        Block("每个应用由以下内容指定：", APP_SPEC_COMPONENTS_ZH),
         Single(
-            "以下工具由 {agent} 使用，其规范详述如下："
+            "以下应用由 {agent} 使用，其规范详述如下："
         ).set_refname("used_app_spec_intro"),
         "{used_tools_descriptions}",
     ).set_sep("\n\n"),
@@ -158,10 +158,10 @@ USED_TOOLS_SPECIFICATIO_ZH = NamedBlock(
 
 
 CURRENT_APP_SPECIFICATION_ZH = NamedBlock(
-    "当前工具的详细规范",
+    "当前应用的详细规范",
     Sequential(
         Single(
-            "当前由 {agent} 使用的工具及其详细规范如下："
+            "当前由 {agent} 使用的应用及其详细规范如下："
         ).set_refname("current_app_spec_intro"),
         "* {{current_tool}}: {{current_app_description}}",
     ).set_sep("\n\n"),

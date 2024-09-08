@@ -42,12 +42,12 @@ USERS_FORMAT_ZH = NamedBlock(
                         NamedVariable(
                             refname="advantages", 
                             name="Advantages", 
-                            content="`advantages`: 从 {app} 中选定不少于 {min_apps} 个 app，根据 {profession} 和 {user_desc}，判断他（她）擅长使用哪些工具包，将对应的工具包名称不加改动地 **以列表形式输出**", 
+                            content="`advantages`: 从 {app} 中选定不少于 {min_apps} 个 app，根据 {profession} 和 {user_desc}，判断他（她）擅长使用哪些应用程序，将对应的应用程序名称不加改动地 **以列表形式输出**", 
                         ), 
                         NamedVariable(
                             refname="disadvantages", 
                             name="Disadvantages", 
-                            content="`disadvantages`: 从 {app} 中选定不少于 {min_apps} 个 app，根据 {profession} 和 {user_desc}，判断他（她）不擅长使用哪些工具包，将对应的工具包名称不加改动地 **以列表形式输出**", 
+                            content="`disadvantages`: 从 {app} 中选定不少于 {min_apps} 个 app，根据 {profession} 和 {user_desc}，判断他（她）不擅长使用哪些应用程序，将对应的应用程序名称不加改动地 **以列表形式输出**", 
                         )
                     ).set_indexing_method(number_indexing),
                 ),
@@ -67,13 +67,13 @@ GEN_USERS_TASK_DESC_ZH = NamedBlock(
         "类别描述：{description}", 
         "你应该遵循以下要求：", 
         Collection(
-            "档案的内容包括：人物名称、职业、职业描述、性格特点（尤其是细心程度）、对于电脑相关的知识背景、对 LLM 的熟悉程度、智能设备使用习惯、日常使用的 Agent 类型、擅长使用的工具包、不擅长使用的工具包", 
+            "档案的内容包括：人物名称、职业、职业描述、性格特点（尤其是细心程度）、对于电脑相关的知识背景、对 LLM 的熟悉程度、智能设备使用习惯、日常使用的 Agent 类型、擅长使用的应用程序、不擅长使用的应用程序", 
             "生成的职业和学历覆盖全年龄，从小学生、大学在读学生到社会上主流的各种职业", 
             "确保生成的职业或学历是真实的", 
             "生成的职业或学历应具有多样性。生成工作、生活、生产需求较多的职业，涵盖不同的子类别。",
             "关注那些具有专业领域，对大部分领域没有深入了解的职业。",
             "确保日常使用的 Agent 类型与人物的生产生活存在较为紧密的联系。"
-            "确保选择的工具包名称与 {app} 完全一致，不得创造新的工具包名称或调用未出现的子工具包名称"
+            "确保选择的应用程序名称与 {app} 完全一致，不得创造新的应用程序名称或调用未出现的子应用程序名称"
         ), 
     ).set_sep("\n"), 
 )

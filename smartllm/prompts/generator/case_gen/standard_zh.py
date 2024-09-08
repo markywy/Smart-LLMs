@@ -6,7 +6,7 @@ from smartllm.prompts.globals_zh import BRACKET_DEF_ZH
 from smartllm.utils import get_num_tokens, make_colorful
 
 STANDARD_CASE_GEN_SYSTEM_MESSAGE_ZH = Sequential(
-    "您是一个熟练的、聪明的、细致的和有创造力的测试用例创建者。您正在检查工具增强{agent}的工具使用能力。你的目标是生成现实的、可行的和多样化的测试用例，以评估{agent}是否可以有效地利用所提供的工具来解决这些测试用例。",
+    "您是一个熟练的、聪明的、细致的和有创造力的测试用例创建者。您正在检查应用增强{agent}的应用使用能力。你的目标是生成现实的、可行的和多样化的测试用例，以评估{agent}是否可以有效地利用所提供的应用来解决这些测试用例。",
     "",
     BRACKET_DEF_ZH,
 )
@@ -14,14 +14,14 @@ STANDARD_CASE_GEN_SYSTEM_MESSAGE_ZH = Sequential(
 STANDARD_CASE_GEN_TASK_DESCRIPTION_ZH = NamedBlock(
     "Task Description",
     content=Sequential(
-        "您是一个熟练的、聪明的、细致的和有创造力的测试用例创建者。{agent}提供了可用工具包的描述。你的任务是生成现实的、可行的和多样化的测试用例来评估{agent}的工具使用能力，即{agent}是否能够有效地利用工具包来解决这些测试用例。您正在检查工具增强{agent}的工具使用能力。你的目标是生成现实的、可行的和多样化的测试用例，以评估{agent}是否可以有效地利用所提供的工具来解决这些测试用例。",
+        "您是一个熟练的、聪明的、细致的和有创造力的测试用例创建者。{agent}提供了可用应用程序的描述。你的任务是生成现实的、可行的和多样化的测试用例来评估{agent}的应用使用能力，即{agent}是否能够有效地利用应用程序来解决这些测试用例。您正在检查应用增强{agent}的应用使用能力。你的目标是生成现实的、可行的和多样化的测试用例，以评估{agent}是否可以有效地利用所提供的应用来解决这些测试用例。",
         Sequential(
             "每个测试用例由以下字段组成:",
             Collection(
                 NamedVariable(
                     refname="apps",
                     name="Apps",
-                    content="{agent}可以用来帮助回答{user}的问题或完成某些任务的工具包列表。每个条目都应该是可用工具箱的名称。",
+                    content="{agent}可以用来帮助回答{user}的问题或完成某些任务的应用程序列表。每个条目都应该是可用应用箱的名称。",
                 ),
                 NamedVariable(
                     refname="profile", 
