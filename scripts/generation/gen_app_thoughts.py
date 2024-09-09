@@ -54,7 +54,7 @@ def main():
     for f in args.apps_paths:
         apps.extend(read_file(f))
     print(f"Loaded {len(apps)} apps")
-    existing_app_names = set([t["app"] for t in apps])
+    existing_app_names = set([t["application"] for t in apps])
 
     os.makedirs(args.dump_dir, exist_ok=True)
     base_name = args.gen_filename + ("_risky" if generator.gen_risky_app else "_std")
