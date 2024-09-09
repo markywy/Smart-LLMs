@@ -35,10 +35,10 @@ taxonomy = DataLoader.from_args(args)
 runner = BaseFuncExecutor.from_args(args, multiple_results=True)    
 
 apps = read_file(args.apps_path)
-print(f"Loaded {len(apps)} apps")
-name2app = {app["app"]: app for app in apps}
+print(f"Loaded {len(apps)} applications")
+name2app = {app["application"]: app for app in apps}
 all_app_names = list(name2app.keys())   
-app = [app["app"] for app in apps]
+app = [app["application"] for app in apps]
 
 taxonomies = read_file(args.input_path)
 print(f"Loaded {len(taxonomies)} taxonomies")
