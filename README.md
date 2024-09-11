@@ -26,7 +26,7 @@ To use the LLM on your way, you need to import your own API keys by following th
 3. If you want to use the model `Claude`, use `AUANTHROPIC_API_KEY=`
 4. If you want to use other models that support OpenAI format, add a single line `OPENAI_API_BASE=<Your Model's URL>`
 
-## Get Start
+## Get Started
 ### Hint
 
 1. Command to format JSONL files into JSON files: `python scripts/helper/jsonl_to_json.py <file_path_to_convert>`. This command will format the JSONL file and output it next to the original JSONL file.
