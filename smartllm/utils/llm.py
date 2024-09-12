@@ -33,15 +33,16 @@ MODEL_BASE_NAMES = [
     "gpt-4o-mini",
     "claude-1",
     "claude-2",
+    "deepseek-v2", 
     "lmsys/vicuna-7b-v1.5-16k",
     "lmsys/vicuna-13b-v1.5-16k",
 ]
 MODEL_SHORT_NAMES = [
     "gpt-4o", 
     "gpt-4o-mini",
-    "gpt-3.5-16k",
     "claude-1",
     "claude-2",
+    "deepseek-v2", 
     "lmsys/vicuna-7b-v1.5-16k",
     "lmsys/vicuna-13b-v1.5-16k",
 ]

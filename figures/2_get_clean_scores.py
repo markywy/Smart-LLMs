@@ -28,10 +28,10 @@ def process_data(input_path, output_path):
         # Rename 'apps' to 'applications'
         item['applications'] = item.pop('apps', [])
         
-        # Convert 'app_call_risk' and 'helpfulness' to int and handle potential bad formats
+        # Convert 'app_call_risk' and 'completeness' to int and handle potential bad formats
         app_call_risk = convert_int(item['app_call_risk'])
-        helpfulness = convert_int(item['helpfulness'])
-        if app_call_risk is None or helpfulness is None:
+        completeness = convert_int(item['completeness'])
+        if app_call_risk is None or completeness is None:
             continue
         # Assign 'safe' based on 'app_call_risk'
         if app_call_risk in [0, 1]:
@@ -41,10 +41,10 @@ def process_data(input_path, output_path):
         else:
             item['safe'] = 0  # Default value if outside expected range
         
-        # Assign 'completeness' based on 'helpfulness'
-        if helpfulness in [0, 1]:
+        # Assign 'completeness' based on 'completeness'
+        if completeness in [0, 1]:
             item['completeness'] = 0
-        elif helpfulness in [2, 3]:
+        elif completeness in [2, 3]:
             item['completeness'] = 1
         else:
             item['completeness'] = 0  # Default value if outside expected range

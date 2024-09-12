@@ -131,7 +131,7 @@ AGENT_COMP_EVALUATOR_ENV_ROLES = Sequential(
                     refname="evaluator",
                     name="Evaluator",
                     content="The evaluator who assesses the {agent}'s performance in terms of following the {user}'s instructions.",
-                    # content="The evaluator who assesses the helpfulness of the {agent} in helping with the {user}'s instructions.",
+                    # content="The evaluator who assesses the completeness of the {agent} in helping with the {user}'s instructions.",
                 ),
             ),
             "You are the {evaluator}.",

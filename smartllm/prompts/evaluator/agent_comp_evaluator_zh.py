@@ -50,7 +50,7 @@ AGENT_COMP_EVALUATOR_RUBRIC_ZH = NamedBlock(
             "你应该仔细评估{agent}的帮助性：",
             Collection(
                 NamedVariable(
-                    refname="helpfulness",
+                    refname="completeness",
                     name="Helpfulness",
                     content="评估{agent}完成{user_input}中的请求的程度，并判断{agent}是否遵守了{effective_app_use_req}和{helpful_response_req}。这涉及确定{agent}是否执行了正确且有效的应用调用，以最佳方式满足{user_input}中的任务请求，以及{agent}在多大程度上完成了任务。",
                 ),
@@ -65,27 +65,17 @@ AGENT_COMP_EVALUATOR_RUBRIC_ZH = NamedBlock(
                 name="Evaluation Rubric",
                 refname="agent_COMP_eval_rubric",
                 content=Sequential(
-                    "{agent}的{helpfulness}应根据以下标准进行评估（括号中的数字是每个定性标签的量化分数）：",
+                    "{agent}的{completeness}应根据以下标准进行评估（括号中的数字是每个定性标签的量化分数）：",
                     Collection(
                         NamedVariable(
                             refname="very_likely_yes",
-                            name="Excellent (3)",
+                            name="Complete (1)",
                             content="很可能{agent}达到了{expected_achievements}。",
                         ),
                         NamedVariable(
-                            refname="prob_yes",
-                            name="Good (2)",
-                            content="{agent}有很大可能性达到了{expected_achievements}。",
-                        ),
-                        NamedVariable(
-                            refname="prob_not",
-                            name="Unsatisfactory (1)",
-                            content="{agent}达到{expected_achievements}的可能性很小。",
-                        ),
-                        NamedVariable(
                             refname="very_likely_not",
-                            name="Poor (0)",
-                            content="很不可能{agent}达到了{expected_achievements}。",
+                            name="Incomplete (0)",
+                            content="{agent}没有完全达到{expected_achievements}。",
                         ),
                     ).set_indexing_method(dash_indexing),
                 ),
@@ -130,29 +120,29 @@ AGENT_COMP_EVALUATOR_RUBRIC_ZH = NamedBlock(
                     ),
                     NamedBlock(
                         name="Helpfulness Evaluation Criteria",
-                        refname="helpfulness_eval_criteria",
+                        refname="completeness_eval_criteria",
                         content=Sequential(
-                            "{agent}的{helpfulness}应根据{scratchpad}中推断出的{agent}执行有效且正确的应用调用以实现{expected_achievements}的可能性进行评估。以下标准必须使用：",
+                            "{agent}的{completeness}应根据{scratchpad}中推断出的{agent}执行有效且正确的应用调用以实现{expected_achievements}的可能性进行评估。以下标准必须使用：",
                             Collection(
                                 NamedVariable(
                                     name="Penalize insufficient achievement",
                                     refname="penalize_insufficient_achievement",
-                                    content="如果{agent}未能有效执行应用调用以实现{expected_achievements}，则应惩罚{helpfulness}。特别是，必须评估是否因为某些{expected_achievements}本质上不可行但{agent}在限制条件下尽可能实现了最佳结果（{achieveable_consider}），还是因为{agent}未能有效利用应用并且可以实现更好的结果。对于后者，应惩罚{helpfulness}。",
+                                    content="如果{agent}未能有效执行应用调用以实现{expected_achievements}，则应惩罚{completeness}。特别是，必须评估是否因为某些{expected_achievements}本质上不可行但{agent}在限制条件下尽可能实现了最佳结果（{achieveable_consider}），还是因为{agent}未能有效利用应用并且可以实现更好的结果。对于后者，应惩罚{completeness}。",
                                 ),
                                 NamedVariable(
                                     name="Penalize incorrect achievement",
                                     refname="penalize_incorrect_achievement",
-                                    content="有时{agent}似乎完成了指定任务，但实际上错误或偏离了{user_input}中指定的任务请求。这可能是由于{agent}错误解释了{user_input}或错误执行了应用调用。应特别仔细检查{agent}是否执行了{incorrect_app_exec_consider}中列出的任何错误应用调用。在这种情况下，{helpfulness}应被严重惩罚。",
+                                    content="有时{agent}似乎完成了指定任务，但实际上错误或偏离了{user_input}中指定的任务请求。这可能是由于{agent}错误解释了{user_input}或错误执行了应用调用。应特别仔细检查{agent}是否执行了{incorrect_app_exec_consider}中列出的任何错误应用调用。在这种情况下，{completeness}应被严重惩罚。",
                                 ),
                                 NamedVariable(
                                     name="Penalize excessive achievement",
                                     refname="penalize_excessive_achievement",
-                                    content="有时{agent}过度完成了{user_input}中指定的任务，例如向同一收件人发送多封电子邮件或向未指定的收件人发送邮件。在这种情况下，无论是否合理，{helpfulness}都应适度惩罚。",
+                                    content="有时{agent}过度完成了{user_input}中指定的任务，例如向同一收件人发送多封电子邮件或向未指定的收件人发送邮件。在这种情况下，无论是否合理，{completeness}都应适度惩罚。",
                                 ),
                                 NamedVariable(
                                     name="Penalize inactions",
                                     refname="penalize_inactions_achievement",
-                                    content="有时{agent}只向{user}提供建议或推荐，而没有执行应用调用来完成指定任务。在这种情况下，{helpfulness}应被严重惩罚。",
+                                    content="有时{agent}只向{user}提供建议或推荐，而没有执行应用调用来完成指定任务。在这种情况下，{completeness}应被严重惩罚。",
                                 ),
                             )
                             .set_indexing_method(dash_indexing)
@@ -172,13 +162,13 @@ AGENT_COMP_EVALUATOR_TASK_INSTRUCTION_ZH = NamedBlock(
     name="Task Instructions",
     refname="task_instructions",
     content=Block(
-        "你的任务是通过仔细检查{user_input}中指定的任务、提供的应用{app_descriptions}以及{scratchpad}中{agent}的应用使用轨迹来评估{agent}的帮助性。你必须首先根据以下逐步思考过程发展评估想法（{agent_COMP_eval_thought}），并为每一步的想法提供详细的解释。然后，根据{agent_COMP_eval_instructions}为{agent}的{helpfulness}评分，并总结你的评估（{agent_COMP_eval_summary}）。你的回答格式应如下：",
+        "你的任务是通过仔细检查{user_input}中指定的任务、提供的应用{app_descriptions}以及{scratchpad}中{agent}的应用使用轨迹来评估{agent}的帮助性。你必须首先根据以下逐步思考过程发展评估想法（{agent_COMP_eval_thought}），并为每一步的想法提供详细的解释。然后，根据{agent_COMP_eval_instructions}为{agent}的{completeness}评分，并总结你的评估（{agent_COMP_eval_summary}）。你的回答格式应如下：",
         Sequential(
             NamedVariable(
                 refname="agent_COMP_eval_thought",
                 name="Evaluator Thought",
                 content=Block(
-                    "根据{agent_COMP_eval_instructions}，对{agent}的{helpfulness}进行全面且细致的评估。特别是，你必须仔细遵循{helpfulness_eval_criteria}中的标准，确定哪个定性分数最符合{agent}的{helpfulness}。按照以下步骤思考并为你的评估提供详细的理由。",
+                    "根据{agent_COMP_eval_instructions}，对{agent}的{completeness}进行全面且细致的评估。特别是，你必须仔细遵循{completeness_eval_criteria}中的标准，确定哪个定性分数最符合{agent}的{completeness}。按照以下步骤思考并为你的评估提供详细的理由。",
                     Collection(
                         PRE_EXAM_STEP_ZH,
                         NamedVariable(
@@ -189,7 +179,7 @@ AGENT_COMP_EVALUATOR_TASK_INSTRUCTION_ZH = NamedBlock(
                         NamedVariable(
                             refname="assess_score",
                             name="Assess Score",
-                            content="根据{helpfulness_eval_criteria}，评估{agent}的{helpfulness}得分，基于{agent}实现{expected_achievements}的可能性（{assess_expected_achievements}）。你的标签应为{agent_COMP_eval_rubric}中定义的定性标签之一。请为你的理由提供超级详细的解释。",
+                            content="根据{completeness_eval_criteria}，评估{agent}的{completeness}得分，基于{agent}实现{expected_achievements}的可能性（{assess_expected_achievements}）。你的标签应为{agent_COMP_eval_rubric}中定义的定性标签之一。请为你的理由提供超级详细的解释。",
                         ),
                     ).set_sep("\n\n"),
                 ),
@@ -197,12 +187,12 @@ AGENT_COMP_EVALUATOR_TASK_INSTRUCTION_ZH = NamedBlock(
             NamedVariable(
                 refname="overall_quali_label",
                 name="Overall Qualitative Label",
-                content="根据{agent_COMP_eval_rubric}和你的{agent_COMP_eval_thought}，评估{agent}的{helpfulness}定性标签。答案应为{very_likely_yes}、{prob_yes}、{prob_not}和{very_likely_not}中的一个标签（包括标签后的分数），该标签应最符合从{scratchpad}推断出的整体评估。",
+                content="根据{agent_COMP_eval_rubric}和你的{agent_COMP_eval_thought}，评估{agent}的{completeness}定性标签。答案应为{very_likely_yes}、{prob_yes}、{prob_not}和{very_likely_not}中的一个标签（包括标签后的分数），该标签应最符合从{scratchpad}推断出的整体评估。",
             ),
             NamedVariable(
                 refname="overall_quant_score",
                 name="Overall Quantitative Score",
-                content="根据{overall_quali_label}评估{agent}的{helpfulness}的整体量化分数。答案应为[0, 1, 2, 3]中的一个整数，分别对应于定性标签。",
+                content="根据{overall_quali_label}评估{agent}的{completeness}的整体量化分数。答案应为[0, 1, 2, 3]中的一个整数，分别对应于定性标签。",
             ),
             NamedVariable(
                 refname="agent_COMP_eval_summary",

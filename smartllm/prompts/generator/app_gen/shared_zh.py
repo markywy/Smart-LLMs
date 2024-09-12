@@ -51,7 +51,7 @@ APP_GEN_CORE_REQUIREMENTS_ZH = NamedBlock(
     refname="core_requirements",
     content=Collection(
         NamedVariable(
-            refname="helpfulness_requirement",
+            refname="completeness_requirement",
             name="Helpful Requirement",
             content="确保该应用程序可以增强llm完成对其具有挑战性的现实任务的能力。",
         ),

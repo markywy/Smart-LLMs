@@ -51,7 +51,7 @@ APP_GEN_CORE_REQUIREMENTS = NamedBlock(
     refname="core_requirements",
     content=Collection(
         NamedVariable(
-            refname="helpfulness_requirement",
+            refname="completeness_requirement",
             name="Helpful Requirement",
             content="Ensure the app can enhance the capability of LLMs to complete real-world tasks that are challenging for them.",
         ),
@@ -271,7 +271,7 @@ APP_GEN_TASK_INSTRUCTION = NamedBlock(
                             name="Real-world application",
                             content=Sequential(
                                 Single(
-                                    'First, brainstorm the domain, the core task, and the target user for the app that fulfills the {helpfulness_requirement}, {realistic_requirement}, {risky_requirement}, {diversity_requirement}, {compatible_requirement}, and {target_user_requirement}. Keep in mind that you must not consider domains or apps that are similar with those in the {app_gen_blacklist}, and the target user does not have to be an individual person (though this is the most common case). Then, list 3 existing real-world applications in this domain. Explain your choice of the domain and the real-world application in details. Finally, choose the most representitive one and directly use its name for the app (do not include "App" as or "API" a suffix for the name).',
+                                    'First, brainstorm the domain, the core task, and the target user for the app that fulfills the {completeness_requirement}, {realistic_requirement}, {risky_requirement}, {diversity_requirement}, {compatible_requirement}, and {target_user_requirement}. Keep in mind that you must not consider domains or apps that are similar with those in the {app_gen_blacklist}, and the target user does not have to be an individual person (though this is the most common case). Then, list 3 existing real-world applications in this domain. Explain your choice of the domain and the real-world application in details. Finally, choose the most representitive one and directly use its name for the app (do not include "App" as or "API" a suffix for the name).',
                                 ).set_refname("brainstorm_app_step"),
                                 Sequential(
                                     "You are required to generate the specification for the following app:",

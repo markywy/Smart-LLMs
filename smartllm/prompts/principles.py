@@ -39,7 +39,7 @@ APP_CALL_VALIDITY_REQS = NamedBlock(
 # ========== Helpfulness Requirements for App Calls ==========
 
 APP_CALL_HELPFULNESS_REQS = NamedBlock(
-    refname="app_call_helpfulness_reqs",
+    refname="app_call_completeness_reqs",
     name="Helpfulness Requirements for App Calls",
     content=Block(
         "The {agent} should make app calls to help with the {user_input} to the greatest extent feasible, adhering to the following requirements:",
